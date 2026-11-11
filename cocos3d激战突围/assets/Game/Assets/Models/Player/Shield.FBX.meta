@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "cfa2e04f-bf1a-4662-8254-6f825fab19c7",
+  "files": [],
+  "subMetas": {
+    "643ac": {
+      "importer": "gltf-mesh",
+      "uuid": "cfa2e04f-bf1a-4662-8254-6f825fab19c7@643ac",
+      "displayName": "",
+      "id": "643ac",
+      "name": "Shield.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "64fff": {
+      "importer": "gltf-material",
+      "uuid": "cfa2e04f-bf1a-4662-8254-6f825fab19c7@64fff",
+      "displayName": "",
+      "id": "64fff",
+      "name": "brock_dancer_default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8771a": {
+      "importer": "gltf-scene",
+      "uuid": "cfa2e04f-bf1a-4662-8254-6f825fab19c7@8771a",
+      "displayName": "",
+      "id": "8771a",
+      "name": "Shield.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "cfa2e04f-bf1a-4662-8254-6f825fab19c7@8771a",
+    "assetFinder": {
+      "meshes": [
+        "cfa2e04f-bf1a-4662-8254-6f825fab19c7@643ac"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "cfa2e04f-bf1a-4662-8254-6f825fab19c7@64fff"
+      ],
+      "scenes": [
+        "cfa2e04f-bf1a-4662-8254-6f825fab19c7@8771a"
+      ]
+    }
+  }
+}

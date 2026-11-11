@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c58f1d78-8b15-484e-becd-3e6411f1fb4c",
+  "files": [],
+  "subMetas": {
+    "624b0": {
+      "importer": "gltf-mesh",
+      "uuid": "c58f1d78-8b15-484e-becd-3e6411f1fb4c@624b0",
+      "displayName": "",
+      "id": "624b0",
+      "name": "Grenades.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78e21": {
+      "importer": "gltf-material",
+      "uuid": "c58f1d78-8b15-484e-becd-3e6411f1fb4c@78e21",
+      "displayName": "",
+      "id": "78e21",
+      "name": "13 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e8fc4": {
+      "importer": "gltf-scene",
+      "uuid": "c58f1d78-8b15-484e-becd-3e6411f1fb4c@e8fc4",
+      "displayName": "",
+      "id": "e8fc4",
+      "name": "Grenades.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "c58f1d78-8b15-484e-becd-3e6411f1fb4c@e8fc4",
+    "assetFinder": {
+      "meshes": [
+        "c58f1d78-8b15-484e-becd-3e6411f1fb4c@624b0"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "c58f1d78-8b15-484e-becd-3e6411f1fb4c@78e21"
+      ],
+      "scenes": [
+        "c58f1d78-8b15-484e-becd-3e6411f1fb4c@e8fc4"
+      ]
+    }
+  }
+}

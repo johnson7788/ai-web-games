@@ -1,0 +1,732 @@
+{
+ "zeta": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色白色、蓝色、红色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zeta.webp",
+  "size": [
+   153,
+   256
+  ],
+  "seconds": 39.2
+ },
+ "nu": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色白色、蓝色、浅蓝，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/nu.webp",
+  "size": [
+   128,
+   256
+  ],
+  "seconds": 37.1
+ },
+ "zz": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色白色、红色、蓝色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zz.webp",
+  "size": [
+   191,
+   256
+  ],
+  "seconds": 37.0
+ },
+ "f91": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色白色、蓝色、红色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/f91.webp",
+  "size": [
+   140,
+   256
+  ],
+  "seconds": 36.0
+ },
+ "metz": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色白色、灰色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/metz.webp",
+  "size": [
+   169,
+   256
+  ],
+  "seconds": 38.1
+ },
+ "great": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色黑色、红色、白色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/great.webp",
+  "size": [
+   194,
+   256
+  ],
+  "seconds": 37.3
+ },
+ "grendizer": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色白色、蓝色、红色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/grendizer.webp",
+  "size": [
+   225,
+   256
+  ],
+  "seconds": 35.4
+ },
+ "daitarn": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色橙色、深红、粉色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/daitarn.webp",
+  "size": [
+   232,
+   256
+  ],
+  "seconds": 38.1
+ },
+ "getterg": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色白色、红色、浅蓝，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/getterg.webp",
+  "size": [
+   195,
+   256
+  ],
+  "seconds": 36.6
+ },
+ "getterq": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色黄色、棕色、白色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/getterq.webp",
+  "size": [
+   198,
+   256
+  ],
+  "seconds": 37.5
+ },
+ "argama": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创宇宙战舰，舰桥、弹射甲板与推进器，主色白色、蓝色、红色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/argama.webp",
+  "size": [
+   163,
+   256
+  ],
+  "seconds": 35.2
+ },
+ "neelagama": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创宇宙战舰，舰桥、弹射甲板与推进器，主色白色、蓝色、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/neelagama.webp",
+  "size": [
+   156,
+   256
+  ],
+  "seconds": 37.7
+ },
+ "racalium": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创宇宙战舰，舰桥、弹射甲板与推进器，主色白色、青色、红色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/racalium.webp",
+  "size": [
+   141,
+   256
+  ],
+  "seconds": 37.3
+ },
+ "midia": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创宇宙战舰，舰桥、弹射甲板与推进器，主色银色、灰色、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/midia.webp",
+  "size": [
+   177,
+   256
+  ],
+  "seconds": 36.3
+ },
+ "bosses": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色黄色、蓝色、白色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/bosses.webp",
+  "size": [
+   221,
+   256
+  ],
+  "seconds": 36.8
+ },
+ "cybuster": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色白色、紫色、浅蓝，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/cybuster.webp",
+  "size": [
+   169,
+   256
+  ],
+  "seconds": 33.2
+ },
+ "minervaX": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创宇宙战舰，舰桥、弹射甲板与推进器，主色紫色、深蓝、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/minervaX.webp",
+  "size": [
+   182,
+   256
+  ],
+  "seconds": 37.0
+ },
+ "gyan": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色白色、蓝色、金色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/gyan.webp",
+  "size": [
+   139,
+   256
+  ],
+  "seconds": 35.8
+ },
+ "redzaku": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色红色、深红、粉色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/redzaku.webp",
+  "size": [
+   147,
+   256
+  ],
+  "seconds": 35.5
+ },
+ "zaku3": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色绿色、深绿、灰色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zaku3.webp",
+  "size": [
+   150,
+   256
+  ],
+  "seconds": 36.4
+ },
+ "zaku3kai": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色紫色、深蓝、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zaku3kai.webp",
+  "size": [
+   155,
+   255
+  ],
+  "seconds": 37.4
+ },
+ "dreissen": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色绿色、深绿、金色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/dreissen.webp",
+  "size": [
+   179,
+   256
+  ],
+  "seconds": 34.7
+ },
+ "bau": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色棕色、黑色、黄色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/bau.webp",
+  "size": [
+   156,
+   256
+  ],
+  "seconds": 36.3
+ },
+ "marasai": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色紫色、深蓝、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/marasai.webp",
+  "size": [
+   140,
+   256
+  ],
+  "seconds": 35.2
+ },
+ "gazaC": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色绿色、深绿、黄色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/gazaC.webp",
+  "size": [
+   235,
+   256
+  ],
+  "seconds": 36.8
+ },
+ "giradoga": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色绿色、深绿、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/giradoga.webp",
+  "size": [
+   155,
+   256
+  ],
+  "seconds": 36.8
+ },
+ "zusa": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色紫色、深蓝、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zusa.webp",
+  "size": [
+   160,
+   256
+  ],
+  "seconds": 33.1
+ },
+ "yact": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色红色、深红、粉色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/yact.webp",
+  "size": [
+   145,
+   256
+  ],
+  "seconds": 36.5
+ },
+ "doven": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色深蓝、黑色、浅蓝，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/doven.webp",
+  "size": [
+   221,
+   256
+  ],
+  "seconds": 36.6
+ },
+ "hambrabi": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色紫色、深蓝、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/hambrabi.webp",
+  "size": [
+   127,
+   256
+  ],
+  "seconds": 35.7
+ },
+ "jamrufin": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色金色、棕色、粉色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/jamrufin.webp",
+  "size": [
+   164,
+   256
+  ],
+  "seconds": 36.3
+ },
+ "geymalk": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色青色、深蓝、浅蓝，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/geymalk.webp",
+  "size": [
+   256,
+   254
+  ],
+  "seconds": 32.0
+ },
+ "palace": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色灰色、深蓝、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/palace.webp",
+  "size": [
+   161,
+   256
+  ],
+  "seconds": 37.4
+ },
+ "dom": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色黑色、棕色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/dom.webp",
+  "size": [
+   159,
+   256
+  ],
+  "seconds": 37.3
+ },
+ "hygogg": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色青色、深绿、银色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/hygogg.webp",
+  "size": [
+   229,
+   256
+  ],
+  "seconds": 36.8
+ },
+ "gogge": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色绿色、深绿、银色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/gogge.webp",
+  "size": [
+   256,
+   256
+  ],
+  "seconds": 53.3
+ },
+ "byarlant": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色青色、深蓝、浅蓝，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/byarlant.webp",
+  "size": [
+   133,
+   256
+  ],
+  "seconds": 35.7
+ },
+ "asshimar": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色绿色、深绿、黄色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/asshimar.webp",
+  "size": [
+   195,
+   256
+  ],
+  "seconds": 37.3
+ },
+ "bog": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色深蓝、黑色、浅蓝，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/bog.webp",
+  "size": [
+   154,
+   256
+  ],
+  "seconds": 38.0
+ },
+ "zakrello": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色棕色、黑色、粉色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zakrello.webp",
+  "size": [
+   256,
+   222
+  ],
+  "seconds": 36.4
+ },
+ "sig": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色绿色、深绿、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/sig.webp",
+  "size": [
+   131,
+   256
+  ],
+  "seconds": 35.9
+ },
+ "elmes": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色白色、灰色、金色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/elmes.webp",
+  "size": [
+   232,
+   255
+  ],
+  "seconds": 37.2
+ },
+ "messala": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色灰色、深蓝、银色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/messala.webp",
+  "size": [
+   191,
+   256
+  ],
+  "seconds": 38.4
+ },
+ "beguina": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色粉色、灰色、白色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/beguina.webp",
+  "size": [
+   152,
+   256
+  ],
+  "seconds": 38.0
+ },
+ "quin": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色紫色、深蓝、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/quin.webp",
+  "size": [
+   230,
+   256
+  ],
+  "seconds": 34.9
+ },
+ "psyco": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色红色、深红、黑色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/psyco.webp",
+  "size": [
+   211,
+   256
+  ],
+  "seconds": 37.8
+ },
+ "psyco2": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色紫色、黑色、银色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/psyco2.webp",
+  "size": [
+   211,
+   256
+  ],
+  "seconds": 37.3
+ },
+ "bigzam": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色青色、黑色、金色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/bigzam.webp",
+  "size": [
+   216,
+   256
+  ],
+  "seconds": 38.4
+ },
+ "gio": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色黑色、金色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/gio.webp",
+  "size": [
+   184,
+   256
+  ],
+  "seconds": 36.4
+ },
+ "alpha": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色灰色、黑色、银色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/alpha.webp",
+  "size": [
+   251,
+   256
+  ],
+  "seconds": 36.0
+ },
+ "rafflesia": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色绿色、深绿、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/rafflesia.webp",
+  "size": [
+   234,
+   256
+  ],
+  "seconds": 38.1
+ },
+ "valshione": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色红色、深红、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/valshione.webp",
+  "size": [
+   234,
+   256
+  ],
+  "seconds": 36.5
+ },
+ "granzon": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色黑色、紫色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/granzon.webp",
+  "size": [
+   230,
+   255
+  ],
+  "seconds": 37.6
+ },
+ "lineX1": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色深蓝、黑色、金色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/lineX1.webp",
+  "size": [
+   256,
+   248
+  ],
+  "seconds": 35.8
+ },
+ "gigil": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色棕色、黑色、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/gigil.webp",
+  "size": [
+   240,
+   256
+  ],
+  "seconds": 36.4
+ },
+ "gigilgan": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色棕色、黑色、黄色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/gigilgan.webp",
+  "size": [
+   215,
+   256
+  ],
+  "seconds": 37.7
+ },
+ "monster": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色紫色、黑色、银色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/monster.webp",
+  "size": [
+   256,
+   239
+  ],
+  "seconds": 37.9
+ },
+ "brawler": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色棕色、黑色、黄色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/brawler.webp",
+  "size": [
+   207,
+   255
+  ],
+  "seconds": 36.6
+ },
+ "gushios": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色灰色、深绿、银色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/gushios.webp",
+  "size": [
+   256,
+   249
+  ],
+  "seconds": 37.3
+ },
+ "kinggori": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色棕色、黑色、粉色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/kinggori.webp",
+  "size": [
+   256,
+   246
+  ],
+  "seconds": 36.5
+ },
+ "dablas": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色绿色、黑色、银色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/dablas.webp",
+  "size": [
+   236,
+   255
+  ],
+  "seconds": 37.5
+ },
+ "garada": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色棕色、黑色、粉色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/garada.webp",
+  "size": [
+   256,
+   234
+  ],
+  "seconds": 37.8
+ },
+ "zen2": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创大型BOSS机甲，厚重装甲，独眼与重型火炮，主色深蓝、黑色、紫色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zen2.webp",
+  "size": [
+   211,
+   256
+  ],
+  "seconds": 34.3
+ },
+ "ghoul": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色深红、黑色、粉色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/ghoul.webp",
+  "size": [
+   219,
+   255
+  ],
+  "seconds": 37.9
+ },
+ "jalaga": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色棕色、黑色、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/jalaga.webp",
+  "size": [
+   166,
+   256
+  ],
+  "seconds": 35.0
+ },
+ "alsos": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创机械兽，四足站立，机械利爪与装甲尾巴，主色青色、深绿、银色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/alsos.webp",
+  "size": [
+   244,
+   255
+  ],
+  "seconds": 38.2
+ },
+ "turret": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创固定炮台，多管火炮与厚重基座，主色灰色、深绿、银色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/turret.webp",
+  "size": [
+   189,
+   256
+  ],
+  "seconds": 35.6
+ },
+ "mirror": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创六边形镜面反射装置，金属边框，主色浅蓝、深蓝、白色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/mirror.webp",
+  "size": [
+   119,
+   256
+  ],
+  "seconds": 36.2
+ },
+ "missile": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创流线型导弹，尾翼与弹头，主色银色、灰色、红色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/missile.webp",
+  "size": [
+   173,
+   256
+  ],
+  "seconds": 37.9
+ },
+ "bad": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色棕色、黑色、银色，手持光束步枪",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/bad.webp",
+  "size": [
+   148,
+   256
+  ],
+  "seconds": 36.4
+ },
+ "zai": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创超级系机器人，厚重装甲，巨大肩甲与拳头，主色棕色、黑色、黄色，双手握拳",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/zai.webp",
+  "size": [
+   235,
+   255
+  ],
+  "seconds": 37.3
+ },
+ "tros": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创宇宙战舰，舰桥、弹射甲板与推进器，主色棕色、黑色、金色，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/tros.webp",
+  "size": [
+   147,
+   256
+  ],
+  "seconds": 36.0
+ },
+ "bound": {
+  "status": "ok",
+  "prompt": "Q版机甲战棋单位，全身正面站立，日系机器人动画风格，干净赛璐璐上色，纯白背景，居中构图，无文字，无阴影，游戏单位立绘，原创设计，不模仿任何现有作品。原创人形真实系机甲，修长四肢，背包与推进器，主色青色、黑色、浅蓝，细节丰富",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units/bound.webp",
+  "size": [
+   106,
+   256
+  ],
+  "seconds": 35.5
+ }
+}

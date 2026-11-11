@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "da4fe571-a7bd-4ec5-885b-709e7400fda9",
+  "files": [],
+  "subMetas": {
+    "f6fbd": {
+      "importer": "gltf-mesh",
+      "uuid": "da4fe571-a7bd-4ec5-885b-709e7400fda9@f6fbd",
+      "displayName": "",
+      "id": "f6fbd",
+      "name": "Grenades_throw.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78e21": {
+      "importer": "gltf-material",
+      "uuid": "da4fe571-a7bd-4ec5-885b-709e7400fda9@78e21",
+      "displayName": "",
+      "id": "78e21",
+      "name": "13 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "13d26": {
+      "importer": "gltf-scene",
+      "uuid": "da4fe571-a7bd-4ec5-885b-709e7400fda9@13d26",
+      "displayName": "",
+      "id": "13d26",
+      "name": "Grenades_throw.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "da4fe571-a7bd-4ec5-885b-709e7400fda9@13d26",
+    "assetFinder": {
+      "meshes": [
+        "da4fe571-a7bd-4ec5-885b-709e7400fda9@f6fbd"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "da4fe571-a7bd-4ec5-885b-709e7400fda9@78e21"
+      ],
+      "scenes": [
+        "da4fe571-a7bd-4ec5-885b-709e7400fda9@13d26"
+      ]
+    }
+  }
+}

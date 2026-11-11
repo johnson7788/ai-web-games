@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "2c68c953-244a-4fa1-872d-deb422daec1f",
+  "files": [],
+  "subMetas": {
+    "bfb31": {
+      "importer": "gltf-mesh",
+      "uuid": "2c68c953-244a-4fa1-872d-deb422daec1f@bfb31",
+      "displayName": "",
+      "id": "bfb31",
+      "name": "Sandbag.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d90a4": {
+      "importer": "gltf-material",
+      "uuid": "2c68c953-244a-4fa1-872d-deb422daec1f@d90a4",
+      "displayName": "",
+      "id": "d90a4",
+      "name": "01 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "12da2": {
+      "importer": "gltf-scene",
+      "uuid": "2c68c953-244a-4fa1-872d-deb422daec1f@12da2",
+      "displayName": "",
+      "id": "12da2",
+      "name": "Sandbag.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "2c68c953-244a-4fa1-872d-deb422daec1f@12da2",
+    "assetFinder": {
+      "meshes": [
+        "2c68c953-244a-4fa1-872d-deb422daec1f@bfb31"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "2c68c953-244a-4fa1-872d-deb422daec1f@d90a4"
+      ],
+      "scenes": [
+        "2c68c953-244a-4fa1-872d-deb422daec1f@12da2"
+      ]
+    }
+  }
+}

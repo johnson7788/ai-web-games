@@ -1,0 +1,15 @@
+# Build/generated artifacts — kept locally, not in git
+.srw2-hd-backup/
+srw2-hd/assets/hd/ai-raw/
+srw2-hd/assets/hd/side-raw/
+srw2-hd/assets/hd/fantasy-raw/
+windup-kid/tools/artgen/
+red-fortress/tools/video/
+red-fortress/tests/artifacts/
+red-fortress/tests/final/
+neon-drift/tools/raw/
+stickman/tools/artgen/
+
+# Common junk
+.DS_Store
+node_modules/

@@ -1,0 +1,14 @@
+TITLE: PAW BRAWL - 3D Animal Party Fighting Game
+
+DESCRIPTION: Punch, grab and launch eight cute animals across three chaotic arenas in a free 3D browser brawler with solo and team modes.
+
+CATEGORY: Action / Fighting / Casual
+
+TAGS: 3d, fighting, party game, animals, casual, single player, browser game, mobile game, physics, arena
+
+LONG:
+PAW BRAWL is a fast, cheerful 3D party fighting game you can play directly in your browser. Choose from eight original animals, each with distinct stats and a special passive, then jump, dash, punch, grab and throw your rivals off floating arenas. Quick attacks, charged punches, aerial slams and physics-driven knockback make every round easy to learn and unpredictable to play.
+
+Battle through Cloud Ring, Candy Works and Frozen Lake, three colorful arenas with their own movement and hazards. Dodge rotating candy sweepers, ride a chocolate conveyor, stay balanced on slippery ice and use springboards to recover. Pick up fish, hammers, bombs, gloves and stars to turn a close fight around. Play a three-round free-for-all or join the red team in a friendly-fire-free 4v4 match against computer-controlled opponents.
+
+Earn coins from placements, knockouts and victories, unlock new paws and improve your results across matches. The game includes Chinese and English interfaces, keyboard, touch and gamepad controls, adjustable sound and graphics settings, persistent progress and downloadable result cards. Everything runs locally with procedural artwork and audio, so there are no external assets to wait for. Step onto the podium, share your victory and jump straight into another brawl.

@@ -1,0 +1,7203 @@
+{
+ "alpha": {
+  "head": {
+   "file": "assets/hd/parts/alpha/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 171,
+   "h": 62,
+   "pivotX": 102.0,
+   "pivotY": 61.44,
+   "fullW": 204,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/alpha/torso.webp",
+   "x": 70,
+   "y": 62,
+   "w": 65,
+   "h": 87,
+   "pivotX": 32.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 204,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/alpha/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 70,
+   "h": 87,
+   "pivotX": 69.36,
+   "pivotY": 14.36,
+   "fullW": 204,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/alpha/arm-r.webp",
+   "x": 135,
+   "y": 62,
+   "w": 69,
+   "h": 87,
+   "pivotX": -0.36000000000001364,
+   "pivotY": 14.36,
+   "fullW": 204,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/alpha/leg-l.webp",
+   "x": 27,
+   "y": 149,
+   "w": 75,
+   "h": 107,
+   "pivotX": 54.599999999999994,
+   "pivotY": -0.5200000000000102,
+   "fullW": 204,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/alpha/leg-r.webp",
+   "x": 102,
+   "y": 149,
+   "w": 61,
+   "h": 96,
+   "pivotX": 20.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 204,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/alpha/legs-back.webp",
+   "x": 27,
+   "y": 148,
+   "w": 136,
+   "h": 108,
+   "pivotX": 75.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 204,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/alpha/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 204,
+   "h": 87,
+   "pivotX": 102.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 204,
+   "fullH": 256
+  }
+ },
+ "alsos": {
+  "head": {
+   "file": "assets/hd/parts/alsos/head.webp",
+   "x": 97,
+   "y": 0,
+   "w": 132,
+   "h": 49,
+   "pivotX": 31.0,
+   "pivotY": 48.72,
+   "fullW": 256,
+   "fullH": 203
+  },
+  "torso": {
+   "file": "assets/hd/parts/alsos/torso.webp",
+   "x": 88,
+   "y": 49,
+   "w": 81,
+   "h": 69,
+   "pivotX": 40.0,
+   "pivotY": 68.74,
+   "fullW": 256,
+   "fullH": 203
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/alsos/arm-l.webp",
+   "x": 30,
+   "y": 65,
+   "w": 58,
+   "h": 53,
+   "pivotX": 57.03999999999999,
+   "pivotY": -4.82,
+   "fullW": 256,
+   "fullH": 203
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/alsos/arm-r.webp",
+   "x": 169,
+   "y": 49,
+   "w": 87,
+   "h": 69,
+   "pivotX": -0.03999999999999204,
+   "pivotY": 11.18,
+   "fullW": 256,
+   "fullH": 203
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/alsos/leg-l.webp",
+   "x": 0,
+   "y": 118,
+   "w": 128,
+   "h": 83,
+   "pivotX": 102.4,
+   "pivotY": -0.2600000000000051,
+   "fullW": 256,
+   "fullH": 203
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/alsos/leg-r.webp",
+   "x": 128,
+   "y": 118,
+   "w": 114,
+   "h": 85,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.2600000000000051,
+   "fullW": 256,
+   "fullH": 203
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/alsos/legs-back.webp",
+   "x": 0,
+   "y": 117,
+   "w": 242,
+   "h": 86,
+   "pivotX": 128.0,
+   "pivotY": 0.7399999999999949,
+   "fullW": 256,
+   "fullH": 203
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/alsos/torso-back.webp",
+   "x": 32,
+   "y": 48,
+   "w": 224,
+   "h": 69,
+   "pivotX": 96.0,
+   "pivotY": 69.74,
+   "fullW": 256,
+   "fullH": 203
+  }
+ },
+ "aphrodite": {
+  "head": {
+   "file": "assets/hd/parts/aphrodite/head.webp",
+   "x": 3,
+   "y": 0,
+   "w": 115,
+   "h": 62,
+   "pivotX": 56.0,
+   "pivotY": 61.44,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/aphrodite/torso.webp",
+   "x": 41,
+   "y": 62,
+   "w": 37,
+   "h": 87,
+   "pivotX": 18.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/aphrodite/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 41,
+   "h": 87,
+   "pivotX": 40.120000000000005,
+   "pivotY": 14.36,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/aphrodite/arm-r.webp",
+   "x": 78,
+   "y": 62,
+   "w": 40,
+   "h": 87,
+   "pivotX": -0.12000000000000455,
+   "pivotY": 14.36,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/aphrodite/leg-l.webp",
+   "x": 14,
+   "y": 149,
+   "w": 45,
+   "h": 107,
+   "pivotX": 33.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/aphrodite/leg-r.webp",
+   "x": 59,
+   "y": 149,
+   "w": 46,
+   "h": 107,
+   "pivotX": 11.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/aphrodite/legs-back.webp",
+   "x": 14,
+   "y": 148,
+   "w": 91,
+   "h": 108,
+   "pivotX": 45.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/aphrodite/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 118,
+   "h": 87,
+   "pivotX": 59.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 118,
+   "fullH": 256
+  }
+ },
+ "argama": {
+  "head": {
+   "file": "assets/hd/parts/argama/head.webp",
+   "x": 79,
+   "y": 0,
+   "w": 53,
+   "h": 37,
+   "pivotX": 49.0,
+   "pivotY": 36.72,
+   "fullW": 256,
+   "fullH": 153
+  },
+  "torso": {
+   "file": "assets/hd/parts/argama/torso.webp",
+   "x": 88,
+   "y": 37,
+   "w": 81,
+   "h": 52,
+   "pivotX": 40.0,
+   "pivotY": 51.739999999999995,
+   "fullW": 256,
+   "fullH": 153
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/argama/arm-l.webp",
+   "x": 7,
+   "y": 37,
+   "w": 81,
+   "h": 52,
+   "pivotX": 80.03999999999999,
+   "pivotY": 8.18,
+   "fullW": 256,
+   "fullH": 153
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/argama/arm-r.webp",
+   "x": 169,
+   "y": 82,
+   "w": 47,
+   "h": 7,
+   "pivotX": -0.03999999999999204,
+   "pivotY": -36.82,
+   "fullW": 256,
+   "fullH": 153
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/argama/leg-l.webp",
+   "x": 0,
+   "y": 89,
+   "w": 128,
+   "h": 64,
+   "pivotX": 102.4,
+   "pivotY": -0.2600000000000051,
+   "fullW": 256,
+   "fullH": 153
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/argama/leg-r.webp",
+   "x": 128,
+   "y": 89,
+   "w": 128,
+   "h": 61,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.2600000000000051,
+   "fullW": 256,
+   "fullH": 153
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/argama/legs-back.webp",
+   "x": 0,
+   "y": 88,
+   "w": 256,
+   "h": 65,
+   "pivotX": 128.0,
+   "pivotY": 0.7399999999999949,
+   "fullW": 256,
+   "fullH": 153
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/argama/torso-back.webp",
+   "x": 7,
+   "y": 36,
+   "w": 209,
+   "h": 52,
+   "pivotX": 121.0,
+   "pivotY": 52.739999999999995,
+   "fullW": 256,
+   "fullH": 153
+  }
+ },
+ "asshimar": {
+  "head": {
+   "file": "assets/hd/parts/asshimar/head.webp",
+   "x": 17,
+   "y": 0,
+   "w": 103,
+   "h": 62,
+   "pivotX": 69.0,
+   "pivotY": 61.44,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/asshimar/torso.webp",
+   "x": 59,
+   "y": 62,
+   "w": 55,
+   "h": 87,
+   "pivotX": 27.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/asshimar/arm-l.webp",
+   "x": 6,
+   "y": 62,
+   "w": 53,
+   "h": 87,
+   "pivotX": 52.480000000000004,
+   "pivotY": 14.36,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/asshimar/arm-r.webp",
+   "x": 114,
+   "y": 77,
+   "w": 58,
+   "h": 72,
+   "pivotX": -0.480000000000004,
+   "pivotY": -0.6400000000000006,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/asshimar/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 86,
+   "h": 107,
+   "pivotX": 68.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/asshimar/leg-r.webp",
+   "x": 86,
+   "y": 149,
+   "w": 62,
+   "h": 93,
+   "pivotX": 17.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/asshimar/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 148,
+   "h": 108,
+   "pivotX": 86.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/asshimar/torso-back.webp",
+   "x": 6,
+   "y": 61,
+   "w": 166,
+   "h": 87,
+   "pivotX": 80.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 172,
+   "fullH": 256
+  }
+ },
+ "bad": {
+  "head": {
+   "file": "assets/hd/parts/bad/head.webp",
+   "x": 12,
+   "y": 0,
+   "w": 130,
+   "h": 62,
+   "pivotX": 73.0,
+   "pivotY": 61.44,
+   "fullW": 170,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/bad/torso.webp",
+   "x": 58,
+   "y": 62,
+   "w": 55,
+   "h": 87,
+   "pivotX": 27.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 170,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/bad/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 58,
+   "h": 87,
+   "pivotX": 57.8,
+   "pivotY": 14.36,
+   "fullW": 170,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/bad/arm-r.webp",
+   "x": 113,
+   "y": 62,
+   "w": 26,
+   "h": 87,
+   "pivotX": -0.7999999999999972,
+   "pivotY": 14.36,
+   "fullW": 170,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/bad/leg-l.webp",
+   "x": 2,
+   "y": 149,
+   "w": 83,
+   "h": 107,
+   "pivotX": 66.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 170,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/bad/leg-r.webp",
+   "x": 85,
+   "y": 149,
+   "w": 85,
+   "h": 90,
+   "pivotX": 17.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 170,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/bad/legs-back.webp",
+   "x": 2,
+   "y": 148,
+   "w": 168,
+   "h": 108,
+   "pivotX": 83.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 170,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/bad/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 139,
+   "h": 87,
+   "pivotX": 85.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 170,
+   "fullH": 256
+  }
+ },
+ "bau": {
+  "head": {
+   "file": "assets/hd/parts/bau/head.webp",
+   "x": 6,
+   "y": 0,
+   "w": 137,
+   "h": 62,
+   "pivotX": 80.5,
+   "pivotY": 61.44,
+   "fullW": 173,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/bau/torso.webp",
+   "x": 59,
+   "y": 62,
+   "w": 56,
+   "h": 87,
+   "pivotX": 27.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 173,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/bau/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 59,
+   "h": 87,
+   "pivotX": 58.82,
+   "pivotY": 14.36,
+   "fullW": 173,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/bau/arm-r.webp",
+   "x": 115,
+   "y": 62,
+   "w": 33,
+   "h": 87,
+   "pivotX": -0.8199999999999932,
+   "pivotY": 14.36,
+   "fullW": 173,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/bau/leg-l.webp",
+   "x": 3,
+   "y": 149,
+   "w": 84,
+   "h": 107,
+   "pivotX": 66.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 173,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/bau/leg-r.webp",
+   "x": 87,
+   "y": 149,
+   "w": 86,
+   "h": 102,
+   "pivotX": 16.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 173,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/bau/legs-back.webp",
+   "x": 3,
+   "y": 148,
+   "w": 170,
+   "h": 108,
+   "pivotX": 83.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 173,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/bau/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 148,
+   "h": 87,
+   "pivotX": 86.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 173,
+   "fullH": 256
+  }
+ },
+ "beguina": {
+  "head": {
+   "file": "assets/hd/parts/beguina/head.webp",
+   "x": 3,
+   "y": 0,
+   "w": 92,
+   "h": 62,
+   "pivotX": 58.0,
+   "pivotY": 61.44,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/beguina/torso.webp",
+   "x": 42,
+   "y": 62,
+   "w": 39,
+   "h": 87,
+   "pivotX": 19.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/beguina/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 42,
+   "h": 87,
+   "pivotX": 41.480000000000004,
+   "pivotY": 14.36,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/beguina/arm-r.webp",
+   "x": 81,
+   "y": 62,
+   "w": 27,
+   "h": 87,
+   "pivotX": -0.480000000000004,
+   "pivotY": 14.36,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/beguina/leg-l.webp",
+   "x": 5,
+   "y": 149,
+   "w": 56,
+   "h": 107,
+   "pivotX": 43.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/beguina/leg-r.webp",
+   "x": 61,
+   "y": 149,
+   "w": 61,
+   "h": 94,
+   "pivotX": 12.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/beguina/legs-back.webp",
+   "x": 5,
+   "y": 148,
+   "w": 117,
+   "h": 108,
+   "pivotX": 56.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/beguina/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 108,
+   "h": 87,
+   "pivotX": 61.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 122,
+   "fullH": 256
+  }
+ },
+ "bigzam": {
+  "head": {
+   "file": "assets/hd/parts/bigzam/head.webp",
+   "x": 2,
+   "y": 0,
+   "w": 147,
+   "h": 62,
+   "pivotX": 84.0,
+   "pivotY": 61.44,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/bigzam/torso.webp",
+   "x": 59,
+   "y": 62,
+   "w": 55,
+   "h": 87,
+   "pivotX": 27.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/bigzam/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 59,
+   "h": 87,
+   "pivotX": 58.480000000000004,
+   "pivotY": 14.36,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/bigzam/arm-r.webp",
+   "x": 114,
+   "y": 62,
+   "w": 55,
+   "h": 87,
+   "pivotX": -0.480000000000004,
+   "pivotY": 14.36,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/bigzam/leg-l.webp",
+   "x": 12,
+   "y": 149,
+   "w": 74,
+   "h": 107,
+   "pivotX": 56.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/bigzam/leg-r.webp",
+   "x": 86,
+   "y": 149,
+   "w": 86,
+   "h": 90,
+   "pivotX": 17.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/bigzam/legs-back.webp",
+   "x": 12,
+   "y": 148,
+   "w": 160,
+   "h": 108,
+   "pivotX": 74.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 172,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/bigzam/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 169,
+   "h": 87,
+   "pivotX": 86.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 172,
+   "fullH": 256
+  }
+ },
+ "bog": {
+  "head": {
+   "file": "assets/hd/parts/bog/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 97,
+   "h": 62,
+   "pivotX": 50.0,
+   "pivotY": 61.44,
+   "fullW": 100,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/bog/torso.webp",
+   "x": 34,
+   "y": 62,
+   "w": 33,
+   "h": 87,
+   "pivotX": 16.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 100,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/bog/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 34,
+   "h": 85,
+   "pivotX": 34.0,
+   "pivotY": 14.36,
+   "fullW": 100,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/bog/arm-r.webp",
+   "x": 67,
+   "y": 62,
+   "w": 33,
+   "h": 87,
+   "pivotX": -1.0,
+   "pivotY": 14.36,
+   "fullW": 100,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/bog/leg-l.webp",
+   "x": 21,
+   "y": 149,
+   "w": 29,
+   "h": 107,
+   "pivotX": 19.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 100,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/bog/leg-r.webp",
+   "x": 50,
+   "y": 149,
+   "w": 48,
+   "h": 107,
+   "pivotX": 10.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 100,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/bog/legs-back.webp",
+   "x": 21,
+   "y": 148,
+   "w": 77,
+   "h": 108,
+   "pivotX": 29.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 100,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/bog/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 100,
+   "h": 87,
+   "pivotX": 50.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 100,
+   "fullH": 256
+  }
+ },
+ "bosses": {
+  "head": {
+   "file": "assets/hd/parts/bosses/head.webp",
+   "x": 7,
+   "y": 0,
+   "w": 149,
+   "h": 62,
+   "pivotX": 83.0,
+   "pivotY": 61.44,
+   "fullW": 180,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/bosses/torso.webp",
+   "x": 62,
+   "y": 62,
+   "w": 57,
+   "h": 87,
+   "pivotX": 28.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 180,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/bosses/arm-l.webp",
+   "x": 2,
+   "y": 62,
+   "w": 60,
+   "h": 87,
+   "pivotX": 59.2,
+   "pivotY": 14.36,
+   "fullW": 180,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/bosses/arm-r.webp",
+   "x": 119,
+   "y": 62,
+   "w": 61,
+   "h": 87,
+   "pivotX": -0.20000000000000284,
+   "pivotY": 14.36,
+   "fullW": 180,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/bosses/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 90,
+   "h": 107,
+   "pivotX": 72.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 180,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/bosses/leg-r.webp",
+   "x": 90,
+   "y": 149,
+   "w": 88,
+   "h": 96,
+   "pivotX": 18.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 180,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/bosses/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 178,
+   "h": 108,
+   "pivotX": 90.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 180,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/bosses/torso-back.webp",
+   "x": 2,
+   "y": 61,
+   "w": 178,
+   "h": 87,
+   "pivotX": 88.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 180,
+   "fullH": 256
+  }
+ },
+ "bound": {
+  "head": {
+   "file": "assets/hd/parts/bound/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 123,
+   "h": 62,
+   "pivotX": 74.5,
+   "pivotY": 61.44,
+   "fullW": 149,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/bound/torso.webp",
+   "x": 51,
+   "y": 62,
+   "w": 48,
+   "h": 87,
+   "pivotX": 23.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 149,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/bound/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 50.66,
+   "pivotY": 14.36,
+   "fullW": 149,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/bound/arm-r.webp",
+   "x": 99,
+   "y": 62,
+   "w": 39,
+   "h": 87,
+   "pivotX": -0.6599999999999966,
+   "pivotY": 14.36,
+   "fullW": 149,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/bound/leg-l.webp",
+   "x": 16,
+   "y": 149,
+   "w": 59,
+   "h": 107,
+   "pivotX": 43.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 149,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/bound/leg-r.webp",
+   "x": 75,
+   "y": 149,
+   "w": 74,
+   "h": 99,
+   "pivotX": 14.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 149,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/bound/legs-back.webp",
+   "x": 16,
+   "y": 148,
+   "w": 133,
+   "h": 108,
+   "pivotX": 58.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 149,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/bound/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 138,
+   "h": 87,
+   "pivotX": 74.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 149,
+   "fullH": 256
+  }
+ },
+ "brawler": {
+  "head": {
+   "file": "assets/hd/parts/brawler/head.webp",
+   "x": 4,
+   "y": 0,
+   "w": 105,
+   "h": 62,
+   "pivotX": 70.0,
+   "pivotY": 61.44,
+   "fullW": 148,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/brawler/torso.webp",
+   "x": 51,
+   "y": 62,
+   "w": 47,
+   "h": 87,
+   "pivotX": 23.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 148,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/brawler/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 50.32,
+   "pivotY": 14.36,
+   "fullW": 148,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/brawler/arm-r.webp",
+   "x": 98,
+   "y": 62,
+   "w": 50,
+   "h": 87,
+   "pivotX": -0.3199999999999932,
+   "pivotY": 14.36,
+   "fullW": 148,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/brawler/leg-l.webp",
+   "x": 9,
+   "y": 149,
+   "w": 65,
+   "h": 95,
+   "pivotX": 50.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 148,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/brawler/leg-r.webp",
+   "x": 74,
+   "y": 149,
+   "w": 71,
+   "h": 107,
+   "pivotX": 14.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 148,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/brawler/legs-back.webp",
+   "x": 9,
+   "y": 148,
+   "w": 136,
+   "h": 108,
+   "pivotX": 65.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 148,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/brawler/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 148,
+   "h": 87,
+   "pivotX": 74.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 148,
+   "fullH": 256
+  }
+ },
+ "byarlant": {
+  "head": {
+   "file": "assets/hd/parts/byarlant/head.webp",
+   "x": 8,
+   "y": 0,
+   "w": 97,
+   "h": 62,
+   "pivotX": 53.0,
+   "pivotY": 61.44,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/byarlant/torso.webp",
+   "x": 42,
+   "y": 62,
+   "w": 39,
+   "h": 87,
+   "pivotX": 19.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/byarlant/arm-l.webp",
+   "x": 8,
+   "y": 62,
+   "w": 34,
+   "h": 87,
+   "pivotX": 33.480000000000004,
+   "pivotY": 14.36,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/byarlant/arm-r.webp",
+   "x": 81,
+   "y": 62,
+   "w": 26,
+   "h": 87,
+   "pivotX": -0.480000000000004,
+   "pivotY": 14.36,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/byarlant/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 61,
+   "h": 107,
+   "pivotX": 48.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/byarlant/leg-r.webp",
+   "x": 61,
+   "y": 149,
+   "w": 61,
+   "h": 103,
+   "pivotX": 12.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/byarlant/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 122,
+   "h": 108,
+   "pivotX": 61.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 122,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/byarlant/torso-back.webp",
+   "x": 8,
+   "y": 61,
+   "w": 99,
+   "h": 87,
+   "pivotX": 53.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 122,
+   "fullH": 256
+  }
+ },
+ "cybuster": {
+  "head": {
+   "file": "assets/hd/parts/cybuster/head.webp",
+   "x": 18,
+   "y": 0,
+   "w": 102,
+   "h": 62,
+   "pivotX": 52.5,
+   "pivotY": 61.44,
+   "fullW": 141,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/cybuster/torso.webp",
+   "x": 48,
+   "y": 62,
+   "w": 46,
+   "h": 87,
+   "pivotX": 22.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 141,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/cybuster/arm-l.webp",
+   "x": 8,
+   "y": 62,
+   "w": 40,
+   "h": 87,
+   "pivotX": 39.94,
+   "pivotY": 14.36,
+   "fullW": 141,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/cybuster/arm-r.webp",
+   "x": 94,
+   "y": 62,
+   "w": 34,
+   "h": 87,
+   "pivotX": -0.9399999999999977,
+   "pivotY": 14.36,
+   "fullW": 141,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/cybuster/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 69,
+   "h": 107,
+   "pivotX": 56.4,
+   "pivotY": -0.5200000000000102,
+   "fullW": 141,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/cybuster/leg-r.webp",
+   "x": 77,
+   "y": 149,
+   "w": 64,
+   "h": 98,
+   "pivotX": 7.599999999999994,
+   "pivotY": -0.5200000000000102,
+   "fullW": 141,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/cybuster/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 141,
+   "h": 108,
+   "pivotX": 70.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 141,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/cybuster/torso-back.webp",
+   "x": 8,
+   "y": 61,
+   "w": 119,
+   "h": 87,
+   "pivotX": 62.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 141,
+   "fullH": 256
+  }
+ },
+ "dablas": {
+  "head": {
+   "file": "assets/hd/parts/dablas/head.webp",
+   "x": 94,
+   "y": 0,
+   "w": 124,
+   "h": 54,
+   "pivotX": 34.0,
+   "pivotY": 53.76,
+   "fullW": 256,
+   "fullH": 224
+  },
+  "torso": {
+   "file": "assets/hd/parts/dablas/torso.webp",
+   "x": 88,
+   "y": 54,
+   "w": 81,
+   "h": 76,
+   "pivotX": 40.0,
+   "pivotY": 75.91999999999999,
+   "fullW": 256,
+   "fullH": 224
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/dablas/arm-l.webp",
+   "x": 13,
+   "y": 94,
+   "w": 75,
+   "h": 36,
+   "pivotX": 74.03999999999999,
+   "pivotY": -27.560000000000002,
+   "fullW": 256,
+   "fullH": 224
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/dablas/arm-r.webp",
+   "x": 169,
+   "y": 54,
+   "w": 66,
+   "h": 76,
+   "pivotX": -0.03999999999999204,
+   "pivotY": 12.439999999999998,
+   "fullW": 256,
+   "fullH": 224
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/dablas/leg-l.webp",
+   "x": 0,
+   "y": 130,
+   "w": 128,
+   "h": 93,
+   "pivotX": 102.4,
+   "pivotY": -0.0800000000000125,
+   "fullW": 256,
+   "fullH": 224
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/dablas/leg-r.webp",
+   "x": 128,
+   "y": 130,
+   "w": 128,
+   "h": 94,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.0800000000000125,
+   "fullW": 256,
+   "fullH": 224
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/dablas/legs-back.webp",
+   "x": 0,
+   "y": 129,
+   "w": 256,
+   "h": 95,
+   "pivotX": 128.0,
+   "pivotY": 0.9199999999999875,
+   "fullW": 256,
+   "fullH": 224
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/dablas/torso-back.webp",
+   "x": 13,
+   "y": 53,
+   "w": 222,
+   "h": 76,
+   "pivotX": 115.0,
+   "pivotY": 76.91999999999999,
+   "fullW": 256,
+   "fullH": 224
+  }
+ },
+ "daitarn": {
+  "head": {
+   "file": "assets/hd/parts/daitarn/head.webp",
+   "x": 24,
+   "y": 0,
+   "w": 105,
+   "h": 62,
+   "pivotX": 55.0,
+   "pivotY": 61.44,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/daitarn/torso.webp",
+   "x": 54,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 25.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/daitarn/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 54,
+   "h": 87,
+   "pivotX": 53.72,
+   "pivotY": 14.36,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/daitarn/arm-r.webp",
+   "x": 105,
+   "y": 62,
+   "w": 53,
+   "h": 87,
+   "pivotX": -0.7199999999999989,
+   "pivotY": 14.36,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/daitarn/leg-l.webp",
+   "x": 9,
+   "y": 149,
+   "w": 70,
+   "h": 107,
+   "pivotX": 54.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/daitarn/leg-r.webp",
+   "x": 79,
+   "y": 149,
+   "w": 74,
+   "h": 84,
+   "pivotX": 15.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/daitarn/legs-back.webp",
+   "x": 9,
+   "y": 148,
+   "w": 144,
+   "h": 108,
+   "pivotX": 70.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/daitarn/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 158,
+   "h": 87,
+   "pivotX": 79.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 158,
+   "fullH": 256
+  }
+ },
+ "dom": {
+  "head": {
+   "file": "assets/hd/parts/dom/head.webp",
+   "x": 11,
+   "y": 0,
+   "w": 92,
+   "h": 62,
+   "pivotX": 40.5,
+   "pivotY": 61.44,
+   "fullW": 103,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/dom/torso.webp",
+   "x": 36,
+   "y": 62,
+   "w": 32,
+   "h": 87,
+   "pivotX": 15.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 103,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/dom/arm-l.webp",
+   "x": 4,
+   "y": 62,
+   "w": 32,
+   "h": 87,
+   "pivotX": 31.019999999999996,
+   "pivotY": 14.36,
+   "fullW": 103,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/dom/arm-r.webp",
+   "x": 68,
+   "y": 62,
+   "w": 35,
+   "h": 83,
+   "pivotX": -0.01999999999999602,
+   "pivotY": 14.36,
+   "fullW": 103,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/dom/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 52,
+   "h": 107,
+   "pivotX": 41.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 103,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/dom/leg-r.webp",
+   "x": 52,
+   "y": 149,
+   "w": 42,
+   "h": 107,
+   "pivotX": 9.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 103,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/dom/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 94,
+   "h": 108,
+   "pivotX": 51.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 103,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/dom/torso-back.webp",
+   "x": 4,
+   "y": 61,
+   "w": 99,
+   "h": 87,
+   "pivotX": 47.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 103,
+   "fullH": 256
+  }
+ },
+ "doven": {
+  "head": {
+   "file": "assets/hd/parts/doven/head.webp",
+   "x": 13,
+   "y": 0,
+   "w": 125,
+   "h": 62,
+   "pivotX": 78.0,
+   "pivotY": 61.44,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/doven/torso.webp",
+   "x": 62,
+   "y": 62,
+   "w": 59,
+   "h": 87,
+   "pivotX": 29.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/doven/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 62,
+   "h": 87,
+   "pivotX": 61.879999999999995,
+   "pivotY": 14.36,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/doven/arm-r.webp",
+   "x": 121,
+   "y": 62,
+   "w": 50,
+   "h": 87,
+   "pivotX": -0.8799999999999955,
+   "pivotY": 14.36,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/doven/leg-l.webp",
+   "x": 11,
+   "y": 149,
+   "w": 80,
+   "h": 107,
+   "pivotX": 61.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/doven/leg-r.webp",
+   "x": 91,
+   "y": 149,
+   "w": 91,
+   "h": 101,
+   "pivotX": 18.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/doven/legs-back.webp",
+   "x": 10,
+   "y": 148,
+   "w": 172,
+   "h": 108,
+   "pivotX": 81.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/doven/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 171,
+   "h": 87,
+   "pivotX": 91.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 182,
+   "fullH": 256
+  }
+ },
+ "dreissen": {
+  "head": {
+   "file": "assets/hd/parts/dreissen/head.webp",
+   "x": 20,
+   "y": 0,
+   "w": 132,
+   "h": 62,
+   "pivotX": 74.5,
+   "pivotY": 61.44,
+   "fullW": 189,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/dreissen/torso.webp",
+   "x": 65,
+   "y": 62,
+   "w": 60,
+   "h": 87,
+   "pivotX": 29.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 189,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/dreissen/arm-l.webp",
+   "x": 10,
+   "y": 62,
+   "w": 55,
+   "h": 87,
+   "pivotX": 54.25999999999999,
+   "pivotY": 14.36,
+   "fullW": 189,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/dreissen/arm-r.webp",
+   "x": 125,
+   "y": 62,
+   "w": 57,
+   "h": 87,
+   "pivotX": -0.2599999999999909,
+   "pivotY": 14.36,
+   "fullW": 189,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/dreissen/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 95,
+   "h": 107,
+   "pivotX": 75.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 189,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/dreissen/leg-r.webp",
+   "x": 95,
+   "y": 149,
+   "w": 94,
+   "h": 96,
+   "pivotX": 18.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 189,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/dreissen/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 189,
+   "h": 108,
+   "pivotX": 94.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 189,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/dreissen/torso-back.webp",
+   "x": 10,
+   "y": 61,
+   "w": 172,
+   "h": 87,
+   "pivotX": 84.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 189,
+   "fullH": 256
+  }
+ },
+ "elmes": {
+  "head": {
+   "file": "assets/hd/parts/elmes/head.webp",
+   "x": 98,
+   "y": 0,
+   "w": 151,
+   "h": 56,
+   "pivotX": 30.0,
+   "pivotY": 55.44,
+   "fullW": 256,
+   "fullH": 231
+  },
+  "torso": {
+   "file": "assets/hd/parts/elmes/torso.webp",
+   "x": 88,
+   "y": 56,
+   "w": 81,
+   "h": 78,
+   "pivotX": 40.0,
+   "pivotY": 77.97999999999999,
+   "fullW": 256,
+   "fullH": 231
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/elmes/arm-l.webp",
+   "x": 30,
+   "y": 71,
+   "w": 58,
+   "h": 63,
+   "pivotX": 57.03999999999999,
+   "pivotY": -2.1400000000000006,
+   "fullW": 256,
+   "fullH": 231
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/elmes/arm-r.webp",
+   "x": 169,
+   "y": 56,
+   "w": 87,
+   "h": 78,
+   "pivotX": -0.03999999999999204,
+   "pivotY": 12.86,
+   "fullW": 256,
+   "fullH": 231
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/elmes/leg-l.webp",
+   "x": 0,
+   "y": 134,
+   "w": 128,
+   "h": 97,
+   "pivotX": 102.4,
+   "pivotY": -0.020000000000010232,
+   "fullW": 256,
+   "fullH": 231
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/elmes/leg-r.webp",
+   "x": 128,
+   "y": 134,
+   "w": 97,
+   "h": 97,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.020000000000010232,
+   "fullW": 256,
+   "fullH": 231
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/elmes/legs-back.webp",
+   "x": 0,
+   "y": 133,
+   "w": 225,
+   "h": 98,
+   "pivotX": 128.0,
+   "pivotY": 0.9799999999999898,
+   "fullW": 256,
+   "fullH": 231
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/elmes/torso-back.webp",
+   "x": 30,
+   "y": 55,
+   "w": 226,
+   "h": 78,
+   "pivotX": 98.0,
+   "pivotY": 78.97999999999999,
+   "fullW": 256,
+   "fullH": 231
+  }
+ },
+ "f91": {
+  "head": {
+   "file": "assets/hd/parts/f91/head.webp",
+   "x": 3,
+   "y": 0,
+   "w": 127,
+   "h": 62,
+   "pivotX": 62.0,
+   "pivotY": 61.44,
+   "fullW": 130,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/f91/torso.webp",
+   "x": 45,
+   "y": 62,
+   "w": 41,
+   "h": 87,
+   "pivotX": 20.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 130,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/f91/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 45,
+   "h": 87,
+   "pivotX": 44.2,
+   "pivotY": 14.36,
+   "fullW": 130,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/f91/arm-r.webp",
+   "x": 86,
+   "y": 62,
+   "w": 43,
+   "h": 87,
+   "pivotX": -0.20000000000000284,
+   "pivotY": 14.36,
+   "fullW": 130,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/f91/leg-l.webp",
+   "x": 39,
+   "y": 149,
+   "w": 26,
+   "h": 106,
+   "pivotX": 13.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 130,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/f91/leg-r.webp",
+   "x": 65,
+   "y": 149,
+   "w": 48,
+   "h": 107,
+   "pivotX": 13.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 130,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/f91/legs-back.webp",
+   "x": 39,
+   "y": 148,
+   "w": 74,
+   "h": 108,
+   "pivotX": 26.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 130,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/f91/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 129,
+   "h": 87,
+   "pivotX": 65.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 130,
+   "fullH": 256
+  }
+ },
+ "garada": {
+  "head": {
+   "file": "assets/hd/parts/garada/head.webp",
+   "x": 63,
+   "y": 0,
+   "w": 130,
+   "h": 62,
+   "pivotX": 53.0,
+   "pivotY": 61.44,
+   "fullW": 232,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/garada/torso.webp",
+   "x": 79,
+   "y": 62,
+   "w": 75,
+   "h": 87,
+   "pivotX": 37.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 232,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/garada/arm-l.webp",
+   "x": 17,
+   "y": 62,
+   "w": 62,
+   "h": 87,
+   "pivotX": 61.879999999999995,
+   "pivotY": 14.36,
+   "fullW": 232,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/garada/arm-r.webp",
+   "x": 154,
+   "y": 62,
+   "w": 49,
+   "h": 87,
+   "pivotX": -0.8799999999999955,
+   "pivotY": 14.36,
+   "fullW": 232,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/garada/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 116,
+   "h": 98,
+   "pivotX": 92.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 232,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/garada/leg-r.webp",
+   "x": 116,
+   "y": 149,
+   "w": 116,
+   "h": 107,
+   "pivotX": 23.19999999999999,
+   "pivotY": -0.5200000000000102,
+   "fullW": 232,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/garada/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 232,
+   "h": 108,
+   "pivotX": 116.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 232,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/garada/torso-back.webp",
+   "x": 18,
+   "y": 61,
+   "w": 185,
+   "h": 87,
+   "pivotX": 98.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 232,
+   "fullH": 256
+  }
+ },
+ "gazaC": {
+  "head": {
+   "file": "assets/hd/parts/gazaC/head.webp",
+   "x": 25,
+   "y": 0,
+   "w": 135,
+   "h": 62,
+   "pivotX": 71.5,
+   "pivotY": 61.199999999999996,
+   "fullW": 193,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/gazaC/torso.webp",
+   "x": 66,
+   "y": 62,
+   "w": 62,
+   "h": 86,
+   "pivotX": 30.5,
+   "pivotY": 85.89999999999998,
+   "fullW": 193,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gazaC/arm-l.webp",
+   "x": 10,
+   "y": 62,
+   "w": 56,
+   "h": 86,
+   "pivotX": 55.620000000000005,
+   "pivotY": 14.299999999999997,
+   "fullW": 193,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gazaC/arm-r.webp",
+   "x": 128,
+   "y": 62,
+   "w": 61,
+   "h": 86,
+   "pivotX": -0.6200000000000045,
+   "pivotY": 14.299999999999997,
+   "fullW": 193,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gazaC/leg-l.webp",
+   "x": 0,
+   "y": 148,
+   "w": 97,
+   "h": 107,
+   "pivotX": 77.2,
+   "pivotY": -0.10000000000002274,
+   "fullW": 193,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gazaC/leg-r.webp",
+   "x": 97,
+   "y": 148,
+   "w": 96,
+   "h": 101,
+   "pivotX": 18.799999999999997,
+   "pivotY": -0.10000000000002274,
+   "fullW": 193,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gazaC/legs-back.webp",
+   "x": 0,
+   "y": 147,
+   "w": 193,
+   "h": 108,
+   "pivotX": 96.5,
+   "pivotY": 0.8999999999999773,
+   "fullW": 193,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gazaC/torso-back.webp",
+   "x": 10,
+   "y": 61,
+   "w": 179,
+   "h": 86,
+   "pivotX": 86.5,
+   "pivotY": 86.89999999999998,
+   "fullW": 193,
+   "fullH": 255
+  }
+ },
+ "getter": {
+  "head": {
+   "file": "assets/hd/parts/getter/head.webp",
+   "x": 14,
+   "y": 0,
+   "w": 167,
+   "h": 62,
+   "pivotX": 76.5,
+   "pivotY": 61.44,
+   "fullW": 181,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/getter/torso.webp",
+   "x": 62,
+   "y": 62,
+   "w": 58,
+   "h": 87,
+   "pivotX": 28.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 181,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/getter/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 62,
+   "h": 87,
+   "pivotX": 61.54,
+   "pivotY": 14.36,
+   "fullW": 181,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/getter/arm-r.webp",
+   "x": 120,
+   "y": 62,
+   "w": 43,
+   "h": 84,
+   "pivotX": -0.539999999999992,
+   "pivotY": 14.36,
+   "fullW": 181,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/getter/leg-l.webp",
+   "x": 3,
+   "y": 149,
+   "w": 88,
+   "h": 105,
+   "pivotX": 69.4,
+   "pivotY": -0.5200000000000102,
+   "fullW": 181,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/getter/leg-r.webp",
+   "x": 91,
+   "y": 149,
+   "w": 58,
+   "h": 107,
+   "pivotX": 17.599999999999994,
+   "pivotY": -0.5200000000000102,
+   "fullW": 181,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/getter/legs-back.webp",
+   "x": 2,
+   "y": 148,
+   "w": 147,
+   "h": 108,
+   "pivotX": 88.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 181,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/getter/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 164,
+   "h": 87,
+   "pivotX": 90.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 181,
+   "fullH": 256
+  }
+ },
+ "getterg": {
+  "head": {
+   "file": "assets/hd/parts/getterg/head.webp",
+   "x": 12,
+   "y": 0,
+   "w": 130,
+   "h": 62,
+   "pivotX": 79.0,
+   "pivotY": 61.44,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/getterg/torso.webp",
+   "x": 62,
+   "y": 62,
+   "w": 59,
+   "h": 87,
+   "pivotX": 29.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/getterg/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 62,
+   "h": 87,
+   "pivotX": 61.879999999999995,
+   "pivotY": 14.36,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/getterg/arm-r.webp",
+   "x": 121,
+   "y": 62,
+   "w": 61,
+   "h": 87,
+   "pivotX": -0.8799999999999955,
+   "pivotY": 14.36,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/getterg/leg-l.webp",
+   "x": 6,
+   "y": 149,
+   "w": 81,
+   "h": 107,
+   "pivotX": 66.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/getterg/leg-r.webp",
+   "x": 96,
+   "y": 149,
+   "w": 74,
+   "h": 90,
+   "pivotX": 13.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/getterg/legs-back.webp",
+   "x": 6,
+   "y": 148,
+   "w": 164,
+   "h": 108,
+   "pivotX": 85.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 182,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/getterg/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 182,
+   "h": 87,
+   "pivotX": 91.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 182,
+   "fullH": 256
+  }
+ },
+ "getterq": {
+  "head": {
+   "file": "assets/hd/parts/getterq/head.webp",
+   "x": 77,
+   "y": 0,
+   "w": 142,
+   "h": 62,
+   "pivotX": 33.5,
+   "pivotY": 61.44,
+   "fullW": 221,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/getterq/torso.webp",
+   "x": 76,
+   "y": 62,
+   "w": 70,
+   "h": 87,
+   "pivotX": 34.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 221,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/getterq/arm-l.webp",
+   "x": 10,
+   "y": 110,
+   "w": 66,
+   "h": 39,
+   "pivotX": 65.14,
+   "pivotY": -33.64,
+   "fullW": 221,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/getterq/arm-r.webp",
+   "x": 146,
+   "y": 62,
+   "w": 75,
+   "h": 87,
+   "pivotX": -0.13999999999998636,
+   "pivotY": 14.36,
+   "fullW": 221,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/getterq/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 111,
+   "h": 107,
+   "pivotX": 88.4,
+   "pivotY": -0.5200000000000102,
+   "fullW": 221,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/getterq/leg-r.webp",
+   "x": 111,
+   "y": 149,
+   "w": 107,
+   "h": 107,
+   "pivotX": 21.599999999999994,
+   "pivotY": -0.5200000000000102,
+   "fullW": 221,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/getterq/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 218,
+   "h": 108,
+   "pivotX": 110.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 221,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/getterq/torso-back.webp",
+   "x": 10,
+   "y": 61,
+   "w": 211,
+   "h": 87,
+   "pivotX": 100.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 221,
+   "fullH": 256
+  }
+ },
+ "geymalk": {
+  "head": {
+   "file": "assets/hd/parts/geymalk/head.webp",
+   "x": 17,
+   "y": 0,
+   "w": 127,
+   "h": 62,
+   "pivotX": 79.0,
+   "pivotY": 61.44,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/geymalk/torso.webp",
+   "x": 66,
+   "y": 62,
+   "w": 61,
+   "h": 87,
+   "pivotX": 30.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/geymalk/arm-l.webp",
+   "x": 5,
+   "y": 62,
+   "w": 61,
+   "h": 87,
+   "pivotX": 60.28,
+   "pivotY": 14.36,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/geymalk/arm-r.webp",
+   "x": 127,
+   "y": 62,
+   "w": 65,
+   "h": 87,
+   "pivotX": -0.28000000000000114,
+   "pivotY": 14.36,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/geymalk/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 96,
+   "h": 107,
+   "pivotX": 76.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/geymalk/leg-r.webp",
+   "x": 96,
+   "y": 149,
+   "w": 86,
+   "h": 97,
+   "pivotX": 19.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/geymalk/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 182,
+   "h": 108,
+   "pivotX": 96.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/geymalk/torso-back.webp",
+   "x": 5,
+   "y": 61,
+   "w": 187,
+   "h": 87,
+   "pivotX": 91.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 192,
+   "fullH": 256
+  }
+ },
+ "ghoul": {
+  "head": {
+   "file": "assets/hd/parts/ghoul/head.webp",
+   "x": 91,
+   "y": 0,
+   "w": 146,
+   "h": 62,
+   "pivotX": 29.0,
+   "pivotY": 61.44,
+   "fullW": 240,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/ghoul/torso.webp",
+   "x": 82,
+   "y": 62,
+   "w": 77,
+   "h": 87,
+   "pivotX": 38.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 240,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/ghoul/arm-l.webp",
+   "x": 6,
+   "y": 89,
+   "w": 76,
+   "h": 60,
+   "pivotX": 75.6,
+   "pivotY": -12.64,
+   "fullW": 240,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/ghoul/arm-r.webp",
+   "x": 159,
+   "y": 62,
+   "w": 81,
+   "h": 87,
+   "pivotX": -0.5999999999999943,
+   "pivotY": 14.36,
+   "fullW": 240,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/ghoul/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 120,
+   "h": 104,
+   "pivotX": 96.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 240,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/ghoul/leg-r.webp",
+   "x": 120,
+   "y": 149,
+   "w": 116,
+   "h": 107,
+   "pivotX": 24.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 240,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/ghoul/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 236,
+   "h": 108,
+   "pivotX": 120.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 240,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/ghoul/torso-back.webp",
+   "x": 6,
+   "y": 61,
+   "w": 234,
+   "h": 87,
+   "pivotX": 114.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 240,
+   "fullH": 256
+  }
+ },
+ "gigil": {
+  "head": {
+   "file": "assets/hd/parts/gigil/head.webp",
+   "x": 1,
+   "y": 0,
+   "w": 210,
+   "h": 62,
+   "pivotX": 111.5,
+   "pivotY": 61.199999999999996,
+   "fullW": 225,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/gigil/torso.webp",
+   "x": 77,
+   "y": 62,
+   "w": 72,
+   "h": 86,
+   "pivotX": 35.5,
+   "pivotY": 85.89999999999998,
+   "fullW": 225,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gigil/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 77,
+   "h": 86,
+   "pivotX": 76.5,
+   "pivotY": 14.299999999999997,
+   "fullW": 225,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gigil/arm-r.webp",
+   "x": 149,
+   "y": 62,
+   "w": 72,
+   "h": 86,
+   "pivotX": -0.5,
+   "pivotY": 14.299999999999997,
+   "fullW": 225,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gigil/leg-l.webp",
+   "x": 32,
+   "y": 148,
+   "w": 81,
+   "h": 107,
+   "pivotX": 58.0,
+   "pivotY": -0.10000000000002274,
+   "fullW": 225,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gigil/leg-r.webp",
+   "x": 113,
+   "y": 148,
+   "w": 112,
+   "h": 103,
+   "pivotX": 22.0,
+   "pivotY": -0.10000000000002274,
+   "fullW": 225,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gigil/legs-back.webp",
+   "x": 32,
+   "y": 147,
+   "w": 193,
+   "h": 108,
+   "pivotX": 80.5,
+   "pivotY": 0.8999999999999773,
+   "fullW": 225,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gigil/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 221,
+   "h": 86,
+   "pivotX": 112.5,
+   "pivotY": 86.89999999999998,
+   "fullW": 225,
+   "fullH": 255
+  }
+ },
+ "gigilgan": {
+  "head": {
+   "file": "assets/hd/parts/gigilgan/head.webp",
+   "x": 17,
+   "y": 0,
+   "w": 126,
+   "h": 62,
+   "pivotX": 78.0,
+   "pivotY": 61.199999999999996,
+   "fullW": 190,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/gigilgan/torso.webp",
+   "x": 65,
+   "y": 62,
+   "w": 61,
+   "h": 86,
+   "pivotX": 30.0,
+   "pivotY": 85.89999999999998,
+   "fullW": 190,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gigilgan/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 65,
+   "h": 86,
+   "pivotX": 64.6,
+   "pivotY": 14.299999999999997,
+   "fullW": 190,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gigilgan/arm-r.webp",
+   "x": 126,
+   "y": 62,
+   "w": 64,
+   "h": 86,
+   "pivotX": -0.5999999999999943,
+   "pivotY": 14.299999999999997,
+   "fullW": 190,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gigilgan/leg-l.webp",
+   "x": 29,
+   "y": 148,
+   "w": 66,
+   "h": 107,
+   "pivotX": 47.0,
+   "pivotY": -0.10000000000002274,
+   "fullW": 190,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gigilgan/leg-r.webp",
+   "x": 95,
+   "y": 148,
+   "w": 95,
+   "h": 105,
+   "pivotX": 19.0,
+   "pivotY": -0.10000000000002274,
+   "fullW": 190,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gigilgan/legs-back.webp",
+   "x": 29,
+   "y": 147,
+   "w": 161,
+   "h": 108,
+   "pivotX": 66.0,
+   "pivotY": 0.8999999999999773,
+   "fullW": 190,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gigilgan/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 190,
+   "h": 86,
+   "pivotX": 95.0,
+   "pivotY": 86.89999999999998,
+   "fullW": 190,
+   "fullH": 255
+  }
+ },
+ "gio": {
+  "head": {
+   "file": "assets/hd/parts/gio/head.webp",
+   "x": 11,
+   "y": 0,
+   "w": 140,
+   "h": 62,
+   "pivotX": 93.0,
+   "pivotY": 61.44,
+   "fullW": 208,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/gio/torso.webp",
+   "x": 71,
+   "y": 62,
+   "w": 67,
+   "h": 87,
+   "pivotX": 33.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 208,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gio/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 71,
+   "h": 87,
+   "pivotX": 70.72,
+   "pivotY": 14.36,
+   "fullW": 208,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gio/arm-r.webp",
+   "x": 138,
+   "y": 62,
+   "w": 70,
+   "h": 87,
+   "pivotX": -0.7199999999999989,
+   "pivotY": 14.36,
+   "fullW": 208,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gio/leg-l.webp",
+   "x": 26,
+   "y": 149,
+   "w": 78,
+   "h": 107,
+   "pivotX": 57.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 208,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gio/leg-r.webp",
+   "x": 104,
+   "y": 149,
+   "w": 103,
+   "h": 102,
+   "pivotX": 20.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 208,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gio/legs-back.webp",
+   "x": 26,
+   "y": 148,
+   "w": 182,
+   "h": 108,
+   "pivotX": 78.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 208,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gio/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 208,
+   "h": 87,
+   "pivotX": 104.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 208,
+   "fullH": 256
+  }
+ },
+ "giradoga": {
+  "head": {
+   "file": "assets/hd/parts/giradoga/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 117,
+   "h": 62,
+   "pivotX": 63.5,
+   "pivotY": 61.44,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/giradoga/torso.webp",
+   "x": 44,
+   "y": 62,
+   "w": 40,
+   "h": 87,
+   "pivotX": 19.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/giradoga/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 44,
+   "h": 87,
+   "pivotX": 43.18,
+   "pivotY": 14.36,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/giradoga/arm-r.webp",
+   "x": 84,
+   "y": 62,
+   "w": 42,
+   "h": 87,
+   "pivotX": -0.18000000000000682,
+   "pivotY": 14.36,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/giradoga/leg-l.webp",
+   "x": 12,
+   "y": 149,
+   "w": 52,
+   "h": 107,
+   "pivotX": 38.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/giradoga/leg-r.webp",
+   "x": 64,
+   "y": 149,
+   "w": 63,
+   "h": 97,
+   "pivotX": 12.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/giradoga/legs-back.webp",
+   "x": 12,
+   "y": 148,
+   "w": 115,
+   "h": 108,
+   "pivotX": 51.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/giradoga/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 126,
+   "h": 87,
+   "pivotX": 63.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 127,
+   "fullH": 256
+  }
+ },
+ "gogge": {
+  "head": {
+   "file": "assets/hd/parts/gogge/head.webp",
+   "x": 17,
+   "y": 0,
+   "w": 125,
+   "h": 62,
+   "pivotX": 77.0,
+   "pivotY": 61.44,
+   "fullW": 188,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/gogge/torso.webp",
+   "x": 64,
+   "y": 62,
+   "w": 61,
+   "h": 87,
+   "pivotX": 30.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 188,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gogge/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 64,
+   "h": 87,
+   "pivotX": 63.92,
+   "pivotY": 14.36,
+   "fullW": 188,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gogge/arm-r.webp",
+   "x": 125,
+   "y": 62,
+   "w": 63,
+   "h": 87,
+   "pivotX": -0.9200000000000017,
+   "pivotY": 14.36,
+   "fullW": 188,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gogge/leg-l.webp",
+   "x": 4,
+   "y": 149,
+   "w": 90,
+   "h": 107,
+   "pivotX": 71.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 188,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gogge/leg-r.webp",
+   "x": 94,
+   "y": 149,
+   "w": 93,
+   "h": 97,
+   "pivotX": 18.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 188,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gogge/legs-back.webp",
+   "x": 4,
+   "y": 148,
+   "w": 183,
+   "h": 108,
+   "pivotX": 90.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 188,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gogge/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 188,
+   "h": 87,
+   "pivotX": 94.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 188,
+   "fullH": 256
+  }
+ },
+ "granzon": {
+  "head": {
+   "file": "assets/hd/parts/granzon/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 187,
+   "h": 62,
+   "pivotX": 108.5,
+   "pivotY": 61.44,
+   "fullW": 217,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/granzon/torso.webp",
+   "x": 74,
+   "y": 62,
+   "w": 70,
+   "h": 87,
+   "pivotX": 34.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 217,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/granzon/arm-l.webp",
+   "x": 3,
+   "y": 62,
+   "w": 71,
+   "h": 87,
+   "pivotX": 70.78,
+   "pivotY": 14.36,
+   "fullW": 217,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/granzon/arm-r.webp",
+   "x": 144,
+   "y": 62,
+   "w": 73,
+   "h": 87,
+   "pivotX": -0.7800000000000011,
+   "pivotY": 14.36,
+   "fullW": 217,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/granzon/leg-l.webp",
+   "x": 27,
+   "y": 149,
+   "w": 82,
+   "h": 107,
+   "pivotX": 59.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 217,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/granzon/leg-r.webp",
+   "x": 109,
+   "y": 149,
+   "w": 83,
+   "h": 107,
+   "pivotX": 21.19999999999999,
+   "pivotY": -0.5200000000000102,
+   "fullW": 217,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/granzon/legs-back.webp",
+   "x": 27,
+   "y": 148,
+   "w": 165,
+   "h": 108,
+   "pivotX": 81.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 217,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/granzon/torso-back.webp",
+   "x": 3,
+   "y": 61,
+   "w": 214,
+   "h": 87,
+   "pivotX": 105.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 217,
+   "fullH": 256
+  }
+ },
+ "great": {
+  "head": {
+   "file": "assets/hd/parts/great/head.webp",
+   "x": 19,
+   "y": 0,
+   "w": 138,
+   "h": 62,
+   "pivotX": 94.5,
+   "pivotY": 61.44,
+   "fullW": 227,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/great/torso.webp",
+   "x": 78,
+   "y": 62,
+   "w": 72,
+   "h": 87,
+   "pivotX": 35.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 227,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/great/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 78,
+   "h": 87,
+   "pivotX": 77.18,
+   "pivotY": 14.36,
+   "fullW": 227,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/great/arm-r.webp",
+   "x": 150,
+   "y": 76,
+   "w": 77,
+   "h": 71,
+   "pivotX": -0.18000000000000682,
+   "pivotY": 0.35999999999999943,
+   "fullW": 227,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/great/leg-l.webp",
+   "x": 2,
+   "y": 149,
+   "w": 112,
+   "h": 107,
+   "pivotX": 88.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 227,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/great/leg-r.webp",
+   "x": 114,
+   "y": 149,
+   "w": 91,
+   "h": 101,
+   "pivotX": 22.19999999999999,
+   "pivotY": -0.5200000000000102,
+   "fullW": 227,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/great/legs-back.webp",
+   "x": 2,
+   "y": 148,
+   "w": 203,
+   "h": 108,
+   "pivotX": 111.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 227,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/great/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 227,
+   "h": 87,
+   "pivotX": 113.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 227,
+   "fullH": 256
+  }
+ },
+ "grendizer": {
+  "head": {
+   "file": "assets/hd/parts/grendizer/head.webp",
+   "x": 38,
+   "y": 0,
+   "w": 138,
+   "h": 62,
+   "pivotX": 68.5,
+   "pivotY": 61.44,
+   "fullW": 213,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/grendizer/torso.webp",
+   "x": 73,
+   "y": 62,
+   "w": 68,
+   "h": 87,
+   "pivotX": 33.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 213,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/grendizer/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 73,
+   "h": 87,
+   "pivotX": 72.42,
+   "pivotY": 14.36,
+   "fullW": 213,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/grendizer/arm-r.webp",
+   "x": 141,
+   "y": 62,
+   "w": 42,
+   "h": 87,
+   "pivotX": -0.4200000000000159,
+   "pivotY": 14.36,
+   "fullW": 213,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/grendizer/leg-l.webp",
+   "x": 3,
+   "y": 149,
+   "w": 104,
+   "h": 107,
+   "pivotX": 82.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 213,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/grendizer/leg-r.webp",
+   "x": 107,
+   "y": 149,
+   "w": 106,
+   "h": 98,
+   "pivotX": 20.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 213,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/grendizer/legs-back.webp",
+   "x": 3,
+   "y": 148,
+   "w": 210,
+   "h": 108,
+   "pivotX": 103.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 213,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/grendizer/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 183,
+   "h": 87,
+   "pivotX": 106.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 213,
+   "fullH": 256
+  }
+ },
+ "gundam": {
+  "head": {
+   "file": "assets/hd/parts/gundam/head.webp",
+   "x": 8,
+   "y": 0,
+   "w": 109,
+   "h": 62,
+   "pivotX": 55.5,
+   "pivotY": 61.44,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/gundam/torso.webp",
+   "x": 44,
+   "y": 62,
+   "w": 40,
+   "h": 87,
+   "pivotX": 19.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gundam/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 44,
+   "h": 87,
+   "pivotX": 43.18,
+   "pivotY": 14.36,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gundam/arm-r.webp",
+   "x": 84,
+   "y": 62,
+   "w": 36,
+   "h": 87,
+   "pivotX": -0.18000000000000682,
+   "pivotY": 14.36,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gundam/leg-l.webp",
+   "x": 11,
+   "y": 149,
+   "w": 53,
+   "h": 107,
+   "pivotX": 39.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gundam/leg-r.webp",
+   "x": 64,
+   "y": 149,
+   "w": 63,
+   "h": 92,
+   "pivotX": 12.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gundam/legs-back.webp",
+   "x": 11,
+   "y": 148,
+   "w": 116,
+   "h": 108,
+   "pivotX": 52.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 127,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gundam/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 120,
+   "h": 87,
+   "pivotX": 63.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 127,
+   "fullH": 256
+  }
+ },
+ "gushios": {
+  "head": {
+   "file": "assets/hd/parts/gushios/head.webp",
+   "x": 39,
+   "y": 0,
+   "w": 166,
+   "h": 62,
+   "pivotX": 73.5,
+   "pivotY": 61.44,
+   "fullW": 225,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/gushios/torso.webp",
+   "x": 77,
+   "y": 62,
+   "w": 72,
+   "h": 87,
+   "pivotX": 35.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 225,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gushios/arm-l.webp",
+   "x": 12,
+   "y": 62,
+   "w": 65,
+   "h": 87,
+   "pivotX": 64.5,
+   "pivotY": 14.36,
+   "fullW": 225,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gushios/arm-r.webp",
+   "x": 149,
+   "y": 62,
+   "w": 73,
+   "h": 87,
+   "pivotX": -0.5,
+   "pivotY": 14.36,
+   "fullW": 225,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gushios/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 113,
+   "h": 107,
+   "pivotX": 90.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 225,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gushios/leg-r.webp",
+   "x": 113,
+   "y": 149,
+   "w": 112,
+   "h": 70,
+   "pivotX": 22.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 225,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gushios/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 225,
+   "h": 108,
+   "pivotX": 112.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 225,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gushios/torso-back.webp",
+   "x": 12,
+   "y": 61,
+   "w": 210,
+   "h": 87,
+   "pivotX": 100.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 225,
+   "fullH": 256
+  }
+ },
+ "gyan": {
+  "head": {
+   "file": "assets/hd/parts/gyan/head.webp",
+   "x": 5,
+   "y": 0,
+   "w": 125,
+   "h": 62,
+   "pivotX": 64.0,
+   "pivotY": 61.44,
+   "fullW": 138,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/gyan/torso.webp",
+   "x": 47,
+   "y": 62,
+   "w": 45,
+   "h": 87,
+   "pivotX": 22.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 138,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/gyan/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 47,
+   "h": 87,
+   "pivotX": 46.92,
+   "pivotY": 14.36,
+   "fullW": 138,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/gyan/arm-r.webp",
+   "x": 92,
+   "y": 62,
+   "w": 30,
+   "h": 87,
+   "pivotX": -0.9200000000000017,
+   "pivotY": 14.36,
+   "fullW": 138,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/gyan/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 69,
+   "h": 107,
+   "pivotX": 55.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 138,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/gyan/leg-r.webp",
+   "x": 69,
+   "y": 149,
+   "w": 69,
+   "h": 98,
+   "pivotX": 13.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 138,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/gyan/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 138,
+   "h": 108,
+   "pivotX": 69.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 138,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/gyan/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 122,
+   "h": 87,
+   "pivotX": 69.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 138,
+   "fullH": 256
+  }
+ },
+ "hambrabi": {
+  "head": {
+   "file": "assets/hd/parts/hambrabi/head.webp",
+   "x": 12,
+   "y": 0,
+   "w": 113,
+   "h": 62,
+   "pivotX": 50.5,
+   "pivotY": 61.44,
+   "fullW": 125,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/hambrabi/torso.webp",
+   "x": 43,
+   "y": 62,
+   "w": 40,
+   "h": 87,
+   "pivotX": 19.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 125,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/hambrabi/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 43,
+   "h": 87,
+   "pivotX": 42.5,
+   "pivotY": 14.36,
+   "fullW": 125,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/hambrabi/arm-r.webp",
+   "x": 83,
+   "y": 62,
+   "w": 42,
+   "h": 87,
+   "pivotX": -0.5,
+   "pivotY": 14.36,
+   "fullW": 125,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/hambrabi/leg-l.webp",
+   "x": 15,
+   "y": 149,
+   "w": 48,
+   "h": 107,
+   "pivotX": 35.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 125,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/hambrabi/leg-r.webp",
+   "x": 63,
+   "y": 149,
+   "w": 60,
+   "h": 107,
+   "pivotX": 12.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 125,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/hambrabi/legs-back.webp",
+   "x": 15,
+   "y": 148,
+   "w": 108,
+   "h": 108,
+   "pivotX": 47.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 125,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/hambrabi/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 125,
+   "h": 87,
+   "pivotX": 62.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 125,
+   "fullH": 256
+  }
+ },
+ "hygogg": {
+  "head": {
+   "file": "assets/hd/parts/hygogg/head.webp",
+   "x": 18,
+   "y": 0,
+   "w": 107,
+   "h": 62,
+   "pivotX": 66.0,
+   "pivotY": 61.44,
+   "fullW": 168,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/hygogg/torso.webp",
+   "x": 58,
+   "y": 62,
+   "w": 53,
+   "h": 87,
+   "pivotX": 26.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 168,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/hygogg/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 58,
+   "h": 87,
+   "pivotX": 57.120000000000005,
+   "pivotY": 14.36,
+   "fullW": 168,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/hygogg/arm-r.webp",
+   "x": 111,
+   "y": 62,
+   "w": 57,
+   "h": 87,
+   "pivotX": -0.12000000000000455,
+   "pivotY": 14.36,
+   "fullW": 168,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/hygogg/leg-l.webp",
+   "x": 10,
+   "y": 149,
+   "w": 74,
+   "h": 107,
+   "pivotX": 57.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 168,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/hygogg/leg-r.webp",
+   "x": 84,
+   "y": 149,
+   "w": 70,
+   "h": 94,
+   "pivotX": 16.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 168,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/hygogg/legs-back.webp",
+   "x": 10,
+   "y": 148,
+   "w": 144,
+   "h": 108,
+   "pivotX": 74.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 168,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/hygogg/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 168,
+   "h": 87,
+   "pivotX": 84.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 168,
+   "fullH": 256
+  }
+ },
+ "jalaga": {
+  "head": {
+   "file": "assets/hd/parts/jalaga/head.webp",
+   "x": 16,
+   "y": 0,
+   "w": 102,
+   "h": 62,
+   "pivotX": 43.0,
+   "pivotY": 61.44,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/jalaga/torso.webp",
+   "x": 41,
+   "y": 62,
+   "w": 37,
+   "h": 87,
+   "pivotX": 18.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/jalaga/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 41,
+   "h": 87,
+   "pivotX": 40.120000000000005,
+   "pivotY": 14.36,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/jalaga/arm-r.webp",
+   "x": 78,
+   "y": 62,
+   "w": 32,
+   "h": 87,
+   "pivotX": -0.12000000000000455,
+   "pivotY": 14.36,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/jalaga/leg-l.webp",
+   "x": 6,
+   "y": 149,
+   "w": 53,
+   "h": 107,
+   "pivotX": 41.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/jalaga/leg-r.webp",
+   "x": 59,
+   "y": 149,
+   "w": 45,
+   "h": 107,
+   "pivotX": 11.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/jalaga/legs-back.webp",
+   "x": 6,
+   "y": 148,
+   "w": 98,
+   "h": 108,
+   "pivotX": 53.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 118,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/jalaga/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 111,
+   "h": 87,
+   "pivotX": 59.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 118,
+   "fullH": 256
+  }
+ },
+ "jamrufin": {
+  "head": {
+   "file": "assets/hd/parts/jamrufin/head.webp",
+   "x": 19,
+   "y": 0,
+   "w": 120,
+   "h": 62,
+   "pivotX": 50.5,
+   "pivotY": 61.44,
+   "fullW": 139,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/jamrufin/torso.webp",
+   "x": 48,
+   "y": 62,
+   "w": 44,
+   "h": 87,
+   "pivotX": 21.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 139,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/jamrufin/arm-l.webp",
+   "x": 14,
+   "y": 62,
+   "w": 34,
+   "h": 87,
+   "pivotX": 33.26,
+   "pivotY": 14.36,
+   "fullW": 139,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/jamrufin/arm-r.webp",
+   "x": 92,
+   "y": 62,
+   "w": 47,
+   "h": 84,
+   "pivotX": -0.2599999999999909,
+   "pivotY": 14.36,
+   "fullW": 139,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/jamrufin/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 70,
+   "h": 107,
+   "pivotX": 55.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 139,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/jamrufin/leg-r.webp",
+   "x": 70,
+   "y": 149,
+   "w": 69,
+   "h": 95,
+   "pivotX": 13.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 139,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/jamrufin/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 139,
+   "h": 108,
+   "pivotX": 69.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 139,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/jamrufin/torso-back.webp",
+   "x": 14,
+   "y": 61,
+   "w": 125,
+   "h": 87,
+   "pivotX": 55.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 139,
+   "fullH": 256
+  }
+ },
+ "kinggori": {
+  "head": {
+   "file": "assets/hd/parts/kinggori/head.webp",
+   "x": 121,
+   "y": 0,
+   "w": 123,
+   "h": 47,
+   "pivotX": 6.5,
+   "pivotY": 46.559999999999995,
+   "fullW": 255,
+   "fullH": 194
+  },
+  "torso": {
+   "file": "assets/hd/parts/kinggori/torso.webp",
+   "x": 87,
+   "y": 47,
+   "w": 82,
+   "h": 66,
+   "pivotX": 40.5,
+   "pivotY": 65.52,
+   "fullW": 255,
+   "fullH": 194
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/kinggori/arm-l.webp",
+   "x": 23,
+   "y": 52,
+   "w": 64,
+   "h": 61,
+   "pivotX": 63.69999999999999,
+   "pivotY": 5.640000000000001,
+   "fullW": 255,
+   "fullH": 194
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/kinggori/arm-r.webp",
+   "x": 169,
+   "y": 47,
+   "w": 86,
+   "h": 66,
+   "pivotX": -0.6999999999999886,
+   "pivotY": 10.64,
+   "fullW": 255,
+   "fullH": 194
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/kinggori/leg-l.webp",
+   "x": 0,
+   "y": 113,
+   "w": 128,
+   "h": 81,
+   "pivotX": 102.0,
+   "pivotY": -0.480000000000004,
+   "fullW": 255,
+   "fullH": 194
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/kinggori/leg-r.webp",
+   "x": 128,
+   "y": 113,
+   "w": 123,
+   "h": 80,
+   "pivotX": 25.0,
+   "pivotY": -0.480000000000004,
+   "fullW": 255,
+   "fullH": 194
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/kinggori/legs-back.webp",
+   "x": 0,
+   "y": 112,
+   "w": 251,
+   "h": 82,
+   "pivotX": 127.5,
+   "pivotY": 0.519999999999996,
+   "fullW": 255,
+   "fullH": 194
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/kinggori/torso-back.webp",
+   "x": 23,
+   "y": 46,
+   "w": 232,
+   "h": 66,
+   "pivotX": 104.5,
+   "pivotY": 66.52,
+   "fullW": 255,
+   "fullH": 194
+  }
+ },
+ "lineX1": {
+  "head": {
+   "file": "assets/hd/parts/lineX1/head.webp",
+   "x": 10,
+   "y": 0,
+   "w": 195,
+   "h": 62,
+   "pivotX": 92.5,
+   "pivotY": 61.44,
+   "fullW": 205,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/lineX1/torso.webp",
+   "x": 70,
+   "y": 62,
+   "w": 66,
+   "h": 87,
+   "pivotX": 32.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 205,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/lineX1/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 70,
+   "h": 87,
+   "pivotX": 69.7,
+   "pivotY": 14.36,
+   "fullW": 205,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/lineX1/arm-r.webp",
+   "x": 136,
+   "y": 62,
+   "w": 67,
+   "h": 87,
+   "pivotX": -0.6999999999999886,
+   "pivotY": 14.36,
+   "fullW": 205,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/lineX1/leg-l.webp",
+   "x": 10,
+   "y": 149,
+   "w": 93,
+   "h": 107,
+   "pivotX": 72.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 205,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/lineX1/leg-r.webp",
+   "x": 103,
+   "y": 149,
+   "w": 87,
+   "h": 100,
+   "pivotX": 20.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 205,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/lineX1/legs-back.webp",
+   "x": 10,
+   "y": 148,
+   "w": 180,
+   "h": 108,
+   "pivotX": 92.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 205,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/lineX1/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 203,
+   "h": 87,
+   "pivotX": 102.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 205,
+   "fullH": 256
+  }
+ },
+ "marasai": {
+  "head": {
+   "file": "assets/hd/parts/marasai/head.webp",
+   "x": 21,
+   "y": 0,
+   "w": 106,
+   "h": 62,
+   "pivotX": 58.5,
+   "pivotY": 61.199999999999996,
+   "fullW": 159,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/marasai/torso.webp",
+   "x": 55,
+   "y": 62,
+   "w": 50,
+   "h": 86,
+   "pivotX": 24.5,
+   "pivotY": 85.89999999999998,
+   "fullW": 159,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/marasai/arm-l.webp",
+   "x": 20,
+   "y": 62,
+   "w": 35,
+   "h": 86,
+   "pivotX": 34.06,
+   "pivotY": 14.299999999999997,
+   "fullW": 159,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/marasai/arm-r.webp",
+   "x": 105,
+   "y": 62,
+   "w": 15,
+   "h": 86,
+   "pivotX": -0.060000000000002274,
+   "pivotY": 14.299999999999997,
+   "fullW": 159,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/marasai/leg-l.webp",
+   "x": 0,
+   "y": 148,
+   "w": 80,
+   "h": 107,
+   "pivotX": 63.6,
+   "pivotY": -0.10000000000002274,
+   "fullW": 159,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/marasai/leg-r.webp",
+   "x": 80,
+   "y": 148,
+   "w": 79,
+   "h": 106,
+   "pivotX": 15.400000000000006,
+   "pivotY": -0.10000000000002274,
+   "fullW": 159,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/marasai/legs-back.webp",
+   "x": 0,
+   "y": 147,
+   "w": 159,
+   "h": 108,
+   "pivotX": 79.5,
+   "pivotY": 0.8999999999999773,
+   "fullW": 159,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/marasai/torso-back.webp",
+   "x": 20,
+   "y": 61,
+   "w": 100,
+   "h": 86,
+   "pivotX": 59.5,
+   "pivotY": 86.89999999999998,
+   "fullW": 159,
+   "fullH": 255
+  }
+ },
+ "mazinger": {
+  "head": {
+   "file": "assets/hd/parts/mazinger/head.webp",
+   "x": 14,
+   "y": 0,
+   "w": 118,
+   "h": 62,
+   "pivotX": 65.0,
+   "pivotY": 61.44,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/mazinger/torso.webp",
+   "x": 54,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 25.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/mazinger/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 54,
+   "h": 87,
+   "pivotX": 53.72,
+   "pivotY": 14.36,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/mazinger/arm-r.webp",
+   "x": 105,
+   "y": 62,
+   "w": 32,
+   "h": 82,
+   "pivotX": -0.7199999999999989,
+   "pivotY": 14.36,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/mazinger/leg-l.webp",
+   "x": 1,
+   "y": 149,
+   "w": 78,
+   "h": 107,
+   "pivotX": 62.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/mazinger/leg-r.webp",
+   "x": 79,
+   "y": 149,
+   "w": 79,
+   "h": 98,
+   "pivotX": 15.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/mazinger/legs-back.webp",
+   "x": 1,
+   "y": 148,
+   "w": 157,
+   "h": 108,
+   "pivotX": 78.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/mazinger/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 137,
+   "h": 87,
+   "pivotX": 79.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 158,
+   "fullH": 256
+  }
+ },
+ "messala": {
+  "head": {
+   "file": "assets/hd/parts/messala/head.webp",
+   "x": 21,
+   "y": 0,
+   "w": 123,
+   "h": 62,
+   "pivotX": 77.5,
+   "pivotY": 61.44,
+   "fullW": 197,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/messala/torso.webp",
+   "x": 67,
+   "y": 62,
+   "w": 64,
+   "h": 87,
+   "pivotX": 31.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 197,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/messala/arm-l.webp",
+   "x": 3,
+   "y": 62,
+   "w": 64,
+   "h": 87,
+   "pivotX": 63.980000000000004,
+   "pivotY": 14.36,
+   "fullW": 197,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/messala/arm-r.webp",
+   "x": 131,
+   "y": 62,
+   "w": 66,
+   "h": 87,
+   "pivotX": -0.9799999999999898,
+   "pivotY": 14.36,
+   "fullW": 197,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/messala/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 99,
+   "h": 107,
+   "pivotX": 78.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 197,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/messala/leg-r.webp",
+   "x": 99,
+   "y": 149,
+   "w": 93,
+   "h": 107,
+   "pivotX": 19.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 197,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/messala/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 192,
+   "h": 108,
+   "pivotX": 98.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 197,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/messala/torso-back.webp",
+   "x": 3,
+   "y": 61,
+   "w": 194,
+   "h": 87,
+   "pivotX": 95.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 197,
+   "fullH": 256
+  }
+ },
+ "metz": {
+  "head": {
+   "file": "assets/hd/parts/metz/head.webp",
+   "x": 4,
+   "y": 0,
+   "w": 118,
+   "h": 62,
+   "pivotX": 57.5,
+   "pivotY": 61.44,
+   "fullW": 123,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/metz/torso.webp",
+   "x": 42,
+   "y": 62,
+   "w": 40,
+   "h": 87,
+   "pivotX": 19.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 123,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/metz/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 42,
+   "h": 87,
+   "pivotX": 41.82,
+   "pivotY": 14.36,
+   "fullW": 123,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/metz/arm-r.webp",
+   "x": 82,
+   "y": 62,
+   "w": 26,
+   "h": 87,
+   "pivotX": -0.8199999999999932,
+   "pivotY": 14.36,
+   "fullW": 123,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/metz/leg-l.webp",
+   "x": 4,
+   "y": 149,
+   "w": 58,
+   "h": 107,
+   "pivotX": 45.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 123,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/metz/leg-r.webp",
+   "x": 62,
+   "y": 149,
+   "w": 61,
+   "h": 98,
+   "pivotX": 11.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 123,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/metz/legs-back.webp",
+   "x": 2,
+   "y": 148,
+   "w": 121,
+   "h": 108,
+   "pivotX": 59.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 123,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/metz/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 108,
+   "h": 87,
+   "pivotX": 61.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 123,
+   "fullH": 256
+  }
+ },
+ "midia": {
+  "head": {
+   "file": "assets/hd/parts/midia/head.webp",
+   "x": 103,
+   "y": 0,
+   "w": 14,
+   "h": 20,
+   "pivotX": 24.5,
+   "pivotY": 19.68,
+   "fullW": 255,
+   "fullH": 82
+  },
+  "torso": {
+   "file": "assets/hd/parts/midia/torso.webp",
+   "x": 87,
+   "y": 20,
+   "w": 82,
+   "h": 28,
+   "pivotX": 40.5,
+   "pivotY": 27.559999999999995,
+   "fullW": 255,
+   "fullH": 82
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/midia/arm-l.webp",
+   "x": 0,
+   "y": 20,
+   "w": 87,
+   "h": 28,
+   "pivotX": 86.69999999999999,
+   "pivotY": 3.9200000000000017,
+   "fullW": 255,
+   "fullH": 82
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/midia/arm-r.webp",
+   "x": 169,
+   "y": 36,
+   "w": 86,
+   "h": 12,
+   "pivotX": -0.6999999999999886,
+   "pivotY": -12.079999999999998,
+   "fullW": 255,
+   "fullH": 82
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/midia/leg-l.webp",
+   "x": 1,
+   "y": 48,
+   "w": 127,
+   "h": 34,
+   "pivotX": 101.0,
+   "pivotY": -0.44000000000000483,
+   "fullW": 255,
+   "fullH": 82
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/midia/leg-r.webp",
+   "x": 128,
+   "y": 48,
+   "w": 125,
+   "h": 25,
+   "pivotX": 25.0,
+   "pivotY": -0.44000000000000483,
+   "fullW": 255,
+   "fullH": 82
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/midia/legs-back.webp",
+   "x": 0,
+   "y": 47,
+   "w": 255,
+   "h": 35,
+   "pivotX": 127.5,
+   "pivotY": 0.5599999999999952,
+   "fullW": 255,
+   "fullH": 82
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/midia/torso-back.webp",
+   "x": 0,
+   "y": 19,
+   "w": 255,
+   "h": 28,
+   "pivotX": 127.5,
+   "pivotY": 28.559999999999995,
+   "fullW": 255,
+   "fullH": 82
+  }
+ },
+ "minervaX": {
+  "head": {
+   "file": "assets/hd/parts/minervaX/head.webp",
+   "x": 8,
+   "y": 0,
+   "w": 135,
+   "h": 62,
+   "pivotX": 101.5,
+   "pivotY": 61.44,
+   "fullW": 219,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/minervaX/torso.webp",
+   "x": 75,
+   "y": 62,
+   "w": 70,
+   "h": 87,
+   "pivotX": 34.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 219,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/minervaX/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 75,
+   "h": 87,
+   "pivotX": 74.46000000000001,
+   "pivotY": 14.36,
+   "fullW": 219,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/minervaX/arm-r.webp",
+   "x": 145,
+   "y": 71,
+   "w": 74,
+   "h": 35,
+   "pivotX": -0.46000000000000796,
+   "pivotY": 5.359999999999999,
+   "fullW": 219,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/minervaX/leg-l.webp",
+   "x": 12,
+   "y": 149,
+   "w": 98,
+   "h": 107,
+   "pivotX": 75.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 219,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/minervaX/leg-r.webp",
+   "x": 110,
+   "y": 149,
+   "w": 44,
+   "h": 93,
+   "pivotX": 21.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 219,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/minervaX/legs-back.webp",
+   "x": 12,
+   "y": 148,
+   "w": 142,
+   "h": 108,
+   "pivotX": 97.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 219,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/minervaX/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 219,
+   "h": 87,
+   "pivotX": 109.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 219,
+   "fullH": 256
+  }
+ },
+ "mirror": {
+  "head": {
+   "file": "assets/hd/parts/mirror/head.webp",
+   "x": 1,
+   "y": 0,
+   "w": 129,
+   "h": 62,
+   "pivotX": 66.0,
+   "pivotY": 61.44,
+   "fullW": 134,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/mirror/torso.webp",
+   "x": 46,
+   "y": 62,
+   "w": 43,
+   "h": 87,
+   "pivotX": 21.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 134,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/mirror/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 46,
+   "h": 87,
+   "pivotX": 45.56,
+   "pivotY": 14.36,
+   "fullW": 134,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/mirror/arm-r.webp",
+   "x": 89,
+   "y": 62,
+   "w": 45,
+   "h": 87,
+   "pivotX": -0.5600000000000023,
+   "pivotY": 14.36,
+   "fullW": 134,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/mirror/leg-l.webp",
+   "x": 12,
+   "y": 149,
+   "w": 55,
+   "h": 107,
+   "pivotX": 41.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 134,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/mirror/leg-r.webp",
+   "x": 67,
+   "y": 149,
+   "w": 50,
+   "h": 92,
+   "pivotX": 13.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 134,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/mirror/legs-back.webp",
+   "x": 12,
+   "y": 148,
+   "w": 105,
+   "h": 108,
+   "pivotX": 55.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 134,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/mirror/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 134,
+   "h": 87,
+   "pivotX": 67.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 134,
+   "fullH": 256
+  }
+ },
+ "missile": {
+  "head": {
+   "file": "assets/hd/parts/missile/head.webp",
+   "x": 40,
+   "y": 0,
+   "w": 128,
+   "h": 59,
+   "pivotX": 88.0,
+   "pivotY": 58.8,
+   "fullW": 256,
+   "fullH": 245
+  },
+  "torso": {
+   "file": "assets/hd/parts/missile/torso.webp",
+   "x": 88,
+   "y": 59,
+   "w": 81,
+   "h": 84,
+   "pivotX": 40.0,
+   "pivotY": 83.1,
+   "fullW": 256,
+   "fullH": 245
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/missile/arm-l.webp",
+   "x": 29,
+   "y": 59,
+   "w": 59,
+   "h": 84,
+   "pivotX": 58.03999999999999,
+   "pivotY": 13.700000000000003,
+   "fullW": 256,
+   "fullH": 245
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/missile/arm-r.webp",
+   "x": 169,
+   "y": 111,
+   "w": 85,
+   "h": 32,
+   "pivotX": -0.03999999999999204,
+   "pivotY": -38.3,
+   "fullW": 256,
+   "fullH": 245
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/missile/leg-l.webp",
+   "x": 0,
+   "y": 143,
+   "w": 128,
+   "h": 102,
+   "pivotX": 102.4,
+   "pivotY": -0.9000000000000057,
+   "fullW": 256,
+   "fullH": 245
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/missile/leg-r.webp",
+   "x": 128,
+   "y": 143,
+   "w": 128,
+   "h": 98,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.9000000000000057,
+   "fullW": 256,
+   "fullH": 245
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/missile/legs-back.webp",
+   "x": 0,
+   "y": 142,
+   "w": 256,
+   "h": 103,
+   "pivotX": 128.0,
+   "pivotY": 0.09999999999999432,
+   "fullW": 256,
+   "fullH": 245
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/missile/torso-back.webp",
+   "x": 29,
+   "y": 58,
+   "w": 223,
+   "h": 84,
+   "pivotX": 99.0,
+   "pivotY": 84.1,
+   "fullW": 256,
+   "fullH": 245
+  }
+ },
+ "monster": {
+  "head": {
+   "file": "assets/hd/parts/monster/head.webp",
+   "x": 102,
+   "y": 0,
+   "w": 99,
+   "h": 62,
+   "pivotX": 21.0,
+   "pivotY": 61.199999999999996,
+   "fullW": 246,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/monster/torso.webp",
+   "x": 84,
+   "y": 62,
+   "w": 79,
+   "h": 86,
+   "pivotX": 39.0,
+   "pivotY": 85.89999999999998,
+   "fullW": 246,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/monster/arm-l.webp",
+   "x": 36,
+   "y": 96,
+   "w": 48,
+   "h": 52,
+   "pivotX": 47.64,
+   "pivotY": -19.700000000000003,
+   "fullW": 246,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/monster/arm-r.webp",
+   "x": 163,
+   "y": 62,
+   "w": 50,
+   "h": 86,
+   "pivotX": -0.6399999999999864,
+   "pivotY": 14.299999999999997,
+   "fullW": 246,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/monster/leg-l.webp",
+   "x": 0,
+   "y": 148,
+   "w": 123,
+   "h": 95,
+   "pivotX": 98.4,
+   "pivotY": -0.10000000000002274,
+   "fullW": 246,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/monster/leg-r.webp",
+   "x": 123,
+   "y": 148,
+   "w": 123,
+   "h": 107,
+   "pivotX": 24.599999999999994,
+   "pivotY": -0.10000000000002274,
+   "fullW": 246,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/monster/legs-back.webp",
+   "x": 0,
+   "y": 147,
+   "w": 246,
+   "h": 108,
+   "pivotX": 123.0,
+   "pivotY": 0.8999999999999773,
+   "fullW": 246,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/monster/torso-back.webp",
+   "x": 38,
+   "y": 61,
+   "w": 175,
+   "h": 86,
+   "pivotX": 85.0,
+   "pivotY": 86.89999999999998,
+   "fullW": 246,
+   "fullH": 255
+  }
+ },
+ "neelagama": {
+  "head": {
+   "file": "assets/hd/parts/neelagama/head.webp",
+   "x": 89,
+   "y": 0,
+   "w": 38,
+   "h": 24,
+   "pivotX": 39.0,
+   "pivotY": 23.759999999999998,
+   "fullW": 256,
+   "fullH": 99
+  },
+  "torso": {
+   "file": "assets/hd/parts/neelagama/torso.webp",
+   "x": 88,
+   "y": 24,
+   "w": 81,
+   "h": 34,
+   "pivotX": 40.0,
+   "pivotY": 33.419999999999995,
+   "fullW": 256,
+   "fullH": 99
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/neelagama/arm-l.webp",
+   "x": 41,
+   "y": 35,
+   "w": 47,
+   "h": 23,
+   "pivotX": 46.03999999999999,
+   "pivotY": -6.060000000000002,
+   "fullW": 256,
+   "fullH": 99
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/neelagama/arm-r.webp",
+   "x": 169,
+   "y": 54,
+   "w": 20,
+   "h": 4,
+   "pivotX": -0.03999999999999204,
+   "pivotY": -25.060000000000002,
+   "fullW": 256,
+   "fullH": 99
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/neelagama/leg-l.webp",
+   "x": 0,
+   "y": 58,
+   "w": 128,
+   "h": 41,
+   "pivotX": 102.4,
+   "pivotY": -0.5800000000000054,
+   "fullW": 256,
+   "fullH": 99
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/neelagama/leg-r.webp",
+   "x": 128,
+   "y": 58,
+   "w": 128,
+   "h": 36,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.5800000000000054,
+   "fullW": 256,
+   "fullH": 99
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/neelagama/legs-back.webp",
+   "x": 0,
+   "y": 57,
+   "w": 256,
+   "h": 42,
+   "pivotX": 128.0,
+   "pivotY": 0.4199999999999946,
+   "fullW": 256,
+   "fullH": 99
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/neelagama/torso-back.webp",
+   "x": 41,
+   "y": 23,
+   "w": 147,
+   "h": 34,
+   "pivotX": 87.0,
+   "pivotY": 34.419999999999995,
+   "fullW": 256,
+   "fullH": 99
+  }
+ },
+ "nu": {
+  "head": {
+   "file": "assets/hd/parts/nu/head.webp",
+   "x": 10,
+   "y": 0,
+   "w": 118,
+   "h": 62,
+   "pivotX": 69.0,
+   "pivotY": 61.44,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/nu/torso.webp",
+   "x": 54,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 25.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/nu/arm-l.webp",
+   "x": 3,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 50.72,
+   "pivotY": 14.36,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/nu/arm-r.webp",
+   "x": 105,
+   "y": 62,
+   "w": 29,
+   "h": 87,
+   "pivotX": -0.7199999999999989,
+   "pivotY": 14.36,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/nu/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 79,
+   "h": 107,
+   "pivotX": 63.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/nu/leg-r.webp",
+   "x": 79,
+   "y": 149,
+   "w": 79,
+   "h": 100,
+   "pivotX": 15.799999999999997,
+   "pivotY": -0.5200000000000102,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/nu/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 158,
+   "h": 108,
+   "pivotX": 79.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 158,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/nu/torso-back.webp",
+   "x": 3,
+   "y": 61,
+   "w": 131,
+   "h": 87,
+   "pivotX": 76.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 158,
+   "fullH": 256
+  }
+ },
+ "palace": {
+  "head": {
+   "file": "assets/hd/parts/palace/head.webp",
+   "x": 23,
+   "y": 0,
+   "w": 116,
+   "h": 62,
+   "pivotX": 54.0,
+   "pivotY": 61.44,
+   "fullW": 154,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/palace/torso.webp",
+   "x": 53,
+   "y": 62,
+   "w": 49,
+   "h": 87,
+   "pivotX": 24.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 154,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/palace/arm-l.webp",
+   "x": 20,
+   "y": 62,
+   "w": 33,
+   "h": 82,
+   "pivotX": 32.36,
+   "pivotY": 14.36,
+   "fullW": 154,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/palace/arm-r.webp",
+   "x": 102,
+   "y": 62,
+   "w": 38,
+   "h": 87,
+   "pivotX": -0.35999999999999943,
+   "pivotY": 14.36,
+   "fullW": 154,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/palace/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 77,
+   "h": 99,
+   "pivotX": 61.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 154,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/palace/leg-r.webp",
+   "x": 77,
+   "y": 149,
+   "w": 77,
+   "h": 107,
+   "pivotX": 15.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 154,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/palace/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 154,
+   "h": 108,
+   "pivotX": 77.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 154,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/palace/torso-back.webp",
+   "x": 20,
+   "y": 61,
+   "w": 120,
+   "h": 87,
+   "pivotX": 57.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 154,
+   "fullH": 256
+  }
+ },
+ "psyco": {
+  "head": {
+   "file": "assets/hd/parts/psyco/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 192,
+   "h": 62,
+   "pivotX": 96.0,
+   "pivotY": 61.44,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/psyco/torso.webp",
+   "x": 66,
+   "y": 62,
+   "w": 61,
+   "h": 87,
+   "pivotX": 30.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/psyco/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 66,
+   "h": 87,
+   "pivotX": 65.28,
+   "pivotY": 14.36,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/psyco/arm-r.webp",
+   "x": 127,
+   "y": 62,
+   "w": 65,
+   "h": 87,
+   "pivotX": -0.28000000000000114,
+   "pivotY": 14.36,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/psyco/leg-l.webp",
+   "x": 6,
+   "y": 149,
+   "w": 90,
+   "h": 107,
+   "pivotX": 70.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/psyco/leg-r.webp",
+   "x": 96,
+   "y": 149,
+   "w": 59,
+   "h": 92,
+   "pivotX": 19.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/psyco/legs-back.webp",
+   "x": 6,
+   "y": 148,
+   "w": 149,
+   "h": 108,
+   "pivotX": 90.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/psyco/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 192,
+   "h": 87,
+   "pivotX": 96.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 192,
+   "fullH": 256
+  }
+ },
+ "psyco2": {
+  "head": {
+   "file": "assets/hd/parts/psyco2/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 187,
+   "h": 62,
+   "pivotX": 100.0,
+   "pivotY": 61.44,
+   "fullW": 200,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/psyco2/torso.webp",
+   "x": 68,
+   "y": 62,
+   "w": 65,
+   "h": 87,
+   "pivotX": 32.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 200,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/psyco2/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 68,
+   "h": 86,
+   "pivotX": 68.0,
+   "pivotY": 14.36,
+   "fullW": 200,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/psyco2/arm-r.webp",
+   "x": 133,
+   "y": 62,
+   "w": 67,
+   "h": 87,
+   "pivotX": -1.0,
+   "pivotY": 14.36,
+   "fullW": 200,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/psyco2/leg-l.webp",
+   "x": 26,
+   "y": 149,
+   "w": 74,
+   "h": 107,
+   "pivotX": 54.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 200,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/psyco2/leg-r.webp",
+   "x": 100,
+   "y": 149,
+   "w": 99,
+   "h": 99,
+   "pivotX": 20.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 200,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/psyco2/legs-back.webp",
+   "x": 26,
+   "y": 148,
+   "w": 173,
+   "h": 108,
+   "pivotX": 74.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 200,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/psyco2/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 200,
+   "h": 87,
+   "pivotX": 100.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 200,
+   "fullH": 256
+  }
+ },
+ "quin": {
+  "head": {
+   "file": "assets/hd/parts/quin/head.webp",
+   "x": 8,
+   "y": 0,
+   "w": 167,
+   "h": 62,
+   "pivotX": 88.0,
+   "pivotY": 61.44,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/quin/torso.webp",
+   "x": 66,
+   "y": 62,
+   "w": 61,
+   "h": 87,
+   "pivotX": 30.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/quin/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 66,
+   "h": 87,
+   "pivotX": 65.28,
+   "pivotY": 14.36,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/quin/arm-r.webp",
+   "x": 127,
+   "y": 62,
+   "w": 65,
+   "h": 87,
+   "pivotX": -0.28000000000000114,
+   "pivotY": 14.36,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/quin/leg-l.webp",
+   "x": 6,
+   "y": 149,
+   "w": 90,
+   "h": 107,
+   "pivotX": 70.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/quin/leg-r.webp",
+   "x": 96,
+   "y": 149,
+   "w": 94,
+   "h": 97,
+   "pivotX": 19.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/quin/legs-back.webp",
+   "x": 6,
+   "y": 148,
+   "w": 185,
+   "h": 108,
+   "pivotX": 90.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 192,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/quin/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 192,
+   "h": 87,
+   "pivotX": 96.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 192,
+   "fullH": 256
+  }
+ },
+ "racalium": {
+  "head": {
+   "file": "assets/hd/parts/racalium/head.webp",
+   "x": 43,
+   "y": 0,
+   "w": 27,
+   "h": 28,
+   "pivotX": 85.0,
+   "pivotY": 27.599999999999998,
+   "fullW": 256,
+   "fullH": 115
+  },
+  "torso": {
+   "file": "assets/hd/parts/racalium/torso.webp",
+   "x": 88,
+   "y": 30,
+   "w": 56,
+   "h": 37,
+   "pivotX": 40.0,
+   "pivotY": 36.69999999999999,
+   "fullW": 256,
+   "fullH": 115
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/racalium/arm-l.webp",
+   "x": 12,
+   "y": 28,
+   "w": 76,
+   "h": 39,
+   "pivotX": 75.03999999999999,
+   "pivotY": 5.899999999999999,
+   "fullW": 256,
+   "fullH": 115
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/racalium/leg-l.webp",
+   "x": 0,
+   "y": 67,
+   "w": 128,
+   "h": 48,
+   "pivotX": 102.4,
+   "pivotY": -0.30000000000001137,
+   "fullW": 256,
+   "fullH": 115
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/racalium/leg-r.webp",
+   "x": 128,
+   "y": 67,
+   "w": 128,
+   "h": 48,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.30000000000001137,
+   "fullW": 256,
+   "fullH": 115
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/racalium/arm-r.webp",
+   "x": 12,
+   "y": 28,
+   "w": 76,
+   "h": 39,
+   "pivotX": 75.03999999999999,
+   "pivotY": 5.899999999999999,
+   "fullW": 256,
+   "fullH": 115,
+   "fallback": true
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/racalium/legs-back.webp",
+   "x": 0,
+   "y": 66,
+   "w": 256,
+   "h": 49,
+   "pivotX": 128.0,
+   "pivotY": 0.6999999999999886,
+   "fullW": 256,
+   "fullH": 115
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/racalium/torso-back.webp",
+   "x": 12,
+   "y": 27,
+   "w": 132,
+   "h": 39,
+   "pivotX": 116.0,
+   "pivotY": 39.69999999999999,
+   "fullW": 256,
+   "fullH": 115
+  }
+ },
+ "rafflesia": {
+  "head": {
+   "file": "assets/hd/parts/rafflesia/head.webp",
+   "x": 40,
+   "y": 0,
+   "w": 156,
+   "h": 62,
+   "pivotX": 67.5,
+   "pivotY": 61.44,
+   "fullW": 215,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/rafflesia/torso.webp",
+   "x": 74,
+   "y": 62,
+   "w": 68,
+   "h": 87,
+   "pivotX": 33.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 215,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/rafflesia/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 74,
+   "h": 87,
+   "pivotX": 73.1,
+   "pivotY": 14.36,
+   "fullW": 215,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/rafflesia/arm-r.webp",
+   "x": 142,
+   "y": 62,
+   "w": 73,
+   "h": 87,
+   "pivotX": -0.09999999999999432,
+   "pivotY": 14.36,
+   "fullW": 215,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/rafflesia/leg-l.webp",
+   "x": 59,
+   "y": 149,
+   "w": 49,
+   "h": 107,
+   "pivotX": 27.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 215,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/rafflesia/leg-r.webp",
+   "x": 108,
+   "y": 149,
+   "w": 94,
+   "h": 107,
+   "pivotX": 21.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 215,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/rafflesia/legs-back.webp",
+   "x": 59,
+   "y": 148,
+   "w": 143,
+   "h": 108,
+   "pivotX": 48.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 215,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/rafflesia/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 215,
+   "h": 87,
+   "pivotX": 107.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 215,
+   "fullH": 256
+  }
+ },
+ "redzaku": {
+  "head": {
+   "file": "assets/hd/parts/redzaku/head.webp",
+   "x": 3,
+   "y": 0,
+   "w": 126,
+   "h": 62,
+   "pivotX": 61.5,
+   "pivotY": 61.199999999999996,
+   "fullW": 129,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/redzaku/torso.webp",
+   "x": 44,
+   "y": 62,
+   "w": 42,
+   "h": 86,
+   "pivotX": 20.5,
+   "pivotY": 85.89999999999998,
+   "fullW": 129,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/redzaku/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 44,
+   "h": 86,
+   "pivotX": 43.86,
+   "pivotY": 14.299999999999997,
+   "fullW": 129,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/redzaku/arm-r.webp",
+   "x": 86,
+   "y": 62,
+   "w": 43,
+   "h": 86,
+   "pivotX": -0.8599999999999994,
+   "pivotY": 14.299999999999997,
+   "fullW": 129,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/redzaku/leg-l.webp",
+   "x": 0,
+   "y": 148,
+   "w": 65,
+   "h": 107,
+   "pivotX": 51.6,
+   "pivotY": -0.10000000000002274,
+   "fullW": 129,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/redzaku/leg-r.webp",
+   "x": 65,
+   "y": 148,
+   "w": 63,
+   "h": 107,
+   "pivotX": 12.400000000000006,
+   "pivotY": -0.10000000000002274,
+   "fullW": 129,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/redzaku/legs-back.webp",
+   "x": 0,
+   "y": 147,
+   "w": 128,
+   "h": 108,
+   "pivotX": 64.5,
+   "pivotY": 0.8999999999999773,
+   "fullW": 129,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/redzaku/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 129,
+   "h": 86,
+   "pivotX": 64.5,
+   "pivotY": 86.89999999999998,
+   "fullW": 129,
+   "fullH": 255
+  }
+ },
+ "sig": {
+  "head": {
+   "file": "assets/hd/parts/sig/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 98,
+   "h": 62,
+   "pivotX": 64.5,
+   "pivotY": 61.44,
+   "fullW": 129,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/sig/torso.webp",
+   "x": 44,
+   "y": 62,
+   "w": 42,
+   "h": 87,
+   "pivotX": 20.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 129,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/sig/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 44,
+   "h": 87,
+   "pivotX": 43.86,
+   "pivotY": 14.36,
+   "fullW": 129,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/sig/arm-r.webp",
+   "x": 86,
+   "y": 62,
+   "w": 17,
+   "h": 87,
+   "pivotX": -0.8599999999999994,
+   "pivotY": 14.36,
+   "fullW": 129,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/sig/leg-l.webp",
+   "x": 2,
+   "y": 149,
+   "w": 62,
+   "h": 107,
+   "pivotX": 49.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 129,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/sig/leg-r.webp",
+   "x": 66,
+   "y": 149,
+   "w": 63,
+   "h": 99,
+   "pivotX": 11.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 129,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/sig/legs-back.webp",
+   "x": 2,
+   "y": 148,
+   "w": 127,
+   "h": 108,
+   "pivotX": 62.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 129,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/sig/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 103,
+   "h": 87,
+   "pivotX": 64.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 129,
+   "fullH": 256
+  }
+ },
+ "texas": {
+  "head": {
+   "file": "assets/hd/parts/texas/head.webp",
+   "x": 12,
+   "y": 0,
+   "w": 137,
+   "h": 62,
+   "pivotX": 80.0,
+   "pivotY": 61.44,
+   "fullW": 184,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/texas/torso.webp",
+   "x": 63,
+   "y": 62,
+   "w": 59,
+   "h": 87,
+   "pivotX": 29.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 184,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/texas/arm-l.webp",
+   "x": 10,
+   "y": 62,
+   "w": 53,
+   "h": 87,
+   "pivotX": 52.56,
+   "pivotY": 14.36,
+   "fullW": 184,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/texas/arm-r.webp",
+   "x": 122,
+   "y": 62,
+   "w": 30,
+   "h": 87,
+   "pivotX": -0.5600000000000023,
+   "pivotY": 14.36,
+   "fullW": 184,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/texas/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 92,
+   "h": 107,
+   "pivotX": 73.6,
+   "pivotY": -0.5200000000000102,
+   "fullW": 184,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/texas/leg-r.webp",
+   "x": 92,
+   "y": 149,
+   "w": 92,
+   "h": 101,
+   "pivotX": 18.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 184,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/texas/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 184,
+   "h": 108,
+   "pivotX": 92.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 184,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/texas/torso-back.webp",
+   "x": 10,
+   "y": 61,
+   "w": 142,
+   "h": 87,
+   "pivotX": 82.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 184,
+   "fullH": 256
+  }
+ },
+ "tros": {
+  "head": {
+   "file": "assets/hd/parts/tros/head.webp",
+   "x": 50,
+   "y": 0,
+   "w": 39,
+   "h": 20,
+   "pivotX": 78.0,
+   "pivotY": 19.919999999999998,
+   "fullW": 256,
+   "fullH": 83
+  },
+  "torso": {
+   "file": "assets/hd/parts/tros/torso.webp",
+   "x": 88,
+   "y": 20,
+   "w": 81,
+   "h": 29,
+   "pivotX": 40.0,
+   "pivotY": 28.139999999999993,
+   "fullW": 256,
+   "fullH": 83
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/tros/arm-l.webp",
+   "x": 0,
+   "y": 20,
+   "w": 88,
+   "h": 29,
+   "pivotX": 87.03999999999999,
+   "pivotY": 3.9800000000000004,
+   "fullW": 256,
+   "fullH": 83
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/tros/arm-r.webp",
+   "x": 169,
+   "y": 37,
+   "w": 87,
+   "h": 12,
+   "pivotX": -0.03999999999999204,
+   "pivotY": -13.02,
+   "fullW": 256,
+   "fullH": 83
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/tros/leg-l.webp",
+   "x": 0,
+   "y": 49,
+   "w": 128,
+   "h": 34,
+   "pivotX": 102.4,
+   "pivotY": -0.8600000000000065,
+   "fullW": 256,
+   "fullH": 83
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/tros/leg-r.webp",
+   "x": 128,
+   "y": 49,
+   "w": 127,
+   "h": 32,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.8600000000000065,
+   "fullW": 256,
+   "fullH": 83
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/tros/legs-back.webp",
+   "x": 0,
+   "y": 48,
+   "w": 256,
+   "h": 35,
+   "pivotX": 128.0,
+   "pivotY": 0.13999999999999346,
+   "fullW": 256,
+   "fullH": 83
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/tros/torso-back.webp",
+   "x": 0,
+   "y": 19,
+   "w": 256,
+   "h": 29,
+   "pivotX": 128.0,
+   "pivotY": 29.139999999999993,
+   "fullW": 256,
+   "fullH": 83
+  }
+ },
+ "turret": {
+  "head": {
+   "file": "assets/hd/parts/turret/head.webp",
+   "x": 30,
+   "y": 0,
+   "w": 172,
+   "h": 62,
+   "pivotX": 71.0,
+   "pivotY": 61.44,
+   "fullW": 202,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/turret/torso.webp",
+   "x": 69,
+   "y": 62,
+   "w": 65,
+   "h": 87,
+   "pivotX": 32.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 202,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/turret/arm-l.webp",
+   "x": 14,
+   "y": 62,
+   "w": 55,
+   "h": 87,
+   "pivotX": 54.68000000000001,
+   "pivotY": 14.36,
+   "fullW": 202,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/turret/arm-r.webp",
+   "x": 134,
+   "y": 62,
+   "w": 32,
+   "h": 87,
+   "pivotX": -0.6800000000000068,
+   "pivotY": 14.36,
+   "fullW": 202,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/turret/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 101,
+   "h": 107,
+   "pivotX": 80.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 202,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/turret/leg-r.webp",
+   "x": 101,
+   "y": 149,
+   "w": 88,
+   "h": 104,
+   "pivotX": 20.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 202,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/turret/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 189,
+   "h": 108,
+   "pivotX": 101.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 202,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/turret/torso-back.webp",
+   "x": 14,
+   "y": 61,
+   "w": 152,
+   "h": 87,
+   "pivotX": 87.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 202,
+   "fullH": 256
+  }
+ },
+ "valshione": {
+  "head": {
+   "file": "assets/hd/parts/valshione/head.webp",
+   "x": 16,
+   "y": 0,
+   "w": 176,
+   "h": 62,
+   "pivotX": 95.5,
+   "pivotY": 61.44,
+   "fullW": 223,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/valshione/torso.webp",
+   "x": 76,
+   "y": 62,
+   "w": 72,
+   "h": 87,
+   "pivotX": 35.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 223,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/valshione/arm-l.webp",
+   "x": 2,
+   "y": 62,
+   "w": 74,
+   "h": 87,
+   "pivotX": 73.82,
+   "pivotY": 14.36,
+   "fullW": 223,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/valshione/arm-r.webp",
+   "x": 148,
+   "y": 62,
+   "w": 75,
+   "h": 87,
+   "pivotX": -0.8199999999999932,
+   "pivotY": 14.36,
+   "fullW": 223,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/valshione/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 112,
+   "h": 107,
+   "pivotX": 89.2,
+   "pivotY": -0.5200000000000102,
+   "fullW": 223,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/valshione/leg-r.webp",
+   "x": 112,
+   "y": 149,
+   "w": 96,
+   "h": 105,
+   "pivotX": 21.80000000000001,
+   "pivotY": -0.5200000000000102,
+   "fullW": 223,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/valshione/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 208,
+   "h": 108,
+   "pivotX": 111.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 223,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/valshione/torso-back.webp",
+   "x": 2,
+   "y": 61,
+   "w": 221,
+   "h": 87,
+   "pivotX": 109.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 223,
+   "fullH": 256
+  }
+ },
+ "whitebase": {
+  "head": {
+   "file": "assets/hd/parts/whitebase/head.webp",
+   "x": 70,
+   "y": 0,
+   "w": 32,
+   "h": 36,
+   "pivotX": 58.0,
+   "pivotY": 35.04,
+   "fullW": 256,
+   "fullH": 146
+  },
+  "torso": {
+   "file": "assets/hd/parts/whitebase/torso.webp",
+   "x": 88,
+   "y": 36,
+   "w": 81,
+   "h": 49,
+   "pivotX": 40.0,
+   "pivotY": 48.67999999999999,
+   "fullW": 256,
+   "fullH": 146
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/whitebase/arm-l.webp",
+   "x": 25,
+   "y": 36,
+   "w": 63,
+   "h": 49,
+   "pivotX": 62.03999999999999,
+   "pivotY": 7.759999999999998,
+   "fullW": 256,
+   "fullH": 146
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/whitebase/arm-r.webp",
+   "x": 169,
+   "y": 57,
+   "w": 87,
+   "h": 28,
+   "pivotX": -0.03999999999999204,
+   "pivotY": -13.240000000000002,
+   "fullW": 256,
+   "fullH": 146
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/whitebase/leg-l.webp",
+   "x": 0,
+   "y": 85,
+   "w": 128,
+   "h": 61,
+   "pivotX": 102.4,
+   "pivotY": -0.3200000000000074,
+   "fullW": 256,
+   "fullH": 146
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/whitebase/leg-r.webp",
+   "x": 128,
+   "y": 85,
+   "w": 128,
+   "h": 57,
+   "pivotX": 25.599999999999994,
+   "pivotY": -0.3200000000000074,
+   "fullW": 256,
+   "fullH": 146
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/whitebase/legs-back.webp",
+   "x": 0,
+   "y": 84,
+   "w": 256,
+   "h": 62,
+   "pivotX": 128.0,
+   "pivotY": 0.6799999999999926,
+   "fullW": 256,
+   "fullH": 146
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/whitebase/torso-back.webp",
+   "x": 25,
+   "y": 35,
+   "w": 231,
+   "h": 49,
+   "pivotX": 103.0,
+   "pivotY": 49.67999999999999,
+   "fullW": 256,
+   "fullH": 146
+  }
+ },
+ "yact": {
+  "head": {
+   "file": "assets/hd/parts/yact/head.webp",
+   "x": 11,
+   "y": 0,
+   "w": 117,
+   "h": 62,
+   "pivotX": 64.0,
+   "pivotY": 61.44,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/yact/torso.webp",
+   "x": 51,
+   "y": 62,
+   "w": 49,
+   "h": 87,
+   "pivotX": 24.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/yact/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 51.0,
+   "pivotY": 14.36,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/yact/arm-r.webp",
+   "x": 100,
+   "y": 62,
+   "w": 32,
+   "h": 81,
+   "pivotX": -1.0,
+   "pivotY": 14.36,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/yact/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 75,
+   "h": 107,
+   "pivotX": 60.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/yact/leg-r.webp",
+   "x": 75,
+   "y": 149,
+   "w": 75,
+   "h": 87,
+   "pivotX": 15.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/yact/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 150,
+   "h": 108,
+   "pivotX": 75.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/yact/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 132,
+   "h": 87,
+   "pivotX": 75.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 150,
+   "fullH": 256
+  }
+ },
+ "zai": {
+  "head": {
+   "file": "assets/hd/parts/zai/head.webp",
+   "x": 12,
+   "y": 0,
+   "w": 113,
+   "h": 62,
+   "pivotX": 68.0,
+   "pivotY": 61.44,
+   "fullW": 160,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/zai/torso.webp",
+   "x": 55,
+   "y": 62,
+   "w": 51,
+   "h": 87,
+   "pivotX": 25.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 160,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zai/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 55,
+   "h": 87,
+   "pivotX": 54.4,
+   "pivotY": 14.36,
+   "fullW": 160,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zai/arm-r.webp",
+   "x": 106,
+   "y": 62,
+   "w": 54,
+   "h": 87,
+   "pivotX": -0.4000000000000057,
+   "pivotY": 14.36,
+   "fullW": 160,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zai/leg-l.webp",
+   "x": 11,
+   "y": 149,
+   "w": 69,
+   "h": 107,
+   "pivotX": 53.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 160,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zai/leg-r.webp",
+   "x": 80,
+   "y": 149,
+   "w": 79,
+   "h": 91,
+   "pivotX": 16.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 160,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zai/legs-back.webp",
+   "x": 11,
+   "y": 148,
+   "w": 148,
+   "h": 108,
+   "pivotX": 69.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 160,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zai/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 160,
+   "h": 87,
+   "pivotX": 80.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 160,
+   "fullH": 256
+  }
+ },
+ "zakrello": {
+  "head": {
+   "file": "assets/hd/parts/zakrello/head.webp",
+   "x": 52,
+   "y": 0,
+   "w": 147,
+   "h": 62,
+   "pivotX": 62.5,
+   "pivotY": 61.199999999999996,
+   "fullW": 229,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/zakrello/torso.webp",
+   "x": 78,
+   "y": 62,
+   "w": 74,
+   "h": 86,
+   "pivotX": 36.5,
+   "pivotY": 85.89999999999998,
+   "fullW": 229,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zakrello/arm-l.webp",
+   "x": 13,
+   "y": 62,
+   "w": 65,
+   "h": 86,
+   "pivotX": 64.86,
+   "pivotY": 14.299999999999997,
+   "fullW": 229,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zakrello/arm-r.webp",
+   "x": 152,
+   "y": 62,
+   "w": 57,
+   "h": 86,
+   "pivotX": -0.8600000000000136,
+   "pivotY": 14.299999999999997,
+   "fullW": 229,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zakrello/leg-l.webp",
+   "x": 0,
+   "y": 148,
+   "w": 115,
+   "h": 98,
+   "pivotX": 91.6,
+   "pivotY": -0.10000000000002274,
+   "fullW": 229,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zakrello/leg-r.webp",
+   "x": 115,
+   "y": 148,
+   "w": 114,
+   "h": 107,
+   "pivotX": 22.400000000000006,
+   "pivotY": -0.10000000000002274,
+   "fullW": 229,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zakrello/legs-back.webp",
+   "x": 0,
+   "y": 147,
+   "w": 229,
+   "h": 108,
+   "pivotX": 114.5,
+   "pivotY": 0.8999999999999773,
+   "fullW": 229,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zakrello/torso-back.webp",
+   "x": 13,
+   "y": 61,
+   "w": 196,
+   "h": 86,
+   "pivotX": 101.5,
+   "pivotY": 86.89999999999998,
+   "fullW": 229,
+   "fullH": 255
+  }
+ },
+ "zaku": {
+  "head": {
+   "file": "assets/hd/parts/zaku/head.webp",
+   "x": 5,
+   "y": 0,
+   "w": 115,
+   "h": 62,
+   "pivotX": 55.0,
+   "pivotY": 61.44,
+   "fullW": 120,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/zaku/torso.webp",
+   "x": 41,
+   "y": 62,
+   "w": 39,
+   "h": 87,
+   "pivotX": 19.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 120,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zaku/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 41,
+   "h": 87,
+   "pivotX": 40.8,
+   "pivotY": 14.36,
+   "fullW": 120,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zaku/arm-r.webp",
+   "x": 80,
+   "y": 62,
+   "w": 30,
+   "h": 87,
+   "pivotX": -0.7999999999999972,
+   "pivotY": 14.36,
+   "fullW": 120,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zaku/leg-l.webp",
+   "x": 19,
+   "y": 149,
+   "w": 41,
+   "h": 107,
+   "pivotX": 29.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 120,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zaku/leg-r.webp",
+   "x": 60,
+   "y": 149,
+   "w": 45,
+   "h": 107,
+   "pivotX": 12.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 120,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zaku/legs-back.webp",
+   "x": 19,
+   "y": 148,
+   "w": 86,
+   "h": 108,
+   "pivotX": 41.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 120,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zaku/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 110,
+   "h": 87,
+   "pivotX": 60.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 120,
+   "fullH": 256
+  }
+ },
+ "zaku3": {
+  "head": {
+   "file": "assets/hd/parts/zaku3/head.webp",
+   "x": 7,
+   "y": 0,
+   "w": 147,
+   "h": 62,
+   "pivotX": 71.5,
+   "pivotY": 61.44,
+   "fullW": 157,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/zaku3/torso.webp",
+   "x": 54,
+   "y": 62,
+   "w": 50,
+   "h": 87,
+   "pivotX": 24.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 157,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zaku3/arm-l.webp",
+   "x": 0,
+   "y": 62,
+   "w": 54,
+   "h": 87,
+   "pivotX": 53.379999999999995,
+   "pivotY": 14.36,
+   "fullW": 157,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zaku3/arm-r.webp",
+   "x": 104,
+   "y": 62,
+   "w": 46,
+   "h": 87,
+   "pivotX": -0.37999999999999545,
+   "pivotY": 14.36,
+   "fullW": 157,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zaku3/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 79,
+   "h": 107,
+   "pivotX": 62.8,
+   "pivotY": -0.5200000000000102,
+   "fullW": 157,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zaku3/leg-r.webp",
+   "x": 79,
+   "y": 149,
+   "w": 78,
+   "h": 100,
+   "pivotX": 15.200000000000003,
+   "pivotY": -0.5200000000000102,
+   "fullW": 157,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zaku3/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 157,
+   "h": 108,
+   "pivotX": 78.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 157,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zaku3/torso-back.webp",
+   "x": 0,
+   "y": 61,
+   "w": 150,
+   "h": 87,
+   "pivotX": 78.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 157,
+   "fullH": 256
+  }
+ },
+ "zaku3kai": {
+  "head": {
+   "file": "assets/hd/parts/zaku3kai/head.webp",
+   "x": 11,
+   "y": 0,
+   "w": 112,
+   "h": 62,
+   "pivotX": 67.0,
+   "pivotY": 61.44,
+   "fullW": 156,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/zaku3kai/torso.webp",
+   "x": 54,
+   "y": 62,
+   "w": 49,
+   "h": 87,
+   "pivotX": 24.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 156,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zaku3kai/arm-l.webp",
+   "x": 9,
+   "y": 62,
+   "w": 45,
+   "h": 87,
+   "pivotX": 44.04,
+   "pivotY": 14.36,
+   "fullW": 156,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zaku3kai/arm-r.webp",
+   "x": 103,
+   "y": 62,
+   "w": 19,
+   "h": 87,
+   "pivotX": -0.03999999999999204,
+   "pivotY": 14.36,
+   "fullW": 156,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zaku3kai/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 78,
+   "h": 94,
+   "pivotX": 62.4,
+   "pivotY": -0.5200000000000102,
+   "fullW": 156,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zaku3kai/leg-r.webp",
+   "x": 78,
+   "y": 149,
+   "w": 78,
+   "h": 107,
+   "pivotX": 15.599999999999994,
+   "pivotY": -0.5200000000000102,
+   "fullW": 156,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zaku3kai/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 156,
+   "h": 108,
+   "pivotX": 78.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 156,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zaku3kai/torso-back.webp",
+   "x": 9,
+   "y": 61,
+   "w": 113,
+   "h": 87,
+   "pivotX": 69.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 156,
+   "fullH": 256
+  }
+ },
+ "zen2": {
+  "head": {
+   "file": "assets/hd/parts/zen2/head.webp",
+   "x": 0,
+   "y": 0,
+   "w": 152,
+   "h": 62,
+   "pivotX": 84.5,
+   "pivotY": 61.44,
+   "fullW": 169,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/zen2/torso.webp",
+   "x": 58,
+   "y": 62,
+   "w": 54,
+   "h": 87,
+   "pivotX": 26.5,
+   "pivotY": 86.47999999999999,
+   "fullW": 169,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zen2/arm-l.webp",
+   "x": 11,
+   "y": 62,
+   "w": 47,
+   "h": 87,
+   "pivotX": 46.46,
+   "pivotY": 14.36,
+   "fullW": 169,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zen2/arm-r.webp",
+   "x": 112,
+   "y": 62,
+   "w": 57,
+   "h": 87,
+   "pivotX": -0.46000000000000796,
+   "pivotY": 14.36,
+   "fullW": 169,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zen2/leg-l.webp",
+   "x": 40,
+   "y": 149,
+   "w": 45,
+   "h": 107,
+   "pivotX": 27.599999999999994,
+   "pivotY": -0.5200000000000102,
+   "fullW": 169,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zen2/leg-r.webp",
+   "x": 85,
+   "y": 149,
+   "w": 78,
+   "h": 86,
+   "pivotX": 16.400000000000006,
+   "pivotY": -0.5200000000000102,
+   "fullW": 169,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zen2/legs-back.webp",
+   "x": 40,
+   "y": 148,
+   "w": 123,
+   "h": 108,
+   "pivotX": 44.5,
+   "pivotY": 0.47999999999998977,
+   "fullW": 169,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zen2/torso-back.webp",
+   "x": 8,
+   "y": 61,
+   "w": 161,
+   "h": 87,
+   "pivotX": 76.5,
+   "pivotY": 87.47999999999999,
+   "fullW": 169,
+   "fullH": 256
+  }
+ },
+ "zeta": {
+  "head": {
+   "file": "assets/hd/parts/zeta/head.webp",
+   "x": 25,
+   "y": 0,
+   "w": 111,
+   "h": 62,
+   "pivotX": 50.0,
+   "pivotY": 61.44,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "torso": {
+   "file": "assets/hd/parts/zeta/torso.webp",
+   "x": 51,
+   "y": 62,
+   "w": 49,
+   "h": 87,
+   "pivotX": 24.0,
+   "pivotY": 86.47999999999999,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zeta/arm-l.webp",
+   "x": 25,
+   "y": 62,
+   "w": 26,
+   "h": 57,
+   "pivotX": 26.0,
+   "pivotY": 14.36,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zeta/arm-r.webp",
+   "x": 100,
+   "y": 62,
+   "w": 48,
+   "h": 87,
+   "pivotX": -1.0,
+   "pivotY": 14.36,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zeta/leg-l.webp",
+   "x": 0,
+   "y": 149,
+   "w": 75,
+   "h": 107,
+   "pivotX": 60.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zeta/leg-r.webp",
+   "x": 75,
+   "y": 149,
+   "w": 75,
+   "h": 100,
+   "pivotX": 15.0,
+   "pivotY": -0.5200000000000102,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zeta/legs-back.webp",
+   "x": 0,
+   "y": 148,
+   "w": 150,
+   "h": 108,
+   "pivotX": 75.0,
+   "pivotY": 0.47999999999998977,
+   "fullW": 150,
+   "fullH": 256
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zeta/torso-back.webp",
+   "x": 25,
+   "y": 61,
+   "w": 123,
+   "h": 87,
+   "pivotX": 50.0,
+   "pivotY": 87.47999999999999,
+   "fullW": 150,
+   "fullH": 256
+  }
+ },
+ "zusa": {
+  "head": {
+   "file": "assets/hd/parts/zusa/head.webp",
+   "x": 3,
+   "y": 0,
+   "w": 140,
+   "h": 62,
+   "pivotX": 81.5,
+   "pivotY": 61.199999999999996,
+   "fullW": 169,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/zusa/torso.webp",
+   "x": 58,
+   "y": 62,
+   "w": 54,
+   "h": 86,
+   "pivotX": 26.5,
+   "pivotY": 85.89999999999998,
+   "fullW": 169,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zusa/arm-l.webp",
+   "x": 2,
+   "y": 62,
+   "w": 56,
+   "h": 86,
+   "pivotX": 55.46,
+   "pivotY": 14.299999999999997,
+   "fullW": 169,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zusa/arm-r.webp",
+   "x": 112,
+   "y": 62,
+   "w": 26,
+   "h": 86,
+   "pivotX": -0.46000000000000796,
+   "pivotY": 14.299999999999997,
+   "fullW": 169,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zusa/leg-l.webp",
+   "x": 0,
+   "y": 148,
+   "w": 85,
+   "h": 107,
+   "pivotX": 67.6,
+   "pivotY": -0.10000000000002274,
+   "fullW": 169,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zusa/leg-r.webp",
+   "x": 85,
+   "y": 148,
+   "w": 84,
+   "h": 101,
+   "pivotX": 16.400000000000006,
+   "pivotY": -0.10000000000002274,
+   "fullW": 169,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zusa/legs-back.webp",
+   "x": 0,
+   "y": 147,
+   "w": 169,
+   "h": 108,
+   "pivotX": 84.5,
+   "pivotY": 0.8999999999999773,
+   "fullW": 169,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zusa/torso-back.webp",
+   "x": 2,
+   "y": 61,
+   "w": 136,
+   "h": 86,
+   "pivotX": 82.5,
+   "pivotY": 86.89999999999998,
+   "fullW": 169,
+   "fullH": 255
+  }
+ },
+ "zz": {
+  "head": {
+   "file": "assets/hd/parts/zz/head.webp",
+   "x": 7,
+   "y": 0,
+   "w": 135,
+   "h": 62,
+   "pivotX": 78.5,
+   "pivotY": 61.199999999999996,
+   "fullW": 171,
+   "fullH": 255
+  },
+  "torso": {
+   "file": "assets/hd/parts/zz/torso.webp",
+   "x": 59,
+   "y": 62,
+   "w": 54,
+   "h": 86,
+   "pivotX": 26.5,
+   "pivotY": 85.89999999999998,
+   "fullW": 171,
+   "fullH": 255
+  },
+  "arm-l": {
+   "file": "assets/hd/parts/zz/arm-l.webp",
+   "x": 17,
+   "y": 62,
+   "w": 42,
+   "h": 86,
+   "pivotX": 41.14,
+   "pivotY": 14.299999999999997,
+   "fullW": 171,
+   "fullH": 255
+  },
+  "arm-r": {
+   "file": "assets/hd/parts/zz/arm-r.webp",
+   "x": 113,
+   "y": 62,
+   "w": 58,
+   "h": 86,
+   "pivotX": -0.14000000000000057,
+   "pivotY": 14.299999999999997,
+   "fullW": 171,
+   "fullH": 255
+  },
+  "leg-l": {
+   "file": "assets/hd/parts/zz/leg-l.webp",
+   "x": 0,
+   "y": 148,
+   "w": 86,
+   "h": 107,
+   "pivotX": 68.4,
+   "pivotY": -0.10000000000002274,
+   "fullW": 171,
+   "fullH": 255
+  },
+  "leg-r": {
+   "file": "assets/hd/parts/zz/leg-r.webp",
+   "x": 86,
+   "y": 148,
+   "w": 76,
+   "h": 97,
+   "pivotX": 16.599999999999994,
+   "pivotY": -0.10000000000002274,
+   "fullW": 171,
+   "fullH": 255
+  },
+  "legs-back": {
+   "file": "assets/hd/parts/zz/legs-back.webp",
+   "x": 0,
+   "y": 147,
+   "w": 162,
+   "h": 108,
+   "pivotX": 85.5,
+   "pivotY": 0.8999999999999773,
+   "fullW": 171,
+   "fullH": 255
+  },
+  "torso-back": {
+   "file": "assets/hd/parts/zz/torso-back.webp",
+   "x": 17,
+   "y": 61,
+   "w": 154,
+   "h": 86,
+   "pivotX": 68.5,
+   "pivotY": 86.89999999999998,
+   "fullW": 171,
+   "fullH": 255
+  }
+ }
+}

@@ -1,0 +1,83 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "2458adf3-5054-4a12-b654-6fc9b6abf720",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "ee525": {
+      "importer": "gltf-animation",
+      "uuid": "2458adf3-5054-4a12-b654-6fc9b6abf720@ee525",
+      "displayName": "",
+      "id": "ee525",
+      "name": "win.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.3333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "4bbb8": {
+      "importer": "gltf-scene",
+      "uuid": "2458adf3-5054-4a12-b654-6fc9b6abf720@4bbb8",
+      "displayName": "",
+      "id": "4bbb8",
+      "name": "player@win.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "win",
+            "from": 0,
+            "to": 3.3333332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "2458adf3-5054-4a12-b654-6fc9b6abf720@4bbb8",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "2458adf3-5054-4a12-b654-6fc9b6abf720@4bbb8"
+      ]
+    }
+  }
+}

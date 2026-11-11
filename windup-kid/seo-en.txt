@@ -1,0 +1,16 @@
+Title: WIND-UP KID — Free 2.5D Platformer Game
+
+Description:
+WIND-UP KID is a free 2.5D side-scrolling platformer set in a wooden toy-box world.
+Play a wind-up puppet: run, jump, stomp clockwork beetles, kick turtle shells, break
+crates, grow big with a spring coil, and throw fireballs as a fire form.
+
+- 3 handcrafted levels across a sunset toy-box valley
+- Tight platforming: coyote time, jump buffering, variable jump height
+- Enemies with personality: patrolling beetles and kickable shells
+- 3-star scoring: clear the level, collect 80% of gears, take no damage
+- Keyboard and touch controls, English and Chinese
+- Plays instantly in the browser — no download, no account
+
+Keywords: platformer, 2.5D, side scroller, mario-like, jump and run, retro, web game,
+free online game, browser game, puzzle platformer, kids, casual

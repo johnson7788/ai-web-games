@@ -1,0 +1,19 @@
+Title: RED FORTRESS — Free Top-Down Jeep Shooter Game
+
+Description:
+RED FORTRESS is a free top-down vertical-scrolling vehicle shooter in your browser.
+Drive the last jeep into the enemy fortress, tear through the defense with a machine gun
+and grenades, and ferry a chain of rescued POWs back to the helipad — the more you save,
+the harder you hit.
+
+- 4 handcrafted themed stages: Jungle Dawn, River Crossing, Desert Outpost, Red Fortress
+- Signature mechanic: POWs trail behind your jeep; deliver 8 in one stage to call a gunship airstrike
+- Grenades blast sandbag walls and wipe enemy bullets; the terrain stays scarred
+- 7 enemy types and 2 bosses: a heavy tank and the Fortress Core (4 cannons → shield down → core)
+- Choose 1 of 3 upgrades between stages, 8 stackable mods: AP rounds, twin gun, HE grenade, turbo…
+- 3 lives, English and Chinese, keyboard/mouse and mobile touch
+- Plays instantly in the browser — no download, no account, works offline
+
+Keywords: top down shooter, vehicle shooter, jeep, run and gun, vertical scroller, arcade,
+retro, pixel art, classic remake, rescue, tank, boss fight, twin stick, browser game,
+free online game, HTML5 game

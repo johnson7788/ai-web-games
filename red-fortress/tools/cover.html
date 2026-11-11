@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>RED FORTRESS cover</title>
+<style>
+  :root { --s: calc(100vw / 1920); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0605; }
+  body { font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", ui-monospace, monospace; }
+  .poster {
+    position: relative; width: 100vw; height: 56.25vw; max-height: 100vh; overflow: hidden;
+    background: #0a0605;
+  }
+  .art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .shade {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(8,4,3,.82) 0%, rgba(8,4,3,.38) 34%, rgba(8,4,3,0) 58%),
+      linear-gradient(90deg, rgba(8,4,3,.85) 0%, rgba(8,4,3,.25) 46%, rgba(8,4,3,0) 70%),
+      radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%);
+  }
+  .grain {
+    position: absolute; inset: 0; opacity: .16; mix-blend-mode: overlay;
+    background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.09) 0 1px, transparent 1px 3px);
+  }
+  .content { position: absolute; left: calc(84 * var(--s)); top: calc(58 * var(--s)); right: calc(84 * var(--s)); }
+  .kicker {
+    font-size: calc(17 * var(--s)); letter-spacing: calc(9 * var(--s)); color: #ffb347;
+    text-transform: uppercase; margin-bottom: calc(10 * var(--s));
+  }
+  .title-zh {
+    font-size: calc(148 * var(--s)); line-height: .92; font-weight: 900; letter-spacing: calc(6 * var(--s));
+    color: #f5e6c8;
+    text-shadow:
+      0 calc(5 * var(--s)) 0 #7d1a12,
+      0 calc(10 * var(--s)) calc(30 * var(--s)) rgba(0,0,0,.8),
+      0 0 calc(70 * var(--s)) rgba(255,77,58,.35);
+    -webkit-text-stroke: calc(2 * var(--s)) #2a0c08;
+  }
+  .title-zh em { font-style: normal; color: #ff4d3a; }
+  .title-en {
+    margin-top: calc(14 * var(--s)); font-size: calc(46 * var(--s)); letter-spacing: calc(20 * var(--s));
+    color: #ffd166; font-weight: 700;
+  }
+  .tagline {
+    margin-top: calc(20 * var(--s)); font-size: calc(25 * var(--s)); color: #e8d8bd;
+    letter-spacing: calc(2 * var(--s));
+  }
+  .badges { position: absolute; left: calc(84 * var(--s)); bottom: calc(62 * var(--s)); display: flex; gap: calc(12 * var(--s)); flex-wrap: wrap; max-width: 62%; }
+  .badge {
+    border: calc(2 * var(--s)) solid rgba(255,179,71,.65); background: rgba(12,7,5,.72);
+    color: #f2e8d5; font-size: calc(19 * var(--s)); letter-spacing: calc(2 * var(--s));
+    padding: calc(9 * var(--s)) calc(18 * var(--s));
+  }
+  .badge b { color: #ffd166; }
+  .corner {
+    position: absolute; right: calc(84 * var(--s)); bottom: calc(62 * var(--s)); text-align: right;
+    color: #b9a98f; font-size: calc(18 * var(--s)); letter-spacing: calc(3 * var(--s)); line-height: 1.6;
+  }
+  .corner b { color: #6fe3c1; font-weight: 700; }
+  .stripe {
+    position: absolute; left: 0; right: 0; top: 0; height: calc(10 * var(--s));
+    background: repeating-linear-gradient(90deg, #ff4d3a 0 calc(60 * var(--s)), #1a0d09 calc(60 * var(--s)) calc(120 * var(--s)));
+    opacity: .85;
+  }
+</style>
+</head>
+<body>
+  <div class="poster" id="poster">
+    <img class="art" src="../assets/art/cover-art.jpg" alt="">
+    <div class="shade"></div>
+    <div class="grain"></div>
+    <div class="stripe"></div>
+    <div class="content">
+      <div class="kicker">1989 · 赤色要塞 · 铁马小队</div>
+      <div class="title-zh">赤色<em>要塞</em></div>
+      <div class="title-en">RED FORTRESS</div>
+      <div class="tagline">救人，然后炸平一切。</div>
+    </div>
+    <div class="badges">
+      <span class="badge"><b>4</b> 张主题关卡</span>
+      <span class="badge"><b>7</b> 种敌军单位</span>
+      <span class="badge"><b>2</b> 场 Boss 战</span>
+      <span class="badge">战俘尾巴 · 直升机空袭</span>
+    </div>
+    <div class="corner">
+      <div>网页直开 · 免安装</div>
+      <div>键盘 / 鼠标 / <b>触屏</b></div>
+      <div>中文 · English</div>
+    </div>
+  </div>
+</body>
+</html>

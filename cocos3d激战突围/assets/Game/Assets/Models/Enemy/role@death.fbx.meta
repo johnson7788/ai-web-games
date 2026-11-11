@@ -1,0 +1,84 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "75fa44b5-fd42-4eb1-9faf-a844c3f2d16e",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "c52b3": {
+      "importer": "gltf-animation",
+      "uuid": "75fa44b5-fd42-4eb1-9faf-a844c3f2d16e@c52b3",
+      "displayName": "",
+      "id": "c52b3",
+      "name": "death.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 1,
+        "sample": 60,
+        "span": {
+          "from": 0,
+          "to": 3.3333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "f2df3": {
+      "importer": "gltf-scene",
+      "uuid": "75fa44b5-fd42-4eb1-9faf-a844c3f2d16e@f2df3",
+      "displayName": "",
+      "id": "f2df3",
+      "name": "role@death.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "death",
+            "from": 0,
+            "to": 3.3333332538604736,
+            "fps": 60,
+            "wrapMode": 1
+          }
+        ]
+      }
+    ],
+    "redirect": "75fa44b5-fd42-4eb1-9faf-a844c3f2d16e@f2df3",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "75fa44b5-fd42-4eb1-9faf-a844c3f2d16e@f2df3"
+      ]
+    }
+  }
+}

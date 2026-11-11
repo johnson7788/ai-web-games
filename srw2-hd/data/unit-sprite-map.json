@@ -1,0 +1,427 @@
+{
+ "ガンダム": {
+  "sprite": "gundam",
+  "name": "高达",
+  "en": "Gundam"
+ },
+ "Ｚガンダム": {
+  "sprite": "zeta",
+  "name": "Z高达",
+  "en": "Z Gundam"
+ },
+ "νガンダム": {
+  "sprite": "nu",
+  "name": "ν高达",
+  "en": "ν Gundam"
+ },
+ "ＺＺガンダム": {
+  "sprite": "zz",
+  "name": "ZZ高达",
+  "en": "ZZ Gundam"
+ },
+ "F-91": {
+  "sprite": "f91",
+  "name": "F91",
+  "en": "F91"
+ },
+ "メタス": {
+  "sprite": "metz",
+  "name": "米塔斯",
+  "en": "Methuss"
+ },
+ "アフロダイＡ": {
+  "sprite": "aphrodite",
+  "name": "阿芙罗迪A",
+  "en": "Aphrodite A"
+ },
+ "マジンガーＺ": {
+  "sprite": "mazinger",
+  "name": "魔神Z",
+  "en": "Mazinger Z"
+ },
+ "グレートマジンガー": {
+  "sprite": "great",
+  "name": "大魔神",
+  "en": "Great Mazinger"
+ },
+ "グレンダイザー": {
+  "sprite": "grendizer",
+  "name": "古连泰沙",
+  "en": "Grendizer"
+ },
+ "ダイ": {
+  "sprite": "daitarn",
+  "name": "戴莫斯",
+  "en": "Daimos"
+ },
+ "ゲッター１": {
+  "sprite": "getter",
+  "name": "盖塔1",
+  "en": "Getter-1"
+ },
+ "ゲッターロボＧ": {
+  "sprite": "getterg",
+  "name": "盖塔G",
+  "en": "Getter Robo G"
+ },
+ "ゲッターＱ": {
+  "sprite": "getterq",
+  "name": "盖塔Q",
+  "en": "Getter Q"
+ },
+ "テキサスマック": {
+  "sprite": "texas",
+  "name": "德州麦克",
+  "en": "Texas Mack"
+ },
+ "ホワイトベース": {
+  "sprite": "whitebase",
+  "name": "白色要塞",
+  "en": "White Base"
+ },
+ "アーガマ": {
+  "sprite": "argama",
+  "name": "亚加玛",
+  "en": "Argama"
+ },
+ "ネェル・アーガマ": {
+  "sprite": "neelagama",
+  "name": "拟·亚加玛",
+  "en": "Nahel Argama"
+ },
+ "ラー・カイラム": {
+  "sprite": "racalium",
+  "name": "拉·凯拉姆",
+  "en": "Ra Cailum"
+ },
+ "ミデア": {
+  "sprite": "midia",
+  "name": "米迪亚",
+  "en": "Medea"
+ },
+ "ボスボロット": {
+  "sprite": "bosses",
+  "name": "波士机器人",
+  "en": "Boss Borot"
+ },
+ "サイバスター": {
+  "sprite": "cybuster",
+  "name": "塞巴斯塔",
+  "en": "Cybuster"
+ },
+ "ミネルバＸ": {
+  "sprite": "minervaX",
+  "name": "密涅瓦X",
+  "en": "Minerva X"
+ },
+ "ギャン": {
+  "sprite": "gyan",
+  "name": "强人",
+  "en": "Gyan"
+ },
+ "ザク": {
+  "sprite": "zaku",
+  "name": "扎古Ⅱ",
+  "en": "Zaku II"
+ },
+ "赤ザク": {
+  "sprite": "redzaku",
+  "name": "红色扎古",
+  "en": "Red Zaku"
+ },
+ "ザクⅢ": {
+  "sprite": "zaku3",
+  "name": "扎古Ⅲ",
+  "en": "Zaku III"
+ },
+ "ザクⅢ改": {
+  "sprite": "zaku3kai",
+  "name": "扎古Ⅲ改",
+  "en": "Zaku III Custom"
+ },
+ "ドライセン": {
+  "sprite": "dreissen",
+  "name": "德莱森",
+  "en": "Dreissen"
+ },
+ "バウ": {
+  "sprite": "bau",
+  "name": "巴乌",
+  "en": "Bawoo"
+ },
+ "マラサイ": {
+  "sprite": "marasai",
+  "name": "马拉赛",
+  "en": "Marasai"
+ },
+ "ガザＣ": {
+  "sprite": "gazaC",
+  "name": "加撒C",
+  "en": "Gaza C"
+ },
+ "ギラ・ドーガ": {
+  "sprite": "giradoga",
+  "name": "基拉·德卡",
+  "en": "Geara Doga"
+ },
+ "ズサ": {
+  "sprite": "zusa",
+  "name": "兹萨",
+  "en": "Zssa"
+ },
+ "ヤクト・ドーガ": {
+  "sprite": "yact",
+  "name": "亚克托·德卡",
+  "en": "Jagd Doga"
+ },
+ "ドーベンウルフ": {
+  "sprite": "doven",
+  "name": "多本·沃尔夫",
+  "en": "Doven Wolf"
+ },
+ "ハンブラビ": {
+  "sprite": "hambrabi",
+  "name": "汉布拉比",
+  "en": "Hambrabi"
+ },
+ "ジャムルフィン": {
+  "sprite": "jamrufin",
+  "name": "贾姆鲁芬",
+  "en": "Jamru Fin"
+ },
+ "ゲーマルク": {
+  "sprite": "geymalk",
+  "name": "盖马尔克",
+  "en": "Geymalk"
+ },
+ "パラス・アテネ": {
+  "sprite": "palace",
+  "name": "帕拉斯·雅典娜",
+  "en": "Palace Athene"
+ },
+ "ドム": {
+  "sprite": "dom",
+  "name": "德姆",
+  "en": "Dom"
+ },
+ "ハイゴッグ": {
+  "sprite": "hygogg",
+  "name": "高战蟹",
+  "en": "Hygogg"
+ },
+ "ズゴックＥ": {
+  "sprite": "gogge",
+  "name": "兹高克E",
+  "en": "Z'Gok E"
+ },
+ "グフ": {
+  "sprite": "gyan",
+  "name": "古夫",
+  "en": "Gouf"
+ },
+ "バイアラン": {
+  "sprite": "byarlant",
+  "name": "拜亚兰",
+  "en": "Byarlant"
+ },
+ "アッシマー": {
+  "sprite": "asshimar",
+  "name": "阿西玛",
+  "en": "Asshimar"
+ },
+ "ボング": {
+  "sprite": "bog",
+  "name": "邦格",
+  "en": "Bong"
+ },
+ "ザクレロ": {
+  "sprite": "zakrello",
+  "name": "扎古雷罗",
+  "en": "Zakrello"
+ },
+ "シグ": {
+  "sprite": "sig",
+  "name": "希格",
+  "en": "Zig"
+ },
+ "エルメス": {
+  "sprite": "elmes",
+  "name": "艾尔美斯",
+  "en": "Elmeth"
+ },
+ "メッサーラ": {
+  "sprite": "messala",
+  "name": "梅萨拉",
+  "en": "Messala"
+ },
+ "ビギナ・ギナ": {
+  "sprite": "beguina",
+  "name": "比基纳·基纳",
+  "en": "Begina Gina"
+ },
+ "キュベレイ": {
+  "sprite": "quin",
+  "name": "卡碧尼",
+  "en": "Qubeley"
+ },
+ "キュベレイmkⅡ": {
+  "sprite": "quin",
+  "name": "卡碧尼MkⅡ",
+  "en": "Qubeley Mk-II"
+ },
+ "サイコガンダム": {
+  "sprite": "psyco",
+  "name": "精神感应高达",
+  "en": "Psycho Gundam"
+ },
+ "サイコガンダムmkⅡ": {
+  "sprite": "psyco2",
+  "name": "精神感应高达MkⅡ",
+  "en": "Psycho Gundam Mk-II"
+ },
+ "クインマンサ": {
+  "sprite": "quin",
+  "name": "昆曼沙",
+  "en": "Quin Mantha"
+ },
+ "ビグザム": {
+  "sprite": "bigzam",
+  "name": "比格扎姆",
+  "en": "Big Zam"
+ },
+ "ジ・オ": {
+  "sprite": "gio",
+  "name": "铁奥",
+  "en": "The-O"
+ },
+ "α・アジール": {
+  "sprite": "alpha",
+  "name": "α·阿吉尔",
+  "en": "Alpha Azieru"
+ },
+ "ラフレシア": {
+  "sprite": "rafflesia",
+  "name": "拉芙蕾西亚",
+  "en": "Rafflesia"
+ },
+ "ヴァルシオン": {
+  "sprite": "valshione",
+  "name": "瓦尔西昂",
+  "en": "Valsione"
+ },
+ "グランゾン": {
+  "sprite": "granzon",
+  "name": "古兰森",
+  "en": "Granzon"
+ },
+ "ラインＸ１": {
+  "sprite": "lineX1",
+  "name": "莱茵X1",
+  "en": "Line X1"
+ },
+ "ギルギル": {
+  "sprite": "gigil",
+  "name": "基尔基尔",
+  "en": "Girgil"
+ },
+ "ギルギルガン": {
+  "sprite": "gigilgan",
+  "name": "基尔基尔甘",
+  "en": "Girgilgan"
+ },
+ "ジェノバＭ９": {
+  "sprite": "monster",
+  "name": "杰诺巴M9",
+  "en": "Genob M9"
+ },
+ "ブラッガーＳ１": {
+  "sprite": "brawler",
+  "name": "布拉格S1",
+  "en": "Bragger S1"
+ },
+ "グシオスβⅢ": {
+  "sprite": "gushios",
+  "name": "古西奥斯βⅢ",
+  "en": "Gushios βIII"
+ },
+ "キングゴリ": {
+  "sprite": "kinggori",
+  "name": "金刚猩猩",
+  "en": "King Gori"
+ },
+ "メカ雷獣鬼": {
+  "sprite": "monster",
+  "name": "机械雷兽鬼",
+  "en": "Mecha Raijuuki"
+ },
+ "メカ胡蝶鬼": {
+  "sprite": "monster",
+  "name": "机械胡蝶鬼",
+  "en": "Mecha Kochouki"
+ },
+ "ダブラスＭ２": {
+  "sprite": "dablas",
+  "name": "达布拉斯M2",
+  "en": "Dablas M2"
+ },
+ "ガラダＫ７": {
+  "sprite": "garada",
+  "name": "加拉达K7",
+  "en": "Garada K7"
+ },
+ "ゼンⅡ": {
+  "sprite": "zen2",
+  "name": "宰恩Ⅱ",
+  "en": "Zen II"
+ },
+ "グール": {
+  "sprite": "ghoul",
+  "name": "古尔",
+  "en": "Ghoul"
+ },
+ "ジャラガ": {
+  "sprite": "jalaga",
+  "name": "贾拉加",
+  "en": "Jalaga"
+ },
+ "アルソス": {
+  "sprite": "alsos",
+  "name": "阿尔索斯",
+  "en": "Alsos"
+ },
+ "固定砲台": {
+  "sprite": "turret",
+  "name": "固定炮台",
+  "en": "Fixed Turret"
+ },
+ "発電ミラー": {
+  "sprite": "mirror",
+  "name": "发电镜",
+  "en": "Solar Mirror"
+ },
+ "誘導ミサイル": {
+  "sprite": "missile",
+  "name": "诱导导弹",
+  "en": "Guided Missile"
+ },
+ "バド": {
+  "sprite": "bad",
+  "name": "巴德",
+  "en": "Bado"
+ },
+ "ザイ": {
+  "sprite": "zai",
+  "name": "扎伊",
+  "en": "Zai"
+ },
+ "トロスＤ７": {
+  "sprite": "tros",
+  "name": "特罗斯D7",
+  "en": "Tros D7"
+ },
+ "バウンド・ドック": {
+  "sprite": "bound",
+  "name": "巴恩德克",
+  "en": "Bound Doc"
+ }
+}

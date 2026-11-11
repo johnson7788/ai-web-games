@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "2e73d677-028d-42c5-8195-ed59f0a5153c",
+  "files": [],
+  "subMetas": {
+    "a831e": {
+      "importer": "gltf-mesh",
+      "uuid": "2e73d677-028d-42c5-8195-ed59f0a5153c@a831e",
+      "displayName": "",
+      "id": "a831e",
+      "name": "FinishLine.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d90a4": {
+      "importer": "gltf-material",
+      "uuid": "2e73d677-028d-42c5-8195-ed59f0a5153c@d90a4",
+      "displayName": "",
+      "id": "d90a4",
+      "name": "01 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "72ee3": {
+      "importer": "gltf-scene",
+      "uuid": "2e73d677-028d-42c5-8195-ed59f0a5153c@72ee3",
+      "displayName": "",
+      "id": "72ee3",
+      "name": "FinishLine.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "2e73d677-028d-42c5-8195-ed59f0a5153c@72ee3",
+    "assetFinder": {
+      "meshes": [
+        "2e73d677-028d-42c5-8195-ed59f0a5153c@a831e"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "2e73d677-028d-42c5-8195-ed59f0a5153c@d90a4"
+      ],
+      "scenes": [
+        "2e73d677-028d-42c5-8195-ed59f0a5153c@72ee3"
+      ]
+    }
+  }
+}

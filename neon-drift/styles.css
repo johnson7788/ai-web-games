@@ -1,0 +1,161 @@
+:root{
+  --cyan:#28e0ff; --magenta:#ff2d78; --amber:#ffb347;
+  --ink:rgba(6,8,20,.62); --line:rgba(140,220,255,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#05060e;color:#eaf6ff;
+  font-family:"Arial Black","Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-user-select:none;user-select:none;touch-action:none}
+#app{position:fixed;inset:0}
+canvas{display:block}
+.hidden{display:none !important}
+
+/* ---------- HUD：纯矢量，按 960×540 逻辑坐标缩放 ---------- */
+#hud{position:fixed;inset:0;pointer-events:none;display:grid;place-items:center}
+#stage{width:960px;height:540px;position:relative;transform-origin:center center}
+.shade{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(4,6,16,.55) 0%,transparent 18%,transparent 74%,rgba(4,6,16,.62) 100%)}
+.vignette{position:absolute;inset:0;box-shadow:inset 0 0 220px 40px rgba(0,0,0,.55)}
+
+.topbar{position:absolute;top:18px;left:24px;right:24px;display:flex;align-items:flex-start;justify-content:space-between}
+.pill{background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 14px;
+  color:#dff3ff;font-size:13px;letter-spacing:.14em;backdrop-filter:blur(6px);
+  box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.pill b{color:#fff}
+.pill .dim{color:#8fb6cc;font-weight:400}
+.pill .sep{opacity:.4;margin:0 4px}
+.timer{text-align:center;line-height:1}
+.timer .t{font-size:40px;letter-spacing:.02em;font-variant-numeric:tabular-nums;
+  text-shadow:0 0 18px rgba(40,224,255,.55),0 2px 0 rgba(0,0,0,.5)}
+.timer .l{font-size:11px;letter-spacing:.32em;color:#9fd8ee;margin-top:6px}
+
+.speedwrap{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);
+  width:300px;height:196px;display:grid;place-items:end center}
+.speedwrap svg{position:absolute;inset:0}
+.num{position:relative;bottom:58px;text-align:center;color:#fff;
+  filter:drop-shadow(0 8px 30px rgba(3,6,16,.85))}
+.num .v{font-size:76px;letter-spacing:-.03em;line-height:.9;font-variant-numeric:tabular-nums;
+  text-shadow:0 0 26px rgba(40,224,255,.6),0 4px 0 rgba(0,0,0,.45)}
+.num .u{font-size:12px;letter-spacing:.42em;color:#a9dced;margin-top:4px}
+
+.nitro{position:absolute;left:26px;bottom:30px;width:210px}
+.nitro .lab{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;
+  color:#9fd8ee;margin-bottom:8px}
+.nitro .bar{display:flex;gap:5px}
+.nitro .seg{flex:1;height:12px;border-radius:3px;background:rgba(255,255,255,.10);
+  border:1px solid rgba(120,200,230,.22);transition:background .08s,box-shadow .08s}
+.nitro .seg.on{background:linear-gradient(180deg,#7ff0ff,#16b8e6);
+  box-shadow:0 0 14px rgba(40,224,255,.75),inset 0 1px 0 rgba(255,255,255,.6);border-color:transparent}
+.nitro.ready .seg.on{background:linear-gradient(180deg,#ffe9a8,#ffb347);
+  box-shadow:0 0 16px rgba(255,179,71,.8),inset 0 1px 0 rgba(255,255,255,.6)}
+
+.pos{position:absolute;right:26px;bottom:32px;text-align:right;color:#fff}
+.pos .p{font-size:54px;line-height:.9;text-shadow:0 0 20px rgba(255,45,120,.5)}
+.pos .p small{font-size:20px;color:#9fd8ee;letter-spacing:.1em}
+.pos .d{font-size:10px;letter-spacing:.3em;color:#9fd8ee;margin-top:6px}
+
+/* ---------- 触屏 ---------- */
+#touch{position:absolute;inset:0;pointer-events:none}
+#touch .steer{position:absolute;top:0;bottom:0;width:38%;pointer-events:auto;
+  background:linear-gradient(90deg,rgba(40,224,255,.10),transparent)}
+#touch .steer.right{right:0;background:linear-gradient(270deg,rgba(40,224,255,.10),transparent)}
+#touch .btn{position:absolute;bottom:26px;width:104px;height:104px;border-radius:50%;
+  display:grid;place-items:center;font-size:15px;letter-spacing:.06em;color:#dff3ff;pointer-events:auto;
+  background:rgba(10,20,40,.55);border:2px solid rgba(140,220,255,.45);
+  box-shadow:0 0 24px rgba(40,224,255,.25),inset 0 0 18px rgba(40,224,255,.16)}
+#touch .drift{right:34px}
+#touch .nitro{left:34px;color:#ffe9a8;border-color:rgba(255,179,71,.5);
+  box-shadow:0 0 24px rgba(255,179,71,.25),inset 0 0 18px rgba(255,179,71,.16)}
+#touch .btn.active{transform:scale(.94)}
+
+/* ---------- 屏幕 ---------- */
+.screen{position:fixed;inset:0;display:grid;place-items:center;z-index:20;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(13,22,56,.82) 0%,rgba(7,10,24,.88) 55%,rgba(4,5,12,.93) 100%);
+  backdrop-filter:blur(2px)}
+.bg-glow{position:absolute;width:70vw;height:70vw;border-radius:50%;filter:blur(90px);
+  background:radial-gradient(circle,rgba(40,224,255,.22),transparent 62%);pointer-events:none}
+.title-inner{position:relative;text-align:center}
+.logo{font-size:76px;letter-spacing:.06em;line-height:.9;
+  background:linear-gradient(180deg,#ffffff 10%,#8fe9ff 55%,#28a8ff 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 26px rgba(40,224,255,.45))}
+.logo span{display:block;font-size:76px;
+  background:linear-gradient(180deg,#fff 5%,#ff9ec2 50%,#ff2d78 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:10px;font-size:12px;letter-spacing:.6em;color:#8fb6cc}
+.cta{margin-top:34px;padding:16px 54px;border-radius:999px;border:1px solid rgba(140,220,255,.5);
+  background:linear-gradient(180deg,rgba(40,224,255,.28),rgba(40,224,255,.10));
+  color:#eaf9ff;font-size:17px;letter-spacing:.22em;cursor:pointer;
+  box-shadow:0 0 34px rgba(40,224,255,.35),inset 0 1px 0 rgba(255,255,255,.4);
+  font-family:inherit;transition:transform .12s,box-shadow .12s}
+.cta:hover{transform:translateY(-1px);box-shadow:0 0 46px rgba(40,224,255,.5),inset 0 1px 0 rgba(255,255,255,.5)}
+.cta:active{transform:translateY(1px) scale(.99)}
+.hint{margin-top:22px;font-size:12px;color:#7fa3b8;letter-spacing:.06em;font-family:"PingFang SC",sans-serif;font-weight:400}
+.bestline{margin-top:10px;font-size:12px;color:#9fd8ee;letter-spacing:.14em}
+.bestline b{color:#ffd98a}
+
+/* 倒计时 */
+#countdown{position:fixed;inset:0;display:grid;place-items:center;z-index:30;pointer-events:none}
+.cd-num{font-size:190px;color:#fff;letter-spacing:.02em;
+  text-shadow:0 0 60px rgba(40,224,255,.9),0 0 140px rgba(255,45,120,.5);
+  animation:cd .9s ease-out}
+@keyframes cd{0%{transform:scale(1.6);opacity:0}25%{transform:scale(1);opacity:1}100%{transform:scale(.92);opacity:.85}}
+
+/* 结算 */
+.panel{margin-top:150px;min-width:420px;padding:38px 44px;border-radius:22px;text-align:center;
+  background:rgba(8,12,26,.86);border:1px solid rgba(140,220,255,.24);
+  box-shadow:0 24px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+.r-title{font-size:26px;letter-spacing:.3em;color:#bff0ff}
+.r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 8px}
+.r-grid div{background:rgba(255,255,255,.04);border:1px solid rgba(140,220,255,.14);
+  border-radius:12px;padding:12px 8px}
+.r-grid span{display:block;font-size:10px;letter-spacing:.2em;color:#8fb6cc}
+.r-grid b{display:block;margin-top:8px;font-size:18px;color:#fff;font-variant-numeric:tabular-nums}
+.newrec{margin-top:16px;font-size:13px;letter-spacing:.3em;color:#ffd98a;
+  text-shadow:0 0 18px rgba(255,179,71,.7)}
+.panel .cta{margin-top:26px}
+
+@media (max-width:520px){
+  .logo,.logo span{font-size:48px}
+  .sub{font-size:10px;letter-spacing:.4em}
+  .cta{padding:14px 38px;font-size:15px}
+  .panel{min-width:0;width:88vw;padding:26px 22px}
+  .r-grid b{font-size:15px}
+}
+
+
+/* 竖屏提示：3D 赛车必须横屏 */
+#rotate{display:none;position:fixed;inset:0;z-index:60;background:#04060e;
+  color:#dff3ff;text-align:center;place-items:center;align-content:center;gap:14px}
+.rot-icon{font-size:64px;color:#28e0ff;filter:drop-shadow(0 0 24px rgba(40,224,255,.6))}
+.rot-sub{font-size:10px;letter-spacing:.36em;color:#7fa3b8}
+@media (orientation: portrait) and (pointer: coarse){
+  #rotate{display:grid}
+  #hud,#title{display:none !important}
+}
+
+/* ---------- 赛道 / 赛车选择 ---------- */
+.pickers{display:flex;gap:26px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.picker{text-align:left}
+.plabel{font-size:10px;letter-spacing:.34em;color:#7fa3b8;margin-bottom:8px}
+.cards{display:flex;gap:10px}
+.card{width:118px;padding:0 0 8px;border-radius:12px;overflow:hidden;cursor:pointer;
+  background:rgba(10,16,30,.72);border:1px solid rgba(140,220,255,.18);
+  color:#cfe8f5;font-family:inherit;text-align:center;transition:transform .12s,border-color .12s,box-shadow .12s}
+.card:hover{transform:translateY(-2px);border-color:rgba(140,220,255,.45)}
+.card.on{border-color:rgba(40,224,255,.85);box-shadow:0 0 22px rgba(40,224,255,.35),inset 0 0 18px rgba(40,224,255,.12)}
+.card img{width:100%;height:66px;object-fit:cover;display:block;opacity:.85}
+.card.on img{opacity:1}
+.card span{display:block;font-size:12px;letter-spacing:.08em;margin-top:6px}
+.card em{display:block;font-style:normal;font-size:8px;letter-spacing:.18em;color:#7fa3b8;margin-top:3px}
+.card.car{padding-top:6px;height:112px;
+  background-image:linear-gradient(180deg,rgba(6,10,22,.35),rgba(6,10,22,.88)),url(assets/garage.jpg);
+  background-size:cover;background-position:center}
+.card.car.on{background-image:linear-gradient(180deg,rgba(6,20,34,.25),rgba(4,14,26,.86)),url(assets/garage.jpg)}
+.card.car svg{width:100%;height:64px;display:block}
+@media (max-height:760px){
+  .pickers{margin-top:14px;gap:14px}
+  .card{width:100px}
+  .card.car{height:100px}
+  .card img{height:56px}
+}

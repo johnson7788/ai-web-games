@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>LAST LINE — 最后一笔</title>
+  <meta name="description" content="The world is a drawing and the ink is running out. A ragdoll stickman shooter about the last unfinished stroke.">
+  <meta name="theme-color" content="#f2eee3">
+  <meta property="og:title" content="LAST LINE — 最后一笔">
+  <meta property="og:description" content="An ink-drawn ragdoll shooter. Recoil pushes you. Ink is your blood.">
+  <meta property="og:image" content="./post.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="./post.jpg">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game" aria-label="LAST LINE game canvas"></canvas>
+
+  <!-- HUD（DOM 层，ui.js 负责更新；不要放进 canvas） -->
+  <div id="hud" class="is-hidden" aria-live="off">
+    <div class="hud-left">
+      <div class="hud-ink">
+        <div class="hud-ink-label" data-i18n="hud.ink">墨</div>
+        <div class="hud-ink-bar"><div id="hud-ink-fill"></div><div id="hud-ink-ghost"></div></div>
+        <div class="hud-ink-num"><span id="hud-ink-text">100</span></div>
+      </div>
+      <div class="hud-dash" id="hud-dash"><i></i><i></i></div>
+    </div>
+    <div class="hud-center">
+      <div id="hud-act" class="hud-act"></div>
+      <div id="hud-wave" class="hud-wave"></div>
+      <div id="hud-combo" class="hud-combo is-hidden"></div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-score"><span id="hud-score">0</span><small data-i18n="hud.score">分</small></div>
+      <div class="hud-weapon"><span id="hud-weapon">铅笔</span><span id="hud-ammo">12</span></div>
+    </div>
+    <div id="hud-boss" class="hud-boss is-hidden">
+      <div class="hud-boss-name" data-i18n="boss.name">空白</div>
+      <div class="hud-boss-bar"><div id="hud-boss-fill"></div></div>
+    </div>
+    <div id="hud-tip" class="hud-tip"></div>
+  </div>
+
+  <!-- 触屏控制（仅触屏设备显示） -->
+  <div id="touch" class="is-hidden">
+    <div id="stick" class="stick"><div id="stick-knob"></div></div>
+    <div class="touch-btns">
+      <button id="t-melee" class="tbtn small" data-i18n="touch.melee">锋</button>
+      <button id="t-dash" class="tbtn small" data-i18n="touch.dash">冲</button>
+      <button id="t-jump" class="tbtn" data-i18n="touch.jump">跳</button>
+      <button id="t-fire" class="tbtn fire" data-i18n="touch.fire">射</button>
+      <button id="t-reload" class="tbtn tiny" data-i18n="touch.reload">换</button>
+    </div>
+  </div>
+
+  <!-- 屏幕层 -->
+  <main id="screens">
+    <section class="screen" data-screen="loading">
+      <div class="load-wrap">
+        <div class="load-mark"></div>
+        <div class="load-title">LAST LINE</div>
+        <div class="load-bar"><div id="loading-fill"></div></div>
+        <div class="load-meta"><span id="loading-pct">0%</span><span data-i18n="loading">正在研墨</span></div>
+        <div class="load-tip" id="loading-tip" data-i18n="load.tip.1">墨就是你的血。</div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="title">
+      <div class="title-wrap">
+        <div class="title-logo">
+          <h1 class="logo-main">LAST LINE</h1>
+          <div class="logo-sub" data-i18n="subtitle">最后一笔</div>
+          <div class="logo-tag" data-i18n="tagline">墨干了，世界开始消失。</div>
+        </div>
+        <nav class="title-menu">
+          <button id="btn-play" class="btn primary" data-i18n="play">落笔</button>
+          <button id="btn-continue" class="btn is-hidden" data-i18n="continue">继续</button>
+          <button id="btn-gallery" class="btn ghost" data-i18n="gallery">画册</button>
+          <button id="btn-settings" class="btn ghost" data-i18n="settings">设置</button>
+        </nav>
+        <div class="title-foot">
+          <span id="best-score" data-i18n="bestScore"></span>
+          <span class="title-controls" data-i18n="ctrl.weapons">1 / 2 / 3 换笔</span>
+        </div>
+        <div class="title-credit" data-i18n="settings.credits"></div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="story">
+      <div class="story-wrap">
+        <p id="story-text" class="story-text"></p>
+        <div class="story-foot">
+          <span class="story-tap" data-i18n="tap">点击继续</span>
+          <button id="btn-story-skip" class="btn link" data-i18n="skip">跳过</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="act">
+      <div class="act-wrap">
+        <div class="act-no" id="act-no"></div>
+        <h2 class="act-name" id="act-name"></h2>
+        <div class="act-sub" id="act-sub"></div>
+        <blockquote class="act-quote" id="act-quote"></blockquote>
+        <button id="btn-act-enter" class="btn primary" data-i18n="act.enter">落笔</button>
+        <div class="act-hint" data-i18n="hint.ink">墨就是你的命</div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="upgrade">
+      <div class="upgrade-wrap">
+        <h2 class="screen-title" data-i18n="upgrade.title">补一笔</h2>
+        <div class="screen-sub" data-i18n="upgrade.sub">选一种画法，继续。</div>
+        <div id="upgrade-cards" class="upgrade-cards"></div>
+        <div class="upgrade-foot"><span id="upgrade-ink"></span></div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="actclear">
+      <div class="clear-wrap">
+        <h2 class="screen-title" data-i18n="act.clear">这一幕画完了</h2>
+        <div class="screen-sub" id="clear-sub" data-i18n="act.clearSub">纸还有空。</div>
+        <div class="clear-bonus" id="clear-bonus"></div>
+        <div class="clear-quote" id="clear-quote"></div>
+        <button id="btn-act-continue" class="btn primary" data-i18n="act.continue">下一笔</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="pause">
+      <div class="panel">
+        <h2 class="screen-title" data-i18n="pause.title">暂停</h2>
+        <div class="panel-btns">
+          <button id="btn-resume" class="btn primary" data-i18n="pause.resume">继续画</button>
+          <button id="btn-restart" class="btn ghost" data-i18n="pause.restart">重新落笔</button>
+          <button id="btn-pause-settings" class="btn ghost" data-i18n="pause.settings">设置</button>
+          <button id="btn-quit" class="btn ghost" data-i18n="pause.quit">回到标题</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="settings">
+      <div class="panel settings-panel">
+        <h2 class="screen-title" data-i18n="settings.title">设置</h2>
+        <div class="setting-row">
+          <label data-i18n="settings.music">音乐</label>
+          <input id="set-music" type="range" min="0" max="100" value="55">
+          <span id="set-music-val" class="setting-val">55</span>
+        </div>
+        <div class="setting-row">
+          <label data-i18n="settings.sfx">音效</label>
+          <input id="set-sfx" type="range" min="0" max="100" value="85">
+          <span id="set-sfx-val" class="setting-val">85</span>
+        </div>
+        <div class="setting-row">
+          <label data-i18n="settings.shake">画面震动</label>
+          <button id="set-shake" class="toggle" data-on="true"></button>
+        </div>
+        <div class="setting-row">
+          <label data-i18n="settings.quality">画质</label>
+          <div class="seg" id="set-quality">
+            <button data-value="high" data-i18n="settings.high">高</button>
+            <button data-value="low" data-i18n="settings.low">低</button>
+          </div>
+        </div>
+        <div class="setting-row">
+          <label data-i18n="settings.lang">语言</label>
+          <div class="seg" id="set-lang">
+            <button data-value="zh">中文</button>
+            <button data-value="en">EN</button>
+          </div>
+        </div>
+        <button id="btn-reset" class="btn danger small" data-i18n="settings.reset">清除进度</button>
+        <button id="btn-settings-back" class="btn ghost" data-i18n="settings.back">返回</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="gallery">
+      <div class="panel gallery-panel">
+        <h2 class="screen-title" data-i18n="gallery.title">画册</h2>
+        <div class="screen-sub" data-i18n="gallery.sub">你在纸缝里拾到的东西。</div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+        <div class="gallery-count" id="gallery-count"></div>
+        <button id="btn-gallery-back" class="btn ghost" data-i18n="back">返回</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="dead">
+      <div class="panel dead-panel">
+        <h2 class="screen-title" data-i18n="dead.title">被擦掉了</h2>
+        <div class="screen-sub" data-i18n="dead.sub">墨干了。</div>
+        <div class="dead-stats" id="dead-stats"></div>
+        <div class="dead-tip" id="dead-tip"></div>
+        <div class="panel-btns row">
+          <button id="btn-retry" class="btn primary" data-i18n="dead.retry">再画一次</button>
+          <button id="btn-dead-quit" class="btn ghost" data-i18n="dead.quit">回到标题</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="ending">
+      <div class="ending-wrap">
+        <div class="ending-kicker" data-i18n="ending.choice">最后一笔，落，还是不落？</div>
+        <h2 class="ending-title" id="ending-title"></h2>
+        <p class="ending-text" id="ending-text"></p>
+        <div class="ending-stats" id="ending-stats"></div>
+        <div class="ending-btns" id="ending-btns">
+          <button id="btn-end-finish" class="btn primary" data-i18n="ending.finish.btn">把自己画完</button>
+          <button id="btn-end-blank" class="btn ghost" data-i18n="ending.blank.btn">给世界留白</button>
+        </div>
+        <div class="ending-after is-hidden" id="ending-after">
+          <button id="btn-ending-again" class="btn primary" data-i18n="ending.again">再画一幅</button>
+          <button id="btn-ending-gallery" class="btn ghost" data-i18n="ending.gallery">看看画册</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="rotate" class="is-hidden">
+    <div class="rotate-icon">⟳</div>
+    <div class="rotate-title" data-i18n="rotate.title">横过来，纸才够大</div>
+    <div class="rotate-sub" data-i18n="rotate.sub">这个游戏横屏更好画。</div>
+    <button id="btn-rotate-continue" class="btn link" data-i18n="rotate.continue">就这样玩</button>
+  </div>
+
+  <div id="fade"></div>
+  <div id="flash"></div>
+  <div id="toast" class="is-hidden"></div>
+  <div id="grain" aria-hidden="true"></div>
+</div>
+<noscript><div class="noscript">LAST LINE needs JavaScript.</div></noscript>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

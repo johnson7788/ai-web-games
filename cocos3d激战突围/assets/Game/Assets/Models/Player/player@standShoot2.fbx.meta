@@ -1,0 +1,99 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "987f0db9-1600-42b3-b087-9f36099308d4",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "14154": {
+      "importer": "gltf-scene",
+      "uuid": "987f0db9-1600-42b3-b087-9f36099308d4@14154",
+      "displayName": "",
+      "id": "14154",
+      "name": "player@standShoot2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d7bab": {
+      "importer": "gltf-animation",
+      "uuid": "987f0db9-1600-42b3-b087-9f36099308d4@d7bab",
+      "displayName": "",
+      "id": "d7bab",
+      "name": "standShoot.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.20000000298023224
+        },
+        "events": [
+          {
+            "frame": 0.03333333333333333,
+            "func": "",
+            "params": []
+          },
+          {
+            "frame": 0.03333333333333333,
+            "func": "onAtk",
+            "params": []
+          }
+        ],
+        "embeddedPlayers": [],
+        "editorExtras": {
+          "embeddedPlayerGroups": []
+        },
+        "speed": 0.2
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 0.20000000298023224,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "standShoot",
+            "from": 0,
+            "to": 0.20000000298023224,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "987f0db9-1600-42b3-b087-9f36099308d4@14154",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "987f0db9-1600-42b3-b087-9f36099308d4@14154"
+      ]
+    }
+  }
+}

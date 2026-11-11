@@ -1,0 +1,127 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "ceabc282-34e6-49e4-803d-d9716797472c",
+  "files": [],
+  "subMetas": {
+    "48718": {
+      "importer": "gltf-mesh",
+      "uuid": "ceabc282-34e6-49e4-803d-d9716797472c@48718",
+      "displayName": "",
+      "id": "48718",
+      "name": "FireGun.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a1a7e": {
+      "importer": "gltf-embeded-image",
+      "uuid": "ceabc282-34e6-49e4-803d-d9716797472c@a1a7e",
+      "displayName": "",
+      "id": "a1a7e",
+      "name": "贴图 #47.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "0115b": {
+      "importer": "texture",
+      "uuid": "ceabc282-34e6-49e4-803d-d9716797472c@0115b",
+      "displayName": "",
+      "id": "0115b",
+      "name": "贴图 #47.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "ceabc282-34e6-49e4-803d-d9716797472c@a1a7e"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7ae61": {
+      "importer": "gltf-material",
+      "uuid": "ceabc282-34e6-49e4-803d-d9716797472c@7ae61",
+      "displayName": "",
+      "id": "7ae61",
+      "name": "Material #71.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "74ace": {
+      "importer": "gltf-scene",
+      "uuid": "ceabc282-34e6-49e4-803d-d9716797472c@74ace",
+      "displayName": "",
+      "id": "74ace",
+      "name": "FireGun.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "贴图 #47",
+        "uri": "ceabc282-34e6-49e4-803d-d9716797472c@a1a7e"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "ceabc282-34e6-49e4-803d-d9716797472c@74ace",
+    "assetFinder": {
+      "meshes": [
+        "ceabc282-34e6-49e4-803d-d9716797472c@48718"
+      ],
+      "skeletons": [],
+      "textures": [
+        "ceabc282-34e6-49e4-803d-d9716797472c@0115b"
+      ],
+      "materials": [
+        "ceabc282-34e6-49e4-803d-d9716797472c@7ae61"
+      ],
+      "scenes": [
+        "ceabc282-34e6-49e4-803d-d9716797472c@74ace"
+      ]
+    }
+  }
+}

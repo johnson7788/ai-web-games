@@ -1,0 +1,134 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42",
+  "files": [],
+  "subMetas": {
+    "cafeb": {
+      "importer": "gltf-mesh",
+      "uuid": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@cafeb",
+      "displayName": "",
+      "id": "cafeb",
+      "name": "Foundation.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "51a88": {
+      "importer": "gltf-mesh",
+      "uuid": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@51a88",
+      "displayName": "",
+      "id": "51a88",
+      "name": "Fuselage.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bbac5": {
+      "importer": "gltf-mesh",
+      "uuid": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@bbac5",
+      "displayName": "",
+      "id": "bbac5",
+      "name": "BlastHoleBit.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "efbfc": {
+      "importer": "gltf-mesh",
+      "uuid": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@efbfc",
+      "displayName": "",
+      "id": "efbfc",
+      "name": "AutoDoor.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78e21": {
+      "importer": "gltf-material",
+      "uuid": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@78e21",
+      "displayName": "",
+      "id": "78e21",
+      "name": "13 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8c4b1": {
+      "importer": "gltf-scene",
+      "uuid": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@8c4b1",
+      "displayName": "",
+      "id": "8c4b1",
+      "name": "FortBarbette.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@8c4b1",
+    "assetFinder": {
+      "meshes": [
+        "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@cafeb",
+        "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@51a88",
+        "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@bbac5",
+        "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@efbfc"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@78e21"
+      ],
+      "scenes": [
+        "b06ce4ae-76d9-4dd2-bf85-37f25ddfaa42@8c4b1"
+      ]
+    }
+  }
+}

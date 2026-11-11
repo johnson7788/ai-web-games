@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>第2次超级机器人大战 · 网页版</title>
+  <meta name="description" content="FC《第2次超级机器人大战》中文版，在浏览器里直接开玩：即时存档、CRT 滤镜、手机触屏手柄，并附中文攻略与机体资料。" />
+  <meta name="theme-color" content="#070a12" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="vendor/emulatorjs/data/emulator.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">SRW<span>2</span></span>
+        <div class="brand-text">
+          <h1>第2次超级机器人大战</h1>
+          <p>
+            <span class="tag">FC 中文版</span>
+            <span class="tag outline">浏览器移植</span>
+            <span class="status"><i id="statusDot"></i><span id="statusText">正在点火…</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn ghost" id="btnPause" type="button" disabled>暂停</button>
+        <button class="btn ghost" id="btnRestart" type="button" disabled>重开</button>
+        <button class="btn ghost" id="btnGuide" type="button">攻略</button>
+        <button class="btn ghost" id="btnCrt" type="button" aria-pressed="true">CRT</button>
+        <button class="btn ghost" id="btnShot" type="button">截图</button>
+        <button class="btn primary" id="btnFull" type="button">全屏</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <section class="console" aria-label="游戏画面">
+        <div class="bezel">
+          <div class="screen" id="game">
+            <div class="boot" id="boot">
+              <p class="boot-kicker">SYSTEM BOOT</p>
+              <p class="boot-title">加载 NES 运行时</p>
+              <p class="boot-sub" id="bootSub">正在准备 FCEUmm 核心…</p>
+            </div>
+          </div>
+          <div class="attract" id="attract" aria-hidden="true">
+            <img src="assets/title.png" alt="" />
+          </div>
+          <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+          <div class="screen-glare" aria-hidden="true"></div>
+        </div>
+        <div class="console-foot">
+          <span>256 × 240 · 60 fps</span>
+          <span id="romName">ROM · srw2.nes</span>
+          <span>FCEUmm</span>
+        </div>
+      </section>
+
+      <aside class="rail">
+        <section class="panel">
+          <h2>即时存档 <small>存在本机浏览器</small></h2>
+          <div class="slots" id="slots"></div>
+          <p class="hint">存档保存在 localStorage；换设备不会同步，清浏览器数据会丢失。</p>
+        </section>
+
+        <section class="panel">
+          <h2>按键</h2>
+          <dl class="keys">
+            <div><dt>方向键</dt><dd>移动光标 / 机体</dd></div>
+            <div><dt>Z</dt><dd>确认（A）</dd></div>
+            <div><dt>X</dt><dd>取消（B）</dd></div>
+            <div><dt>Enter</dt><dd>开始 / 菜单</dd></div>
+            <div><dt>V</dt><dd>选择（Select）</dd></div>
+          </dl>
+          <p class="hint">手机端会自动出现虚拟手柄；蓝牙手柄即插即用。</p>
+        </section>
+
+        <section class="panel about">
+          <h2>关于这一版</h2>
+          <p>原版 1991 年由 Winky Soft 开发、Banpresto 发行，卡带容量 512 KB。这里是 <b>原版 ROM + 网页 NES 运行时</b>：玩法、数值、剧情与当年完全一致，只在外面加了一层现代化的壳。</p>
+          <p class="hint">ROM 版权归原作者与发行方所有，请仅用自己拥有的卡带转储，不要公开分发。</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span>存档槽 <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> 由本地保存 · 游戏内自带电池存档同样可用</span>
+      <span class="footer-right">
+        <button class="linklike" id="btnMute" type="button" aria-pressed="false">静音</button>
+        <button class="linklike" id="btnImport" type="button">换一个自己的 ROM</button>
+      </span>
+    </footer>
+  </div>
+
+  <dialog class="guide" id="guideDialog">
+    <div class="guide-head">
+      <div>
+        <p class="guide-kicker">FIELD MANUAL</p>
+        <h2>第二次机器人大战 · 中文攻略</h2>
+      </div>
+      <button class="btn ghost" id="guideClose" type="button" aria-label="关闭">关闭</button>
+    </div>
+    <div class="guide-body">
+      <nav class="guide-list" id="guideList" aria-label="攻略目录"></nav>
+      <article class="guide-article" id="guideArticle">
+        <p class="placeholder">从左侧选一篇攻略。收录了关卡流程、升级心得、机体与机师代码表。</p>
+      </article>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <input type="file" id="romPicker" accept=".nes,.zip" hidden />
+
+  <script src="src/boot.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

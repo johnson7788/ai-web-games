@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LAST LINE · Render Bench</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #111; }
+    body { font: 11px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    canvas { position: fixed; inset: 0; display: block; }
+    #tools { position: fixed; z-index: 2; top: 0; left: 0; right: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 5px 12px; padding: 8px 12px; color: #ddd; background: rgba(8, 8, 12, .86); border-bottom: 1px solid rgba(255, 255, 255, .2); }
+    .group { display: flex; align-items: center; gap: 3px; }
+    .label { color: #888; margin-right: 3px; text-transform: uppercase; letter-spacing: .12em; }
+    button { appearance: none; border: 1px solid #555; border-radius: 0; padding: 5px 8px; color: #bbb; background: transparent; font: inherit; cursor: pointer; }
+    button:hover { color: #fff; border-color: #aaa; }
+    button.active { color: #071017; border-color: #bdeeff; background: #bdeeff; }
+    #status { margin-left: auto; color: #8fa8b2; white-space: nowrap; }
+    #pose-name { position: fixed; z-index: 1; left: 24px; bottom: 18px; color: rgba(110, 110, 110, .65); letter-spacing: .2em; text-transform: uppercase; }
+    @media (max-width: 900px) { #tools { gap: 4px 7px; padding: 5px; } button { padding: 4px 5px; } #status { display: none; } }
+  </style>
+</head>
+<body>
+  <canvas id="game" aria-label="Render benchmark"></canvas>
+  <div id="tools">
+    <div class="group"><span class="label">Map</span>
+      <button data-map="draft" class="active">草稿</button><button data-map="blueprint">蓝图</button><button data-map="neon">霓虹</button><button data-map="wash">水墨</button><button data-map="blank">留白</button>
+    </div>
+    <div class="group"><span class="label">Figure</span>
+      <button data-character="all" class="active">陈列</button><button data-character="player">玩家</button><button data-character="scribble">墨渣</button><button data-character="nib">断笔</button><button data-character="compass">圆规</button><button data-character="smudge">涂抹</button><button data-character="eraser">橡皮</button><button data-character="blank">空白</button>
+    </div>
+    <div class="group"><span class="label">Pose</span>
+      <button data-pose="idle" class="active">Idle</button><button data-pose="walk">Walk</button><button data-pose="jump">Jump</button><button data-pose="dead">Dead</button>
+    </div>
+    <div class="group"><span class="label">Quality</span><button data-quality="high" class="active">High</button><button data-quality="low">Low</button></div>
+    <span id="status">-- FPS · HIGH</span>
+  </div>
+  <div id="pose-name">DRAFT / LINEUP / IDLE</div>
+  <script type="module">
+    import { CONFIG, WORLD } from '../config/game.config.js';
+    import { MAPS } from '../config/maps.js';
+    import Render from '../src/render/index.js';
+
+    const R = CONFIG.rig;
+    const canvas = document.getElementById('game');
+    const state = { map: 'draft', character: 'all', pose: 'idle', quality: 'high', t: 0, fps: 0 };
+    const types = ['player', 'scribble', 'nib', 'compass', 'smudge', 'eraser'];
+    const weapons = { draft: 'pencil', blueprint: 'nib', neon: 'brush', wash: 'nib', blank: 'pencil' };
+    let entities = [];
+    let eventClock = 0;
+    let meleeClock = 0;
+
+    function point(x, y, r = 2) {
+      return { x, y, px: x, py: y, vx: 0, vy: 0, r };
+    }
+
+    function makeEntity(type, x, index) {
+      const player = type === 'player';
+      const boss = type === 'blank';
+      const scale = player || boss ? 1 : (CONFIG.enemyScale[type] || 1);
+      const ground = WORLD.groundY;
+      const ent = {
+        id: `bench-${type}-${index}`, kind: player ? 'player' : 'enemy', type,
+        x, y: ground - R.leg * 1.5 * scale, px: x, py: ground - R.leg * 1.5 * scale,
+        vx: 0, vy: 0, hp: type === 'smudge' ? 96 : 82, maxHp: 100,
+        r: boss ? 130 : (player ? 26 : ({ scribble: 24, nib: 26, compass: 30, smudge: 40, eraser: 28 }[type] || 26)),
+        facing: index % 3 === 1 ? -1 : 1, dead: false, dying: false, invuln: 0,
+        body: { pts: Array.from({ length: 11 }, () => point(x, 0)) },
+        gun: { x: x + 28, y: ground - 55, dx: 1, dy: -0.08 }, aim: { x: x + 200, y: ground - 55 },
+        anim: { walk: 0, hurt: 0, dead: 0, flash: 0, dash: 0, melee: 0, reload: 0, spawn: 0, telegraph: type === 'compass' ? 0.8 : 0 },
+        weapon: player ? weapons[state.map] : 'pencil', mag: 12, magMax: 12,
+        reloading: false, reloadT: 0, hitFlash: 0, scale,
+      };
+      ent._benchX = x;
+      ent._benchScale = scale;
+      return ent;
+    }
+
+    function rebuild() {
+      let lineup;
+      if (state.character !== 'all') {
+        lineup = [state.character];
+      } else if (state.map === 'blank') {
+        lineup = ['player', 'blank'];
+      } else {
+        lineup = types;
+      }
+      entities = lineup.map((type, i) => {
+        const x = lineup.length === 1 ? 640 : lineup.length === 2 ? [280, 830][i] : 140 + i * 198;
+        return makeEntity(type, x, i);
+      });
+    }
+
+    function standing(ent, t, index) {
+      const s = ent._benchScale;
+      const x = ent._benchX;
+      const ground = WORLD.groundY;
+      const walking = state.pose === 'walk';
+      const jumping = state.pose === 'jump';
+      const phase = t * 6 + index * 0.7;
+      const lift = jumping ? 118 + Math.sin(t * 2 + index) * 8 : 0;
+      const bob = walking ? Math.abs(Math.sin(phase)) * 3 : Math.sin(t * 2 + index) * 0.7;
+      const pelvisY = ground - R.leg * 1.5 * s - lift - bob;
+      const stride = walking ? Math.sin(phase) * 20 * s : 0;
+      const stepL = walking ? Math.max(0, Math.cos(phase)) * 10 * s : 0;
+      const stepR = walking ? Math.max(0, -Math.cos(phase)) * 10 * s : 0;
+      const coords = [
+        [0, -R.neck - R.body, R.neck + 3], [0, -R.body, 2], [0, 0, 2],
+        [-R.arm * 0.8, -R.body + R.arm * 0.5, 2], [R.arm * 0.8, -R.body + R.arm * 0.5, 2],
+        [-R.arm, -R.body + R.arm, 2], [R.arm, -R.body + R.arm, 2],
+        [-R.leg * 0.6 + stride * 0.35, R.leg * 0.7 - lift * 0.02, 2],
+        [R.leg * 0.6 - stride * 0.35, R.leg * 0.7 - lift * 0.02, 2],
+        [-R.leg * 0.6 + stride, R.leg * 1.5 - stepL / s, 2],
+        [R.leg * 0.6 - stride, R.leg * 1.5 - stepR / s, 2],
+      ];
+      ent.body.pts.forEach((p, i) => {
+        let px = x + coords[i][0] * s;
+        let py = pelvisY + coords[i][1] * s;
+        if (jumping && i >= 7) {
+          px = x + (i % 2 ? 1 : -1) * (12 + (i >= 9 ? 13 : 0)) * s;
+          py = pelvisY + (i >= 9 ? 20 : 10) * s;
+        }
+        p.px = p.x; p.py = p.y; p.x = px; p.y = py; p.r = coords[i][2] * s;
+      });
+      ent.x = x; ent.y = pelvisY; ent.vx = walking ? 280 : 0; ent.vy = jumping ? -100 : 0;
+      ent.anim.walk = walking ? 1 : 0;
+      ent.anim.dash = walking && index === 0 && Math.sin(t * 0.7) > 0.72 ? 0.1 : 0;
+      ent.anim.telegraph = ent.type === 'compass' ? 0.8 : (ent.type === 'eraser' && Math.sin(t * 2) > 0.65 ? 0.5 : 0);
+      const hand = ent.body.pts[6];
+      ent.gun.x = hand.x + 11 * ent.facing;
+      ent.gun.y = hand.y - 2;
+      ent.gun.dx = ent.facing;
+      ent.gun.dy = -0.08;
+      ent.dead = false;
+      ent.anim.dead = 0;
+    }
+
+    function fallen(ent, index) {
+      const s = ent._benchScale;
+      const x = ent._benchX;
+      const y = WORLD.groundY - 9 - index % 2;
+      const coords = [
+        [-45, -4, R.neck + 3], [-29, -8, 2], [0, 0, 2],
+        [-24, -20, 2], [-12, 8, 2], [-44, -24, 2], [5, 14, 2],
+        [20, -11, 2], [24, 8, 2], [44, -18, 2], [49, 4, 2],
+      ];
+      ent.body.pts.forEach((p, i) => {
+        p.px = p.x; p.py = p.y;
+        p.x = x + coords[i][0] * s; p.y = y + coords[i][1] * s; p.r = coords[i][2] * s;
+      });
+      ent.x = x; ent.y = y; ent.vx = 0; ent.vy = 0;
+      ent.dead = true; ent.dying = true; ent.anim.dead = 0.45;
+      ent.gun.x = x + 12; ent.gun.y = y + 13; ent.gun.dx = 1; ent.gun.dy = 0.2;
+    }
+
+    function applyBoss(ent, t) {
+      const pts = ent.body.pts;
+      const cx = ent._benchX;
+      const cy = 435 + Math.sin(t * 0.8) * 8;
+      const offsets = [[0, -45], [0, 20], [0, 100], [-70, 25], [70, 25], [-100, 110], [100, 110], [-35, 150], [35, 150], [-55, 205], [55, 205]];
+      pts.forEach((p, i) => {
+        p.px = p.x; p.py = p.y; p.x = cx + offsets[i][0]; p.y = cy + offsets[i][1]; p.r = i === 0 ? 32 : 4;
+      });
+      ent.x = cx; ent.y = cy + 100; ent.hp = 62; ent.maxHp = 100;
+      ent.anim.telegraph = Math.sin(t * 0.6) > 0.5 ? 0.8 : 0;
+    }
+
+    function mockRun() {
+      entities.forEach((ent, i) => {
+        if (ent.type === 'blank') applyBoss(ent, state.t);
+        else if (state.pose === 'dead') fallen(ent, i);
+        else standing(ent, state.t, i);
+      });
+      const player = entities.find((ent) => ent.type === 'player') || null;
+      const enemies = entities.filter((ent) => ent !== player);
+      const boss = entities.find((ent) => ent.type === 'blank') || null;
+      const bx = (state.t * 340) % (WORLD.w + 160) - 80;
+      const bullets = state.pose === 'dead' ? [] : [
+        { x: bx, y: 568, px: bx - 22, py: 568, dx: 1, dy: 0, owner: 'player', r: 3, color: MAPS[state.map].palette.accent },
+        { x: WORLD.w - bx, y: 590, px: WORLD.w - bx + 18, py: 590, dx: -1, dy: 0, owner: 'enemy', r: 3 },
+      ];
+      return {
+        sim: {
+          t: state.t, world: WORLD, map: MAPS[state.map], player, enemies, bullets,
+          pickups: [], stats: { kills: 0, shots: 0, hits: 0, damage: 0, time: state.t, score: 0, combo: 0, inkGained: 0, lore: [] },
+          wave: { index: 1, total: 3, act: MAPS[state.map].act - 1, actTotal: 5 }, boss,
+        },
+      };
+    }
+
+    function syncButtons() {
+      document.querySelectorAll('button').forEach((button) => {
+        const key = button.dataset.map ? 'map' : button.dataset.character ? 'character' : button.dataset.pose ? 'pose' : 'quality';
+        button.classList.toggle('active', button.dataset[key] === state[key]);
+      });
+      document.getElementById('status').textContent = `${state.fps} FPS · ${state.quality.toUpperCase()} · ${Render.state.quality.toUpperCase()}`;
+      document.getElementById('pose-name').textContent = `${state.map} / ${state.character} / ${state.pose}`;
+    }
+
+    function setMap(id) {
+      if (!MAPS[id]) return;
+      state.map = id;
+      Render.setMap(id);
+      rebuild();
+      Render.fx([{ type: 'actStart', act: MAPS[id].act, id }, { type: 'kill', x: 1030, y: 580, type: 'scribble', ragdoll: true }]);
+      syncButtons();
+    }
+
+    function pose(value) {
+      if (!['idle', 'walk', 'jump', 'dead'].includes(value)) return;
+      state.pose = value;
+      syncButtons();
+    }
+
+    function quality(value) {
+      state.quality = value === 'low' ? 'low' : 'high';
+      Render.setQuality(state.quality);
+      syncButtons();
+    }
+
+    function character(value) {
+      if (value !== 'all' && !types.includes(value) && value !== 'blank') return;
+      state.character = value;
+      rebuild();
+      syncButtons();
+    }
+
+    function shake(value = 1) {
+      Render.setShakeScale(value);
+      if (value > 0) Render.fx([{ type: 'bossPhase', phase: 2, x: 640, y: 330 }]);
+    }
+
+    document.querySelectorAll('button').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (button.dataset.map) setMap(button.dataset.map);
+        else if (button.dataset.character) character(button.dataset.character);
+        else if (button.dataset.pose) pose(button.dataset.pose);
+        else if (button.dataset.quality) quality(button.dataset.quality);
+      });
+    });
+
+    Render.init(canvas, { quality: state.quality });
+    Render.setMap(state.map);
+    rebuild();
+    window.addEventListener('resize', () => Render.resize());
+    window.__bench = {
+      setMap, pose, quality, character, shake,
+      get fps() { return state.fps; },
+      get state() { return { ...state }; },
+    };
+    window.__ll = { state: { phase: 'bench', paused: false }, run: null };
+
+    let last = performance.now();
+    let fpsAt = last;
+    let frames = 0;
+    function frame(now) {
+      const dt = Math.min(0.05, (now - last) / 1000 || 1 / 60);
+      last = now;
+      state.t += dt;
+      eventClock += dt;
+      meleeClock += dt;
+      if (eventClock > 0.85 && state.pose !== 'dead') {
+        eventClock = 0;
+        const player = entities.find((ent) => ent.type === 'player');
+        const target = entities.find((ent) => ent.kind === 'enemy');
+        if (player) Render.fx([{ type: 'shot', x: player.gun.x, y: player.gun.y, dx: player.facing, dy: 0, weapon: player.weapon, owner: 'player' }]);
+        if (target) Render.fx([{ type: 'hit', x: target.body.pts[0].x, y: target.body.pts[0].y, dmg: 17, target: 'enemy', heavy: false }]);
+      }
+      if (meleeClock > 2.8 && state.pose !== 'dead') {
+        meleeClock = 0;
+        const player = entities.find((ent) => ent.type === 'player');
+        if (player) Render.fx([{ type: 'melee', x: player.x, y: player.y, dir: player.facing, hit: true }]);
+      }
+      Render.draw(mockRun(), 1, dt);
+      frames += 1;
+      if (now - fpsAt >= 600) {
+        state.fps = Math.round(frames * 1000 / (now - fpsAt));
+        frames = 0;
+        fpsAt = now;
+        syncButtons();
+      }
+      requestAnimationFrame(frame);
+    }
+    syncButtons();
+    requestAnimationFrame(frame);
+  </script>
+</body>
+</html>

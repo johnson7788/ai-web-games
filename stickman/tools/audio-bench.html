@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>audio bench — LAST LINE</title>
+<style>
+  body { font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; margin: 16px; background: #f2eee3; color: #2c2a26; }
+  h1 { font-size: 16px; margin: 0 0 8px; }
+  button { font: inherit; margin: 2px; padding: 4px 8px; cursor: pointer; }
+  .row { margin: 4px 0; }
+  #unlock { font-size: 15px; padding: 6px 14px; }
+  #state { margin: 8px 0; padding: 8px; background: #fff; border: 1px solid #ccc; white-space: pre-wrap; }
+  .scene-btn { background: #0a2744; color: #d8f2ff; }
+  .meter { width: 160px; height: 8px; background: #ddd; display: inline-block; vertical-align: middle; }
+  .meter i { display: block; height: 100%; background: #b8422f; width: 0; }
+</style>
+</head>
+<body>
+<h1>LAST LINE · audio bench（全程序化 WebAudio）</h1>
+<button id="unlock">🔓 解锁音频</button>
+<div class="row">场景：<span id="scenes"></span></div>
+<div class="row">音效：<span id="sfx"></span></div>
+<div id="state">loading…</div>
+<script type="module">
+import { Audio } from '../src/core/audio.js';
+window.AudioRef = Audio;
+window.__benchReady = true;
+
+const SFX = [
+  'shot.pencil', 'shot.brush', 'shot.nib', 'hit', 'kill', 'ragdoll.thud',
+  'dash', 'melee', 'reload', 'ink.pickup', 'hurt', 'wave.start', 'wave.clear',
+  'act.change', 'boss.roar', 'death', 'splash', 'lore', 'boss.down',
+  'ui.click', 'ui.hover', 'ui.pick', 'ui.back',
+];
+const SCENES = ['title', 'draft', 'blueprint', 'neon', 'wash', 'blank', 'ending'];
+
+function btn(label, fn) {
+  const b = document.createElement('button');
+  b.textContent = label;
+  b.addEventListener('click', fn);
+  return b;
+}
+
+const sfxBox = document.getElementById('sfx');
+for (const name of SFX) sfxBox.appendChild(btn(name, () => Audio.play(name)));
+
+const sceneBox = document.getElementById('scenes');
+for (const id of SCENES) {
+  const b = btn(id, () => { Audio.setScene(id); Audio.setIntensity(0.5); });
+  b.className = 'scene-btn';
+  sceneBox.appendChild(b);
+}
+sceneBox.appendChild(btn('停止', () => Audio.setScene(null)));
+
+document.getElementById('unlock').addEventListener('click', () => { Audio.init(); Audio.unlock(); });
+
+setInterval(() => {
+  const s = Audio.getState();
+  const el = document.getElementById('state');
+  el.textContent = `ready=${s.ready} ctx=… scene=${s.scene} intensity=${s.intensity.toFixed(2)} rms=${s.rms.toFixed(4)} peak=${s.peak.toFixed(4)} voices=${s.voices} muted=${s.muted}`;
+}, 120);
+</script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RED FORTRESS · Render Bench</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #0d0708; }
+    body { font: 11px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    canvas { position: fixed; inset: 0; display: block; width: 100%; height: 100%; }
+    #tools { position: fixed; z-index: 2; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 5px; padding: 8px 12px; color: #e8f2d8; background: rgba(13, 7, 8, .88); border-bottom: 1px solid #7a5a4a; }
+    button { appearance: none; border: 1px solid #7a5a4a; border-radius: 0; padding: 5px 9px; color: #e8f2d8; background: transparent; font: inherit; cursor: pointer; }
+    button.active { color: #0d0708; border-color: #ffd166; background: #ffd166; }
+    #status { margin-left: auto; color: #a9c9d8; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <canvas id="game" width="1280" height="720" aria-label="RED FORTRESS render benchmark"></canvas>
+  <div id="tools">
+    <button data-stage="0" class="active">JUNGLE</button>
+    <button data-stage="1">RIVER</button>
+    <button data-stage="2">DESERT</button>
+    <button data-stage="3">FORTRESS</button>
+    <button data-quality="high" class="active">HIGH</button>
+    <button data-quality="low">LOW</button>
+    <button id="motion">REDUCED: OFF</button>
+    <span id="status">WARMING UP</span>
+  </div>
+  <script type="module">
+    import { WORLD } from '../config/game.config.js';
+    import { STAGES } from '../config/levels.js';
+    import { initRenderer } from '../src/render/index.js';
+
+    const canvas = document.getElementById('game');
+    const renderer = initRenderer(canvas);
+    const state = { stage: 0, quality: 'high', reduced: false, title: false, fps: 0 };
+    const enemyTypes = ['rifle', 'rocket', 'tank', 'turret', 'mortar', 'mine'];
+    const sampleLimit = 4096;
+    const drawSamples = new Float64Array(sampleLimit);
+    const frameSamples = new Float64Array(sampleLimit);
+    let sampleCount = 0;
+    let run = null;
+    let last = performance.now();
+    let fpsAt = last;
+    let frames = 0;
+    let eventIndex = 0;
+
+    function entity(id, kind, type, x, y, extra = {}) {
+      return Object.freeze({
+        id, kind, type, x, y, vx: 0, vy: 0, r: type === 'tank' ? 24 : 13,
+        hp: type === 'tank' ? 6 : 2, maxHp: type === 'tank' ? 8 : 2,
+        angle: -Math.PI / 2 + (id % 8) * Math.PI / 4, t: id * 0.13, life: 2,
+        owner: 'enemy', state: id % 7 === 0 ? 'fire' : 'aim', dead: false, ...extra,
+      });
+    }
+
+    function makeRun(stageIndex) {
+      const stage = STAGES[stageIndex];
+      const rows = 18;
+      const solid = new Uint8Array(20 * rows);
+      const sand = new Uint8Array(20 * rows);
+      for (let y = 0; y < rows; y += 1) {
+        for (let x = 0; x < 20; x += 1) {
+          const i = y * 20 + x;
+          if (x === 0 || x === 19 || y === 0 || y === rows - 1) solid[i] = 1;
+          else if (stageIndex === 1 && y >= 5 && y <= 7 && x < 7) solid[i] = 2;
+          else if ((stageIndex === 2 || stageIndex === 3) && y === 9 && x > 2 && x < 7) {
+            solid[i] = 3;
+            sand[i] = 2;
+          }
+        }
+      }
+      const entities = [];
+      for (let i = 0; i < 60; i += 1) {
+        const col = i % 10;
+        const row = Math.floor(i / 10);
+        const type = stageIndex === 2 && i === 0 ? 'tankboss' : enemyTypes[i % enemyTypes.length];
+        entities.push(entity(i + 1, 'enemy', type, 105 + col * 118, 135 + row * 75));
+      }
+      for (let i = 0; i < 6; i += 1) {
+        entities.push(entity(100 + i, 'pow', 'pow', 450 + i * 48, 625, { owner: 'neutral', state: i < 3 ? 'follow' : 'idle', hp: 1, maxHp: 1 }));
+      }
+      for (let i = 0; i < 30; i += 1) {
+        const player = i % 3 !== 0;
+        entities.push(entity(200 + i, 'bullet', 'bullet', 80 + (i * 83) % 1120, 95 + (i * 47) % 500, {
+          owner: player ? 'player' : 'enemy', weapon: i % 11 === 0 ? 'rocket' : i % 7 === 0 ? 'cannon' : 'mg',
+          angle: (i % 8) * Math.PI / 4, hp: 0, maxHp: 0,
+        }));
+      }
+      for (let i = 0; i < 3; i += 1) {
+        entities.push(entity(300 + i, 'grenade', 'grenade', 520 + i * 110, 470, {
+          z: 0.35 + i * 0.2, landX: 540 + i * 110, landY: 390, owner: 'player', hp: 0, maxHp: 0,
+        }));
+      }
+      const boss = stageIndex === 3 ? Object.freeze({
+        x: 640, y: 245, w: 520, h: 260, hp: 74, maxHp: 100, shield: 1, active: true, phase: 1,
+        nodes: Object.freeze([
+          Object.freeze({ id: 1, x: 470, y: 190, hp: 20, maxHp: 20, alive: true, angle: Math.PI / 2 }),
+          Object.freeze({ id: 2, x: 810, y: 190, hp: 12, maxHp: 20, alive: true, angle: Math.PI / 2 }),
+          Object.freeze({ id: 3, x: 470, y: 305, hp: 0, maxHp: 20, alive: false, angle: Math.PI / 2 }),
+          Object.freeze({ id: 4, x: 810, y: 305, hp: 20, maxHp: 20, alive: true, angle: Math.PI / 2 }),
+        ]),
+        core: Object.freeze({ x: 640, y: 250, r: 50, hp: 74, maxHp: 100 }),
+      }) : null;
+      return Object.freeze({
+        stageIndex, seed: stage.seed, difficulty: 'normal', levelH: rows * 64, cameraY: 0, time: 0,
+        state: 'fight', map: Object.freeze({ cols: 20, rows, tile: 64, levelH: rows * 64, solid, sand, seed: stage.seed }),
+        zones: Object.freeze([
+          Object.freeze({ type: 'helipad', row: 8, x: 930, y: 500, w: 240, h: 150 }),
+          Object.freeze({ type: 'camp', row: 2, x: 60, y: 390, w: 310, h: 145 }),
+        ]),
+        entities: Object.freeze(entities), boss,
+        stats: Object.freeze({ kills: 0, shots: 0, hits: 0, rescued: 3, delivered: 0, damageTaken: 0, time: 0, score: 0 }),
+        mods: Object.freeze({}),
+        player: Object.freeze({ x: 650, y: 590, vx: 80, vy: -120, angle: -0.7, hullAngle: -Math.PI / 2, hp: 4, maxHp: 6, r: 22, invuln: 0, grenades: 3, maxGrenades: 5, pow: 3, maxPow: 6, fireCd: 0.09, grenadeCd: 0, alive: true }),
+      });
+    }
+
+    function sync() {
+      document.querySelectorAll('button[data-stage]').forEach((button) => button.classList.toggle('active', Number(button.dataset.stage) === state.stage && !state.title));
+      document.querySelectorAll('button[data-quality]').forEach((button) => button.classList.toggle('active', button.dataset.quality === state.quality));
+      document.getElementById('motion').textContent = `REDUCED: ${state.reduced ? 'ON' : 'OFF'}`;
+    }
+
+    function setStage(index) {
+      state.stage = Math.max(0, Math.min(3, Number(index) || 0));
+      state.title = false;
+      run = makeRun(state.stage);
+      sync();
+    }
+
+    function setQuality(value) {
+      state.quality = value === 'low' ? 'low' : 'high';
+      renderer.setQuality(state.quality);
+      sync();
+    }
+
+    function setReducedMotion(value) {
+      state.reduced = !!value;
+      renderer.setReducedMotion(state.reduced);
+      sync();
+    }
+
+    function resetStats() {
+      sampleCount = 0;
+      drawSamples.fill(0);
+      frameSamples.fill(0);
+    }
+
+    function percentile(source, count, ratio) {
+      const values = Array.from(source.slice(0, count)).sort((a, b) => a - b);
+      return values[Math.min(values.length - 1, Math.floor(values.length * ratio))] || 0;
+    }
+
+    function getStats() {
+      const count = Math.min(sampleCount, sampleLimit);
+      let drawTotal = 0;
+      let frameTotal = 0;
+      for (let i = 0; i < count; i += 1) {
+        drawTotal += drawSamples[i];
+        frameTotal += frameSamples[i];
+      }
+      const avgDrawMs = count ? drawTotal / count : 0;
+      const avgFrameMs = count ? frameTotal / count : 0;
+      return {
+        stage: STAGES[state.stage].id, quality: state.quality, samples: count,
+        avgDrawMs, p95DrawMs: percentile(drawSamples, count, 0.95),
+        avgFrameMs, p95FrameMs: percentile(frameSamples, count, 0.95),
+        fps: avgFrameMs ? 1000 / avgFrameMs : 0,
+        ...renderer.getStats(),
+      };
+    }
+
+    document.querySelectorAll('button[data-stage]').forEach((button) => button.addEventListener('click', () => setStage(button.dataset.stage)));
+    document.querySelectorAll('button[data-quality]').forEach((button) => button.addEventListener('click', () => setQuality(button.dataset.quality)));
+    document.getElementById('motion').addEventListener('click', () => setReducedMotion(!state.reduced));
+
+    window.__bench = {
+      setStage, setQuality, setReducedMotion, resetStats, getStats,
+      setTitle() { state.title = true; run = null; sync(); },
+      stress() {
+        for (let i = 0; i < 32; i += 1) renderer.fx({ type: 'explode', x: 80 + (i * 97) % 1120, y: 100 + (i * 53) % 520, radius: 96, kind: 'grenade' });
+      },
+    };
+    window.__ll = { state: { phase: 'bench' }, get run() { return run; }, render: () => renderer };
+
+    function frame(now) {
+      const frameMs = Math.min(100, Math.max(0.01, now - last));
+      const dt = frameMs / 1000;
+      last = now;
+      if (run) {
+        const x = 110 + (eventIndex * 89) % 1060;
+        const y = 120 + (eventIndex * 47) % 450;
+        renderer.fx({ type: 'explode', x, y, radius: 92, kind: 'grenade' });
+        for (let i = 0; i < 4; i += 1) renderer.fx({ type: 'shot', x: 180 + i * 260, y: 540, angle: -Math.PI / 2, weapon: 'mg', owner: 'player' });
+        if (eventIndex % 45 === 0) renderer.fx({ type: 'airstrike', x: 700, y: 400 });
+        eventIndex += 1;
+      }
+      const start = performance.now();
+      renderer.draw({ run, phase: state.title ? 'title' : 'playing', t: now / 1000, dt, quality: state.quality, reducedMotion: state.reduced });
+      const drawMs = performance.now() - start;
+      if (sampleCount < sampleLimit) {
+        drawSamples[sampleCount] = drawMs;
+        frameSamples[sampleCount] = frameMs;
+        sampleCount += 1;
+      }
+      frames += 1;
+      if (now - fpsAt > 600) {
+        state.fps = Math.round(frames * 1000 / (now - fpsAt));
+        frames = 0;
+        fpsAt = now;
+        const stats = renderer.getStats();
+        document.getElementById('status').textContent = `${state.fps} FPS · ${drawMs.toFixed(2)} MS DRAW · ${stats.particles} FX · DPR ${stats.dpr}`;
+      }
+      requestAnimationFrame(frame);
+    }
+
+    setStage(0);
+    setQuality('high');
+    requestAnimationFrame(frame);
+  </script>
+</body>
+</html>

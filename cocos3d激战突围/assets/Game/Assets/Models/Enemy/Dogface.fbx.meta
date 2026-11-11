@@ -1,0 +1,139 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9d637fe3-acb5-451f-8695-1ede4af87f03",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "ee51d": {
+      "importer": "gltf-mesh",
+      "uuid": "9d637fe3-acb5-451f-8695-1ede4af87f03@ee51d",
+      "displayName": "",
+      "id": "ee51d",
+      "name": "Dogface.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "18d6f": {
+      "importer": "gltf-animation",
+      "uuid": "9d637fe3-acb5-451f-8695-1ede4af87f03@18d6f",
+      "displayName": "",
+      "id": "18d6f",
+      "name": "mixamo.com.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.03333333507180214
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "9d637fe3-acb5-451f-8695-1ede4af87f03@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 22
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "685e5": {
+      "importer": "gltf-material",
+      "uuid": "9d637fe3-acb5-451f-8695-1ede4af87f03@685e5",
+      "displayName": "",
+      "id": "685e5",
+      "name": "Bomb_Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fc3e6": {
+      "importer": "gltf-scene",
+      "uuid": "9d637fe3-acb5-451f-8695-1ede4af87f03@fc3e6",
+      "displayName": "",
+      "id": "fc3e6",
+      "name": "Dogface.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 0.03333333507180214,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "mixamo.com",
+            "from": 0,
+            "to": 0.03333333507180214,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "9d637fe3-acb5-451f-8695-1ede4af87f03@fc3e6",
+    "assetFinder": {
+      "meshes": [
+        "9d637fe3-acb5-451f-8695-1ede4af87f03@ee51d"
+      ],
+      "skeletons": [
+        "9d637fe3-acb5-451f-8695-1ede4af87f03@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "9d637fe3-acb5-451f-8695-1ede4af87f03@685e5"
+      ],
+      "scenes": [
+        "9d637fe3-acb5-451f-8695-1ede4af87f03@fc3e6"
+      ]
+    }
+  }
+}

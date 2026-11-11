@@ -1,0 +1,139 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "67c7e": {
+      "importer": "gltf-mesh",
+      "uuid": "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@67c7e",
+      "displayName": "",
+      "id": "67c7e",
+      "name": "Boss_B.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "18d6f": {
+      "importer": "gltf-animation",
+      "uuid": "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@18d6f",
+      "displayName": "",
+      "id": "18d6f",
+      "name": "mixamo.com.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.03333333507180214
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 22
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "685e5": {
+      "importer": "gltf-material",
+      "uuid": "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@685e5",
+      "displayName": "",
+      "id": "685e5",
+      "name": "Bomb_Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b5990": {
+      "importer": "gltf-scene",
+      "uuid": "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@b5990",
+      "displayName": "",
+      "id": "b5990",
+      "name": "Boss_B.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 0.03333333507180214,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "mixamo.com",
+            "from": 0,
+            "to": 0.03333333507180214,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@b5990",
+    "assetFinder": {
+      "meshes": [
+        "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@67c7e"
+      ],
+      "skeletons": [
+        "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@685e5"
+      ],
+      "scenes": [
+        "3ada0ba0-0d15-4ff2-9fb0-98e65db4e223@b5990"
+      ]
+    }
+  }
+}

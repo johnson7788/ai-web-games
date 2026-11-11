@@ -1,0 +1,100 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "be382b5a-0bb4-471b-abbe-435d5981691a",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "09540": {
+      "importer": "gltf-animation",
+      "uuid": "be382b5a-0bb4-471b-abbe-435d5981691a@09540",
+      "displayName": "",
+      "id": "09540",
+      "name": "shootBack.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 60,
+        "span": {
+          "from": 0,
+          "to": 0.5
+        },
+        "events": [
+          {
+            "frame": 0.23333333333333334,
+            "func": "",
+            "params": []
+          },
+          {
+            "frame": 0.23333333333333334,
+            "func": "onAtk",
+            "params": []
+          }
+        ],
+        "embeddedPlayers": [],
+        "editorExtras": {
+          "embeddedPlayerGroups": []
+        },
+        "speed": 0.5
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "e2ab2": {
+      "importer": "gltf-scene",
+      "uuid": "be382b5a-0bb4-471b-abbe-435d5981691a@e2ab2",
+      "displayName": "",
+      "id": "e2ab2",
+      "name": "player@shootBack.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 0.5,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "shootBack",
+            "from": 0,
+            "to": 0.5,
+            "fps": 60,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "be382b5a-0bb4-471b-abbe-435d5981691a@e2ab2",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "be382b5a-0bb4-471b-abbe-435d5981691a@e2ab2"
+      ]
+    }
+  }
+}

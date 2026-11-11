@@ -1,0 +1,61 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "cb6cc727-a98c-4da8-a3da-afe2057acf75",
+  "files": [],
+  "subMetas": {
+    "c6160": {
+      "importer": "gltf-mesh",
+      "uuid": "cb6cc727-a98c-4da8-a3da-afe2057acf75@c6160",
+      "displayName": "",
+      "id": "c6160",
+      "name": "Cylinder001.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ea437": {
+      "importer": "gltf-scene",
+      "uuid": "cb6cc727-a98c-4da8-a3da-afe2057acf75@ea437",
+      "displayName": "",
+      "id": "ea437",
+      "name": "scifi_hexagon_tube.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "cb6cc727-a98c-4da8-a3da-afe2057acf75@ea437",
+    "assetFinder": {
+      "meshes": [
+        "cb6cc727-a98c-4da8-a3da-afe2057acf75@c6160"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "cb6cc727-a98c-4da8-a3da-afe2057acf75@ea437"
+      ]
+    }
+  }
+}

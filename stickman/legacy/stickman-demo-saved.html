@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://xienaoban.github.io/resources/DEMO_%E7%81%AB%E6%9F%B4%E4%BA%BA.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>火柴人DEMO</title>
+    <style type="text/css">
+        table {
+            /* moz-user-select: -moz-none; */
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: ghostwhite;
+        }
+    </style>
+</head>
+<body>
+    <table border="0">
+        <tbody><tr>
+            <td><label>NPC数量: </label></td><td><input id="npc_number" style="border:0;height:20px;"></td><td><input type="button" onclick="buttonNPCNumberClick();" value="修改" style="border:0;height:22px;"></td>
+        </tr><tr>
+            <td><label>NPC射击频率: </label></td><td><input id="npc_shoot_frequency" style="border:0;height:20px;"></td><td><input type="button" onclick="buttonNPCShootFrequencyClick();" value="修改" style="border:0;height:22px;"></td>
+        </tr><tr>
+            <td><label>玩家子弹间隔: </label></td><td><input id="bullet_interval" style="border:0;height:20px;"></td><td><input type="button" onclick="buttonBulletIntervalClick();" value="修改" style="border:0;height:22px;"></td>
+        </tr><tr>
+            <td><label>后坐力: </label></td><td><input id="recoil" style="border:0;height:20px;"></td><td><input type="button" onclick="buttonRecoilClick();" value="修改" style="border:0;height:22px;"></td>
+        </tr>
+    </tbody></table>
+    <label id="debug"></label>
+    <script type="text/javascript" src="./火柴人DEMO_files/match_man.js.下载"></script><canvas width="1912" height="948" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 1;"></canvas>
+    <script>
+function buttonNPCNumberClick() {
+    let npc_num = Number(document.getElementById("npc_number").value);
+    npcs = [];
+    for (var i = 0; i < npc_num; ++i) npcs.push(new Person());
+}
+function buttonBulletIntervalClick() {
+    shootMaxCnt = Number(document.getElementById("bullet_interval").value);
+    // Author: XieNaoban | document.getElementById("debug").innerHTML = "[" + shootMaxCnt + "]";
+}
+function buttonRecoilClick() {
+    recoil = Number(document.getElementById("recoil").value);
+}
+function buttonNPCShootFrequencyClick() {
+    shootFrequency = Number(document.getElementById("npc_shoot_frequency").value) / 100.0;
+}
+document.getElementById("npc_number").value = npcs.length;
+document.getElementById("bullet_interval").value = shootMaxCnt;
+document.getElementById("recoil").value = recoil;
+document.getElementById("npc_shoot_frequency").value = shootFrequency * 100;
+    </script>
+
+</body></html>

@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "607df907-a8b3-4284-a728-627ed5053296",
+  "files": [],
+  "subMetas": {
+    "c2000": {
+      "importer": "gltf-mesh",
+      "uuid": "607df907-a8b3-4284-a728-627ed5053296@c2000",
+      "displayName": "",
+      "id": "c2000",
+      "name": "Decorate_E.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d90a4": {
+      "importer": "gltf-material",
+      "uuid": "607df907-a8b3-4284-a728-627ed5053296@d90a4",
+      "displayName": "",
+      "id": "d90a4",
+      "name": "01 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6d98e": {
+      "importer": "gltf-scene",
+      "uuid": "607df907-a8b3-4284-a728-627ed5053296@6d98e",
+      "displayName": "",
+      "id": "6d98e",
+      "name": "Decorate_E.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "607df907-a8b3-4284-a728-627ed5053296@6d98e",
+    "assetFinder": {
+      "meshes": [
+        "607df907-a8b3-4284-a728-627ed5053296@c2000"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "607df907-a8b3-4284-a728-627ed5053296@d90a4"
+      ],
+      "scenes": [
+        "607df907-a8b3-4284-a728-627ed5053296@6d98e"
+      ]
+    }
+  }
+}

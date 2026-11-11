@@ -1,0 +1,127 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9db005ab-5780-4562-9178-83997ebcfa91",
+  "files": [],
+  "subMetas": {
+    "b5f1d": {
+      "importer": "gltf-mesh",
+      "uuid": "9db005ab-5780-4562-9178-83997ebcfa91@b5f1d",
+      "displayName": "",
+      "id": "b5f1d",
+      "name": "Shotgun.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a1a7e": {
+      "importer": "gltf-embeded-image",
+      "uuid": "9db005ab-5780-4562-9178-83997ebcfa91@a1a7e",
+      "displayName": "",
+      "id": "a1a7e",
+      "name": "贴图 #47.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "0115b": {
+      "importer": "texture",
+      "uuid": "9db005ab-5780-4562-9178-83997ebcfa91@0115b",
+      "displayName": "",
+      "id": "0115b",
+      "name": "贴图 #47.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "9db005ab-5780-4562-9178-83997ebcfa91@a1a7e"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7ae61": {
+      "importer": "gltf-material",
+      "uuid": "9db005ab-5780-4562-9178-83997ebcfa91@7ae61",
+      "displayName": "",
+      "id": "7ae61",
+      "name": "Material #71.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6b1a0": {
+      "importer": "gltf-scene",
+      "uuid": "9db005ab-5780-4562-9178-83997ebcfa91@6b1a0",
+      "displayName": "",
+      "id": "6b1a0",
+      "name": "Shotgun.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "贴图 #47",
+        "uri": "9db005ab-5780-4562-9178-83997ebcfa91@a1a7e"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "9db005ab-5780-4562-9178-83997ebcfa91@6b1a0",
+    "assetFinder": {
+      "meshes": [
+        "9db005ab-5780-4562-9178-83997ebcfa91@b5f1d"
+      ],
+      "skeletons": [],
+      "textures": [
+        "9db005ab-5780-4562-9178-83997ebcfa91@0115b"
+      ],
+      "materials": [
+        "9db005ab-5780-4562-9178-83997ebcfa91@7ae61"
+      ],
+      "scenes": [
+        "9db005ab-5780-4562-9178-83997ebcfa91@6b1a0"
+      ]
+    }
+  }
+}

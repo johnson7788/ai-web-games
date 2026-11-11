@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#8FD3FF">
+  <title>PAW BRAWL — 爪爪大乱斗</title>
+  <meta name="description" content="Eight tiny animals. One cloud-top arena. A playful 3D party brawler made entirely with procedural toys.">
+  <meta property="og:title" content="Paw Brawl — 3D Party Animal Brawler">
+  <meta property="og:description" content="Punch, grab and throw tiny animals off a cloud-top arena.">
+  <meta property="og:image" content="./post.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="./post.jpg">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">{ "imports": { "three": "./lib/three.module.js" } }</script>
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" aria-label="PAW BRAWL 3D game"></canvas>
+
+    <section id="title-screen" class="screen">
+      <div class="title-card">
+        <div class="title-kicker" data-i18n="subtitle">CLOUD-TOP CLUB</div>
+        <h1><span>PAW</span><strong>BRAWL</strong></h1>
+        <p class="tagline" data-i18n="tagline">Tiny paws. Big trouble.</p>
+        <button id="btnPlay" class="sticker-button" data-i18n="play">PLAY</button>
+        <div class="title-links"><a class="text-button" href="./online.html">ONLINE</a><button id="btnTitleHelp" class="text-button" data-i18n="help.title">HOW TO PLAY</button><button id="btnSettings" class="text-button" data-i18n="settings">SETTINGS</button></div>
+        <div class="title-controls">
+          <span data-i18n="controls">WASD move · SPACE jump · SHIFT dash</span>
+          <span data-i18n="actions">J punch · K grab · ESC pause</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-mode" class="screen" hidden>
+      <div class="mode-shell">
+        <header class="mode-header">
+          <button id="btnModeBack" class="back-button" data-i18n="select.back">BACK</button>
+          <div><span class="result-kicker" data-i18n="mode.kicker">CHOOSE YOUR CHAOS</span><h2 data-i18n="mode.title">PICK A MODE</h2></div>
+          <div id="mode-coins" class="coin-pill">🪙 0</div>
+        </header>
+        <div class="mode-grid">
+          <button class="mode-card ffa" data-mode="ffa">
+            <span class="mode-number">01</span><span class="mode-icon">8×</span>
+            <strong data-i18n="mode.ffa">FREE-FOR-ALL</strong><small data-i18n="mode.ffaDesc">Eight paws, one survivor</small>
+            <span class="mode-tag" data-i18n="mode.solo">SOLO · 3 ROUNDS</span>
+          </button>
+          <button class="mode-card team" data-mode="team">
+            <span class="mode-number">02</span><span class="mode-icon">4<span>v</span>4</span>
+            <strong data-i18n="mode.team">TEAM BRAWL</strong><small data-i18n="mode.teamDesc">4v4. No friendly fire. First to 2.</small>
+            <span class="mode-tag" data-i18n="mode.teamTag">RED vs BLUE</span>
+          </button>
+          <button class="mode-card soon" disabled>
+            <span class="mode-number">03</span><span class="mode-icon">◆</span>
+            <strong data-i18n="mode.bone">BONE RUSH</strong><small data-i18n="mode.boneDesc">Grab the golden bone</small>
+            <span class="mode-tag" data-i18n="mode.soon">COMING SOON</span>
+          </button>
+        </div>
+        <button id="btnModeNext" class="sticker-button" data-i18n="mode.next">NEXT</button>
+      </div>
+    </section>
+
+    <section id="screen-select" class="screen" hidden>
+      <div class="select-shell">
+        <header class="select-header">
+          <button id="btnSelectBack" class="back-button" data-i18n="select.back">BACK</button>
+          <h2 data-i18n="select.title">CHOOSE YOUR PAW</h2>
+          <div id="select-coins" class="coin-pill">🪙 0</div>
+        </header>
+        <div class="select-context"><span id="select-mode"></span><i></i><span id="select-arena"></span><b id="select-team" hidden></b></div>
+        <div class="select-layout">
+          <div id="character-grid" class="character-grid"></div>
+          <aside class="select-preview">
+            <div class="preview-spacer"></div>
+            <div class="preview-info">
+              <h3 id="preview-name"></h3>
+              <p id="preview-species"></p>
+              <div id="preview-stats" class="preview-stats"></div>
+              <p id="preview-passive" class="preview-passive"></p>
+            </div>
+          </aside>
+        </div>
+        <button id="btnStartMatch" class="sticker-button select-start" data-i18n="select.start">START BRAWL</button>
+      </div>
+    </section>
+
+    <section id="hud" hidden>
+      <div class="hud-left">
+        <div class="mini-logo">PAW <b>BRAWL</b></div>
+        <div class="round-pill"><span id="round-label">ROUND 1</span><i></i><span id="time-label">00:00</span></div>
+      </div>
+      <div id="team-score" hidden><div class="team-red"><span data-i18n="team.red">RED</span><b id="score-red">0</b></div><div class="team-versus">VS</div><div class="team-blue"><b id="score-blue">0</b><span data-i18n="team.blue">BLUE</span></div></div>
+      <button id="help-button" class="icon-button" aria-label="How to play">?</button>
+      <button id="pause-button" class="icon-button" aria-label="Pause">Ⅱ</button>
+      <button id="mute-button" class="icon-button" aria-label="Mute">♪</button>
+      <div id="ranking" aria-label="Ranking"></div>
+      <div id="kill-feed" aria-live="polite"></div>
+      <div id="announcement" aria-live="assertive" hidden></div>
+      <div id="game-hint" hidden></div>
+      <div id="item-slot"><span id="item-icon" class="slot-paw">●</span><b id="item-name" data-i18n="empty">EMPTY</b><small id="item-detail"></small></div>
+    </section>
+
+    <div id="markers" aria-hidden="true"></div>
+    <div id="showcase-labels" aria-hidden="true"></div>
+
+    <section id="pause-screen" class="overlay" hidden>
+      <div class="pause-card">
+        <span class="pause-paws">● ● ●</span>
+        <h2 data-i18n="paused">PAUSED</h2>
+        <div class="pause-help"><span data-i18n="controls"></span><span data-i18n="actions"></span></div>
+        <button id="btnResume" class="sticker-button" data-i18n="resume">RESUME</button>
+        <button id="btnPauseHelp" class="text-button" data-i18n="help.title">HOW TO PLAY</button>
+        <button id="btnRestart" class="text-button" data-i18n="restart">RESTART</button>
+        <button id="btnPauseHome" class="text-button" data-i18n="home">HOME</button>
+      </div>
+    </section>
+
+    <section id="screen-help" class="overlay" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden>
+      <div class="help-card">
+        <span class="result-kicker" data-i18n="help.kicker">FIELD GUIDE</span>
+        <h2 id="help-title" data-i18n="help.title">HOW TO PLAY</h2>
+        <p class="help-objective" data-i18n="help.objective">Knock everyone off the ring. Last paw standing wins.</p>
+        <div class="help-content">
+          <table class="help-controls">
+            <thead><tr><th data-i18n="help.action">ACTION</th><th data-i18n="help.keyboard">KEYBOARD</th><th data-i18n="help.touch">TOUCH</th></tr></thead>
+            <tbody>
+              <tr><td data-i18n="move">MOVE</td><td>WASD</td><td data-i18n="help.touchMove">Joystick</td></tr>
+              <tr><td data-i18n="jump">JUMP</td><td>Space</td><td data-i18n="jump">JUMP</td></tr>
+              <tr><td data-i18n="dash">DASH</td><td>Shift</td><td data-i18n="help.touchDash">Double-tap joystick</td></tr>
+              <tr><td data-i18n="punch">PUNCH</td><td>J</td><td data-i18n="punch">PUNCH</td></tr>
+              <tr><td data-i18n="help.charge">CHARGE</td><td data-i18n="help.keyCharge">Hold J</td><td data-i18n="help.touchCharge">Hold PUNCH</td></tr>
+              <tr><td data-i18n="grab">GRAB</td><td>K</td><td data-i18n="grab">GRAB</td></tr>
+              <tr><td data-i18n="help.throw">THROW</td><td data-i18n="help.keyThrow">J while holding</td><td data-i18n="help.touchThrow">PUNCH while holding</td></tr>
+              <tr><td data-i18n="help.item">USE ITEM</td><td>J</td><td data-i18n="punch">PUNCH</td></tr>
+              <tr><td data-i18n="pause">PAUSE</td><td>Esc</td><td data-i18n="help.touchPause">Pause button</td></tr>
+            </tbody>
+          </table>
+          <ol class="help-tips">
+            <li data-i18n="help.tip1">Grab with K, then throw with J. Throw rivals into the crowd.</li>
+            <li data-i18n="help.tip2">Press J in the air to slam. Hold J for a heavy punch.</li>
+            <li data-i18n="help.tip3">The ring shrinks. Stay away from the edge.</li>
+          </ol>
+        </div>
+        <button id="btnHelpClose" class="sticker-button" data-i18n="help.gotIt">GOT IT</button>
+      </div>
+    </section>
+
+    <section id="death-overlay" class="overlay death-overlay" aria-live="assertive" hidden>
+      <div class="death-card">
+        <strong>OUT!</strong>
+        <h2 data-i18n="death.title">你被淘汰了</h2>
+        <p id="death-killer"></p>
+        <small data-i18n="death.spectating">观战中…</small>
+      </div>
+    </section>
+
+    <section id="round-panel" class="overlay result-overlay" hidden>
+      <div class="result-card round-card">
+        <h2 id="round-title">ROUND COMPLETE</h2>
+        <div id="round-results"></div>
+        <div id="round-countdown" class="round-countdown"></div>
+        <button id="btnNextRound" class="text-button" data-i18n="nextRound">NEXT ROUND</button>
+      </div>
+    </section>
+
+    <section id="screen-results" class="screen" hidden>
+      <div class="champion-heading">
+        <div id="team-result-banner" hidden><span id="team-result-score"></span><strong id="team-result-winner"></strong></div>
+        <span id="result-crown" class="result-kicker" data-i18n="results.crown">CROWN</span>
+        <h2 id="champion-name"></h2>
+        <div id="podium"></div>
+      </div>
+      <div class="result-card match-card">
+        <span class="result-kicker" data-i18n="results.champion">CHAMPION</span>
+        <h2 data-i18n="results.title">MATCH RESULTS</h2>
+        <div id="match-standings"></div>
+        <div id="coin-breakdown" class="coin-breakdown"></div>
+        <div id="coin-total"></div>
+        <div id="match-summary" class="match-summary"></div>
+        <div class="result-actions">
+          <button id="btnPlayAgain" class="sticker-button" data-i18n="results.playAgain">PLAY AGAIN</button>
+          <button id="btnChangePaw" class="text-button" data-i18n="results.changePaw">CHANGE PAW</button>
+          <button id="btnChangeMode" class="text-button" data-i18n="results.changeMode">CHANGE MODE</button>
+          <button id="btnShare" class="text-button" data-i18n="results.share">SHARE</button>
+          <button id="btnResultsHome" class="text-button" data-i18n="home">HOME</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-settings" class="overlay" hidden>
+      <div class="pause-card settings-card">
+        <h2 data-i18n="settings.title">SETTINGS</h2>
+        <div class="setting-row"><span data-i18n="settings.sfx">SOUND FX</span><button id="setting-sfx" class="setting-toggle"></button></div>
+        <div class="setting-row"><span data-i18n="settings.music">MUSIC</span><button id="setting-music" class="setting-toggle"></button></div>
+        <label class="setting-row"><span data-i18n="settings.quality">QUALITY</span><select id="setting-quality"><option value="auto" data-i18n="settings.auto">AUTO</option><option value="low" data-i18n="settings.low">LOW</option></select></label>
+        <button id="btnResetSave" class="text-button danger" data-i18n="settings.reset">RESET SAVE</button>
+        <button id="btnSettingsBack" class="sticker-button" data-i18n="select.back">BACK</button>
+      </div>
+    </section>
+
+    <section id="rotate-screen" class="overlay rotate-overlay" aria-live="polite">
+      <div class="rotate-card">
+        <span class="rotate-icon" aria-hidden="true">↻</span>
+        <h2 data-i18n="rotate">ROTATE TO PLAY</h2>
+        <p data-i18n="rotateHint">Turn your device sideways to rejoin the brawl</p>
+      </div>
+    </section>
+
+    <section id="webgl-fallback" class="overlay" hidden>
+      <div class="pause-card">
+        <h2>PAW BRAWL</h2>
+        <p data-i18n="webgl">This game needs WebGL. Enable hardware acceleration or try a current browser.</p>
+      </div>
+    </section>
+
+    <div id="toast" hidden></div>
+
+    <section id="touch" hidden>
+      <div id="joystick-zone" aria-label="Movement joystick">
+        <div id="joystick-base" hidden><div id="joystick-knob"></div></div>
+      </div>
+      <div id="touch-buttons">
+        <button class="touch-button grab" data-action="grab" data-i18n="grab">GRAB</button>
+        <button class="touch-button punch" data-action="punch" data-i18n="punch">PUNCH</button>
+        <button class="touch-button jump" data-action="jump" data-i18n="jump">JUMP</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "943049d5-ef0d-41f2-ba1b-8ba274819b8b",
+  "files": [],
+  "subMetas": {
+    "781d7": {
+      "importer": "gltf-mesh",
+      "uuid": "943049d5-ef0d-41f2-ba1b-8ba274819b8b@781d7",
+      "displayName": "",
+      "id": "781d7",
+      "name": "Drone.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1ef3c": {
+      "importer": "gltf-material",
+      "uuid": "943049d5-ef0d-41f2-ba1b-8ba274819b8b@1ef3c",
+      "displayName": "",
+      "id": "1ef3c",
+      "name": "17 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0103b": {
+      "importer": "gltf-scene",
+      "uuid": "943049d5-ef0d-41f2-ba1b-8ba274819b8b@0103b",
+      "displayName": "",
+      "id": "0103b",
+      "name": "Drone.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "943049d5-ef0d-41f2-ba1b-8ba274819b8b@0103b",
+    "assetFinder": {
+      "meshes": [
+        "943049d5-ef0d-41f2-ba1b-8ba274819b8b@781d7"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "943049d5-ef0d-41f2-ba1b-8ba274819b8b@1ef3c"
+      ],
+      "scenes": [
+        "943049d5-ef0d-41f2-ba1b-8ba274819b8b@0103b"
+      ]
+    }
+  }
+}

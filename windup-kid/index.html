@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>WIND-UP KID — 2.5D Platformer</title>
+<meta name="description" content="WIND-UP KID: a 2.5D side-scrolling platformer in a wooden toy-box world. Run, stomp, grow, and fire your way to the clock tower.">
+<meta property="og:title" content="WIND-UP KID — 2.5D Platformer">
+<meta property="og:description" content="A wind-up wooden puppet platformer: stomp beetles, kick shells, grow big, throw fireballs.">
+<meta property="og:type" content="game">
+<meta property="og:image" content="poster.jpg">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{ "imports": { "three": "./lib/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="game"></canvas>
+
+  <!-- 加载 -->
+  <section id="scr-loading" class="screen">
+    <div class="brand">
+      <div class="cog">⚙</div>
+      <div class="brand-title" data-i18n="title">WIND-UP KID</div>
+      <div class="loadbar"><i id="loadBar"></i></div>
+      <div class="loadlabel" data-i18n="loading">WINDING UP…</div>
+    </div>
+  </section>
+
+  <!-- 标题 -->
+  <section id="scr-title" class="screen hidden">
+    <div class="title-wrap">
+      <div class="cog big">⚙</div>
+      <h1 data-i18n="title">WIND-UP KID</h1>
+      <p class="sub" data-i18n="subtitle">a 2.5D toy-box platformer</p>
+      <button id="btnPlay" class="btn primary" data-i18n="play">PLAY</button>
+      <button id="btnSettings" class="btn ghost" data-i18n="settings">SETTINGS</button>
+    </div>
+  </section>
+
+  <!-- 选关 -->
+  <section id="scr-select" class="screen hidden">
+    <div class="panel">
+      <h2 data-i18n="select">SELECT LEVEL</h2>
+      <div id="levelGrid" class="grid"></div>
+      <button id="btnBack" class="btn ghost" data-i18n="back">BACK</button>
+    </div>
+  </section>
+
+  <!-- 暂停 -->
+  <section id="scr-pause" class="overlay hidden">
+    <div class="panel">
+      <h2 data-i18n="paused">PAUSED</h2>
+      <button id="btnResume" class="btn primary" data-i18n="resume">RESUME</button>
+      <button id="btnRestart" class="btn ghost" data-i18n="restart">RESTART</button>
+      <button id="btnPauseSettings" class="btn ghost" data-i18n="settings">SETTINGS</button>
+      <button id="btnQuit" class="btn ghost" data-i18n="back">BACK</button>
+    </div>
+  </section>
+
+  <!-- 设置 -->
+  <section id="scr-settings" class="overlay hidden">
+    <div class="panel">
+      <h2 data-i18n="settings">SETTINGS</h2>
+      <label class="row"><span data-i18n="music">MUSIC</span><input id="rangeMusic" type="range" min="0" max="100" step="1"></label>
+      <label class="row"><span data-i18n="sfx">SOUND</span><input id="rangeSfx" type="range" min="0" max="100" step="1"></label>
+      <label class="row"><span data-i18n="shake">SCREEN SHAKE</span><button id="btnShake" class="toggle">ON</button></label>
+      <button id="btnSettingsBack" class="btn primary" data-i18n="back">BACK</button>
+    </div>
+  </section>
+
+  <!-- 结算 -->
+  <section id="scr-clear" class="overlay hidden">
+    <div class="panel">
+    <h2 id="clearTitle" data-i18n="clear">LEVEL CLEAR</h2>
+    <div id="clearStars" class="stars"></div>
+    <p id="clearStats" class="stats"></p>
+    <button id="btnDouble" class="btn ghost hidden" data-i18n="double">×2 GEARS (AD)</button>
+    <button id="btnShare" class="btn ghost" data-i18n="share">SHARE</button>
+    <div class="row-btns">
+      <button id="btnNext" class="btn primary" data-i18n="next">NEXT</button>
+      <button id="btnRetry" class="btn ghost" data-i18n="retry">RETRY</button>
+      <button id="btnSelect" class="btn ghost" data-i18n="select">SELECT LEVEL</button>
+    </div>
+    </div>
+  </section>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div class="row">
+      <div class="pill"><img class="ico" src="assets/props/gear.webp" alt=""><span class="k" data-i18n="gears">GEARS</span><b id="gears">0</b><span class="dim">/<span id="gearTotal">0</span></span></div>
+      <div class="pill"><span class="k" data-i18n="time">TIME</span><b id="time">4:00</b></div>
+      <div class="pill"><span class="k" data-i18n="deaths">DEATHS</span><b id="deaths">0</b></div>
+    </div>
+    <div id="levelName" class="level">1-1</div>
+  </div>
+
+  <!-- 域名锁 -->
+  <section id="scr-lock" class="overlay hidden">
+    <h2 data-i18n="lockTitle">NOT AUTHORIZED</h2>
+    <p class="stats" id="lockMsg">Redirecting…</p>
+  </section>
+
+  <!-- 复活 -->
+  <section id="scr-revive" class="overlay hidden">
+    <div class="panel">
+    <h2 data-i18n="reviveTitle">KEEP GOING?</h2>
+    <button id="btnRevive" class="btn primary" data-i18n="reviveBtn">WATCH AD · REVIVE</button>
+    <button id="btnGiveUp" class="btn ghost" data-i18n="reviveSkip">CONTINUE</button>
+    <p class="stats" id="reviveTimer"></p>
+    </div>
+  </section>
+
+  <div id="adMask" class="overlay hidden"><h2>AD</h2><p class="stats">…</p></div>
+
+  <div id="flash"></div>
+  <div id="toast" class="hidden"></div>
+  <div id="hint" data-i18n="hint">← → move · SPACE jump</div>
+
+  <div id="touch" class="hidden">
+    <div class="pad left" data-key="left">◀</div>
+    <div class="pad right" data-key="right">▶</div>
+    <div class="fire" data-key="fire">FIRE</div>
+    <div class="jump" data-key="jump">JUMP</div>
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8777 @@
+{
+ "01": {
+  "title": "「救出!!Ｚガンダム」",
+  "map": {
+   "cols": 17,
+   "rows": 21,
+   "image": {
+    "width": 273,
+    "height": 337
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 12,
+    "y": 16,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": 1,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 16,
+    "pilot": "弓さやか",
+    "unit": "アフロダイＡ",
+    "lv": 1,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 17,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": 1,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 18,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": 1,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 18,
+    "pilot": "ジャック",
+    "unit": "テキサスマック",
+    "lv": 1,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 19,
+    "pilot": "ブライト＝ノア",
+    "unit": "ホワイトベース",
+    "lv": 1,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 8,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 2,
+    "exp": 36,
+    "money": 80,
+    "ai": "8ターンから移動",
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 2,
+    "exp": 36,
+    "money": 80,
+    "ai": "8ターンから移動",
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 2,
+    "exp": 36,
+    "money": 80,
+    "ai": "12ターンから移動",
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 1,
+    "exp": 18,
+    "money": 80,
+    "ai": "最初から移動1",
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 1,
+    "exp": 18,
+    "money": 80,
+    "ai": "最初から移動2",
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 1,
+    "exp": 18,
+    "money": 80,
+    "ai": "最初から移動1",
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 3,
+    "exp": 54,
+    "money": 80,
+    "ai": "8ターンから移動",
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 3,
+    "exp": 54,
+    "money": 80,
+    "ai": "12ターンから移動",
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 3,
+    "exp": 54,
+    "money": 80,
+    "ai": "12ターンから移動",
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 6,
+    "pilot": null,
+    "unit": "ダブラスＭ２",
+    "lv": 1,
+    "exp": 25,
+    "money": 100,
+    "ai": "最初から移動2",
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 7,
+    "pilot": null,
+    "unit": "ガラダＫ７",
+    "lv": 1,
+    "exp": 22,
+    "money": 100,
+    "ai": "最初から移動2",
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 1,
+    "pilot": null,
+    "unit": "ゼンⅡ",
+    "lv": 4,
+    "exp": 80,
+    "money": 150,
+    "ai": "12ターンから移動",
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 3,
+    "exp": 54,
+    "money": 100,
+    "ai": "12ターンから移動",
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 11,
+    "side": "enemy",
+    "heading": "増援（11EP）",
+    "units": [
+     {
+      "x": 1,
+      "y": 0,
+      "pilot": "シャア",
+      "unit": "ザク",
+      "lv": 13,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "pilot": "デニム",
+      "unit": "ザク",
+      "lv": 5,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 1,
+      "pilot": "ジーン",
+      "unit": "ザク",
+      "lv": 2,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "まず、本作は敵を倒した時でないと経験値が入らないので、\n 経験値を獲得するユニットを決めましょう。\n テキサスマックは、ステージクリア後にいなくなるので削り役に徹し、\n 他のユニットで倒していきましょう。",
+  "clear": "クリア後、カミーユ（Ζガンダム）が仲間になります。\n 可変機かつ優秀なので育てていきましょう。 \n パイロット\n ユニット\n Lv\n カミーユ＝ビダン\n Ζガンダム\n 3",
+  "stageType": "ground"
+ },
+ "02": {
+  "title": "「謀略の町」",
+  "map": {
+   "cols": 33,
+   "rows": 16,
+   "image": {
+    "width": 529,
+    "height": 256
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 1,
+    "y": 6,
+    "pilot": "ブライト＝ノア",
+    "unit": "ホワイトベース",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 8,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 10,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 5,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 7,
+    "pilot": "弓さやか",
+    "unit": "アフロダイＡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 9,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 16,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 3,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 3,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 3,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 4,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 4,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 4,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "グフ",
+    "lv": 4,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 4,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 4,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "グフ",
+    "lv": 4,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 7,
+    "pilot": "早乙女ミチル",
+    "unit": "ゲッターＱ",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 3,
+    "pilot": "ジェリド＝メサ",
+    "unit": "マラサイ",
+    "lv": 7,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 5,
+    "pilot": "カクリコン＝カクーラー",
+    "unit": "マラサイ",
+    "lv": 6,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 6,
+    "pilot": null,
+    "unit": "アルソス",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 3,
+    "side": "player",
+    "heading": "増援（3EP）",
+    "units": [
+     {
+      "x": 8,
+      "y": 0,
+      "pilot": "ジャック",
+      "unit": "テキサスマック",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 6,
+    "side": "enemy",
+    "heading": "増援（6EP）",
+    "units": [
+     {
+      "x": 19,
+      "y": 0,
+      "pilot": "アコース",
+      "unit": "ザク",
+      "lv": 4,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 20,
+      "y": 0,
+      "pilot": "ランバ＝ラル",
+      "unit": "グフ",
+      "lv": 10,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 21,
+      "y": 0,
+      "pilot": "コズン",
+      "unit": "ザク",
+      "lv": 3,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "このステージでZガンダムを育成しましょう。\n ウェイブライダーに変形できて移動に便利だが近接攻撃がないので注意。\n ゲッターＱは3EPになりテキサスマックが登場すると、\n NPCとして味方になるが倒して経験値にしても特に問題はない。 \n ジェリドはHP199以下になると東に移動し、(31,6)に着くと撤退してしまう。\n HP200近くから一気に倒してしまいたい。",
+  "clear": "ゲッターＱ、テキサスマックはこの地に残るため、ここでお別れです。",
+  "stageType": "ground"
+ },
+ "03": {
+  "title": "「ダカールの制圧」",
+  "map": {
+   "cols": 16,
+   "rows": 25,
+   "image": {
+    "width": 256,
+    "height": 400
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 6,
+    "y": 18,
+    "pilot": "ブライト＝ノア",
+    "unit": "ホワイトベース",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 17,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 16,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 17,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 18,
+    "pilot": "弓さやか",
+    "unit": "アフロダイＡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 19,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 2,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "ザク",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 10,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 6,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 11,
+    "pilot": null,
+    "unit": "トロスＤ７",
+    "lv": 4,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 10,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 6,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 5,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 1,
+    "pilot": "シャア＝アズナブル",
+    "unit": "赤ザク",
+    "lv": 13,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 1,
+    "pilot": "ララァ＝スン",
+    "unit": "エルメス",
+    "lv": 10,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ハイゴッグ",
+    "lv": 6,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ハイゴッグ",
+    "lv": 6,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ハイゴッグ",
+    "lv": 6,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 3,
+    "side": "player",
+    "heading": "増援（3EP）",
+    "units": [
+     {
+      "x": 9,
+      "y": 23,
+      "pilot": "シーブック＝アノー",
+      "unit": "F-91",
+      "lv": 8,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 4,
+    "side": "enemy",
+    "heading": "増援（4EP）",
+    "units": [
+     {
+      "x": 3,
+      "y": 21,
+      "pilot": "ガイア",
+      "unit": "ドム",
+      "lv": 14,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 21,
+      "pilot": "マッシュ",
+      "unit": "ドム",
+      "lv": 13,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 3,
+      "y": 22,
+      "pilot": "オルテガ",
+      "unit": "ドム",
+      "lv": 13,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "最初はザク、バド、トロスＤ７が動くので、\n 味方を3体ずつに分けるなどで対応しましょう。 \n 次に黒い三連星の増援に備えましょう。\n 全員で戦ったほうが安心です。\n その後、ハイゴッグを倒したらシャアたちのところを目指しましょう。\n ララァはアムロで説得すると仲間にできる。\n 後に離脱してしまうが、射程6のビットを持つので仲間にした方が心強い。",
+  "clear": "",
+  "stageType": "ground"
+ },
+ "04": {
+  "title": "「ストライク・バック」",
+  "map": {
+   "cols": 27,
+   "rows": 24,
+   "image": {
+    "width": 432,
+    "height": 384
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 15,
+    "y": 9,
+    "pilot": "ブライト＝ノア",
+    "unit": "ホワイトベース",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 7,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 7,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 8,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 8,
+    "pilot": "弓さやか",
+    "unit": "アフロダイＡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 10,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 10,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 9,
+    "pilot": "ララァ＝スン",
+    "unit": "エルメス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 2,
+    "y": 3,
+    "pilot": "ジェリド＝メサ",
+    "unit": "マラサイ",
+    "lv": 8,
+    "exp": 192,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 2,
+    "pilot": "カクリコン＝カクーラー",
+    "unit": "マラサイ",
+    "lv": 8,
+    "exp": 192,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 5,
+    "pilot": "マッシュ",
+    "unit": "ドム",
+    "lv": 13,
+    "exp": 273,
+    "money": 110,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 4,
+    "pilot": "ガイア",
+    "unit": "ドム",
+    "lv": 13,
+    "exp": 273,
+    "money": 110,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 3,
+    "pilot": "オルテガ",
+    "unit": "ドム",
+    "lv": 13,
+    "exp": 273,
+    "money": 110,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ズゴックＥ",
+    "lv": 9,
+    "exp": 135,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 20,
+    "pilot": "兵士",
+    "unit": "ズゴックＥ",
+    "lv": 9,
+    "exp": 135,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 20,
+    "pilot": "兵士",
+    "unit": "ズゴックＥ",
+    "lv": 9,
+    "exp": 135,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ザクレロ",
+    "lv": 11,
+    "exp": 440,
+    "money": 250,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 1,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 8,
+    "exp": 144,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 8,
+    "exp": 144,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 8,
+    "exp": 144,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 8,
+    "exp": 144,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 14,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 9,
+    "exp": 207,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 15,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 9,
+    "exp": 207,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 4,
+    "side": "enemy",
+    "heading": "増援（4EP）",
+    "units": [
+     {
+      "x": 0,
+      "y": 0,
+      "pilot": "兵士",
+      "unit": "ザクレロ",
+      "lv": 10,
+      "exp": 400,
+      "money": 250,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 8,
+    "side": "enemy",
+    "heading": "増援（8EP）",
+    "units": [
+     {
+      "x": 4,
+      "y": 16,
+      "pilot": "マシュマー＝セロ",
+      "unit": "ズサ",
+      "lv": 16,
+      "exp": 288,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 3,
+      "y": 15,
+      "pilot": "兵士",
+      "unit": "ズサ",
+      "lv": 9,
+      "exp": 162,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 5,
+      "y": 17,
+      "pilot": "兵士",
+      "unit": "ズサ",
+      "lv": 9,
+      "exp": 162,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 5,
+      "y": 14,
+      "pilot": "兵士",
+      "unit": "ガザＣ",
+      "lv": 9,
+      "exp": 162,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 15,
+      "pilot": "兵士",
+      "unit": "ガザＣ",
+      "lv": 9,
+      "exp": 162,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 7,
+      "y": 16,
+      "pilot": "兵士",
+      "unit": "ガザＣ",
+      "lv": 9,
+      "exp": 162,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "序盤は、ドム、ズゴック、ガザ、ザクレロがこちらに向かってくるので、\n 動かずに本拠地や基地の上で敵を迎え撃ちましょう。\n 基地はターン開始時にHPが回復するので、上手く回復させましょう。\n ドムかザクレロを気合を使いつつ倒し、他を掃討したら\n 後から進軍してくるマラサイや増援を倒す。\n マシュマーの増援に関しても、最後まで本拠地周辺で戦えばいい。",
+  "clear": "ステージクリアのイベントの際に、仲間の入れ替えが発生します。\n ホワイトベースがアーガマに変更されます（レベルは引き継ぐ）\n アフロダイＡ（弓さやか）が離脱\n メタス（ファ＝ユイリィ）が加入する\n パイロット\n ユニット\n Lv\n ファ＝ユイリィ\n メタス\n 10",
+  "stageType": "ground"
+ },
+ "05": {
+  "title": "「裏切りの荒野」",
+  "map": {
+   "cols": 32,
+   "rows": 16,
+   "image": {
+    "width": 512,
+    "height": 256
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 2,
+    "y": 3,
+    "pilot": "ブライト＝ノア",
+    "unit": "アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 4,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 5,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 5,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 6,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 7,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 6,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 5,
+    "pilot": "ララァ＝スン",
+    "unit": "エルメス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 17,
+    "y": 9,
+    "pilot": "ドズル＝ザビ",
+    "unit": "ビグザム",
+    "lv": 21,
+    "exp": 840,
+    "money": 500,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 13,
+    "exp": 312,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 13,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 13,
+    "exp": 312,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 12,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 13,
+    "exp": 312,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 7,
+    "pilot": null,
+    "unit": "トロスＤ７",
+    "lv": 12,
+    "exp": 360,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 8,
+    "pilot": null,
+    "unit": "トロスＤ７",
+    "lv": 12,
+    "exp": 360,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 9,
+    "pilot": null,
+    "unit": "トロスＤ７",
+    "lv": 12,
+    "exp": 360,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 0,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 11,
+    "exp": 198,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 1,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 11,
+    "exp": 198,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 11,
+    "exp": 198,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 3,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 10,
+    "exp": 230,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 5,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 10,
+    "exp": 230,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 7,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 10,
+    "exp": 230,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 4,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 10,
+    "exp": 230,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 6,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 10,
+    "exp": 230,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [
+   {
+    "x": 2,
+    "y": 9,
+    "pilot": "フォウ＝ムラサメ",
+    "unit": "サイコガンダム",
+    "lv": 26,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "reinforcements": [],
+  "strategy": "サイコガンダムとビグザムは動かない。\n ビグザムは非常に強いので、射程範囲6以内に近付かないように。\n 3PPになるとイベントが発生して、フォウとドズルは戦場から離脱する。\n ※無理してビグザムを倒してもフォウは仲間になりません \n マラサイ以外が遠距離攻撃を持つので優先して倒しましょう。",
+  "clear": "結局フォウは仲間になりません。",
+  "stageType": "ground"
+ },
+ "06": {
+  "title": "「敵要塞を破壊せよ」",
+  "map": {
+   "cols": 25,
+   "rows": 25,
+   "image": {
+    "width": 400,
+    "height": 400
+   }
+  },
+  "objective": {
+   "victory": "敵要塞の内部に潜入せよ\n または、敵を全滅させる",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 3,
+    "y": 19,
+    "pilot": "ブライト＝ノア",
+    "unit": "アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 21,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 18,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 20,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 22,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 19,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 21,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 20,
+    "pilot": "ララァ＝スン",
+    "unit": "エルメス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 19,
+    "y": 18,
+    "pilot": "胡蝶",
+    "unit": "メカ胡蝶鬼",
+    "lv": 16,
+    "exp": 384,
+    "money": 500,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 2,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 13,
+    "exp": 260,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 3,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 13,
+    "exp": 260,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 2,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 13,
+    "exp": 260,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 3,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 13,
+    "exp": 260,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 6,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 13,
+    "exp": 260,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 8,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 12,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 5,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 12,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 7,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 12,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 6,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 12,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 8,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 12,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 18,
+    "pilot": "兵士",
+    "unit": "ドム",
+    "lv": 12,
+    "exp": 252,
+    "money": 110,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ドム",
+    "lv": 12,
+    "exp": 252,
+    "money": 110,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 20,
+    "pilot": "兵士",
+    "unit": "ドム",
+    "lv": 12,
+    "exp": 252,
+    "money": 110,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 11,
+    "exp": 264,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 11,
+    "exp": 264,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 7,
+    "side": "player",
+    "heading": "増援（7EP）",
+    "units": [
+     {
+      "x": 12,
+      "y": 0,
+      "pilot": "マサキ＝アンドー",
+      "unit": "サイバスター",
+      "lv": 16,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 2,
+    "side": "enemy",
+    "heading": "増援（2EP）",
+    "units": [
+     {
+      "x": 23,
+      "y": 20,
+      "pilot": "ブラン＝ブルターク",
+      "unit": "アッシマー",
+      "lv": 16,
+      "exp": 320,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 6,
+    "side": "enemy",
+    "heading": "増援（6EP）",
+    "units": [
+     {
+      "x": 23,
+      "y": 1,
+      "pilot": "ガイア",
+      "unit": "ドム",
+      "lv": 16,
+      "exp": 336,
+      "money": 110,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 21,
+      "y": 2,
+      "pilot": "兵士",
+      "unit": "ドム",
+      "lv": 13,
+      "exp": 273,
+      "money": 110,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 22,
+      "y": 3,
+      "pilot": "兵士",
+      "unit": "ドム",
+      "lv": 13,
+      "exp": 273,
+      "money": 110,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 23,
+      "y": 4,
+      "pilot": "兵士",
+      "unit": "ドム",
+      "lv": 13,
+      "exp": 273,
+      "money": 110,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "",
+  "clear": "",
+  "stageType": "ground"
+ },
+ "07": {
+  "title": "「決闘!!ラインX1」",
+  "map": {
+   "cols": 21,
+   "rows": 21,
+   "image": {
+    "width": 336,
+    "height": 336
+   }
+  },
+  "objective": {
+   "victory": "ラインX1を倒すこと",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 11,
+    "y": 1,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 3,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 3,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 2,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 2,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 1,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 2,
+    "pilot": "ララァ＝スン",
+    "unit": "エルメス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 3,
+    "pilot": "胡蝶",
+    "unit": "メカ胡蝶鬼",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 13,
+    "y": 10,
+    "pilot": "ローレライ",
+    "unit": "ラインＸ１",
+    "lv": 21,
+    "exp": 735,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 5,
+    "pilot": null,
+    "unit": "ジェノバＭ９",
+    "lv": 15,
+    "exp": 330,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 6,
+    "pilot": null,
+    "unit": "ジェノバＭ９",
+    "lv": 15,
+    "exp": 330,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 7,
+    "pilot": null,
+    "unit": "ジェノバＭ９",
+    "lv": 15,
+    "exp": 330,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 14,
+    "exp": 336,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 11,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 14,
+    "exp": 336,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 12,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 14,
+    "exp": 336,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 14,
+    "exp": 252,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 14,
+    "exp": 252,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 14,
+    "exp": 252,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 14,
+    "exp": 252,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 6,
+    "pilot": null,
+    "unit": "ザイ",
+    "lv": 14,
+    "exp": 532,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 7,
+    "pilot": null,
+    "unit": "ザイ",
+    "lv": 14,
+    "exp": 532,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [
+   {
+    "x": 11,
+    "y": 1,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": 22,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "reinforcements": [
+   {
+    "turn": 6,
+    "side": "enemy",
+    "heading": "増援（6EP）",
+    "units": [
+     {
+      "x": 1,
+      "y": 15,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 16,
+      "exp": 368,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 1,
+      "y": 16,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 16,
+      "exp": 368,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 1,
+      "y": 17,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 16,
+      "exp": 368,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 16,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 16,
+      "exp": 368,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 3,
+      "y": 16,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 16,
+      "exp": 368,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 8,
+    "side": "enemy",
+    "heading": "増援（8EP）",
+    "units": [
+     {
+      "x": 17,
+      "y": 17,
+      "pilot": null,
+      "unit": "ゼンⅡ",
+      "lv": 18,
+      "exp": 360,
+      "money": 150,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 18,
+      "y": 16,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 16,
+      "exp": 320,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 16,
+      "y": 18,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 16,
+      "exp": 320,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 17,
+      "y": 15,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 16,
+      "exp": 320,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 15,
+      "y": 17,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 16,
+      "exp": 320,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "ラインX1は遠距離攻撃が無効なため、接近して攻撃しなければならない。\n ジェノバＭ９の射程7の範囲外で戦い、\n 移動してくるマラサイまでを倒してから進んだ方が安全です。\n 増援まで全て初期位置らへんで待ち受けると一番簡単だと思います。\n その後はジェノバＭ９を倒し、ラインX1の近くまで行くと、\n ラインX1が動き出すので、囲んで直接攻撃で倒しましょう。",
+  "clear": "残念ですが、ララァとはここでお別れです。\n 次のステージから、各ユニットの武器がグレードアップしています。\n 主にこんな感じ。書いてないですが他の武器の威力もアップしている。\n ユニット\n 解説\n アーガマ\n メガ粒子砲の射程4→5\n ウェイブライダー\n メガ粒子砲の射程4→5\n ゲッター3\n ゲッターミサイルの射程3→4",
+  "stageType": "base"
+ },
+ "08": {
+  "title": "「マクベの罠」",
+  "map": {
+   "cols": 29,
+   "rows": 21,
+   "image": {
+    "width": 464,
+    "height": 336
+   }
+  },
+  "objective": {
+   "victory": "ギャンを破壊すること",
+   "defeat": "グレンダイザーが破壊される"
+  },
+  "allies": [
+   {
+    "x": 17,
+    "y": 15,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 24,
+    "y": 1,
+    "pilot": "マ＝クベ",
+    "unit": "ギャン",
+    "lv": 29,
+    "exp": 1102,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 16,
+    "exp": 384,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 16,
+    "exp": 384,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 16,
+    "exp": 384,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 16,
+    "exp": 288,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 18,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 16,
+    "exp": 288,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 16,
+    "exp": 288,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 1,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 16,
+    "exp": 288,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 16,
+    "exp": 288,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 16,
+    "exp": 288,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 1,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 14,
+    "exp": 252,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 14,
+    "exp": 252,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 14,
+    "exp": 252,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 4,
+    "pilot": null,
+    "unit": "ミネルバＸ",
+    "lv": 18,
+    "exp": 504,
+    "money": 300,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [
+   {
+    "x": 17,
+    "y": 12,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": 15,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "reinforcements": [
+   {
+    "turn": 3,
+    "side": "player",
+    "heading": "増援（3EP）",
+    "units": [
+     {
+      "x": 1,
+      "y": 1,
+      "pilot": "ブライト＝ノア",
+      "unit": "アーガマ",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 3,
+      "y": 3,
+      "pilot": "アムロ＝レイ",
+      "unit": "ガンダム",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 4,
+      "pilot": "流竜馬",
+      "unit": "ゲッター１",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 1,
+      "y": 3,
+      "pilot": "ファ＝ユイリィ",
+      "unit": "メタス",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 4,
+      "y": 2,
+      "pilot": "カミーユ＝ビダン",
+      "unit": "Ｚガンダム",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 2,
+      "pilot": "シーブック＝アノー",
+      "unit": "F-91",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 3,
+      "y": 1,
+      "pilot": "胡蝶",
+      "unit": "メカ胡蝶鬼",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 10,
+    "side": "enemy",
+    "heading": "増援（10EP）",
+    "units": [
+     {
+      "x": 27,
+      "y": 0,
+      "pilot": null,
+      "unit": "ジェノバＭ９",
+      "lv": 16,
+      "exp": 352,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 26,
+      "y": 0,
+      "pilot": null,
+      "unit": "ザイ",
+      "lv": 16,
+      "exp": 608,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 27,
+      "y": 1,
+      "pilot": null,
+      "unit": "ザイ",
+      "lv": 16,
+      "exp": 608,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "マジンガーは基地の上で待ち受けた方がいい。\n 2PPでグレンダイザーが「偽グレンダイザー」になります。\n マジンガーで隣接している時としてない時で、イベントのメッセージが変わります。\n メッセージ以外の違いはなさそうです。 \n ミネルバXはマジンガーを攻撃してこない。\n マジンガーで説得すると仲間になります。しかし後に離脱するので育てる必要はない。\n 味方の増援が来たら、マジンガー1体で無理そうなら、\n 機動力の高いユニットで助けに行きましょう。\n ギャン（マ＝クベ）はかなりの強敵なので、他の敵を倒しきってから挑んだほうがいい。\n マクベに攻撃するとグレンダイザーとボスボロットが登場し、マクベに攻撃を行います。\n もし隣接できない場合には攻撃しません。\n ボスボロット自体は役に立たないが、精神コマンド「激怒」でダメージを与えるといい。",
+  "clear": "残念ですが、胡蝶とはここでお別れです。\n 代わりにグレンダイザー（デューク）とボスボロット（ボス）が仲間になります。\n パイロット\n ユニット\n Lv\n デューク＝フリード\n グレンダイザー\n 21\n ボス\n ボスボロット\n 20",
+  "stageType": "ground"
+ },
+ "09": {
+  "title": "「復讐の風」",
+  "map": {
+   "cols": 23,
+   "rows": 32,
+   "image": {
+    "width": 368,
+    "height": 512
+   }
+  },
+  "objective": {
+   "victory": "ギャンを破壊すること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 13,
+    "y": 13,
+    "pilot": "ブライト＝ノア",
+    "unit": "アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 14,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 12,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 14,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 12,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 11,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 13,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 13,
+    "pilot": "ミネルバＸ",
+    "unit": "ミネルバＸ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 11,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 10,
+    "pilot": "ボス",
+    "unit": "ボスボロット",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 6,
+    "y": 25,
+    "pilot": "マ＝クベ",
+    "unit": "ギャン",
+    "lv": 26,
+    "exp": 988,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 3,
+    "side": "player",
+    "heading": "増援（3EP）",
+    "units": [
+     {
+      "x": 0,
+      "y": 12,
+      "pilot": "ジュドー＝アーシタ",
+      "unit": "ＺＺガンダム",
+      "lv": 21,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 1,
+    "side": "enemy",
+    "heading": "増援（1EP）",
+    "units": [
+     {
+      "x": 7,
+      "y": 22,
+      "pilot": "兵士",
+      "unit": "ガザＣ",
+      "lv": 18,
+      "exp": 324,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 7,
+      "y": 21,
+      "pilot": "兵士",
+      "unit": "ガザＣ",
+      "lv": 18,
+      "exp": 324,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 7,
+      "y": 23,
+      "pilot": "兵士",
+      "unit": "ガザＣ",
+      "lv": 18,
+      "exp": 324,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 9,
+      "y": 24,
+      "pilot": null,
+      "unit": "ザイ",
+      "lv": 18,
+      "exp": 684,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 8,
+      "y": 24,
+      "pilot": null,
+      "unit": "ザイ",
+      "lv": 18,
+      "exp": 684,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 10,
+      "y": 24,
+      "pilot": null,
+      "unit": "ザイ",
+      "lv": 18,
+      "exp": 684,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 10,
+      "y": 16,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 18,
+      "exp": 414,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 9,
+      "y": 16,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 18,
+      "exp": 414,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 11,
+      "y": 16,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 18,
+      "exp": 414,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 7,
+      "y": 25,
+      "pilot": "兵士",
+      "unit": "ズサ",
+      "lv": 19,
+      "exp": 342,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 24,
+      "pilot": "兵士",
+      "unit": "ズサ",
+      "lv": 19,
+      "exp": 342,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 8,
+      "y": 26,
+      "pilot": "兵士",
+      "unit": "ズサ",
+      "lv": 19,
+      "exp": 342,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 2,
+    "side": "enemy",
+    "heading": "増援（2EP）",
+    "units": [
+     {
+      "x": 8,
+      "y": 24,
+      "pilot": null,
+      "unit": "誘導ミサイル",
+      "lv": 19,
+      "exp": 95,
+      "money": 10,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 7,
+      "y": 23,
+      "pilot": null,
+      "unit": "誘導ミサイル",
+      "lv": 19,
+      "exp": 95,
+      "money": 10,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 23,
+      "pilot": null,
+      "unit": "誘導ミサイル",
+      "lv": 19,
+      "exp": 95,
+      "money": 10,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 8,
+      "y": 25,
+      "pilot": null,
+      "unit": "誘導ミサイル",
+      "lv": 19,
+      "exp": 95,
+      "money": 10,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "マクベ一人で明らかに怪しいステージ。\n 1EP、2EPで敵増援が出現する。 \n 基地の下周辺で戦うのが良いでしょう。\n 2EPで出現する誘導ミサイルは攻撃力が高いので優先して倒しておきたい。\n ギャン（マ＝クベ）は海の中にいるので、ビーム系の攻撃ができない。\n 熱血持ちでサーベルなどを使って攻撃しましょう。",
+  "clear": "残念ですが、ミネルバＸとはここでお別れです。\n 代わりにＺＺガンダム（ジュドー＝アーシタ）が仲間になります。",
+  "stageType": "space"
+ },
+ "10": {
+  "title": "「マリオネット・フォウ」",
+  "map": {
+   "cols": 29,
+   "rows": 30,
+   "image": {
+    "width": 464,
+    "height": 480
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 3,
+    "y": 22,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 20,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 20,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 21,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 21,
+    "pilot": "ボス",
+    "unit": "ボスボロット",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 19,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 6,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 6,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 5,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 23,
+    "pilot": "ブライト＝ノア",
+    "unit": "アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 10,
+    "y": 2,
+    "pilot": "フォウ＝ムラサメ",
+    "unit": "サイコガンダム(MS)",
+    "lv": 24,
+    "exp": 720,
+    "money": 500,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 3,
+    "pilot": "ジェリド＝メサ",
+    "unit": "バイアラン",
+    "lv": 31,
+    "exp": 930,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 3,
+    "pilot": "ライラ＝ミラ＝ライラ",
+    "unit": "バイアラン",
+    "lv": 31,
+    "exp": 930,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 19,
+    "exp": 418,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 19,
+    "exp": 418,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 19,
+    "exp": 418,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 18,
+    "exp": 396,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 18,
+    "exp": 396,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 18,
+    "exp": 396,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 13,
+    "pilot": null,
+    "unit": "ダイ",
+    "lv": 23,
+    "exp": 874,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 17,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 15,
+    "exp": 345,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 18,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 15,
+    "exp": 345,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 19,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 15,
+    "exp": 345,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 9,
+    "pilot": null,
+    "unit": "ギルギル",
+    "lv": 19,
+    "exp": 380,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 9,
+    "pilot": null,
+    "unit": "ギルギル",
+    "lv": 19,
+    "exp": 380,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 13,
+    "exp": 312,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 13,
+    "exp": 312,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "マラサイ",
+    "lv": 13,
+    "exp": 312,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 5,
+    "side": "enemy",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 1,
+      "y": 15,
+      "pilot": null,
+      "unit": "ダイ",
+      "lv": 21,
+      "exp": 798,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 14,
+      "pilot": null,
+      "unit": "グシオスβⅢ",
+      "lv": 20,
+      "exp": 440,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 2,
+      "y": 17,
+      "pilot": null,
+      "unit": "グシオスβⅢ",
+      "lv": 20,
+      "exp": 440,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 10,
+    "side": "enemy",
+    "heading": "増援（10EP）",
+    "units": [
+     {
+      "x": 12,
+      "y": 0,
+      "pilot": "兵士",
+      "unit": "ザクレロ",
+      "lv": 21,
+      "exp": 840,
+      "money": 250,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "陽動の3ユニットは急がずギルギル、バドを倒してから、\n ドライセンに向かいましょう。\n 4EPになりフォウのセリフが発生したら、その後はカミーユで説得して仲間にできる。\n 初っ端にボスの激怒を使いたいところだが、\n そうするとドライセンやバイアランが一斉に動き出すので止めた方がいい。\n 本隊はマラサイを倒したら、ダイを狙いましょう。\n HPが高く倒すのに時間がかかると思います。\n そのうち増援が出てくるのでそちらも対応しましょう。\n 最終的には全員でドライセンやバイアランを1体ずつ倒していきましょう。",
+  "clear": "一時的にシーブックとジュドーが離脱します。\n サイコガンダム（フォウ＝ムラサメ）は、そのまま仲間になります。",
+  "stageType": "ground"
+ },
+ "11": {
+  "title": "「驚異!!究極ロボ ヴァルシオン」",
+  "map": {
+   "cols": 26,
+   "rows": 32,
+   "image": {
+    "width": 416,
+    "height": 512
+   }
+  },
+  "objective": {
+   "victory": "ミデアを守りつつ敵を全滅させること",
+   "defeat": "ミデアが破壊されたとき"
+  },
+  "allies": [
+   {
+    "x": 8,
+    "y": 6,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 5,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 4,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 8,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 6,
+    "pilot": "フォウ＝ムラサメ",
+    "unit": "サイコガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 5,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 7,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 9,
+    "pilot": "ボス",
+    "unit": "ボスボロット",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 16,
+    "y": 6,
+    "pilot": null,
+    "unit": "グシオスβⅢ",
+    "lv": 19,
+    "exp": 418,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 5,
+    "pilot": null,
+    "unit": "グシオスβⅢ",
+    "lv": 20,
+    "exp": 440,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 7,
+    "pilot": null,
+    "unit": "グシオスβⅢ",
+    "lv": 19,
+    "exp": 418,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 16,
+    "pilot": "兵士",
+    "unit": "アッシマー(MS)",
+    "lv": 20,
+    "exp": 400,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "アッシマー(MS)",
+    "lv": 20,
+    "exp": 400,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "アッシマー(MS)",
+    "lv": 20,
+    "exp": 400,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 18,
+    "pilot": null,
+    "unit": "ジェノバＭ９",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 19,
+    "pilot": null,
+    "unit": "ジェノバＭ９",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 23,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 21,
+    "exp": 483,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 23,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 21,
+    "exp": 483,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 23,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 21,
+    "exp": 483,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 1,
+    "pilot": null,
+    "unit": "メカ雷獣鬼",
+    "lv": 22,
+    "exp": 572,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 27,
+    "pilot": null,
+    "unit": "ギルギル",
+    "lv": 23,
+    "exp": 460,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 26,
+    "pilot": null,
+    "unit": "ダイ",
+    "lv": 24,
+    "exp": 912,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 25,
+    "pilot": null,
+    "unit": "ギルギル",
+    "lv": 23,
+    "exp": 460,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [
+   {
+    "x": 9,
+    "y": 7,
+    "pilot": "マチルダ=アジャン",
+    "unit": "ミデア",
+    "lv": 13,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "reinforcements": [
+   {
+    "turn": 7,
+    "side": "player",
+    "heading": "増援（7EP）",
+    "units": [
+     {
+      "x": 14,
+      "y": 24,
+      "pilot": "マサキ＝アンドー",
+      "unit": "サイバスター",
+      "lv": 24,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 5,
+    "side": "enemy",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 2,
+      "y": 19,
+      "pilot": "ビアン＝ゾルダーク",
+      "unit": "ヴァルシオン",
+      "lv": 31,
+      "exp": 0,
+      "money": 0,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 8,
+    "side": "enemy",
+    "heading": "増援（8EP）",
+    "units": [
+     {
+      "x": 4,
+      "y": 14,
+      "pilot": "兵士",
+      "unit": "バイアラン",
+      "lv": 22,
+      "exp": 660,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 4,
+      "y": 13,
+      "pilot": "兵士",
+      "unit": "ズサ",
+      "lv": 22,
+      "exp": 396,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 4,
+      "y": 15,
+      "pilot": "兵士",
+      "unit": "ズサ",
+      "lv": 22,
+      "exp": 396,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "ミデアを守る必要があるため、\n 増援のことも考えてミデア周辺で戦いましょう。\n 5EPでヴァルシオンが登場するが、圧倒的な性能のため倒すことは無理だと思います。\n こちらが攻撃しなければ攻撃されることはない。 \n 7EPでマサキが登場することでビアンが撤退する。\n マサキは今後も仲間として戦ってくれることになります。",
+  "clear": "",
+  "stageType": "ground"
+ },
+ "12": {
+  "title": "「ラサの攻防」",
+  "map": {
+   "cols": 20,
+   "rows": 30,
+   "image": {
+    "width": 320,
+    "height": 480
+   }
+  },
+  "objective": {
+   "victory": "ビグザムを破壊し、シャトルブースターを手に入れること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 14,
+    "y": 4,
+    "pilot": "流竜馬",
+    "unit": "ゲッター１",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 4,
+    "pilot": "アムロ＝レイ",
+    "unit": "ガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 5,
+    "pilot": "兜甲児",
+    "unit": "マジンガーＺ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 1,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 2,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 4,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 1,
+    "pilot": "ボス",
+    "unit": "ボスボロット",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 2,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 3,
+    "pilot": "フォウ＝ムラサメ",
+    "unit": "サイコガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 10,
+    "y": 16,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 22,
+    "exp": 396,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 16,
+    "pilot": "ドズル＝ザビ",
+    "unit": "ビグザム",
+    "lv": 27,
+    "exp": 1080,
+    "money": 500,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 15,
+    "pilot": "兵士",
+    "unit": "ズサ",
+    "lv": 22,
+    "exp": 396,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 20,
+    "pilot": "兵士",
+    "unit": "アッシマー(MS)",
+    "lv": 21,
+    "exp": 420,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 21,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 21,
+    "exp": 483,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 21,
+    "pilot": null,
+    "unit": "バド",
+    "lv": 21,
+    "exp": 483,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 7,
+    "pilot": null,
+    "unit": "メカ雷獣鬼",
+    "lv": 22,
+    "exp": 572,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 8,
+    "pilot": null,
+    "unit": "メカ雷獣鬼",
+    "lv": 22,
+    "exp": 572,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 14,
+    "pilot": null,
+    "unit": "ダイ",
+    "lv": 23,
+    "exp": 874,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 12,
+    "pilot": null,
+    "unit": "アルソス",
+    "lv": 23,
+    "exp": 644,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 12,
+    "pilot": null,
+    "unit": "アルソス",
+    "lv": 23,
+    "exp": 644,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 12,
+    "pilot": null,
+    "unit": "ボング",
+    "lv": 23,
+    "exp": 644,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 5,
+    "side": "player",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 12,
+      "y": 27,
+      "pilot": "ブライト＝ノア",
+      "unit": "ネェル・アーガマ",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 12,
+      "y": 26,
+      "pilot": "シーブック＝アノー",
+      "unit": "F-91",
+      "lv": null,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 6,
+    "side": "enemy",
+    "heading": "増援（6EP）",
+    "units": [
+     {
+      "x": 14,
+      "y": 27,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 23,
+      "exp": 529,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 13,
+      "y": 28,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 23,
+      "exp": 529,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 15,
+      "y": 28,
+      "pilot": null,
+      "unit": "バド",
+      "lv": 23,
+      "exp": 529,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "初期位置から動かずに集まってきたところでサイフラッシュを当てるのがおすすめ。\n ボスの激怒を使うなら、1ターン目が良いが、\n ビグザムが動き出すことになるので、そこはお好みで。 \n 敵の数が少ないので、クリアしやすいステージだと思います。\n 6EPの敵増援はネェル・アーガマで撃破して経験値を与えておくといいでしょう。",
+  "clear": "ＺＺガンダム（ジュドー）が復帰します。\n また、各ユニットの武器がグレードアップしています。主にこんな感じ。\n ユニット\n 解説\n ウェイブライダー\n メガ粒子砲の射程5→6\n メタス(MA)\n アームビームガン→メガ粒子砲に変更\n グレンダイザー\n 武器が反重力ストーム、ショルダーブーメランに変更\n スペイザー\n ダブルスペイザーになり武器も一新\n ボスボロット\n 武器がスペシャルボロットパンチに変更",
+  "stageType": "ground"
+ },
+ "13": {
+  "title": "「シロッコの影」",
+  "map": {
+   "cols": 24,
+   "rows": 24,
+   "image": {
+    "width": 384,
+    "height": 384
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "ネェル・アーガマが破壊されたとき"
+  },
+  "allies": [
+   {
+    "x": 11,
+    "y": 12,
+    "pilot": "ブライト＝ノア",
+    "unit": "ネェル・アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 14,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 10,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 12,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 11,
+    "pilot": "フォウ＝ムラサメ",
+    "unit": "サイコガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 10,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 14,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 13,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 12,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 13,
+    "pilot": "ボス",
+    "unit": "ボスボロット",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 11,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 17,
+    "y": 2,
+    "pilot": "マシュマー＝セロ",
+    "unit": "ザクⅢ改",
+    "lv": 29,
+    "exp": 725,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 2,
+    "pilot": "ハマーン＝カーン",
+    "unit": "キュベレイ",
+    "lv": 38,
+    "exp": 1178,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 3,
+    "pilot": "エルピー＝プル",
+    "unit": "キュベレイmkⅡ",
+    "lv": 26,
+    "exp": 520,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 0,
+    "y": 18,
+    "pilot": "レコア＝ロンド",
+    "unit": "パラス・アテネ",
+    "lv": 23,
+    "exp": 690,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 19,
+    "pilot": "パプテマス＝シロッコ",
+    "unit": "パラス・アテネ",
+    "lv": 36,
+    "exp": 1080,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 20,
+    "pilot": "サラ＝ザビアロフ",
+    "unit": "パラス・アテネ",
+    "lv": 21,
+    "exp": 630,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 18,
+    "pilot": "ジェリド＝メサ",
+    "unit": "バウンド・ドック",
+    "lv": 29,
+    "exp": 725,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 15,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 23,
+    "exp": 506,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 16,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 23,
+    "exp": 506,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 16,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 23,
+    "exp": 506,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 23,
+    "exp": 506,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 19,
+    "exp": 342,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 0,
+    "y": 5,
+    "pilot": null,
+    "unit": "ジャラガ",
+    "lv": 24,
+    "exp": 528,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 19,
+    "exp": 342,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 5,
+    "side": "enemy",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 20,
+      "y": 6,
+      "pilot": null,
+      "unit": "キングゴリ",
+      "lv": 24,
+      "exp": 576,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 20,
+      "y": 5,
+      "pilot": null,
+      "unit": "キングゴリ",
+      "lv": 24,
+      "exp": 576,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 21,
+      "y": 6,
+      "pilot": null,
+      "unit": "キングゴリ",
+      "lv": 24,
+      "exp": 576,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 5,
+      "y": 7,
+      "pilot": null,
+      "unit": "アルソス",
+      "lv": 24,
+      "exp": 672,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 4,
+      "y": 8,
+      "pilot": null,
+      "unit": "アルソス",
+      "lv": 24,
+      "exp": 672,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 8,
+      "pilot": null,
+      "unit": "アルソス",
+      "lv": 24,
+      "exp": 672,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "囲まれているので中央周辺で、2手に分かれて対応すると良いでしょう。\n ボスの激怒を使うなら、1ターン目がオススメ。\n ジュドーがプルに隣接すると説得できる。これによりプルは離脱。\n 敵に名前ありのパイロットが多く不安に感じるかもしれないが、\n 2EPでシロッコ、レコア、サラが撤退するので安心していい。\n キュベレイやキングゴリには、気合や熱血を使って早めに倒しましょう。",
+  "clear": "これにて地球を出て、宇宙でのステージが始まります。\n ボスボロットは宇宙空間では使えないので出撃しません。\n また、残念ですがフォウとはここでお別れです。",
+  "stageType": "ground"
+ },
+ "14": {
+  "title": "「宇宙へ…」",
+  "map": {
+   "cols": 22,
+   "rows": 30,
+   "image": {
+    "width": 352,
+    "height": 480
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 10,
+    "y": 22,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 23,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 22,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 25,
+    "pilot": "ブライト＝ノア",
+    "unit": "ネェル・アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 26,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 26,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 24,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 24,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 24,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 24,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 13,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 24,
+    "exp": 672,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 9,
+    "pilot": "ロザミア＝バダム",
+    "unit": "サイコガンダムmkⅡ(MS)",
+    "lv": 36,
+    "exp": 1440,
+    "money": 1000,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 6,
+    "y": 4,
+    "pilot": "ヤザン＝ゲーブル",
+    "unit": "ハンブラビ",
+    "lv": 36,
+    "exp": 720,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 15,
+    "pilot": "兵士",
+    "unit": "ザクⅢ",
+    "lv": 24,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "ザクⅢ",
+    "lv": 24,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 15,
+    "pilot": "兵士",
+    "unit": "ザクⅢ",
+    "lv": 24,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "ザクⅢ",
+    "lv": 24,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 21,
+    "exp": 462,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 12,
+    "pilot": "ラカン＝ダカラン",
+    "unit": "ザクⅢ",
+    "lv": 36,
+    "exp": 900,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 2,
+    "side": "enemy",
+    "heading": "増援（2EP）",
+    "units": [
+     {
+      "x": 1,
+      "y": 19,
+      "pilot": "兵士",
+      "unit": "ドライセン",
+      "lv": 24,
+      "exp": 528,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 0,
+      "y": 17,
+      "pilot": "兵士",
+      "unit": "ドライセン",
+      "lv": 24,
+      "exp": 528,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 0,
+      "y": 21,
+      "pilot": "兵士",
+      "unit": "ドライセン",
+      "lv": 24,
+      "exp": 528,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 8,
+    "side": "enemy",
+    "heading": "増援（8EP）",
+    "units": [
+     {
+      "x": 21,
+      "y": 2,
+      "pilot": "兵士",
+      "unit": "ドライセン",
+      "lv": 25,
+      "exp": 1000,
+      "money": 250,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 21,
+      "y": 3,
+      "pilot": "兵士",
+      "unit": "ジャムルフィン",
+      "lv": 25,
+      "exp": 675,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 21,
+      "y": 4,
+      "pilot": "兵士",
+      "unit": "ドライセン",
+      "lv": 25,
+      "exp": 1000,
+      "money": 250,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 9,
+    "side": "enemy",
+    "heading": "増援（9EP）",
+    "units": [
+     {
+      "x": 4,
+      "y": 6,
+      "pilot": "兵士",
+      "unit": "ザクⅢ",
+      "lv": 25,
+      "exp": 625,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 5,
+      "y": 7,
+      "pilot": "兵士",
+      "unit": "ザクⅢ",
+      "lv": 25,
+      "exp": 625,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 8,
+      "pilot": "兵士",
+      "unit": "ザクⅢ",
+      "lv": 25,
+      "exp": 625,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "ロザミアの行動時にカミーユに隣接できる距離にいると、\n イベントが始まり仲間になる。以降はNPCとしてカミーユを追うようになる。\n カミーユが撃破されると、専用セリフの次ターンから敵に攻撃を開始する。\n なお、ロザミアは結局倒すことになるので、\n このマップでも倒してしまって問題ない。 \n クモの巣に引っかかると、このマップでは移動ができなるので要注意。\n ヤザンは動けなくなったユニットを襲ってきます。 \n 引っかかるのは一人だけなので、グレートマジンガーでワザとかかるのも良いと思います。",
+  "clear": "",
+  "stageType": "space"
+ },
+ "15": {
+  "title": "「激闘！ジュピトリス」",
+  "map": {
+   "cols": 25,
+   "rows": 32,
+   "image": {
+    "width": 400,
+    "height": 512
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 12,
+    "y": 14,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 16,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 17,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 17,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 17,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 16,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 18,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 18,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 20,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 12,
+    "y": 2,
+    "pilot": "パプテマス＝シロッコ",
+    "unit": "パラス・アテネ",
+    "lv": 41,
+    "exp": 1230,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 3,
+    "pilot": "サラ＝ザビアロフ",
+    "unit": "パラス・アテネ",
+    "lv": 37,
+    "exp": 1110,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 3,
+    "pilot": "レコア＝ロンド",
+    "unit": "パラス・アテネ",
+    "lv": 37,
+    "exp": 1110,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 26,
+    "exp": 702,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 20,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 24,
+    "exp": 648,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 20,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 26,
+    "exp": 702,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 24,
+    "exp": 648,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 9,
+    "pilot": "ジェリド＝メサ",
+    "unit": "バウンド・ドック",
+    "lv": 33,
+    "exp": 825,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 8,
+    "pilot": "マウアー＝ファラオ",
+    "unit": "バウンド・ドック",
+    "lv": 33,
+    "exp": 825,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 13,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 26,
+    "exp": 572,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 26,
+    "exp": 572,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 13,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 21,
+    "exp": 378,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "ガザＣ",
+    "lv": 21,
+    "exp": 378,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ゲーマルク",
+    "lv": 26,
+    "exp": 676,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 11,
+    "pilot": "ロザミア＝バダム",
+    "unit": "サイコガンダムmkⅡ",
+    "lv": 31,
+    "exp": 1240,
+    "money": 1000,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 4,
+    "side": "enemy",
+    "heading": "増援（4EP）",
+    "units": [
+     {
+      "x": 12,
+      "y": 6,
+      "pilot": "兵士",
+      "unit": "バウンド・ドック",
+      "lv": 26,
+      "exp": 650,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 11,
+      "y": 7,
+      "pilot": "兵士",
+      "unit": "バウンド・ドック",
+      "lv": 26,
+      "exp": 650,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 13,
+      "y": 7,
+      "pilot": "兵士",
+      "unit": "バウンド・ドック",
+      "lv": 26,
+      "exp": 650,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "最初からかなり囲まれていて危険な状態です。\n ジャムルフィンの射程外に移動しつつ、ゲーマルクとサイコガンダムを倒しましょう。\n 熱血などを使った速攻をおすすめします。 \n 残念ですがロザミアは倒すしかないです。\n あとは1箇所に集まって近付いてきた敵を撃破していくのが安全です。",
+  "clear": "",
+  "stageType": "base"
+ },
+ "16": {
+  "title": "「脱出」",
+  "map": {
+   "cols": 32,
+   "rows": 16,
+   "image": {
+    "width": 512,
+    "height": 256
+   }
+  },
+  "objective": {
+   "victory": "全ての味方ユニットを脱出ポイントから脱出させること\n または敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 15,
+    "y": 8,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 14,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 9,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 10,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 11,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 13,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 12,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 12,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 11,
+    "pilot": "ブライト＝ノア",
+    "unit": "ネェル・アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 10,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 2,
+    "y": 8,
+    "pilot": "カロッゾ＝ロナ",
+    "unit": "ラフレシア",
+    "lv": 46,
+    "exp": 2208,
+    "money": 1100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 6,
+    "pilot": "ギュネイ＝ガス",
+    "unit": "ヤクト・ドーガ",
+    "lv": 45,
+    "exp": 1350,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 10,
+    "pilot": "クエス＝パラヤ",
+    "unit": "ヤクト・ドーガ",
+    "lv": 45,
+    "exp": 1350,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 8,
+    "pilot": "レズン＝シュナイダー",
+    "unit": "ギラ・ドーガ",
+    "lv": 45,
+    "exp": 990,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 40,
+    "exp": 880,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 40,
+    "exp": 880,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 12,
+    "pilot": "キャプテンラドラ",
+    "unit": "シグ",
+    "lv": 42,
+    "exp": 1176,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 13,
+    "pilot": null,
+    "unit": "メカ雷獣鬼",
+    "lv": 40,
+    "exp": 1040,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 38,
+    "exp": 836,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 39,
+    "exp": 858,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "ドライセン",
+    "lv": 38,
+    "exp": 836,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 38,
+    "exp": 836,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 38,
+    "exp": 836,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 3,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 38,
+    "exp": 1064,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 38,
+    "exp": 1064,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 8,
+    "pilot": "セシリー＝フェアチャイルド",
+    "unit": "ビギナ・ギナ",
+    "lv": 43,
+    "exp": 1634,
+    "money": 1000,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [],
+  "strategy": "マップ右端にある宇宙気流の中まで逃げるのが目的です。\n ユニットを待機させるとマップから離脱します。\n これを全ユニット行う必要がある。 \n 左側にいるカロッゾたちは動かないので\n 右側の敵を倒して離脱ポイントまで行きましょう。",
+  "clear": "次のステージはサイバスター（マサキ）がいません。",
+  "stageType": "space"
+ },
+ "17": {
+  "title": "「ソーラレイ発動」",
+  "map": {
+   "cols": 26,
+   "rows": 32,
+   "image": {
+    "width": 416,
+    "height": 512
+   }
+  },
+  "objective": {
+   "victory": "制限時間以内にソーラレイを破壊せよ",
+   "defeat": "11ターンの経過"
+  },
+  "allies": [
+   {
+    "x": 19,
+    "y": 26,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 25,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 27,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 24,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 28,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 26,
+    "pilot": "ブライト＝ノア",
+    "unit": "ネェル・アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 26,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 24,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 26,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 7,
+    "y": 6,
+    "pilot": null,
+    "unit": "発電ミラー",
+    "lv": 30,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 8,
+    "pilot": null,
+    "unit": "発電ミラー",
+    "lv": 30,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 9,
+    "pilot": null,
+    "unit": "発電ミラー",
+    "lv": 30,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 11,
+    "pilot": null,
+    "unit": "発電ミラー",
+    "lv": 30,
+    "exp": 240,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 10,
+    "pilot": "グレミー＝トト",
+    "unit": "バウ",
+    "lv": 35,
+    "exp": 980,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 12,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 29,
+    "exp": 812,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 13,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 29,
+    "exp": 812,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 29,
+    "exp": 812,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 8,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 30,
+    "exp": 810,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 30,
+    "exp": 810,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 30,
+    "exp": 810,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 20,
+    "pilot": null,
+    "unit": "ギルギル",
+    "lv": 29,
+    "exp": 580,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 22,
+    "pilot": null,
+    "unit": "ザイ",
+    "lv": 29,
+    "exp": 1102,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 24,
+    "pilot": null,
+    "unit": "アルソス",
+    "lv": 29,
+    "exp": 812,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 28,
+    "exp": 784,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 23,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 28,
+    "exp": 784,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 11,
+    "pilot": "エルピー＝プル",
+    "unit": "キュベレイmkⅡ(プル)",
+    "lv": 30,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 4,
+    "side": "enemy",
+    "heading": "増援（4EP）",
+    "units": [
+     {
+      "x": 24,
+      "y": 30,
+      "pilot": "兵士",
+      "unit": "ジャムルフィン",
+      "lv": 28,
+      "exp": 756,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 25,
+      "y": 29,
+      "pilot": "兵士",
+      "unit": "ジャムルフィン",
+      "lv": 28,
+      "exp": 756,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 23,
+      "y": 31,
+      "pilot": "兵士",
+      "unit": "ジャムルフィン",
+      "lv": 28,
+      "exp": 756,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 7,
+    "side": "enemy",
+    "heading": "増援（7EP）",
+    "units": [
+     {
+      "x": 18,
+      "y": 0,
+      "pilot": null,
+      "unit": "ボング",
+      "lv": 30,
+      "exp": 840,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 17,
+      "y": 1,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 29,
+      "exp": 580,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 19,
+      "y": 1,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 29,
+      "exp": 580,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 9,
+    "side": "enemy",
+    "heading": "増援（9EP）",
+    "units": [
+     {
+      "x": 0,
+      "y": 5,
+      "pilot": "兵士",
+      "unit": "ザクレロ",
+      "lv": 28,
+      "exp": 1120,
+      "money": 250,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 0,
+      "y": 7,
+      "pilot": "兵士",
+      "unit": "ザクレロ",
+      "lv": 28,
+      "exp": 1120,
+      "money": 250,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 0,
+      "y": 9,
+      "pilot": "兵士",
+      "unit": "ザクレロ",
+      "lv": 28,
+      "exp": 1120,
+      "money": 250,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "11ターン以内にクリアが必要なため、急がないと厳しい。\n プルはジュドーで説得ができます。\n 1ターンで2回説得ができるので、説得すると仲間になります。\n グレミーと周辺のバウはダメージを受けたり隣接しない限りは動かない。\n そのためまずは各ユニットで発電ミラーに隣接しましょう。\n 発電ミラーが攻撃してくるので、反撃でダメージを与えられます。\n 後は余裕があれば、周りの敵を倒して経験値を稼ぎましょう。",
+  "clear": "",
+  "stageType": "space"
+ },
+ "18": {
+  "title": "「潜入！コンペトー」",
+  "map": {
+   "cols": 32,
+   "rows": 20,
+   "image": {
+    "width": 512,
+    "height": 320
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 15,
+    "y": 5,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 7,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 7,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 8,
+    "pilot": "エルピー＝プル",
+    "unit": "キュベレイmkⅡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 6,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 7,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 7,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 5,
+    "pilot": "ボス",
+    "unit": "ボスボロット",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 1,
+    "y": 6,
+    "pilot": "グレミー＝トト",
+    "unit": "バウ",
+    "lv": 37,
+    "exp": 1036,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ドーベンウルフ",
+    "lv": 36,
+    "exp": 972,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 30,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 8,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 30,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 30,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 30,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 16,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 30,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 10,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 29,
+    "exp": 1102,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 28,
+    "y": 11,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 29,
+    "exp": 1102,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 28,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 29,
+    "exp": 812,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 29,
+    "y": 5,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 30,
+    "exp": 840,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 30,
+    "exp": 840,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 28,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 30,
+    "exp": 840,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 16,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 30,
+    "exp": 600,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 5,
+    "side": "enemy",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 0,
+      "y": 8,
+      "pilot": "兵士",
+      "unit": "ザクⅢ",
+      "lv": 30,
+      "exp": 750,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 0,
+      "y": 9,
+      "pilot": "兵士",
+      "unit": "ザクⅢ",
+      "lv": 30,
+      "exp": 750,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 31,
+      "y": 5,
+      "pilot": "ラカン＝ダカラン",
+      "unit": "ドーベンウルフ",
+      "lv": 39,
+      "exp": 1053,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 31,
+      "y": 6,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 30,
+      "exp": 600,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 30,
+      "exp": 600,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 7,
+    "side": "enemy",
+    "heading": "増援（7EP）",
+    "units": [
+     {
+      "x": 30,
+      "y": 0,
+      "pilot": "兵士",
+      "unit": "メッサーラ",
+      "lv": 30,
+      "exp": 900,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 30,
+      "y": 1,
+      "pilot": "兵士",
+      "unit": "ハンブラビ",
+      "lv": 30,
+      "exp": 600,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 29,
+      "y": 1,
+      "pilot": "兵士",
+      "unit": "バウ",
+      "lv": 30,
+      "exp": 840,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 29,
+      "y": null,
+      "pilot": "兵士",
+      "unit": "バウ",
+      "lv": 30,
+      "exp": 840,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "味方が少ないため、南側に集まって戦うのが良いでしょう。\n グレミーは最初は動かないため、呼びたくなったら\n ボスの激怒を使えば動き出します。\n グレミーとラカンに注意して、あとは無理せず\n 固まって行動すれば問題のないステージかなと思います。",
+  "clear": "サイバスター（マサキ）が復帰します。\n また、各ユニットの武器がグレードアップしています。主にこんな感じ。\n ユニット\n 解説\n Ｚガンダム\n ビームライフルがハイパーメガランチャーに変更\n ウェイブライダー\n メガ粒子砲がハイパーメガランチャーに変更\n νガンダム\n フィンファンネルの射程5→6\n メタス(MA)\n メガ粒子砲の射程4→5\n F-91\n ビームライフルがヴェスバーに変更\n ゲッタードラゴン\n ゲッタービームがシャインスパークに変更\n ゲッターライガー\n ライガーミサイルの射程3→4\n ゲッターポセイドン\n ストロングミサイルの射程3→4\n グレートマジンガー\n 武器がサンダーブレイク、グレートブーメランに変更\n グレンダイザー\n 武器がスペースサンダー、ダブルハーケンに変更\n 変形にドリルスペイザー、マリンスペイザーが追加\n スペイザー\n ダブルスペイザーになり武器も一新\n ボスボロット\n 武器がスペシャルボロットパンチに変更",
+  "stageType": "base"
+ },
+ "19": {
+  "title": "「月面の死闘」",
+  "map": {
+   "cols": 26,
+   "rows": 26,
+   "image": {
+    "width": 416,
+    "height": 416
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 7,
+    "y": 11,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 12,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 13,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 14,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 6,
+    "y": 12,
+    "pilot": "ブライト＝ノア",
+    "unit": "ネェル・アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 11,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 13,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 9,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 15,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 6,
+    "y": 10,
+    "pilot": "エルピー＝プル",
+    "unit": "キュベレイmkⅡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 6,
+    "y": 14,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 16,
+    "y": 20,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 30,
+    "exp": 1140,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 19,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 30,
+    "exp": 1140,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 21,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 30,
+    "exp": 1140,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 4,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 30,
+    "exp": 840,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 30,
+    "exp": 840,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 16,
+    "pilot": null,
+    "unit": "ザイ",
+    "lv": 30,
+    "exp": 1140,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 15,
+    "pilot": null,
+    "unit": "ザイ",
+    "lv": 30,
+    "exp": 1140,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 14,
+    "pilot": null,
+    "unit": "ザイ",
+    "lv": 30,
+    "exp": 1140,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 30,
+    "exp": 810,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "バウンド・ドック",
+    "lv": 31,
+    "exp": 775,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 21,
+    "pilot": "プルツー",
+    "unit": "サイコガンダムmkⅡ(MS)",
+    "lv": 39,
+    "exp": 1560,
+    "money": 1000,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 20,
+    "pilot": "ハマーン＝カーン",
+    "unit": "キュベレイ",
+    "lv": 46,
+    "exp": 1426,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [],
+  "strategy": "プルツーはプルだけを狙います。\n プルツーの攻撃でプルが撃破されると死んでしまいます。\n ※プルツーを仲間にしたいならこのイベントを起こす必要がある \n つまりプルかプルツーどちらか一方しか仲間にできません。\n これ以外は増援もなく、シンプルなステージです。\n ハマーンにだけ気を付けましょう。",
+  "clear": "",
+  "stageType": "space"
+ },
+ "20": {
+  "title": "「決戦!!グラナダ要塞」",
+  "map": {
+   "cols": 32,
+   "rows": 20,
+   "image": {
+    "width": 512,
+    "height": 320
+   }
+  },
+  "objective": {
+   "victory": "敵を全滅させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 9,
+    "y": 13,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 12,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 14,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 8,
+    "pilot": "ブライト＝ノア",
+    "unit": "ネェル・アーガマ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 6,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 5,
+    "y": 10,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 7,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 9,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 6,
+    "y": 7,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 6,
+    "y": 9,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 8,
+    "pilot": "エルピー＝プル",
+    "unit": "キュベレイmkⅡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 8,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 26,
+    "exp": 520,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 26,
+    "exp": 520,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 14,
+    "pilot": null,
+    "unit": "アルソス",
+    "lv": 29,
+    "exp": 812,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 15,
+    "pilot": null,
+    "unit": "アルソス",
+    "lv": 29,
+    "exp": 812,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 15,
+    "pilot": "兵士",
+    "unit": "ドーベンウルフ",
+    "lv": 32,
+    "exp": 864,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 14,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 33,
+    "exp": 891,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 13,
+    "pilot": "兵士",
+    "unit": "ドーベンウルフ",
+    "lv": 32,
+    "exp": 864,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 1,
+    "pilot": null,
+    "unit": "ジェノバＭ９",
+    "lv": 32,
+    "exp": 704,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 2,
+    "pilot": null,
+    "unit": "ジェノバＭ９",
+    "lv": 32,
+    "exp": 704,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 18,
+    "pilot": null,
+    "unit": "ボング",
+    "lv": 32,
+    "exp": 896,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "ドーベンウルフ",
+    "lv": 32,
+    "exp": 864,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 16,
+    "pilot": null,
+    "unit": "ボング",
+    "lv": 32,
+    "exp": 896,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 12,
+    "pilot": "ハマーン＝カーン",
+    "unit": "キュベレイ",
+    "lv": 37,
+    "exp": 1147,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 11,
+    "pilot": "マシュマー＝セロ",
+    "unit": "ゲーマルク",
+    "lv": 36,
+    "exp": 936,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 13,
+    "pilot": "キャラ＝スーン",
+    "unit": "ゲーマルク",
+    "lv": 34,
+    "exp": 884,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 1,
+    "side": "enemy",
+    "heading": "増援（1EP）",
+    "units": [
+     {
+      "x": 19,
+      "y": 4,
+      "pilot": "シュウ＝シラカワ",
+      "unit": "グランゾン",
+      "lv": 41,
+      "exp": 3280,
+      "money": 800,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 5,
+    "side": "enemy",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 0,
+      "y": 8,
+      "pilot": null,
+      "unit": "ブラッガーＳ１",
+      "lv": 30,
+      "exp": 1140,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 0,
+      "y": 9,
+      "pilot": null,
+      "unit": "ブラッガーＳ１",
+      "lv": 30,
+      "exp": 1140,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 31,
+      "y": 5,
+      "pilot": "兵士",
+      "unit": "ドーベンウルフ",
+      "lv": 39,
+      "exp": 1053,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 31,
+      "y": 6,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 30,
+      "exp": 600,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 31,
+      "y": 4,
+      "pilot": null,
+      "unit": "ギルギル",
+      "lv": 30,
+      "exp": 600,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "1EPに登場するグランゾンが強烈に強い。\n 下記のグランゾン撃破の準備ができていないなら、\n 倒すのは諦めて攻撃せず、回復に努めましょう。7EPで撤退します。 \n キュベレイはHPも低くあまり強くありません。\n グランゾンさえなんとかできれば問題のないステージです。",
+  "clear": "",
+  "stageType": "space"
+ },
+ "21": {
+  "title": "「時間よ　止まれ」",
+  "map": {
+   "cols": 32,
+   "rows": 32,
+   "image": {
+    "width": 512,
+    "height": 512
+   }
+  },
+  "objective": {
+   "victory": "15ターン以内に全員を画面下の出口から脱出させること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 24,
+    "y": 5,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 6,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 6,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 7,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 8,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 8,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 9,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 9,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 9,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 11,
+    "pilot": "エルピー＝プル",
+    "unit": "キュベレイmkⅡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 24,
+    "y": 3,
+    "pilot": "ビアン＝ゾルダーク",
+    "unit": "ヴァルシオン",
+    "lv": 50,
+    "exp": 0,
+    "money": 0,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 4,
+    "side": "player",
+    "heading": "増援（4EP）",
+    "units": [
+     {
+      "x": 13,
+      "y": 31,
+      "pilot": "フォウ＝ムラサメ",
+      "unit": "サイコガンダム",
+      "lv": 41,
+      "exp": null,
+      "money": null,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 1,
+    "side": "enemy",
+    "heading": "増援（1EP）",
+    "units": [
+     {
+      "x": 13,
+      "y": 5,
+      "pilot": null,
+      "unit": "キングゴリ",
+      "lv": 33,
+      "exp": 792,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 3,
+    "side": "enemy",
+    "heading": "増援（3EP）",
+    "units": [
+     {
+      "x": 5,
+      "y": 13,
+      "pilot": null,
+      "unit": "ボング",
+      "lv": 33,
+      "exp": 924,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 13,
+      "pilot": null,
+      "unit": "ブラッガーＳ１",
+      "lv": 33,
+      "exp": 1254,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "ヴァルシオンは開始イベントで撤退するので、\n 敵が居ない状態で始まります。\n 変形できるユニットは移動力の高い形態に変形しておきましょう。\n 移動力の低いユニットはνガンダムとグレートマジンガーの移動力7になります。\n 彼らは無駄にターンを過ごすとクリアできません。\n （νガンダムは精神コマンド「疾風」を使えば余裕はある） \n 増援は少ないので、移動力の高いサイバスターやゲッターライガーなどで倒すといいでしょう。",
+  "clear": "ネェル・アーガマから、ラー・カイラムに乗り換えになります。\n 宇宙での活動はこれにて終わり、地球に向かいます。",
+  "stageType": "base"
+ },
+ "22": {
+  "title": "「大気圏突入」",
+  "map": {
+   "cols": 32,
+   "rows": 18,
+   "image": {
+    "width": 512,
+    "height": 288
+   }
+  },
+  "objective": {
+   "victory": "20ターンの間、ラー・カイラムを守り抜くこと\n または敵を全滅させること",
+   "defeat": "ラー・カイラムが破壊されたとき"
+  },
+  "allies": [
+   {
+    "x": 17,
+    "y": 8,
+    "pilot": "ブライト＝ノア",
+    "unit": "ラー・カイラム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 8,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 21,
+    "y": 8,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 6,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 10,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 8,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 8,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 7,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 7,
+    "pilot": "エルピー＝プル",
+    "unit": "キュベレイmkⅡ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 9,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 9,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 29,
+    "y": 14,
+    "pilot": "ハマーン＝カーン",
+    "unit": "キュベレイ",
+    "lv": 38,
+    "exp": 1178,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 30,
+    "y": 14,
+    "pilot": "キャラ＝スーン",
+    "unit": "ゲーマルク",
+    "lv": 36,
+    "exp": 936,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 29,
+    "y": 15,
+    "pilot": "マシュマー＝セロ",
+    "unit": "ザクⅢ改",
+    "lv": 37,
+    "exp": 925,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 22,
+    "y": 13,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 34,
+    "exp": 748,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 30,
+    "y": 15,
+    "pilot": "プルツー",
+    "unit": "サイコガンダムmkⅡ(MS)",
+    "lv": 37,
+    "exp": 1480,
+    "money": 1000,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 12,
+    "pilot": "レズン＝シュナイダー",
+    "unit": "ギラ・ドーガ",
+    "lv": 36,
+    "exp": 792,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 11,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 34,
+    "exp": 748,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 25,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 34,
+    "exp": 748,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 24,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "ハンブラビ",
+    "lv": 34,
+    "exp": 680,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 26,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 34,
+    "exp": 952,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 28,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "ドーベンウルフ",
+    "lv": 34,
+    "exp": 918,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 11,
+    "pilot": "兵士",
+    "unit": "バウンド・ドック",
+    "lv": 35,
+    "exp": 875,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 6,
+    "y": 11,
+    "pilot": "ジェリド＝メサ",
+    "unit": "ドーベンウルフ",
+    "lv": 37,
+    "exp": 999,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 11,
+    "pilot": "兵士",
+    "unit": "バウンド・ドック",
+    "lv": 35,
+    "exp": 875,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 3,
+    "side": "enemy",
+    "heading": "増援（3EP）",
+    "units": [
+     {
+      "x": 17,
+      "y": 1,
+      "pilot": null,
+      "unit": "ブラッガーＳ１",
+      "lv": 33,
+      "exp": 1254,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 13,
+      "pilot": null,
+      "unit": "ブラッガーＳ１",
+      "lv": 33,
+      "exp": 1254,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 6,
+      "y": 12,
+      "pilot": null,
+      "unit": "ブラッガーＳ１",
+      "lv": 33,
+      "exp": 1254,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "ラー・カイラムは動けず、敵の殆どがラー・カイラムを狙ってきます。\n そのためラー・カイラムの周辺で戦うのが良いでしょう。\n 第19話「月面の死闘」でプルが死亡してしまっている場合のみ\n ジュドーでプルツーを説得すれば仲間になります。\n ※プルが生存している場合も説得自体はできるが仲間にはならない \n 敵の数は多くないので、今まで通りのプレイでクリアできると思います。",
+  "clear": "こっそり武装などがアップグレードされています。\n 主なものは以下ですが、他の武器も威力が上がっていたりします。 \n ユニット\n 解説\n Ｚガンダム\n ウェイブライダー \n ハイパーメガランチャーの射程6→7\n νガンダム\n フィンファンネルの射程6→7\n ゲッターライガー\n ライガーミサイルの射程4→5\n ゲッターポセイドン\n ストロングミサイルの射程4→5\n ＺＺガンダム\n 武器がメガビームサーベル、ハイメガキャノンに変更\n サイバスター\n ディスカッターがバニティリッパーに変更",
+  "stageType": "space"
+ },
+ "23": {
+  "title": "「逆襲のシロッコ」",
+  "map": {
+   "cols": 28,
+   "rows": 16,
+   "image": {
+    "width": 448,
+    "height": 256
+   }
+  },
+  "objective": {
+   "victory": "ジ・オを破壊すること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 12,
+    "y": 8,
+    "pilot": "ブライト＝ノア",
+    "unit": "ラー・カイラム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 6,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 6,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 7,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 9,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 7,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 8,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 8,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 7,
+    "pilot": "エルピー＝プル\n （プルツー）",
+    "unit": "キュベレイmkⅡ\n （サイコガンダムmkⅡ）",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 10,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 9,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 24,
+    "y": 6,
+    "pilot": "パプテマス＝シロッコ",
+    "unit": "ジ・オ",
+    "lv": 41,
+    "exp": 2050,
+    "money": 400,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 5,
+    "pilot": "サラ＝ザビアロフ",
+    "unit": "メッサーラ(MS)",
+    "lv": 38,
+    "exp": 1140,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 7,
+    "pilot": "レコア＝ロンド",
+    "unit": "パラス・アテネ",
+    "lv": 39,
+    "exp": 1170,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 8,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 35,
+    "exp": 770,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 35,
+    "exp": 770,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 35,
+    "exp": 770,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 7,
+    "pilot": "兵士",
+    "unit": "ヤクト・ドーガ",
+    "lv": 35,
+    "exp": 1050,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ヤクト・ドーガ",
+    "lv": 35,
+    "exp": 1050,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 8,
+    "pilot": "兵士",
+    "unit": "ヤクト・ドーガ",
+    "lv": 35,
+    "exp": 1050,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 14,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 35,
+    "exp": 700,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 14,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 35,
+    "exp": 700,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 14,
+    "pilot": null,
+    "unit": "固定砲台",
+    "lv": 35,
+    "exp": 700,
+    "money": 50,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 1,
+    "pilot": null,
+    "unit": "誘導ミサイル",
+    "lv": 35,
+    "exp": 175,
+    "money": 10,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 1,
+    "pilot": null,
+    "unit": "誘導ミサイル",
+    "lv": 35,
+    "exp": 175,
+    "money": 10,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 1,
+    "pilot": null,
+    "unit": "誘導ミサイル",
+    "lv": 35,
+    "exp": 175,
+    "money": 10,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 9,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 36,
+    "exp": 1368,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 10,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 36,
+    "exp": 1368,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 5,
+    "side": "enemy",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 23,
+      "y": 0,
+      "pilot": "シュウ＝シラカワ",
+      "unit": "グランゾン",
+      "lv": 49,
+      "exp": 3920,
+      "money": 800,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "敵全員が動いてくるので早めに敵の数を減らしたい。\n 増援はいないので精神コマンドを使ってしまいましょう。 \n ミサイルはサイフラッシュで潰すといい。 \n ジ・オは攻撃力も素早さも高い強敵です。\n 再攻撃されることがほとんどなので、HPの低いユニットは近付かないようにしましょう。 \n 厳しいようだったらジ・オ優先で倒してクリアする手もアリです。",
+  "clear": "",
+  "stageType": "ground"
+ },
+ "24": {
+  "title": "「ギルギルガンの亡霊」",
+  "map": {
+   "cols": 26,
+   "rows": 32,
+   "image": {
+    "width": 416,
+    "height": 512
+   }
+  },
+  "objective": {
+   "victory": "ジ・オを破壊すること",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 15,
+    "y": 19,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 18,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 14,
+    "y": 19,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 16,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 15,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 16,
+    "pilot": "エルピー＝プル\n （プルツー）",
+    "unit": "キュベレイmkⅡ\n （サイコガンダムmkⅡ）",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 16,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 14,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 14,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 15,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 8,
+    "y": 11,
+    "pilot": "ギルギルガン",
+    "unit": "ギルギルガン",
+    "lv": 44,
+    "exp": 3080,
+    "money": 600,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 11,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 37,
+    "exp": 814,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 8,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 37,
+    "exp": 814,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 12,
+    "pilot": null,
+    "unit": "ブラッガーＳ１",
+    "lv": 37,
+    "exp": 1406,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 16,
+    "pilot": "兵士",
+    "unit": "ハイゴッグ",
+    "lv": 37,
+    "exp": 555,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ハイゴッグ",
+    "lv": 37,
+    "exp": 555,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 18,
+    "pilot": "兵士",
+    "unit": "ドーベンウルフ",
+    "lv": 38,
+    "exp": 1026,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "ドーベンウルフ",
+    "lv": 38,
+    "exp": 1026,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 25,
+    "pilot": "ハマーン＝カーン",
+    "unit": "キュベレイ",
+    "lv": 48,
+    "exp": 1488,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 20,
+    "pilot": "兵士",
+    "unit": "ゲーマルク",
+    "lv": 38,
+    "exp": 988,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 20,
+    "y": 15,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 37,
+    "exp": 1036,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 26,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 37,
+    "exp": 1036,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 12,
+    "pilot": "兵士",
+    "unit": "バウ",
+    "lv": 38,
+    "exp": 1064,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 7,
+    "y": 9,
+    "pilot": "兵士",
+    "unit": "ゲーマルク",
+    "lv": 38,
+    "exp": 988,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 9,
+    "y": 10,
+    "pilot": "兵士",
+    "unit": "ゲーマルク",
+    "lv": 38,
+    "exp": 988,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 5,
+    "side": "enemy",
+    "heading": "増援（5EP）",
+    "units": [
+     {
+      "x": 18,
+      "y": 21,
+      "pilot": null,
+      "unit": "誘導ミサイル",
+      "lv": 36,
+      "exp": 180,
+      "money": 10,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 1,
+      "y": 21,
+      "pilot": null,
+      "unit": "誘導ミサイル",
+      "lv": 36,
+      "exp": 180,
+      "money": 10,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "川を挟んで味方ユニットが別れている。\n そのまま二手に分かれて戦うのが良いでしょう。\n 右側の味方は、ゲーマルク周辺を撃破したら、\n ゲッターはギルギルガンへ向かうのが良いかなと思います。\n ギルギルガンはグラヴィトンウェーブが高火力なので、\n 接近戦で戦うようにしましょう。 \n ギルギルガンを撃破するとメカギルギルガンとして復活します。\n 敵ターンで倒すとメカギルギルガンも行動するので、\n 味方が落とされる可能性が高くなる。\n 味方ターンでギルギルガンを撃破するようにしましょう。 \n メカギルギルガンを倒すとクリアなので、\n キュベレイを倒してからメカギルギルガンを倒すようにして\n 経験値を稼いでおきましょう。",
+  "clear": "プルがいる場合、クインマンサが手に入り、\n キュベレイmkⅡは廃棄して乗り換えることになる。",
+  "stageType": "ground"
+ },
+ "25": {
+  "title": "「ラストバタリオン再び」",
+  "map": {
+   "cols": 32,
+   "rows": 22,
+   "image": {
+    "width": 512,
+    "height": 352
+   }
+  },
+  "objective": {
+   "victory": "ラフレシアを倒すこと",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 17,
+    "y": 13,
+    "pilot": "ブライト＝ノア",
+    "unit": "ラー・カイラム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 11,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 15,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 13,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 13,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 12,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 14,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 13,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 12,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 14,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 13,
+    "pilot": "エルピー＝プル\n （プルツー）",
+    "unit": "クインマンサ\n （サイコガンダムmkⅡ）",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 17,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 39,
+    "exp": 858,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 2,
+    "pilot": "レズン＝シュナイダー",
+    "unit": "ヤクト・ドーガ",
+    "lv": 45,
+    "exp": 1350,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 2,
+    "pilot": "兵士",
+    "unit": "ギラ・ドーガ",
+    "lv": 39,
+    "exp": 858,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 11,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "ザクⅢ",
+    "lv": 38,
+    "exp": 950,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 12,
+    "y": 18,
+    "pilot": "兵士",
+    "unit": "ザクⅢ",
+    "lv": 38,
+    "exp": 950,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 13,
+    "y": 19,
+    "pilot": "兵士",
+    "unit": "ザクⅢ",
+    "lv": 38,
+    "exp": 950,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 23,
+    "y": 17,
+    "pilot": "兵士",
+    "unit": "キュベレイ",
+    "lv": 39,
+    "exp": 1209,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 2,
+    "y": 6,
+    "pilot": "兵士",
+    "unit": "ジャムルフィン",
+    "lv": 38,
+    "exp": 1026,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 6,
+    "pilot": "カロッゾ＝ロナ",
+    "unit": "ラフレシア",
+    "lv": 46,
+    "exp": 2208,
+    "money": 1100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 5,
+    "pilot": "クエス＝パラヤ",
+    "unit": "α・アジール",
+    "lv": 43,
+    "exp": 1806,
+    "money": 400,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 4,
+    "y": 6,
+    "pilot": "ラカン＝ダカラン",
+    "unit": "ヤクト・ドーガ",
+    "lv": 43,
+    "exp": 1290,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 3,
+    "y": 7,
+    "pilot": "ギュネイ＝ガス",
+    "unit": "ヤクト・ドーガ",
+    "lv": 42,
+    "exp": 1260,
+    "money": 200,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 27,
+    "y": 15,
+    "pilot": "あしゅら男爵",
+    "unit": "グール",
+    "lv": 42,
+    "exp": 1344,
+    "money": 400,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "ビグザム",
+    "lv": 40,
+    "exp": 1600,
+    "money": 500,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 21,
+    "pilot": "兵士",
+    "unit": "ビグザム",
+    "lv": 40,
+    "exp": 1600,
+    "money": 500,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [
+   {
+    "turn": 1,
+    "side": "enemy",
+    "heading": "増援（1EP）",
+    "units": [
+     {
+      "x": 31,
+      "y": 8,
+      "pilot": "セシリー＝フェアチャイルド",
+      "unit": "ビギナ・ギナ",
+      "lv": 46,
+      "exp": 1748,
+      "money": 1000,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 2,
+    "side": "enemy",
+    "heading": "増援（2EP）",
+    "units": [
+     {
+      "x": 9,
+      "y": 0,
+      "pilot": "ハマーン＝カーン",
+      "unit": "キュベレイ",
+      "lv": 48,
+      "exp": 1488,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 10,
+      "y": 0,
+      "pilot": "キャラ＝スーン",
+      "unit": "ゲーマルク",
+      "lv": 48,
+      "exp": 1248,
+      "money": 100,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   },
+   {
+    "turn": 4,
+    "side": "enemy",
+    "heading": "増援（4EP）",
+    "units": [
+     {
+      "x": 8,
+      "y": 19,
+      "pilot": "ランバ＝ラル",
+      "unit": "ヤクト・ドーガ",
+      "lv": 48,
+      "exp": 1440,
+      "money": 200,
+      "ai": null,
+      "ability": null
+     },
+     {
+      "x": 9,
+      "y": 19,
+      "pilot": "ガイア",
+      "unit": "ヤクト・ドーガ",
+      "lv": 48,
+      "exp": 1440,
+      "money": 200,
+      "ai": null,
+      "ability": null
+     }
+    ]
+   }
+  ],
+  "strategy": "ラフレシア周辺は動かないので、まずは他から撃破しましょう。\n ちなみに次が最終ステージとなりますが、\n ラー・カイラムは出撃できないので、もう育成する必要はありません。 \n 1EPで登場するセシリーはシーブックで説得して味方になるが、\n NPCなので敵に突っ込んでいって撃墜されるし\n このステージ限りなので、正直倒してしまっていい。\n その後も敵の増援が出現するので、時間をかけて全て倒しましょう。\n 最後にラフレシア周辺を攻略することになりますが、\n 全員射程が長い武器を持つため、サイバスターは近付かないように。\n 精神コマンドを使ってでも、1ターンで\n ヤクト・ドーガ、ジャムルフィンは倒しておきたい。",
+  "clear": "",
+  "stageType": "ground"
+ },
+ "26": {
+  "title": "「暁の決戦」",
+  "map": {
+   "cols": 20,
+   "rows": 23,
+   "image": {
+    "width": 320,
+    "height": 368
+   }
+  },
+  "objective": {
+   "victory": "ヴァルシオンを倒すこと",
+   "defeat": "味方の全滅"
+  },
+  "allies": [
+   {
+    "x": 17,
+    "y": 13,
+    "pilot": "ブライト＝ノア",
+    "unit": "ラー・カイラム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 11,
+    "pilot": "アムロ＝レイ",
+    "unit": "νガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 17,
+    "y": 15,
+    "pilot": "流竜馬",
+    "unit": "ゲッターロボＧ",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 15,
+    "y": 13,
+    "pilot": "兜甲児",
+    "unit": "グレートマジンガー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 13,
+    "pilot": "マサキ＝アンドー",
+    "unit": "サイバスター",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 12,
+    "pilot": "シーブック＝アノー",
+    "unit": "F-91",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 14,
+    "pilot": "ジュドー＝アーシタ",
+    "unit": "ＺＺガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 16,
+    "y": 13,
+    "pilot": "カミーユ＝ビダン",
+    "unit": "Ｚガンダム",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 12,
+    "pilot": "デューク＝フリード",
+    "unit": "グレンダイザー",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 14,
+    "pilot": "ファ＝ユイリィ",
+    "unit": "メタス",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 19,
+    "y": 13,
+    "pilot": "エルピー＝プル\n （プルツー）",
+    "unit": "クインマンサ\n （サイコガンダムmkⅡ）",
+    "lv": null,
+    "exp": null,
+    "money": null,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "enemies": [
+   {
+    "x": 9,
+    "y": 3,
+    "pilot": "ビアン＝ゾルダーク",
+    "unit": "ヴァルシオン",
+    "lv": 50,
+    "exp": 0,
+    "money": 0,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 10,
+    "y": 3,
+    "pilot": "シュウ＝シラカワ",
+    "unit": "グランゾン",
+    "lv": 49,
+    "exp": 3920,
+    "money": 800,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 1,
+    "y": 21,
+    "pilot": "ラカン＝ダカラン",
+    "unit": "ゲーマルク",
+    "lv": 46,
+    "exp": 1196,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   },
+   {
+    "x": 18,
+    "y": 21,
+    "pilot": "キャラ＝スーン",
+    "unit": "ゲーマルク",
+    "lv": 46,
+    "exp": 1196,
+    "money": 100,
+    "ai": null,
+    "ability": null
+   }
+  ],
+  "npc": [],
+  "reinforcements": [],
+  "strategy": "まずは1ターン待機してゲーマルクが近付いてきたら撃破しましょう。\n ヴァルシオンとグランゾンは最初動きませんが、5EPから動き出します。\n 射程外で集まり、攻撃の準備をしておきましょう。\n プルの激怒などを使っておくのも良いでしょう。\n ヴァルシオンを倒せばエンディングです。\n そのためグランゾンを倒す必要はありません。\n 精神コマンドを使い切ってヴァルシオンに集中しましょう。",
+  "clear": "",
+  "stageType": "base"
+ }
+}

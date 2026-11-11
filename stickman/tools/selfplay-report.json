@@ -1,0 +1,43 @@
+{
+  "seed": 42,
+  "state": "won",
+  "steps": 12863,
+  "time": 214.38333333339608,
+  "actIndex": 4,
+  "actId": "blank",
+  "kills": 119,
+  "shots": 787,
+  "hits": 564,
+  "accuracy": "71.7%",
+  "score": 4085,
+  "maxCombo": 26,
+  "inkGained": 2716,
+  "loreFound": 2,
+  "acts": [
+    {
+      "act": 0,
+      "id": "draft",
+      "duration": "29.6"
+    },
+    {
+      "act": 1,
+      "id": "blueprint",
+      "duration": "38.3"
+    },
+    {
+      "act": 2,
+      "id": "neon",
+      "duration": "58.9"
+    },
+    {
+      "act": 3,
+      "id": "wash",
+      "duration": "50.9"
+    },
+    {
+      "act": 4,
+      "id": "blank",
+      "duration": "36.6"
+    }
+  ]
+}

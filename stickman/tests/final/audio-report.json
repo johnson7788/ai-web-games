@@ -1,0 +1,212 @@
+{
+  "ok": true,
+  "sfx": [
+    {
+      "name": "shot.pencil",
+      "peak": 0.19432181119918823,
+      "rms": 0.027474884842383987,
+      "voices": 2
+    },
+    {
+      "name": "shot.brush",
+      "peak": 0.5426404476165771,
+      "rms": 0.1441247928213332,
+      "voices": 2
+    },
+    {
+      "name": "shot.nib",
+      "peak": 0.4411601126194,
+      "rms": 0.08803850642148932,
+      "voices": 2
+    },
+    {
+      "name": "hit",
+      "peak": 0.45944443345069885,
+      "rms": 0.07733274788329696,
+      "voices": 2
+    },
+    {
+      "name": "kill",
+      "peak": 0.6913627982139587,
+      "rms": 0.182436917406021,
+      "voices": 2
+    },
+    {
+      "name": "ragdoll.thud",
+      "peak": 0.49299827218055725,
+      "rms": 0.18237496320781807,
+      "voices": 2
+    },
+    {
+      "name": "dash",
+      "peak": 0.06734586507081985,
+      "rms": 0.014940131652048166,
+      "voices": 1
+    },
+    {
+      "name": "melee",
+      "peak": 0.6502335667610168,
+      "rms": 0.1047354227356206,
+      "voices": 2
+    },
+    {
+      "name": "reload",
+      "peak": 0.5849499106407166,
+      "rms": 0.04601746895516442,
+      "voices": 2
+    },
+    {
+      "name": "ink.pickup",
+      "peak": 0.3998836278915405,
+      "rms": 0.10252967866243383,
+      "voices": 1
+    },
+    {
+      "name": "hurt",
+      "peak": 0.30032357573509216,
+      "rms": 0.0603173716099227,
+      "voices": 1
+    },
+    {
+      "name": "wave.start",
+      "peak": 0.573498547077179,
+      "rms": 0.21570057846446458,
+      "voices": 2
+    },
+    {
+      "name": "wave.clear",
+      "peak": 0.3850381076335907,
+      "rms": 0.13095144509097978,
+      "voices": 5
+    },
+    {
+      "name": "act.change",
+      "peak": 0.16710548102855682,
+      "rms": 0.04003659991837373,
+      "voices": 3
+    },
+    {
+      "name": "boss.roar",
+      "peak": 0.4540138244628906,
+      "rms": 0.22571982082545858,
+      "voices": 3
+    },
+    {
+      "name": "death",
+      "peak": 0.40337783098220825,
+      "rms": 0.14989365085606876,
+      "voices": 6
+    },
+    {
+      "name": "splash",
+      "peak": 0.482353150844574,
+      "rms": 0.1544673818357253,
+      "voices": 8
+    },
+    {
+      "name": "lore",
+      "peak": 0.3357652425765991,
+      "rms": 0.1004836062370196,
+      "voices": 3
+    },
+    {
+      "name": "boss.down",
+      "peak": 0.5211173295974731,
+      "rms": 0.3064718974784891,
+      "voices": 2
+    },
+    {
+      "name": "ui.click",
+      "peak": 0.44971051812171936,
+      "rms": 0.05581762066427343,
+      "voices": 4
+    },
+    {
+      "name": "ui.hover",
+      "peak": 0.11887636035680771,
+      "rms": 0.022007074866129815,
+      "voices": 3
+    },
+    {
+      "name": "ui.pick",
+      "peak": 0.21419546008110046,
+      "rms": 0.05002992478040742,
+      "voices": 3
+    },
+    {
+      "name": "ui.back",
+      "peak": 0.1963679939508438,
+      "rms": 0.0411950055831234,
+      "voices": 1
+    }
+  ],
+  "scenes": [
+    {
+      "name": "title",
+      "peak": 0.06049114465713501,
+      "rms": 0.020908087634754078,
+      "voices": 0
+    },
+    {
+      "name": "draft",
+      "peak": 0.07415815442800522,
+      "rms": 0.026983729112936748,
+      "voices": 0
+    },
+    {
+      "name": "blueprint",
+      "peak": 0.07587052881717682,
+      "rms": 0.027284071321215277,
+      "voices": 0
+    },
+    {
+      "name": "neon",
+      "peak": 0.21535083651542664,
+      "rms": 0.11118787691278814,
+      "voices": 0
+    },
+    {
+      "name": "wash",
+      "peak": 0.2536395490169525,
+      "rms": 0.14015108266900358,
+      "voices": 0
+    },
+    {
+      "name": "blank",
+      "peak": 0.09802424907684326,
+      "rms": 0.04309208064494186,
+      "voices": 0
+    },
+    {
+      "name": "ending",
+      "peak": 0.33874619007110596,
+      "rms": 0.16503144517334564,
+      "voices": 0
+    }
+  ],
+  "state": {
+    "ready": true,
+    "scene": null,
+    "intensity": 0.5,
+    "muted": false,
+    "voices": 13
+  },
+  "consoleErrors": [],
+  "failed": [],
+  "requests": [
+    "http://127.0.0.1:8124/tools/audio-bench.html",
+    "http://127.0.0.1:8124/src/core/audio.js",
+    "http://127.0.0.1:8124/config/game.config.js",
+    "http://127.0.0.1:8124/src/core/music.js",
+    "http://127.0.0.1:8124/config/maps.js"
+  ],
+  "externalRequests": [],
+  "summary": {
+    "sfxCount": 23,
+    "allSfxHeard": true,
+    "allScenesHeard": true,
+    "consoleErrors": 0,
+    "failed": [],
+    "externalRequests": []
+  }
+}

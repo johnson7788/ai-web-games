@@ -1,0 +1,80 @@
+{
+  "ver": "1.0.1",
+  "importer": "label-atlas",
+  "imported": true,
+  "uuid": "a96a8c21-4679-4844-946c-1a60b547ecdf",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {},
+  "userData": {
+    "itemWidth": 90,
+    "itemHeight": 90,
+    "fontSize": 79.2,
+    "startChar": "1",
+    "spriteFrameUuid": "c2541052-2eb1-4209-b0c4-33c8b6aab087@f9941",
+    "_fntConfig": {
+      "commonHeight": 90,
+      "fontSize": 79,
+      "atlasName": "font_time",
+      "fontDefDictionary": {
+        "49": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 90,
+            "height": 90
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 90
+        },
+        "50": {
+          "rect": {
+            "x": 90,
+            "y": 0,
+            "width": 90,
+            "height": 90
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 90
+        },
+        "51": {
+          "rect": {
+            "x": 180,
+            "y": 0,
+            "width": 90,
+            "height": 90
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 90
+        },
+        "52": {
+          "rect": {
+            "x": 270,
+            "y": 0,
+            "width": 90,
+            "height": 90
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 90
+        },
+        "53": {
+          "rect": {
+            "x": 360,
+            "y": 0,
+            "width": 90,
+            "height": 90
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 90
+        }
+      },
+      "kerningDict": {}
+    }
+  }
+}

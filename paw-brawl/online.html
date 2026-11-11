@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#8FD3FF">
+  <title>PAW BRAWL ONLINE — 爪爪大乱斗</title>
+  <meta name="description" content="Create a room, invite your friends and brawl together in PAW BRAWL ONLINE.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./online.css">
+  <script type="importmap">{ "imports": { "three": "./lib/three.module.js" } }</script>
+</head>
+<body class="online-page">
+  <main id="app">
+    <canvas id="game" aria-label="PAW BRAWL ONLINE 3D game"></canvas>
+
+    <section id="online-lobby" class="screen online-lobby">
+      <header class="online-topbar">
+        <div class="mini-logo">PAW <b>BRAWL</b></div>
+        <div id="online-connection" class="online-connection" data-state="connecting">
+          <i></i><span id="online-connection-label" data-i18n="online.connecting">CONNECTING</span>
+          <b id="online-ping">-- ms</b>
+        </div>
+      </header>
+
+      <div id="online-setup" class="online-setup">
+        <section class="online-intro">
+          <span class="title-kicker" data-i18n="online.kicker">LIVE ROOMS · 8 PAWS</span>
+          <h1><span>PAW</span><strong>BRAWL</strong><em>ONLINE</em></h1>
+          <p class="online-tagline" data-i18n="online.tagline">One room code. Instant chaos.</p>
+          <label class="online-field">
+            <span data-i18n="online.name">YOUR NAME</span>
+            <input id="online-name" type="text" maxlength="12" autocomplete="nickname" data-i18n-placeholder="online.namePlaceholder" placeholder="Player">
+          </label>
+          <div class="online-field">
+            <span data-i18n="online.mode">MODE</span>
+            <div class="online-mode-picker" role="group" aria-label="Game mode">
+              <button type="button" data-online-mode="ffa" class="selected" data-i18n="mode.ffa">FREE-FOR-ALL</button>
+              <button type="button" data-online-mode="team" data-i18n="mode.team">TEAM BRAWL</button>
+            </div>
+          </div>
+          <button id="btnOnlineCreate" class="sticker-button" data-i18n="online.create">CREATE ROOM</button>
+          <div class="online-join">
+            <input id="online-room-input" type="text" maxlength="4" autocapitalize="characters" autocomplete="off" spellcheck="false" data-i18n-placeholder="online.joinPlaceholder" placeholder="CODE" aria-label="Room code">
+            <button id="btnOnlineJoin" class="online-secondary" data-i18n="online.join">JOIN</button>
+          </div>
+          <a class="online-offline" href="./index.html" data-i18n="online.offline">BACK TO OFFLINE</a>
+          <p id="online-lobby-message" class="online-message" role="status"></p>
+        </section>
+
+        <section class="online-picker">
+          <div class="online-section-heading">
+            <div><span data-i18n="select.title">CHOOSE YOUR PAW</span><strong id="online-selected-name">Wangcai</strong></div>
+            <small data-i18n="online.rosterNote">All paws unlocked online</small>
+          </div>
+          <div id="online-character-grid" class="online-character-grid"></div>
+          <div id="online-selected-passive" class="online-selected-passive"></div>
+          <div class="online-controls-hint"><span data-i18n="controls"></span><span>J / K</span></div>
+        </section>
+      </div>
+
+      <section id="online-room" class="online-room" hidden>
+        <header class="online-room-header">
+          <div><span data-i18n="online.room">ROOM CODE</span><button id="online-room-code" type="button" title="Copy room link">----</button></div>
+          <button id="btnOnlineCopy" class="online-secondary" data-i18n="online.copy">COPY INVITE</button>
+        </header>
+        <div class="online-room-meta"><span id="online-room-mode"></span><b data-i18n="online.roomHint">Bots fill empty seats</b></div>
+        <div class="online-section-heading"><span data-i18n="online.players">PLAYERS</span><small id="online-room-count"></small></div>
+        <div id="online-player-list" class="online-player-list"></div>
+        <p id="online-room-message" class="online-message" role="status"></p>
+        <div class="online-room-actions">
+          <button id="btnOnlineReady" class="online-secondary" data-i18n="online.ready">READY</button>
+          <button id="btnOnlineStart" class="sticker-button" data-i18n="online.start">START BRAWL</button>
+          <button id="btnOnlineLeave" class="text-button" data-i18n="online.leave">LEAVE ROOM</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="hud" hidden>
+      <div class="hud-left">
+        <div class="mini-logo">PAW <b>BRAWL</b></div>
+        <div class="round-pill"><span id="round-label">ROUND 1</span><i></i><span id="time-label">01:15</span></div>
+      </div>
+      <div id="online-ping-hud" class="online-ping-hud">-- ms</div>
+      <button id="mute-button" class="icon-button" aria-label="Mute">♪</button>
+      <div id="ranking" aria-label="Ranking"></div>
+      <div id="kill-feed" aria-live="polite"></div>
+      <div id="announcement" aria-live="assertive" hidden></div>
+      <div id="item-slot" class="empty"><span id="item-icon" class="slot-paw">●</span><b id="item-name" data-i18n="empty">EMPTY</b><small id="item-detail"></small></div>
+    </section>
+
+    <div id="markers" aria-hidden="true" hidden></div>
+
+    <section id="online-round-panel" class="overlay online-result-overlay" hidden>
+      <div class="result-card">
+        <span class="result-kicker" data-i18n="roundResults">ROUND COMPLETE</span>
+        <h2 id="online-round-title"></h2>
+        <div id="online-round-results" class="online-standings"></div>
+        <small data-i18n="online.nextAutomatic">Next round starts automatically</small>
+      </div>
+    </section>
+
+    <section id="online-results" class="screen online-results" hidden>
+      <div class="result-card online-match-card">
+        <span class="result-kicker" data-i18n="matchEnd">MATCH OVER</span>
+        <h2 id="online-champion"></h2>
+        <div id="online-team-result"></div>
+        <div id="online-match-standings" class="online-standings"></div>
+        <p id="online-rematch-note" data-i18n="online.rematchNote">A rematch starts in a fresh room.</p>
+        <button id="btnOnlineReplay" class="sticker-button" data-i18n="results.playAgain">PLAY AGAIN</button>
+        <button id="btnOnlineResultsLeave" class="text-button" data-i18n="online.leave">LEAVE ROOM</button>
+      </div>
+    </section>
+
+    <section id="connection-overlay" class="overlay online-connection-overlay" hidden>
+      <div class="pause-card">
+        <span class="result-kicker">ONLINE</span>
+        <h2 id="connection-title" data-i18n="online.reconnecting">RECONNECTING</h2>
+        <p id="connection-detail"></p>
+        <button id="btnOnlineRetry" class="sticker-button" data-i18n="online.retry">RETRY</button>
+        <a href="./index.html" class="text-button" data-i18n="online.offline">BACK TO OFFLINE</a>
+      </div>
+    </section>
+
+    <section id="rotate-screen" class="overlay rotate-overlay" aria-live="polite">
+      <div class="rotate-card"><span class="rotate-icon" aria-hidden="true">↻</span><h2 data-i18n="rotate">ROTATE TO PLAY</h2><p data-i18n="rotateHint">Turn your device sideways to rejoin the brawl</p></div>
+    </section>
+
+    <section id="webgl-fallback" class="overlay" hidden>
+      <div class="pause-card"><h2>PAW BRAWL</h2><p data-i18n="webgl">This game needs WebGL. Enable hardware acceleration or try a current browser.</p></div>
+    </section>
+
+    <div id="toast" hidden></div>
+
+    <section id="touch" hidden>
+      <div id="joystick-zone" aria-label="Movement joystick"><div id="joystick-base" hidden><div id="joystick-knob"></div></div></div>
+      <div id="touch-buttons">
+        <button class="touch-button grab" data-action="grab" data-i18n="grab">GRAB</button>
+        <button class="touch-button punch" data-action="punch" data-i18n="punch">PUNCH</button>
+        <button class="touch-button jump" data-action="jump" data-i18n="jump">JUMP</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./src/online/main.js"></script>
+</body>
+</html>

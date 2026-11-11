@@ -1,0 +1,38 @@
+{
+  "__version__": "1.0.2",
+  "general": {
+    "designResolution": {
+      "width": 720,
+      "height": 1280,
+      "fitWidth": true,
+      "fitHeight": false
+    },
+    "renderPipeline": "fd8ec536-a354-4a17-9c74-4f3883c378c8"
+  },
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "player"
+      },
+      {
+        "index": 2,
+        "name": "barrier"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 0,
+      "1": 404,
+      "2": 2,
+      "3": 496,
+      "4": 106,
+      "5": 280,
+      "6": 920,
+      "7": 74,
+      "8": 106,
+      "9": 64
+    },
+    "fixedTimeStep": 0.016666,
+    "autoSimulation": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "844bbc70-0cfa-41da-b50b-a46ff830b689",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "24f58": {
+      "importer": "gltf-animation",
+      "uuid": "844bbc70-0cfa-41da-b50b-a46ff830b689@24f58",
+      "displayName": "",
+      "id": "24f58",
+      "name": "throwBack.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1
+        },
+        "events": [
+          {
+            "frame": 0.5666666666666667,
+            "func": "",
+            "params": []
+          },
+          {
+            "frame": 0.5666666666666667,
+            "func": "onAtk",
+            "params": []
+          }
+        ],
+        "embeddedPlayers": [],
+        "editorExtras": {
+          "embeddedPlayerGroups": []
+        },
+        "speed": 1
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "6d309": {
+      "importer": "gltf-scene",
+      "uuid": "844bbc70-0cfa-41da-b50b-a46ff830b689@6d309",
+      "displayName": "",
+      "id": "6d309",
+      "name": "player@throwBack.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 1,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "throwBack",
+            "from": 0,
+            "to": 1,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "844bbc70-0cfa-41da-b50b-a46ff830b689@6d309",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "844bbc70-0cfa-41da-b50b-a46ff830b689@6d309"
+      ]
+    }
+  }
+}

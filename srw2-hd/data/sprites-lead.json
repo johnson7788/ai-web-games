@@ -1,0 +1,914 @@
+{
+ "alpha": {
+  "unit": "α・アジール",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/alpha.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/alpha.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "25",
+   "x": 3,
+   "y": 5
+  }
+ },
+ "alsos": {
+  "unit": "アルソス",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/alsos.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/alsos.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "02",
+   "x": 18,
+   "y": 6
+  }
+ },
+ "aphrodite": {
+  "unit": "アフロダイＡ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/aphrodite.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/aphrodite.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 14,
+   "y": 16
+  }
+ },
+ "argama": {
+  "unit": "アーガマ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/argama.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/argama.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "05",
+   "x": 2,
+   "y": 3
+  }
+ },
+ "bad": {
+  "unit": "バド",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/bad.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/bad.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "02",
+   "x": 23,
+   "y": 4
+  }
+ },
+ "bau": {
+  "unit": "バウ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/bau.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/bau.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "16",
+   "x": 26,
+   "y": 3
+  }
+ },
+ "beguina": {
+  "unit": "ビギナ・ギナ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/beguina.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/beguina.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "16",
+   "x": 25,
+   "y": 8
+  }
+ },
+ "bigzam": {
+  "unit": "ビグザム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/bigzam.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/bigzam.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "05",
+   "x": 17,
+   "y": 9
+  }
+ },
+ "bog": {
+  "unit": "ボング",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/bog.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/bog.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "12",
+   "x": 15,
+   "y": 12
+  }
+ },
+ "bosses": {
+  "unit": "ボスボロット",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/bosses.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/bosses.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "09",
+   "x": 12,
+   "y": 10
+  }
+ },
+ "bound": {
+  "unit": "バウンド・ドック",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/bound.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/bound.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 2,
+   "y": 18
+  }
+ },
+ "brawler": {
+  "unit": "ブラッガーＳ１",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/brawler.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/brawler.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "19",
+   "x": 16,
+   "y": 20
+  }
+ },
+ "byarlant": {
+  "unit": "バイアラン",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/byarlant.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/byarlant.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "10",
+   "x": 9,
+   "y": 3
+  }
+ },
+ "cybuster": {
+  "unit": "サイバスター",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/cybuster.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/cybuster.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "07",
+   "x": 11,
+   "y": 1
+  }
+ },
+ "dablas": {
+  "unit": "ダブラスＭ２",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/dablas.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/dablas.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 7,
+   "y": 6
+  }
+ },
+ "daitarn": {
+  "unit": "ダイ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/daitarn.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/daitarn.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "10",
+   "x": 8,
+   "y": 13
+  }
+ },
+ "dom": {
+  "unit": "ドム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/dom.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/dom.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "04",
+   "x": 3,
+   "y": 5
+  }
+ },
+ "doven": {
+  "unit": "ドーベンウルフ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/doven.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/doven.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "20",
+   "x": 14,
+   "y": 15
+  }
+ },
+ "dreissen": {
+  "unit": "ドライセン",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/dreissen.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/dreissen.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "10",
+   "x": 7,
+   "y": 4
+  }
+ },
+ "elmes": {
+  "unit": "エルメス",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/elmes.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/elmes.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "03",
+   "x": 11,
+   "y": 1
+  }
+ },
+ "f91": {
+  "unit": "F-91",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/f91.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/f91.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "04",
+   "x": 16,
+   "y": 10
+  }
+ },
+ "garada": {
+  "unit": "ガラダＫ７",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/garada.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/garada.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 8,
+   "y": 7
+  }
+ },
+ "gazaC": {
+  "unit": "ガザＣ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gazaC.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gazaC.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "04",
+   "x": 22,
+   "y": 1
+  }
+ },
+ "getter": {
+  "unit": "ゲッター１",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/getter.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/getter.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 12,
+   "y": 18
+  }
+ },
+ "getterg": {
+  "unit": "ゲッターロボＧ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/getterg.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/getterg.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "15",
+   "x": 10,
+   "y": 17
+  }
+ },
+ "getterq": {
+  "unit": "ゲッターＱ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/getterq.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/getterq.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "02",
+   "x": 9,
+   "y": 7
+  }
+ },
+ "geymalk": {
+  "unit": "ゲーマルク",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/geymalk.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/geymalk.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "20",
+   "x": 27,
+   "y": 11
+  }
+ },
+ "ghoul": {
+  "unit": "グール",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/ghoul.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/ghoul.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "25",
+   "x": 27,
+   "y": 15
+  }
+ },
+ "gigil": {
+  "unit": "ギルギル",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gigil.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gigil.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "10",
+   "x": 14,
+   "y": 9
+  }
+ },
+ "gigilgan": {
+  "unit": "ギルギルガン",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gigilgan.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gigilgan.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "24",
+   "x": 8,
+   "y": 11
+  }
+ },
+ "gio": {
+  "unit": "ジ・オ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gio.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gio.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "23",
+   "x": 24,
+   "y": 6
+  }
+ },
+ "giradoga": {
+  "unit": "ギラ・ドーガ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/giradoga.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/giradoga.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "16",
+   "x": 5,
+   "y": 8
+  }
+ },
+ "gogge": {
+  "unit": "ズゴックＥ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gogge.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gogge.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "04",
+   "x": 16,
+   "y": 19
+  }
+ },
+ "granzon": {
+  "unit": "グランゾン",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/granzon.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/granzon.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "26",
+   "x": 10,
+   "y": 3
+  }
+ },
+ "great": {
+  "unit": "グレートマジンガー",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/great.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/great.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 9,
+   "y": 12
+  }
+ },
+ "grendizer": {
+  "unit": "グレンダイザー",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/grendizer.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/grendizer.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "08",
+   "x": 17,
+   "y": 12
+  }
+ },
+ "gundam": {
+  "unit": "ガンダム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gundam.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gundam.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 12,
+   "y": 16
+  }
+ },
+ "gushios": {
+  "unit": "グシオスβⅢ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gushios.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gushios.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "11",
+   "x": 16,
+   "y": 6
+  }
+ },
+ "gyan": {
+  "unit": "グフ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/gyan.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/gyan.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "02",
+   "x": 23,
+   "y": 3
+  }
+ },
+ "hambrabi": {
+  "unit": "ハンブラビ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/hambrabi.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/hambrabi.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "14",
+   "x": 6,
+   "y": 4
+  }
+ },
+ "hygogg": {
+  "unit": "ハイゴッグ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/hygogg.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/hygogg.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "03",
+   "x": 3,
+   "y": 9
+  }
+ },
+ "jalaga": {
+  "unit": "ジャラガ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/jalaga.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/jalaga.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 0,
+   "y": 5
+  }
+ },
+ "jamrufin": {
+  "unit": "ジャムルフィン",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/jamrufin.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/jamrufin.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "15",
+   "x": 8,
+   "y": 19
+  }
+ },
+ "lineX1": {
+  "unit": "ラインＸ１",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/lineX1.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/lineX1.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "07",
+   "x": 13,
+   "y": 10
+  }
+ },
+ "marasai": {
+  "unit": "マラサイ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/marasai.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/marasai.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "02",
+   "x": 26,
+   "y": 3
+  }
+ },
+ "mazinger": {
+  "unit": "マジンガーＺ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/mazinger.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/mazinger.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 13,
+   "y": 17
+  }
+ },
+ "metz": {
+  "unit": "メタス",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/metz.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/metz.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "05",
+   "x": 3,
+   "y": 6
+  }
+ },
+ "midia": {
+  "unit": "ミデア",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/midia.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/midia.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "11",
+   "x": 9,
+   "y": 7
+  }
+ },
+ "minervaX": {
+  "unit": "ミネルバＸ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/minervaX.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/minervaX.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "08",
+   "x": 17,
+   "y": 4
+  }
+ },
+ "mirror": {
+  "unit": "発電ミラー",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/mirror.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/mirror.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "17",
+   "x": 7,
+   "y": 6
+  }
+ },
+ "missile": {
+  "unit": "誘導ミサイル",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/missile.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/missile.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "23",
+   "x": 12,
+   "y": 1
+  }
+ },
+ "monster": {
+  "unit": "メカ雷獣鬼",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/monster.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/monster.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "11",
+   "x": 3,
+   "y": 1
+  }
+ },
+ "neelagama": {
+  "unit": "ネェル・アーガマ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/neelagama.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/neelagama.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 11,
+   "y": 12
+  }
+ },
+ "nu": {
+  "unit": "νガンダム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/nu.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/nu.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 13,
+   "y": 14
+  }
+ },
+ "palace": {
+  "unit": "パラス・アテネ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/palace.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/palace.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 0,
+   "y": 18
+  }
+ },
+ "psyco": {
+  "unit": "サイコガンダム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/psyco.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/psyco.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "05",
+   "x": 2,
+   "y": 9
+  }
+ },
+ "quin": {
+  "unit": "キュベレイ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/quin.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/quin.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 18,
+   "y": 2
+  }
+ },
+ "racalium": {
+  "unit": "ラー・カイラム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/racalium.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/racalium.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "22",
+   "x": 17,
+   "y": 8
+  }
+ },
+ "rafflesia": {
+  "unit": "ラフレシア",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/rafflesia.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/rafflesia.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "16",
+   "x": 2,
+   "y": 8
+  }
+ },
+ "redzaku": {
+  "unit": "赤ザク",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/redzaku.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/redzaku.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "03",
+   "x": 10,
+   "y": 1
+  }
+ },
+ "sig": {
+  "unit": "シグ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/sig.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/sig.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "16",
+   "x": 27,
+   "y": 12
+  }
+ },
+ "texas": {
+  "unit": "テキサスマック",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/texas.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/texas.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 14,
+   "y": 18
+  }
+ },
+ "tros": {
+  "unit": "トロスＤ７",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/tros.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/tros.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "03",
+   "x": 13,
+   "y": 11
+  }
+ },
+ "turret": {
+  "unit": "固定砲台",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/turret.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/turret.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "06",
+   "x": 1,
+   "y": 2
+  }
+ },
+ "valshione": {
+  "unit": "ヴァルシオン",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/valshione.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/valshione.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "26",
+   "x": 9,
+   "y": 3
+  }
+ },
+ "whitebase": {
+  "unit": "ホワイトベース",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/whitebase.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/whitebase.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 15,
+   "y": 19
+  }
+ },
+ "yact": {
+  "unit": "ヤクト・ドーガ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/yact.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/yact.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "16",
+   "x": 1,
+   "y": 6
+  }
+ },
+ "zai": {
+  "unit": "ザイ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zai.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zai.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "07",
+   "x": 5,
+   "y": 6
+  }
+ },
+ "zakrello": {
+  "unit": "ザクレロ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zakrello.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zakrello.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "04",
+   "x": 22,
+   "y": 2
+  }
+ },
+ "zaku": {
+  "unit": "ザク",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zaku.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zaku.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 8,
+   "y": 3
+  }
+ },
+ "zaku3": {
+  "unit": "ザクⅢ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zaku3.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zaku3.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "14",
+   "x": 17,
+   "y": 15
+  }
+ },
+ "zaku3kai": {
+  "unit": "ザクⅢ改",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zaku3kai.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zaku3kai.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "13",
+   "x": 17,
+   "y": 2
+  }
+ },
+ "zen2": {
+  "unit": "ゼンⅡ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zen2.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zen2.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 12,
+   "y": 1
+  }
+ },
+ "zeta": {
+  "unit": "Ｚガンダム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zeta.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zeta.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "02",
+   "x": 2,
+   "y": 9
+  }
+ },
+ "zusa": {
+  "unit": "ズサ",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zusa.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zusa.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "01",
+   "x": 11,
+   "y": 3
+  }
+ },
+ "zz": {
+  "unit": "ＺＺガンダム",
+  "file": "/Users/admin/git/webgames/games/srw2-hd/assets/hd/units-gen/zz.png",
+  "file16": "/Users/admin/git/webgames/games/srw2-hd/data/sprites-lead-16/zz.png",
+  "w": 256,
+  "h": 256,
+  "source": {
+   "chapter": "10",
+   "x": 25,
+   "y": 6
+  }
+ }
+}

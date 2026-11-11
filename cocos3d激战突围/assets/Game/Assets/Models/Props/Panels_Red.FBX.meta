@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "62ec311c-f7d1-498c-acbc-5d4777a4d69e",
+  "files": [],
+  "subMetas": {
+    "8a1ec": {
+      "importer": "gltf-mesh",
+      "uuid": "62ec311c-f7d1-498c-acbc-5d4777a4d69e@8a1ec",
+      "displayName": "",
+      "id": "8a1ec",
+      "name": "Panels_Red_1.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78e21": {
+      "importer": "gltf-material",
+      "uuid": "62ec311c-f7d1-498c-acbc-5d4777a4d69e@78e21",
+      "displayName": "",
+      "id": "78e21",
+      "name": "13 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "366ba": {
+      "importer": "gltf-scene",
+      "uuid": "62ec311c-f7d1-498c-acbc-5d4777a4d69e@366ba",
+      "displayName": "",
+      "id": "366ba",
+      "name": "Panels_Red.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "62ec311c-f7d1-498c-acbc-5d4777a4d69e@366ba",
+    "assetFinder": {
+      "meshes": [
+        "62ec311c-f7d1-498c-acbc-5d4777a4d69e@8a1ec"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "62ec311c-f7d1-498c-acbc-5d4777a4d69e@78e21"
+      ],
+      "scenes": [
+        "62ec311c-f7d1-498c-acbc-5d4777a4d69e@366ba"
+      ]
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "checks": [
+    {
+      "name": "boot 到标题",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "开场字卡出现",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "字卡后进入幕卡/游戏",
+      "ok": true,
+      "detail": "act"
+    },
+    {
+      "name": "进入 playing",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "射击被记录",
+      "ok": true,
+      "detail": "{\"ink\":92,\"enemies\":3,\"score\":0,\"shots\":24,\"act\":0}"
+    },
+    {
+      "name": "玩家仍存活",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "升级卡 3 张",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "选完升级回到 playing",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Boss 存在",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 外部请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "external": [],
+  "screenshots": [
+    "01-title.png",
+    "02-story.png",
+    "03-act.png",
+    "04-game-draft.png",
+    "05-upgrade.png",
+    "06-act-2-blueprint.png",
+    "06-act-3-neon.png",
+    "06-act-5-blank.png",
+    "07-dead.png",
+    "08-ending.png",
+    "09-ending-text.png",
+    "10-gallery.png",
+    "11-settings.png",
+    "12-mobile-title.png",
+    "13-mobile-game.png"
+  ],
+  "perf": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

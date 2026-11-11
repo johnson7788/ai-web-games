@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "37f7a802-41fe-405f-a3bc-7e76708d5cd1",
+  "files": [],
+  "subMetas": {
+    "ab45c": {
+      "importer": "gltf-mesh",
+      "uuid": "37f7a802-41fe-405f-a3bc-7e76708d5cd1@ab45c",
+      "displayName": "",
+      "id": "ab45c",
+      "name": "Rocket.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78e21": {
+      "importer": "gltf-material",
+      "uuid": "37f7a802-41fe-405f-a3bc-7e76708d5cd1@78e21",
+      "displayName": "",
+      "id": "78e21",
+      "name": "13 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "264f1": {
+      "importer": "gltf-scene",
+      "uuid": "37f7a802-41fe-405f-a3bc-7e76708d5cd1@264f1",
+      "displayName": "",
+      "id": "264f1",
+      "name": "Rocket.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "37f7a802-41fe-405f-a3bc-7e76708d5cd1@264f1",
+    "assetFinder": {
+      "meshes": [
+        "37f7a802-41fe-405f-a3bc-7e76708d5cd1@ab45c"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "37f7a802-41fe-405f-a3bc-7e76708d5cd1@78e21"
+      ],
+      "scenes": [
+        "37f7a802-41fe-405f-a3bc-7e76708d5cd1@264f1"
+      ]
+    }
+  }
+}

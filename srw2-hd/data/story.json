@@ -1,0 +1,290 @@
+{
+ "01": {
+  "titleZh": "救出!!Z高达",
+  "summaryZh": "全灭扎古守军，救出卡缪并收得Z高达。",
+  "briefZh": "敌方 13 机以扎古为主，第 11 回合夏亚（Lv13）率队增援。先清杂兵赚经验；德克萨斯·马克过关后即离队，只当削血用。",
+  "briefEn": "13 enemies, mostly Zaku grunts; Char (Lv13) arrives with reinforcements on turn 11. Farm the grunts first — Texas Mack leaves right after this stage, so use it only to chip.",
+  "summaryEn": "Wipe out the Zaku garrison, rescue Kamille and acquire the Z Gundam."
+ },
+ "02": {
+  "titleZh": "谋略之城",
+  "summaryZh": "在谋略之城中培养Z高达，击退杰利德与兰巴·拉尔。",
+  "briefZh": "敌方 13 机，第 6 回合兰巴·拉尔（古夫 Lv10）率队增援。杰利德 HP 降到 199 以下就会向东逃，务必从近满血一口气击坠；本关适合练Z高达。",
+  "briefEn": "13 enemies; Ramba Ral (Gouf, Lv10) arrives on turn 6. Jerid bolts east once his HP falls below 199, so burst him down from near-full HP — this stage is the place to level the Z Gundam.",
+  "summaryEn": "Train the Z Gundam in the City of Schemes and drive off Jerid and Ramba Ral."
+ },
+ "03": {
+  "titleZh": "压制达卡尔",
+  "summaryZh": "压制达卡尔，迎击夏亚与黑色三连星并说服拉拉。",
+  "briefZh": "敌方 15 机，第 3 回合 F-91（西布克）来援，第 4 回合黑色三连星（德姆 Lv13-14）登场。先分兵清理扎古、巴多与特洛斯D7，再集中对付夏亚；阿姆罗可说服拉拉加入（她之后会离队）。",
+  "briefEn": "15 enemies. F-91 (Seabook) arrives on turn 3 and the Black Tri-Stars (Doms, Lv13-14) on turn 4. Split up to clear the Zakus, Bads and Tros D7, then mass on Char; Amuro can persuade Lalah to join (she leaves the party later).",
+  "summaryEn": "Seize Dakar, repel Char and the Black Tri-Stars, and persuade Lalah."
+ },
+ "04": {
+  "titleZh": "反击",
+  "summaryZh": "固守基地迎击来袭部队，击退马修马的增援。",
+  "briefZh": "敌方 15 机，第 8 回合马修马（兹萨 Lv16）率 6 机增援。基地每回合开始回血，原地据守迎敌，用精神指令先秒德姆与扎古莱罗。",
+  "briefEn": "15 enemies; Mashymre (Zssa, Lv16) brings 6 more on turn 8. The base heals at the start of each turn — hold position and burn spirit commands to delete the Doms and Zakrello first.",
+  "summaryEn": "Hold the base against the raiders and repel Mashmyre's reinforcements."
+ },
+ "05": {
+  "titleZh": "背叛的荒野",
+  "summaryZh": "荒野迎击多兹鲁的比格扎姆，福中途离场。",
+  "briefZh": "敌方 15 机，比格扎姆（多兹鲁 Lv21）不会移动但射程极远，切勿进入其 6 格范围。第 3 回合我方行动时福与多兹鲁离场，击坠比格扎姆也不会让福加入；优先清掉远程杂兵。",
+  "briefEn": "15 enemies. The Big Zam (Dozle, Lv21) never moves but out-ranges everything — stay outside its 6-tile reach. Four and Dozle leave on turn 3, and killing the Big Zam won't recruit her; clear the long-range grunts first.",
+  "summaryEn": "Face Dozle's Big Zam in the wasteland; Four leaves midway."
+ },
+ "06": {
+  "titleZh": "破坏敌要塞",
+  "summaryZh": "突入敌要塞或全歼守军，赛巴斯塔来援。",
+  "briefZh": "胜利条件是潜入要塞内部或全灭敌军，守军含 10 座固定炮台与胡蝶的机械胡蝶鬼（Lv16）。第 2 回合布兰（亚希玛 Lv16）来袭，第 7 回合正树（赛巴斯塔 Lv16）来援。",
+  "briefEn": "Win by infiltrating the fortress or wiping out the enemy; the garrison includes 10 fixed turrets and Kochō's Mecha Kochoki (Lv16). Blan (Asshimar, Lv16) strikes on turn 2, and Masaki (Cybuster, Lv16) reinforces on turn 7.",
+  "summaryEn": "Storm the enemy fortress or wipe out its garrison; Cybuster arrives."
+ },
+ "07": {
+  "titleZh": "决斗",
+  "summaryZh": "击坠罗蕾莱的莱因X1，顶住巴多与基尔基尔增援。",
+  "briefZh": "目标是击坠罗蕾莱的莱因X1（Lv21），它对远程攻击免疫，必须贴脸围杀。先在初始位置顶住第 6、8 回合的巴多、泽恩II 与基尔基尔增援，清掉射程 7 的杰诺瓦M9 再推进。",
+  "briefEn": "Objective: destroy Lorelei's Line X1 (Lv21), which ignores ranged attacks — you must close in and swarm it. Hold your start position through the Bad, Zen II and Gilgil reinforcements on turns 6 and 8, clear the range-7 Genova M9s, then advance.",
+  "summaryEn": "Destroy Lorelei's Line X1 and hold off the Bado and Girgil reinforcements."
+ },
+ "08": {
+  "titleZh": "圈套",
+  "summaryZh": "魔神Z独守基地，识破马·库贝的强人陷阱。",
+  "briefZh": "开局只有魔神Z，第 3 回合主力才来援，且古连泰沙被击坠即败。先守在基地上，用魔神Z说服密涅瓦X，等援军到齐再围杀马·库贝的强人（Lv29）——本关最强敌。",
+  "briefEn": "You begin with Mazinger Z alone; the main force arrives on turn 3, and losing Grendizer means defeat. Hold on the base, persuade Minerva X with Mazinger, then gang up on Ma Kube's Gyan (Lv29), the strongest enemy here.",
+  "summaryEn": "Mazinger Z holds the base alone and sees through M'Qube's Gyan trap."
+ },
+ "09": {
+  "titleZh": "复仇之风",
+  "summaryZh": "马·库贝孤身诱敌，顶住导弹群后击坠强人。",
+  "briefZh": "场上看似只有马·库贝的强人（Lv26），第 1、2 回合却涌出大批增援与高攻诱导导弹。在基地下方迎击，优先击毁导弹；强人躲在海里令光束无效，用「热血」配剑类近战解决。",
+  "briefEn": "Only Ma Kube's Gyan (Lv26) is visible, but turns 1-2 flood the map with reinforcements and hard-hitting guided missiles. Fight below the base and kill the missiles first; the Gyan hides in the sea where beams fail — use Hot Blood with sabre attacks.",
+  "summaryEn": "M'Qube lures you in alone; survive the missile swarm and destroy the Gyan."
+ },
+ "10": {
+  "titleZh": "傀儡凤",
+  "summaryZh": "卡缪说服被操控的凤，全歼杰利德与莱拉部队。",
+  "briefZh": "敌方 18 机，杰利德与莱拉的拜亚兰（Lv31）威胁最大，第 5 回合还有戴与格西奥斯βIII 增援。第 4 回合后卡缪可说服凤（精神感应高达 Lv24）加入；别在第一回合用波士的「激怒」，否则德莱森与拜亚兰会全体出动。",
+  "briefEn": "18 enemies; Jerid's and Lyla's Byarlants (Lv31) are the biggest threat, with Dai and Gshiios βIII arriving on turn 5. From turn 4 Kamille can persuade Four (Psycho Gundam, Lv24) to join. Don't use Boss's Rage on turn 1, or every Dreissen and Byarlant charges at once.",
+  "summaryEn": "Kamille persuades the brainwashed Four; annihilate Jerid and Lila's forces."
+ },
+ "11": {
+  "titleZh": "惊异!!究极机器人瓦尔西昂",
+  "summaryZh": "护卫米迪亚并全灭敌军，直面瓦尔西昂登场。",
+  "briefZh": "米迪亚被击坠即败，务必围着它作战。第 5 回合比安的瓦尔西昂（Lv31）登场，性能压倒性，只要不主动攻击它就不会还手；第 7 回合正树来援，比安随即撤退。",
+  "briefEn": "Losing the Midia means defeat, so fight around it. Bian's Valsione (Lv31) appears on turn 5 with overwhelming stats but won't strike unless attacked; Masaki arrives on turn 7 and Bian withdraws.",
+  "summaryEn": "Escort the Medea and destroy the enemy force as Valsione appears."
+ },
+ "12": {
+  "titleZh": "拉萨攻防",
+  "summaryZh": "击坠比格扎姆，夺取航天飞机助推器。",
+  "briefZh": "敌方仅 12 机，目标是击坠多兹鲁的比格扎姆（Lv27）。原地不动等敌机聚拢，用赛巴斯塔的「赛闪光」一网打尽；第 5 回合尼尔·阿伽马与 F-91 来援，第 6 回合再添 3 架巴多。",
+  "briefEn": "Just 12 enemies; the goal is Dozle's Big Zam (Lv27). Sit still and let them bunch up, then sweep them with Cybuster's Cyflash; the Neel Argama and F-91 arrive on turn 5, and 3 more Bawoos on turn 6.",
+  "summaryEn": "Destroy the Big Zam and seize the shuttle booster."
+ },
+ "13": {
+  "titleZh": "西洛克的影子",
+  "summaryZh": "突出重围击退西洛克，朱多说服普露。",
+  "briefZh": "开局即被 14 机包围，第 5 回合还有金哥利与阿尔索斯增援，尼尔·阿伽马被击坠即败。朱多靠近普露可说服她退场；第 2 回合西洛克、蕾柯亚与莎拉就会撤走，集中火力先秒哈曼的丘贝雷（Lv38）。",
+  "briefEn": "You start boxed in by 14 enemies, with King Gori and Alsos packs on turn 5, and losing the Neel Argama ends the run. Move Judau beside Puru to persuade her off the field; Sirocco, Reccoa and Sara withdraw on turn 2 — focus fire on Haman's Qubeley (Lv38).",
+  "summaryEn": "Break the encirclement, repel Scirocco, and let Judau persuade Ple."
+ },
+ "14": {
+  "titleZh": "前往宇宙",
+  "summaryZh": "升空前往宇宙，卡缪接触罗莎米娅并将其说服。",
+  "briefZh": "敌方 14 机，亚赞的汉布拉比（Lv36）专挑被蜘蛛网困住的机体下手，第 2、8、9 回合还有增援。卡缪在罗莎米娅行动时相邻即可触发剧情使她加入（之后仍需击坠她）；网只会困住一机，可让大魔神故意去踩。",
+  "briefEn": "14 enemies; Yazan's Hambrabi (Lv36) preys on units caught in webs, and reinforcements land on turns 2, 8 and 9. Put Kamille next to Rosamia on her turn to trigger her join event (you still have to kill her later); only one unit gets webbed, so Great Mazinger can volunteer.",
+  "summaryEn": "Launch into space; Kamille reaches out to Rosamia and wins her over."
+ },
+ "15": {
+  "titleZh": "激斗！朱庇特利斯",
+  "summaryZh": "朱庇特利斯被围，强杀西洛克队与罗莎米娅。",
+  "briefZh": "开局就被 15 机重重包围，第 4 回合再添 3 架邦德·多克。先移出贾姆尔芬的射程，用「热血」速杀盖马尔克与罗莎米娅的精神感应高达MK-II（Lv31），再收拢兵力逐个击破。",
+  "briefEn": "You start surrounded by 15 enemies and 3 more Bound Docs arrive on turn 4. Step outside the Jamru Fins' range and use Hot Blood to burst the Gemark and Rosamia's Psycho Gundam Mk-II (Lv31), then regroup and pick enemies off one by one.",
+  "summaryEn": "The Jupiteris is surrounded; cut through Scirocco's team and Rosamia."
+ },
+ "16": {
+  "titleZh": "脱出！",
+  "summaryZh": "全员撤入地图右端的宇宙气流，逃离卡罗佐追击。",
+  "briefZh": "胜利条件是全部 10 机从地图右端的宇宙气流撤离（待机即离场），或全灭敌军。左侧卡罗佐的拉夫蕾西亚队不会主动行动，先清掉右半场的基拉·多加与德莱森，再依次撤离。",
+  "briefEn": "Win by withdrawing all 10 units into the space current at the right edge (wait to leave), or by wiping out the enemy. Carozzo's Rafflesia group on the left never moves — clear the right-side Geara Dogas and Dreissens, then pull out.",
+  "summaryEn": "Withdraw every unit into the space current at the right edge and escape Karozo."
+ },
+ "17": {
+  "titleZh": "太阳射线发动",
+  "summaryZh": "11 回合内摧毁发电镜，阻止太阳射线发射。",
+  "briefZh": "必须 11 回合内击破 4 座发电镜（Lv30），超时即败。发电镜会主动攻击，可借反击磨血；格雷米与其周围的巴乌不受伤、不接敌就不动。朱多每回合可两次说服普露（Lv30）加入。",
+  "briefEn": "Destroy the four power mirrors (Lv30) within 11 turns or lose. The mirrors shoot back, so let counters do the damage; Gremy and his Bawoos stay put unless damaged or approached. Judau can try persuading Puru (Lv30) twice per turn.",
+  "summaryEn": "Destroy the solar mirrors within 11 turns and stop the Solar Ray."
+ },
+ "18": {
+  "titleZh": "潜入！康佩特",
+  "summaryZh": "潜入康佩特要塞，在南侧集结迎击格雷米与拉坎。",
+  "briefZh": "我方只有 8 机，先在南方集结固守；第 5 回合拉坎（多本狼 Lv39）与第 7 回合的增援会从两翼夹来。格雷米（巴乌 Lv37）起初不动，想引他出来可用波士的「激怒」。",
+  "briefEn": "Only 8 allies — group up in the south. Rakan (Doven Wolf, Lv39) and a later wave hit from both flanks on turns 5 and 7. Gremy (Bawoo, Lv37) won't move at first; use Boss's Rage to pull him in.",
+  "summaryEn": "Infiltrate Konpeito Fortress and rally in the south against Gremy and Lakan."
+ },
+ "19": {
+  "titleZh": "月面死斗",
+  "summaryZh": "月面决战哈曼，普露与普露兹只能二选一。",
+  "briefZh": "敌方 12 机且无增援，最大威胁是哈曼的丘贝雷（Lv46）。普露兹只追着普露打，普露被击坠即死亡；想收普露兹就必须让这段剧情发生，两人只能得其一。",
+  "briefEn": "12 enemies with no reinforcements; Haman's Qubeley (Lv46) is the real danger. Puru-Two only hunts Puru, and if she kills her, Puru dies — that event is required to recruit Puru-Two, and you can keep only one of them.",
+  "summaryEn": "Decisive battle against Haman on the moon; only one of Ple or Ple Two can be saved."
+ },
+ "20": {
+  "titleZh": "决战!!格拉纳达要塞",
+  "summaryZh": "攻略格拉纳达要塞，第 1 回合修的古兰森登场。",
+  "briefZh": "第 1 回合修的古兰森（Lv41）就会登场，实力极强；没有把握就别攻击它，专心防御回复，它会在第 7 回合自行撤退。清掉其余敌人与第 5 回合增援即可过关，哈曼的丘贝雷（Lv37）并不算硬。",
+  "briefEn": "Shu's Granzon (Lv41) appears on turn 1 and hits far too hard; if unprepared, don't attack it — just heal up and it withdraws on turn 7. Clear everything else plus the turn-5 wave; Haman's Qubeley (Lv37) is not tough.",
+  "summaryEn": "Storm Granada Fortress as Shu's Granzon appears on turn 1."
+ },
+ "21": {
+  "titleZh": "时间啊停下",
+  "summaryZh": "15 回合内从地图下方出口全员撤离。",
+  "briefZh": "15 回合内让全部 10 机从画面下方的出口离场；瓦尔西昂开场即撤退，本关只需赶路。变形机体换成高机动形态，ν高达与大魔神只有移动力 7，不能浪费回合（ν高达可用「疾风」补救），零星增援交给赛巴斯塔等快机清理。",
+  "briefEn": "Get all 10 units off the bottom exit within 15 turns; Valsione withdraws at the start, so this is a pure race. Switch transformable units to fast forms — ν Gundam and Great Mazinger move only 7 and can't waste turns (ν Gundam has Gale). Let fast units such as Cybuster handle the few reinforcements.",
+  "summaryEn": "Get every unit out through the bottom exit within 15 turns."
+ },
+ "22": {
+  "titleZh": "大气层突入",
+  "summaryZh": "20 回合死守不能移动的拉·凯莱姆完成突入。",
+  "briefZh": "拉·凯莱姆无法移动，且几乎全体敌人都扑向它，务必在其周围布防死守 20 回合（或全灭敌军）。若第 19 话普露阵亡，朱多可在此说服普露兹加入；第 3 回合有 3 架布拉加S1 增援。",
+  "briefEn": "The Lar Kairm can't move and almost everything targets it, so ring it and hold for 20 turns (or wipe the enemy out). If Puru died in chapter 19, Judau can recruit Puru-Two here; 3 Bragger S1s arrive on turn 3.",
+  "summaryEn": "Hold out for 20 turns to bring the immobile Ra Cailum through re-entry."
+ },
+ "23": {
+  "titleZh": "西洛克的逆袭",
+  "summaryZh": "与西洛克的The-O决战，第 5 回合古兰森乱入。",
+  "briefZh": "敌方 17 机全部主动出击，要尽快削减数量，第 5 回合修的古兰森（Lv49）还会乱入。西洛克的The-O攻高且常能再攻击，血少的机体别靠近；用「赛闪光」清导弹，实在吃紧就集火The-O 直接过关。",
+  "briefEn": "All 17 enemies advance, so thin them out fast — and Shu's Granzon (Lv49) crashes in on turn 5. Sirocco's The-O hits hard and usually double-attacks, so keep fragile units away; Cyflash clears the missiles, and if it gets rough, focus The-O to end the stage.",
+  "summaryEn": "Final duel with Scirocco's The-O; Granzon crashes in on turn 5."
+ },
+ "24": {
+  "titleZh": "基尔基尔甘的亡灵",
+  "summaryZh": "基尔基尔甘化为亡灵复活，击破机械形态过关。",
+  "briefZh": "原文胜利条件写作击坠The-O，但本关实际敌人是基尔基尔甘：击破后它会以机械基尔基尔甘复活，且必须在己方回合击坠，否则它复苏后立刻行动、容易反杀我方。",
+  "briefEn": "The mission text says destroy The-O, but the real enemy here is Gilgilgan: killing it revives it as Mecha Gilgilgan, so finish it on your own turn — if it dies on the enemy turn, the revived form acts at once and can kill your units.",
+  "summaryEn": "Girgilgan returns as a ghost; destroy its machine form to clear."
+ },
+ "25": {
+  "titleZh": "最后巴塔利昂再临",
+  "summaryZh": "击坠卡罗佐的拉夫蕾西亚，塞西莉与哈曼乱入。",
+  "briefZh": "目标是击坠卡罗佐的拉夫蕾西亚（Lv46），其周边守军射程极长，赛巴斯塔别靠近。塞西莉第 1 回合被西布克说服后只是 NPC，会自己送死；第 2 回合哈曼（丘贝雷 Lv48）与第 4 回合的雅克特·多加才是硬仗，可用精神指令一回合秒掉雅克特·多加与贾姆尔芬。",
+  "briefEn": "Objective: destroy Carozzo's Rafflesia (Lv46); its escorts out-range you, so keep Cybuster back. Cecily only joins as an NPC on turn 1 after Seabook persuades her and will charge to her death. The real fights are Haman's Qubeley (Lv48) on turn 2 and the Yakt Dogas on turn 4 — burn spirit commands to delete a Yakt Doga and the Jamru Fin in one turn.",
+  "summaryEn": "Bring down Karozo's Rafflesia as Cecily and Haman intrude."
+ },
+ "26": {
+  "titleZh": "黎明的决战",
+  "summaryZh": "黎明决战瓦尔西昂，击坠比安迎来结局。",
+  "briefZh": "敌方仅 4 机：先等一回合，击破逼近的盖马尔克；瓦尔西昂（Lv50）与古兰森（Lv49）要到第 5 回合才行动。在射程外集结蓄力，把精神指令全砸向瓦尔西昂即可通关，古兰森不必击坠。",
+  "briefEn": "Only 4 enemies: wait one turn and kill the approaching Gemark; Valsione (Lv50) and Granzon (Lv49) sit still until turn 5. Gather outside their range, then dump every spirit command on Valsione to end the game — Granzon need not die.",
+  "summaryEn": "The decisive dawn battle against Valsione; defeat Bian to reach the ending."
+ },
+ "_objectives": {
+  "01": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "02": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "03": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "04": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "05": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "06": {
+   "victoryZh": "潜入敌要塞内部，或敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "07": {
+   "victoryZh": "击坠莱因X1",
+   "defeatZh": "我方全灭"
+  },
+  "08": {
+   "victoryZh": "击坠强人",
+   "defeatZh": "古连泰沙被击坠"
+  },
+  "09": {
+   "victoryZh": "击坠强人",
+   "defeatZh": "我方全灭"
+  },
+  "10": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "11": {
+   "victoryZh": "在保护米迪亚的同时全灭敌军",
+   "defeatZh": "米迪亚被击坠"
+  },
+  "12": {
+   "victoryZh": "击坠比格扎姆，取得航天飞机助推器",
+   "defeatZh": "我方全灭"
+  },
+  "13": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "尼尔·阿伽马被击坠"
+  },
+  "14": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "15": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "16": {
+   "victoryZh": "让全部我方机体从脱出点撤离，或敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "17": {
+   "victoryZh": "在限制时间内破坏太阳射线",
+   "defeatZh": "超过 11 回合"
+  },
+  "18": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "19": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "20": {
+   "victoryZh": "敌全灭",
+   "defeatZh": "我方全灭"
+  },
+  "21": {
+   "victoryZh": "15 回合内让全员从画面下方的出口撤离",
+   "defeatZh": "我方全灭"
+  },
+  "22": {
+   "victoryZh": "守住拉·凯莱姆 20 回合，或敌全灭",
+   "defeatZh": "拉·凯莱姆被击坠"
+  },
+  "23": {
+   "victoryZh": "击坠The-O",
+   "defeatZh": "我方全灭"
+  },
+  "24": {
+   "victoryZh": "击坠The-O",
+   "defeatZh": "我方全灭"
+  },
+  "25": {
+   "victoryZh": "击坠拉夫蕾西亚",
+   "defeatZh": "我方全灭"
+  },
+  "26": {
+   "victoryZh": "击坠瓦尔西昂",
+   "defeatZh": "我方全灭"
+  }
+ }
+}

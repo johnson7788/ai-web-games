@@ -1,0 +1,51 @@
+{
+  "head": {
+    "file": "head.webp",
+    "w": 334,
+    "h": 351,
+    "aspect": 0.9516,
+    "pivot": "bottom"
+  },
+  "torso": {
+    "file": "torso.webp",
+    "w": 202,
+    "h": 318,
+    "aspect": 0.6352,
+    "pivot": "bottom"
+  },
+  "arm_upper": {
+    "file": "arm_upper.webp",
+    "w": 130,
+    "h": 355,
+    "aspect": 0.3662,
+    "pivot": "top"
+  },
+  "arm_fore": {
+    "file": "arm_fore.webp",
+    "w": 146,
+    "h": 367,
+    "aspect": 0.3978,
+    "pivot": "top"
+  },
+  "thigh": {
+    "file": "thigh.webp",
+    "w": 169,
+    "h": 374,
+    "aspect": 0.4519,
+    "pivot": "top"
+  },
+  "shin": {
+    "file": "shin.webp",
+    "w": 164,
+    "h": 327,
+    "aspect": 0.5015,
+    "pivot": "top"
+  },
+  "boot": {
+    "file": "boot.webp",
+    "w": 292,
+    "h": 235,
+    "aspect": 1.2426,
+    "pivot": "top"
+  }
+}

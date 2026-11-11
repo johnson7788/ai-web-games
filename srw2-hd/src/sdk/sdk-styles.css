@@ -1,0 +1,85 @@
+/* ============================================================
+ * 公共 SDK 样式（广告占位遮罩 / 反调试遮罩）
+ * 由 sdk/gamesdk.js 在「游戏未提供自定义 overlay」时自动注入使用。
+ * 游戏若用自己的 UI（如 #screen-ad），仍可 bindOverlay 接管，无需本文件。
+ * ============================================================ */
+
+/* ---------- 广告占位遮罩 ---------- */
+.sdk-ad-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 6, 10, 0.82);
+  backdrop-filter: blur(2px);
+}
+.sdk-ad-screen.hidden {
+  display: none;
+}
+.sdk-ad-box {
+  text-align: center;
+  color: #f4ead8;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: 28px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(20, 16, 22, 0.9);
+  min-width: 220px;
+}
+.sdk-ad-spinner {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 14px;
+  border: 4px solid rgba(255, 255, 255, 0.18);
+  border-top-color: #ffcf6a;
+  border-radius: 50%;
+  animation: sdk-spin 0.9s linear infinite;
+}
+@keyframes sdk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sdk-ad-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.sdk-ad-note {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+/* ---------- 反调试 / 锁定全屏遮罩（独立部署时可用） ---------- */
+.sdk-lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b0908;
+  color: #ffd9c0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  text-align: center;
+  padding: 24px;
+}
+.sdk-lock-screen.hidden {
+  display: none;
+}
+.sdk-lock-panel {
+  max-width: 320px;
+}
+.sdk-lock-panel h2 {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+.sdk-lock-countdown {
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.7;
+}

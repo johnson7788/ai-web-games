@@ -1,0 +1,5 @@
+{
+    "1":
+    {"lv":1,"gridSize":{"x":2,"y":6},"railCount":4,"gridInfo":[{"p":{"x":0.5,"y":0,"z":2.5},"type":"Rail_S","connectKey":"02","isStatic":true,"hasTrain":true,"trainDirec":0,"trainId":1},{"p":{"x":0.5,"y":0,"z":-2.5},"type":"Rail_S","connectKey":"02","isStatic":true,"hasTrain":false,"trainDirec":0,"trainId":1}],"barrierArr":[{"x":-0.5,"y":0,"z":-1.5},{"x":-0.5,"y":0,"z":-0.5},{"x":-0.5,"y":0,"z":0.5},{"x":-0.5,"y":0,"z":1.5},{"x":-0.5,"y":0,"z":-2.5},{"x":-0.5,"y":0,"z":2.5}],"fenceArr":[],"tunnerArr":[],"railSwitchArr":[],"endGridInfo":{"p":{"x":0.5,"y":0,"z":-3.5},"connectKey":"20","type":"Rail_S"},"models":{},"sceneType":"SceneCity"}
+ 
+}

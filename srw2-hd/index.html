@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>第2次超级机器人大战 HD · 救出!!Z高达</title>
+  <meta name="description" content="FC《第2次超级机器人大战》高清重制：原版关卡、原版剧情、原版规则，用矢量美术与现代化界面重新演绎。" />
+  <meta name="theme-color" content="#060a12" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="src/sdk/sdk-styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="stage" aria-label="第2次超级机器人大战 HD">
+      <canvas id="map" width="880" height="605"></canvas>
+
+      <header id="hud">
+        <div class="hud-left">
+          <span class="chapter">第 1 话</span>
+          <strong id="hud-title">救出!!Z高达</strong>
+          <span class="phase-tag" id="phaseTag">我方阶段</span>
+        </div>
+        <div class="hud-right">
+          <span class="turn">TURN <b id="turnNum">01</b></span>
+          <span class="objective" id="objective">胜利条件：敌全灭</span>
+          <button id="btnLang" class="hud-btn" type="button" title="Language / 语言">EN</button>
+          <button id="btnMute" class="hud-btn" type="button" title="音乐开关">♪</button>
+          <button id="btnHelp" class="hud-btn" type="button" title="操作说明">?</button>
+        </div>
+      </header>
+
+      <aside id="side">
+        <div class="side-head">
+          <span id="sideKicker">UNIT</span>
+          <span id="sidePhase" class="side-phase">SELECT</span>
+        </div>
+
+        <div id="unitCard" class="unit-card empty">
+          <div class="unit-empty">选择一支部队</div>
+        </div>
+
+        <div class="side-actions" id="sideActions">
+          <button id="btnEndTurn" class="act act-primary" type="button">结束回合 <kbd>E</kbd></button>
+          <button id="btnSave" class="act" type="button">保存进度</button>
+        </div>
+
+        <div class="log-wrap">
+          <div class="log-title">战况</div>
+          <ol id="log" class="log"></ol>
+        </div>
+      </aside>
+
+      <footer id="bar">
+        <span class="hint" id="hint">点击我方机体 → 选择移动格 → 选择武器与目标</span>
+        <span class="keys"><kbd>方向键</kbd>移动光标 <kbd>Enter</kbd>确定 <kbd>Esc</kbd>取消 <kbd>E</kbd>结束回合</span>
+      </footer>
+
+      <!-- 标题 -->
+      <section id="titleScreen" class="overlay title-screen">
+        <div class="title-inner">
+          <p class="title-kicker">SUPER ROBOT WARS 2 · HD REMASTER</p>
+          <h1>第2次<span>超级机器人大战</span></h1>
+          <div class="title-line"></div>
+          <p class="title-chapter">第 1 话 <b>救出!!Z高达</b></p>
+          <p class="title-desc">原版关卡 · 原版剧情 · 原版战斗规则<br />矢量美术与高清界面重新演绎</p>
+          <div class="title-actions">
+            <button id="btnStart" class="cta" type="button">出 击</button>
+            <button id="btnContinue" class="cta ghost" type="button" hidden>继续作战</button>
+          </div>
+          <p class="title-foot">FAN REMAKE · 非官方重制 · 原作 © WINKY SOFT / BANPRESTO</p>
+        </div>
+      </section>
+
+      <!-- 对话 -->
+      <section id="dialogue" class="overlay dialogue" hidden>
+        <div class="dlg-box">
+          <div class="dlg-portrait" id="dlgPortrait"></div>
+          <div class="dlg-body">
+            <div class="dlg-name" id="dlgName">阿姆罗</div>
+            <p class="dlg-text" id="dlgText"></p>
+            <div class="dlg-next">点击继续 <span>▸</span></div>
+            <button class="dlg-skip" id="dlgSkip" type="button">跳过</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 结果 -->
+      <section id="result" class="overlay result" hidden>
+        <div class="result-card">
+          <p class="result-kicker" id="resultKicker">MISSION COMPLETE</p>
+          <h2 id="resultTitle">第 1 话 完成</h2>
+          <ul class="result-stats" id="resultStats"></ul>
+          <div class="result-actions">
+            <button id="btnNext" class="cta" type="button" hidden>下一话</button>
+            <button id="btnAgain" class="cta" type="button">再战一次</button>
+            <button id="btnBackTitle" class="cta ghost" type="button">返回标题</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 帮助 -->
+      <section id="help" class="overlay help" hidden>
+        <div class="help-card">
+          <h2>操作与规则</h2>
+          <div class="help-grid">
+            <div>
+              <h3>操作</h3>
+              <p><kbd>方向键</kbd> 移动光标<br /><kbd>Enter</kbd> 确定 / 结束指令<br /><kbd>Esc</kbd> 取消选择<br /><kbd>E</kbd> 结束我方回合<br />鼠标：点机体 → 点目标格 → 选武器</p>
+            </div>
+            <div>
+              <h3>战斗规则（原作）</h3>
+              <p>伤害 = 强度 + 武器攻击力 − 敌方防御<br />命中 = 我方速度 + 武器命中 − 敌方速度<br />速度比对方高 50 以上时再攻击<br />山地 / 城市 / 海：命中 ×0.8<br />基地地形每回合回复 HP</p>
+            </div>
+            <div>
+              <h3>精神指令</h3>
+              <p>消耗 SP，出击前/战斗中可用。<br />必杀：命中 100%<br />强攻：伤害 2 倍<br />回避：完全闪避一次<br />热血：伤害 3 倍</p>
+            </div>
+          </div>
+          <button id="btnHelpClose" class="cta" type="button">明白了</button>
+        </div>
+      </section>
+
+      <!-- 战斗演出（cut-in） -->
+      <section id="cutin" class="cutin" hidden>
+        <img class="cutin-bg" alt="" />
+        <div class="cutin-shade"></div>
+        <div class="cutin-side left">
+          <div class="cutin-figure"><img id="cutinA" alt="" /></div>
+          <span id="cutinNA" class="cutin-name"></span>
+        </div>
+        <div class="cutin-side right">
+          <div class="cutin-figure"><img id="cutinB" alt="" /></div>
+          <span id="cutinNB" class="cutin-name"></span>
+        </div>
+        <canvas id="cutinFx" class="cutin-fx"></canvas>
+        <div id="cutinFlash" class="cutin-flash"></div>
+        <div id="cutinDmg" class="cutin-dmg"></div>
+        <div id="cutinMove" class="cutin-move"></div>
+        <div class="cutin-tag">BATTLE</div>
+      </section>
+
+      <div id="toast" class="toast" role="status"></div>
+      <div id="phaseBanner" class="phase-banner" hidden>
+        <span class="phase-banner-kicker">PHASE</span>
+        <strong id="phaseBannerMain"></strong>
+        <span id="phaseBannerSub"></span>
+      </div>
+    </div>
+    <div id="rotateHint">建议横屏游玩 · Rotate for a better view</div>
+  </div>
+  <audio id="bgm" src="assets/audio/bgm-sortie.mp3" loop preload="auto"></audio>
+  <noscript>本重制版需要启用 JavaScript。</noscript>
+  <script src="src/sdk/sdk.config.js"></script>
+  <script src="src/sdk/gamesdk.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

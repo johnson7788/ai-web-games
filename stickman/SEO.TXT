@@ -1,0 +1,43 @@
+TITLE
+LAST LINE — The Ink Is Running Out
+
+SHORT DESCRIPTION
+A hand-drawn ragdoll shooter. Recoil pushes your body. Ink is your blood. Fight through five sketchbook worlds before the eraser reaches you.
+
+LONG DESCRIPTION
+LAST LINE is a 2D ragdoll shooter drawn on paper.
+
+The city was drawn, and every line is somebody's life. The artist stopped drawing. As the ink dried, the unfinished things began to disappear. You are the last stroke he laid down — unfinished, therefore not yet erased. Drink the dried ink of the fallen and keep yourself drawn.
+
+EVERY BULLET MOVES YOUR BODY
+Your stickman is eleven points of ink and string. Walking is a sliding stride, shooting kicks your whole body backward, and death drops you into a soft ragdoll heap. Fire mid-air and the recoil becomes flight.
+
+INK IS YOUR BLOOD
+Taking damage drains ink. Dashing drains ink. Killing gives it back. One meter, every decision.
+
+FIVE WORLDS, FIVE DRAWING STYLES
+Draft: pencil on coffee-stained paper. Blueprint: a city being redrawn into a plan. Neon: wet ink glowing at night. Wash: rice paper, mountains, a red seal. Blank: the end of the canvas, where something is erasing everything.
+
+THREE WEAPONS, SIXTEEN UPGRADES
+Pencil for precision. Brush for spread and violent recoil. Needle pen for piercing shots. Between every stroke, choose one of three upgrades and rebuild yourself.
+
+A QUIET STORY
+Four opening cards, a line from the artist at every act, eight fragments hidden in the pages, and two endings.
+
+FEATURES
+- 11-point ragdoll stickman with procedural walk, aim and death
+- 5 hand-drawn worlds with distinct palettes, platforms and hazards
+- 3 weapons, 6 enemy types, a three-phase boss that erases the arena
+- 16 stacking upgrades, combo scoring, endless ink economy
+- Fully procedural audio: adaptive music per world and synthesized SFX
+- Chinese and English UI, save data, mobile touch controls
+- No downloads, no sign-up, no external assets — runs in the browser
+
+HOW TO PLAY
+Move with A/D, aim with the mouse, shoot with the left button. Space to jump, Shift to dash, right button for the nib strike that also deflects bullets. R to reload. 1/2/3 to switch weapons.
+
+CATEGORY
+Action, Shooting, Arcade
+
+TAGS
+stickman, ragdoll, shooter, roguelite, ink, hand-drawn, 2d, arena, waves, story

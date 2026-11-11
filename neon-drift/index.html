@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>NEON DRIFT — 3D 霓虹竞速</title>
+<meta name="description" content="NEON DRIFT：按住漂移过弯、攒氮气直线超车的 3D 街机竞速。浏览器直接玩，支持手机触屏。">
+<meta property="og:title" content="NEON DRIFT — 3D 霓虹竞速">
+<meta property="og:type" content="game">
+<meta property="og:image" content="poster.jpg">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app"></div>
+
+<!-- 竖屏提示 -->
+<div id="rotate"><div class="rot-icon">⟳</div><div>请横屏游玩</div><div class="rot-sub">ROTATE YOUR DEVICE</div></div>
+
+<div id="hud" class="hidden">
+  <div id="stage">
+    <div class="shade"></div>
+    <div class="vignette"></div>
+
+    <div class="topbar">
+      <div class="pill">LAP <b id="lap">1</b><span class="dim">/<span id="laps">3</span></span>
+        <span class="sep">·</span> <span class="dim">BEST</span> <b id="best">--</b></div>
+      <div class="timer"><div class="t" id="time">0'00.00</div><div class="l" id="timeLabel">RACE TIME</div></div>
+      <div class="pill"><span class="dim">POS</span> <b id="pos">1</b><span class="dim">/<span id="total">4</span></span></div>
+    </div>
+
+    <div class="speedwrap">
+      <svg viewBox="0 0 300 196" fill="none">
+        <defs>
+          <linearGradient id="gauge" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#28e0ff" stop-opacity=".15"/>
+            <stop offset=".55" stop-color="#28e0ff" stop-opacity=".95"/>
+            <stop offset="1" stop-color="#ff2d78" stop-opacity=".95"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 186 A120 120 0 1 1 268 186" stroke="rgba(120,200,230,.16)" stroke-width="10" stroke-linecap="round"/>
+        <path id="gaugeFill" d="M32 186 A120 120 0 1 1 268 186" stroke="url(#gauge)" stroke-width="10"
+              stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="377"/>
+      </svg>
+      <div class="num"><div class="v" id="speed">0</div><div class="u" id="unit">KM/H</div></div>
+    </div>
+
+    <div class="nitro">
+      <div class="lab"><span id="nitroLabel">NITRO</span><span id="nitroNum">0 / 5</span></div>
+      <div class="bar" id="nitroBar">
+        <div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div>
+      </div>
+    </div>
+
+    <div class="pos"><div class="p"><span id="posBig">1</span><small>/<span id="totalBig">4</span></small></div><div class="d">POSITION</div></div>
+
+    <!-- 触屏控制 -->
+    <div id="touch" class="hidden">
+      <div class="steer left" data-steer="-1"></div>
+      <div class="steer right" data-steer="1"></div>
+      <div class="btn drift" id="btnDrift">漂移</div>
+      <div class="btn nitro" id="btnNitro">氮气</div>
+    </div>
+  </div>
+</div>
+
+<!-- 标题 -->
+<div id="title" class="screen">
+  <div class="bg-glow"></div>
+  <div class="title-inner">
+    <div class="logo">NEON<span>DRIFT</span></div>
+    <div class="sub">3D ARCADE RACING</div>
+    <div class="pickers">
+      <div class="picker">
+        <div class="plabel">赛道</div>
+        <div class="cards" id="trackCards"></div>
+      </div>
+      <div class="picker">
+        <div class="plabel">赛车</div>
+        <div class="cards" id="carCards"></div>
+      </div>
+    </div>
+    <button id="btnStart" class="cta">开始比赛</button>
+    <div class="hint" id="hint">按住空格漂移 · Shift 氮气 · 方向键转向</div>
+    <div class="bestline">最佳单圈 <b id="titleBest">--</b></div>
+  </div>
+</div>
+
+<!-- 倒计时 -->
+<div id="countdown" class="hidden"><div class="cd-num" id="cdNum">3</div></div>
+
+<!-- 结算 -->
+<div id="results" class="screen hidden">
+  <div class="panel">
+    <div class="r-title" id="rTitle">完赛</div>
+    <div class="r-grid">
+      <div><span>总时间</span><b id="rTotal">--</b></div>
+      <div><span>最快圈</span><b id="rBest">--</b></div>
+      <div><span>名次</span><b id="rPos">--</b></div>
+    </div>
+    <div class="newrec hidden" id="rRecord">新纪录</div>
+    <button id="btnRestart" class="cta">再来一局</button>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "./lib/three.module.js" } }
+</script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

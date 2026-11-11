@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c950aed4-85e6-4497-b559-649c8ea5cb80",
+  "files": [],
+  "subMetas": {
+    "b0f67": {
+      "importer": "gltf-mesh",
+      "uuid": "c950aed4-85e6-4497-b559-649c8ea5cb80@b0f67",
+      "displayName": "",
+      "id": "b0f67",
+      "name": "ElectricSaw.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78e21": {
+      "importer": "gltf-material",
+      "uuid": "c950aed4-85e6-4497-b559-649c8ea5cb80@78e21",
+      "displayName": "",
+      "id": "78e21",
+      "name": "13 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "aee50": {
+      "importer": "gltf-scene",
+      "uuid": "c950aed4-85e6-4497-b559-649c8ea5cb80@aee50",
+      "displayName": "",
+      "id": "aee50",
+      "name": "ElectricSaw.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "c950aed4-85e6-4497-b559-649c8ea5cb80@aee50",
+    "assetFinder": {
+      "meshes": [
+        "c950aed4-85e6-4497-b559-649c8ea5cb80@b0f67"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "c950aed4-85e6-4497-b559-649c8ea5cb80@78e21"
+      ],
+      "scenes": [
+        "c950aed4-85e6-4497-b559-649c8ea5cb80@aee50"
+      ]
+    }
+  }
+}

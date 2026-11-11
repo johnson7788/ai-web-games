@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0",
+  "files": [],
+  "subMetas": {
+    "f5631": {
+      "importer": "gltf-mesh",
+      "uuid": "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0@f5631",
+      "displayName": "",
+      "id": "f5631",
+      "name": "Road_Turning_B.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "78e21": {
+      "importer": "gltf-material",
+      "uuid": "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0@78e21",
+      "displayName": "",
+      "id": "78e21",
+      "name": "13 - Default.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4877c": {
+      "importer": "gltf-scene",
+      "uuid": "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0@4877c",
+      "displayName": "",
+      "id": "4877c",
+      "name": "Road_Turning_B.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0@4877c",
+    "assetFinder": {
+      "meshes": [
+        "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0@f5631"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0@78e21"
+      ],
+      "scenes": [
+        "0fad94d2-9dbc-4a9c-aef0-f366ec18f7a0@4877c"
+      ]
+    }
+  }
+}

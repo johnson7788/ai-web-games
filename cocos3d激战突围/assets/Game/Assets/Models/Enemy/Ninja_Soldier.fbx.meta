@@ -1,0 +1,139 @@
+{
+  "ver": "2.3.1",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "ff949889-7254-444f-ad27-311765b4375c",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "8dbda": {
+      "importer": "gltf-mesh",
+      "uuid": "ff949889-7254-444f-ad27-311765b4375c@8dbda",
+      "displayName": "",
+      "id": "8dbda",
+      "name": "Ninja_Soldier.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "18d6f": {
+      "importer": "gltf-animation",
+      "uuid": "ff949889-7254-444f-ad27-311765b4375c@18d6f",
+      "displayName": "",
+      "id": "18d6f",
+      "name": "mixamo.com.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.03333333507180214
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "ff949889-7254-444f-ad27-311765b4375c@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 22
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "685e5": {
+      "importer": "gltf-material",
+      "uuid": "ff949889-7254-444f-ad27-311765b4375c@685e5",
+      "displayName": "",
+      "id": "685e5",
+      "name": "Bomb_Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2d94d": {
+      "importer": "gltf-scene",
+      "uuid": "ff949889-7254-444f-ad27-311765b4375c@2d94d",
+      "displayName": "",
+      "id": "2d94d",
+      "name": "Ninja_Soldier.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 0.03333333507180214,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "mixamo.com",
+            "from": 0,
+            "to": 0.03333333507180214,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "ff949889-7254-444f-ad27-311765b4375c@2d94d",
+    "assetFinder": {
+      "meshes": [
+        "ff949889-7254-444f-ad27-311765b4375c@8dbda"
+      ],
+      "skeletons": [
+        "ff949889-7254-444f-ad27-311765b4375c@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "ff949889-7254-444f-ad27-311765b4375c@685e5"
+      ],
+      "scenes": [
+        "ff949889-7254-444f-ad27-311765b4375c@2d94d"
+      ]
+    }
+  }
+}
