@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCREW OUT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level"></span>
+          <span id="hud-plates"></span>
+          <span id="hud-time"></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+      <div class="progress"><div id="progress-fill"></div></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">SCREW OUT</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="total-stars"><span id="stars-total"></span></div>
+      <button id="btn-start">Start</button>
+      <div id="level-grid" class="level-grid"></div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-win" class="screen hidden">
+      <h2 id="win-title">Board Clear!</h2>
+      <div class="win-stars" id="win-stars"></div>
+      <div class="win-time" id="win-time"></div>
+      <div class="win-meta" id="win-meta"></div>
+      <div class="win-btns">
+        <button id="btn-prev">Prev</button>
+        <button id="btn-next">Next</button>
+        <button id="btn-home2">Menu</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

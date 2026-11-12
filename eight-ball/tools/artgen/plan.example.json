@@ -1,0 +1,28 @@
+{
+  "gateway": "http://127.0.0.1:19100",
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image",
+    "steps": 24,
+    "size": [1024, 1024],
+    "negative": "文字, 水印, 模糊, 低质量, 多余肢体, 边框, 3D渲染, 写实照片"
+  },
+  "items": [
+    {
+      "name": "hero",
+      "kind": "image",
+      "prompt": "像素风游戏角色全身立绘，正面，纯白背景，硬朗轮廓，暖色调",
+      "size": [832, 1216],
+      "seeds": [11, 12, 13],
+      "prep": { "out": "assets/characters/hero.webp", "height": 512, "pivot": "bottom" }
+    },
+    {
+      "name": "crate",
+      "kind": "image",
+      "prompt": "像素风木箱，正面视角，游戏道具，纯洋红背景",
+      "size": [512, 512],
+      "seeds": [7],
+      "prep": { "out": "assets/props/crate.webp", "width": 128, "pad": 2 }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0b0d12">
+  <title>EIGHT BALL CLUB</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hud hidden">
+      <div class="card card-you" id="card-you">
+        <div class="card-top">
+          <span class="p-name" id="name-you">You</span>
+          <span class="p-group" id="group-you">Open</span>
+        </div>
+        <div class="balls" id="balls-you"></div>
+      </div>
+
+      <div class="mid">
+        <div class="turn" id="turn-label">Break</div>
+        <div class="sub" id="turn-sub"></div>
+      </div>
+
+      <div class="card card-rival" id="card-rival">
+        <div class="card-top">
+          <span class="p-name" id="name-rival">Club pro</span>
+          <span class="p-group" id="group-rival">Open</span>
+        </div>
+        <div class="balls" id="balls-rival"></div>
+      </div>
+
+      <div class="controls" id="controls">
+        <button id="btn-sound" class="ctl" type="button" aria-label="Sound">♪</button>
+        <button id="btn-pause" class="ctl" type="button" aria-label="Pause">II</button>
+        <button id="btn-restart" class="ctl" type="button" aria-label="Restart">↺</button>
+        <select id="lang-select-hud" class="ctl lang" aria-label="Language"></select>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <div id="hint" class="hint hidden"></div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <div class="crest">
+        <div class="crest-ring">8</div>
+        <h1 id="title-text">EIGHT BALL CLUB</h1>
+        <p class="subtitle" id="subtitle-text">Rack up — one table, one club pro.</p>
+      </div>
+      <div class="row">
+        <label class="field">
+          <span id="label-ai">Rival</span>
+          <select id="ai-select" aria-label="Rival">
+            <option value="amateur">Amateur</option>
+            <option value="club" selected>Club pro</option>
+            <option value="pro">Pro</option>
+          </select>
+        </label>
+        <div class="record">
+          <span id="record-label">Record</span>
+          <b id="record-value">0 / 0</b>
+        </div>
+      </div>
+      <button id="btn-start" class="big" type="button">Start</button>
+      <p class="howto" id="howto-text">Press near the cue ball, drag backwards, release to strike.</p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="big" type="button">Resume</button>
+      <button id="btn-quit" class="ghost" type="button">Restart</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <div class="panel" id="result-panel">
+        <h2 id="result-title">YOU WIN</h2>
+        <p id="result-desc"></p>
+        <p id="result-shots" class="shots"></p>
+        <button id="btn-again" class="big" type="button">Play again</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

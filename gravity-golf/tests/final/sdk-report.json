@@ -1,0 +1,119 @@
+{
+  "url": "http://127.0.0.1:8142/",
+  "at": "2026-11-12T15:28:34.221Z",
+  "sdk": {
+    "hasPipyGames": true,
+    "hasGameSDK": true,
+    "adsEnabled": true,
+    "placements": [],
+    "trackingEnabled": true,
+    "api": {
+      "showRewarded": true,
+      "showInterstitial": true,
+      "canShowAd": true,
+      "newRun": true,
+      "levelCleared": true,
+      "gameOver": true,
+      "track": true
+    }
+  },
+  "adsEnabled": true,
+  "probes": {
+    "rewarded": {
+      "ran": true,
+      "ok": true,
+      "value": "true"
+    },
+    "track": {
+      "ok": true
+    },
+    "store": {
+      "ok": true,
+      "via": "window.__ll.save"
+    },
+    "share": {
+      "ok": false,
+      "error": "no share api"
+    }
+  },
+  "offlineDegrade": true,
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-gravity-golf",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-gravity-golf"
+  ],
+  "consoleErrors": [
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "failedRequests": [
+    "https://pipygames.com/sdk/config.json net::ERR_FAILED",
+    "https://pipygames.com/api/sdk/config?appId=pipy-gravity-golf net::ERR_FAILED"
+  ],
+  "sdkLoadFailed": false,
+  "strict": false,
+  "checks": [
+    {
+      "name": "SDK 对象存在（PipyGames 或 GameSDK）",
+      "ok": true,
+      "level": "error",
+      "detail": "{\"hasPipyGames\":true,\"hasGameSDK\":true,\"adsEnabled\":true,\"placements\":[],\"trackingEnabled\":true,\"api\":{\"showRewarded\":true,\"showInterstitial\":true,\"canShowAd\":t"
+    },
+    {
+      "name": "快捷 API 齐全（广告/生命周期/埋点）",
+      "ok": true,
+      "level": "error",
+      "detail": "{\"showRewarded\":true,\"showInterstitial\":true,\"canShowAd\":true,\"newRun\":true,\"levelCleared\":true,\"gameOver\":true,\"track\":true}"
+    },
+    {
+      "name": "showRewarded 不抛异常且返回布尔/超时",
+      "ok": true,
+      "level": "error",
+      "detail": "{\"ran\":true,\"ok\":true,\"value\":\"true\"}"
+    },
+    {
+      "name": "track 自定义埋点可用",
+      "ok": true,
+      "level": "error",
+      "detail": "{\"ok\":true}"
+    },
+    {
+      "name": "存档出口存在（SDK 或 __ll.save）",
+      "ok": true,
+      "level": "warn",
+      "detail": "{\"ok\":true,\"via\":\"window.__ll.save\"}"
+    },
+    {
+      "name": "分享出口存在（SDK 或游戏 wrapper）",
+      "ok": false,
+      "level": "warn",
+      "detail": "{\"ok\":false,\"error\":\"no share api\"}"
+    },
+    {
+      "name": "SDK 域名被拦后仍能加载页面（降级）",
+      "ok": true,
+      "level": "error",
+      "detail": ""
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "level": "error",
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求（SDK 自身除外）",
+      "ok": true,
+      "level": "error",
+      "detail": ""
+    },
+    {
+      "name": "SDK 脚本未从线上加载成功（已按降级处理）",
+      "ok": true,
+      "level": "warn",
+      "detail": ""
+    }
+  ],
+  "pass": true
+}

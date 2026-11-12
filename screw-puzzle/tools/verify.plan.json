@@ -1,0 +1,49 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start()" },
+    { "wait": 700 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "screenshot": "02-playing.png" },
+    { "eval": "window.__ll.debug.loadLevel(0)" },
+    { "wait": 500 },
+    { "assert": "window.__ll.debug.state().plates > 0", "name": "关卡已加载（有板）" },
+    { "screenshot": "03-level.png" },
+    { "assert": "window.__ll.debug.state().screwsLeft === 6", "name": "初始螺丝数正确" },
+    { "assert": "window.__ll.sim.level.unscrew('0-0').reason === 'covered'", "name": "遮挡螺丝不可拧" },
+    { "eval": "window.__ll.debug.unscrew('2-0')" },
+    { "wait": 100 },
+    { "assert": "window.__ll.debug.state().screwsLeft === 5", "name": "拧出后计数减一" },
+    { "assert": "window.__ll.debug.state().cleared === false", "name": "未清空时 cleared=false" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "重启回标题" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  }
+}

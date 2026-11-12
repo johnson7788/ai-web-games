@@ -1,0 +1,200 @@
+{
+  "viewport": [
+    1280,
+    720
+  ],
+  "steps": [
+    {
+      "wait": 800
+    },
+    {
+      "screenshot": "01-title.png"
+    },
+    {
+      "assert": "window.__ll.state.phase === 'title'",
+      "name": "标题屏"
+    },
+    {
+      "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'",
+      "name": "默认英文/LTR"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "document.documentElement.lang === 'zh'",
+      "name": "切中文"
+    },
+    {
+      "assertText": {
+        "selector": "#tagline",
+        "contains": "月球"
+      },
+      "name": "中文标语生效"
+    },
+    {
+      "screenshot": "01b-title-zh.png"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "document.documentElement.lang === 'en'",
+      "name": "切回英文"
+    },
+    {
+      "eval": "window.__ll.start()"
+    },
+    {
+      "wait": 500
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "进入游戏"
+    },
+    {
+      "assert": "typeof window.__ll.debug.shoot === 'function' && typeof window.__ll.debug.setPlanet === 'function' && typeof window.__ll.debug.addCoins === 'function'",
+      "name": "击球调试口"
+    },
+    {
+      "eval": "window.__shot1 = window.__ll.debug.shoot(0.85, 35)"
+    },
+    {
+      "assert": "window.__shot1 && window.__shot1.ok === true && window.__shot1.distance > 0",
+      "name": "首杆返回有效距离"
+    },
+    {
+      "wait": 1100
+    },
+    {
+      "screenshot": "02-playing.png"
+    },
+    {
+      "assert": "window.__ll.debug.setPlanet(2) === 'ice'",
+      "name": "切到冰星"
+    },
+    {
+      "wait": 700
+    },
+    {
+      "screenshot": "03-planet-ice.png"
+    },
+    {
+      "eval": "(()=>{window.__ll.debug.addCoins(500); window.__c0 = window.__ll.sim.coins; return window.__ll.sim.upgrade('power').ok;})()"
+    },
+    {
+      "assert": "window.__ll.sim.upgrades.power === 1 && window.__ll.sim.coins === window.__c0 - 25",
+      "name": "升级扣钱生效"
+    },
+    {
+      "eval": "window.__ll.debug.shoot(1, 40)"
+    },
+    {
+      "eval": "window.__ll.debug.shoot(0.8, 40)"
+    },
+    {
+      "eval": "window.__ll.debug.shoot(0.8, 40)"
+    },
+    {
+      "wait": 1400
+    },
+    {
+      "assertVisible": "#screen-upgrade",
+      "name": "每 3 杆自动弹升级面板"
+    },
+    {
+      "assert": "window.__ll.sim.planetIndex === 3",
+      "name": "3 杆后切到熔岩星"
+    },
+    {
+      "eval": "document.getElementById('btn-close-upgrade').click()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "document.getElementById('screen-upgrade').classList.contains('hidden')",
+      "name": "关闭升级面板"
+    },
+    {
+      "assert": "window.__ll.sim.getHud().best > 0",
+      "name": "最远距离已记录"
+    },
+    {
+      "eval": "window.__ll.pause()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "window.__ll.state.phase === 'paused'",
+      "name": "暂停"
+    },
+    {
+      "eval": "window.__ll.resume()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "恢复"
+    },
+    {
+      "eval": "window.__ll.restart()"
+    },
+    {
+      "wait": 500
+    },
+    {
+      "assert": "window.__ll.state.phase === 'title'",
+      "name": "重启回标题"
+    }
+  ],
+  "mobile": {
+    "viewport": [
+      844,
+      390
+    ],
+    "steps": [
+      {
+        "wait": 800
+      },
+      {
+        "eval": "window.__ll.start()"
+      },
+      {
+        "wait": 400
+      },
+      {
+        "eval": "window.__ll.debug.shoot(0.8, 40)"
+      },
+      {
+        "wait": 1300
+      },
+      {
+        "assert": "window.__ll.state.phase === 'playing'",
+        "name": "移动端可玩"
+      },
+      {
+        "screenshot": "05-mobile-playing.png"
+      }
+    ]
+  },
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  }
+}

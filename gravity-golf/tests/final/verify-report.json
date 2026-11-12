@@ -1,0 +1,134 @@
+{
+  "url": "http://127.0.0.1:8141/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "中文标语生效",
+      "ok": true,
+      "detail": "text: \"一杆挥向月球。\" contains \"月球\""
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "击球调试口",
+      "ok": true,
+      "detail": "eval: typeof window.__ll.debug.shoot === 'function' && typeof window.__ll.debug.setPlanet === 'function' && typeof window.__ll.debug.addCoins === 'function'"
+    },
+    {
+      "name": "首杆返回有效距离",
+      "ok": true,
+      "detail": "eval: window.__shot1 && window.__shot1.ok === true && window.__shot1.distance > 0"
+    },
+    {
+      "name": "切到冰星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.setPlanet(2) === 'ice'"
+    },
+    {
+      "name": "升级扣钱生效",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.upgrades.power === 1 && window.__ll.sim.coins === window.__c0 - 25"
+    },
+    {
+      "name": "每 3 杆自动弹升级面板",
+      "ok": true,
+      "detail": "visible: #screen-upgrade"
+    },
+    {
+      "name": "3 杆后切到熔岩星",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.planetIndex === 3"
+    },
+    {
+      "name": "关闭升级面板",
+      "ok": true,
+      "detail": "eval: document.getElementById('screen-upgrade').classList.contains('hidden')"
+    },
+    {
+      "name": "最远距离已记录",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.getHud().best > 0"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重启回标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端可玩",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-planet-ice.png",
+    "05-mobile-playing.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "[mobile] https://pipygames.com/sdk/config.json",
+    "[mobile] https://pipygames.com/api/sdk/config?appId=pipy-gravity-golf",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-gravity-golf",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-gravity-golf"
+  ],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

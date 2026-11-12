@@ -1,0 +1,114 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh' && document.getElementById('title-text').textContent === '八球俱乐部'", "name": "切中文即时生效" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+
+    { "eval": "window.__ll.start()" },
+    { "wait": 600 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "assert": "window.__ll.debug.layout().tableTop >= window.__ll.debug.layout().hudBottom", "name": "台面不压 HUD" },
+    { "assert": "window.__ll.debug.layout().tableBottom <= 712", "name": "台面不越界" },
+    { "assertVisible": "#card-you" },
+    { "assertVisible": "#card-rival" },
+    { "assertText": { "selector": "#turn-label", "contains": "Break" } },
+    { "assertText": { "selector": "#group-you", "contains": "Open" } },
+    { "screenshot": "02-break.png" },
+
+    { "eval": "window.__ll.debug.shoot(0, 0.92)" },
+    { "wait": 400 },
+    { "assert": "window.__ll.sim.match.phase === 'moving'", "name": "开球后物理在跑" },
+    { "waitFor": "window.__ll.sim.stick.state === 'idle' && window.__ll.sim.match.phase !== 'moving'", "timeout": 25000 },
+    { "assert": "window.__ll.debug.state().shots.player === 1", "name": "开球计为一杆" },
+    { "assert": "window.__ll.sim.world.balls.filter(b=>b.alive).length > 2", "name": "球堆被冲散且未穿袋" },
+    { "screenshot": "03-after-break.png" },
+
+    { "eval": "window.__ll.debug.aiShoot()" },
+    { "wait": 1400 },
+    { "screenshot": "04-rival-thinking.png" },
+    { "waitFor": "window.__ll.sim.stick.state === 'idle' && window.__ll.sim.match.phase !== 'moving'", "timeout": 30000 },
+    { "assert": "['aim','break','over'].indexOf(window.__ll.sim.match.phase) >= 0", "name": "AI 出杆后回合收敛" },
+    { "assert": "window.__ll.debug.state().shots.rival >= 1", "name": "AI 完成一杆" },
+
+    { "eval": "(()=>{window.__ll.debug.setBalls([{id:0,x:600,y:370},{id:3,x:700,y:300},{id:12,x:800,y:370}]); window.__ll.debug.setGroups('solid','stripe'); return true;})()" },
+    { "eval": "window.__ll.debug.shoot(0, 0.5)" },
+    { "waitFor": "window.__ll.sim.stick.state === 'idle' && window.__ll.sim.match.phase !== 'moving'", "timeout": 25000 },
+    { "assert": "window.__ll.debug.state().foul && window.__ll.debug.state().foul.reason === 'wrong_ball'", "name": "先碰对方球=犯规" },
+    { "assert": "window.__ll.debug.state().turn === 'rival'", "name": "犯规后交换出杆权" },
+    { "screenshot": "05-foul.png" },
+
+    { "eval": "(()=>{window.__ll.debug.setBalls([{id:0,x:1040,y:190},{id:8,x:1100,y:150}]); window.__ll.debug.setGroups(null,null); return true;})()" },
+    { "eval": "window.__ll.debug.shoot(-33.69, 0.35)" },
+    { "waitFor": "window.__ll.sim.match.phase === 'over'", "timeout": 25000 },
+    { "assert": "window.__ll.debug.state().result === 'lose' && window.__ll.debug.state().reason === 'early'", "name": "提前打进 8 号判负" },
+    { "assert": "window.__ll.state.phase === 'over'", "name": "终局状态同步" },
+    { "assertVisible": "#result-panel" },
+    { "screenshot": "06-lose.png" },
+
+    { "eval": "window.__ll.start()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing' && window.__ll.sim.match.phase === 'break'", "name": "结算后可重开" },
+
+    { "eval": "(()=>{window.__ll.debug.setBalls([{id:0,x:1040,y:190},{id:8,x:1100,y:150}]); window.__ll.debug.setGroups('solid','stripe'); return true;})()" },
+    { "eval": "window.__ll.debug.shoot(-33.69, 0.35)" },
+    { "waitFor": "window.__ll.sim.match.phase === 'over'", "timeout": 25000 },
+    { "assert": "window.__ll.debug.state().result === 'win'", "name": "清完本组合法进 8 号判胜" },
+    { "screenshot": "07-win.png" },
+
+    { "eval": "(()=>{window.__ll.start(); window.__ll.debug.setBalls([{id:0,x:900,y:121},{id:5,x:400,y:300}]); return true;})()" },
+    { "wait": 300 },
+    { "eval": "window.__ll.debug.rivalShoot(180, 0.25)" },
+    { "waitFor": "window.__ll.sim.stick.state === 'idle' && window.__ll.sim.match.phase !== 'moving'", "timeout": 25000 },
+    { "assert": "window.__ll.debug.state().ballInHand === true && window.__ll.debug.state().turn === 'player'", "name": "对手洗袋=我方自由球" },
+    { "assert": "document.getElementById('hint').textContent.indexOf('Ball in hand') === 0", "name": "自由球提示可见" },
+    { "assert": "window.__ll.sim.world.balls.some(b=>b.id===0&&b.alive)", "name": "白球重新摆回台面" },
+    { "screenshot": "08-ball-in-hand.png" },
+
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused' && !document.getElementById('screen-pause').classList.contains('hidden')", "name": "暂停保留画面" },
+    { "screenshot": "09-pause.png" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "重启回标题" },
+    { "assert": "document.getElementById('record-value').textContent.replace(/\\s/g,'') === '1/1'", "name": "战绩累计 1 胜 1 负" }
+  ],
+  "mobile": {
+    "viewport": [844, 390],
+    "steps": [
+      { "wait": 700 },
+      { "eval": "window.__ll.start()" },
+      { "wait": 900 },
+      { "assert": "window.__ll.state.phase === 'playing'", "name": "[mobile] 进入游戏" },
+      { "eval": "window.__ll.debug.shoot(0, 0.6)" },
+      { "waitFor": "window.__ll.sim.stick.state === 'idle' && window.__ll.sim.match.phase !== 'moving'", "timeout": 25000 },
+      { "assert": "window.__ll.debug.state().shots.player === 1", "name": "[mobile] 触屏出杆" },
+      { "assert": "(()=>{const b=document.getElementById('btn-pause').getBoundingClientRect(); return b.width >= 44 && b.height >= 44;})()", "name": "[mobile] 按钮 ≥44px" },
+      { "assert": "document.getElementById('hud').getBoundingClientRect().bottom <= 70", "name": "[mobile] HUD 不压台面" },
+      { "screenshot": "10-mobile.png" }
+    ]
+  },
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "(()=>{window.__ll.start(); window.__ll.debug.shoot(0, 0.9); return true;})()"
+  }
+}

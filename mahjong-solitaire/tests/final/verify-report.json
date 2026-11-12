@@ -1,0 +1,104 @@
+{
+  "url": "http://127.0.0.1:8171/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "144 张牌",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().remaining === 144"
+    },
+    {
+      "name": "提示返回一对",
+      "ok": true,
+      "detail": "eval: (()=>{const h=window.__ll.debug.hint(); return Array.isArray(h) && h.length===2;})()"
+    },
+    {
+      "name": "消掉一对",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().remaining === 142"
+    },
+    {
+      "name": "洗牌可用",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.shuffle() === true"
+    },
+    {
+      "name": "洗牌不改剩余牌数",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().remaining === 142"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重启回标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-match.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-mahjong-solitaire"
+  ],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

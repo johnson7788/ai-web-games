@@ -1,0 +1,47 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start()" },
+    { "wait": 700 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "assert": "window.__ll.debug.state().remaining === 144", "name": "144 张牌" },
+    { "screenshot": "02-playing.png" },
+    { "assert": "(()=>{const h=window.__ll.debug.hint(); return Array.isArray(h) && h.length===2;})()", "name": "提示返回一对" },
+    { "eval": "window.__ll.debug.autoSolvePair()" },
+    { "wait": 600 },
+    { "assert": "window.__ll.debug.state().remaining === 142", "name": "消掉一对" },
+    { "screenshot": "03-match.png" },
+    { "assert": "window.__ll.debug.shuffle() === true", "name": "洗牌可用" },
+    { "assert": "window.__ll.debug.state().remaining === 142", "name": "洗牌不改剩余牌数" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "重启回标题" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  }
+}
