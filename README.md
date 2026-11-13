@@ -22,7 +22,12 @@
 https://pipygames.com/
 
 > 最后四款（gravity-golf / eight-ball / screw-puzzle / mahjong-solitaire）为 2026-11-12 新建，
-> 目前是**单玩法可玩版**，尚未上架。
+> 2026-11-13 已上架 pipygames（单玩法版）：
+>
+> - [GRAVITY GOLF](https://pipygames.com/games/gravity-golf-free-physics-golf-game-elqk)
+> - [EIGHT BALL CLUB](https://pipygames.com/games/eight-ball-club-free-browser-pool-game-zmqp)
+> - [SCREW OUT](https://pipygames.com/games/screw-out-free-screw-puzzle-game-gjd7)
+> - [MAHJONG SOLITAIRE](https://pipygames.com/games/mahjong-solitaire-free-classic-tile-game-75zy)
 
 ---
 
