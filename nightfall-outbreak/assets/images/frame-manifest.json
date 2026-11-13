@@ -1,0 +1,15 @@
+{
+  "dir": "assets/images/frames/",
+  "ext": "webp",
+  "canvas": 512,
+  "baseline": 20,
+  "note": "art.framing = three：本作角色全部来自 assets/models/*.glb 的 SkinnedMesh + AnimationMixer（Idle/Walk/Run），逐帧角色与光效序列刻意留空。天空/材质/特效全部程序化（GLSL + 代码粒子），不产生帧图。",
+  "actionPresets": {
+    "idle": { "type": "loop", "frames": 4, "fps": 6, "view": "front", "bbox": "standing", "anchor": "feet" },
+    "walk": { "type": "loop", "frames": 6, "fps": 10, "view": "side", "bbox": "standing", "anchor": "feet" },
+    "run": { "type": "loop", "frames": 6, "fps": 14, "view": "side", "bbox": "standing", "anchor": "feet" },
+    "die": { "type": "once", "frames": 4, "fps": 10, "view": "side", "bbox": "wide", "anchor": "center" }
+  },
+  "characters": {},
+  "fx": {}
+}

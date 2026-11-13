@@ -1,0 +1,18 @@
+## TITLE
+NIGHTFALL: OUTBREAK — First-Person Zombie Survival Shooter
+
+## CATEGORY
+Action / First-Person Shooter / Zombie Survival
+
+## TAGS
+zombie shooter, fps, survival, waves, horror, 3d, low poly, night, boss fight, weapons, horde, apocalypse, browser game, pipygames
+
+## SHORT DESCRIPTION
+Hold the quarantine line until dawn. A first-person zombie survival shooter with ten escalating sectors, real recoil, glowing weak points and a boss at the end of every chapter.
+
+## LONG DESCRIPTION
+NIGHTFALL: OUTBREAK drops you into a fog-choked quarantine zone with a VK-7 carbine, thirty rounds and a dying radio. Move with WASD, turn with the arrow keys or by dragging the left mouse button, jump with Space, fire with the left mouse button, aim down sights with the right mouse button, reload with R and call in an assist with H. Browse the illustrated sector-select map to jump into any cleared sector. Ten hand-built sectors escalate from a slow teaching wave to two chapter bosses, mixing runners, armoured corpses, bloaters that detonate near fire and a weak-point boss that only takes damage on its glowing core. Sprint, swap to the sidearm, bait enemies into flames and keep a kill chain alive to earn all three stars.
+
+The game runs in a real 3D scene: a procedural blood-moon sky, volumetric fog, soft moon shadows, wet ground with reflective puddles, a full-screen filmic grade with bloom, chromatic aberration, vignette and grain, plus muzzle flashes, shell casings and impact sparks. Zombies are animated low-poly models with their own walk and run cycles. All sound is synthesised live in the browser: layered firearm transients with room reflections, guttural undead growls built from formant filters, and an aggressive, driving combat score that adds layers as the waves get heavier.
+
+Progress, best score, salvage and weapon finishes are saved between sessions. The first sector is a safe tutorial, and every interface is available in English and Chinese through the platform locale. Low-poly models by Polyfork (https://polyfork.dev).

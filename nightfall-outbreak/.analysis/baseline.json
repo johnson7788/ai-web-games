@@ -1,0 +1,26 @@
+{
+  "_note": "fidelity=C：仅 4 张截屏 + 线上静态文案。aspect/charHeightRatio/groundLine/palette 由截屏量得；moveSpeed/spawnMs/judgeWindowMs 为品类基线推断，不作为原作实测值。",
+  "fidelity": "C",
+  "aspect": 1.7778,
+  "charHeightRatio": 0.24,
+  "groundLine": 0.52,
+  "moveSpeed": 620,
+  "spawnMs": 1200,
+  "judgeWindowMs": 90,
+  "palette": [
+    "#1c2a33",
+    "#4a5a55",
+    "#8d9d9c",
+    "#d9443c",
+    "#ff7a3c"
+  ],
+  "_methods": {
+    "aspect": "S3 截屏 1000x563 像素实测",
+    "charHeightRatio": "S3 近处僵尸包围盒 135px / 563px",
+    "groundLine": "S3 雾层与地面交界 y≈292 / 563",
+    "moveSpeed": "无源码；FPS 品类 4.5m/s 折算逻辑坐标，设计目标值",
+    "spawnMs": "无录屏；按 ZOMBIES 2 小队错峰入场推断",
+    "judgeWindowMs": "hitscan + ADS 收束窗口品类基线推断",
+    "palette": "S3 取 5 主色：夜蓝 / 雾绿 / 雾灰 / 血条红 / 枪口橙"
+  }
+}

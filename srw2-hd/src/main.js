@@ -174,7 +174,7 @@ function startNew(index = 0) {
 }
 
 function continueGame() {
-  const raw = localStorage.getItem(SAVE_KEY);
+  const raw = store.get(SAVE_KEY);
   if (!raw) return;
   try {
     const parsed = JSON.parse(raw);
@@ -232,6 +232,11 @@ function openBriefing(sc) {
 
 /* ------------------------------------------------------------ 动画工具 */
 
+// 沙箱 iframe（Pipygames）里 localStorage 可能直接抛异常，统一降级。
+const store = {
+  get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+  set(key, val) { try { localStorage.setItem(key, val); return true; } catch { return false; } }
+};
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const center = (unit) => ({ x: unit.x * T + T / 2, y: unit.y * T + T / 2 });
 
@@ -764,7 +769,7 @@ function backToTitle() {
   ui.hideResult();
   ui.showTitle(true);
   audio.play("title", 1);
-  ui.renderTitle(!!localStorage.getItem(SAVE_KEY));
+  ui.renderTitle(!!store.get(SAVE_KEY));
   ui.renderChapter();
 }
 
@@ -913,7 +918,7 @@ document.getElementById("btnEndTurn").addEventListener("click", endTurn);
 document.getElementById("btnSave").addEventListener("click", () => {
   if (!app.battle || app.locked) return;
   if (app.battle.phase !== "player") return;
-  localStorage.setItem(SAVE_KEY, JSON.stringify({ at: Date.now(), scenarioIndex: app.scenarioIndex, data: E.serialize(app.battle) }));
+  store.set(SAVE_KEY, JSON.stringify({ at: Date.now(), scenarioIndex: app.scenarioIndex, data: E.serialize(app.battle) }));
   ui.toast(t("saved"));
   ui.renderTitle(true);
   sdk.track("save", { stage: app.currentScenario().chapter, turn: app.battle.turn });
@@ -929,7 +934,7 @@ document.getElementById("btnLang").addEventListener("click", () => {
   i18n.toggle();
   ui.renderAll();
   ui.renderChapter();
-  ui.renderTitle(!!localStorage.getItem(SAVE_KEY));
+  ui.renderTitle(!!store.get(SAVE_KEY));
 });
 
 /* ------------------------------------------------------------ 渲染循环 */
@@ -1025,6 +1030,6 @@ window.__ll = {
 };
 
 sdk.track("load", {});
-ui.renderTitle(!!localStorage.getItem(SAVE_KEY));
+ui.renderTitle(!!store.get(SAVE_KEY));
 ui.renderChapter();
 app.mode = "title";
