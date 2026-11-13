@@ -1,4 +1,5 @@
-# games
+# pipy games
+游戏都可以在这体验: https://pipygames.com/
 
 个人游戏合集仓库。每个目录是一款可独立运行的网页游戏（少数为引擎工程），
 绝大多数**零构建、零运行期依赖**，起一个静态服务器即可玩。
@@ -17,9 +18,6 @@
 | [`eight-ball`](eight-ball/) | EIGHT BALL CLUB | 体育 · 台球 | 八球俱乐部 |
 | [`screw-puzzle`](screw-puzzle/) | SCREW OUT | 益智解谜 | 螺丝出逃 |
 | [`mahjong-solitaire`](mahjong-solitaire/) | MAHJONG SOLITAIRE | 棋牌 · 接龙 | 麻将接龙 |
-
-游戏都可以在这体验:
-https://pipygames.com/
 
 > 最后四款（gravity-golf / eight-ball / screw-puzzle / mahjong-solitaire）为 2026-11-12 新建，
 > 2026-11-13 已上架 pipygames（单玩法版）：
