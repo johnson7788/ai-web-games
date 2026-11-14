@@ -1,0 +1,11 @@
+{
+  "name": "duomu",
+  "version": "1.0.0",
+  "description": "夺木 — 通天建木上的胆小鬼博弈",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/",
+    "serve": "python3 -m http.server 8127"
+  }
+}

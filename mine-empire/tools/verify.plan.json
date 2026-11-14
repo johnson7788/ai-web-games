@@ -1,0 +1,52 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "assert": "window.__ll.debug.state().layer === 'dirt'", "name": "初始泥土层" },
+    { "screenshot": "02-playing.png" },
+    { "eval": "window.__ll.debug.dig()" },
+    { "wait": 200 },
+    { "assert": "window.__ll.debug.state().depth >= 1", "name": "点击挖掘" },
+    { "assert": "window.__ll.debug.state().money >= 1", "name": "挖掘赚钱" },
+    { "eval": "window.__ll.debug.addMoney(1000)" },
+    { "eval": "window.__ll.debug.buy('pick')" },
+    { "wait": 200 },
+    { "assert": "window.__ll.debug.state().levels.pick === 1", "name": "购买镐头升级" },
+    { "eval": "window.__ll.debug.setDepth(60)" },
+    { "wait": 200 },
+    { "assert": "window.__ll.debug.state().layer === 'coal'", "name": "深入煤矿层" },
+    { "screenshot": "03-coal.png" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "重启回标题" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  }
+}

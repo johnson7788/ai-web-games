@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>LOGO QUIZ</title>
+  <meta name="description" content="Read the brand mark, name the brand. A logo guessing quiz with original fictional brands.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-round" class="hud-round"></span>
+        <span id="hud-score"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-mute" class="hud-btn" aria-label="Sound"></button>
+        <button id="btn-pause" class="hud-btn" aria-label="Pause">II</button>
+      </div>
+    </div>
+
+    <div id="quiz" class="hidden">
+      <div id="question-label" class="question-label"></div>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback"></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text"></h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="how-to" id="how-to"></p>
+      <button id="btn-start"></button>
+      <p class="best" id="title-best"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume"></button>
+      <button id="btn-restart" class="secondary"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-done" class="screen hidden">
+      <h2 id="done-title"></h2>
+      <p class="done-score" id="done-score"></p>
+      <button id="btn-again"></button>
+      <button id="btn-title" class="secondary"></button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

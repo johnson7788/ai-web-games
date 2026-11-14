@@ -1,0 +1,149 @@
+{
+  "game": "smash-karts",
+  "generatedAt": "2026-11-14T12:45:23.448Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 6.75,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start Match”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景角色与前景按钮存在轻微视觉干扰，部分 kart 轮廓在强光下辨识度下降",
+        "‘How to play’按钮边框较细，与背景对比度偏低，可能影响弱视用户识别",
+        "右上角语言切换下拉菜单无展开指示图标，移动端易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央黄色圆圈区域发射弹珠",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央黄色瞄准圈与小弹珠重叠，可能误判目标点",
+        "左上角'Pop Gun'按钮文字与图标间距过小，略显拥挤",
+        "右上角玩家列表中角色名与数字对齐不一致（Minty/Cherry等左对齐，数字右对齐）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-round1.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意两个技能卡片进行选择",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊角色轮廓与前景卡片重叠，眯眼时难以区分可交互元素与背景装饰",
+        "‘Round won!’标题与下方卡片间距偏小，视觉层级略显拥挤",
+        "右上角暂停/音量按钮区域文字微小且部分被裁切（如‘Cherry’等标签）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-arena2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角‘Pop Gun’按钮切换武器或准备射击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央黄色圆圈为临时高亮，但未标注含义，易误判为可交互物",
+        "中间两条轨道箭头密集且颜色相近（灰/紫），低对比度下方向辨识困难",
+        "右上角角色计分列表文字偏小（约10px），在小屏设备可能难读"
+      ]
+    },
+    {
+      "shot": "tests/final/05-arena3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央黄色圆圈区域发射火箭弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Rocket 6’按钮与HP/BOOST条紧邻，可能误触；",
+        "右上角玩家列表中‘Cherry Prime’旁星标与文字间距过小，易误读；",
+        "中央黄色瞄准圈与橙色六边形目标重叠时视觉干扰，部分目标被虚线遮挡"
+      ]
+    },
+    {
+      "shot": "tests/final/06-end.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Play again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "蓝色圆形‘B’图标无明确语义，可能被误认为玩家标识而非胜利标志",
+        "背景有模糊图案但细节不可辨，轻微干扰焦点",
+        "‘Rounds won: 3’与上方统计项间距略小，视觉层级稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start Match”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景角色（粉色蘑菇状物体）与标题文字部分重叠，轻微干扰主视觉焦点",
+        "‘Best score: 120 | Rank B’字号过小且位置偏下，易被忽略",
+        "‘How to play’按钮与‘Start Match’间距过近，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角暂停按钮或移动蓝色小车避开障碍",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角玩家列表文字字号偏小，眯眼时‘Cherry/Blu/Sunny/Grape’难以快速区分",
+        "中央计时器‘1:40’与‘First to 10’间距过近，略显拥挤",
+        "部分粉色蘑菇状障碍物与背景格子色差不足，边缘辨识度偏低"
+      ]
+    }
+  ]
+}

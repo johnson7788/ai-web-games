@@ -1,0 +1,66 @@
+/* 《夺木》—— 页面只负责把 720×1280 的画面按比例塞进视口，其余全在 canvas 里画。 */
+
+:root {
+  --ink: #0b0910;
+  --paper: #f2e6cf;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: #07060a;
+  color: var(--paper);
+  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  /* 留出 iOS 底部安全区，避免按钮被小白条盖住 */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+canvas {
+  display: block;
+  /* 渲染尺寸由 main.js 按 letterbox 计算后写入 */
+  touch-action: none;
+  user-select: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(232, 180, 74, 0.18), 0 24px 80px rgba(0, 0, 0, 0.7);
+  image-rendering: auto;
+}
+
+/* 加载期先给个底色，避免白闪 */
+body.loading { background: #0b0910; }
+
+@media (prefers-reduced-motion: reduce) {
+  canvas { transition: none !important; }
+}
+
+#filewarn {
+  max-width: 560px;
+  margin: 12vh auto;
+  padding: 28px 32px;
+  border: 1px solid rgba(232, 180, 74, 0.45);
+  border-radius: 14px;
+  background: rgba(18, 14, 22, 0.92);
+  line-height: 1.75;
+}
+#filewarn h1 { font-size: 22px; color: #e8b44a; margin-bottom: 14px; }
+#filewarn p { font-size: 15px; color: #d8cbb4; margin: 8px 0; }
+#filewarn pre {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #0d0a12;
+  color: #7fd6a0;
+  font-size: 15px;
+}
+#filewarn code { color: #ffd98a; }
+#filewarn a { color: #6fc9e8; }

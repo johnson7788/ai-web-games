@@ -1,0 +1,77 @@
+{
+  "assets": {
+    "bg/atelier": {
+      "file": "assets/bg/atelier.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 74520,
+      "sha256": "b1b2de64381947ace9e7aaabb787edd5f04c5b0782a90fcbd685f104fdc4cc7a",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 301,
+        "prompt": "A cozy nighttime artist atelier background plate for a paint-by-number relaxation web game, rendered in polished stylized 3D cartoon style in a wide 16:9 composition. The room is bathed in deep dark purple tones: base walls in near-black plum (#14101c) with a soft ambient glow of muted violet (#221a30) pooling gently behind the central workspace, exactly matching the game's night-studio palette. Around the edges of the frame sit charming stylized studio props: a wooden easel silhouette on the far left, shelves with rounded paint jars and rolled canvases on the far right, a small desk lamp casting a warm amber (#fbbf24) pool of light in one corner, and a few floating dust motes catching the glow. The large central region and the right-center region stay deliberately calm, dark and uncluttered because the numbered painting grid and the color palette panel are drawn on top at runtime; no props, no bright highlights and no busy patterns may intrude into those areas. A faint soft vignette darkens the corners, and a very subtle lavender (#c084fc) accent glow traces the edge of the easel. Lighting is soft, warm and diffuse with a single gentle lamp key light, materials read as matte painted wood, soft fabric and ceramic, the mood is calm, intimate and creatively soothing, like a quiet studio at midnight. No characters, no visible artwork with recognizable subjects, no text, no numbers, no watermark, no UI elements.",
+        "raw": "assets/_src/bg-atelier-s301.png"
+      }
+    },
+    "sprites/frame-ornate": {
+      "file": "assets/sprites/frame-ornate.webp",
+      "group": "sprites",
+      "w": 451,
+      "h": 560,
+      "aspect": 0.8054,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 27534,
+      "sha256": "acf7ba49261554e5d3efd79515f826071d42b086ded5118e0ec8b70881270278",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 302,
+        "prompt": "An elegant ornate picture frame designed as a decorative overlay sprite for a paint-by-number relaxation game, rendered in polished stylized 3D cartoon style and viewed perfectly straight on with zero perspective tilt. The frame is a wide rectangular border with softly rounded outer corners and gently carved classical molding profiles, finished in deep muted violet wood (#3a2c4d) with subtle plum shadow recesses (#1c1428) and delicate warm gold (#fbbf24) leaf accents on the corner rosettes and inner lip, plus a faint lavender (#c084fc) sheen along the raised edges. Small charming details include tiny carved paintbrush and palette motifs at the four corners, toy-like and friendly rather than antique-heavy. The entire opening inside the frame is completely empty and shows the exact same plain neutral light-gray as the outer background, with no canvas, no artwork, no glass reflection and no inner shadow, so background removal can cleanly clear both the outside and the inside of the border. Lighting is soft even studio illumination with a mild upper-left highlight on the molding and gentle ambient occlusion in the carved grooves, no hard cast shadow. Materials read as matte painted wood with satin gold leaf, consistent with the cozy dark-purple night atelier palette. The border thickness is moderate so the frame reads clearly at about 560 pixels tall in game, with crisp clean edges suitable for cutout. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/frame-ornate-s302.png"
+      }
+    },
+    "bg/celebration": {
+      "file": "assets/bg/celebration.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 35284,
+      "sha256": "de0ac1cf4657436c7ba286a9eda776ba72c28843af3ea2a7d4ed8d6d8dd6b68a",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 303,
+        "prompt": "A joyful completion celebration illustration for a paint-by-number relaxation web game, rendered in polished stylized 3D cartoon style in a wide 16:9 composition, shown when the player finishes a painting. In the center floats a charming stylized finished canvas on a small wooden easel, its surface a soft abstract mosaic of rounded color patches in the game's nine palette colors: red (#ef4444), orange (#f97316), amber (#fbbf24), green (#22c55e), blue (#3b82f6), violet (#a78bfa), pink (#f472b6), warm white (#f8fafc) and brown (#92400e), arranged as a pleasing abstract pattern with no recognizable subject and no numbers. Around the easel bursts a festive but gentle shower of confetti ribbons, tiny paint splashes and soft glowing sparkles in the same nine colors, plus a few floating gold stars (#fbbf24) and lavender (#c084fc) light motes. The background is the cozy night atelier in deep plum (#14101c) with a warm violet glow (#221a30) radiating from behind the easel, soft vignette corners, and a gentle warm lamp light from the upper left. Materials read as matte painted wood, soft paper confetti and glossy paint droplets, toy-like and heartwarming. The mood is proud, calm and rewarding rather than loud, with generous dark breathing room around the edges so overlay UI stays readable. No characters, no text, no numbers, no watermark, no UI elements.",
+        "raw": "assets/_src/celebration-s303.png"
+      }
+    },
+    "keyart/color-tap": {
+      "file": "assets/keyart/color-tap.webp",
+      "group": "keyart",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 43432,
+      "sha256": "5afa49b9cd54a9c0fc241c619ab255b29abaf5b3ae77b45c4bbed0376baa7444",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 305,
+        "prompt": "Atmospheric 16:9 key art for a paint-by-number relaxation web game set in a cozy midnight art studio, rendered in polished stylized 3D cartoon style with soft rounded forms and a calm creative mood. The scene shows a charming wooden easel at a gentle three-quarter angle holding a partially finished abstract paint-by-number canvas: some regions already filled with smooth rounded patches of vivid red (#ef4444), amber (#fbbf24), green (#22c55e), blue (#3b82f6), violet (#a78bfa) and pink (#f472b6), while the remaining regions are soft empty plum cells (#241c30) with faint violet edges (#3a2c4d), deliberately showing no numbers and no recognizable subject. A cute rounded paintbrush with a lavender (#c084fc) handle rests against the easel, dripping one glowing paint drop, and a small ceramic palette with nine glossy color wells sits on a stool nearby. The studio around them is deep dark plum (#14101c) with a warm violet ambient glow (#221a30), a desk lamp casting a soft amber pool of light from the upper left, floating dust motes and a few gentle sparkles drifting above the canvas. Materials read as matte painted wood, ceramic and glossy wet paint, lighting is soft and warm with a single lamp key light and subtle rim glow, the mood is intimate, soothing and quietly magical. Composition keeps the upper area calm for layout breathing room, no characters, no text, no numbers, no logos, no watermark, no UI elements.",
+        "raw": "assets/_src/keyart-color-tap-s305.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T02:32:06+00:00"
+}

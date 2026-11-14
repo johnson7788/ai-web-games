@@ -1,0 +1,91 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  height: 100%;
+  background: #0a0e18;
+  color: #eef2ff;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body { display: flex; justify-content: center; align-items: center; }
+#game-container {
+  position: relative;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  aspect-ratio: 16 / 9;
+}
+canvas { width: 100%; height: 100%; display: block; background: #101420; border-radius: 12px; touch-action: none; }
+
+#hud {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 18px; z-index: 6; pointer-events: none;
+}
+.hud-left { display: flex; align-items: baseline; gap: 16px; font-size: 16px; font-weight: 700; }
+.hud-round { font-size: 19px; color: #60a5fa; }
+.hud-right { display: flex; gap: 8px; pointer-events: auto; }
+.hud-btn {
+  min-width: 46px; height: 44px; padding: 0 12px;
+  font-size: 16px; font-weight: 700; font-family: inherit;
+  color: #eef2ff; background: rgba(22,28,46,0.92);
+  border: 2px solid #2c3e5f; border-radius: 10px;
+  cursor: pointer; touch-action: manipulation;
+}
+.hud-btn:hover { border-color: #60a5fa; }
+
+#quiz {
+  position: absolute; left: 50%; top: 52%; transform: translateX(-50%);
+  width: 70%; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.question-label { font-size: 20px; font-weight: 800; color: #60a5fa; }
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+.opt-btn {
+  min-height: 58px; padding: 10px 18px;
+  font-size: 19px; font-weight: 800; font-family: inherit;
+  color: #eef2ff; background: rgba(22,28,46,0.92);
+  border: 2px solid #2c3e5f; border-radius: 12px;
+  cursor: pointer; touch-action: manipulation;
+}
+.opt-btn:hover:not(:disabled) { border-color: #60a5fa; }
+.opt-btn:disabled { cursor: default; }
+.opt-btn.correct { border-color: #34d399; background: rgba(52,211,153,0.2); }
+.opt-btn.wrong { border-color: #fb7185; background: rgba(251,113,133,0.2); }
+.feedback { min-height: 1.4em; font-size: 18px; font-weight: 800; }
+.feedback.good { color: #34d399; }
+.feedback.bad { color: #fb7185; }
+
+.screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: rgba(10,14,24,0.95); backdrop-filter: blur(3px);
+  z-index: 10; text-align: center; padding: 20px;
+}
+.hidden { display: none !important; }
+.screen h1 { font-size: clamp(32px, 5.5vw, 60px); letter-spacing: 3px; margin-bottom: 8px; color: #60a5fa; text-shadow: 0 0 24px rgba(96,165,250,0.5); }
+.screen h2 { font-size: clamp(28px, 5vw, 50px); margin-bottom: 12px; letter-spacing: 2px; color: #60a5fa; }
+.screen .subtitle { font-size: 19px; opacity: 0.85; margin-bottom: 14px; letter-spacing: 1px; }
+.screen .how-to { font-size: 15px; opacity: 0.7; max-width: 580px; line-height: 1.5; margin-bottom: 26px; }
+.screen .best { margin-top: 18px; font-size: 16px; opacity: 0.85; color: #fbbf24; }
+.screen .done-score { font-size: 24px; font-weight: 800; margin-bottom: 18px; }
+.screen button {
+  min-width: 200px; min-height: 54px; padding: 12px 36px;
+  font-size: 20px; font-weight: 800; font-family: inherit; letter-spacing: 1px;
+  color: #07101f; background: linear-gradient(#bfdbfe, #60a5fa);
+  border: 2px solid #1e40af; border-radius: 14px;
+  cursor: pointer; margin-top: 12px; touch-action: manipulation;
+  box-shadow: 0 6px 20px rgba(96,165,250,0.3);
+}
+.screen button:hover { filter: brightness(1.08); }
+.screen button.secondary { background: rgba(22,28,46,0.95); color: #eef2ff; border-color: #2c3e5f; font-size: 16px; min-height: 46px; box-shadow: none; }
+.lang-select {
+  position: absolute; top: 16px; right: 16px;
+  padding: 8px 12px; font-size: 15px; font-family: inherit;
+  background: #161c2e; color: #eef2ff; border: 1px solid #60a5fa; border-radius: 8px; cursor: pointer;
+}
+@media (max-height: 460px) {
+  #quiz { top: 50%; gap: 8px; }
+  .opt-btn { min-height: 44px; font-size: 16px; }
+  .question-label { font-size: 16px; }
+}

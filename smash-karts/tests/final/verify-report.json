@@ -1,0 +1,189 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "step 5",
+      "ok": true,
+      "detail": "visible: #btn-start"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入比赛",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "5 台车",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.karts.length === 5"
+    },
+    {
+      "name": "第 1 局 meadow",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.roundIndex === 0"
+    },
+    {
+      "name": "step 19",
+      "ok": true,
+      "detail": "visible: #hud"
+    },
+    {
+      "name": "step 20",
+      "ok": true,
+      "detail": "visible: #hp-fill"
+    },
+    {
+      "name": "加速条存在",
+      "ok": true,
+      "detail": "eval: !!document.getElementById('boost-fill')"
+    },
+    {
+      "name": "step 22",
+      "ok": true,
+      "detail": "visible: #scoreboard"
+    },
+    {
+      "name": "开车有速度",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.karts[0].speed > 20"
+    },
+    {
+      "name": "加速条可填满",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.karts[0].boost === 1"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "step 34",
+      "ok": true,
+      "detail": "visible: #screen-pause"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "局间结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'roundEnd'"
+    },
+    {
+      "name": "三选一升级",
+      "ok": true,
+      "detail": "eval: document.querySelectorAll('.upgrade-card').length === 3"
+    },
+    {
+      "name": "进入第 2 局",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.roundIndex === 1"
+    },
+    {
+      "name": "升级已生效",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.upgrades.length === 1"
+    },
+    {
+      "name": "第二次三选一",
+      "ok": true,
+      "detail": "eval: document.querySelectorAll('.upgrade-card').length === 3"
+    },
+    {
+      "name": "进入第 3 局",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.roundIndex === 2"
+    },
+    {
+      "name": "冠军车出场",
+      "ok": true,
+      "detail": "eval: window.__ll.sim.karts.some(function(k){return !!k.isChampion;})"
+    },
+    {
+      "name": "比赛结束",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'matchOver'"
+    },
+    {
+      "name": "step 59",
+      "ok": true,
+      "detail": "visible: #screen-end"
+    },
+    {
+      "name": "有评级徽章",
+      "ok": true,
+      "detail": "eval: !!document.querySelector('#rank-badge').textContent.trim()"
+    },
+    {
+      "name": "重启回标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端 HUD 不超宽",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.layout().hud.width <= 844"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-round1.png",
+    "04-arena2.png",
+    "05-arena3.png",
+    "06-end.png",
+    "07-mobile-title.png",
+    "08-mobile-playing.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-smash-karts"
+  ],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

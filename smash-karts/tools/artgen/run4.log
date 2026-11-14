@@ -1,0 +1,31 @@
+显卡 http://117.50.187.176:8990 NVIDIA A800-SXM4-80GB：65831/81920 MiB
+显卡 http://117.50.180.88:8990 NVIDIA A800-SXM4-80GB：16467/81920 MiB
+显卡 http://117.50.89.18:8990 NVIDIA A800-SXM4-80GB：60725/81920 MiB
+显卡 http://106.75.68.50:8990 NVIDIA A800-SXM4-80GB：37951/81920 MiB
+plan: /Users/admin/git/webgames/games/smash-karts/tools/artgen/plan-final.json
+输出: /Users/admin/git/webgames/games/smash-karts/assets/_src
+条目: 9
+
+▶ arena-lava  (image · qwen-image-xl)
+  ✓ assets/_src/arena-lava-s203.png  1659KB  19.0s
+▶ kart-cherry  (image · qwen-image-xl)
+  ✓ assets/_src/kart-cherry-s212.png  1044KB  15.2s
+▶ kart-blu  (image · qwen-image-xl)
+  ✓ assets/_src/kart-blu-s213.png  1171KB  15.2s
+▶ kart-sunny  (image · qwen-image-xl)
+  ✓ assets/_src/kart-sunny-s214.png  984KB  15.1s
+▶ kart-grape  (image · qwen-image-xl)
+  ✓ assets/_src/kart-grape-s215.png  998KB  15.3s
+▶ decor-mushroom  (image · qwen-image-xl)
+  ✓ assets/_src/decor-mushroom-s221.png  972KB  15.1s
+▶ decor-gumdrop  (image · qwen-image-xl)
+  ✓ assets/_src/decor-gumdrop-s222.png  1294KB  14.9s
+▶ pickup-crate  (image · qwen-image-xl)
+  ✓ assets/_src/pickup-crate-s223.png  937KB  15.2s
+▶ keyart-smash  (image · qwen-image-xl)
+  ✓ assets/_src/keyart-smash-s231.png  1758KB  19.4s
+
+provenance: assets/_src/provenance.json
+下一步：挑图（tools/artgen/pick.json）→ assetprep.py 抠图裁切 → asset-check.mjs 验收
+
+=== OK · 成功 9/9 ===

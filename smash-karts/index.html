@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>SMASH KARTS · Cute Kart Brawl</title>
+  <meta name="description" content="Drive a cute kart with a face, drift to charge a boost, grab weapon crates and smash the bots in a candy arena. First to 10 wins the round.">
+  <meta name="theme-color" content="#fff6e5">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" aria-label="Kart battle arena"></canvas>
+
+    <!-- 加载 -->
+    <div id="screen-loading" class="screen is-active">
+      <h2 id="loading-text"></h2>
+      <div class="loading-bar"><div id="loading-fill" class="loading-fill"></div></div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="meter hp-meter">
+          <span class="meter-label" id="hp-label"></span>
+          <div class="meter-track"><div id="hp-fill" class="meter-fill hp-fill"></div></div>
+        </div>
+        <div class="meter boost-meter">
+          <span class="meter-label" id="boost-label"></span>
+          <div class="meter-track"><div id="boost-fill" class="meter-fill boost-fill"></div></div>
+        </div>
+        <div id="weapon-hud" class="weapon-hud">
+          <span id="weapon-icon" class="weapon-icon"></span>
+          <span id="weapon-name" class="weapon-name"></span>
+          <span id="weapon-ammo" class="weapon-ammo"></span>
+        </div>
+      </div>
+
+      <div class="hud-center">
+        <div id="round-pips" class="round-pips"></div>
+        <div id="timer" class="timer"></div>
+        <div id="kill-goal" class="kill-goal"></div>
+      </div>
+
+      <div class="hud-right">
+        <div id="scoreboard" class="scoreboard"></div>
+        <div class="hud-buttons">
+          <button id="btn-mute" class="icon-btn" aria-label="Sound"></button>
+          <button id="btn-pause" class="icon-btn" aria-label="Pause">II</button>
+        </div>
+      </div>
+
+      <div id="boost-flash" class="boost-flash hidden"></div>
+      <div id="countdown" class="countdown hidden"></div>
+      <div id="respawn-note" class="respawn-note hidden"></div>
+    </div>
+
+    <!-- 触屏 -->
+    <div id="joystick" class="joystick hidden"><div id="joystick-knob" class="joystick-knob"></div></div>
+    <button id="fire-btn" class="touch-btn fire-btn hidden"></button>
+    <button id="drift-btn" class="touch-btn drift-btn hidden"></button>
+
+    <!-- 标题 -->
+    <div id="screen-title" class="screen hidden">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text"></h1>
+      <p id="subtitle-text" class="subtitle"></p>
+      <p id="tagline-text" class="tagline"></p>
+      <button id="btn-start" class="primary-btn"></button>
+      <button id="btn-howto" class="secondary-btn"></button>
+      <p id="how-to" class="how-to"></p>
+      <p id="title-best" class="title-best"></p>
+    </div>
+
+    <!-- 暂停 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="primary-btn"></button>
+      <button id="btn-restart" class="secondary-btn"></button>
+      <button id="btn-howto-pause" class="secondary-btn" data-tutorial-replay></button>
+      <button id="btn-title" class="secondary-btn"></button>
+      <label class="toggle-row"><input type="checkbox" id="chk-reduced"> <span id="reduced-label"></span></label>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 局间：升级三选一 -->
+    <div id="screen-round" class="screen hidden">
+      <h2 id="round-title"></h2>
+      <p id="round-sub" class="round-sub"></p>
+      <div id="upgrade-cards" class="upgrade-cards"></div>
+      <p id="pick-hint" class="pick-hint"></p>
+    </div>
+
+    <!-- 结算 -->
+    <div id="screen-end" class="screen hidden">
+      <h2 id="end-title"></h2>
+      <div id="rank-badge" class="rank-badge"></div>
+      <div id="end-stats" class="end-stats"></div>
+      <p id="end-near" class="end-near"></p>
+      <button id="btn-again" class="primary-btn"></button>
+      <button id="btn-back" class="secondary-btn"></button>
+    </div>
+
+    <!-- 交互引导（tutorial-check 依赖这些属性） -->
+    <div id="tutorial" class="tutorial hidden" data-tutorial>
+      <div id="tutorial-spot" class="tutorial-spot"></div>
+      <div class="tutorial-card">
+        <p id="tutorial-step" class="tutorial-step"></p>
+        <h3 id="tutorial-title" class="tutorial-title"></h3>
+        <p id="tutorial-body" class="tutorial-body"></p>
+        <div class="tutorial-actions">
+          <button id="tutorial-next" class="primary-btn"></button>
+          <button id="tutorial-skip" class="secondary-btn" data-tutorial-skip></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 横屏提示（竖屏时显示） -->
+    <div id="rotate-hint" class="rotate-hint hidden"><span id="rotate-text"></span></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

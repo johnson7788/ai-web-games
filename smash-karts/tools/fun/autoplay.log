@@ -1,0 +1,5 @@
+→ /Users/admin/git/webgames/games/smash-karts/tools/fun/autoplay.json
+greedy-1 greedy success=23.8 actions=525 lvl=3 deaths=2 completed=true
+greedy-2 greedy success=21.6 actions=467 lvl=3 deaths=2 completed=true
+random-1 random success=null actions=72 lvl=1 deaths=0 completed=false
+noinput-1 noinput success=null actions=0 lvl=1 deaths=0 completed=false

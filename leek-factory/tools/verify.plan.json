@@ -1,0 +1,50 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "assert": "Math.abs(window.__ll.debug.state().throughput - 0.6) < 1e-9", "name": "初始吞吐 0.6（pack 瓶颈）" },
+    { "assert": "window.__ll.debug.state().bottleneck === 'pack'", "name": "瓶颈是打包站" },
+    { "screenshot": "02-playing.png" },
+    { "eval": "window.__ll.debug.harvest()" },
+    { "wait": 200 },
+    { "assert": "window.__ll.debug.state().coins >= 5", "name": "手动收割得金币" },
+    { "eval": "window.__ll.debug.addCoins(1000)" },
+    { "eval": "window.__ll.debug.buy('pack')" },
+    { "wait": 200 },
+    { "assert": "Math.abs(window.__ll.debug.state().throughput - 0.8) < 1e-9", "name": "升级瓶颈后吞吐升到 0.8" },
+    { "assert": "window.__ll.debug.state().bottleneck === 'process'", "name": "瓶颈转移到加工站" },
+    { "screenshot": "03-upgraded.png" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "重启回标题" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  }
+}

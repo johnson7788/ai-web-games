@@ -1,0 +1,136 @@
+{
+  "assets": {
+    "sky-night": {
+      "file": "assets/sky-night.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 327267,
+      "sha256": "408afee0d6f3aa755b87e2fb65105f951494945e450db79b223db41e32019d4c",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Equirectangular 360 degree panoramic night sky texture for a 3D racing game skybox, seamless horizontal wrap, dark indigo night atmosphere over a neon megacity horizon, scattered stylized skyscraper silhouettes with tiny warm and cyan window lights along the lower third, soft magenta and cyan neon glow bleeding into low clouds, a few stars and a thin crescent moon high in the sky, subtle horizontal banding free gradient, painterly stylized game art, high detail, no text, no watermark, no cars, no road, uniform exposure suitable for image based lighting",
+        "raw": "assets/_src/sky-night-s41.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 1920,
+      "h": 1083,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 456331,
+      "sha256": "0a5f251bb0fc32493eb559124584f9629ee7de62e4512cdbbc539d306cda7801",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 77,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a cyan neon-lit hypercar drifting sideways through a rain-slick night city intersection, thick white tire smoke curling behind the rear wheels, glowing cyan underglow and light trails, two white police interceptors with flashing red and blue light bars chasing close behind in the background, wet asphalt reflecting magenta and cyan neon signs, skyscrapers with lit windows, dramatic low camera angle, motion blur on wheels only, crisp car body, vibrant saturated arcade racing aesthetic, high detail PBR materials, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s77.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 308718,
+      "sha256": "82704375040584ab4fcfe6be2c7fd52db394e39362a2759acf0fabdb3405400b",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 9,
+        "prompt": "Square mobile game app icon artwork, centered composition: rear three-quarter view of a stylized cyan hypercar drifting with a bold magenta neon light trail sweeping behind it, two tiny red and blue police light dots far behind, dark indigo night background with subtle city glow at the bottom edge, strong silhouette readable at 64 pixels, flat stylized 3D render, clean edges, vibrant contrast, no text, no watermark, no border",
+        "raw": "assets/_src/icon-raw-s9.png"
+      }
+    },
+    "car-0.jpg": {
+      "file": "assets/car-0.jpg",
+      "group": "reused",
+      "alpha": false,
+      "bytes": 310526,
+      "sha256": "943fa75fd43de41f158332cc8dd28958ffd895a59ecfeefa3b7ae1eceb4202ec",
+      "source": {
+        "kind": "reused",
+        "from": "games/neon-drift"
+      }
+    },
+    "car-1.jpg": {
+      "file": "assets/car-1.jpg",
+      "group": "reused",
+      "alpha": false,
+      "bytes": 355612,
+      "sha256": "5cfa6e40e1ab109636bc26595dabb18908141a780bf2bc6ac0db54ffb4fd4ec9",
+      "source": {
+        "kind": "reused",
+        "from": "games/neon-drift"
+      }
+    },
+    "car-2.jpg": {
+      "file": "assets/car-2.jpg",
+      "group": "reused",
+      "alpha": false,
+      "bytes": 276759,
+      "sha256": "f256cf2486b69a038cee28769e445f2bca66ff8cf38322092f4a13dc2193e929",
+      "source": {
+        "kind": "reused",
+        "from": "games/neon-drift"
+      }
+    },
+    "car-normal.png": {
+      "file": "assets/car-normal.png",
+      "group": "reused",
+      "alpha": false,
+      "bytes": 226782,
+      "sha256": "28534c38989144d8c284158940398a30481dbf6334f99dad4deb9d84f018c2ee",
+      "source": {
+        "kind": "reused",
+        "from": "games/neon-drift"
+      }
+    },
+    "car-orm.png": {
+      "file": "assets/car-orm.png",
+      "group": "reused",
+      "alpha": false,
+      "bytes": 827285,
+      "sha256": "48dfaba0073a156c7e06d0479d363815ba50cf6a2f1dfbba9f394191af8064b8",
+      "source": {
+        "kind": "reused",
+        "from": "games/neon-drift"
+      }
+    },
+    "road-albedo.jpg": {
+      "file": "assets/road-albedo.jpg",
+      "group": "reused",
+      "alpha": false,
+      "bytes": 167094,
+      "sha256": "bd41125f9ea19fd5e2095d0927235ba4a37a5aeb9815db44d7520b1fb51ee471",
+      "source": {
+        "kind": "reused",
+        "from": "games/neon-drift"
+      }
+    },
+    "road-normal.png": {
+      "file": "assets/road-normal.png",
+      "group": "reused",
+      "alpha": false,
+      "bytes": 433838,
+      "sha256": "983ac93418c8ea7fa51146d03b7cbc243240989789bdb996abd22908e42cb9c5",
+      "source": {
+        "kind": "reused",
+        "from": "games/neon-drift"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T12:51:22+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "url": "https://pipygames.com/g/g_1794628159053_2rhhiw/index.html?cb=tutorial-evidence",
+  "first": {
+    "active": true,
+    "steps": [
+      "scan-one",
+      "scan-all",
+      "change",
+      "give"
+    ],
+    "visible": true,
+    "hash": ""
+  },
+  "afterSkip": {
+    "active": false,
+    "phase": "playing",
+    "hash": "#tutorialDone"
+  },
+  "afterReload": {
+    "active": false,
+    "phase": "playing",
+    "hash": "#tutorialDone"
+  },
+  "errors": [],
+  "pass": true
+}

@@ -1,0 +1,156 @@
+{
+  "slug": "market-cashier",
+  "genre": "sim",
+  "oneLiner": "三班倒的超市收银员：扫码、算总价、用纸币硬币凑出精确找零，在顾客耐心耗尽前完成交易。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "scan",
+      "cost": "每一件都要花时间，顾客耐心在流走",
+      "feedback": [
+        "scan beep",
+        "item stamp",
+        "bag count"
+      ],
+      "combinesWith": [
+        "count-change"
+      ]
+    },
+    {
+      "name": "count-change",
+      "cost": "点得越多越慢；多找/少找都要重来",
+      "feedback": [
+        "coin clink",
+        "receipt update",
+        "change tray"
+      ],
+      "combinesWith": [
+        "choose-upgrade"
+      ]
+    },
+    {
+      "name": "choose-upgrade",
+      "cost": "三选一，放弃另外两张",
+      "feedback": [
+        "card flip",
+        "bonus toast",
+        "next day"
+      ],
+      "combinesWith": [
+        "scan"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 12,
+      "choice": "用一张 $10 还是两张 $5 凑找零",
+      "cost": "少点一次 vs 多一次点击、更多零钱"
+    },
+    {
+      "atSec": 24,
+      "choice": "直接给整钞让顾客找，还是用零钱精确凑",
+      "cost": "时间 vs 精确度"
+    },
+    {
+      "atSec": 36,
+      "choice": "现在交付拿小费，还是再调整一次",
+      "cost": "小费随耐心下降；改错扣 30"
+    },
+    {
+      "atSec": 52,
+      "choice": "找零超了：清零重来还是继续加",
+      "cost": "时间 / 越加越乱"
+    },
+    {
+      "atSec": 80,
+      "choice": "班间升级三选一",
+      "cost": "放弃另外两个升级"
+    },
+    {
+      "atSec": 128,
+      "choice": "第二个班间升级三选一",
+      "cost": "放弃另外两个升级"
+    },
+    {
+      "atSec": 165,
+      "choice": "冲零失误完美班次，还是稳一手",
+      "cost": "冒险失误扣分 vs 放弃 +150"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "扫码 + 找零基础循环"
+    },
+    {
+      "index": 2,
+      "newElement": "赶时间顾客与整钞顾客"
+    },
+    {
+      "index": 3,
+      "newElement": "大采购、连击倍率与完美班次"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "quick-hands",
+      "kind": "rule"
+    },
+    {
+      "id": "generous-tips",
+      "kind": "stat"
+    },
+    {
+      "id": "patient-customers",
+      "kind": "rule"
+    },
+    {
+      "id": "combo-master",
+      "kind": "rule"
+    },
+    {
+      "id": "coin-hint",
+      "kind": "rule"
+    },
+    {
+      "id": "exact-bonus",
+      "kind": "rule"
+    },
+    {
+      "id": "express-target",
+      "kind": "stat"
+    },
+    {
+      "id": "loyalty",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "newBuild",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 55,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

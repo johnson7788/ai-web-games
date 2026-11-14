@@ -1,0 +1,125 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "bg-table",
+      "kind": "image",
+      "seeds": [
+        42
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "A wide 16:9 background of a cozy party game-night table seen from a gentle three-quarter overhead angle, for a two-player airplane board game. The table surface is dark purple wood and felt near hex 14101c and 221a30, lit by a warm hanging lamp that pools soft violet light near hex c084fc across the scene. The left-center of the table holds a large empty cream parchment board area near hex f4ecd8 with tan edges near hex cdbb94, kept completely blank: no grid lines, no cells, no tokens, no numbers, because the board is drawn by code on top. Around the board, festive decorations stay at the edges: red paper fans and blue bunting in the corners near hex ef4444 and 3b82f6, a small bowl of snacks, two party cups, scattered confetti dots and a soft purple table runner. The right side of the table stays calmer and darker, reserved for the game panel UI. Warm lamp glow, gentle ambient occlusion, soft shadows from the decorations. Rendered as a polished stylized 3D cartoon environment with hand-painted toy materials, chunky rounded shapes, playful family game-night mood, consistent dark-purple and cream art direction with red and blue accents, high production value, no characters, no text, no numbers, no letters, no watermark.",
+      "prep": {
+        "out": "assets/bg/table.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    },
+    {
+      "name": "board-parchment",
+      "kind": "image",
+      "seeds": [
+        43
+      ],
+      "prompt": "A square seamless-looking board base texture of warm cream parchment for a party board game, filling the entire frame edge to edge. The surface is aged paper in soft cream near hex f4ecd8 with very subtle mottling, faint fiber strands, gentle tea-stain clouds and a slightly darker tan vignette near hex cdbb94 around the four edges, as if the sheet were laid on a wooden table. The texture is calm and low contrast so that programmatically drawn grid cells, tokens and highlights stay perfectly readable on top of it. Absolutely no grid lines, no cells, no squares, no paths, no tokens, no airplanes, no dice, no numbers, no letters, no symbols, no borders with patterns; only plain parchment texture with soft organic variation. Lighting is even and diffuse with a barely perceptible warm gradient from the upper left, no harsh shadows, no horizon, no objects. The grain runs uniformly in every direction so the sheet can be cropped to any square region without visible seams or repeating motifs, and the corners stay gently rounded in tone rather than decorated. Rendered as a polished stylized 3D cartoon material study with hand-painted storybook surface detail, cozy game-night warmth, soft ambient occlusion only in the paper grain, consistent cream-and-tan art direction, high production value, family friendly, never photorealistic, no text, no watermark.",
+      "prep": {
+        "out": "assets/bg/board-parchment.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "size": [
+        1280,
+        720
+      ],
+      "steps": 20
+    },
+    {
+      "name": "token-red-plane",
+      "kind": "image",
+      "seeds": [
+        42
+      ],
+      "prompt": "A game token sprite of a chunky toy airplane seen from directly above, top-down orthographic view, for a two-player airplane board game. The plane is painted vivid warm red near hex ef4444 with cream near hex f4ecd8 wing stripes and a small gold near hex fbbf24 nose ring, in a friendly rounded toy style: fat fuselage, wide swept wings spread symmetrically left and right, a small tailplane and a three-blade propeller at the nose pointing straight up in frame. The canopy is a smooth pale blue glass bubble. Surfaces are glossy painted plastic with soft studio highlights, gentle ambient occlusion under the wings and one clean specular streak along the fuselage. The silhouette is bold and symmetric so it reads instantly at about ninety pixels tall on a cream board, and the top-down orientation matches the programmatic board movement. No pilot, no numbers, no markings, no motion blur. Rendered as a polished stylized 3D cartoon toy with hand-painted storybook surface detail, cozy party game-night mood, dark purple undertones near hex 14101c in the shading, chunky rounded shapes, soft warm lighting, consistent art direction across both player tokens, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/tokens/red-plane.webp",
+        "cutout": true,
+        "height": 90,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "token-blue-plane",
+      "kind": "image",
+      "seeds": [
+        42
+      ],
+      "prompt": "A game token sprite of a chunky toy airplane seen from directly above, top-down orthographic view, for a two-player airplane board game. The plane is painted vivid friendly blue near hex 3b82f6 with cream near hex f4ecd8 wing stripes and a small gold near hex fbbf24 nose ring, in a friendly rounded toy style: fat fuselage, wide swept wings spread symmetrically left and right, a small tailplane and a three-blade propeller at the nose pointing straight up in frame. The canopy is a smooth pale cream glass bubble. Surfaces are glossy painted plastic with soft studio highlights, gentle ambient occlusion under the wings and one clean specular streak along the fuselage. The silhouette is bold and symmetric so it reads instantly at about ninety pixels tall on a cream board, and the top-down orientation matches the programmatic board movement. No pilot, no numbers, no markings, no motion blur. Rendered as a polished stylized 3D cartoon toy with hand-painted storybook surface detail, cozy party game-night mood, dark purple undertones near hex 14101c in the shading, chunky rounded shapes, soft warm lighting, consistent art direction across both player tokens, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/tokens/blue-plane.webp",
+        "cutout": true,
+        "height": 90,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "token-die",
+      "kind": "image",
+      "seeds": [
+        44
+      ],
+      "prompt": "A game prop sprite of a single chunky six-sided die for a party board game, shown in a gentle three-quarter view from slightly above. The die body is warm ivory near hex f4ecd8 with softly rounded corners and edges, and its pips are polished gold near hex fbbf24 set into shallow circular dimples. The top face shows six gold pips in two neat columns, the visible left face shows two pips and the visible right face shows three pips, all classic round dots with no numerals anywhere. The ivory material has a smooth satin toy-plastic finish with one clean specular highlight on the top edge, subtle warm ambient occlusion in the pip dimples and a faint golden bounce light underneath. Proportions are fat and friendly, a storybook casino die scaled for a family table. No motion blur, no extra dice, no numbers, no letters. Rendered as a polished stylized 3D cartoon toy with hand-painted storybook surface detail, cozy party game-night mood, dark purple undertones near hex 14101c in the shading, chunky rounded shapes, soft warm lighting, consistent art direction with the airplane tokens, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/tokens/die.webp",
+        "cutout": true,
+        "height": 120,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "keyart-ludo-party",
+      "kind": "image",
+      "seeds": [
+        42,
+        7
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "Key art hero illustration for a cozy two-player airplane board game party, wide 16:9 composition with no text anywhere. On a dark purple game-night table near hex 14101c and 221a30 under warm lamp light, a cream parchment board near hex f4ecd8 sits at the center with its grid deliberately left blank and abstract, while two chunky toy airplanes, one vivid red near hex ef4444 and one friendly blue near hex 3b82f6, bank playfully through the air above it as if racing mid-flight. A fat ivory die with gold pips tumbles between them, trailing soft violet sparkles near hex c084fc. Red and blue bunting, paper fans and confetti dots frame the corners, and a soft golden glow near hex fbbf24 rims the flying planes. Two empty party cups and a small snack bowl sit at the table edge, and a soft violet lamp halo pools behind the board, grounding the flying toys in a real family room. The mood is festive, friendly and competitive, a family game night caught at its most exciting moment. Rendered as a polished stylized 3D cartoon scene with hand-painted toy materials, chunky rounded shapes, soft warm lighting, gentle ambient occlusion, consistent dark-purple, cream, red and blue art direction, high production value, family friendly, no characters, no text, no numbers, no letters, no logo, no watermark.",
+      "prep": {
+        "out": "assets/keyart/ludo-party.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    }
+  ]
+}

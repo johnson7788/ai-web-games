@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+<meta name="theme-color" content="#0b0910" />
+<title>Seize the Log — Two Immortals, One World Tree</title>
+<meta name="description" content="Seize the Log: a chicken game on the world tree. Blind thunder brands, three timing windows, first-strike bonus. Solo vs CPU or two players on one screen." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="stage">
+    <canvas id="game" width="720" height="1280" aria-label="Seize the Log game canvas" role="img"></canvas>
+  </div>
+  <noscript>Please enable JavaScript to play Seize the Log.</noscript>
+  <div id="filewarn" hidden>
+    <h1>Please open this with a local server</h1>
+    <p>Browsers block ES modules over <code>file://</code>. Run this in the game folder:</p>
+    <pre>./start.sh</pre>
+    <p>or <code>python3 -m http.server 8127</code>, then open
+      <a href="http://127.0.0.1:8127/">http://127.0.0.1:8127/</a></p>
+  </div>
+  <script>
+    // ES modules are blocked under file:// by CORS — say so up front instead of a blank screen
+    if (location.protocol === 'file:') {
+      document.getElementById('filewarn').hidden = false;
+      document.getElementById('stage').style.display = 'none';
+    }
+  </script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

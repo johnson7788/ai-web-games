@@ -1,0 +1,10 @@
+显卡 http://117.50.187.176:8990 NVIDIA A800-SXM4-80GB：66709/81920 MiB
+显卡 http://117.50.180.88:8990 NVIDIA A800-SXM4-80GB：16569/81920 MiB
+显卡 http://106.75.68.50:8990 NVIDIA A800-SXM4-80GB：39867/81920 MiB
+plan: /Users/admin/git/webgames/games/smash-karts/tools/artgen/plan-remain.json
+输出: /Users/admin/git/webgames/games/smash-karts/assets/_src
+条目: 10
+
+▶ arena-lava  (image · h3-image)
+  ✗ fetch failed
+▶ kart-mint  (image · h3-image)

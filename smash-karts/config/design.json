@@ -1,0 +1,118 @@
+{
+  "slug": "smash-karts",
+  "genre": "action",
+  "oneLiner": "开着一台会笑会生气的卡丁车，在糖果竞技场里漂移蓄力、捡枪对射，先把 10 台车打成 X 眼就赢下这一局",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "drive",
+      "cost": "速度换转向：高速入弯会被推出外线，撞墙掉速度并露出发懵表情",
+      "feedback": ["engine-pitch", "tire-squeal", "speed-lines"],
+      "combinesWith": ["drift", "shoot"]
+    },
+    {
+      "name": "drift",
+      "cost": "漂移必须贴外侧线走，松开才结算加速；整条加速只够一次",
+      "feedback": ["skid-marks", "sparks", "boost-meter-fill"],
+      "combinesWith": ["boost", "shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "弹药有限，开火有后坐减速，开火瞬间没法闪避",
+      "feedback": ["muzzle-flash", "angry-face", "hit-numbers"],
+      "combinesWith": ["drift", "ram"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "先冲中央武器箱，还是绕外圈先偷 Cherry 一枪",
+      "cost": "抢箱子会正对三台车的枪口；绕后则少一把枪"
+    },
+    {
+      "atSec": 14,
+      "choice": "按住漂移蓄力，还是直线贴脸开火",
+      "cost": "漂移走外线，侧身暴露 1 秒"
+    },
+    {
+      "atSec": 24,
+      "choice": "现在把 6 发火箭丢给近处，还是留着打冲过来的 Blu",
+      "cost": "火箭打空就失去全部爆发"
+    },
+    {
+      "atSec": 38,
+      "choice": "血量 40% 时继续对枪，还是撤到角落回血",
+      "cost": "撤退把击杀数让给领跑的对手"
+    },
+    {
+      "atSec": 55,
+      "choice": "加速条用来撞人（ram 伤害），还是留着急救脱身",
+      "cost": "整条加速只够一次"
+    },
+    {
+      "atSec": 80,
+      "choice": "三选一升级：弹跳火箭，还是漂移火花",
+      "cost": "放弃另一条 build，本局不再出现"
+    },
+    {
+      "atSec": 110,
+      "choice": "领先 2 杀时继续推，还是收着打拖时间",
+      "cost": "时间到按击杀数判胜负，保守可能被判平/负"
+    },
+    {
+      "atSec": 150,
+      "choice": "末局硬拼冠军车 Cherry Prime，还是先清小怪攒箱子",
+      "cost": "硬拼可能被夹击掉两杀，清怪则给它回血时间"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "漂移蓄力加速 + 中央武器箱（Sunny Meadow）"
+    },
+    {
+      "index": 2,
+      "newElement": "传送带推着走 + 弹力糖球（Bubblegum Factory）"
+    },
+    {
+      "index": 3,
+      "newElement": "岩浆坑持续伤害 + 冠军车追猎（Lava Lamp Lair）"
+    }
+  ],
+  "upgrades": [
+    { "id": "rocket-bounce", "kind": "rule" },
+    { "id": "triple-shot", "kind": "rule" },
+    { "id": "drift-fire-trail", "kind": "rule" },
+    { "id": "turbo-refund", "kind": "rule" },
+    { "id": "ram-boost", "kind": "rule" },
+    { "id": "ghost-respawn", "kind": "rule" },
+    { "id": "magnet-crate", "kind": "rule" },
+    { "id": "lucky-crate", "kind": "rule" },
+    { "id": "armor-plate", "kind": "stat" },
+    { "id": "quick-reload", "kind": "stat" },
+    { "id": "turbo-engine", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "newBuild", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

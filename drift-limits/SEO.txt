@@ -1,0 +1,5 @@
+TITLE: DRIFT LIMITS - 极限漂移
+CATEGORY: Racing
+TAGS: drift, police chase, racing, 3d, nitro, arcade, 漂移, 警车, 赛车
+SHORT DESCRIPTION: Chain drifts to stack x10 multipliers, burn nitro to shake the cops, and survive 3 laps to escape the neon city. One crash resets it all.
+LONG DESCRIPTION: DRIFT LIMITS is a 3D arcade drift-chase racer. Launch on the green light, slide through neon corners to build combo multipliers and charge nitro, weave traffic for near-miss bonuses, and outrun escalating police heat across three laps. Crashing resets your multiplier and lets the cops close in - push your luck for x10 or play it safe? Unlock garage perks, chase S-rank scores, and master the perfect getaway. 中文：绿灯起步、连击漂移叠倍率、氮气甩警车，撞一次倍率归零，三圈冲出霓虹城界。

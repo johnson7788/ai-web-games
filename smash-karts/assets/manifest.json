@@ -1,0 +1,419 @@
+{
+  "assets": {
+    "bg/arena-floor": {
+      "file": "assets/bg/arena-floor.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 54878,
+      "sha256": "98324fa89a37b6dff832ef656b837d6362226c0639689d341da6be51fb32440e",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 101,
+        "prompt": "Top-down orthographic game arena floor texture for a midnight kart-battle web game, rendered as a polished stylized 3D cartoon surface seen from directly above with zero perspective distortion. The floor is a large rectangular combat arena covered in a clearly readable checkerboard of two deep blue tones, dark slate blue (#1a2632) alternating with slightly darker navy (#16202b), each tile softly beveled like sealed painted concrete panels with faint scuff marks, curved tire streaks and tiny scratches that tell the story of countless kart battles. A thick perimeter wall frame in desaturated steel blue (#2c3e50) borders the whole arena, with rounded corner guards, subtle panel seams and small amber (#fbbf24) hazard chevrons painted near the inner edge. The central combat area stays clean and readable, carrying only faint circular drift marks and a very subtle painted center divider, leaving generous empty space for procedural obstacles, karts, projectiles and pickups to be drawn on top at runtime. Lighting is soft ambient night illumination with a gentle cool vignette toward the corners and a faint warm glow near the center, no harsh directional shadows and absolutely no objects standing on the floor, a completely empty arena. Materials read as matte sealed concrete, painted lane markings and brushed metal wall caps, consistent with a toy-like stylized 3D cartoon aesthetic and the deep midnight blue (#101820) mood of the game. The composition fills the entire 16:9 frame edge to edge as a background plate, crisp and readable when scaled to 1280 pixels wide, no text, no watermark, no characters, no vehicles, no logos.",
+        "raw": "assets/_src/arena-floor-s101.png"
+      }
+    },
+    "sprites/obstacle-crate": {
+      "file": "assets/sprites/obstacle-crate.webp",
+      "group": "sprites",
+      "w": 121,
+      "h": 120,
+      "aspect": 1.0083,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 8016,
+      "sha256": "9ea69c31a5d4e866ce055281acd300a2b189ec5652334f8a9e34c7b2ff0115a4",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 102,
+        "prompt": "A single heavy industrial storage crate designed as a top-down obstacle sprite for a stylized kart-battle arena game, rendered in polished stylized 3D cartoon style and viewed from directly above in a perfectly orthographic top-down camera with zero perspective tilt. The crate is a chunky rectangular box with softly rounded beveled edges, painted in desaturated steel blue (#34495e) with clearly lighter blue-gray edge highlights (#4a6278) along the raised rims and corner brackets. The lid shows recessed panel seams, four bold hex bolts at the corners, a subtle cross-shaped reinforcement rib and a small painted amber (#fbbf24) hazard stripe band near one edge, giving it a readable toy-like military-supply character without any lettering or numbers. Materials read as painted matte metal over a sturdy frame, with gentle wear, faint scratches and soft ambient occlusion in the grooves, matching the midnight blue arena palette of the game. Lighting is soft even studio illumination from above with a mild highlight on the upper-left rim and no hard cast shadow, so the sprite stays neutral for runtime rotation and placement. The silhouette is compact, roughly a 3:2 rectangle footprint, instantly readable at small in-game size around 120 pixels, with clean anti-aliased edges suitable for background removal. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/obstacle-crate-s102.png"
+      }
+    },
+    "karts/mint": {
+      "file": "assets/karts/mint.webp",
+      "group": "karts",
+      "w": 187,
+      "h": 132,
+      "aspect": 1.4167,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 8202,
+      "sha256": "f188a8b262398030bd760ddd52be015df80c8e7e434c4bc0b79d3e2d281c2bbd",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 211,
+        "prompt": "A single cute battle go-kart character for a top-down cartoon kart brawler, viewed from a high three-quarter top-down angle, the kart nose pointing exactly to the right along the horizontal axis at zero degrees because the game engine rotates this sprite at runtime. Chunky rounded mint-green kart body with a soft teal shadow panel and a cream racing stripe, fat black rubber tires with pale grey hubcaps, a short rounded rear spoiler, two tiny round side mirrors like little ears. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Tiny leaf antenna on the back. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting with a mild highlight on the upper left, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+        "raw": "assets/_src/kart-mint-s211.png"
+      }
+    },
+    "karts/rose": {
+      "file": "assets/karts/rose.webp",
+      "group": "karts",
+      "w": 167,
+      "h": 120,
+      "aspect": 1.3917,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 8878,
+      "sha256": "63fa6a019f0643ccf995cdccf533e2cc50a62938e4fd75458168271002d12383",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 104,
+        "prompt": "A compact battle go-kart designed as a top-down rival bot sprite for a midnight arena kart-brawler, rendered in polished stylized 3D cartoon style with toy-like proportions, viewed from directly above in a perfectly orthographic top-down camera, the kart nose pointing exactly to the right along the horizontal axis as the zero-degree base angle because the game engine rotates this sprite at runtime. The body is a chunky rounded racing kart painted in vivid rose-pink (#fb7185), with deeper crimson shadow panels, a small white center racing stripe, an aggressive stubby front ram bumper and a short angular rear spoiler that gives this bot a feisty personality. Four wide black rubber tires with soft gray hubcaps sit slightly outside the body at the corners, and a tiny cute driver wearing a rounded white-and-rose helmet is visible in the open cockpit, leaning forward on a small steering wheel. Materials read as clean matte plastic, painted metal and soft rubber with softly beveled edges, subtle panel seams and gentle ambient occlusion under the chassis, matching the deep midnight blue arena mood. Lighting is soft even studio illumination with a mild upper-left highlight and no hard directional shadow, keeping the sprite neutral for any rotation. The silhouette stays compact and roughly square, instantly readable at about 120 pixels in game, with crisp clean edges suitable for cutout. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/kart-rose-s104.png"
+      }
+    },
+    "karts/blue": {
+      "file": "assets/karts/blue.webp",
+      "group": "karts",
+      "w": 162,
+      "h": 120,
+      "aspect": 1.35,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 7842,
+      "sha256": "cce50fc0c2030453c344b8a1f54381557558cd721f4b78a1469f52832e76ea9c",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 105,
+        "prompt": "A compact battle go-kart designed as a top-down rival bot sprite for a midnight arena kart-brawler, rendered in polished stylized 3D cartoon style with toy-like proportions, viewed from directly above in a perfectly orthographic top-down camera, the kart nose pointing exactly to the right along the horizontal axis as the zero-degree base angle because the game engine rotates this sprite at runtime. The body is a chunky rounded racing kart painted in vivid sky blue (#60a5fa), with deeper navy shadow panels, a small white center racing stripe, a smooth aerodynamic front bumper and a neat rounded rear spoiler that gives this bot a calm technical personality. Four wide black rubber tires with soft gray hubcaps sit slightly outside the body at the corners, and a tiny cute driver wearing a rounded white-and-blue helmet is visible in the open cockpit, hands steady on a small steering wheel. Materials read as clean matte plastic, painted metal and soft rubber with softly beveled edges, subtle panel seams and gentle ambient occlusion under the chassis, matching the deep midnight blue arena mood. Lighting is soft even studio illumination with a mild upper-left highlight and no hard directional shadow, keeping the sprite neutral for any rotation. The silhouette stays compact and roughly square, instantly readable at about 120 pixels in game, with crisp clean edges suitable for cutout. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/kart-blue-s105.png"
+      }
+    },
+    "karts/amber": {
+      "file": "assets/karts/amber.webp",
+      "group": "karts",
+      "w": 162,
+      "h": 120,
+      "aspect": 1.35,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 8680,
+      "sha256": "e87851261219761e3506bee9fad15fc3027a493d0d9a3554177d64bc881d736a",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 106,
+        "prompt": "A compact battle go-kart designed as a top-down rival bot sprite for a midnight arena kart-brawler, rendered in polished stylized 3D cartoon style with toy-like proportions, viewed from directly above in a perfectly orthographic top-down camera, the kart nose pointing exactly to the right along the horizontal axis as the zero-degree base angle because the game engine rotates this sprite at runtime. The body is a chunky rounded racing kart painted in vivid warm amber (#fbbf24), with deeper bronze shadow panels, a small black center racing stripe, a wide sturdy front bumper and a boxy rear spoiler that gives this bot a bold heavy personality. Four wide black rubber tires with soft gray hubcaps sit slightly outside the body at the corners, and a tiny cute driver wearing a rounded white-and-amber helmet is visible in the open cockpit, gripping a small steering wheel. Materials read as clean matte plastic, painted metal and soft rubber with softly beveled edges, subtle panel seams and gentle ambient occlusion under the chassis, matching the deep midnight blue arena mood. Lighting is soft even studio illumination with a mild upper-left highlight and no hard directional shadow, keeping the sprite neutral for any rotation. The silhouette stays compact and roughly square, instantly readable at about 120 pixels in game, with crisp clean edges suitable for cutout. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/kart-amber-s106.png"
+      }
+    },
+    "karts/violet": {
+      "file": "assets/karts/violet.webp",
+      "group": "karts",
+      "w": 201,
+      "h": 120,
+      "aspect": 1.675,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 9860,
+      "sha256": "6ac45c20c45517c0ff2fa6c21a185b1ac7077d9beb90ed1d95ff174b18b3241e",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 107,
+        "prompt": "A compact battle go-kart designed as a top-down rival bot sprite for a midnight arena kart-brawler, rendered in polished stylized 3D cartoon style with toy-like proportions, viewed from directly above in a perfectly orthographic top-down camera, the kart nose pointing exactly to the right along the horizontal axis as the zero-degree base angle because the game engine rotates this sprite at runtime. The body is a chunky rounded racing kart painted in vivid soft violet (#a78bfa), with deeper purple shadow panels, a small white center racing stripe, a sleek curved front bumper and a swept rear spoiler that gives this bot a sly mysterious personality. Four wide black rubber tires with soft gray hubcaps sit slightly outside the body at the corners, and a tiny cute driver wearing a rounded white-and-violet helmet is visible in the open cockpit, hands relaxed on a small steering wheel. Materials read as clean matte plastic, painted metal and soft rubber with softly beveled edges, subtle panel seams and gentle ambient occlusion under the chassis, matching the deep midnight blue arena mood. Lighting is soft even studio illumination with a mild upper-left highlight and no hard directional shadow, keeping the sprite neutral for any rotation. The silhouette stays compact and roughly square, instantly readable at about 120 pixels in game, with crisp clean edges suitable for cutout. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/kart-violet-s107.png"
+      }
+    },
+    "icons/weapon-rapid": {
+      "file": "assets/icons/weapon-rapid.webp",
+      "group": "icons",
+      "w": 93,
+      "h": 96,
+      "aspect": 0.9688,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 4336,
+      "sha256": "0995a2884c5ef5c55b4dcaeb48c56034f75354d01bce3458189707a189c163ac",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 108,
+        "prompt": "A small glowing weapon pickup crate icon for a top-down kart-battle arena game, rendered in polished stylized 3D cartoon style and viewed from directly above in a perfectly orthographic top-down camera with zero perspective tilt. The object is a chunky rounded square supply crate painted in desaturated steel blue (#34495e) with lighter blue-gray rims (#4a6278), and on its lid sits a bold embossed emblem of three parallel streamlined bullets with motion streaks, glowing in vivid sky blue (#60a5fa) to signal the rapid-fire machine gun weapon. A soft blue rim light wraps the crate edges and a faint emissive glow spills from the emblem grooves, making the pickup read as interactive and valuable against the dark midnight arena floor. Materials read as painted matte metal with softly beveled corners, four small hex bolts, subtle wear scratches and gentle ambient occlusion in the seams, toy-like and friendly rather than realistic military. Lighting is soft even studio illumination with a mild upper-left highlight and no hard cast shadow so the icon stays neutral for runtime placement. The silhouette is compact and square, instantly readable at about 96 pixels and even smaller in the HUD, with crisp clean edges suitable for background removal. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/icon-weapon-rapid-s108.png"
+      }
+    },
+    "icons/weapon-shotgun": {
+      "file": "assets/icons/weapon-shotgun.webp",
+      "group": "icons",
+      "w": 96,
+      "h": 96,
+      "aspect": 1.0,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 4264,
+      "sha256": "1f635319a197f651740711c95fdd88175720671fd2dcd8d40ea2ee1c694a9c81",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 109,
+        "prompt": "A small glowing weapon pickup crate icon for a top-down kart-battle arena game, rendered in polished stylized 3D cartoon style and viewed from directly above in a perfectly orthographic top-down camera with zero perspective tilt. The object is a chunky rounded square supply crate painted in desaturated steel blue (#34495e) with lighter blue-gray rims (#4a6278), and on its lid sits a bold embossed emblem of five small pellets fanning outward in a wide spread arc from a single shell base, glowing in vivid pink (#f472b6) to signal the shotgun spread weapon. A soft pink rim light wraps the crate edges and a faint emissive glow spills from the emblem grooves, making the pickup read as interactive and valuable against the dark midnight arena floor. Materials read as painted matte metal with softly beveled corners, four small hex bolts, subtle wear scratches and gentle ambient occlusion in the seams, toy-like and friendly rather than realistic military. Lighting is soft even studio illumination with a mild upper-left highlight and no hard cast shadow so the icon stays neutral for runtime placement. The silhouette is compact and square, instantly readable at about 96 pixels and even smaller in the HUD, with crisp clean edges suitable for background removal. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/icon-weapon-shotgun-s109.png"
+      }
+    },
+    "icons/weapon-rocket": {
+      "file": "assets/icons/weapon-rocket.webp",
+      "group": "icons",
+      "w": 95,
+      "h": 96,
+      "aspect": 0.9896,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 3556,
+      "sha256": "83000ce1324d2853752b3f44e2c3686b38a5c89183abb64a47c02ec3aacea191",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 110,
+        "prompt": "A small glowing weapon pickup crate icon for a top-down kart-battle arena game, rendered in polished stylized 3D cartoon style and viewed from directly above in a perfectly orthographic top-down camera with zero perspective tilt. The object is a chunky rounded square supply crate painted in desaturated steel blue (#34495e) with lighter blue-gray rims (#4a6278), and on its lid sits a bold embossed emblem of a single chunky cartoon rocket with rounded nose cone, small fins and a short flame tail, glowing in vivid rose-red (#fb7185) to signal the explosive rocket launcher weapon. A soft rose rim light wraps the crate edges and a faint emissive glow spills from the emblem grooves, making the pickup read as interactive and dangerous against the dark midnight arena floor. Materials read as painted matte metal with softly beveled corners, four small hex bolts, subtle wear scratches and gentle ambient occlusion in the seams, toy-like and friendly rather than realistic military. Lighting is soft even studio illumination with a mild upper-left highlight and no hard cast shadow so the icon stays neutral for runtime placement. The silhouette is compact and square, instantly readable at about 96 pixels and even smaller in the HUD, with crisp clean edges suitable for background removal. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/icon-weapon-rocket-s110.png"
+      }
+    },
+    "keyart/smash-karts": {
+      "file": "assets/keyart/smash-karts.webp",
+      "group": "keyart",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 103454,
+      "sha256": "731c03f1e38c079b41d502a51f546d70eed3f2106baf7987718245703610bb1a",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 112,
+        "prompt": "Dynamic 16:9 key art for a top-down midnight kart-battle arena web game, rendered in polished stylized 3D cartoon style with toy-like proportions and vivid saturated colors. Five chunky battle go-karts in mint green (#34d399), rose pink (#fb7185), sky blue (#60a5fa), warm amber (#fbbf24) and soft violet (#a78bfa) drift and clash across a deep midnight blue checkerboard arena floor (#1a2632 and #16202b tiles), seen from a dramatic high three-quarter angle that still reads the top-down arena layout. The mint kart in the foreground fires a glowing amber tracer stream toward a spinning rose kart, while a rocket with a rose-red warhead streaks across the upper right leaving a soft smoke ribbon, and a pink shotgun pellet fan bursts near a steel blue obstacle crate. Steel blue crates (#34495e) with lighter rims dot the arena, glowing weapon pickup crates pulse blue, pink and rose, and stylized cartoon explosion puffs with amber cores bloom at impact points. The perimeter wall in desaturated steel blue (#2c3e50) frames the scene under a deep night atmosphere (#101820), lit by cool ambient night light with warm amber rim highlights, soft volumetric glow and gentle tire-smoke haze. Composition is energetic and diagonal with clear negative space in the upper area, materials read as matte plastic, painted metal and rubber, no text, no logos, no watermark, no UI elements.",
+        "raw": "assets/_src/keyart-smash-karts-s112.png"
+      }
+    },
+    "bg/arena-meadow": {
+      "file": "assets/bg/arena-meadow.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 76732,
+      "sha256": "34d843eaec28e94af722bfe12e1bb33c6de0b85a986e74e1a8e334c251958c79",
+      "source": {
+        "kind": "image",
+        "model": null,
+        "seed": null,
+        "prompt": null,
+        "raw": "assets/_src/arena-meadow-s201.png"
+      }
+    },
+    "bg/arena-candy": {
+      "file": "assets/bg/arena-candy.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 66766,
+      "sha256": "eeb8d48787109db752ef481667cf7242799249a5833fc4152601ca663610a47b",
+      "source": {
+        "kind": "image",
+        "model": null,
+        "seed": null,
+        "prompt": null,
+        "raw": "assets/_src/arena-candy-s202.png"
+      }
+    },
+    "bg/arena-lava": {
+      "file": "assets/bg/arena-lava.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 723,
+      "aspect": 1.7704,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 116780,
+      "sha256": "e924fe8b4b0c50f0fe3dcc9aa3b39d56119b0fcc1f982dcbb33759a47f538438",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 203,
+        "prompt": "Strict straight-down top view of a game arena floor for a cute cartoon kart-battle web game, seen from directly above with zero perspective distortion, filling the entire 16:9 frame edge to edge. A cozy cartoon lava-lamp lair: deep plum and violet rounded stone tiles in a checkerboard, glowing orange lava seams and a few small round bubbling lava pools, warm amber rim highlight, thick dark plum rounded wall frame with chunky rock bumps. The central fighting area stays clean and readable with only faint tire scuff marks. Warm orange ambient glow from below, gentle vignette at the corners, no harsh shadows, no objects standing in the arena, no vehicles, no characters. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, not scary, no text, no watermark, no logos.",
+        "raw": "assets/_src/arena-lava-s203.png"
+      }
+    },
+    "karts/cherry": {
+      "file": "assets/karts/cherry.webp",
+      "group": "karts",
+      "w": 233,
+      "h": 132,
+      "aspect": 1.7652,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 12310,
+      "sha256": "1d8f3daf2b3fc3d073e4919eaf32d3aa8fda73a3caee6a06beed2a47c80752ee",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 212,
+        "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded cherry-pink body with a deep raspberry shadow panel and a white racing stripe, an angular rear spoiler, a stubby front ram bumper and a tiny flame decal. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+        "raw": "assets/_src/kart-cherry-s212.png"
+      }
+    },
+    "karts/blu": {
+      "file": "assets/karts/blu.webp",
+      "group": "karts",
+      "w": 226,
+      "h": 132,
+      "aspect": 1.7121,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 13116,
+      "sha256": "40eab2944377f5344173b4ba96d58674d69ee32b639972c4db4f821500427e8f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 213,
+        "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded sky-blue body with a deep navy shadow panel and a white racing stripe, a smooth rounded rear spoiler and a pair of round goggles resting behind the cockpit. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+        "raw": "assets/_src/kart-blu-s213.png"
+      }
+    },
+    "karts/sunny": {
+      "file": "assets/karts/sunny.webp",
+      "group": "karts",
+      "w": 181,
+      "h": 132,
+      "aspect": 1.3712,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 10878,
+      "sha256": "1a67728a5930d99df7e93ee411b54a2a480f15f2eeb5d409b9b1c84725806f0d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 214,
+        "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded sunny-yellow body with a warm orange shadow panel and a black racing stripe, a wide sturdy front bumper, a boxy rear spoiler and a tiny star antenna. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+        "raw": "assets/_src/kart-sunny-s214.png"
+      }
+    },
+    "karts/grape": {
+      "file": "assets/karts/grape.webp",
+      "group": "karts",
+      "w": 211,
+      "h": 132,
+      "aspect": 1.5985,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 10134,
+      "sha256": "b43fad45b6ba736361fed11686592290540730e33d521a7a8614f38b1e642684",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 215,
+        "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded grape-purple body with a deep indigo shadow panel and a mint racing stripe, a low sleepy rounded rear spoiler and a soft front bumper. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+        "raw": "assets/_src/kart-grape-s215.png"
+      }
+    },
+    "sprites/mushroom": {
+      "file": "assets/sprites/mushroom.webp",
+      "group": "sprites",
+      "w": 97,
+      "h": 96,
+      "aspect": 1.0104,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 3812,
+      "sha256": "ac56447ed03280b77b9ff54fc4a76ff903328ed52162e9993202ecb43431bc71",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 221,
+        "prompt": "Strict straight-down top view (bird's eye, perfectly orthographic, zero perspective) of one chunky cartoon mushroom bumper obstacle for a top-down cute kart-battle game: bright pink rounded cap filling the frame with big cream polka dots and a soft glossy highlight, a sliver of cream stem visible around the edge, chunky toy proportions. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no ground shadow.",
+        "raw": "assets/_src/decor-mushroom-s221.png"
+      }
+    },
+    "sprites/gumdrop": {
+      "file": "assets/sprites/gumdrop.webp",
+      "group": "sprites",
+      "w": 89,
+      "h": 88,
+      "aspect": 1.0114,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 4854,
+      "sha256": "ff54639389089755855012eefb7052083a5ce1fcb07dabe078c1fcf49c1e0317",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 222,
+        "prompt": "Strict straight-down top view (bird's eye, perfectly orthographic, zero perspective) of one chunky glossy cartoon gumdrop candy obstacle for a top-down cute kart-battle game: translucent mint and lemon jelly dome with sugar crystal speckles and a bright specular highlight, chunky toy proportions, squishy and bouncy looking. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no ground shadow.",
+        "raw": "assets/_src/decor-gumdrop-s222.png"
+      }
+    },
+    "sprites/pickup-crate": {
+      "file": "assets/sprites/pickup-crate.webp",
+      "group": "sprites",
+      "w": 76,
+      "h": 74,
+      "aspect": 1.027,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 3556,
+      "sha256": "13eed43e27d2db42bfd83ba50bd5d4c5af8098ff09b1b6152c0262ad3fc019b2",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 223,
+        "prompt": "Strict straight-down top view (bird's eye, perfectly orthographic, zero perspective) of one cute cartoon weapon crate pickup for a top-down kart-battle game: a chunky rounded toffee-brown wooden crate with cream corner brackets, a big glowing golden-yellow star emblem painted on its lid and a warm inner glow escaping the lid seams, toy-like proportions. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no ground shadow.",
+        "raw": "assets/_src/pickup-crate-s223.png"
+      }
+    },
+    "keyart/keyart-keyart-smash": {
+      "file": "assets/keyart/keyart-keyart-smash.webp",
+      "group": "keyart",
+      "w": 1920,
+      "h": 1084,
+      "aspect": 1.7712,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 235502,
+      "sha256": "74297e2aa2616d57aece86b49ff227b6ac2d24f7953da813895f928c0ecf9b74",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 231,
+        "prompt": "Key art poster illustration for a cute cartoon kart-battle video game. Five adorable toy-like battle karts with big cartoon eyes and expressive faces race toward the viewer through a bright candy-colored meadow arena with pink mushroom bumpers and a glowing golden weapon crate, each kart a different candy color: mint green, cherry pink, sky blue, sunny yellow and grape purple. The mint-green kart in the foreground has huge sparkling happy eyes and a wide open grin while firing a tiny cartoon rocket, a pink kart behind it has angry eyebrows and a puff of smoke, wheels kicking up cartoon dust puffs and speed lines. Bright sunny midday sky with puffy clouds and confetti sparks, dynamic low camera angle with foreshortening, chunky rounded toy-like 3D cartoon render with clean soft shading, bold saturated candy colors, cheerful energetic and adorable mood, safe for kids. No text, no watermark, no logos.",
+        "raw": "assets/_src/keyart-smash-s231.png"
+      }
+    },
+    "keyart/icon-art": {
+      "file": "assets/keyart/icon-art.webp",
+      "group": "keyart",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 49192,
+      "sha256": "a552f92eca8883caeb94acc799bc75b2129d892e93671c66108ff8cd0f822243",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 241,
+        "prompt": "Mobile app icon illustration for a cute cartoon kart battle game: a big close-up of one adorable mint-green battle kart character with an enormous happy grin, huge sparkling cartoon eyes and rosy blushing cheeks, the kart filling most of the frame and facing the viewer at a slight three-quarter angle, thick clean dark outlines, glossy toy-like 3D cartoon render with chunky rounded shapes, vivid candy colors, simple bright sunshine-yellow radial gradient background with a few tiny confetti sparkles, bold and instantly readable at small icon sizes, centered composition, no text, no watermark, no logos.",
+        "raw": "assets/_src/icon-art-s241.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T12:30:15+00:00"
+}

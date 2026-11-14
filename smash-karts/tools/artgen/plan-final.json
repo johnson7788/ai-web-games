@@ -1,0 +1,173 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 30
+  },
+  "items": [
+    {
+      "name": "arena-lava",
+      "kind": "image",
+      "seeds": [
+        203
+      ],
+      "size": [
+        1536,
+        864
+      ],
+      "prompt": "Strict straight-down top view of a game arena floor for a cute cartoon kart-battle web game, seen from directly above with zero perspective distortion, filling the entire 16:9 frame edge to edge. A cozy cartoon lava-lamp lair: deep plum and violet rounded stone tiles in a checkerboard, glowing orange lava seams and a few small round bubbling lava pools, warm amber rim highlight, thick dark plum rounded wall frame with chunky rock bumps. The central fighting area stays clean and readable with only faint tire scuff marks. Warm orange ambient glow from below, gentle vignette at the corners, no harsh shadows, no objects standing in the arena, no vehicles, no characters. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, not scary, no text, no watermark, no logos.",
+      "prep": {
+        "out": "assets/bg/arena-lava.webp",
+        "cutout": false,
+        "width": 1280
+      }
+    },
+    {
+      "name": "kart-cherry",
+      "kind": "image",
+      "seeds": [
+        212
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded cherry-pink body with a deep raspberry shadow panel and a white racing stripe, an angular rear spoiler, a stubby front ram bumper and a tiny flame decal. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+      "prep": {
+        "out": "assets/karts/cherry.webp",
+        "cutout": true,
+        "height": 132,
+        "pivot": "center"
+      }
+    },
+    {
+      "name": "kart-blu",
+      "kind": "image",
+      "seeds": [
+        213
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded sky-blue body with a deep navy shadow panel and a white racing stripe, a smooth rounded rear spoiler and a pair of round goggles resting behind the cockpit. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+      "prep": {
+        "out": "assets/karts/blu.webp",
+        "cutout": true,
+        "height": 132,
+        "pivot": "center"
+      }
+    },
+    {
+      "name": "kart-sunny",
+      "kind": "image",
+      "seeds": [
+        214
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded sunny-yellow body with a warm orange shadow panel and a black racing stripe, a wide sturdy front bumper, a boxy rear spoiler and a tiny star antenna. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+      "prep": {
+        "out": "assets/karts/sunny.webp",
+        "cutout": true,
+        "height": 132,
+        "pivot": "center"
+      }
+    },
+    {
+      "name": "kart-grape",
+      "kind": "image",
+      "seeds": [
+        215
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points straight down toward the bottom of the frame. Chunky rounded grape-purple body with a deep indigo shadow panel and a mint racing stripe, a low sleepy rounded rear spoiler and a soft front bumper. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+      "prep": {
+        "out": "assets/karts/grape.webp",
+        "cutout": true,
+        "height": 132,
+        "pivot": "center"
+      }
+    },
+    {
+      "name": "decor-mushroom",
+      "kind": "image",
+      "seeds": [
+        221
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, perfectly orthographic, zero perspective) of one chunky cartoon mushroom bumper obstacle for a top-down cute kart-battle game: bright pink rounded cap filling the frame with big cream polka dots and a soft glossy highlight, a sliver of cream stem visible around the edge, chunky toy proportions. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no ground shadow.",
+      "prep": {
+        "out": "assets/sprites/mushroom.webp",
+        "cutout": true,
+        "height": 96,
+        "pivot": "center"
+      }
+    },
+    {
+      "name": "decor-gumdrop",
+      "kind": "image",
+      "seeds": [
+        222
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, perfectly orthographic, zero perspective) of one chunky glossy cartoon gumdrop candy obstacle for a top-down cute kart-battle game: translucent mint and lemon jelly dome with sugar crystal speckles and a bright specular highlight, chunky toy proportions, squishy and bouncy looking. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no ground shadow.",
+      "prep": {
+        "out": "assets/sprites/gumdrop.webp",
+        "cutout": true,
+        "height": 88,
+        "pivot": "center"
+      }
+    },
+    {
+      "name": "pickup-crate",
+      "kind": "image",
+      "seeds": [
+        223
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, perfectly orthographic, zero perspective) of one cute cartoon weapon crate pickup for a top-down kart-battle game: a chunky rounded toffee-brown wooden crate with cream corner brackets, a big glowing golden-yellow star emblem painted on its lid and a warm inner glow escaping the lid seams, toy-like proportions. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no ground shadow.",
+      "prep": {
+        "out": "assets/sprites/pickup-crate.webp",
+        "cutout": true,
+        "height": 74,
+        "pivot": "center"
+      }
+    },
+    {
+      "name": "keyart-smash",
+      "kind": "image",
+      "seeds": [
+        231
+      ],
+      "size": [
+        1536,
+        864
+      ],
+      "prompt": "Key art poster illustration for a cute cartoon kart-battle video game. Five adorable toy-like battle karts with big cartoon eyes and expressive faces race toward the viewer through a bright candy-colored meadow arena with pink mushroom bumpers and a glowing golden weapon crate, each kart a different candy color: mint green, cherry pink, sky blue, sunny yellow and grape purple. The mint-green kart in the foreground has huge sparkling happy eyes and a wide open grin while firing a tiny cartoon rocket, a pink kart behind it has angry eyebrows and a puff of smoke, wheels kicking up cartoon dust puffs and speed lines. Bright sunny midday sky with puffy clouds and confetti sparks, dynamic low camera angle with foreshortening, chunky rounded toy-like 3D cartoon render with clean soft shading, bold saturated candy colors, cheerful energetic and adorable mood, safe for kids. No text, no watermark, no logos.",
+      "prep": {
+        "out": "assets/keyart/keyart-keyart-smash.webp",
+        "cutout": false,
+        "width": 1920
+      }
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "generatedBy": "tools/prep-assets.py",
+  "model": "dashscope/qwen-image-3.0",
+  "assets": {
+    "bg_wind.jpg": {
+      "w": 720,
+      "h": 1280,
+      "bytes": 139801,
+      "promptKey": "bg_wind",
+      "prompt": "东方神话游戏背景，竖版。暴风将至的云海，灰蓝暗青色调，远处层叠山峦剪影，天边几道微弱闪电，云雾翻涌充满整个画面，画面完整无任何分隔线或色块。中国神话厚涂风格，粗犷笔触，电影级光影，无文字，无人物，无树",
+      "source": "ai-generated"
+    },
+    "bg_fire.jpg": {
+      "w": 720,
+      "h": 1280,
+      "bytes": 150200,
+      "promptKey": "bg_fire",
+      "prompt": "东方神话游戏背景，竖版。赤红熔岩色的天幕，火山灰云翻滚充满整个画面，金色火星飞舞，远处焦黑山峦剪影，画面完整无任何分隔线或色块。中国神话厚涂风格，粗犷笔触，压迫感，无文字，无人物，无树",
+      "source": "ai-generated"
+    },
+    "bg_thunder.jpg": {
+      "w": 720,
+      "h": 1280,
+      "bytes": 144968,
+      "promptKey": "bg_thunder",
+      "prompt": "东方神话游戏背景，竖版。紫黑色雷暴天幕，密集闪电劈开云层，紫金色电光，远处山峦剪影，云海翻涌充满整个画面，画面完整无任何分隔线或色块。中国神话厚涂风格，粗犷笔触，末日感，无文字，无人物，无树",
+      "source": "ai-generated"
+    },
+    "log.webp": {
+      "w": 760,
+      "h": 251,
+      "bytes": 75644,
+      "promptKey": "log_wide",
+      "note": "去底裁切·含锯切面",
+      "prompt": "游戏素材，单体物件，横向长条形：一段被斧头砍断的圆木横放在画面中，宽高比约2.4比1，上方能看到椭圆形年轮切面，正面是粗糙树皮，树皮上刻着金色古文字符文，两端有焦黑砍痕。正视略带俯角，物件左右占满画面，纯白色背景，无投影，厚涂质感，无文字标题",
+      "source": "ai-generated"
+    },
+    "log_body.webp": {
+      "w": 760,
+      "h": 285,
+      "bytes": 77970,
+      "promptKey": "bark_strip",
+      "note": "专属树皮带·竖向拼接",
+      "prompt": "游戏贴图，横向长条树皮纹理，宽高比 2.5比1：一株通天古树的树皮表面，深深的纵向裂纹，褐色与焦黑色调，表面刻着金色的甲骨文符文，上下边缘收口自然可以竖向拼接，树皮占满整个画面，纯白色背景，厚涂质感，无文字标题，无边框",
+      "source": "ai-generated"
+    },
+    "trunk.webp": {
+      "w": 440,
+      "h": 1100,
+      "bytes": 117844,
+      "promptKey": "trunk_tall",
+      "note": "竖版整根树干·去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "rune.jpg": {
+      "w": 512,
+      "h": 512,
+      "bytes": 51971,
+      "promptKey": "brand_rune",
+      "prompt": "",
+      "source": "ai-generated",
+      "note": "黑底·加色混合"
+    },
+    "panel.webp": {
+      "w": 556,
+      "h": 768,
+      "bytes": 59306,
+      "promptKey": "ui_panel",
+      "note": "去底·九宫格",
+      "prompt": "东方神话游戏UI素材，一张竖向深色玉牌面板，深墨绿玉质，边缘包金，四角有青铜钉，边框刻云雷纹，表面有细微裂纹。正面平视，纯白色背景，居中，无文字，无投影",
+      "source": "ai-generated"
+    },
+    "hero_red_idle.webp": {
+      "w": 154,
+      "h": 352,
+      "bytes": 17754,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "hero_red_raise.webp": {
+      "w": 162,
+      "h": 380,
+      "bytes": 26980,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "hero_red_strike.webp": {
+      "w": 184,
+      "h": 341,
+      "bytes": 21122,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "hero_red_dead.webp": {
+      "w": 183,
+      "h": 317,
+      "bytes": 20118,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "hero_blue_idle.webp": {
+      "w": 152,
+      "h": 341,
+      "bytes": 18570,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "hero_blue_raise.webp": {
+      "w": 150,
+      "h": 380,
+      "bytes": 29364,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "hero_blue_strike.webp": {
+      "w": 176,
+      "h": 338,
+      "bytes": 21970,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    },
+    "hero_blue_dead.webp": {
+      "w": 194,
+      "h": 333,
+      "bytes": 22266,
+      "promptKey": null,
+      "note": "生成角色图集切分 + 去底",
+      "prompt": "",
+      "source": "ai-generated"
+    }
+  },
+  "totalBytes": 995848
+}

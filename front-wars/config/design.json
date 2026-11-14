@@ -1,0 +1,65 @@
+{
+  "slug": "front-wars",
+  "genre": "action",
+  "oneLiner": "4v4 俯视角竞技场射击：选兵种、用冲刺和掩体推进，先拿 15 杀并赢下三回合。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "离开掩体会暴露在交叉火力里",
+      "feedback": ["脚步声", "移动轨迹", "受击方向"],
+      "combinesWith": ["dash", "shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "开火会暴露位置，射击间隔不能取消",
+      "feedback": ["枪口火光", "弹道", "命中标记"],
+      "combinesWith": ["dash", "move"]
+    },
+    {
+      "name": "dash",
+      "cost": "2.6 秒冷却，冲刺时不射击",
+      "feedback": ["残影", "音效", "方向位移"],
+      "combinesWith": ["shoot", "move"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "选步枪兵、侦察兵还是重装兵", "cost": "放弃另外两个兵种的速度/血量/伤害" },
+    { "atSec": 12, "choice": "走左路、中路还是右路推进", "cost": "不同掩体与交叉火力" },
+    { "atSec": 25, "choice": "抢中央过载核心，还是守住当前掩体", "cost": "离开掩体、暴露 2 秒" },
+    { "atSec": 40, "choice": "用冲刺躲子弹，还是留着过墙", "cost": "冷却 2.6 秒，期间不能射击" },
+    { "atSec": 60, "choice": "先打残血侦察兵，还是压重装兵", "cost": "目标选择决定队伍火力去向" },
+    { "atSec": 85, "choice": "回合间三选一强化", "cost": "放弃另外两个 build" },
+    { "atSec": 130, "choice": "第二个强化：继续输出还是保命", "cost": "放弃另一条路线" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "DEPOT：步枪兵 bot + 基础掩体" },
+    { "index": 2, "newElement": "CROSSING：侦察兵与重装兵混编" },
+    { "index": 3, "newElement": "FOUNDRY：双重重装 + 加时赛点" }
+  ],
+  "upgrades": [
+    { "id": "rapid", "kind": "rule" },
+    { "id": "armor", "kind": "stat" },
+    { "id": "speed", "kind": "stat" },
+    { "id": "pierce", "kind": "rule" },
+    { "id": "medic", "kind": "rule" },
+    { "id": "leader", "kind": "stat" },
+    { "id": "respawn", "kind": "stat" },
+    { "id": "overcharge", "kind": "rule" }
+  ],
+  "replayHooks": ["nearMiss", "newBuild", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

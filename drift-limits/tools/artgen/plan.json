@@ -1,0 +1,66 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      2048,
+      2048
+    ]
+  },
+  "items": [
+    {
+      "name": "sky-night",
+      "kind": "image",
+      "size": [
+        2048,
+        1024
+      ],
+      "seeds": [
+        41
+      ],
+      "prompt": "Equirectangular 360 degree panoramic night sky texture for a 3D racing game skybox, seamless horizontal wrap, dark indigo night atmosphere over a neon megacity horizon, scattered stylized skyscraper silhouettes with tiny warm and cyan window lights along the lower third, soft magenta and cyan neon glow bleeding into low clouds, a few stars and a thin crescent moon high in the sky, subtle horizontal banding free gradient, painterly stylized game art, high detail, no text, no watermark, no cars, no road, uniform exposure suitable for image based lighting",
+      "prep": {
+        "out": "assets/sky-night.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "model": "qwen-image-xl"
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "size": [
+        2048,
+        1152
+      ],
+      "seeds": [
+        77
+      ],
+      "prompt": "Stylized 3D game key art, wide cinematic composition: a cyan neon-lit hypercar drifting sideways through a rain-slick night city intersection, thick white tire smoke curling behind the rear wheels, glowing cyan underglow and light trails, two white police interceptors with flashing red and blue light bars chasing close behind in the background, wet asphalt reflecting magenta and cyan neon signs, skyscrapers with lit windows, dramatic low camera angle, motion blur on wheels only, crisp car body, vibrant saturated arcade racing aesthetic, high detail PBR materials, no text, no watermark, no logo",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 1920
+      },
+      "model": "qwen-image-xl"
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "size": [
+        2048,
+        2048
+      ],
+      "seeds": [
+        9
+      ],
+      "prompt": "Square mobile game app icon artwork, centered composition: rear three-quarter view of a stylized cyan hypercar drifting with a bold magenta neon light trail sweeping behind it, two tiny red and blue police light dots far behind, dark indigo night background with subtle city glow at the bottom edge, strong silhouette readable at 64 pixels, flat stylized 3D render, clean edges, vibrant contrast, no text, no watermark, no border",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "model": "qwen-image-xl"
+    }
+  ]
+}

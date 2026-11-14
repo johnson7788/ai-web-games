@@ -1,0 +1,266 @@
+{
+  "viewport": [
+    1280,
+    720
+  ],
+  "steps": [
+    {
+      "wait": 900
+    },
+    {
+      "screenshot": "01-title.png"
+    },
+    {
+      "assert": "window.__ll.state.phase === 'title'",
+      "name": "标题屏"
+    },
+    {
+      "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'",
+      "name": "默认英文/LTR"
+    },
+    {
+      "assertVisible": "#btn-start"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "assert": "document.documentElement.lang === 'zh'",
+      "name": "切中文"
+    },
+    {
+      "screenshot": "01b-title-zh.png"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "document.documentElement.lang === 'en'",
+      "name": "切回英文"
+    },
+    {
+      "eval": "window.__ll.save('tutorialDone', true)"
+    },
+    {
+      "eval": "window.__ll.start()"
+    },
+    {
+      "waitFor": "window.__ll.state.phase === 'playing'",
+      "timeout": 8000
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "进入比赛"
+    },
+    {
+      "assert": "window.__ll.sim.karts.length === 5",
+      "name": "5 台车"
+    },
+    {
+      "assert": "window.__ll.sim.roundIndex === 0",
+      "name": "第 1 局 meadow"
+    },
+    {
+      "assertVisible": "#hud"
+    },
+    {
+      "assertVisible": "#hp-fill"
+    },
+    {
+      "assert": "!!document.getElementById('boost-fill')",
+      "name": "加速条存在"
+    },
+    {
+      "assertVisible": "#scoreboard"
+    },
+    {
+      "screenshot": "02-playing.png"
+    },
+    {
+      "eval": "window.__ll.debug.setKills(3)"
+    },
+    {
+      "eval": "window.dispatchEvent(new KeyboardEvent('keydown',{code:'KeyW'}))"
+    },
+    {
+      "wait": 700
+    },
+    {
+      "eval": "window.dispatchEvent(new KeyboardEvent('keyup',{code:'KeyW'}))",
+      "name": "松键"
+    },
+    {
+      "assert": "window.__ll.sim.karts[0].speed > 20",
+      "name": "开车有速度"
+    },
+    {
+      "eval": "window.__ll.debug.forceBoost()"
+    },
+    {
+      "assert": "window.__ll.sim.karts[0].boost === 1",
+      "name": "加速条可填满"
+    },
+    {
+      "eval": "window.__ll.pause()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "window.__ll.state.phase === 'paused'",
+      "name": "暂停"
+    },
+    {
+      "assertVisible": "#screen-pause"
+    },
+    {
+      "eval": "window.__ll.resume()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "恢复"
+    },
+    {
+      "eval": "window.__ll.debug.winRound()"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "assert": "window.__ll.state.phase === 'roundEnd'",
+      "name": "局间结算"
+    },
+    {
+      "assert": "document.querySelectorAll('.upgrade-card').length === 3",
+      "name": "三选一升级"
+    },
+    {
+      "screenshot": "03-round1.png"
+    },
+    {
+      "eval": "document.querySelector('.upgrade-card').click()"
+    },
+    {
+      "waitFor": "window.__ll.state.phase === 'playing'",
+      "timeout": 8000
+    },
+    {
+      "assert": "window.__ll.sim.roundIndex === 1",
+      "name": "进入第 2 局"
+    },
+    {
+      "assert": "window.__ll.sim.upgrades.length === 1",
+      "name": "升级已生效"
+    },
+    {
+      "screenshot": "04-arena2.png"
+    },
+    {
+      "eval": "window.__ll.debug.winRound()"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "assert": "document.querySelectorAll('.upgrade-card').length === 3",
+      "name": "第二次三选一"
+    },
+    {
+      "eval": "document.querySelector('.upgrade-card').click()"
+    },
+    {
+      "waitFor": "window.__ll.state.phase === 'playing'",
+      "timeout": 8000
+    },
+    {
+      "assert": "window.__ll.sim.roundIndex === 2",
+      "name": "进入第 3 局"
+    },
+    {
+      "assert": "window.__ll.sim.karts.some(function(k){return !!k.isChampion;})",
+      "name": "冠军车出场"
+    },
+    {
+      "screenshot": "05-arena3.png"
+    },
+    {
+      "eval": "window.__ll.debug.winRound()"
+    },
+    {
+      "waitFor": "window.__ll.state.phase === 'matchOver'",
+      "timeout": 8000
+    },
+    {
+      "assert": "window.__ll.state.phase === 'matchOver'",
+      "name": "比赛结束"
+    },
+    {
+      "assertVisible": "#screen-end"
+    },
+    {
+      "assert": "!!document.querySelector('#rank-badge').textContent.trim()",
+      "name": "有评级徽章"
+    },
+    {
+      "screenshot": "06-end.png"
+    },
+    {
+      "eval": "window.__ll.restart()"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "assert": "window.__ll.state.phase === 'title'",
+      "name": "重启回标题"
+    },
+    {
+      "setViewport": {
+        "w": 844,
+        "h": 390
+      }
+    },
+    {
+      "wait": 400
+    },
+    {
+      "screenshot": "07-mobile-title.png"
+    },
+    {
+      "eval": "window.__ll.start()"
+    },
+    {
+      "waitFor": "window.__ll.state.phase === 'playing'",
+      "timeout": 8000
+    },
+    {
+      "wait": 900
+    },
+    {
+      "screenshot": "08-mobile-playing.png"
+    },
+    {
+      "assert": "window.__ll.debug.layout().hud.width <= 844",
+      "name": "移动端 HUD 不超宽"
+    }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.save('tutorialDone',true);window.__ll.start()"
+  }
+}

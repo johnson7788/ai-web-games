@@ -1,0 +1,145 @@
+{
+  "viewport": [
+    1280,
+    720
+  ],
+  "steps": [
+    {
+      "wait": 800
+    },
+    {
+      "screenshot": "01-title.png"
+    },
+    {
+      "assert": "window.__ll.state.phase === 'title'",
+      "name": "\u6807\u9898\u5c4f"
+    },
+    {
+      "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'",
+      "name": "\u9ed8\u8ba4\u82f1\u6587/LTR"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 200
+    },
+    {
+      "assert": "document.documentElement.lang === 'zh'",
+      "name": "\u5207\u4e2d\u6587"
+    },
+    {
+      "screenshot": "01b-title-zh.png"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 200
+    },
+    {
+      "assert": "window.__ll.state.lang === 'en'",
+      "name": "\u5207\u56de\u82f1\u6587"
+    },
+    {
+      "eval": "window.__ll.start()"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "eval": "window.__ll.tutorial.skip()"
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "\u8fdb\u5165\u6e38\u620f"
+    },
+    {
+      "screenshot": "02-lights.png"
+    },
+    {
+      "wait": 3200
+    },
+    {
+      "assert": "window.__ll.state.simPhase === 'race'",
+      "name": "\u7eff\u706f\u8d77\u6b65\u8fdb\u5165\u6bd4\u8d5b"
+    },
+    {
+      "eval": "window.__AUTO = {steer:0.4, drift:true, nitro:false, brake:false, launch:false}"
+    },
+    {
+      "wait": 1500
+    },
+    {
+      "screenshot": "03-drift.png"
+    },
+    {
+      "eval": "window.__AUTO = {steer:0, drift:false, nitro:true, brake:false, launch:false}"
+    },
+    {
+      "wait": 800
+    },
+    {
+      "screenshot": "04-boost.png"
+    },
+    {
+      "eval": "window.__AUTO = null"
+    },
+    {
+      "eval": "window.__ll.pause()"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "assert": "window.__ll.state.phase === 'paused'",
+      "name": "\u6682\u505c"
+    },
+    {
+      "screenshot": "05-pause.png"
+    },
+    {
+      "eval": "window.__ll.resume()"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "\u6062\u590d"
+    },
+    {
+      "eval": "window.__ll.run.player.s = window.__ll.run.track.length * 3 - 2; window.__ll.run.player.speed = 60"
+    },
+    {
+      "wait": 700
+    },
+    {
+      "assert": "window.__ll.state.phase === 'results'",
+      "name": "\u51b2\u7ebf\u7ed3\u7b97"
+    },
+    {
+      "screenshot": "06-results.png"
+    },
+    {
+      "eval": "window.__ll.restart()"
+    },
+    {
+      "wait": 500
+    },
+    {
+      "assert": "window.__ll.state.phase === 'title'",
+      "name": "restart \u56de\u6807\u9898"
+    }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  }
+}

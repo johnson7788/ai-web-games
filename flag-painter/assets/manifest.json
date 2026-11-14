@@ -1,0 +1,77 @@
+{
+  "assets": {
+    "bg/classroom": {
+      "file": "assets/bg/classroom.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 66502,
+      "sha256": "e42966f2ec616ecaa36e6a6f87792d3889441ef006585298124f8bfa767e1966",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 401,
+        "prompt": "A cozy nighttime geography classroom background plate for a flag-painting quiz web game, rendered in polished stylized 3D cartoon style in a wide 16:9 composition. The room is bathed in deep navy blue tones: base walls in near-black blue (#0e1420) with a soft ambient glow of muted slate blue (#1a2436) pooling gently behind the central display area, exactly matching the game's night-classroom palette. Around the edges of the frame sit charming stylized classroom props: a large vintage world map poster with softly rounded stylized continents in muted teal and sand tones on the far left wall, a wooden globe on a small cabinet in one corner, a bookshelf with rounded atlases and a small potted plant on the far right, and a warm desk lamp casting a gentle amber (#fbbf24) pool of light near the edge. The large left-center region and the right-center region stay deliberately calm, dark and uncluttered because the flag painting canvas and the answer color panel are drawn on top at runtime; no props, no bright highlights, no map details and no busy patterns may intrude into those areas. A faint soft vignette darkens the corners, and a very subtle sky-blue (#60a5fa) accent glow traces the edge of the map poster. Lighting is soft, warm and diffuse with a single gentle lamp key light, materials read as matte painted wood, soft paper and ceramic, the mood is studious, calm and inviting, like a quiet classroom after hours. No characters, no real national flags anywhere, no text, no numbers, no watermark, no UI elements.",
+        "raw": "assets/_src/bg-classroom-s401.png"
+      }
+    },
+    "sprites/flagpole": {
+      "file": "assets/sprites/flagpole.webp",
+      "group": "sprites",
+      "w": 60,
+      "h": 420,
+      "aspect": 0.1429,
+      "pivot": "bottom",
+      "alpha": true,
+      "bytes": 7206,
+      "sha256": "c6541d2cf8a88daa6fd16a371e729ea9bea195f6fbeb62ece26743d15ec092d4",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 402,
+        "prompt": "A charming ceremonial flagpole designed as a decorative side sprite for a flag-painting quiz game, rendered in polished stylized 3D cartoon style and viewed perfectly straight on with zero perspective tilt. The pole is a tall slender rounded column in warm brushed brass with soft golden highlights (#fbbf24) and deeper bronze shadow grooves, topped with a friendly rounded spear-point finial and a small decorative ball collar, and standing on a compact rounded stepped base in deep slate blue (#2c3e5f) with subtle navy recesses (#141e2e). A thin soft rope halyard runs down one side with two tiny cleat details, toy-like and elegant rather than realistic military hardware. No flag is attached: the pole stands completely bare so the game can draw its own procedural flag bands beside it at runtime, and no flag-shaped geometry, fabric or banner may appear anywhere in the image. Lighting is soft even studio illumination with a mild upper-left highlight along the brass column and gentle ambient occlusion at the base steps, no hard cast shadow. Materials read as satin painted metal and matte stone, consistent with the deep navy night-classroom palette with warm gold accents. The silhouette is tall and narrow, roughly one to four width-to-height ratio, instantly readable at about 420 pixels tall in game, with crisp clean edges suitable for background removal. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/sprite-flagpole-s402.png"
+      }
+    },
+    "sprites/frame-classroom": {
+      "file": "assets/sprites/frame-classroom.webp",
+      "group": "sprites",
+      "w": 602,
+      "h": 380,
+      "aspect": 1.5842,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 9292,
+      "sha256": "50f0dbaf7e7a6529978bbc6b894019ad477682c4220e14ffcec38d7377e40b1a",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 403,
+        "prompt": "An elegant classroom display frame designed as a decorative overlay sprite for a flag-painting quiz game, rendered in polished stylized 3D cartoon style and viewed perfectly straight on with zero perspective tilt. The frame is a wide rectangular border in a three-to-two landscape proportion, with softly rounded outer corners and a gentle stepped molding profile, finished in deep slate blue wood (#2c3e5f) with darker navy shadow recesses (#141e2e) and delicate warm gold (#fbbf24) pin-striping along the inner lip, plus a faint sky-blue (#60a5fa) sheen on the raised edges. Small charming details include tiny carved globe and compass-rosette motifs at the four corners, toy-like and scholarly rather than antique-heavy. The entire opening inside the frame is completely empty and shows the exact same plain neutral light-gray as the outer background, with no canvas, no flag, no artwork, no glass reflection and no inner shadow, so background removal can cleanly clear both the outside and the inside of the border; absolutely no flag bands or national symbols may appear. Lighting is soft even studio illumination with a mild upper-left highlight on the molding and gentle ambient occlusion in the grooves, no hard cast shadow. Materials read as matte painted wood with satin gold trim, consistent with the deep navy night-classroom palette. The border thickness is moderate so the frame reads clearly at about 380 pixels tall in game, with crisp clean edges suitable for cutout. centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/frame-classroom-s403.png"
+      }
+    },
+    "keyart/flag-painter": {
+      "file": "assets/keyart/flag-painter.webp",
+      "group": "keyart",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 49096,
+      "sha256": "f82087a4f62c8eb748193ea24f73bc759ad310f41ba328080ea0e651bdce4085",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 405,
+        "prompt": "Warm 16:9 key art for a flag-painting geography quiz web game set in a cozy nighttime classroom, rendered in polished stylized 3D cartoon style with soft rounded forms and a studious playful mood. The scene shows a charming wooden display easel at a gentle three-quarter angle holding a completely fictional abstract banner made of three broad horizontal color bands in vivid red (#ef4444), warm yellow (#fbbf24) and sky blue (#3b82f6), explicitly a made-up design that does not match any real national flag, with a cute rounded paintbrush resting against the easel dripping one glowing blue paint drop. Beside it stands a slender brass flagpole with a golden finial, and on a small stool sits a ceramic palette with glossy wells of red, orange, yellow, green, blue, black and white paint. The classroom around them is deep navy (#0e1420) with a soft slate-blue ambient glow (#1a2436), a vintage world map poster with stylized rounded continents on the back wall, a wooden globe, and a desk lamp casting a warm amber pool of light from the upper left with floating dust motes. Materials read as matte painted wood, ceramic, satin brass and glossy wet paint, lighting is soft and warm with a single lamp key light and subtle rim glow, the mood is curious, cozy and quietly celebratory. Composition keeps the upper area calm for layout breathing room, no characters, no real national flags, no text, no numbers, no logos, no watermark, no UI elements.",
+        "raw": "assets/_src/keyart-flag-painter-s405.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T10:38:18+00:00"
+}

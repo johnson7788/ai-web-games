@@ -15,3 +15,10 @@ stickman/tools/artgen/
 node_modules/
 __pycache__/
 *.py[cod]
+
+# AI 出图原始大图（运行时只用 assets/<group>/*.webp，原图不进库）
+*/assets/_src/
+# 批量接线/上传临时产物
+*/.integrate-status.json
+*/tools/integrate-brief.md
+*/tests/artifacts/

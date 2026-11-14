@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Seize the Log — trailer stage</title>
+<!--
+  只为录制宣传片用的 16:9 舞台：左边是标题与卖点，右边是真实游戏的 iframe。
+  这个文件随 tools/ 一起被排除在发布包之外，不影响线上游戏。
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1600px; height: 900px; overflow: hidden; background: #06050a; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    color: #f2e6cf;
+  }
+  #bg {
+    position: fixed; inset: 0;
+    background: url("../../poster.jpg") center/cover no-repeat;
+    filter: blur(6px) brightness(0.42) saturate(1.05);
+    transform: scale(1.06);
+  }
+  #veil {
+    position: fixed; inset: 0;
+    background: radial-gradient(60% 80% at 30% 50%, rgba(6,5,10,0.15), rgba(6,5,10,0.9) 78%);
+  }
+  .left {
+    position: fixed; left: 96px; top: 50%; transform: translateY(-50%);
+    width: 520px;
+  }
+  .kicker {
+    font-size: 17px; letter-spacing: 4px; color: #e8b44a; font-weight: 700; margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 76px; line-height: 0.94; letter-spacing: -1px;
+    color: #ffd98a; text-shadow: 0 6px 0 rgba(0,0,0,0.55), 0 0 40px rgba(232,180,74,0.35);
+  }
+  .sub { margin-top: 18px; font-size: 25px; color: #d9cbb2; }
+  ul { margin-top: 40px; list-style: none; }
+  li {
+    display: flex; align-items: baseline; gap: 14px;
+    font-size: 24px; color: #efe2c8; margin-bottom: 18px; line-height: 1.35;
+  }
+  li b { color: #ffd98a; font-weight: 800; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #e8b44a; flex: none; }
+  .frame {
+    position: fixed; left: 800px; top: 0; width: 506px; height: 900px;
+    border-left: 2px solid rgba(232,180,74,0.35);
+    border-right: 2px solid rgba(232,180,74,0.35);
+    box-shadow: 0 0 90px rgba(232,180,74,0.18), inset 0 0 60px rgba(0,0,0,0.6);
+    overflow: hidden; background: #000;
+  }
+  iframe { width: 506px; height: 900px; border: 0; display: block; }
+  .cap {
+    position: fixed; right: 60px; bottom: 46px; text-align: right;
+    font-size: 18px; color: rgba(230,214,186,0.55); letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+  <div id="bg"></div>
+  <div id="veil"></div>
+
+  <div class="left">
+    <div class="kicker">ARCADE · 2 PLAYER · BROWSER</div>
+    <h1>SEIZE<br/>THE LOG</h1>
+    <p class="sub">Two immortals. One world tree.<br/>Half a second of nerve.</p>
+    <ul>
+      <li><span class="dot"></span><span>Strike <b>blind</b> for <b>x3</b> — or lose a heart.</span></li>
+      <li><span class="dot"></span><span>First to strike a log gets <b>+1</b>.</span></li>
+      <li><span class="dot"></span><span>Double-brand logs: <b>hold still</b>.</span></li>
+    </ul>
+  </div>
+
+  <div class="frame"><iframe id="game" src="../../index.html?lang=en" title="Seize the Log"></iframe></div>
+  <div class="cap">pipygames.com</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>LEEK FACTORY</title>
+  <meta name="description" content="Run a leek production line. Upgrade the bottleneck, harvest by hand, and build a leek empire in this idle factory game.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-coins" class="hud-coins"></span>
+        <span id="hud-sold"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-mute" class="hud-btn" aria-label="Sound"></button>
+        <button id="btn-pause" class="hud-btn" aria-label="Pause">II</button>
+      </div>
+    </div>
+
+    <div id="panel" class="hidden">
+      <div id="panel-coins" class="panel-coins"></div>
+      <div id="panel-stats" class="panel-stats"></div>
+      <div class="panel-title">Upgrades</div>
+      <button id="btn-grow" class="up-btn"><span class="up-name"></span><span class="up-desc"></span><span class="up-cost"></span></button>
+      <button id="btn-process" class="up-btn"><span class="up-name"></span><span class="up-desc"></span><span class="up-cost"></span></button>
+      <button id="btn-pack" class="up-btn"><span class="up-name"></span><span class="up-desc"></span><span class="up-cost"></span></button>
+      <button id="btn-value" class="up-btn"><span class="up-name"></span><span class="up-desc"></span><span class="up-cost"></span></button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text"></h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="how-to" id="how-to"></p>
+      <button id="btn-start"></button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume"></button>
+      <button id="btn-reset" class="secondary"></button>
+      <button id="btn-title" class="secondary"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

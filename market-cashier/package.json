@@ -1,0 +1,12 @@
+{
+  "name": "market-cashier",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Market Cashier — a three-shift exact-change browser game.",
+  "scripts": {
+    "test": "node --test",
+    "autoplay": "node tools/autoplay.mjs",
+    "verify": "node ../../skills/webgame-playbook/scripts/verify-game.mjs --root . --plan tools/verify.plan.json --out tests/artifacts"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "passRMS": true,
+  "maxRMS": 0.08566992871091839,
+  "maxPeak": 0.24052947759628296,
+  "consoleErrors": [],
+  "failed": [],
+  "samples": 25,
+  "driveMs": 3000,
+  "audio": {
+    "ctxCreated": true,
+    "ctxState": "running",
+    "bgmKind": "file",
+    "muted": false
+  },
+  "bgm404": false
+}

@@ -1,0 +1,28 @@
+{
+  "page": "https://pipygames.com/games/front-wars-4v4-bot-arena-shooter-nljr",
+  "playUrl": "https://pipygames.com/g/g_1794651969571_rnnljr/index.html",
+  "checks": {
+    "desktop": {
+      "canvas": true,
+      "title": "FRONT WARS",
+      "raced": {
+        "state": "playing",
+        "speed": null,
+        "hud": true
+      },
+      "errors": []
+    },
+    "iphone": {
+      "canvas": true,
+      "rotate": "flex",
+      "touch": true,
+      "landscape": {
+        "rotate": "none",
+        "touch": true
+      },
+      "errors": []
+    }
+  },
+  "errors": [],
+  "ok": true
+}

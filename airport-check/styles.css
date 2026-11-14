@@ -1,0 +1,90 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  height: 100%;
+  background: #080d16;
+  color: #eef2ff;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body { display: flex; justify-content: center; align-items: center; }
+#game-container {
+  position: relative;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  aspect-ratio: 16 / 9;
+}
+canvas { width: 100%; height: 100%; display: block; background: #0d1420; border-radius: 12px; touch-action: none; }
+
+#hud {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 18px; z-index: 6; pointer-events: none; gap: 10px;
+}
+.hud-left { display: flex; align-items: baseline; gap: 16px; font-size: 16px; font-weight: 700; }
+.hud-shift { font-size: 19px; color: #60a5fa; }
+.hud-strikes { font-size: 18px; letter-spacing: 2px; }
+.hud-right { display: flex; gap: 8px; pointer-events: auto; }
+.hud-btn {
+  min-width: 46px; height: 44px; padding: 0 12px;
+  font-size: 16px; font-weight: 700; font-family: inherit;
+  color: #eef2ff; background: rgba(19,32,58,0.92);
+  border: 2px solid #2c4066; border-radius: 10px;
+  cursor: pointer; touch-action: manipulation;
+}
+.hud-btn:hover { border-color: #60a5fa; }
+
+#actions {
+  position: absolute; left: 50%; bottom: 3.5%; transform: translateX(-50%);
+  z-index: 6; display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.feedback { min-height: 1.4em; font-size: 18px; font-weight: 800; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+.feedback.good { color: #34d399; }
+.feedback.bad { color: #fb7185; }
+.action-row { display: flex; gap: 18px; }
+.act {
+  min-width: 180px; min-height: 58px; padding: 0 30px;
+  font-size: 22px; font-weight: 900; font-family: inherit; letter-spacing: 1px;
+  border-radius: 14px; cursor: pointer; touch-action: manipulation;
+  border: 3px solid; transition: transform 0.08s;
+}
+.act:active { transform: scale(0.96); }
+.act:disabled { opacity: 0.4; cursor: default; }
+.act.approve { color: #06210f; background: linear-gradient(#bbf7d0, #34d399); border-color: #166534; }
+.act.deny { color: #2a0710; background: linear-gradient(#fecdd3, #fb7185); border-color: #9f1239; }
+
+.screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: rgba(8,13,22,0.93); backdrop-filter: blur(3px);
+  z-index: 10; text-align: center; padding: 20px;
+}
+.hidden { display: none !important; }
+.screen h1 { font-size: clamp(32px, 5.5vw, 60px); letter-spacing: 3px; margin-bottom: 8px; color: #60a5fa; text-shadow: 0 0 24px rgba(96,165,250,0.5); }
+.screen h2 { font-size: clamp(26px, 4.5vw, 44px); margin-bottom: 14px; color: #60a5fa; }
+.screen .subtitle { font-size: 18px; opacity: 0.85; margin-bottom: 14px; letter-spacing: 1px; max-width: 640px; }
+.screen .how-to { font-size: 15px; opacity: 0.7; max-width: 600px; line-height: 1.5; margin-bottom: 26px; }
+.screen .best { margin-top: 18px; font-size: 16px; opacity: 0.85; color: #fbbf24; }
+.screen .over-score, .screen .clear-score { font-size: 24px; font-weight: 800; margin-bottom: 18px; }
+.screen button {
+  min-width: 200px; min-height: 54px; padding: 12px 36px;
+  font-size: 20px; font-weight: 800; font-family: inherit; letter-spacing: 1px;
+  color: #07101f; background: linear-gradient(#bfdbfe, #60a5fa);
+  border: 2px solid #1e40af; border-radius: 14px;
+  cursor: pointer; margin-top: 12px; touch-action: manipulation;
+  box-shadow: 0 6px 20px rgba(96,165,250,0.3);
+}
+.screen button:hover { filter: brightness(1.08); }
+.screen button.secondary { background: rgba(19,32,58,0.95); color: #eef2ff; border-color: #2c4066; font-size: 16px; min-height: 46px; box-shadow: none; }
+.lang-select {
+  position: absolute; top: 16px; right: 16px;
+  padding: 8px 12px; font-size: 15px; font-family: inherit;
+  background: #13203a; color: #eef2ff; border: 1px solid #60a5fa; border-radius: 8px; cursor: pointer;
+}
+@media (max-height: 460px) {
+  .act { min-width: 140px; min-height: 48px; font-size: 18px; }
+  .feedback { font-size: 15px; }
+  #actions { bottom: 2%; gap: 4px; }
+}

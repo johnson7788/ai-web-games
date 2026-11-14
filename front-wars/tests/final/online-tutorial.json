@@ -1,0 +1,31 @@
+{
+  "url": "https://pipygames.com/g/g_1794651969571_rnnljr/index.html",
+  "first": {
+    "active": true,
+    "steps": [
+      "move",
+      "aim",
+      "shoot",
+      "dash"
+    ]
+  },
+  "skip": {
+    "state": "loadout",
+    "hash": "#tutorialDone"
+  },
+  "loadout": {
+    "class": "scout"
+  },
+  "match": {
+    "state": "playing",
+    "round": 1,
+    "playerMoved": true,
+    "bullets": 20
+  },
+  "reload": {
+    "tutorialActive": false,
+    "state": "loadout"
+  },
+  "errors": [],
+  "pass": true
+}

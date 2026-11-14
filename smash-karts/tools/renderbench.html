@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMASH KARTS · M2 Render Bench</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #241b30; color: #fff6e5; font: 14px/1.4 "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",system-ui,sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+  header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; flex-wrap: wrap; justify-content: center; }
+  header h1 { font-size: 16px; margin: 0 8px 0 0; letter-spacing: 1px; }
+  button { font: inherit; background: #3b2a4a; color: #fff6e5; border: 2px solid #fff6e5; border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+  button.active { background: #ffd23f; color: #3b2a4a; border-color: #3b2a4a; }
+  #stats { font-variant-numeric: tabular-nums; opacity: 0.85; padding: 0 0 6px; }
+  canvas { width: min(96vw, 1280px); aspect-ratio: 16 / 9; background: #101820; border-radius: 12px; touch-action: none; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>SMASH KARTS · M2 RENDER BENCH</h1>
+    <button data-scene="bench" class="active">Faces</button>
+    <button data-scene="battle">Battle</button>
+    <button data-scene="ko">KO</button>
+    <button data-scene="arenas">Arenas</button>
+    <span id="stats">fps – · particles – · frame – ms</span>
+  </header>
+  <canvas id="c" width="1280" height="720"></canvas>
+  <script type="module">
+    import { createRenderer } from '../src/render/index.js';
+    import { createKartPainter } from '../src/render/karts.js';
+    import { createArenaPainter } from '../src/render/arena.js';
+    import { ARENAS, KARTS, EXPRESSIONS, WEAPONS } from '../config/game.config.js';
+
+    const KART_IDS = ['mint', 'cherry', 'blu', 'sunny', 'grape'];
+    const EXTRA_PATHS = [
+      'assets/icons/weapon-rapid.webp',
+      'assets/icons/weapon-shotgun.webp',
+      'assets/icons/weapon-rocket.webp',
+      'assets/bg/arena-floor.webp',
+      'assets/sprites/obstacle-crate.webp',
+      'assets/karts/mint.webp',
+      'assets/karts/rose.webp',
+      'assets/karts/blue.webp',
+      'assets/karts/amber.webp',
+      'assets/karts/violet.webp',
+    ];
+    const artMap = new Map();
+    function loadOne(path) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => { artMap.set(path, img); resolve(); };
+        img.onerror = () => resolve();
+        img.src = '../' + path;
+      });
+    }
+    // 只预加载仓库里真实存在的文件；config 指向的缺失贴图由渲染层降级链接管（不产生 404 噪音）。
+    await Promise.all(EXTRA_PATHS.map(loadOne));
+    const assets = { get: (p) => artMap.get(p) || null };
+
+    const canvas = document.getElementById('c');
+    const renderer = createRenderer(canvas, assets);
+    const kartP = createKartPainter(assets);
+    const arenaP = createArenaPainter(assets);
+    const INK = '#3b2a4a';
+    const CREAM = '#fff6e5';
+
+    let t = 0;
+    let last = performance.now();
+    let frameMs = 0;
+    let frames = 0;
+    let fps = 0;
+    let statClock = 0;
+    let sceneName = 'bench';
+
+    const params = new URLSearchParams(location.search);
+    const arenaIndex = Math.max(0, ARENAS.findIndex((a) => a.id === params.get('arena')));
+
+    function mockKart(kartId, id, over = {}) {
+      const cfg = KARTS[kartId];
+      return {
+        id, kartId, name: cfg.name, color: cfg.color,
+        isPlayer: kartId === 'mint', isChampion: false,
+        x: 640, y: 360, angle: 0, speed: 0,
+        hp: 100, maxHp: 100, shield: 0,
+        dead: false, respawn: 0, invuln: 0,
+        weapon: 'gun', ammo: Infinity, cooldown: 0,
+        boost: 0, boosting: false, boostTime: 0,
+        drift: { active: false, charge: 0 },
+        kills: 0, deaths: 0,
+        expression: 'idle', expressionT: 0,
+        hitFlash: 0, squash: 0,
+        ai: { mode: 'idle' }, mods: {},
+        ...over,
+      };
+    }
+
+    // ---- 场景 1：9 表情 × 5 台车静帧 bench ------------------------------------
+    function drawBench() {
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.fillStyle = CREAM;
+      ctx.fillRect(0, 0, 1280, 720);
+      ctx.fillStyle = INK;
+      ctx.font = '800 26px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('M2 RENDER BENCH', 28, 32);
+      ctx.font = '500 15px sans-serif';
+      ctx.globalAlpha = 0.7;
+      ctx.textAlign = 'right';
+      ctx.fillText(`${EXPRESSIONS.length} expressions × ${KART_IDS.length} karts · procedural faces`, 1252, 34);
+      ctx.globalAlpha = 1;
+      ctx.textAlign = 'center';
+
+      const x0 = 148;
+      const y0 = 78;
+      const cw = 122;
+      const ch = 120;
+      ctx.textAlign = 'center';
+      for (let c = 0; c < EXPRESSIONS.length; c += 1) {
+        ctx.fillStyle = INK;
+        ctx.font = '700 14px sans-serif';
+        ctx.fillText(EXPRESSIONS[c], x0 + c * cw + cw / 2, y0 - 16);
+      }
+      for (let r = 0; r < KART_IDS.length; r += 1) {
+        const kartId = KART_IDS[r];
+        const cfg = KARTS[kartId];
+        ctx.textAlign = 'right';
+        ctx.fillStyle = cfg.color;
+        ctx.beginPath();
+        ctx.arc(x0 - 58, y0 + r * ch + ch / 2 - 8, 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = INK;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.fillStyle = INK;
+        ctx.font = '700 14px sans-serif';
+        ctx.fillText(cfg.name, x0 - 74, y0 + r * ch + ch / 2 - 8);
+        for (let c = 0; c < EXPRESSIONS.length; c += 1) {
+          const k = mockKart(kartId, 1000 + r * 10 + c, {
+            x: x0 + c * cw + cw / 2,
+            y: y0 + r * ch + ch / 2,
+            angle: -0.12,
+            expression: EXPRESSIONS[c],
+            expressionT: 0.5,
+            hp: 60 + ((r * 7 + c * 5) % 41),
+            hitFlash: EXPRESSIONS[c] === 'hit' ? 0.05 : 0,
+          });
+          kartP.drawKart(ctx, k, t, { bench: true, lang: 'en' });
+        }
+      }
+    }
+
+    // ---- 场景 2：动态战斗 -----------------------------------------------------
+    const battle = {
+      karts: [],
+      projectiles: [],
+      crates: [],
+      trails: [],
+      nextShot: 0.4,
+      nextHit: 1.3,
+      nextTrail: 0,
+      rocketAt: 0,
+      shotIdx: 0,
+    };
+    function buildBattle() {
+      battle.karts = KART_IDS.map((id, i) => mockKart(id, i + 1, {
+        x: 640 + Math.cos(i * 1.3) * (110 + i * 26),
+        y: 360 + Math.sin(i * 1.3) * (90 + i * 20),
+        angle: i * 1.3 + Math.PI / 2,
+        speed: 180 + i * 10,
+        hp: [100, 78, 55, 100, 34][i],
+        maxHp: 100,
+      }));
+      battle.projectiles = [];
+      battle.crates = [
+        { id: 501, x: 640, y: 210, weapon: 'rocket', t: 2 },
+        { id: 502, x: 400, y: 480, weapon: 'shotgun', t: 1.2 },
+        { id: 503, x: 900, y: 470, weapon: null, t: 0.6 },
+      ];
+      battle.trails = [];
+      battle.shotIdx = 0;
+    }
+    const EXPR_CYCLE = {
+      mint: ['idle', 'happy', 'boost', 'surprise'],
+      cherry: ['angry', 'happy', 'idle', 'boost'],
+      blu: ['idle', 'surprise', 'hit', 'sleepy'],
+      sunny: ['happy', 'boost', 'surprise', 'idle'],
+      grape: ['idle', 'sleepy', 'surprise', 'angry'],
+    };
+    const hitStart = new Map();
+    function stepBattle(dt) {
+      for (const k of battle.karts) {
+        const i = k.id - 1;
+        if (k.dead) {
+          k.respawn -= dt;
+          if (k.respawn <= 0) {
+            k.dead = false;
+            k.expression = 'surprise';
+            k.expressionT = 0;
+            renderer.event({ type: 'respawn', id: k.id, kartId: k.kartId, x: k.x, y: k.y });
+          }
+          continue;
+        }
+        const wobble = Math.sin(t * 0.5 + i) * 24;
+        const dir = i % 2 === 0 ? 1 : -1;
+        const a = t * (0.55 + i * 0.07) * dir + i * 1.3;
+        const rad = 110 + i * 26 + wobble;
+        k.x = 640 + Math.cos(a) * rad;
+        k.y = 360 + Math.sin(a) * (rad * 0.72);
+        k.angle = a + (Math.PI / 2) * dir;
+        k.speed = 210;
+        const cyc = EXPR_CYCLE[k.kartId];
+        const hs = hitStart.get(k.id);
+        if (hs !== undefined) {
+          k.expression = 'hit';
+          k.expressionT = t - hs;
+          k.hitFlash = Math.max(0, 0.9 - (t - hs)) * 0.2;
+          if (t - hs > 0.9) hitStart.delete(k.id);
+        } else {
+          k.expression = cyc[Math.floor(t / 1.6 + i) % cyc.length];
+          k.expressionT = (t % 1.6);
+          k.hitFlash = 0;
+        }
+        if (k.isPlayer) {
+          k.drift.active = true;
+          k.drift.charge = 0.25 + 0.45 * (0.5 + 0.5 * Math.sin(t * 0.7));
+        }
+        if (k.kartId === 'sunny') {
+          const prev = k.boostTime;
+          const cyc4 = t % 4.5;
+          k.boosting = cyc4 > 3.2;
+          k.boostTime = k.boosting ? 4.5 - cyc4 : 0;
+          if (k.boosting && prev <= 0) {
+            renderer.event({ type: 'boost', id: k.id, charge: 0.8, x: k.x, y: k.y });
+          }
+        }
+      }
+      // 开火
+      if (t >= battle.nextShot) {
+        battle.nextShot = t + 0.4;
+        const shooter = battle.karts[battle.shotIdx % battle.karts.length];
+        battle.shotIdx += 1;
+        if (!shooter.dead) {
+          renderer.event({ type: 'shot', owner: shooter.id, weapon: 'gun', x: shooter.x + Math.cos(shooter.angle) * 24, y: shooter.y + Math.sin(shooter.angle) * 24, angle: shooter.angle });
+          battle.projectiles.push({
+            id: 9000 + battle.projectiles.length,
+            x: shooter.x + Math.cos(shooter.angle) * 26,
+            y: shooter.y + Math.sin(shooter.angle) * 26,
+            vx: Math.cos(shooter.angle) * 620, vy: Math.sin(shooter.angle) * 620,
+            damage: 9, owner: shooter.id, life: 0.85, splash: 0,
+            color: WEAPONS.gun.color, kind: 'bullet', bounces: 0,
+          });
+        }
+      }
+      // 火箭
+      if (t >= battle.rocketAt) {
+        battle.rocketAt = t + 3.1;
+        const shooter = battle.karts[1];
+        if (!shooter.dead) {
+          renderer.event({ type: 'shot', owner: shooter.id, weapon: 'rocket', x: shooter.x, y: shooter.y, angle: shooter.angle });
+          battle.projectiles.push({
+            id: 9100, x: shooter.x + Math.cos(shooter.angle) * 26, y: shooter.y + Math.sin(shooter.angle) * 26,
+            vx: Math.cos(shooter.angle) * 430, vy: Math.sin(shooter.angle) * 430,
+            damage: 32, owner: shooter.id, life: 1.1, splash: 74,
+            color: WEAPONS.rocket.color, kind: 'rocket', bounces: 0,
+          });
+        }
+      }
+      // 命中（伤害数字 + 闪白 + >_< ）
+      if (t >= battle.nextHit) {
+        battle.nextHit = t + 1.35;
+        const victim = battle.karts[1 + Math.floor(Math.random() * 4)];
+        if (!victim.dead) {
+          const dmg = Math.random() < 0.3 ? 27 : 12;
+          renderer.event({ type: 'hit', victim: victim.id, attacker: 1, damage: dmg, x: victim.x, y: victim.y, weapon: 'gun' });
+          victim.hp = Math.max(8, victim.hp - dmg);
+          hitStart.set(victim.id, t);
+          victim.expression = 'hit';
+          victim.expressionT = 0;
+        }
+      }
+      // 偶发 KO 展示（首次延迟到 5s，2.5s 后自动重生）
+      if (t > 5 && Math.random() < dt / 6 && battle.karts.some((k) => !k.dead && !k.isPlayer)) {
+        const victim = battle.karts.filter((k) => !k.dead && !k.isPlayer)[0];
+        victim.dead = true;
+        victim.respawn = 2.5;
+        victim.expression = 'ko';
+        renderer.event({ type: 'ko', victim: victim.id, killer: 1, x: victim.x, y: victim.y, kartId: victim.kartId });
+      }
+      // 弹道推进 + 简单反弹
+      for (let i = battle.projectiles.length - 1; i >= 0; i -= 1) {
+        const p = battle.projectiles[i];
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.life -= dt;
+        if (p.x < 32 || p.x > 1248) { p.vx *= -1; p.x = Math.max(32, Math.min(1248, p.x)); p.bounces += 1; }
+        if (p.y < 32 || p.y > 688) { p.vy *= -1; p.y = Math.max(32, Math.min(688, p.y)); p.bounces += 1; }
+        if (p.life <= 0 || p.bounces > 2) {
+          if (p.kind === 'rocket') {
+            renderer.event({ type: 'hit', victim: -1, damage: 30, x: p.x, y: p.y });
+          }
+          battle.projectiles.splice(i, 1);
+        }
+      }
+      // 火花尾迹（drift-fire-trail 产物示意）
+      if (t >= battle.nextTrail) {
+        battle.nextTrail = t + 0.09;
+        const pl = battle.karts[0];
+        if (pl.drift.charge > 0.45) {
+          battle.trails.push({ id: 8000 + Math.floor(t * 100), x: pl.x - Math.cos(pl.angle) * 22, y: pl.y - Math.sin(pl.angle) * 22, r: 12, life: 1.0, owner: pl.id });
+        }
+      }
+      for (let i = battle.trails.length - 1; i >= 0; i -= 1) {
+        battle.trails[i].life -= dt;
+        if (battle.trails[i].life <= 0) battle.trails.splice(i, 1);
+      }
+      for (const c of battle.crates) c.t += dt;
+      const run = {
+        seed: 7,
+        arena: ARENAS[arenaIndex],
+        roundIndex: arenaIndex,
+        karts: battle.karts,
+        projectiles: battle.projectiles,
+        crates: battle.crates,
+        trails: battle.trails,
+      };
+      renderer.draw(run, { lang: 'en', reducedMotion: false }, t);
+    }
+
+    // ---- 场景 3：KO 定格 -------------------------------------------------------
+    const koState = { karts: [], nextPulse: 0 };
+    function buildKo() {
+      koState.karts = [
+        mockKart('mint', 1, { x: 380, y: 400, angle: 0.5, expression: 'surprise', expressionT: 0.3 }),
+        mockKart('cherry', 2, { x: 800, y: 280, angle: 3.6, expression: 'angry', expressionT: 0.8 }),
+        mockKart('blu', 3, { x: 950, y: 480, angle: 4.4, expression: 'hit', expressionT: 0.2, hp: 40 }),
+        mockKart('sunny', 4, { x: 560, y: 220, angle: 2.2, expression: 'happy', expressionT: 0.5 }),
+        mockKart('grape', 5, { x: 680, y: 420, angle: -0.4, expression: 'ko', expressionT: 0, hp: 0 }),
+      ];
+      koState.nextPulse = 0.001;
+    }
+    function stepKo(dt) {
+      if (t >= koState.nextPulse) {
+        koState.nextPulse = t + 1.6;
+        const g = koState.karts[4];
+        g.expressionT = 0;
+        renderer.event({ type: 'ko', victim: 5, killer: 2, x: g.x, y: g.y, kartId: 'grape' });
+      }
+      for (const k of koState.karts) k.expressionT += dt;
+      const run = {
+        seed: 7,
+        arena: ARENAS[0],
+        roundIndex: 0,
+        karts: koState.karts,
+        projectiles: [], crates: [], trails: [],
+      };
+      renderer.draw(run, { lang: 'en', reducedMotion: false }, t);
+    }
+
+    // ---- 场景 4：三张场地缩略 ---------------------------------------------------
+    function drawArenas() {
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.fillStyle = INK;
+      ctx.fillRect(0, 0, 1280, 720);
+      ctx.fillStyle = CREAM;
+      ctx.font = '800 24px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('ARENAS · hazards animate', 28, 34);
+      const scale = 0.315;
+      const tw = 1280 * scale;
+      const th = 720 * scale;
+      for (let i = 0; i < ARENAS.length; i += 1) {
+        const a = ARENAS[i];
+        const ox = 20 + i * (tw + 24);
+        const oy = 90;
+        ctx.save();
+        ctx.translate(ox, oy);
+        ctx.scale(scale, scale);
+        arenaP.drawFloor(ctx, a, t);
+        arenaP.drawObstacles(ctx, a, t);
+        const k = mockKart(KART_IDS[i], 60 + i, {
+          x: 640, y: 360,
+          angle: t * 0.8 + i,
+          expression: ['happy', 'surprise', 'angry'][i],
+          expressionT: 1,
+        });
+        kartP.drawKart(ctx, k, t, { bench: false, lang: 'en' });
+        ctx.restore();
+        ctx.strokeStyle = CREAM;
+        ctx.lineWidth = 3;
+        ctx.strokeRect(ox, oy, tw, th);
+        ctx.fillStyle = CREAM;
+        ctx.font = '700 17px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(`${a.name.en} · ${a.name.zh}`, ox + tw / 2, oy + th + 26);
+        ctx.font = '500 14px sans-serif';
+        ctx.globalAlpha = 0.75;
+        ctx.fillText(a.tagline.en, ox + tw / 2, oy + th + 50);
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // ---- 主循环 ---------------------------------------------------------------
+    function setScene(name) {
+      sceneName = name;
+      renderer.clearEffects();
+      if (name === 'battle') buildBattle();
+      if (name === 'ko') buildKo();
+      for (const b of document.querySelectorAll('button[data-scene]')) {
+        b.classList.toggle('active', b.dataset.scene === name);
+      }
+    }
+    function loop(now) {
+      requestAnimationFrame(loop);
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      t += dt;
+      const t0 = performance.now();
+      if (sceneName === 'bench') drawBench();
+      else if (sceneName === 'battle') stepBattle(dt);
+      else if (sceneName === 'ko') stepKo(dt);
+      else drawArenas();
+      renderer.update(dt);
+      frameMs = performance.now() - t0;
+      statClock += dt;
+      frames += 1;
+      if (statClock >= 0.5) {
+        fps = Math.round(frames / statClock);
+        statClock = 0;
+        frames = 0;
+        document.getElementById('stats').textContent =
+          `fps ${fps} · particles ${renderer.debug.particles()} · frame ${frameMs.toFixed(2)} ms · scene ${sceneName}`;
+      }
+    }
+
+    for (const b of document.querySelectorAll('button[data-scene]')) {
+      b.addEventListener('click', () => setScene(b.dataset.scene));
+    }
+    window.__bench = {
+      scene: setScene,
+      scenes: ['bench', 'battle', 'ko', 'arenas'],
+      stats: () => ({ fps, frameMs, particles: renderer.debug.particles(), shake: renderer.debug.shake() }),
+    };
+    window.__ll = { state: { phase: 'title' } };
+    setScene(params.get('scene') || 'bench');
+    requestAnimationFrame(loop);
+  </script>
+</body>
+</html>

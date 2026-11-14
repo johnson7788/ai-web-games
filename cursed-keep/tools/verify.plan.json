@@ -1,0 +1,53 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "assert": "window.__ll.debug.state().lives === 20", "name": "初始 20 生命" },
+    { "assert": "window.__ll.debug.state().gold === 120", "name": "初始 120 金币" },
+    { "eval": "window.__ll.debug.build(0, 'arrow')" },
+    { "wait": 200 },
+    { "assert": "window.__ll.debug.state().towers === 1", "name": "建了一座箭塔" },
+    { "assert": "window.__ll.debug.state().gold === 70", "name": "扣 50 金币" },
+    { "screenshot": "02-built.png" },
+    { "eval": "window.__ll.debug.addGold(500)" },
+    { "eval": "window.__ll.debug.build(2, 'cannon')" },
+    { "eval": "window.__ll.debug.build(4, 'frost')" },
+    { "eval": "window.__ll.debug.sendWave()" },
+    { "eval": "window.__ll.debug.step(25)" },
+    { "wait": 300 },
+    { "assert": "window.__ll.debug.state().kills >= 1", "name": "塔击杀敌人" },
+    { "screenshot": "03-combat.png" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "重启回标题" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  }
+}

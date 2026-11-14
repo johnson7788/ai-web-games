@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>CHESS MASTER</title>
+  <meta name="description" content="Play chess against a thinking computer. Full rules — castling, en passant, promotion — with checkmate and stalemate detection.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="panel" class="hidden">
+      <div id="status-text" class="status-text"></div>
+      <div class="captured-block">
+        <div class="cap-label" data-i18n="white">White</div>
+        <div id="captured-white" class="captured"></div>
+      </div>
+      <div class="captured-block">
+        <div class="cap-label" data-i18n="black">Black</div>
+        <div id="captured-black" class="captured"></div>
+      </div>
+      <div id="move-count" class="move-count"></div>
+      <button id="btn-undo" class="panel-btn"></button>
+      <button id="btn-new" class="panel-btn secondary"></button>
+      <div class="panel-spacer"></div>
+      <button id="btn-mute" class="panel-btn icon"></button>
+      <button id="btn-pause" class="panel-btn icon">II</button>
+    </div>
+
+    <div id="promotion" class="hidden">
+      <div class="promo-title" data-i18n="promotion">Promote to</div>
+      <div class="promo-row">
+        <button id="promo-q" class="promo-btn" data-piece="q">♛</button>
+        <button id="promo-r" class="promo-btn" data-piece="r">♜</button>
+        <button id="promo-b" class="promo-btn" data-piece="b">♝</button>
+        <button id="promo-n" class="promo-btn" data-piece="n">♞</button>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text"></h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="how-to" id="how-to"></p>
+      <button id="btn-start"></button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume"></button>
+      <button id="btn-restart" class="secondary"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-end" class="screen hidden">
+      <h2 id="end-title"></h2>
+      <p class="end-sub" id="end-sub"></p>
+      <button id="btn-again"></button>
+      <button id="btn-title" class="secondary"></button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

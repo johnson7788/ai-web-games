@@ -1,0 +1,31 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 30
+  },
+  "items": [
+    {
+      "name": "kart-mint",
+      "kind": "image",
+      "seeds": [
+        211
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Strict straight-down top view (bird's eye, 90 degrees from above, perfectly orthographic, zero perspective, no 3/4 angle, no side view) of one single cute cartoon battle go-kart toy, seen only from directly overhead: we see the hood, the cockpit opening and the rear spoiler from above, the four fat wheels barely peeking out at the corners. The kart nose points exactly to the right along the horizontal axis at zero degrees. Chunky rounded mint-green body with a soft teal shadow panel and a cream racing stripe, a short rounded rear spoiler, two tiny round side mirrors like little ears. The front hood carries a large smooth blank cream-white rounded faceplate panel, completely empty with no eyes, no mouth and no face drawn on it, because the game draws a cartoon face there. Style: cute cartoon video game art, glossy toy-like stylized 3D render with chunky rounded shapes, clean soft shading, bright candy colors, cheerful and adorable, soft even studio lighting, no hard cast shadow, no text, no watermark, no logos. Centered single object, isolated on a flat pure white background, no horizon, no ground shadow.",
+      "prep": {
+        "out": "assets/karts/mint.webp",
+        "cutout": true,
+        "height": 132,
+        "pivot": "center"
+      }
+    }
+  ]
+}

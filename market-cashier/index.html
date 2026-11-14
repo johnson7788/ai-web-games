@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MARKET CASHIER</title>
+  <meta name="description" content="Scan the basket, build the exact change, and keep three shifts of customers happy. A cozy cashier simulation.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" aria-hidden="true"></canvas>
+    <div id="scene-shade" aria-hidden="true"></div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="day-chip">
+          <span id="hud-day">DAY 1</span>
+          <small id="hud-day-name">MORNING RUSH</small>
+        </div>
+        <div class="customer-chip" id="hud-customer">CUSTOMER 1/5</div>
+      </div>
+      <div class="hud-center">
+        <div class="score-wrap">
+          <span id="hud-score">0</span>
+          <small id="hud-score-label">SCORE</small>
+        </div>
+        <div id="combo-badge" class="combo-badge hidden">
+          <span id="combo-mult">×1.0</span>
+          <small id="combo-label">STREAK</small>
+        </div>
+      </div>
+      <div class="hud-right">
+        <div class="patience-wrap">
+          <div class="patience-label">
+            <span id="patience-title">PATIENCE</span>
+            <span id="patience-value">30s</span>
+          </div>
+          <div class="patience-track"><div id="patience-fill"></div></div>
+        </div>
+        <button id="btn-mute" class="hud-btn" aria-label="Sound">🔊</button>
+        <button id="btn-pause" class="hud-btn" aria-label="Pause">Ⅱ</button>
+      </div>
+    </div>
+
+    <div id="play-area" class="hidden">
+      <section class="panel belt-panel">
+        <div class="panel-head">
+          <span id="items-label">SCAN THE BASKET</span>
+          <span id="scan-progress" class="panel-meta">0/0</span>
+        </div>
+        <div id="items-list" class="items-list"></div>
+        <div id="customer-note" class="customer-note"></div>
+        <div class="belt-total">
+          <small id="belt-total-label">BASKET TOTAL</small>
+          <b id="belt-total">$0.00</b>
+        </div>
+        <div id="shortcuts" class="shortcuts"></div>
+        <div class="belt-foot">
+          <span id="scan-hint">Tap each item to scan it</span>
+          <span class="bag-count">🛍️ <b id="bag-count">0</b></span>
+        </div>
+      </section>
+
+      <section class="panel receipt-panel">
+        <div class="receipt-head">
+          <span id="receipt-label">RECEIPT</span>
+          <span id="receipt-day" class="panel-meta">DAY 1</span>
+        </div>
+        <div id="receipt" class="receipt"></div>
+        <div id="feedback" class="feedback"></div>
+        <div class="queue-block">
+          <div class="queue-head"><span id="queue-label">TODAY'S QUEUE</span><b id="queue-count">0/5</b></div>
+          <div id="customer-dots" class="customer-dots"></div>
+        </div>
+        <div class="tip-card">
+          <div><small id="tip-label">TIP POTENTIAL</small><b id="tip-value">$0.00</b></div>
+          <div><small id="streak-label">STREAK</small><b id="streak-value">×1.0</b></div>
+        </div>
+        <div class="next-hint">
+          <b id="next-label">NEXT</b>
+          <span id="next-text"></span>
+        </div>
+        <div class="target-card">
+          <div class="target-head">
+            <span id="target-label">TARGET</span>
+            <b id="target-text">$0 / $550</b>
+          </div>
+          <div class="target-track"><div id="target-fill"></div></div>
+          <div class="target-foot">
+            <span id="mistakes-label">Mistakes</span>
+            <b id="mistakes-value">0</b>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel drawer-panel">
+        <div class="drawer-head">
+          <span id="drawer-label">CASH DRAWER</span>
+          <span id="change-status" class="panel-meta"></span>
+        </div>
+        <div class="change-summary">
+          <div>
+            <small id="change-due-label">CHANGE DUE</small>
+            <b id="change-due">$0.00</b>
+          </div>
+          <div>
+            <small id="given-label">YOUR CHANGE</small>
+            <b id="given">$0.00</b>
+          </div>
+        </div>
+        <div class="paid-line"><small id="paid-label">PAID</small><b id="paid-value">$0.00</b></div>
+        <div id="money-grid" class="money-grid"></div>
+        <div class="math-card">
+          <span id="math-paid">$0.00</span><i>−</i><span id="math-total">$0.00</span><i>=</i><b id="math-change">$0.00</b>
+        </div>
+        <div id="change-tray" class="change-tray"></div>
+        <div id="tray-summary" class="tray-summary"></div>
+        <div id="money-hint" class="money-hint"></div>
+        <div class="money-actions">
+          <button id="btn-give" class="act primary"></button>
+          <button id="btn-reset" class="act"></button>
+        </div>
+      </section>
+
+      <div id="customer-strip" class="customer-strip">
+        <div class="customer-avatar" id="customer-avatar"></div>
+        <div class="customer-meta">
+          <b id="customer-name">Alex</b>
+          <small id="customer-type">Regular</small>
+        </div>
+        <div id="customer-bubble" class="bubble"></div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <div class="title-top">
+        <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      </div>
+      <div class="title-card">
+        <div class="brand-kicker">PIPY GAMES · SHIFT 01</div>
+        <h1 id="title-text">MARKET CASHIER</h1>
+        <p class="subtitle" id="subtitle-text"></p>
+        <div class="how-grid">
+          <div class="how-step"><span>1</span><p id="tutorial-1"></p></div>
+          <div class="how-step"><span>2</span><p id="tutorial-2"></p></div>
+          <div class="how-step"><span>3</span><p id="tutorial-3"></p></div>
+          <div class="how-step"><span>4</span><p id="tutorial-4"></p></div>
+        </div>
+        <button id="btn-start" class="cta"></button>
+        <button id="btn-howto" class="act secondary howto-btn"></button>
+        <p class="best" id="title-best"></p>
+      </div>
+      <div class="title-receipt" aria-hidden="true">
+        <div class="tr-line"></div><div class="tr-line short"></div><div class="tr-line"></div>
+        <div class="tr-total"></div><div class="tr-line short"></div>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <div class="modal-card">
+        <h2 id="pause-title"></h2>
+        <button id="btn-resume" class="cta"></button>
+        <button id="btn-restart" class="act secondary"></button>
+        <button id="btn-howto-pause" class="act secondary"></button>
+        <button id="btn-title" class="act secondary"></button>
+        <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+      </div>
+    </div>
+
+    <div id="screen-day" class="screen hidden">
+      <div class="modal-card day-card">
+        <div id="day-kicker" class="brand-kicker"></div>
+        <h2 id="day-title"></h2>
+        <div class="day-stats">
+          <div><small id="day-score-label"></small><b id="day-score-value"></b></div>
+          <div><small id="day-target-label"></small><b id="day-target-value"></b></div>
+          <div><small id="day-mistakes-label"></small><b id="day-mistakes-value"></b></div>
+          <div><small id="day-perfect-label"></small><b id="day-perfect-value"></b></div>
+          <div><small id="day-combo-label"></small><b id="day-combo-value"></b></div>
+          <div><small id="day-tips-label"></small><b id="day-tips-value"></b></div>
+        </div>
+        <p id="day-message"></p>
+        <div id="upgrade-cards" class="upgrade-cards"></div>
+        <button id="btn-retry" class="cta hidden"></button>
+        <p id="upgrade-hint" class="hint"></p>
+      </div>
+    </div>
+
+    <div id="screen-ending" class="screen hidden">
+      <div class="modal-card ending-card">
+        <div class="brand-kicker" id="ending-kicker"></div>
+        <h2 id="ending-title"></h2>
+        <div id="rank-badge" class="rank-badge">A</div>
+        <div class="ending-score">
+          <small id="final-score-label"></small>
+          <b id="final-score-value">0</b>
+        </div>
+        <p id="ending-message"></p>
+        <div class="ending-stats">
+          <div><small id="ending-best-label"></small><b id="ending-best-value"></b></div>
+          <div><small id="ending-day-label"></small><b id="ending-day-value"></b></div>
+        </div>
+        <button id="btn-again" class="cta"></button>
+      </div>
+    </div>
+
+    <div id="toast-layer" class="toast-layer" aria-hidden="true"></div>
+    <div id="flash" class="flash" aria-hidden="true"></div>
+
+    <div id="tutorial" class="tutorial hidden" data-tutorial>
+      <div id="tutorial-spot" class="tutorial-spot"></div>
+      <div class="tutorial-card">
+        <div class="tutorial-head">
+          <span id="tutorial-step"></span>
+          <button id="tutorial-skip" data-tutorial-skip type="button"></button>
+        </div>
+        <h3 id="tutorial-title"></h3>
+        <p id="tutorial-text"></p>
+        <div id="tutorial-dots" class="tutorial-dots"></div>
+        <button id="tutorial-next" class="cta hidden" type="button"></button>
+      </div>
+    </div>
+
+    <div id="rotate" class="rotate-screen" aria-hidden="true">
+      <div class="rotate-inner">
+        <div class="rotate-phone">▯</div>
+        <h2 id="rotate-title"></h2>
+        <p id="rotate-text"></p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

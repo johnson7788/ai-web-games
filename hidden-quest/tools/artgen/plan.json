@@ -1,0 +1,314 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "bg-attic",
+      "kind": "image",
+      "seeds": [
+        42
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "A wide 16:9 hidden-object scene background of a cozy old house attic at night, rendered for a storybook mystery game. Moonlight pours through a round gable window, washing the space in deep navy blue near hex 101820 and 1a2632 with slate blue edges near hex 2c3e50, while a single warm amber lantern near hex fbbf24 on a wooden crate casts a golden pool of light across the floorboards. The attic is furnished with sloped timber rafters, a dressmaker mannequin, stacked hat boxes, a steamer trunk, rolled carpets, an old rocking chair, draped cloth, picture frames leaning on walls and a dusty chandelier. All clutter is purely decorative furniture and fabric; the scene must contain no keys, no stars, no hearts, no gems, no coins, no apples, no fish, no moons, no bells, no crowns, no leaves and no mushrooms, because those shapes are gameplay targets overlaid later by code. Keep mid-dark values and calm negative space between object groups so small amber targets stay readable. Soft volumetric moonbeams, floating dust motes, gentle ambient occlusion. Rendered as a refined stylized 3D cartoon storybook scene with hand-painted textures, rounded chunky shapes, painterly detail, subtle depth of field, whimsical family-friendly nocturnal mystery mood, consistent navy-and-amber art direction, high production value, no characters, no text, no numbers, no letters, no watermark.",
+      "prep": {
+        "out": "assets/bg/attic.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    },
+    {
+      "name": "bg-study",
+      "kind": "image",
+      "seeds": [
+        43
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "A wide 16:9 hidden-object scene background of an antique collector's study at night, rendered for a storybook mystery game. Tall bookshelves filled with leather books line the walls, a heavy oak desk holds an inkwell, quill, folded maps and a brass telescope, a globe stands in the corner, and a velvet armchair faces a cold fireplace. Deep navy blue shadows near hex 101820 and 1a2632 with slate blue trim near hex 2c3e50 dominate, while a warm amber desk lamp near hex fbbf24 and faint candle glow paint golden accents on paper and brass. All clutter is purely decorative furniture, books and instruments; the scene must contain no keys, no stars, no hearts, no gems, no coins, no apples, no fish, no moons, no bells, no crowns, no leaves and no mushrooms, because those shapes are gameplay targets overlaid later by code. Avoid star charts or moon motifs on the walls. Keep mid-dark values, readable silhouettes and calm gaps between furniture groups so small amber targets stay visible. Soft lamp bloom, floating dust, gentle ambient occlusion. Rendered as a refined stylized 3D cartoon storybook scene with hand-painted textures, rounded chunky shapes, painterly detail, subtle depth of field, whimsical family-friendly nocturnal mystery mood, consistent navy-and-amber art direction, high production value, no characters, no text, no numbers, no letters, no watermark.",
+      "prep": {
+        "out": "assets/bg/study.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    },
+    {
+      "name": "bg-greenhouse",
+      "kind": "image",
+      "seeds": [
+        44
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "A wide 16:9 hidden-object scene background of a magical greenhouse at night, rendered for a storybook mystery game. A Victorian glasshouse with slender iron ribs holds terracotta pots, ferns, trailing vines, watering cans, wooden seed trays, a stone birdbath and hanging glass orbs, all bathed in deep navy blue moonlight near hex 101820 and 1a2632 with slate blue structure near hex 2c3e50. Warm amber lanterns near hex fbbf24 hang among the plants and a few softly glowing fireflies add golden magic. All plants and clutter are purely decorative; the scene must contain no keys, no stars, no hearts, no gems, no coins, no apples, no fish, no moons, no bells, no crowns, no leaves as loose objects and no mushrooms, because those shapes are gameplay targets overlaid later by code; foliage stays attached to plants and reads as generic greenery, never as collectible leaf shapes. Keep mid-dark values and calm pockets of empty bench and floor space so small amber targets stay readable. Soft moonbeams through glass, gentle mist, floating pollen glow, ambient occlusion. Rendered as a refined stylized 3D cartoon storybook scene with hand-painted textures, rounded chunky shapes, painterly detail, subtle depth of field, whimsical family-friendly nocturnal mystery mood, consistent navy-and-amber art direction, high production value, no characters, no text, no numbers, no letters, no watermark.",
+      "prep": {
+        "out": "assets/bg/greenhouse.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    },
+    {
+      "name": "item-key",
+      "kind": "image",
+      "seeds": [
+        45
+      ],
+      "prompt": "A hidden-object target sprite of a single ornate golden key, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The key lies in a gentle diagonal pose with a round filigree bow at the top, a slender straight shaft and two simple square teeth at the bottom. Its body is warm amber gold near hex fbbf24 with a soft satin metallic finish, rounded chunky edges and one clean specular highlight along the shaft, plus a faint warm rim glow so it separates from deep navy backgrounds near hex 101820. The bow carries a simple heart-free scroll ornament, no gemstones and no engraving. The teeth are chunky and evenly spaced, and the whole key feels like a friendly storybook prop rather than a real tool. Proportions are exaggerated storybook style: oversized bow, thick shaft, friendly toy-like weight. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/key.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-star",
+      "kind": "image",
+      "seeds": [
+        46
+      ],
+      "prompt": "A hidden-object target sprite of a single five-pointed golden star, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The star is plump and softly puffed with rounded tips and gently beveled faces, like a storybook cookie come to life, in bright warm yellow near hex fde047 with amber shading near hex fbbf24 in the valleys between points. A soft inner glow and one crisp specular highlight on the upper left face give it a cheerful magical sheen, and a faint warm halo helps it pop against deep navy backgrounds near hex 101820. The silhouette is a clean classic five-point star with no face, no trailing sparks and no extra ornaments. Each point is gently fattened at the base so the star keeps a friendly weight even when scaled down. Proportions are chunky and toy-like with friendly weight. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/star.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-heart",
+      "kind": "image",
+      "seeds": [
+        47
+      ],
+      "prompt": "A hidden-object target sprite of a single plump love heart, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The heart is a soft rounded three-dimensional cushion shape in warm rose pink near hex fb7185, with gently beveled edges, a smooth candy-like satin surface and a slightly deeper rose shading in the lower curves. One clean specular highlight sits on the upper left lobe, and a faint warm rim glow separates it from deep navy backgrounds near hex 101820. The silhouette is a clean classic heart with symmetric lobes and a soft point, no face, no arrow, no ribbon and no cracks. The lower point is soft and rounded rather than sharp, and the two lobes blend seamlessly like a single sculpted piece of candy. Proportions are chunky and toy-like, like a storybook plush gem. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/heart.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-gem",
+      "kind": "image",
+      "seeds": [
+        48
+      ],
+      "prompt": "A hidden-object target sprite of a single faceted blue gemstone, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The gem is a classic round brilliant cut rendered in chunky storybook proportions, in bright sky blue near hex 60a5fa with deeper sapphire shading in the lower facets and pale ice-blue sparkle on the crown. Clean geometric facets are softly beveled rather than razor sharp, with glassy internal refraction, one crisp white specular glint and a faint cool glow that still reads against deep navy backgrounds near hex 101820 thanks to a warm amber rim light near hex fbbf24 on one edge. No setting, no ring, no chain, just the loose stone. A tiny secondary glint sits on the lower right facet, and the girdle is a soft rounded band rather than a knife edge. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/gem.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-coin",
+      "kind": "image",
+      "seeds": [
+        49
+      ],
+      "prompt": "A hidden-object target sprite of a single golden coin, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The coin stands tilted slightly toward the viewer so its round face and a sliver of its thick milled edge are both visible. The face is warm amber gold near hex f59e0b with a raised plain rim and a simple embossed sunburst-free blank center, deliberately free of any letter, numeral or portrait. The metal has a soft satin finish, one clean specular sweep across the face and gentle darker shading near the rim, with a faint warm halo separating it from deep navy backgrounds near hex 101820. Proportions are chunky and toy-like, a thick storybook doubloon. The milled edge shows soft evenly spaced ridges, and the face stays proudly blank for the game to use freely. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/coin.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-apple",
+      "kind": "image",
+      "seeds": [
+        50
+      ],
+      "prompt": "A hidden-object target sprite of a single ripe red apple, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The apple is plump and round with a gentle top dimple, a short curved brown stem and one small fresh green leaf attached. Its skin is vivid warm red near hex ef4444 with a soft yellow blush on one side, a smooth waxy satin finish and one clean white specular highlight, while the bottom carries slightly deeper crimson shading. A faint warm rim glow separates it from deep navy backgrounds near hex 101820. No bite marks, no cuts, no worm, no extra fruit. The leaf shows one soft central vein, and the stem casts a tiny gentle shadow into the top dimple. Proportions are chunky and toy-like, a friendly storybook apple. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light near hex fbbf24, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/apple.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-fish",
+      "kind": "image",
+      "seeds": [
+        51
+      ],
+      "prompt": "A hidden-object target sprite of a single cute little fish, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The fish faces left in a clean side profile with a plump teardrop body, one rounded dorsal fin, a fan-shaped tail and a small puckered mouth. Its scales are bright sky cyan near hex 38bdf8 with a paler cream belly, softly rounded scale texture and one clean specular highlight along the back. A big friendly dark eye with a white glint gives it storybook charm, and a faint warm amber rim light near hex fbbf24 separates it from deep navy backgrounds near hex 101820. No bubbles, no water, no hook, no extra fish. The fins are softly rounded paddles, and the tail carries two gentle groove lines for a hand-crafted toy feel. Proportions are chunky and toy-like. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/fish.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-moon",
+      "kind": "image",
+      "seeds": [
+        52
+      ],
+      "prompt": "A hidden-object target sprite of a single crescent moon, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The crescent is a plump softly beveled C shape in pale silver white near hex e2e8f0, with gentle cool gray shading in the inner curve and two or three tiny rounded craters on the outer face for storybook character. Its surface has a smooth matte porcelain finish with a soft inner luminescence and one clean highlight on the upper tip. Because the moon is pale, a subtle warm amber rim glow near hex fbbf24 outlines the outer edge so it stays visible against deep navy backgrounds near hex 101820. No face, no stars, no clouds, no nightcap. The craters are shallow and friendly, and the inner curve glows faintly as if holding a little trapped starlight. Proportions are chunky and toy-like. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/moon.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-bell",
+      "kind": "image",
+      "seeds": [
+        53
+      ],
+      "prompt": "A hidden-object target sprite of a single small golden hand bell, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The bell has a classic flared skirt, a rounded crown and a short wooden handle with a tiny loop on top, plus a small round clapper peeking below the rim. Its body is warm amber gold near hex fbbf24 with a soft satin metallic finish, one clean vertical specular highlight and slightly deeper gold shading inside the skirt. A faint warm halo separates it from deep navy backgrounds near hex 101820. No ribbon, no engraving, no sound lines. The skirt flares outward in a smooth confident curve, and the handle shows two subtle grain lines in warm honey brown wood. Proportions are chunky and toy-like, a friendly storybook sleigh bell grown up. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/bell.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-crown",
+      "kind": "image",
+      "seeds": [
+        54
+      ],
+      "prompt": "A hidden-object target sprite of a single small royal crown, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The crown is a chunky circlet with five rounded points, each tipped with a tiny smooth ball, in bright warm yellow gold near hex fde047 with amber shading near hex fbbf24 at the base band. The front band carries three simple round cabochon bumps in ruby, sapphire and emerald, kept abstract and gem-like without facets. The metal has a soft satin finish with one clean specular sweep, and a faint warm halo separates it from deep navy backgrounds near hex 101820. No velvet cap, no text, no engraving. The points rise in a gentle symmetric rhythm, and the base band carries a soft rope-like twist for storybook richness. Proportions are chunky and toy-like, a storybook king's crown. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/crown.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-leaf",
+      "kind": "image",
+      "seeds": [
+        55
+      ],
+      "prompt": "A hidden-object target sprite of a single fresh green leaf, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The leaf is a broad ovate shape with a gently pointed tip, a short curved stem and one clean central vein with a few soft side veins, tilted in a light diagonal pose as if just fallen. Its surface is vivid spring green near hex 34d399 with a slightly darker teal-green underside curl and a smooth waxy satin finish, one clean specular highlight along the upper curve. A faint warm amber rim light near hex fbbf24 separates it from deep navy backgrounds near hex 101820. No holes, no spots, no dew drops, no extra leaves. The stem bends with a natural spring, and the tip curls ever so slightly as if caught mid-fall. Proportions are chunky and toy-like, a friendly storybook leaf. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/leaf.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "item-mushroom",
+      "kind": "image",
+      "seeds": [
+        56
+      ],
+      "prompt": "A hidden-object target sprite of a single cute pink mushroom, designed to stay instantly readable at about eighty pixels tall inside a dark navy scene. The mushroom has a plump rounded cap in soft rose pink near hex f472b6 dotted with three or four cream-white spots, a thick short ivory stem and a gently curved underside gill hint. The cap surface is smooth and slightly waxy with one clean specular highlight, and the whole shape leans a few degrees for storybook charm. A faint warm amber rim light near hex fbbf24 separates it from deep navy backgrounds near hex 101820. No grass, no dirt, no extra mushrooms, no face. The stem widens slightly at the base like a little boot, and the cap edge curls under just a touch, giving the silhouette a cozy weight. Proportions are chunky and toy-like, a friendly woodland toadstool. Rendered as a refined stylized 3D cartoon storybook piece with hand-painted textures, cozy nocturnal hidden-object adventure mood, deep navy and slate blue palette accents near hex 2c3e50, warm amber key light, soft cool moonlit fill, gentle glow, rounded chunky shapes, painterly detail, whimsical family-friendly mystery atmosphere, consistent art direction across the whole item set, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/items/mushroom.webp",
+        "cutout": true,
+        "height": 80,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "keyart-hidden-quest",
+      "kind": "image",
+      "seeds": [
+        42,
+        7
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "Key art hero illustration for a cozy nocturnal hidden-object adventure, wide 16:9 composition with no text anywhere. A moonlit attic window frames a deep navy night sky near hex 101820 and 1a2632, while inside, a warm amber lantern near hex fbbf24 illuminates a curious scene: an open steamer trunk, a brass telescope pointing at the window, stacked leather books and a velvet armchair. Floating gently above the trunk, a small constellation of glowing collectible treasures hints at the gameplay: a golden key, a puffed yellow star, a rose heart, a blue gem and a golden coin, each softly haloed. Dust motes drift through the moonbeam, and slate blue shadows near hex 2c3e50 pool in the corners. A folded map with blank edges, a brass compass with no markings and a small velvet pouch rest beside the trunk, while the window glass carries faint reflections of the floating treasures, deepening the sense of a room full of secrets waiting to be found. The mood is whimsical mystery, inviting the player to search a beautiful cluttered world. Rendered as a refined stylized 3D cartoon storybook scene with hand-painted textures, rounded chunky shapes, painterly detail, subtle depth of field, soft volumetric moonlight, gentle ambient occlusion, consistent navy-and-amber art direction, high production value, family friendly, no characters, no text, no numbers, no letters, no logo, no watermark.",
+      "prep": {
+        "out": "assets/keyart/hidden-quest.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    }
+  ]
+}

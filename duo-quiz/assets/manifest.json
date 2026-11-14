@@ -1,0 +1,185 @@
+{
+  "assets": {
+    "bg/arena": {
+      "file": "assets/bg/arena.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 723,
+      "aspect": 1.7704,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 74380,
+      "sha256": "80f92b2870a1ebdd56688539ea88e07a99f2507dd7e4c2f8f23f0307d023fc44",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 42,
+        "prompt": "A wide 16:9 background of a stylized television quiz-show studio arena for a two-player versus game. The stage is split into two symmetrical contestant zones: the left side bathed in electric blue light near hex 60a5fa and the right side in rose red light near hex fb7185, each with a sleek rounded contestant podium silhouette and glowing floor strips. The exact center of the stage is kept clean and empty, a simple raised circular platform reserved for question cards that the game draws itself, with no screens, no boards and no baked content. Behind the stage, a deep navy cyclorama near hex 101420 and 1a2036 carries soft radial glow, abstract geometric light panels and gold trim accents near hex fbbf24. Overhead broadcast spotlights cast gentle volumetric cones onto the glossy dark stage floor, which reflects the blue and red zones in soft blurred streaks. Thin gold light strips trace the stage edge, soft haze softens the distant lighting rig, and abstract speaker stacks flank the cyclorama. The mood is upbeat, competitive and family friendly, like a prime-time game show ready for contestants. Rendered as a polished stylized 3D cartoon environment with clean toy-like materials, chunky rounded shapes, crisp rim lighting, soft bloom, gentle ambient occlusion, high production value, no characters, no text, no numbers, no letters, no logos, no watermark.",
+        "raw": "assets/_src/bg-arena-s42.png"
+      }
+    },
+    "mascots/blue-neutral": {
+      "file": "assets/mascots/blue-neutral.webp",
+      "group": "mascots",
+      "w": 226,
+      "h": 240,
+      "aspect": 0.9417,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 14724,
+      "sha256": "56c939bc7944ab3f3c47bc6fa22beac35a3346620f74391d7900a8ad9ad02f7d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 42,
+        "prompt": "A mascot avatar sprite of the blue team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in electric blue near hex 60a5fa, a pale cream face plate, two large expressive oval eyes with dark pupils and white glints, a stubby antenna on top with a softly glowing cyan tip, small floating mitten hands and a compact cheerful body. This is the neutral idle expression: a calm friendly closed-mouth smile, relaxed half-lidded confident eyes, antenna upright, hands resting at its sides, ready and composed. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle cool rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, gold accent hints near hex fbbf24, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-blue-neutral-s42.png"
+      }
+    },
+    "mascots/blue-correct": {
+      "file": "assets/mascots/blue-correct.webp",
+      "group": "mascots",
+      "w": 268,
+      "h": 240,
+      "aspect": 1.1167,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 16752,
+      "sha256": "146892c2edcc518658def1532791935e715b52b192360a6bd253c4677f67218b",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 42,
+        "prompt": "A mascot avatar sprite of the blue team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in electric blue near hex 60a5fa, a pale cream face plate, two large expressive oval eyes, a stubby antenna on top with a softly glowing cyan tip, small floating mitten hands and a compact cheerful body. This is the correct-answer celebration expression: overjoyed wide open smile, eyes squeezed into happy upward arcs with tiny sparkle glints, antenna perked straight up with a brighter glow, both mitten hands raised in a cheerful double fist pump. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle cool rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, gold accent hints near hex fbbf24, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-blue-correct-s42.png"
+      }
+    },
+    "mascots/blue-wrong": {
+      "file": "assets/mascots/blue-wrong.webp",
+      "group": "mascots",
+      "w": 245,
+      "h": 240,
+      "aspect": 1.0208,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 15120,
+      "sha256": "54ba49372438b7b31b258a8ee056b389515461033be04f1626767418aa9286c5",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 42,
+        "prompt": "A mascot avatar sprite of the blue team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in electric blue near hex 60a5fa, a pale cream face plate, two large expressive oval eyes, a stubby antenna on top with a softly glowing cyan tip, small floating mitten hands and a compact cheerful body. This is the wrong-answer expression: comically deflated and dizzy, eyes replaced by soft spiral swirls, a small wavy embarrassed mouth, one cartoon sweat drop at the temple, antenna drooping sideways with a dimmed tip, one mitten hand scratching the back of its head. The mood stays cute and light, never sad or scary. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle cool rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-blue-wrong-s42.png"
+      }
+    },
+    "mascots/blue-win": {
+      "file": "assets/mascots/blue-win.webp",
+      "group": "mascots",
+      "w": 243,
+      "h": 240,
+      "aspect": 1.0125,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 21394,
+      "sha256": "f596a274cbd338a25f7b157782d70d909946c41b2e306ba24d91b0ac3ce9521d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 42,
+        "prompt": "A mascot avatar sprite of the blue team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in electric blue near hex 60a5fa, a pale cream face plate, two large expressive oval eyes, a stubby antenna on top with a softly glowing cyan tip, small floating mitten hands and a compact cheerful body. This is the match-victory expression: triumphant beaming grin with star-shaped sparkles in both eyes, antenna glowing bright gold near hex fbbf24 like a champion beacon, one mitten fist pumped high, chest puffed with pride, a faint golden glow halo around the head. No trophy, no confetti, no ribbon, keeping the silhouette clean for cutout. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle cool rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-blue-win-s42.png"
+      }
+    },
+    "mascots/red-neutral": {
+      "file": "assets/mascots/red-neutral.webp",
+      "group": "mascots",
+      "w": 249,
+      "h": 240,
+      "aspect": 1.0375,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 13804,
+      "sha256": "b91e30e4c7132e607c0d4403d6bd10c0737e20ab6d8ecec96ec9b89c2fcbd52c",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 43,
+        "prompt": "A mascot avatar sprite of the red team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in rose red near hex fb7185, a pale cream face plate, two large expressive oval eyes with dark pupils and white glints, a stubby antenna on top with a softly glowing warm pink tip, small floating mitten hands and a compact cheerful body. This is the neutral idle expression: a calm friendly closed-mouth smile, relaxed half-lidded confident eyes, antenna upright, hands resting at its sides, ready and composed. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle warm rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, gold accent hints near hex fbbf24, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-red-neutral-s43.png"
+      }
+    },
+    "mascots/red-correct": {
+      "file": "assets/mascots/red-correct.webp",
+      "group": "mascots",
+      "w": 255,
+      "h": 240,
+      "aspect": 1.0625,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 14870,
+      "sha256": "d331bd3ccde3869b19648311e5a21756a2e706c3dced7fd044a406e7ec8fc27e",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 43,
+        "prompt": "A mascot avatar sprite of the red team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in rose red near hex fb7185, a pale cream face plate, two large expressive oval eyes, a stubby antenna on top with a softly glowing warm pink tip, small floating mitten hands and a compact cheerful body. This is the correct-answer celebration expression: overjoyed wide open smile, eyes squeezed into happy upward arcs with tiny sparkle glints, antenna perked straight up with a brighter glow, both mitten hands raised in a cheerful double fist pump. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle warm rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, gold accent hints near hex fbbf24, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-red-correct-s43.png"
+      }
+    },
+    "mascots/red-wrong": {
+      "file": "assets/mascots/red-wrong.webp",
+      "group": "mascots",
+      "w": 239,
+      "h": 240,
+      "aspect": 0.9958,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 15042,
+      "sha256": "053ad20684d589cbf078cf6c5856db6032021f50ab8c953caa221eadf2e35cf4",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 43,
+        "prompt": "A mascot avatar sprite of the red team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in rose red near hex fb7185, a pale cream face plate, two large expressive oval eyes, a stubby antenna on top with a softly glowing warm pink tip, small floating mitten hands and a compact cheerful body. This is the wrong-answer expression: comically deflated and dizzy, eyes replaced by soft spiral swirls, a small wavy embarrassed mouth, one cartoon sweat drop at the temple, antenna drooping sideways with a dimmed tip, one mitten hand scratching the back of its head. The mood stays cute and light, never sad or scary. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle warm rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-red-wrong-s43.png"
+      }
+    },
+    "mascots/red-win": {
+      "file": "assets/mascots/red-win.webp",
+      "group": "mascots",
+      "w": 240,
+      "h": 240,
+      "aspect": 1.0,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 17092,
+      "sha256": "6382741c8e3c925c20d2c1bd49958aa298fc13395a898e1bdfce5d4cd27e0e54",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 43,
+        "prompt": "A mascot avatar sprite of the red team contestant for a versus quiz game: a chubby rounded robot-like creature with a smooth glossy vinyl shell in rose red near hex fb7185, a pale cream face plate, two large expressive oval eyes, a stubby antenna on top with a softly glowing warm pink tip, small floating mitten hands and a compact cheerful body. This is the match-victory expression: triumphant beaming grin with star-shaped sparkles in both eyes, antenna glowing bright gold near hex fbbf24 like a champion beacon, one mitten fist pumped high, chest puffed with pride, a faint golden glow halo around the head. No trophy, no confetti, no ribbon, keeping the silhouette clean for cutout. Framing is a head-and-shoulders avatar bust centered in frame, facing slightly toward the viewer, sized to read clearly inside a small player panel. Materials are clean toy-like vinyl with soft studio lighting, one crisp specular highlight on the shell, gentle ambient occlusion and a subtle warm rim light. Rendered as a polished stylized 3D cartoon game-show character with deep navy studio undertones near hex 101420, chunky friendly proportions, crisp rim lighting, soft bloom, upbeat competitive television energy, family friendly, consistent character design across all expression variants, high production value, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/mascot-red-win-s43.png"
+      }
+    },
+    "keyart/duo-quiz": {
+      "file": "assets/keyart/duo-quiz.webp",
+      "group": "keyart",
+      "w": 1280,
+      "h": 723,
+      "aspect": 1.7704,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 88788,
+      "sha256": "a6b01a34c1d0703ff3072ff8e9d96200ea56d1c5c9de46a6c92fa805e2a1a062",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 7,
+        "prompt": "Key art hero illustration for a two-player versus quiz game show, wide 16:9 composition with no text anywhere. On a glossy broadcast stage under deep navy skies near hex 101420 and 1a2036, two chubby rounded robot-like mascots face off from opposite podiums: the left mascot in electric blue near hex 60a5fa with a glowing cyan antenna, the right mascot in rose red near hex fb7185 with a glowing warm pink antenna, both in confident competitive poses with mitten fists raised. Between them a clean empty circular center platform waits under a bright golden spotlight near hex fbbf24, with abstract floating question-card shapes rendered as blank rounded rectangles, deliberately carrying no letters or symbols. Blue and red volumetric light beams cross above the stage, gold trim sparkles along the podium edges, and soft bloom fills the arena. Abstract camera silhouettes and soft audience bokeh dots sit in the darkened foreground corners, while a faint golden sparkle field hangs in the air, framing the showdown like a live broadcast moment. The mood is electric, playful and family friendly, a prime-time showdown about to begin. Rendered as a polished stylized 3D cartoon scene with clean toy-like materials, chunky rounded shapes, crisp rim lighting, gentle ambient occlusion, high production value, no readable text, no numbers, no letters, no logos, no watermark.",
+        "raw": "assets/_src/keyart-duo-quiz-s7.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T12:30:11+00:00"
+}

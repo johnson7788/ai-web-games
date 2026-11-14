@@ -1,0 +1,23 @@
+TITLE: Smash Karts — Cute Kart Battle Arena
+
+CATEGORY: Arcade
+
+TAGS: kart, battle, arena, drifting, cartoon, cute, shooter, io, casual, offline
+
+SHORT DESCRIPTION: Drive a cute kart with a face, drift to charge a boost, grab weapon crates and smash the bots in a candy arena.
+
+LONG DESCRIPTION:
+Smash Karts is a fast, cheerful top-down kart-battle game where the karts are the characters. Every vehicle has big cartoon eyes, rosy cheeks and a mood: it frowns when it fires, yelps when it gets hit, and pops back with X eyes after a smash. You drive one of them.
+
+Hold drift while you turn to charge the orange boost bar, then let go to rocket forward. That boost is the only speed you get, so every corner is a small gamble between a safe straight line and a wide, exposed drift. Weapon crates drop rapid fire, a five-pellet popcorn shotgun and splash-damage rockets. You have 100 health, two seconds to respawn, and one job: be the first to ten smashes.
+
+A cup is three rounds across three arenas. Sunny Meadow teaches the drift. The Bubblegum Factory adds conveyor belts that shove you off your line. The Lava Lamp Lair has burning pools and a 170 HP champion kart hunting you. Between rounds you pick one of three upgrades — eight of the eleven change the rules, from ricocheting rockets to a burning drift trail — so two picks turn your kart into a different build.
+
+It runs in the browser with no download, teaches itself with a four-step interactive tutorial, and plays with keyboard, mouse-free steering or touch controls in landscape. English and Chinese included.
+
+- Ten-smash rounds across a three-arena cup.
+- Drift-to-boost racing feel with a single readable resource bar.
+- Four weapons, weapon crates, ramming, lava and conveyor hazards.
+- Eleven upgrades, eight of them rule-changing.
+- Anthropomorphic karts with nine readable expressions.
+- Keyboard and landscape-touch controls, no install.

@@ -1,0 +1,203 @@
+{
+  "assets": {
+    "bg/cell": {
+      "file": "assets/bg/cell.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 44300,
+      "sha256": "03b48a852d7d94957dcb205bfbc208bbf5963690914fc8ac697d678c583448d4",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 11,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is the interior of a dim prison cell at night. The composition places a simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6, sitting thoughtfully on a low metal cot at the left-center of the frame, his silhouette instantly readable against the dark background. On the right side stands a tall barred cell door and a small barred window, through which cool blue moonlight slants in and casts long bar-shaped shadows across the floor. A tiny warm amber #fbbf24 key lies on the floor near the bars, glowing faintly as the obvious interactive hook. The walls are flat blue-gray stone in #1a2230 and #2a3440 with a few cracks and a faded poster shape, and the floor is a darker #101418. Lighting is low-key and moody, dominated by cool blue moonlight with a single warm amber accent on the key, creating a sneaky nighttime mood. Materials read as flat cel-shaded stone, dull metal bars, and a thin mattress, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide side view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-cell-s11.png"
+      }
+    },
+    "bg/corridor": {
+      "file": "assets/bg/corridor.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 36972,
+      "sha256": "bd9a0e7b6bd4e983efd53c306081d5b39826417cc20d1d9d1fece90e7529f832",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 12,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is a long prison corridor at night. The composition uses a strong one-point perspective drawing the eye down the hallway, with a row of evenly spaced blue-gray pillars and cell doors receding into the distance on both sides. The simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6, is captured mid-stride in an exaggerated sneaky running pose near the center of the frame, arms pumping and legs stretched, his silhouette instantly readable against the dark background. Dim ceiling lamps cast small pools of warm amber #fbbf24 light at intervals along the corridor, alternating with cool blue shadow, while a faint alarm-ready tension hangs in the air. The walls and pillars are flat blue-gray in #1a2230 and #2a3440, the ceiling band is a darker #222c38, and the floor is a deep #101418 with subtle reflective highlights under each lamp. Lighting is low-key and rhythmic, alternating cool blue ambient shadow with warm amber lamp pools to create a sneaky heist mood. Materials read as flat cel-shaded concrete, dull metal doors, and smooth polished floor, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-corridor-s12.png"
+      }
+    },
+    "bg/sewer": {
+      "file": "assets/bg/sewer.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 88130,
+      "sha256": "ae592791d814db666780e5c3fda4d22ac5faf59dd15a759d358abe90af0a0d15",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 13,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is a dark underground sewer tunnel. The composition centers on a large circular brick tunnel mouth in the middle of the frame, its rim built of weathered blue-gray bricks in #3a4654, opening into a deep black #101418 interior. The simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6, is crouched low in an exaggerated crawling pose at the tunnel entrance, his silhouette instantly readable against the dark background. Shallow dark water fills the tunnel floor with faint cool reflections, a few dripping pipes run along the upper walls, and a tiny pair of glowing rat eyes peeks from a side crack for comedic flavor. Lighting is low-key and claustrophobic, dominated by cool teal-blue ambient light with a faint warm amber #fbbf24 glint reflecting off the water and a soft rim light around the tunnel mouth. Materials read as flat cel-shaded damp brick, slick wet stone, dull rusted pipes, and glossy dark water, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-sewer-s13.png"
+      }
+    },
+    "bg/guard": {
+      "file": "assets/bg/guard.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 40618,
+      "sha256": "855933de4be212e79e153a923d522f8573181c1514a4c5f2fda8204e42675e08",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 14,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is a tense checkpoint confrontation with a prison guard. The composition pits two stick figures against each other: on the right stands a large, bulky, intimidating guard stickman drawn in a reddish-pink #fb7185 tone, arms crossed and chest puffed in an exaggerated comedic tough-guy pose, towering over the hero; on the left stands the small simple white stickman protagonist with a round head and thin limbs in pale #eef2f6, frozen in a cautious upright pose, his silhouette instantly readable. Between them sits a simple guard desk or barrier with a lamp, and a harsh overhead spotlight cone drops onto the pair, casting long dramatic shadows on the floor. The background is a flat blue-gray guard post wall in #1a2230 and #2a3440 with a closed door and a clock shape, and the floor is a deep #101418. Lighting is dramatic and high-contrast, a single warm amber #fbbf24 overhead spotlight against cool blue ambient shadow, emphasizing the size difference and the comedic danger. Materials read as flat cel-shaded concrete, dull metal desk, and a simple lamp, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24 and danger pink #fb7185. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-guard-s14.png"
+      }
+    },
+    "bg/yard": {
+      "file": "assets/bg/yard.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 157544,
+      "sha256": "1ce7fe9426b86ceb32661b1bdb84f26a45a4179a1d294e6273c3d8d908bc7d07",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 15,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is an outdoor prison yard at night. The composition shows a tall chain-link fence with vertical posts and a top rail running across the left and center of the frame, a boxy watchtower and a parked delivery truck or crate stack on the right, and an open strip of ground between them. The simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6, is caught in an exaggerated crouched sneaking pose near the fence at center, tiptoeing with bent knees and raised arms, his silhouette instantly readable against the dark background. A cool full moon hangs in the upper sky, and a warm amber #fbbf24 security lamp on the watchtower casts a long cone of light and long shadows across the yard. The sky is a deep blue-gray #1a2230, the ground is a flat #2a3440, and the fence and structures are darker #3a4654 and #222c38. Lighting is low-key nighttime, cool blue moonlight overall with a single warm amber security-lamp accent, creating a sneaky outdoor mood. Materials read as flat cel-shaded metal fence, concrete ground, wooden crates, and a boxy truck, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-yard-s15.png"
+      }
+    },
+    "bg/roof": {
+      "file": "assets/bg/roof.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 59782,
+      "sha256": "1208ce2e7887f1c8cd388ff0b455694e440c4ba03e95bdee30b1e080f225d42d",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 16,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is a prison rooftop at night with a zipline escape route. The composition shows a flat rooftop ledge on the left where the simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6, stands in an exaggerated ready pose at the edge, one hand reaching toward a taut zipline cable that stretches diagonally from the upper-left down to a neighboring building on the right. A blocky guard dog with a reddish-pink #fb7185 body stands on the rooftop to the right, alert and comedic, ears perked. The night sky fills the upper frame in deep blue-gray #1a2230 with a cool moon and a few stars, while distant city lights twinkle in warm amber #fbbf24 along the horizon. The rooftop surface is a flat #222c38 and #2a3440 with a low parapet and a vent box. Lighting is low-key nighttime, cool blue moonlight overall with warm amber distant-city accents and a faint rim light on the zipline cable, creating a daring rooftop mood. Materials read as flat cel-shaded concrete rooftop, taut metal cable, and a simple cartoon dog, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-roof-s16.png"
+      }
+    },
+    "bg/truck": {
+      "file": "assets/bg/truck.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 57514,
+      "sha256": "a096c628f21f12c8ea70db1939ddb28e5c16bd33f8904b1830c2089362115c3a",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 17,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is the inside of a parked delivery truck used as a hiding spot. The composition shows the open rear of a boxy truck filling the frame, with stacked wooden crates and parcels in warm amber #fbbf24 and blue-gray #3a4654 tones forming a cozy hiding nook. The simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6, is tucked among the crates in an exaggerated seated hiding pose, knees up and peeking out, his silhouette instantly readable. The truck cab is visible to the right as a darker #222c38 block, the wheels are deep #101418 circles, and the loading-area ground outside is a flat #2a3440. A warm amber work lamp spills light into the truck bed from above, contrasting with the cool blue night outside, creating a snug yet tense hiding mood. Lighting is low-key with a strong warm amber interior accent against cool blue ambient shadow, emphasizing the contrast between the safe hiding spot and the dangerous night. Materials read as flat cel-shaded wooden crates, corrugated metal truck walls, cardboard parcels, and rubber tires, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-truck-s17.png"
+      }
+    },
+    "bg/tunnel": {
+      "file": "assets/bg/tunnel.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 90946,
+      "sha256": "81a27667e7b4ba3cd49b18ef68ddfc560280049939bb1f51024885c770d12ce0",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 18,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is a drainage tunnel leading out under the prison walls toward a river. The composition shows a large circular brick tunnel mouth on the left, its rim built of weathered blue-gray bricks in #3a4654 opening into a deep black #101418 interior, and a channel of dark flowing water in a muted blue #1e3a5f running along the lower-right toward a faint moonlit exit. The simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6, is crouched in an exaggerated crawling pose at the tunnel edge near center, about to slip into the water, his silhouette instantly readable against the dark background. Cool moonlight filters in from the far exit, a few dripping pipes line the upper wall, and faint ripples catch the light on the water surface. Lighting is low-key and claustrophobic, dominated by cool blue-green ambient light with a soft cool rim light at the tunnel exit and a faint warm amber #fbbf24 glint on the water, creating a tense underground escape mood. Materials read as flat cel-shaded damp brick, slick wet stone, dull rusted pipes, and glossy flowing water, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the choice-button UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-tunnel-s18.png"
+      }
+    },
+    "bg/win": {
+      "file": "assets/bg/win.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 51984,
+      "sha256": "b10910b223abde57fc74563949c0ac463c4710462c90d525decd011a924a2cac",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 19,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is the triumphant moment of escape outside the prison walls. The composition centers on the simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6 with a subtle friendly green #34d399 tint, standing in an exaggerated arms-raised victory pose on an open road, legs apart and fists thrust skyward in pure joy. Behind him the prison silhouette recedes into the distance on the left, while a large warm amber #fbbf24 moon or rising sun glows in the upper-right sky, casting a hopeful golden rim light over the hero. An open road leads away toward the horizon, and a few celebratory confetti-like sparkles drift in the air. The sky is a deep blue-gray #1a2230 warming toward amber near the light source, and the ground is a flat #2a3440. Lighting shifts from the series' usual cool night to a warmer, hopeful tone, with a strong warm amber key light and a gentle green accent on the hero, conveying relief and freedom. Materials read as flat cel-shaded road, distant concrete walls, and soft glowing sky, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the ending UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray palette warmed by amber #fbbf24 and good green #34d399. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-win-s19.png"
+      }
+    },
+    "bg/fail": {
+      "file": "assets/bg/fail.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 32928,
+      "sha256": "17a68b1431d1c229f48e9fd8e68295695179c121cd74307929269cd0cd476751",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 20,
+        "prompt": "A full-frame hand-drawn 2D cartoon scene illustration for a comedic stickman prison-escape adventure game, in the spirit of classic Henry Stickmin style art. The scene is a comedic failed escape attempt. The composition centers on the simple white stickman protagonist with a round head and thin limbs, drawn in pale #eef2f6 with a reddish-pink #fb7185 danger tint, sprawled on the ground in an exaggerated fallen pose, limbs splayed and a cartoon dizzy swirl or little stars circling his head for slapstick humor. A looming guard shadow or a blaring alarm light falls across him from the upper frame, and a faint red alarm glow pulses at the edges to signal being caught. The background is a flat blue-gray prison wall and floor in #1a2230, #2a3440, and #101418, with a closed door and a spinning alarm lamp shape. Lighting is low-key and comedic-dramatic, cool blue ambient shadow pierced by a pulsing reddish-pink #fb7185 alarm glow and a harsh spotlight on the fallen hero, emphasizing the funny defeat. Materials read as flat cel-shaded concrete, dull metal door, and a simple alarm lamp, all rendered with bold clean black outlines and a few soft gradients. The camera is a straight-on wide view framed as a 16:9 game scene, with the lower portion kept relatively clear for the retry UI. The art style is a refined hand-painted 2D cartoon with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by danger pink #fb7185 and amber #fbbf24. No text, no letters, no numbers, no watermark.",
+        "raw": "assets/_src/scene-fail-s20.png"
+      }
+    },
+    "keyart/escape-choice": {
+      "file": "assets/keyart/escape-choice.webp",
+      "group": "keyart",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 118568,
+      "sha256": "5787d05e343554dff0f4a874098af223e0d7dbd83a79760acc3eae86f84cbc1e",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 901,
+        "prompt": "A cinematic 16:9 key art illustration for a comedic stickman prison-escape adventure game, with no title text because the logo will be overlaid later. The composition is a dynamic playful poster collage centered on the simple white stickman protagonist with a round head and thin limbs in pale #eef2f6, caught mid-leap in an exaggerated heroic sneaking pose at the center, one hand reaching forward. Around him, arranged in a balanced radial collage, are the iconic escape vignettes: a barred prison cell door with a glowing amber key, a long shadowy corridor, a circular sewer tunnel mouth, a bulky reddish guard stickman, a chain-link yard fence and watchtower, a rooftop zipline with a cartoon guard dog, a crate-filled delivery truck, and a moonlit drainage tunnel. The background is a deep blue-gray night sky in #1a2230 and #101418 with a large warm amber #fbbf24 moon behind the hero, casting a hopeful golden rim light. Lighting is cinematic and playful, cool blue ambient night overall with warm amber accent glows on each vignette and a bright rim on the hero, conveying sneaky comedic adventure. Materials read as flat cel-shaded stone, metal, wood, and water, all rendered with bold clean black outlines and a few soft gradients. The camera is a wide cinematic poster view with gentle depth and a slight low angle on the hero. The art style is a refined hand-painted 2D cartoon in the spirit of classic stickman escape games, with exaggerated comedic proportions, clean bold outlines, flat cel shading, and a cohesive dark blue-gray night palette accented by amber #fbbf24, good green #34d399, and danger pink #fb7185. No text, no letters, no numbers, no logo, no watermark.",
+        "raw": "assets/_src/keyart-s901.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-13T18:09:29+00:00"
+}

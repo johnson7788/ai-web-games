@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>ESCAPE CHOICE</title>
+  <meta name="description" content="A branching escape adventure. Every choice matters — most lead to a funny fail, a few lead to freedom. Find all four escapes.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-fails"></span>
+        <span id="hud-endings" class="hud-endings"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-mute" class="hud-btn" aria-label="Sound"></button>
+        <button id="btn-pause" class="hud-btn" aria-label="Pause">II</button>
+      </div>
+    </div>
+
+    <div id="story-area" class="hidden">
+      <p id="story-text" class="story-text"></p>
+      <p id="choose-label" class="choose-label"></p>
+      <div id="choices" class="choices"></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text"></h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="how-to" id="how-to"></p>
+      <button id="btn-start"></button>
+      <p class="best" id="title-best"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume"></button>
+      <button id="btn-restart" class="secondary"></button>
+      <button id="btn-title" class="secondary"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-ending" class="screen ending hidden">
+      <h2 id="ending-title"></h2>
+      <p id="ending-text" class="ending-text"></p>
+      <button id="btn-retry"></button>
+      <button id="btn-title2" class="secondary"></button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

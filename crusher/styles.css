@@ -1,0 +1,104 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  height: 100%;
+  background: #0a0710;
+  color: #f3eefc;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body { display: flex; justify-content: center; align-items: center; }
+#game-container {
+  position: relative;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  aspect-ratio: 16 / 9;
+}
+canvas { width: 100%; height: 100%; display: block; background: #120d18; border-radius: 12px; touch-action: none; }
+
+#hud {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 18px; z-index: 6; pointer-events: none; gap: 10px;
+}
+.hud-left { display: flex; align-items: baseline; gap: 16px; font-size: 16px; font-weight: 700; }
+.hud-tier { font-size: 19px; color: #c084fc; }
+.hud-right { display: flex; gap: 8px; pointer-events: auto; }
+.hud-btn {
+  min-width: 46px; height: 44px; padding: 0 12px;
+  font-size: 16px; font-weight: 700; font-family: inherit;
+  color: #f3eefc; background: rgba(26,19,34,0.92);
+  border: 2px solid #3a2c4d; border-radius: 10px;
+  cursor: pointer; touch-action: manipulation;
+}
+.hud-btn:hover { border-color: #c084fc; }
+
+/* 右侧升级面板 */
+#panel {
+  position: absolute;
+  left: 56.5%; top: 13%; width: 39%; height: 80%;
+  z-index: 5;
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 18px;
+  background: rgba(26,19,34,0.82);
+  border: 2px solid #3a2c4d; border-radius: 18px;
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+}
+.panel-coins { font-size: clamp(24px, 3.4vw, 40px); font-weight: 900; color: #fbbf24; text-align: center; }
+.panel-stats { font-size: clamp(11px, 1.4vw, 15px); opacity: 0.8; text-align: center; margin-bottom: 4px; }
+.panel-title { font-size: 14px; font-weight: 800; letter-spacing: 2px; color: #c084fc; text-transform: uppercase; }
+.up-btn {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  width: 100%; min-height: 64px; padding: 10px 14px;
+  font-family: inherit; text-align: left;
+  color: #f3eefc; background: linear-gradient(#2a2036, #1f1729);
+  border: 2px solid #4a3a63; border-radius: 12px;
+  cursor: pointer; touch-action: manipulation;
+}
+.up-btn:hover:not(:disabled) { border-color: #c084fc; }
+.up-btn:disabled { opacity: 0.45; cursor: default; }
+.up-name { font-size: clamp(13px, 1.7vw, 17px); font-weight: 800; }
+.up-desc { font-size: clamp(10px, 1.3vw, 13px); opacity: 0.7; }
+.up-cost { font-size: clamp(12px, 1.6vw, 15px); font-weight: 800; color: #fbbf24; }
+
+.screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: rgba(10,7,16,0.9); backdrop-filter: blur(3px);
+  z-index: 10; text-align: center; padding: 20px;
+}
+.hidden { display: none !important; }
+.screen h1 { font-size: clamp(34px, 6vw, 64px); letter-spacing: 4px; margin-bottom: 8px; color: #c084fc; text-shadow: 0 0 24px rgba(192,132,252,0.5); }
+.screen h2 { font-size: clamp(26px, 4.5vw, 44px); margin-bottom: 14px; color: #c084fc; }
+.screen .subtitle { font-size: 19px; opacity: 0.85; margin-bottom: 14px; letter-spacing: 1px; }
+.screen .how-to { font-size: 15px; opacity: 0.7; max-width: 540px; line-height: 1.5; margin-bottom: 26px; }
+.screen button {
+  min-width: 220px; min-height: 54px; padding: 12px 36px;
+  font-size: 20px; font-weight: 800; font-family: inherit; letter-spacing: 1px;
+  color: #1a0b2e; background: linear-gradient(#e9d5ff, #c084fc);
+  border: 2px solid #6b21a8; border-radius: 14px;
+  cursor: pointer; margin-top: 12px; touch-action: manipulation;
+  box-shadow: 0 6px 20px rgba(192,132,252,0.3);
+}
+.screen button:hover { filter: brightness(1.08); }
+.screen button.secondary { background: rgba(26,19,34,0.95); color: #f3eefc; border-color: #3a2c4d; font-size: 16px; min-height: 46px; box-shadow: none; }
+.lang-select {
+  position: absolute; top: 16px; right: 16px;
+  padding: 8px 12px; font-size: 15px; font-family: inherit;
+  background: #1a1322; color: #f3eefc; border: 1px solid #c084fc; border-radius: 8px; cursor: pointer;
+}
+
+/* 短屏（手机横屏）压缩面板，确保三个升级按钮都可见可点 */
+@media (max-height: 460px) {
+  #panel { padding: 10px; gap: 6px; }
+  .panel-coins { font-size: 22px; }
+  .panel-stats { font-size: 10px; margin-bottom: 0; }
+  .panel-title { font-size: 11px; }
+  .up-btn { min-height: 46px; padding: 6px 10px; gap: 1px; }
+  .up-name { font-size: 12px; }
+  .up-desc { font-size: 10px; }
+  .up-cost { font-size: 12px; }
+}

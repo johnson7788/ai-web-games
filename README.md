@@ -18,14 +18,57 @@
 | [`eight-ball`](eight-ball/) | EIGHT BALL CLUB | 体育 · 台球 | 八球俱乐部 |
 | [`screw-puzzle`](screw-puzzle/) | SCREW OUT | 益智解谜 | 螺丝出逃 |
 | [`mahjong-solitaire`](mahjong-solitaire/) | MAHJONG SOLITAIRE | 棋牌 · 接龙 | 麻将接龙 |
+| [`smash-karts`](smash-karts/) | SMASH KARTS | 动作 · 车辆混战 | 卡丁车大乱斗 |
+| [`chess-master`](chess-master/) | CHESS MASTER | 棋牌 · 国际象棋 AI | 国际象棋 |
+| [`color-clash`](color-clash/) | COLOR CLASH | 纸牌 · UNO | 颜色大战 |
+| [`cursed-keep`](cursed-keep/) | CURSED KEEP | 塔防 | 诅咒要塞 |
+| [`escape-choice`](escape-choice/) | ESCAPE CHOICE | 剧情 · 分支逃脱 | 抉择逃脱 |
+| [`word-trails`](word-trails/) | WORD TRAILS | 文字 · 环形拼词 | 单词接龙 |
+| [`daily-word-hunt`](daily-word-hunt/) | DAILY WORD HUNT | 文字 · 网格找词 | 每日找词 |
+| [`top-answer`](top-answer/) | TOP ANSWER | 问答 · 大众答案 | 大众答案 |
+| [`leek-factory`](leek-factory/) | LEEK FACTORY | 点击放置 · 工厂 | 工厂大亨 |
+| [`crusher`](crusher/) | CRUSHER | 点击放置 · 粉碎 | 粉碎机 |
+| [`airport-check`](airport-check/) | AIRPORT CHECK | 模拟经营 · 安检 | 机场安检 |
+| [`block-blast`](block-blast/) | BLOCK BLAST | 方块 · 填充消除 | 方块爆破 |
+| [`mine-empire`](mine-empire/) | MINE EMPIRE | 点击放置 · 矿业 | 矿业帝国 |
+| [`ludo-party`](ludo-party/) | LUDO PARTY | 棋牌 · 飞行棋 | 飞行棋 |
+| [`picwords`](picwords/) | PICWORDS | 文字 · 看图拼词 | 看图拼词 |
+| [`letter-pile`](letter-pile/) | LETTER PILE | 文字 · 字母堆叠 | 字母堆 |
+| [`flag-painter`](flag-painter/) | FLAG PAINTER | 问答 · 国旗填色 | 国旗猜猜 |
+| [`planet-clicker`](planet-clicker/) | PLANET CLICKER | 点击放置 · 星球 | 星球点击 |
+| [`city-bus`](city-bus/) | CITY BUS | 模拟经营 · 驾驶 | 城市公交 |
+| [`market-cashier`](market-cashier/) | MARKET CASHIER | 模拟经营 · 收银 | 超市收银 |
+| [`basket-bros`](basket-bros/) | BASKET BROS | 体育 · 篮球 1v1 | 街球兄弟 |
+| [`front-wars`](front-wars/) | FRONT WARS | .io · 阵营射击 | 前线战争 |
+| [`rocket-goal`](rocket-goal/) | ROCKET GOAL | .io · 车辆足球 | 火箭足球 |
+| [`hidden-quest`](hidden-quest/) | HIDDEN QUEST | 找物 · 场景寻物 | 寻物大师 |
+| [`paper-world`](paper-world/) | PAPER WORLD | 沙盒 · 2D 挖掘建造 | 纸片世界 |
+| [`duo-quiz`](duo-quiz/) | DUO QUIZ | 派对 · 同屏答题 | 双人问答 |
+| [`hazard-house`](hazard-house/) | HAZARD HOUSE | 派对 · 本地陷阱 | 陷阱屋 |
+| [`color-tap`](color-tap/) | COLOR TAP | 填色 · 数字填色 | 数字填色 |
+| [`mini-blocks`](mini-blocks/) | MINI BLOCKS | 沙盒 · 3D 体素 | 迷你方块 |
+| [`logo-quiz`](logo-quiz/) | LOGO QUIZ | 问答 · 品牌竞猜 | Logo 猜猜 |
+| [`farm-ring`](farm-ring/) | FARM RING | 点击放置 · 农场 | 农场环 |
+| [`sandbox-city`](sandbox-city/) | SANDBOX CITY | 模拟经营 · 沙盒城市 | 沙盒城市 |
+| [`ping-pong-pro`](ping-pong-pro/) | PING PONG PRO | 体育 · 乒乓 | 乒乓对战 |
+| [`parkour-gun`](parkour-gun/) | PARKOUR GUN | .io · 跑酷枪战 | 跑酷枪战 |
 
-> 最后四款（gravity-golf / eight-ball / screw-puzzle / mahjong-solitaire）为 2026-11-12 新建，
-> 2026-11-13 已上架 pipygames（单玩法版）：
+> **2026-11-14 批量上架 34 款新游戏**（P1×12 + P2×16 + P3×6），全部完成 AI 美术升级
+> （角色/地图/背景/keyart 用 h3-image 生成，玩法层保留程序化）+ AI 纯器乐 BGM，
+> 186 条纯逻辑测试全绿、浏览器验收 60fps 通过，已全数上线 pipygames（34/34）。
+> 完整线上链接见 [`docs/publish-2026-11-14.md`](../docs/publish-2026-11-14.md)。
+>
+> 早前四款（gravity-golf / eight-ball / screw-puzzle / mahjong-solitaire）2026-11-13 上架：
 >
 > - [GRAVITY GOLF](https://pipygames.com/games/gravity-golf-free-physics-golf-game-elqk)
 > - [EIGHT BALL CLUB](https://pipygames.com/games/eight-ball-club-free-browser-pool-game-zmqp)
 > - [SCREW OUT](https://pipygames.com/games/screw-out-free-screw-puzzle-game-gjd7)
 > - [MAHJONG SOLITAIRE](https://pipygames.com/games/mahjong-solitaire-free-classic-tile-game-75zy)
+
+> 2026-11-14 新上架：**SMASH KARTS 卡丁车大乱斗**（可爱卡通 · 拟人化卡丁车）
+>
+> - [SMASH KARTS](https://pipygames.com/games/smash-karts-cute-kart-battle-arena-zmfd)
+>   · [讲解视频（YouTube，unlisted）](https://youtu.be/sVV5jBibXO0)
 
 ---
 
@@ -151,3 +194,17 @@ Cocos Creator 3.6.1 移动端工程：跑酷 + 射击 + 合成突围的休闲手
 - 反向剥离发牌，**每局保证有解**；洗牌后仍保证有解
 - 牌面全部 Canvas 程序化（筒/条/万/风/箭/花），零外部图片
 - 计时 + 星级结算；15 条纯逻辑测试
+
+### smash-karts — SMASH KARTS 卡丁车大乱斗
+
+可爱卡通风格的俯视卡丁车道具大乱斗。**车就是角色**：每台卡丁车有大眼睛、腮红和表情——
+开火皱眉、被击中尖叫、被 KO 变 X 眼冒星星、赢球星星眼。
+
+- 漂移即资源：转弯按住漂移蓄力，松手爆发；这是唯一的加速来源，每次过弯都要赌「稳妥直线 vs 走外线蓄力」
+- 武器箱给速射 / 爆米花霰弹 / 火箭；先到 **10 次击倒**赢下该局，三局两胜拿杯
+- 三张地图三套走位规则：阳光草地（学漂移）→ 泡泡糖工厂（传送带推人）→ 岩浆灯窟（岩浆灼伤 + 170HP 冠军车）
+- 局间三选一，共 11 个升级、8 个改规则（弹跳火箭 / 火花尾迹 / 撞击保险杠 / 幽灵起步…）
+- 首局 4 步交互引导（真实操作 + 高亮 + 可跳过/可重看）；中英双语；键盘与横屏触控
+- 技术：零构建纯静态 · Canvas 2D · 1280×720 letterbox · 60Hz 定步长 · WebAudio 22 个程序化音效
+- 表情不靠 AI 逐帧出图：AI 只出「车身 + 空白脸盘」，9 种表情由 Canvas 程序化绘制（`references/case-smash-karts.md` 有完整做法）
+- 验收：`node --test` 53/53 · verify 60fps · fun-audit 100/100 · fun-report 10/10 · vision-review PASS · tutorial PASS

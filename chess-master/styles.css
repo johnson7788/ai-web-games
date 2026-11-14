@@ -1,0 +1,95 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  height: 100%;
+  background: #120d09;
+  color: #f3ece2;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body { display: flex; justify-content: center; align-items: center; }
+#game-container {
+  position: relative;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+  aspect-ratio: 16 / 9;
+}
+canvas { width: 100%; height: 100%; display: block; background: #1a1410; border-radius: 12px; touch-action: none; }
+
+#panel {
+  position: absolute; left: 56.5%; top: 13%; width: 37%; height: 78%;
+  z-index: 5; display: flex; flex-direction: column; gap: 10px;
+  padding: 18px; background: rgba(36,28,20,0.9);
+  border: 2px solid #4a3a28; border-radius: 18px;
+}
+.status-text { font-size: clamp(18px, 2.4vw, 26px); font-weight: 800; color: #fbbf24; min-height: 1.3em; }
+.captured-block { display: flex; flex-direction: column; gap: 2px; }
+.cap-label { font-size: 12px; opacity: 0.6; font-weight: 700; letter-spacing: 1px; }
+.captured { font-size: 24px; min-height: 30px; letter-spacing: 2px; }
+.move-count { font-size: 14px; opacity: 0.7; }
+.panel-spacer { flex: 1 1 auto; }
+.panel-btn {
+  min-height: 48px; padding: 0 16px; font-size: 16px; font-weight: 800; font-family: inherit;
+  color: #1a1410; background: linear-gradient(#fde68a, #fbbf24);
+  border: 2px solid #92400e; border-radius: 12px; cursor: pointer; touch-action: manipulation;
+}
+.panel-btn:hover:not(:disabled) { filter: brightness(1.08); }
+.panel-btn:disabled { opacity: 0.4; cursor: default; }
+.panel-btn.secondary { background: rgba(26,20,16,0.95); color: #f3ece2; border-color: #4a3a28; }
+.panel-btn.icon { min-height: 44px; }
+
+#promotion {
+  position: absolute; left: 50%; top: 44%; transform: translate(-50%, -50%);
+  z-index: 8; padding: 18px 24px; text-align: center;
+  background: rgba(36,28,20,0.97); border: 2px solid #fbbf24; border-radius: 18px;
+}
+.promo-title { font-size: 16px; font-weight: 800; color: #fbbf24; margin-bottom: 12px; }
+.promo-row { display: flex; gap: 12px; }
+.promo-btn {
+  width: 60px; height: 60px; font-size: 40px; line-height: 1;
+  background: #ecd6b0; color: #2b2118; border: 2px solid #92400e; border-radius: 12px;
+  cursor: pointer; touch-action: manipulation;
+}
+.promo-btn:hover { transform: scale(1.08); }
+
+.screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: rgba(18,13,9,0.95); backdrop-filter: blur(3px);
+  z-index: 10; text-align: center; padding: 20px;
+}
+#screen-title {
+  background: radial-gradient(ellipse at center, rgba(18,13,9,0.85) 0%, rgba(18,13,9,0.62) 52%, rgba(18,13,9,0.32) 100%);
+  backdrop-filter: none;
+}
+.hidden { display: none !important; }
+.screen h1 { font-size: clamp(32px, 5.5vw, 60px); letter-spacing: 3px; margin-bottom: 8px; color: #fbbf24; text-shadow: 0 0 24px rgba(251,191,36,0.5); }
+.screen h2 { font-size: clamp(28px, 5vw, 50px); margin-bottom: 12px; letter-spacing: 2px; color: #fbbf24; }
+.screen h2.win { color: #34d399; text-shadow: 0 0 24px rgba(52,211,153,0.5); }
+.screen h2.lose { color: #fb7185; }
+.screen .subtitle { font-size: 19px; opacity: 0.85; margin-bottom: 14px; letter-spacing: 1px; }
+.screen .how-to { font-size: 15px; opacity: 0.7; max-width: 600px; line-height: 1.5; margin-bottom: 26px; }
+.screen .end-sub { font-size: 20px; opacity: 0.85; margin-bottom: 18px; }
+.screen button {
+  min-width: 200px; min-height: 54px; padding: 12px 36px;
+  font-size: 20px; font-weight: 800; font-family: inherit; letter-spacing: 1px;
+  color: #1a1410; background: linear-gradient(#fde68a, #fbbf24);
+  border: 2px solid #92400e; border-radius: 14px;
+  cursor: pointer; margin-top: 12px; touch-action: manipulation;
+  box-shadow: 0 6px 20px rgba(251,191,36,0.3);
+}
+.screen button:hover { filter: brightness(1.08); }
+.screen button.secondary { background: rgba(36,28,20,0.95); color: #f3ece2; border-color: #4a3a28; font-size: 16px; min-height: 46px; box-shadow: none; }
+.lang-select {
+  position: absolute; top: 16px; right: 16px;
+  padding: 8px 12px; font-size: 15px; font-family: inherit;
+  background: #241c14; color: #f3ece2; border: 1px solid #fbbf24; border-radius: 8px; cursor: pointer;
+}
+@media (max-height: 460px) {
+  #panel { padding: 10px; gap: 6px; top: 12%; }
+  .captured { font-size: 18px; min-height: 22px; }
+  .panel-btn { min-height: 40px; font-size: 14px; }
+  .promo-btn { width: 48px; height: 48px; font-size: 32px; }
+}

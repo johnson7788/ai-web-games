@@ -1,0 +1,26 @@
+{
+  "root": ".",
+  "ok": true,
+  "totalBytes": 508342,
+  "entries": 16,
+  "errors": [],
+  "warnings": [],
+  "results": [
+    {
+      "id": "size",
+      "ok": true,
+      "msg": "素材总量 496KB（仅统计，无体积硬线）"
+    },
+    {
+      "id": "count",
+      "ok": true,
+      "msg": "16 项素材"
+    },
+    {
+      "id": "refs",
+      "ok": true,
+      "msg": "代码里 17/17 处素材引用可解析"
+    }
+  ],
+  "at": "2026-11-14T12:29:29.899Z"
+}

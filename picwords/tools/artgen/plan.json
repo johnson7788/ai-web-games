@@ -1,0 +1,354 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "clue-apple",
+      "kind": "image",
+      "seeds": [
+        42
+      ],
+      "prompt": "A single ripe red apple as a picture clue for a word-guessing game, shown whole and upright. The apple is plump and round with a gentle dimple at the top, a short curved brown stem and one fresh green leaf leaning to the side. Its skin is glossy crimson with a soft warm yellow blush on one cheek, a smooth waxy surface, one clean white specular highlight and slightly deeper red shading near the base, so it reads instantly as an apple even at small display size. The fruit sits calmly with no bite marks, no cuts, no slices, no worm and no extra fruit around it, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/apple.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-cat",
+      "kind": "image",
+      "seeds": [
+        43
+      ],
+      "prompt": "A single cute sitting cat as a picture clue for a word-guessing game, shown in a clean three-quarter view. The cat is a chubby rounded kitten with soft orange-cream fur, a white chest and muzzle, two triangular ears with pink inner tips, big friendly dark eyes with white glints, a tiny pink nose, gentle whisker dots and a curled tail wrapping around its front paws. Its posture is upright and calm, head slightly tilted, instantly readable as a cat even at small display size. The fur is stylized in smooth clay-like tufts rather than individual strands, with soft ambient occlusion under the chin and paws. No collar, no bell, no yarn, no background props and no second animal, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/cat.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-sun",
+      "kind": "image",
+      "seeds": [
+        44
+      ],
+      "prompt": "A single cheerful sun as a picture clue for a word-guessing game, shown face-on as a classic storybook sun. The sun is a plump golden disc near hex fbbf24 with a warm gradient toward soft orange at the rim, surrounded by twelve short rounded triangular rays alternating slightly in length, all softly beveled like carved wood. Its face is optional-free: no eyes and no mouth, just a clean radiant disc with gentle inner glow, one soft highlight on the upper left and a faint warm halo, so it reads instantly as the sun even at small display size. The rays are chunky and symmetric, never sharp or flame-like. No clouds, no sky, no horizon and no extra celestial bodies, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/sun.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-dog",
+      "kind": "image",
+      "seeds": [
+        45
+      ],
+      "prompt": "A single happy sitting dog as a picture clue for a word-guessing game, shown in a clean three-quarter view. The dog is a chubby rounded puppy with warm golden-brown fur, floppy darker ears, a cream muzzle and chest, big friendly dark eyes with white glints, a round black nose and a small open smile with a tiny pink tongue. Its tail curls up behind in a cheerful wag-free pose, front paws planted neatly, head slightly tilted, instantly readable as a dog even at small display size. The fur is stylized in smooth clay-like tufts rather than individual strands, with soft ambient occlusion under the chin and paws. No collar, no bone, no leash, no background props and no second animal, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/dog.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-moon",
+      "kind": "image",
+      "seeds": [
+        46
+      ],
+      "prompt": "A single glowing crescent moon as a picture clue for a word-guessing game, shown as a plump storybook crescent. The moon is a softly beveled C shape in pale silver cream with gentle cool gray shading along the inner curve and three tiny rounded craters on the outer face for character. Its surface is smooth matte porcelain with a soft inner luminescence, one clean highlight on the upper tip and a faint cool halo, so it reads instantly as the moon even at small display size. The crescent is thick and friendly, never razor thin. No face, no nightcap, no stars, no clouds and no night sky, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/moon.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-star",
+      "kind": "image",
+      "seeds": [
+        47
+      ],
+      "prompt": "A single twinkling five-pointed star as a picture clue for a word-guessing game, shown face-on as a classic storybook star. The star is plump and softly puffed with rounded tips and gently beveled faces in bright warm yellow near hex fde047, with amber shading in the valleys between points, a soft inner glow and one crisp specular highlight on the upper left face. Two tiny four-point sparkle glints float close to its upper right tip, attached to the same object group, giving a gentle twinkle without clutter. The silhouette is a clean classic five-point star, instantly readable even at small display size. No face, no trailing comet tail, no wand and no extra stars, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/star.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-fish",
+      "kind": "image",
+      "seeds": [
+        48
+      ],
+      "prompt": "A single cute fish as a picture clue for a word-guessing game, shown in a clean side profile facing left. The fish has a plump teardrop body in bright sky cyan near hex 38bdf8 with a paler cream belly, one rounded dorsal fin, a fan-shaped tail, a small side fin and a puckered little mouth. Its scales are stylized as soft overlapping arcs, with one clean specular highlight along the back and a big friendly dark eye with a white glint, instantly readable as a fish even at small display size. Two tiny round bubbles rise near its mouth as part of the same object group. No water surface, no waves, no hook, no seaweed and no second fish, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/fish.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-tree",
+      "kind": "image",
+      "seeds": [
+        49
+      ],
+      "prompt": "A single friendly leafy tree as a picture clue for a word-guessing game, shown straight-on as a classic storybook tree. The tree has a short sturdy brown trunk with two soft root flares at the base and one small knot, supporting a big rounded canopy made of three or four overlapping puffy foliage blobs in fresh spring green with slightly darker teal-green shading underneath. The canopy silhouette is cloud-like and chunky, with gentle ambient occlusion where the blobs meet and one soft highlight on the upper left, instantly readable as a tree even at small display size. No apples, no birds, no swing, no grass patch and no second tree, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/tree.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-house",
+      "kind": "image",
+      "seeds": [
+        50
+      ],
+      "prompt": "A single cozy little house as a picture clue for a word-guessing game, shown in a gentle three-quarter view. The house has warm cream walls, a chunky red gabled roof with softly rounded eaves, one small brick chimney, a rounded wooden front door with a tiny gold knob, two square windows with pale cyan glass and soft white frames, and a small stone step. Proportions are toy-like with a fat roof and thick walls, gentle ambient occlusion under the eaves and one soft highlight on the roof slope, instantly readable as a house even at small display size. No garden, no fence, no mailbox, no smoke, no people and no second building, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/house.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-car",
+      "kind": "image",
+      "seeds": [
+        51
+      ],
+      "prompt": "A single cheerful little car as a picture clue for a word-guessing game, shown in a clean side profile facing right. The car is a chunky rounded toy hatchback in vivid friendly red with a cream roof, two pale cyan windows, a small gold headlight at the front, a soft bumper line and two fat dark wheels with cream hubcaps. Proportions are exaggerated storybook style: tall cabin, short hood, oversized wheels, with one clean specular streak along the body and gentle ambient occlusion under the chassis, instantly readable as a car even at small display size. No road, no motion lines, no driver, no exhaust smoke and no second vehicle, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/car.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-banana",
+      "kind": "image",
+      "seeds": [
+        52
+      ],
+      "prompt": "A single ripe yellow banana as a picture clue for a word-guessing game, shown in a clean three-quarter view. The banana is plump and gently curved in a classic crescent pose, bright warm yellow with a soft green tint near the stem, a short brown stem tip and a tiny brown blossom end. Its peel is smooth and slightly waxy with three subtle longitudinal ridges, one clean specular highlight along the upper curve and gentle deeper yellow shading on the underside, instantly readable as a banana even at small display size. The fruit is whole and unpeeled, with no spots, no slices, no peel opening and no extra fruit around it, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/banana.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-pizza",
+      "kind": "image",
+      "seeds": [
+        53
+      ],
+      "prompt": "A single appetizing pizza as a picture clue for a word-guessing game, shown as one whole round pizza viewed from a gentle overhead three-quarter angle. The pizza has a puffy golden-brown crust ring with soft char dots, a warm tomato-red sauce base, melted cream-yellow cheese with gentle stretchy texture, five or six round pepperoni slices in deep red and a few small green basil leaves. The cheese carries one soft specular sheen and the crust shows gentle ambient occlusion where it rises, instantly readable as a pizza even at small display size. The pizza is whole and unsliced, with no missing slice, no box, no cutter, no steam and no plate, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/pizza.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-lion",
+      "kind": "image",
+      "seeds": [
+        54
+      ],
+      "prompt": "A single friendly lion as a picture clue for a word-guessing game, shown sitting in a clean three-quarter view. The lion is a chubby rounded big cat with warm golden-tan fur, a magnificent puffy mane in deeper amber-orange built from soft clay-like tufts around its face, two rounded ears peeking from the mane, big gentle dark eyes with white glints, a broad cream muzzle, a small brown nose and a calm proud smile. Its front paws plant neatly and a tufted tail curls beside its haunch, instantly readable as a lion even at small display size. The mane is the dominant silhouette feature, chunky and symmetric. No crown, no savanna, no rocks, no prey and no second animal, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/lion.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-balloon",
+      "kind": "image",
+      "seeds": [
+        55
+      ],
+      "prompt": "A single floating party balloon as a picture clue for a word-guessing game, shown upright as a classic storybook balloon. The balloon is a plump teardrop oval in vivid rose red with a smooth glossy latex surface, one big soft specular highlight on the upper left, a slightly deeper red shading near the bottom and a small tied knot at the base. A gently curling cream string hangs from the knot in a soft S curve, part of the same object group. The balloon floats calmly with a slight tilt, instantly readable as a balloon even at small display size. No face, no basket, no confetti, no second balloon and no hand holding it, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/balloon.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-elephant",
+      "kind": "image",
+      "seeds": [
+        56
+      ],
+      "prompt": "A single cute elephant as a picture clue for a word-guessing game, shown standing in a clean three-quarter view. The elephant is a chubby rounded calf in soft blue-gray with a paler cream belly and inner ears, two big fan-shaped ears, a long gently curled trunk raised slightly in a friendly greeting, four stubby pillar legs with tiny toenail dots, small kind dark eyes with white glints and a thin tail with a tufted tip. Proportions are toy-like with an oversized head and ears, smooth clay-like skin with subtle soft wrinkles at the trunk joints, gentle ambient occlusion under the belly and one soft highlight on the forehead, instantly readable as an elephant even at small display size. No tusks, no hat, no water spray, no savanna and no second animal, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/elephant.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "clue-rainbow",
+      "kind": "image",
+      "seeds": [
+        57
+      ],
+      "prompt": "A single bright rainbow as a picture clue for a word-guessing game, shown face-on as a classic storybook arc. The rainbow is a chunky semicircular band with six soft rounded stripes in red, orange, yellow, green, blue and violet, each stripe slightly puffed like painted clay with gentle bevels and one soft highlight along the top of the arc. Two small puffy cream clouds sit at the ends of the arc as part of the same object group, anchoring the rainbow. The colors are saturated but cozy, with subtle ambient occlusion between stripes, instantly readable as a rainbow even at small display size. No rain drops, no sun, no pot of gold, no sky background and no second arc, keeping the silhouette unambiguous for players spelling the word. Rendered in a polished stylized 3D cartoon picture-book style shared by every clue in this set: soft rounded forms, smooth matte clay and vinyl-like materials with gentle subsurface scattering, soft diffused studio lighting from the upper left, a subtle sky-cyan rim light near hex 38bdf8, clean instantly readable silhouette, cozy deep-ocean teal-blue color grading, friendly family-friendly charm, consistent proportions and rendering across the entire set, high detail, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+      "prep": {
+        "out": "assets/clues/rainbow.webp",
+        "cutout": true,
+        "height": 260,
+        "pivot": "center"
+      },
+      "size": [
+        1024,
+        1024
+      ],
+      "steps": 20
+    },
+    {
+      "name": "bg-puzzle",
+      "kind": "image",
+      "seeds": [
+        42
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "A wide 16:9 background for a relaxing picture-word puzzle game, set in a calm deep-ocean teal-blue space near hex 101820 and 1a2c3a. The composition is a softly glowing underwater-inspired abstract room: gentle vertical light rays drift down from the upper edge, faint rounded bubble shapes and smooth dark teal panel forms near hex 14202e with slate blue edges near hex 2c405a frame the sides, and a subtle sky-cyan glow near hex 38bdf8 pools along the lower third where letter tiles will sit. The upper-center region is kept as a clean, softly lit empty space reserved for a clue card that the game draws itself, with no picture, no icon, no frame border and no content baked into that area. The overall mood is serene, focused and cozy, low contrast enough that bright clue illustrations and cyan letter tiles stay perfectly readable on top. Faint concentric ripple rings spread from the lower glow like slow water movement, and the side panels carry smooth beveled corners with no ornament, keeping every area calm and uncluttered for gameplay overlays. Rendered as a polished stylized 3D cartoon environment with smooth matte materials, soft diffused lighting, gentle bloom, subtle ambient occlusion, consistent deep-ocean teal-blue art direction, high production value, family friendly, no characters, no text, no numbers, no letters, no watermark.",
+      "prep": {
+        "out": "assets/bg/puzzle.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    },
+    {
+      "name": "keyart-picwords",
+      "kind": "image",
+      "seeds": [
+        42,
+        7
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "prompt": "Key art hero illustration for a relaxing picture-word puzzle game, wide 16:9 composition with no text anywhere. In a serene deep-ocean teal-blue space near hex 101820 and 1a2c3a, a softly glowing rounded clue card floats at the center showing a single cheerful red apple illustration, while below it a row of blank cyan letter tiles near hex 1e3a5f with bright blue edges near hex 3b82f6 waits empty, deliberately carrying no letters. Around the card, a gentle orbit of small storybook picture clues drifts like bubbles: a golden star, a crescent moon, a cute cyan fish, a pink balloon and a tiny rainbow, each softly haloed. Sky-cyan light rays near hex 38bdf8 and gold sparkles near hex fbbf24 accent the scene, and smooth dark teal panels frame the edges. Tiny drifting bubbles and a soft vignette of deeper ocean blue gather in the corners, while the blank tiles below the card catch a gentle cyan reflection, hinting at words waiting to be spelled. The mood is calm, curious and inviting, celebrating the joy of guessing words from pictures. Rendered as a polished stylized 3D cartoon scene with smooth matte clay and vinyl-like materials, soft diffused lighting, gentle bloom, subtle ambient occlusion, consistent deep-ocean teal-blue art direction, high production value, family friendly, no readable text, no numbers, no letters, no logo, no watermark.",
+      "prep": {
+        "out": "assets/keyart/picwords.webp",
+        "cutout": false,
+        "width": 1280
+      },
+      "steps": 20
+    }
+  ]
+}

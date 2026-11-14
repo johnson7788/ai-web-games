@@ -1,0 +1,30 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 30
+  },
+  "items": [
+    {
+      "name": "icon-art",
+      "kind": "image",
+      "seeds": [
+        241
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Mobile app icon illustration for a cute cartoon kart battle game: a big close-up of one adorable mint-green battle kart character with an enormous happy grin, huge sparkling cartoon eyes and rosy blushing cheeks, the kart filling most of the frame and facing the viewer at a slight three-quarter angle, thick clean dark outlines, glossy toy-like 3D cartoon render with chunky rounded shapes, vivid candy colors, simple bright sunshine-yellow radial gradient background with a few tiny confetti sparkles, bold and instantly readable at small icon sizes, centered composition, no text, no watermark, no logos.",
+      "prep": {
+        "out": "assets/keyart/icon-art.webp",
+        "cutout": false,
+        "width": 512
+      }
+    }
+  ]
+}

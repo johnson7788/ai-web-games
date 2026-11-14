@@ -1,0 +1,185 @@
+{
+  "assets": {
+    "bg/mine-shaft": {
+      "file": "assets/bg/mine-shaft.webp",
+      "group": "bg",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 125694,
+      "sha256": "42533a19fbfdd15e866012788e2c86e2633966e9ce7b614608e3368a8fd0aa73",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 42,
+        "prompt": "A wide 16:9 cross-section background for a cozy idle mining game, showing the interior of a deep hand-dug mine shaft cut vertically through layered earth. The composition keeps a tall central tunnel completely empty and dark, reserved for procedural gameplay geometry, flanked on both sides by richly detailed rock walls. Strata of dark espresso brown soil near hex 14100c and 241c12 shift subtly in tone as they descend, with embedded pebbles, dry root fibers and faint mineral flecks painted in a storybook style. Sturdy wooden support frames of weathered oak beams and cross planks repeat down the walls, joined with iron bolts and rope lashings. Warm amber lanterns near hex fbbf24 hang from the beams at irregular intervals, casting soft pools of golden light and gentle volumetric halos into the dusty air. A small mine cart rail, coiled ropes, a wooden ladder and scattered support crates decorate the side walls only, never intruding into the empty central shaft. Lighting is warm and inviting with soft ambient occlusion in the crevices and a faint cool teal bounce rising from deeper levels. Rendered as a polished stylized 3D cartoon with hand-painted storybook textures, chunky readable shapes, painterly brush detail, cozy idle-game charm, cinematic warm key light, high production value, family friendly, no characters, no text, no numbers, no letters, no watermark.",
+        "raw": "assets/_src/bg-mine-shaft-s42.png"
+      }
+    },
+    "ores/dirt": {
+      "file": "assets/ores/dirt.webp",
+      "group": "ores",
+      "w": 156,
+      "h": 120,
+      "aspect": 1.3,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 6768,
+      "sha256": "d03378d0fc53b61e6cc1278e7845177c8968dbf36386e2bd27bdac1fb0f3c552",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 42,
+        "prompt": "A decorative ore sprite of a small cluster of crumbly dirt chunks for a cozy idle mining game. Three to five rounded clods of warm earthy brown soil near hex 8a6a4a are piled together in a compact triangular arrangement, the largest clod in front and smaller pieces leaning behind it. The surfaces are softly cracked and granular, dotted with tiny embedded pebbles in lighter tan, dry root fibers and faint matte speckles, reading clearly as ordinary humble dirt rather than precious ore. Edges are chunky and rounded with a hand-sculpted clay feel, and a few loose crumbs rest at the base of the pile to suggest freshly dug material. The material is matte and dry with very subtle warm highlights on the upper curves and gentle ambient occlusion between the clods. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, keeping the whole cluster fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, deep espresso brown undertones near hex 14100c, glowing amber key light near hex fbbf24, soft volumetric glow, chunky readable silhouettes, painterly brush texture, cozy idle-game charm, cinematic warm lighting with subtle cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/ore-dirt-s42.png"
+      }
+    },
+    "ores/coal": {
+      "file": "assets/ores/coal.webp",
+      "group": "ores",
+      "w": 167,
+      "h": 120,
+      "aspect": 1.3917,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 7124,
+      "sha256": "a0ef04c0ca50f1184c3c8fe77d8a6591eb8eba93e95341eb08b6932d5b8f55e1",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 43,
+        "prompt": "A decorative ore sprite of a small cluster of coal chunks for a cozy idle mining game. Four or five angular lumps of deep charcoal black near hex 3a3a3a are stacked in a compact pyramid, the largest piece in front with smaller shards leaning against it. Each lump shows flat conchoidal fracture faces with sharp but softly rounded edges, a subtle satin sheen and faint dusty gray streaks, reading unmistakably as coal. Tiny amber glints near hex fbbf24 catch the lantern light on a few upper facets, hinting at the warm mine environment without turning the coal into gold. A thin dusting of gray powder and two or three small crumbs sit at the base of the pile. The material mixes matte sooty surfaces with gently reflective cleavage planes, and ambient occlusion deepens the gaps between chunks. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, the whole cluster fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, deep espresso brown undertones near hex 14100c, glowing amber key light, soft volumetric glow, chunky readable silhouettes, painterly brush texture, cozy idle-game charm, cinematic warm lighting with subtle cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/ore-coal-s43.png"
+      }
+    },
+    "ores/iron": {
+      "file": "assets/ores/iron.webp",
+      "group": "ores",
+      "w": 171,
+      "h": 120,
+      "aspect": 1.425,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 8538,
+      "sha256": "2a5c6a2f1da29e528d8c606d37234e8d9f11ed28890f740207f8b93851f4b63e",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 44,
+        "prompt": "A decorative ore sprite of a small cluster of iron ore rocks for a cozy idle mining game. Three or four heavy rounded boulders of rusty reddish tan near hex b08a6a are grouped in a compact pile, the largest stone in front showing broad fractured faces. The surfaces blend matte oxidized crust with streaks of darker metallic hematite that carry a faint brushed-metal sheen, plus small pitted pores and rusty orange bloom patches so the rock reads clearly as iron ore. A few chips and gravel pieces rest at the base, and subtle warm amber highlights near hex fbbf24 trace the upper edges as if lit by a nearby mine lantern. The material contrast between dry earthy crust and semi-metallic veins is the key visual feature, with gentle ambient occlusion separating the stones. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, the whole cluster fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, deep espresso brown undertones near hex 14100c, glowing amber key light, soft volumetric glow, chunky readable silhouettes, painterly brush texture, cozy idle-game charm, cinematic warm lighting with subtle cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/ore-iron-s44.png"
+      }
+    },
+    "ores/gold": {
+      "file": "assets/ores/gold.webp",
+      "group": "ores",
+      "w": 123,
+      "h": 120,
+      "aspect": 1.025,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 7644,
+      "sha256": "929a4bb9293d1929d156f5cae58c7e7f2fd78cebe872e9309158ca1db872bc91",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 45,
+        "prompt": "A decorative ore sprite of a gold-bearing rock cluster for a cozy idle mining game. A single chunky host boulder of warm dark brown stone near hex 4a3a28 sits at the center, threaded with generous branching veins of bright native gold near hex d4a017 that wrap around its faces like frozen lightning. Two smaller gold-flecked fragments lean at its base. The gold veins are softly rounded and slightly raised, with a rich satin metallic luster, warm specular highlights and a faint inner glow, while the host rock stays matte and earthy with painterly speckles. The contrast between dull stone and gleaming metal makes the sprite read instantly as precious gold ore even at small display size. A few tiny gold flakes scatter near the bottom edge. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, the whole cluster fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, deep espresso brown undertones near hex 14100c, glowing amber key light near hex fbbf24, soft volumetric glow, chunky readable silhouettes, painterly brush texture, cozy idle-game charm, cinematic warm lighting with subtle cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/ore-gold-s45.png"
+      }
+    },
+    "ores/diamond": {
+      "file": "assets/ores/diamond.webp",
+      "group": "ores",
+      "w": 109,
+      "h": 120,
+      "aspect": 0.9083,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 5646,
+      "sha256": "ae147f049c512d943b440d20fd6336766898495f996108620dc0ef6575d1838a",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 46,
+        "prompt": "A decorative ore sprite of a diamond crystal cluster for a cozy idle mining game. A compact base of dark espresso brown host rock near hex 241c12 supports three translucent gem crystals in fresh aqua teal near hex 5eead4, the tallest crystal rising in the middle with two smaller points leaning outward. The crystals show clean geometric facets with softly beveled edges, glassy internal refraction, pale mint highlights and a gentle inner luminescence, reading unmistakably as precious diamond-grade gems. Tiny sparkle glints sit on the upper facet corners, and a faint cool teal light spills onto the surrounding rock, contrasting with the warm amber key light near hex fbbf24 that rims the stone base. The host rock is matte, crumbly and painterly so the gems pop forward. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, the whole cluster fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, chunky readable silhouettes, painterly brush texture, cozy idle-game charm, cinematic warm lighting with cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/ore-diamond-s46.png"
+      }
+    },
+    "icons/pickaxe": {
+      "file": "assets/icons/pickaxe.webp",
+      "group": "icons",
+      "w": 95,
+      "h": 96,
+      "aspect": 0.9896,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 4552,
+      "sha256": "72c662a9dcb4de722154da38d4babef83ca61619e83d07d8c720f538267b82cf",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 47,
+        "prompt": "An upgrade icon sprite of a classic miner pickaxe for a cozy idle mining game, designed to stay readable inside a small UI button. The pickaxe rests in a confident diagonal pose, head at the upper right and handle sweeping to the lower left. Its forged steel head is dark warm gunmetal with two gently curved pointed tips, a reinforced central eye and subtle amber edge highlights near hex fbbf24 where lantern light catches the metal. The handle is honey brown wood with visible painterly grain, a darker leather grip wrap near the base and a small iron collar where head meets shaft. Proportions are chunky and toy-like with softly rounded corners, thick silhouette and exaggerated head size so the tool reads instantly at thumbnail scale. Materials mix brushed metal, matte wood and soft leather with gentle ambient occlusion and one clean specular streak along the head. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, the whole tool fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, deep espresso brown undertones, glowing amber key light, soft volumetric glow, cozy idle-game charm, cinematic warm lighting with subtle cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/icon-pickaxe-s47.png"
+      }
+    },
+    "icons/drill": {
+      "file": "assets/icons/drill.webp",
+      "group": "icons",
+      "w": 96,
+      "h": 96,
+      "aspect": 1.0,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 6032,
+      "sha256": "5129cb6a746e0cb0a37c82ea326877083fa8bb7b7c903b46e235b8ad7f628269",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 48,
+        "prompt": "An upgrade icon sprite of a chunky cartoon mining drill machine for a cozy idle mining game, designed to stay readable inside a small UI button. The drill is a compact riveted steel unit in warm gunmetal gray with a rounded boiler-like body, a large spiral drill bit pointing down and to the right, two exposed brass gears on its side and a small amber indicator lamp near hex fbbf24 glowing on top. A short exhaust pipe curls upward with a single soft puff of stylized steam, and rubberized dark treads or stubby feet anchor the base. Proportions are exaggerated and toy-like: oversized bit, fat body, tiny details simplified so the silhouette reads instantly at thumbnail scale. Materials blend brushed metal, polished brass, matte rubber and warm painted panels with gentle ambient occlusion and clean specular streaks. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, the whole machine fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, deep espresso brown undertones near hex 14100c, glowing amber key light, soft volumetric glow, chunky readable silhouettes, painterly brush texture, cozy idle-game charm, cinematic warm lighting with subtle cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/icon-drill-s48.png"
+      }
+    },
+    "icons/refinery": {
+      "file": "assets/icons/refinery.webp",
+      "group": "icons",
+      "w": 72,
+      "h": 96,
+      "aspect": 0.75,
+      "pivot": "center",
+      "alpha": true,
+      "bytes": 4204,
+      "sha256": "c9f7ddb49035b2b3cdd199203db4af7b784f19a90372496a24fb19ec44df294b",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 49,
+        "prompt": "An upgrade icon sprite of a miniature ore refinery building for a cozy idle mining game, designed to stay readable inside a small UI button. The refinery is a compact stone-and-timber furnace hut with a rounded brick chimney releasing one soft curl of stylized smoke, warm timber framing around a glowing arched furnace mouth, and a small crucible of molten gold near hex d4a017 visible at the front. One finished gold ingot rests on a tiny wooden crate beside the door, and a copper pipe runs along the wall. The furnace glow spills warm amber light near hex fbbf24 onto the stone steps, creating the focal point of the icon. Proportions are chunky and toy-like with a fat rounded roof, thick walls and simplified details so the building reads instantly at thumbnail scale. Materials mix rough painterly stone, aged wood, glowing molten metal and soft smoke with gentle ambient occlusion. Camera is a straight-on three-quarter product view at eye level with a mild 35mm lens feel, the whole building fully inside the frame with generous margins. Rendered as a polished stylized 3D cartoon with hand-painted storybook surface detail, warm underground mining atmosphere, deep espresso brown undertones, glowing amber key light, soft volumetric glow, cozy idle-game charm, cinematic warm lighting with subtle cool teal rim accents, high production value, family friendly, never photorealistic, centered, isolated single object on a plain neutral light-gray studio background, no horizon, no shadow catcher plane, no text, no watermark",
+        "raw": "assets/_src/icon-refinery-s49.png"
+      }
+    },
+    "keyart/mine-empire": {
+      "file": "assets/keyart/mine-empire.webp",
+      "group": "keyart",
+      "w": 1280,
+      "h": 722,
+      "aspect": 1.7729,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 116542,
+      "sha256": "eb7854bb38aaa5037e53cab092ea3570dca8b4f56c92b30880a340460b3cd10c",
+      "source": {
+        "kind": "image",
+        "model": "h3-image",
+        "seed": 7,
+        "prompt": "Key art hero illustration for a cozy idle mining empire game, wide 16:9 composition with no text anywhere. On a dusk hillside under a deep blue teal sky near hex 1a2436, a sturdy timber-framed mine entrance glows with warm amber lantern light near hex fbbf24. In the foreground a wooden mine cart overflows with gold chunks near hex d4a017, a teal diamond crystal near hex 5eead4 and dark coal lumps, while a pickaxe and a chunky riveted drill lean against the rail. Below the surface, a cutaway cross-section reveals layered espresso brown earth near hex 14100c and 241c12 with amber-lit tunnels, wooden supports and tiny glinting ore veins descending into the depths. Fireflies and dust motes drift in the lantern halos, and soft volumetric light shafts connect the surface and underground worlds. A winding dirt path, a few blank wooden signposts and tufts of dusk-lit grass frame the entrance, while distant hills fade into soft teal mist. The mood is warm, industrious and inviting, celebrating humble digging turning into a glowing underground empire. Rendered as a polished stylized 3D cartoon with hand-painted storybook textures, chunky readable shapes, painterly brush detail, cinematic warm key lighting with cool teal rim accents, gentle ambient occlusion, high production value, family friendly, no characters, no text, no numbers, no letters, no logo, no watermark.",
+        "raw": "assets/_src/keyart-mine-empire-s7.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T11:09:33+00:00"
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BASKET BROS</title>
+  <meta name="description" content="1v1 street basketball against the bot. Charge your shot, steal the ball, and sink buckets — first to 11 wins.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left"></div>
+      <div class="hud-right">
+        <button id="btn-mute" class="hud-btn" aria-label="Sound"></button>
+        <button id="btn-pause" class="hud-btn" aria-label="Pause">II</button>
+      </div>
+    </div>
+
+    <div id="touch-controls" class="touch-controls hidden">
+      <div class="touch-move">
+        <button id="btn-left" class="touch-btn" aria-label="Left">◀</button>
+        <button id="btn-right" class="touch-btn" aria-label="Right">▶</button>
+      </div>
+      <div class="touch-actions">
+        <button id="btn-steal" class="touch-btn small"></button>
+        <button id="btn-jump" class="touch-btn small"></button>
+        <button id="btn-shoot" class="touch-btn shoot"></button>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text"></h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="how-to" id="how-to"></p>
+      <button id="btn-start"></button>
+      <p class="best" id="title-best"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume"></button>
+      <button id="btn-restart" class="secondary"></button>
+      <button id="btn-title" class="secondary"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-end" class="screen hidden">
+      <h2 id="end-title"></h2>
+      <button id="btn-again"></button>
+      <button id="btn-title-end" class="secondary"></button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

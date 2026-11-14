@@ -1,0 +1,63 @@
+{
+  "slug": "drift-limits",
+  "genre": "racing",
+  "oneLiner": "夜城环线：绿灯起步、连击漂移叠倍率、氮气甩警车，撞一次倍率归零，三圈冲线即逃脱。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "drift",
+      "cost": "漂移掉速、警车逼近，滑过头撞墙则倍率归零",
+      "feedback": ["skid-sfx", "tire-smoke", "combo-popup", "nitro-charge"],
+      "combinesWith": ["boost"]
+    },
+    {
+      "name": "boost",
+      "cost": "烧掉漂移攒的氮气，烧完必须再漂才能攒",
+      "feedback": ["exhaust-flame", "fov-kick", "engine-roar", "police-gap-widen"],
+      "combinesWith": ["drift"]
+    },
+    {
+      "name": "weave",
+      "cost": "贴车超车拿 near-miss 加分，判断失误就撞车掉倍率",
+      "feedback": ["nearmiss-popup", "whoosh-sfx", "score-tick"],
+      "combinesWith": ["drift"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "红灯起步：绿灯瞬间按空格完美起步 vs 抢跑", "cost": "抢跑警车初始距离 -25m；不按则丢先手" },
+    { "atSec": 12, "choice": "第一个弯：漂移攒倍率 vs 抓地保速", "cost": "漂移掉速让警车逼近，抓地则没分没氮气" },
+    { "atSec": 25, "choice": "第一簇车流：贴车 near-miss vs 安全车道", "cost": "near-miss 加分但失误撞车倍率归零" },
+    { "atSec": 40, "choice": "氮气满：立刻烧掉拉开警车 vs 留到发夹弯", "cost": "现在烧后面没得逃，留着现在被追近" },
+    { "atSec": 60, "choice": "警车贴尾：继续漂移充氮 vs 直线逃跑", "cost": "漂移更慢可能被抓，直线没氮气来源" },
+    { "atSec": 90, "choice": "第二圈双警车：内线短但车多 vs 外线长但空", "cost": "内线 near-miss 机会多也更容易撞" },
+    { "atSec": 120, "choice": "倍率 ×8：停漂保倍率冲线 vs 再贪一个弯 ×10", "cost": "贪弯一旦撞车全部归零" },
+    { "atSec": 150, "choice": "第三圈路障：提前变道缺口 vs 漂移硬切", "cost": "硬切成功省 1s 但失败撞障掉倍率" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "单车追缉 + 稀疏车流：教漂移/氮气/起步" },
+    { "index": 2, "newElement": "双警车夹击 + 密集车流：near-miss 成为主要氮气来源" },
+    { "index": 3, "newElement": "警车涡轮 + 路障缺口道：必须读路障选线" }
+  ],
+  "upgrades": [
+    { "id": "chain-lock", "kind": "rule" },
+    { "id": "nearmiss-master", "kind": "rule" },
+    { "id": "cop-shaker", "kind": "rule" },
+    { "id": "ghost-bump", "kind": "rule" },
+    { "id": "engine-tune", "kind": "stat" },
+    { "id": "turbo-kit", "kind": "stat" },
+    { "id": "grip-tires", "kind": "stat" },
+    { "id": "light-chassis", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

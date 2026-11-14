@@ -1,0 +1,28 @@
+{
+  "page": "https://pipygames.com/games/market-cashier-exact-change-supermarket-sim-hhiw",
+  "playUrl": "https://pipygames.com/g/g_1794628159053_2rhhiw/index.html",
+  "checks": {
+    "desktop": {
+      "canvas": true,
+      "title": "MARKET CASHIER",
+      "raced": {
+        "state": "playing",
+        "speed": null,
+        "hud": true
+      },
+      "errors": []
+    },
+    "iphone": {
+      "canvas": true,
+      "rotate": "flex",
+      "touch": true,
+      "landscape": {
+        "rotate": "none",
+        "touch": true
+      },
+      "errors": []
+    }
+  },
+  "errors": [],
+  "ok": true
+}
