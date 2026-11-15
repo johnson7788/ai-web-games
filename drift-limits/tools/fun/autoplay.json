@@ -5,7 +5,7 @@
       "policy": "greedy",
       "durationSec": 89.93,
       "firstInputSec": 3.02,
-      "inputLatencyMs": 0.8,
+      "inputLatencyMs": 16,
       "firstSuccessSec": 26.1,
       "deaths": 0,
       "actions": 118,
@@ -815,7 +815,7 @@
       "policy": "greedy",
       "durationSec": 86.95,
       "firstInputSec": 3.02,
-      "inputLatencyMs": 0.8,
+      "inputLatencyMs": 16,
       "firstSuccessSec": 9.02,
       "deaths": 0,
       "actions": 103,
@@ -1561,7 +1561,7 @@
       "policy": "greedy",
       "durationSec": 88,
       "firstInputSec": 3.02,
-      "inputLatencyMs": 0.8,
+      "inputLatencyMs": 16,
       "firstSuccessSec": 11.45,
       "deaths": 0,
       "actions": 111,
@@ -2377,20 +2377,256 @@
     {
       "id": "random-44",
       "policy": "random",
-      "durationSec": 8.45,
+      "durationSec": 8.93,
       "firstInputSec": 0,
-      "inputLatencyMs": 0.8,
+      "inputLatencyMs": 16,
       "firstSuccessSec": null,
       "deaths": 1,
-      "actions": 22,
+      "actions": 20,
       "idleSec": 0.48,
       "maxEventGapSec": 1.47,
       "uniqueEvents": 11,
       "levelsReached": 1,
       "completed": false,
       "progressRate": 0.03,
-      "score": 157,
-      "topMult": 5,
+      "score": 91,
+      "topMult": 4,
+      "nearMisses": 0,
+      "crashes": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.21666666666666665,
+          "type": "light"
+        },
+        {
+          "t": 1.2000000000000006,
+          "type": "light"
+        },
+        {
+          "t": 2.2166666666666637,
+          "type": "light"
+        },
+        {
+          "t": 3.016666666666661,
+          "type": "light"
+        },
+        {
+          "t": 3.016666666666661,
+          "type": "launchNormal"
+        },
+        {
+          "t": 3.0333333333333274,
+          "type": "launchPerfect"
+        },
+        {
+          "t": 4.499999999999989,
+          "type": "driftStart"
+        },
+        {
+          "t": 4.599999999999989,
+          "type": "driftEnd"
+        },
+        {
+          "t": 4.633333333333322,
+          "type": "boostEnd"
+        },
+        {
+          "t": 5.266666666666653,
+          "type": "driftStart"
+        },
+        {
+          "t": 5.566666666666652,
+          "type": "driftEnd"
+        },
+        {
+          "t": 5.816666666666651,
+          "type": "driftStart"
+        },
+        {
+          "t": 5.8499999999999845,
+          "type": "driftEnd"
+        },
+        {
+          "t": 6.383333333333316,
+          "type": "offTrack"
+        },
+        {
+          "t": 6.566666666666649,
+          "type": "dist"
+        },
+        {
+          "t": 7.333333333333313,
+          "type": "copClose"
+        },
+        {
+          "t": 7.749999999999978,
+          "type": "driftStart"
+        },
+        {
+          "t": 7.816666666666644,
+          "type": "offTrack"
+        },
+        {
+          "t": 7.816666666666644,
+          "type": "driftTick"
+        },
+        {
+          "t": 7.899999999999977,
+          "type": "driftEnd"
+        },
+        {
+          "t": 8.399999999999997,
+          "type": "offTrack"
+        },
+        {
+          "t": 8.933333333333357,
+          "type": "busted"
+        }
+      ]
+    },
+    {
+      "id": "random-45",
+      "policy": "random",
+      "durationSec": 12.23,
+      "firstInputSec": 0,
+      "inputLatencyMs": 16,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 24,
+      "idleSec": 2,
+      "maxEventGapSec": 1.87,
+      "uniqueEvents": 11,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.07,
+      "score": 337,
+      "topMult": 4,
+      "nearMisses": 0,
+      "crashes": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.21666666666666665,
+          "type": "light"
+        },
+        {
+          "t": 1.2000000000000006,
+          "type": "light"
+        },
+        {
+          "t": 2.2166666666666637,
+          "type": "light"
+        },
+        {
+          "t": 3.016666666666661,
+          "type": "light"
+        },
+        {
+          "t": 3.016666666666661,
+          "type": "launchNormal"
+        },
+        {
+          "t": 3.0333333333333274,
+          "type": "launchPerfect"
+        },
+        {
+          "t": 4.633333333333322,
+          "type": "boostEnd"
+        },
+        {
+          "t": 6.499999999999982,
+          "type": "dist"
+        },
+        {
+          "t": 7.9333333333333105,
+          "type": "driftStart"
+        },
+        {
+          "t": 8.133333333333317,
+          "type": "offTrack"
+        },
+        {
+          "t": 8.133333333333317,
+          "type": "dist"
+        },
+        {
+          "t": 8.366666666666662,
+          "type": "driftEnd"
+        },
+        {
+          "t": 9.450000000000049,
+          "type": "offTrack"
+        },
+        {
+          "t": 9.683333333333394,
+          "type": "driftStart"
+        },
+        {
+          "t": 9.750000000000064,
+          "type": "driftTick"
+        },
+        {
+          "t": 9.966666666666741,
+          "type": "driftEnd"
+        },
+        {
+          "t": 10.533333333333436,
+          "type": "copClose"
+        },
+        {
+          "t": 10.883333333333454,
+          "type": "dist"
+        },
+        {
+          "t": 10.900000000000121,
+          "type": "driftStart"
+        },
+        {
+          "t": 11.200000000000136,
+          "type": "driftTick"
+        },
+        {
+          "t": 11.266666666666806,
+          "type": "driftEnd"
+        },
+        {
+          "t": 11.683333333333493,
+          "type": "driftStart"
+        },
+        {
+          "t": 12.050000000000178,
+          "type": "driftEnd"
+        },
+        {
+          "t": 12.23333333333352,
+          "type": "busted"
+        }
+      ]
+    },
+    {
+      "id": "random-46",
+      "policy": "random",
+      "durationSec": 8.47,
+      "firstInputSec": 0,
+      "inputLatencyMs": 16,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 19,
+      "idleSec": 0.65,
+      "maxEventGapSec": 1.47,
+      "uniqueEvents": 11,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.02,
+      "score": 210,
+      "topMult": 3,
       "nearMisses": 0,
       "crashes": 0,
       "events": [
@@ -2439,243 +2675,43 @@
           "type": "driftEnd"
         },
         {
-          "t": 5.8499999999999845,
+          "t": 5.149999999999987,
+          "type": "offTrack"
+        },
+        {
+          "t": 5.883333333333318,
           "type": "driftStart"
         },
         {
-          "t": 5.866666666666651,
-          "type": "offTrack"
-        },
-        {
-          "t": 6.299999999999983,
+          "t": 6.26666666666665,
           "type": "driftEnd"
         },
         {
-          "t": 6.833333333333314,
+          "t": 6.433333333333316,
           "type": "copClose"
         },
         {
-          "t": 6.966666666666647,
+          "t": 6.683333333333315,
+          "type": "driftStart"
+        },
+        {
+          "t": 6.799999999999981,
+          "type": "driftTick"
+        },
+        {
+          "t": 6.949999999999981,
           "type": "offTrack"
         },
         {
-          "t": 7.066666666666647,
+          "t": 7.233333333333313,
           "type": "dist"
         },
         {
-          "t": 7.516666666666645,
-          "type": "driftStart"
-        },
-        {
-          "t": 7.566666666666645,
-          "type": "driftTick"
-        },
-        {
-          "t": 7.616666666666645,
+          "t": 7.299999999999979,
           "type": "driftEnd"
         },
         {
-          "t": 7.899999999999977,
-          "type": "driftStart"
-        },
-        {
-          "t": 8.066666666666647,
-          "type": "driftEnd"
-        },
-        {
-          "t": 8.066666666666647,
-          "type": "offTrack"
-        },
-        {
-          "t": 8.349999999999994,
-          "type": "driftStart"
-        },
-        {
-          "t": 8.45,
-          "type": "busted"
-        }
-      ]
-    },
-    {
-      "id": "random-45",
-      "policy": "random",
-      "durationSec": 8.33,
-      "firstInputSec": 0,
-      "inputLatencyMs": 0.8,
-      "firstSuccessSec": null,
-      "deaths": 1,
-      "actions": 19,
-      "idleSec": 0.73,
-      "maxEventGapSec": 1.6,
-      "uniqueEvents": 11,
-      "levelsReached": 1,
-      "completed": false,
-      "progressRate": 0.02,
-      "score": 85,
-      "topMult": 2,
-      "nearMisses": 0,
-      "crashes": 0,
-      "events": [
-        {
-          "t": 0,
-          "type": "start"
-        },
-        {
-          "t": 0.21666666666666665,
-          "type": "light"
-        },
-        {
-          "t": 1.2000000000000006,
-          "type": "light"
-        },
-        {
-          "t": 2.2166666666666637,
-          "type": "light"
-        },
-        {
-          "t": 3.016666666666661,
-          "type": "light"
-        },
-        {
-          "t": 3.016666666666661,
-          "type": "launchNormal"
-        },
-        {
-          "t": 3.0333333333333274,
-          "type": "launchPerfect"
-        },
-        {
-          "t": 4.633333333333322,
-          "type": "boostEnd"
-        },
-        {
-          "t": 5.433333333333319,
-          "type": "driftStart"
-        },
-        {
-          "t": 5.599999999999985,
-          "type": "offTrack"
-        },
-        {
-          "t": 5.8499999999999845,
-          "type": "driftEnd"
-        },
-        {
-          "t": 6.5333333333333155,
-          "type": "driftStart"
-        },
-        {
-          "t": 6.566666666666649,
-          "type": "offTrack"
-        },
-        {
-          "t": 6.6166666666666485,
-          "type": "driftTick"
-        },
-        {
-          "t": 6.683333333333315,
-          "type": "driftEnd"
-        },
-        {
-          "t": 6.783333333333315,
-          "type": "copClose"
-        },
-        {
-          "t": 7.216666666666646,
-          "type": "dist"
-        },
-        {
-          "t": 8.333333333333327,
-          "type": "busted"
-        }
-      ]
-    },
-    {
-      "id": "random-46",
-      "policy": "random",
-      "durationSec": 7.95,
-      "firstInputSec": 0,
-      "inputLatencyMs": 0.8,
-      "firstSuccessSec": null,
-      "deaths": 1,
-      "actions": 19,
-      "idleSec": 0.8,
-      "maxEventGapSec": 1.57,
-      "uniqueEvents": 10,
-      "levelsReached": 1,
-      "completed": false,
-      "progressRate": 0.02,
-      "score": 41,
-      "topMult": 2,
-      "nearMisses": 0,
-      "crashes": 0,
-      "events": [
-        {
-          "t": 0,
-          "type": "start"
-        },
-        {
-          "t": 0.21666666666666665,
-          "type": "light"
-        },
-        {
-          "t": 1.2000000000000006,
-          "type": "light"
-        },
-        {
-          "t": 2.2166666666666637,
-          "type": "light"
-        },
-        {
-          "t": 3.016666666666661,
-          "type": "light"
-        },
-        {
-          "t": 3.016666666666661,
-          "type": "launchNormal"
-        },
-        {
-          "t": 3.0333333333333274,
-          "type": "launchPerfect"
-        },
-        {
-          "t": 4.599999999999989,
-          "type": "driftStart"
-        },
-        {
-          "t": 4.633333333333322,
-          "type": "boostEnd"
-        },
-        {
-          "t": 5.099999999999987,
-          "type": "driftTick"
-        },
-        {
-          "t": 5.266666666666653,
-          "type": "offTrack"
-        },
-        {
-          "t": 5.433333333333319,
-          "type": "driftEnd"
-        },
-        {
-          "t": 6.333333333333316,
-          "type": "copClose"
-        },
-        {
-          "t": 6.683333333333315,
-          "type": "driftStart"
-        },
-        {
-          "t": 6.683333333333315,
-          "type": "offTrack"
-        },
-        {
-          "t": 6.733333333333315,
-          "type": "driftEnd"
-        },
-        {
-          "t": 7.949999999999977,
+          "t": 8.466666666666667,
           "type": "busted"
         }
       ]
@@ -2685,7 +2721,7 @@
       "policy": "noinput",
       "durationSec": 8.65,
       "firstInputSec": 8.65,
-      "inputLatencyMs": 0.8,
+      "inputLatencyMs": 16,
       "firstSuccessSec": null,
       "deaths": 1,
       "actions": 0,
@@ -2747,7 +2783,7 @@
       "policy": "noinput",
       "durationSec": 8.65,
       "firstInputSec": 8.65,
-      "inputLatencyMs": 0.8,
+      "inputLatencyMs": 16,
       "firstSuccessSec": null,
       "deaths": 1,
       "actions": 0,

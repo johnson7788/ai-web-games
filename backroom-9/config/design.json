@@ -1,0 +1,159 @@
+{
+  "slug": "backroom-9",
+  "genre": "narrative",
+  "oneLiner": "程序化后室迷宫，找 9 个出口，实体追",
+  "fun": {
+    "primary": "curiosity",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "explore",
+      "cost": "走过的路会变（迷宫重组）",
+      "feedback": [
+        "sfx",
+        "hum",
+        "flicker"
+      ],
+      "combinesWith": [
+        "sprint"
+      ]
+    },
+    {
+      "name": "sprint",
+      "cost": "体力耗尽会喘（引实体）",
+      "feedback": [
+        "sfx",
+        "breath",
+        "fov"
+      ],
+      "combinesWith": [
+        "hide"
+      ]
+    },
+    {
+      "name": "hide",
+      "cost": "躲桌底不能动",
+      "feedback": [
+        "sfx",
+        "heartbeat",
+        "shadow-pass"
+      ],
+      "combinesWith": [
+        "explore"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 10,
+      "choice": "跟荧光标记走还是自己探",
+      "cost": "标记可能是陷阱"
+    },
+    {
+      "atSec": 30,
+      "choice": "听到实体跑还是躲桌底",
+      "cost": "跑耗体力"
+    },
+    {
+      "atSec": 55,
+      "choice": "进红门（危险近路）还是黄门（安全远路）",
+      "cost": "红门实体多"
+    },
+    {
+      "atSec": 80,
+      "choice": "体力药现在用还是留着",
+      "cost": "只有一瓶"
+    },
+    {
+      "atSec": 110,
+      "choice": "第 6 出口后迷宫重组，记旧路还是探新路",
+      "cost": "旧路可能失效"
+    },
+    {
+      "atSec": 150,
+      "choice": "最后出口冲刺还是稳走",
+      "cost": "冲刺引实体"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "Level 0 黄房迷宫 + 1 出口"
+    },
+    {
+      "index": 2,
+      "newElement": "实体（听觉追逐）"
+    },
+    {
+      "index": 3,
+      "newElement": "桌底躲藏"
+    },
+    {
+      "index": 4,
+      "newElement": "红/黄门选择"
+    },
+    {
+      "index": 5,
+      "newElement": "迷宫重组 + 最终第 9 出口"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "marker-sense",
+      "kind": "rule"
+    },
+    {
+      "id": "silent-sprint",
+      "kind": "rule"
+    },
+    {
+      "id": "peek-hide",
+      "kind": "rule"
+    },
+    {
+      "id": "map-memory",
+      "kind": "rule"
+    },
+    {
+      "id": "door-luck",
+      "kind": "rule"
+    },
+    {
+      "id": "stamina-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "breath-control",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "daily",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

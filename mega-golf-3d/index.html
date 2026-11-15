@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MEGA GOLF 3D</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span class="hud-box"><span class="hud-label" data-i18n="hole">HOLE</span> <b id="hud-hole">1/24</b></span>
+        <span class="hud-box"><span class="hud-label" data-i18n="par">PAR</span> <b id="hud-par">2</b></span>
+        <span class="hud-box"><span class="hud-label" data-i18n="strokes">STROKES</span> <b id="hud-strokes">0</b></span>
+      </div>
+      <div class="hud-right">
+        <span class="hud-box"><span class="hud-label" data-i18n="total">TOTAL</span> <b id="hud-total">0</b></span>
+        <span class="hud-box"><span class="hud-label" data-i18n="wind">WIND</span> <b id="hud-wind">·</b></span>
+      </div>
+      <div id="toast" class="toast hidden"></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">MEGA GOLF 3D</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="tagline" id="tagline-text"></p>
+      <p class="title-best" id="title-best"></p>
+      <button id="btn-start" class="btn primary">PLAY</button>
+      <button id="btn-howto" class="btn" data-tutorial-replay>HOW TO PLAY</button>
+      <button id="btn-mute" class="btn small">SOUND: ON</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">PAUSED</h2>
+      <button id="btn-resume" class="btn primary">RESUME</button>
+      <button id="btn-restart-pause" class="btn">RESTART</button>
+      <button id="btn-menu-pause" class="btn">MENU</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title">COURSE COMPLETE</h2>
+      <p id="res-sub"></p>
+      <div id="res-rating"></div>
+      <div id="res-stats"></div>
+      <div id="res-record" class="hidden">NEW BEST!</div>
+      <button id="btn-restart" class="btn primary">RESTART</button>
+      <button id="btn-share" class="btn">SHARE</button>
+      <button id="btn-menu" class="btn">MENU</button>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-next" class="btn primary">OK</button>
+          <button id="tut-skip" class="btn" data-tutorial-skip>SKIP</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <div id="rotate-card">
+        <p id="rotate-text">Rotate your device to play.</p>
+        <button id="btn-rotate-skip" class="btn small">Continue anyway</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

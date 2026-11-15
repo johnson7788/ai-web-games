@@ -1,0 +1,159 @@
+{
+  "slug": "sandbox-isle",
+  "genre": "sim",
+  "oneLiner": "32×24×32 有限体素岛：挖 / 建 / 养动物 / 每日目标",
+  "fun": {
+    "primary": "expression",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "dig",
+      "cost": "体力，挖错会塌",
+      "feedback": [
+        "sfx",
+        "crack",
+        "block-pop"
+      ],
+      "combinesWith": [
+        "build"
+      ]
+    },
+    {
+      "name": "build",
+      "cost": "方块库存有限",
+      "feedback": [
+        "sfx",
+        "place",
+        "ghost-preview"
+      ],
+      "combinesWith": [
+        "dig"
+      ]
+    },
+    {
+      "name": "tend",
+      "cost": "动物要每天喂",
+      "feedback": [
+        "sfx",
+        "heart",
+        "animal-anim"
+      ],
+      "combinesWith": [
+        "build"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 10,
+      "choice": "先挖石材还是先砍木材",
+      "cost": "解锁不同建筑"
+    },
+    {
+      "atSec": 30,
+      "choice": "建动物棚还是先扩农田",
+      "cost": "食物 vs 收入"
+    },
+    {
+      "atSec": 55,
+      "choice": "喂稀有动物还是普通动物",
+      "cost": "稀有产金蛋"
+    },
+    {
+      "atSec": 80,
+      "choice": "挖山造景还是保自然地形",
+      "cost": "造景耗体力"
+    },
+    {
+      "atSec": 110,
+      "choice": "完成每日目标还是自由建造",
+      "cost": "目标给稀有方块"
+    },
+    {
+      "atSec": 150,
+      "choice": "解锁彩虹桥还是攒金币",
+      "cost": "大件投资"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础挖/建 + 鸡"
+    },
+    {
+      "index": 2,
+      "newElement": "农田（种萝卜喂羊）"
+    },
+    {
+      "index": 3,
+      "newElement": "羊 + 羊毛收入"
+    },
+    {
+      "index": 4,
+      "newElement": "稀有孔雀（金蛋）"
+    },
+    {
+      "index": 5,
+      "newElement": "彩虹桥地标（终局建造）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "auto-feed",
+      "kind": "rule"
+    },
+    {
+      "id": "double-harvest",
+      "kind": "rule"
+    },
+    {
+      "id": "ghost-snap",
+      "kind": "rule"
+    },
+    {
+      "id": "animal-whistle",
+      "kind": "rule"
+    },
+    {
+      "id": "rainbow-blocks",
+      "kind": "rule"
+    },
+    {
+      "id": "dig-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "stamina-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "inventory-cap",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "daily",
+    "growth",
+    "unlock"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

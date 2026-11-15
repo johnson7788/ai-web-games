@@ -1,0 +1,23 @@
+{
+  "name": "bridge-horror-house",
+  "private": false,
+  "version": "1.0.0",
+  "description": "A first-person haunted-house escape game for the browser. Three.js, zero asset files, procedural everything.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bridge-mind/bridge-horror-house.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

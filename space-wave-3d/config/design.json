@@ -1,0 +1,147 @@
+{
+  "slug": "space-wave-3d",
+  "genre": "arcade",
+  "oneLiner": "单键穿越管道躲障碍，越窄分越高",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "hold",
+      "cost": "按住上升，松开下落",
+      "feedback": [
+        "sfx",
+        "thrust",
+        "trail"
+      ],
+      "combinesWith": [
+        "thread"
+      ]
+    },
+    {
+      "name": "thread",
+      "cost": "窄缝高分但容错低",
+      "feedback": [
+        "sfx",
+        "slowmo-tick",
+        "score-pop"
+      ],
+      "combinesWith": [
+        "hold"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "穿窄缝贪分还是走宽缝稳",
+      "cost": "窄缝容错 0.3s"
+    },
+    {
+      "atSec": 20,
+      "choice": "提前升还是晚升躲障碍",
+      "cost": "节奏赌错=撞"
+    },
+    {
+      "atSec": 40,
+      "choice": "加速段冲还是控速",
+      "cost": "越快分越高"
+    },
+    {
+      "atSec": 65,
+      "choice": "连续窄缝连穿还是绕",
+      "cost": "连穿×3 倍率"
+    },
+    {
+      "atSec": 95,
+      "choice": "用护盾（唯一）还是留着",
+      "cost": "护盾挡一次撞"
+    },
+    {
+      "atSec": 130,
+      "choice": "冲 2000m 还是见好就收",
+      "cost": "越远缝越窄"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础管道 + 宽缝"
+    },
+    {
+      "index": 2,
+      "newElement": "移动障碍柱"
+    },
+    {
+      "index": 3,
+      "newElement": "窄缝（高分）"
+    },
+    {
+      "index": 4,
+      "newElement": "加速段 + 旋转环"
+    },
+    {
+      "index": 5,
+      "newElement": "极限窄缝连穿段"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "shield",
+      "kind": "rule"
+    },
+    {
+      "id": "slowmo-thread",
+      "kind": "rule"
+    },
+    {
+      "id": "score-chain",
+      "kind": "rule"
+    },
+    {
+      "id": "ghost-frame",
+      "kind": "rule"
+    },
+    {
+      "id": "magnet-orb",
+      "kind": "rule"
+    },
+    {
+      "id": "thrust-power",
+      "kind": "stat"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "score-mult",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "leaderboard",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "url": "http://127.0.0.1:54570/",
+  "startedAt": "2026-11-15T01:37:23.356Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "key",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/nullstern/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/nullstern/tests/final/02-medbay.png",
+    "/Users/admin/git/webgames/games/nullstern/tests/final/03-defense-start.png",
+    "/Users/admin/git/webgames/games/nullstern/tests/final/04-combat.png",
+    "/Users/admin/git/webgames/games/nullstern/tests/final/05-combat-late.png",
+    "/Users/admin/git/webgames/games/nullstern/tests/final/06-first-person.png",
+    "/Users/admin/git/webgames/games/nullstern/tests/final/07-pause.png",
+    "/Users/admin/git/webgames/games/nullstern/tests/final/02-final.png"
+  ],
+  "fps": 60,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T01:37:55.826Z",
+  "video": "/Users/admin/git/webgames/games/nullstern/tests/final/play.webm"
+}

@@ -1,10 +1,10 @@
 {
   "url": "http://127.0.0.1:8330/",
-  "at": "2026-11-14T13:38:31.170Z",
+  "at": "2026-11-14T15:30:06.379Z",
   "sdk": {
     "hasPipyGames": true,
     "hasGameSDK": true,
-    "adsEnabled": true,
+    "adsEnabled": false,
     "placements": [],
     "trackingEnabled": true,
     "api": {
@@ -17,12 +17,12 @@
       "track": true
     }
   },
-  "adsEnabled": true,
+  "adsEnabled": false,
   "probes": {
     "rewarded": {
       "ran": true,
       "ok": true,
-      "value": "true"
+      "value": "false"
     },
     "track": {
       "ok": true
@@ -40,7 +40,8 @@
   "externalRequests": [
     "https://pipygames.com/sdk/config.json",
     "https://pipygames.com/api/sdk/config?appId=pipy-drift-limits",
-    "https://pipygames.com/sdk/config.json"
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-drift-limits"
   ],
   "consoleErrors": [],
   "failedRequests": [],
@@ -51,7 +52,7 @@
       "name": "SDK 对象存在（PipyGames 或 GameSDK）",
       "ok": true,
       "level": "error",
-      "detail": "{\"hasPipyGames\":true,\"hasGameSDK\":true,\"adsEnabled\":true,\"placements\":[],\"trackingEnabled\":true,\"api\":{\"showRewarded\":true,\"showInterstitial\":true,\"canShowAd\":t"
+      "detail": "{\"hasPipyGames\":true,\"hasGameSDK\":true,\"adsEnabled\":false,\"placements\":[],\"trackingEnabled\":true,\"api\":{\"showRewarded\":true,\"showInterstitial\":true,\"canShowAd\":"
     },
     {
       "name": "快捷 API 齐全（广告/生命周期/埋点）",
@@ -63,7 +64,7 @@
       "name": "showRewarded 不抛异常且返回布尔/超时",
       "ok": true,
       "level": "error",
-      "detail": "{\"ran\":true,\"ok\":true,\"value\":\"true\"}"
+      "detail": "{\"ran\":true,\"ok\":true,\"value\":\"false\"}"
     },
     {
       "name": "track 自定义埋点可用",

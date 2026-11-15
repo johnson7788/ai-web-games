@@ -1,0 +1,158 @@
+{
+  "slug": "ragdoll-archers-3d",
+  "genre": "action",
+  "oneLiner": "拉弓→抛物线→箭插进对方身体，慢镜头回放",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "draw",
+      "cost": "拉满弓时移动变慢",
+      "feedback": [
+        "sfx",
+        "bow-bend",
+        "aim-line"
+      ],
+      "combinesWith": [
+        "aim"
+      ]
+    },
+    {
+      "name": "aim",
+      "cost": "抛物线受风影响",
+      "feedback": [
+        "trajectory-dots",
+        "wind-flag"
+      ],
+      "combinesWith": [
+        "draw"
+      ]
+    },
+    {
+      "name": "loose",
+      "cost": "箭袋有限，补箭要等",
+      "feedback": [
+        "sfx",
+        "slowmo",
+        "ragdoll"
+      ],
+      "combinesWith": [
+        "aim"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "直射快攻还是抛射越障",
+      "cost": "抛射暴露更久"
+    },
+    {
+      "atSec": 25,
+      "choice": "瞄头（一击倒）还是瞄身（稳）",
+      "cost": "头目标小"
+    },
+    {
+      "atSec": 45,
+      "choice": "用掉最后一支箭还是等补箭",
+      "cost": "空手无防备"
+    },
+    {
+      "atSec": 70,
+      "choice": "打对手弓手还是先打其掩体",
+      "cost": "掩体可破坏"
+    },
+    {
+      "atSec": 100,
+      "choice": "顺风远射赌分还是走近稳射",
+      "cost": "走近被反击"
+    },
+    {
+      "atSec": 140,
+      "choice": "决胜箭瞄头还是保守瞄身",
+      "cost": "失误=输掉回合"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "平地 duel + 基础抛物线"
+    },
+    {
+      "index": 2,
+      "newElement": "风（影响弹道）"
+    },
+    {
+      "index": 3,
+      "newElement": "木箱掩体（可射穿一层）"
+    },
+    {
+      "index": 4,
+      "newElement": "高台对手（仰射）"
+    },
+    {
+      "index": 5,
+      "newElement": "双对手（2v1 回合）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "piercing-arrow",
+      "kind": "rule"
+    },
+    {
+      "id": "split-shot",
+      "kind": "rule"
+    },
+    {
+      "id": "slowmo-aim",
+      "kind": "rule"
+    },
+    {
+      "id": "wind-reader",
+      "kind": "rule"
+    },
+    {
+      "id": "quiver-cycle",
+      "kind": "rule"
+    },
+    {
+      "id": "draw-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "arrow-dmg",
+      "kind": "stat"
+    },
+    {
+      "id": "move-speed",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "newBuild",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 501201,
+      "sha256": "c8b3b759f8bddff9f1832c0bf044ad2b8c0671531f62400badbb666d9089e833",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a modern Formula 1 race car cornering at extreme speed through a night street circuit, sparks flying from the titanium skid block, glowing red brake discs, motion blur on the background harbor city lights, wet asphalt reflecting neon, rear wing DRS open, dramatic low three-quarter camera angle, vibrant saturated broadcast motorsport aesthetic, high detail PBR materials, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T03:14:44+00:00"
+}

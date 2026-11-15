@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 503005,
+      "sha256": "5e6e67f87b8975a6d4391cf081d9720a3637ed71079a0c7e5a08acd0b62ceadf",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a heroic voxel Zhao Yun warrior in white and silver armor sweeping a long spear through a horde of hundreds of tiny blocky enemy soldiers on a Three Kingdoms battlefield at dusk, enemies flying and shattering into cubes, red and gold war banners with torches burning, a fortress gate in the background, dynamic diagonal action pose, warm torchlight rim light, vibrant saturated voxel musou aesthetic, high detail, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T03:13:43+00:00"
+}

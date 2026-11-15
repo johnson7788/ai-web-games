@@ -1,0 +1,30 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      2048,
+      1152
+    ]
+  },
+  "items": [
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "size": [
+        2048,
+        1152
+      ],
+      "seeds": [
+        41
+      ],
+      "prompt": "Stylized 3D game key art, wide cinematic composition: a cute red go-kart drifting sideways around a banked corner of a colorful ring race track, golden coins spinning in the air and a glowing yellow boost pad ahead, checkered start line and red-white curbs, low-poly pine trees and blue sky, chunky cartoon proportions, warm sunny light, vibrant saturated arcade kart racing aesthetic, high detail, no text, no watermark, no logo",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "model": "qwen-image-xl"
+    }
+  ]
+}

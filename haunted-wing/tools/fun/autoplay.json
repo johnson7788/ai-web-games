@@ -1,0 +1,1075 @@
+{
+  "game": "haunted-wing",
+  "genre": "narrative",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-11",
+      "policy": "greedy",
+      "durationSec": 9.18,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": 1.13,
+      "deaths": 0,
+      "actions": 6,
+      "idleSec": 2.15,
+      "maxEventGapSec": 2.12,
+      "uniqueEvents": 9,
+      "levelsReached": 5,
+      "completed": true,
+      "progressRate": 0.8,
+      "keys": 3,
+      "lives": 3,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.1333333333333342,
+          "type": "key"
+        },
+        {
+          "t": 1.4333333333333331,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.6166666666666658,
+          "type": "door"
+        },
+        {
+          "t": 2.249999999999997,
+          "type": "key"
+        },
+        {
+          "t": 2.33333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 3.2333333333333267,
+          "type": "heartbeat"
+        },
+        {
+          "t": 3.849999999999991,
+          "type": "door"
+        },
+        {
+          "t": 4.933333333333321,
+          "type": "floor"
+        },
+        {
+          "t": 6.883333333333314,
+          "type": "key"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 9.183333333333369,
+          "type": "win"
+        }
+      ]
+    },
+    {
+      "id": "greedy-22",
+      "policy": "greedy",
+      "durationSec": 11.13,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": 1.13,
+      "deaths": 0,
+      "actions": 6,
+      "idleSec": 1.95,
+      "maxEventGapSec": 1.98,
+      "uniqueEvents": 9,
+      "levelsReached": 5,
+      "completed": true,
+      "progressRate": 0.8,
+      "keys": 3,
+      "lives": 3,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.1333333333333342,
+          "type": "key"
+        },
+        {
+          "t": 1.4333333333333331,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.6166666666666658,
+          "type": "door"
+        },
+        {
+          "t": 2.33333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 3.2333333333333267,
+          "type": "heartbeat"
+        },
+        {
+          "t": 4.133333333333324,
+          "type": "heartbeat"
+        },
+        {
+          "t": 4.166666666666657,
+          "type": "key"
+        },
+        {
+          "t": 5.033333333333321,
+          "type": "heartbeat"
+        },
+        {
+          "t": 6.049999999999984,
+          "type": "door"
+        },
+        {
+          "t": 7.116666666666647,
+          "type": "floor"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 9.150000000000034,
+          "type": "key"
+        },
+        {
+          "t": 11.133333333333466,
+          "type": "win"
+        }
+      ]
+    },
+    {
+      "id": "greedy-33",
+      "policy": "greedy",
+      "durationSec": 9.37,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": 1.13,
+      "deaths": 0,
+      "actions": 6,
+      "idleSec": 1.95,
+      "maxEventGapSec": 1.95,
+      "uniqueEvents": 10,
+      "levelsReached": 5,
+      "completed": true,
+      "progressRate": 0.8,
+      "keys": 3,
+      "lives": 3,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.1333333333333342,
+          "type": "key"
+        },
+        {
+          "t": 1.4333333333333331,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.6166666666666658,
+          "type": "door"
+        },
+        {
+          "t": 2.33333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 2.366666666666663,
+          "type": "search"
+        },
+        {
+          "t": 2.3833333333333298,
+          "type": "search"
+        },
+        {
+          "t": 2.3999999999999964,
+          "type": "search"
+        },
+        {
+          "t": 2.416666666666663,
+          "type": "search"
+        },
+        {
+          "t": 2.4333333333333296,
+          "type": "search"
+        },
+        {
+          "t": 2.449999999999996,
+          "type": "search"
+        },
+        {
+          "t": 2.466666666666663,
+          "type": "search"
+        },
+        {
+          "t": 2.4833333333333294,
+          "type": "search"
+        },
+        {
+          "t": 2.499999999999996,
+          "type": "search"
+        },
+        {
+          "t": 2.5166666666666626,
+          "type": "search"
+        },
+        {
+          "t": 2.533333333333329,
+          "type": "search"
+        },
+        {
+          "t": 2.549999999999996,
+          "type": "search"
+        },
+        {
+          "t": 2.5666666666666624,
+          "type": "search"
+        },
+        {
+          "t": 2.583333333333329,
+          "type": "search"
+        },
+        {
+          "t": 2.5999999999999956,
+          "type": "search"
+        },
+        {
+          "t": 2.6166666666666623,
+          "type": "search"
+        },
+        {
+          "t": 2.633333333333329,
+          "type": "search"
+        },
+        {
+          "t": 2.6499999999999955,
+          "type": "search"
+        },
+        {
+          "t": 2.666666666666662,
+          "type": "key"
+        },
+        {
+          "t": 3.2333333333333267,
+          "type": "heartbeat"
+        },
+        {
+          "t": 4.049999999999991,
+          "type": "door"
+        },
+        {
+          "t": 5.116666666666654,
+          "type": "floor"
+        },
+        {
+          "t": 7.066666666666647,
+          "type": "key"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 9.366666666666712,
+          "type": "win"
+        }
+      ]
+    },
+    {
+      "id": "random-44",
+      "policy": "random",
+      "durationSec": 17.38,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "actions": 40,
+      "idleSec": 5.5,
+      "maxEventGapSec": 4.58,
+      "uniqueEvents": 8,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.2,
+      "keys": 0,
+      "lives": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.19999999999999998,
+          "type": "battery"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "breath"
+        },
+        {
+          "t": 0.9333333333333346,
+          "type": "caught"
+        },
+        {
+          "t": 3.849999999999991,
+          "type": "heartbeat"
+        },
+        {
+          "t": 4.7499999999999885,
+          "type": "heartbeat"
+        },
+        {
+          "t": 5.649999999999985,
+          "type": "heartbeat"
+        },
+        {
+          "t": 6.549999999999982,
+          "type": "heartbeat"
+        },
+        {
+          "t": 7.449999999999979,
+          "type": "heartbeat"
+        },
+        {
+          "t": 7.449999999999979,
+          "type": "breath"
+        },
+        {
+          "t": 7.966666666666644,
+          "type": "heartbeat"
+        },
+        {
+          "t": 7.966666666666644,
+          "type": "breath"
+        },
+        {
+          "t": 8.483333333333334,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.483333333333334,
+          "type": "breath"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "breath"
+        },
+        {
+          "t": 9.133333333333367,
+          "type": "caught"
+        },
+        {
+          "t": 13.716666666666928,
+          "type": "heartbeat"
+        },
+        {
+          "t": 14.616666666666973,
+          "type": "heartbeat"
+        },
+        {
+          "t": 15.516666666667017,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.416666666667016,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.933333333333653,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.933333333333653,
+          "type": "breath"
+        },
+        {
+          "t": 17.383333333333628,
+          "type": "caught"
+        },
+        {
+          "t": 17.383333333333628,
+          "type": "fail"
+        }
+      ]
+    },
+    {
+      "id": "random-45",
+      "policy": "random",
+      "durationSec": 17.42,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "actions": 40,
+      "idleSec": 7.83,
+      "maxEventGapSec": 5.62,
+      "uniqueEvents": 8,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.2,
+      "keys": 0,
+      "lives": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "breath"
+        },
+        {
+          "t": 0.6000000000000002,
+          "type": "battery"
+        },
+        {
+          "t": 1.0333333333333345,
+          "type": "caught"
+        },
+        {
+          "t": 6.649999999999982,
+          "type": "heartbeat"
+        },
+        {
+          "t": 7.5499999999999785,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.45,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.966666666666692,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.966666666666692,
+          "type": "breath"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 9.483333333333384,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.483333333333384,
+          "type": "breath"
+        },
+        {
+          "t": 10.000000000000076,
+          "type": "heartbeat"
+        },
+        {
+          "t": 10.000000000000076,
+          "type": "breath"
+        },
+        {
+          "t": 10.500000000000101,
+          "type": "caught"
+        },
+        {
+          "t": 14.716666666666978,
+          "type": "heartbeat"
+        },
+        {
+          "t": 15.616666666667022,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.51666666666701,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.51666666666701,
+          "type": "breath"
+        },
+        {
+          "t": 17.033333333333648,
+          "type": "heartbeat"
+        },
+        {
+          "t": 17.033333333333648,
+          "type": "breath"
+        },
+        {
+          "t": 17.41666666666696,
+          "type": "caught"
+        },
+        {
+          "t": 17.41666666666696,
+          "type": "fail"
+        }
+      ]
+    },
+    {
+      "id": "random-46",
+      "policy": "random",
+      "durationSec": 17.87,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "actions": 41,
+      "idleSec": 7.62,
+      "maxEventGapSec": 5.72,
+      "uniqueEvents": 8,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.2,
+      "keys": 0,
+      "lives": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "breath"
+        },
+        {
+          "t": 1.0500000000000012,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.0500000000000012,
+          "type": "breath"
+        },
+        {
+          "t": 1.4333333333333331,
+          "type": "caught"
+        },
+        {
+          "t": 1.866666666666665,
+          "type": "battery"
+        },
+        {
+          "t": 5.7666666666666515,
+          "type": "heartbeat"
+        },
+        {
+          "t": 6.666666666666648,
+          "type": "heartbeat"
+        },
+        {
+          "t": 7.566666666666645,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.083333333333314,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.083333333333314,
+          "type": "breath"
+        },
+        {
+          "t": 8.600000000000007,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.600000000000007,
+          "type": "breath"
+        },
+        {
+          "t": 8.800000000000017,
+          "type": "caught"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 14.716666666666978,
+          "type": "heartbeat"
+        },
+        {
+          "t": 15.616666666667022,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.51666666666701,
+          "type": "heartbeat"
+        },
+        {
+          "t": 17.033333333333648,
+          "type": "heartbeat"
+        },
+        {
+          "t": 17.033333333333648,
+          "type": "breath"
+        },
+        {
+          "t": 17.550000000000285,
+          "type": "heartbeat"
+        },
+        {
+          "t": 17.550000000000285,
+          "type": "breath"
+        },
+        {
+          "t": 17.866666666666934,
+          "type": "caught"
+        },
+        {
+          "t": 17.866666666666934,
+          "type": "fail"
+        }
+      ]
+    },
+    {
+      "id": "noinput-55",
+      "policy": "noinput",
+      "durationSec": 20.22,
+      "firstInputSec": 20.22,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "actions": 0,
+      "idleSec": 6.85,
+      "maxEventGapSec": 4.48,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.2,
+      "keys": 0,
+      "lives": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "breath"
+        },
+        {
+          "t": 1.0500000000000012,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.0500000000000012,
+          "type": "breath"
+        },
+        {
+          "t": 1.2833333333333337,
+          "type": "caught"
+        },
+        {
+          "t": 5.7666666666666515,
+          "type": "heartbeat"
+        },
+        {
+          "t": 6.666666666666648,
+          "type": "heartbeat"
+        },
+        {
+          "t": 7.566666666666645,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.466666666666667,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 9.366666666666712,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.366666666666712,
+          "type": "breath"
+        },
+        {
+          "t": 9.883333333333404,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.883333333333404,
+          "type": "breath"
+        },
+        {
+          "t": 10.400000000000096,
+          "type": "heartbeat"
+        },
+        {
+          "t": 10.400000000000096,
+          "type": "breath"
+        },
+        {
+          "t": 10.750000000000114,
+          "type": "caught"
+        },
+        {
+          "t": 15.116666666666998,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.01666666666704,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.916666666666988,
+          "type": "heartbeat"
+        },
+        {
+          "t": 17.816666666666936,
+          "type": "heartbeat"
+        },
+        {
+          "t": 18.716666666666885,
+          "type": "heartbeat"
+        },
+        {
+          "t": 18.716666666666885,
+          "type": "breath"
+        },
+        {
+          "t": 19.233333333333523,
+          "type": "heartbeat"
+        },
+        {
+          "t": 19.233333333333523,
+          "type": "breath"
+        },
+        {
+          "t": 19.75000000000016,
+          "type": "heartbeat"
+        },
+        {
+          "t": 19.75000000000016,
+          "type": "breath"
+        },
+        {
+          "t": 20.2166666666668,
+          "type": "caught"
+        },
+        {
+          "t": 20.2166666666668,
+          "type": "fail"
+        }
+      ]
+    },
+    {
+      "id": "noinput-56",
+      "policy": "noinput",
+      "durationSec": 20.22,
+      "firstInputSec": 20.22,
+      "inputLatencyMs": 1.8,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "actions": 0,
+      "idleSec": 6.85,
+      "maxEventGapSec": 4.48,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.2,
+      "keys": 0,
+      "lives": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "start"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.016666666666666666,
+          "type": "breath"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "heartbeat"
+        },
+        {
+          "t": 0.5333333333333333,
+          "type": "breath"
+        },
+        {
+          "t": 1.0500000000000012,
+          "type": "heartbeat"
+        },
+        {
+          "t": 1.0500000000000012,
+          "type": "breath"
+        },
+        {
+          "t": 1.2833333333333337,
+          "type": "caught"
+        },
+        {
+          "t": 5.7666666666666515,
+          "type": "heartbeat"
+        },
+        {
+          "t": 6.666666666666648,
+          "type": "heartbeat"
+        },
+        {
+          "t": 7.566666666666645,
+          "type": "heartbeat"
+        },
+        {
+          "t": 8.466666666666667,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "flicker"
+        },
+        {
+          "t": 9.000000000000027,
+          "type": "silhouette"
+        },
+        {
+          "t": 9.366666666666712,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.366666666666712,
+          "type": "breath"
+        },
+        {
+          "t": 9.883333333333404,
+          "type": "heartbeat"
+        },
+        {
+          "t": 9.883333333333404,
+          "type": "breath"
+        },
+        {
+          "t": 10.400000000000096,
+          "type": "heartbeat"
+        },
+        {
+          "t": 10.400000000000096,
+          "type": "breath"
+        },
+        {
+          "t": 10.750000000000114,
+          "type": "caught"
+        },
+        {
+          "t": 15.116666666666998,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.01666666666704,
+          "type": "heartbeat"
+        },
+        {
+          "t": 16.916666666666988,
+          "type": "heartbeat"
+        },
+        {
+          "t": 17.816666666666936,
+          "type": "heartbeat"
+        },
+        {
+          "t": 18.716666666666885,
+          "type": "heartbeat"
+        },
+        {
+          "t": 18.716666666666885,
+          "type": "breath"
+        },
+        {
+          "t": 19.233333333333523,
+          "type": "heartbeat"
+        },
+        {
+          "t": 19.233333333333523,
+          "type": "breath"
+        },
+        {
+          "t": 19.75000000000016,
+          "type": "heartbeat"
+        },
+        {
+          "t": 19.75000000000016,
+          "type": "breath"
+        },
+        {
+          "t": 20.2166666666668,
+          "type": "caught"
+        },
+        {
+          "t": 20.2166666666668,
+          "type": "fail"
+        }
+      ]
+    }
+  ]
+}

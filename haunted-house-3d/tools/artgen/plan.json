@@ -1,0 +1,30 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      2048,
+      1152
+    ]
+  },
+  "items": [
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "size": [
+        2048,
+        1152
+      ],
+      "seeds": [
+        41
+      ],
+      "prompt": "Stylized 3D game key art, wide cinematic composition: a dark abandoned Victorian house interior at night, a narrow flashlight beam cutting through dust revealing a tall shadowy humanoid entity at the end of a corridor, a glowing brass key on a dusty table in the foreground, peeling wallpaper and cobwebs, moonlight through broken windows, cold blue shadows with warm flashlight cone, dread atmosphere, vibrant saturated horror aesthetic, high detail, no text, no watermark, no logo",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "model": "qwen-image-xl"
+    }
+  ]
+}

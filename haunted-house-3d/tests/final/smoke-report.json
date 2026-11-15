@@ -1,0 +1,315 @@
+{
+  "url": "http://127.0.0.1:57726/",
+  "startedAt": "2026-11-15T01:56:37.727Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 25,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 26,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 27,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 28,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 29,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 30,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 31,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 32,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 33,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 34,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 35,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 36,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 37,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 38,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 39,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 40,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 41,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 42,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 43,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 44,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 45,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 46,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 47,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 48,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 49,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 50,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 51,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 52,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 53,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 54,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 55,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 56,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 57,
+      "act": "hold",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/03-foyer-start.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/04-note.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/05-hallway.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/06-bedroom.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/07-key-taken.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/08-bedroom-look.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/09-lights-out.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/10-frontdoor-locked.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/11-zh-hud.png",
+    "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T01:57:20.473Z",
+  "video": "/Users/admin/git/webgames/games/haunted-house-3d/tests/final/play.webm"
+}

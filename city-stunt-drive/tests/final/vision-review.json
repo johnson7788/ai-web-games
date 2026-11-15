@@ -1,0 +1,101 @@
+{
+  "game": "city-stunt-drive",
+  "generatedAt": "2026-11-15T03:02:12.823Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 7.2,
+    "style_consistent": 8.2
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景建筑与道路在暗光下轮廓模糊，眯眼时‘可交互物’（如 ramps）不易分辨",
+        "‘BEST: 0’文字较小且颜色偏灰，对比度不足，易被忽略",
+        "左上角‘Sound off’按钮无图标，仅靠文字识别，对非英语用户不友好"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景道路与 HUD 元素对比度低，眯眼时‘ROOKIE’选中框与背景融合， silhouette 分辨困难",
+        "‘BEST: 0’文字较小且无高亮，易被忽略",
+        "左上角‘Sound off’按钮无图标，语义依赖文字，对非英语用户不友好"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "加速冲向前方带菱形图案的坡道准备跳跃",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "坡道上方悬浮两个黄色小球，功能不明，疑似未完成元素",
+        "右上角'ZONE 1/5'与'FLIPS 0'间距过近，易误读为'1/50'",
+        "城市建筑窗户灯光颜色杂乱（蓝/黄/橙），部分楼体边缘锯齿明显，风格略不统一"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘GOT IT’按钮或按W/▲加速下坡",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "提示框遮挡车尾及路面部分区域，可能影响对坡道入口的判断",
+        "‘COINS’和‘NITRO’标签在橙色边框内文字偏小，弱光下辨识度略低",
+        "城市背景灯光色块过多，轻微干扰主路视觉焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘GOT IT’按钮以确认操作提示",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD提示框左下角轻微遮挡路面边缘线（非关键区域）",
+        "红色跑车在暗色路面中对比度偏低，眯眼时轮廓略模糊",
+        "背景建筑像素化明显，与道路材质风格略有割裂"
+      ]
+    }
+  ]
+}

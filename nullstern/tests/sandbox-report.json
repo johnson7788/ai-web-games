@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-11-15T01:38:18.675Z",
+  "checks": {
+    "opaque-origin": {
+      "ok": true,
+      "detail": "{\"win\":\"null\",\"ls\":\"SecurityError\"}"
+    },
+    "module-boot": {
+      "ok": true
+    },
+    "fetch-glb-opaque": {
+      "ok": true,
+      "detail": "{\"ok\":true,\"bytes\":9795176}"
+    },
+    "enemy-glb-loaded": {
+      "ok": true
+    },
+    "core-loop-score>0": {
+      "ok": true,
+      "detail": "{\"score\":3,\"level\":1,\"hp\":100,\"started\":true}"
+    },
+    "fp-pointerlock-fallback": {
+      "ok": true,
+      "detail": "{\"before\":{\"lock\":\"none\",\"ammo\":30},\"after\":{\"alive\":true,\"ammo\":22}}"
+    },
+    "zh-hud": {
+      "ok": true,
+      "detail": "{\"lvl\":\"等级 1\",\"wave\":\"敌人 2  ·  距升级 3\",\"prompt\":\"按 [E] 启动防御\"}"
+    },
+    "pause-menu": {
+      "ok": true
+    }
+  },
+  "errors": [],
+  "consoleErrs": [],
+  "warns": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T01:38:42.733Z"
+}

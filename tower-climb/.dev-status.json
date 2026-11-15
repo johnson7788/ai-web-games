@@ -1,0 +1,15 @@
+{
+  "done": true,
+  "agentExit": 0,
+  "gates": {
+    "test": 0,
+    "funAudit": 0,
+    "i18n": 0,
+    "tutorial": 0,
+    "sdk": 0,
+    "verify": 0,
+    "selfplay": 0,
+    "funReport": 0
+  },
+  "at": "2026-11-14T16:12:13.838Z"
+}

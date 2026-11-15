@@ -1,0 +1,159 @@
+{
+  "slug": "keep-guard-3d",
+  "genre": "sim",
+  "oneLiner": "3D 路径塔防：建塔 / 升级 / 改地形堵路",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "build",
+      "cost": "金币有限，塔位互斥",
+      "feedback": [
+        "sfx",
+        "rise-anim",
+        "range-ring"
+      ],
+      "combinesWith": [
+        "upgrade"
+      ]
+    },
+    {
+      "name": "upgrade",
+      "cost": "升级贵于新建",
+      "feedback": [
+        "sfx",
+        "glow",
+        "stat-pop"
+      ],
+      "combinesWith": [
+        "build"
+      ]
+    },
+    {
+      "name": "terraform",
+      "cost": "土墙可被敌人打破",
+      "feedback": [
+        "sfx",
+        "dust",
+        "path-redraw"
+      ],
+      "combinesWith": [
+        "build"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 10,
+      "choice": "先建箭塔还是先堵路",
+      "cost": "堵路改变敌人路线"
+    },
+    {
+      "atSec": 30,
+      "choice": "升级现有塔还是铺新塔",
+      "cost": "集中 vs 分散"
+    },
+    {
+      "atSec": 55,
+      "choice": "土墙堵近路还是留口放风筝",
+      "cost": "堵死敌人会破墙"
+    },
+    {
+      "atSec": 80,
+      "choice": "卖塔换位置还是硬守",
+      "cost": "卖塔折价 50%"
+    },
+    {
+      "atSec": 110,
+      "choice": "第 5 波前攒钱还是花光",
+      "cost": "Boss 波需要爆发"
+    },
+    {
+      "atSec": 150,
+      "choice": "保外塔还是缩守核心",
+      "cost": "外塔挡 Boss 但会碎"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础路径 + 箭塔"
+    },
+    {
+      "index": 2,
+      "newElement": "炮塔（AOE）+ 分叉路"
+    },
+    {
+      "index": 3,
+      "newElement": "土墙改路 + 破墙兵"
+    },
+    {
+      "index": 4,
+      "newElement": "冰塔（减速）+ 飞行兵（无视路）"
+    },
+    {
+      "index": 5,
+      "newElement": "Boss 攻城车（高甲）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "tower-sync",
+      "kind": "rule"
+    },
+    {
+      "id": "kill-refund",
+      "kind": "rule"
+    },
+    {
+      "id": "wall-thorns",
+      "kind": "rule"
+    },
+    {
+      "id": "range-aura",
+      "kind": "rule"
+    },
+    {
+      "id": "crit-chain",
+      "kind": "rule"
+    },
+    {
+      "id": "dmg10",
+      "kind": "stat"
+    },
+    {
+      "id": "range10",
+      "kind": "stat"
+    },
+    {
+      "id": "gold-interest",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "newBuild",
+    "nearMiss",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -22,3 +22,28 @@ __pycache__/
 */.integrate-status.json
 */tools/integrate-brief.md
 */tests/artifacts/
+
+# 讲解视频（大二进制交付物，已微信交付，只留本地，不入库）
+*/video/
+
+# 门禁临时状态
+*/.gate-status.json
+*/.materials-status.json
+
+# 非 portfolio 的 3D 参考模板（下载源码，只留本地参考）
+apex-gp/
+backrooms-signal-lost/
+orbit-collector/
+parapet/
+redline-racer/
+strike-zone/
+
+# 原始 WAV 音源（运行时用压缩 mp3，wav 只留本地）
+*/assets/audio/*.wav
+
+# 测试录像（大二进制，只留本地）
+*/tests/final/*.webm
+*/tests/final/*.mp4
+
+# 旧构建产物
+*/tests/.old-bundles/

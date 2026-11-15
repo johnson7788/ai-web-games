@@ -1,0 +1,103 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic bright candy sky, blue gradient hex 60a5fa with fluffy clouds and floating pastel islands, cheerful playful mood, wide open space, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Playful key art of a transparent marble ball with a cute monkey inside rolling along a narrow candy-pink sky bridge hex f472b6, bananas hex facc15 floating along the path, blue sky hex 60a5fa, cheerful dynamic angle, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: a transparent marble ball with a cute monkey face inside, yellow banana accent hex facc15 on sky blue hex 60a5fa, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "track-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable candy-pink track surface texture hex f472b6 with subtle stripes, top-down flat view, low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/track.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "monkey-tex",
+      "kind": "image",
+      "seeds": [
+        104
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Cute stylized low-poly monkey face texture for inside a marble ball, brown fur with big eyes, front view, game asset, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/monkey.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

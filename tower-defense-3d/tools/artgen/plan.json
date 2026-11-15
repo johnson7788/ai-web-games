@@ -1,0 +1,15 @@
+{
+  "outDir": "assets/_src",
+  "defaults": { "model": "qwen-image-xl", "size": [2048, 1152] },
+  "items": [
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "size": [2048, 1152],
+      "seeds": [41],
+      "prompt": "Stylized 3D game key art, wide cinematic composition: a charming low-poly grass battlefield floating in dark space, three cute stone cannon towers with glowing blue crystals firing bright orange cannonballs at a marching column of round dark slime enemies along a dirt path, one enemy popping into coins, green start portal and red end portal glowing at opposite corners, warm sunset rim light, soft ambient occlusion, vibrant saturated cartoon strategy aesthetic, high detail PBR materials, dramatic diagonal composition, no text, no watermark, no logo",
+      "prep": { "out": "assets/poster-raw.jpg", "cutout": false, "width": 2048 },
+      "model": "qwen-image-xl"
+    }
+  ]
+}

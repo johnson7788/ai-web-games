@@ -1,0 +1,29 @@
+{
+  "mode": "iframe sandbox=\"allow-scripts\" + ACAO:*",
+  "startedAt": "2026-11-15T01:58:04.118Z",
+  "afterStart": {
+    "state": "playing",
+    "fallback": true,
+    "enabled": true,
+    "locked": false,
+    "z": 6.4,
+    "battery": 98.61625500000005
+  },
+  "afterMove": {
+    "z": 0.6500300578838609,
+    "yaw": 1.169640000000177,
+    "battery": 96.44325999999975,
+    "objective": "Find the three brass keys"
+  },
+  "dragLook": {
+    "yawBefore": 1.169640000000177,
+    "yawAfter": 0.7496400000001766
+  },
+  "noteOpen": true,
+  "zhObjective": "找到三把黄铜钥匙",
+  "ok": true,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T01:58:17.764Z"
+}

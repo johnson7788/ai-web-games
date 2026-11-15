@@ -1,0 +1,111 @@
+/* styles.css — 全屏 UI：letterbox 居中，HUD 用绝对定位，屏幕居中卡片 */
+:root {
+  --sand: #d9b26f;
+  --burlap: #c9a27e;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --ink: #241a12;
+  --card: rgba(30, 22, 14, 0.92);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 100%; height: 100%; overflow: hidden; background: #0b0e1a; }
+
+#game-container { position: fixed; inset: 0; }
+
+#canvas { display: block; }
+
+.hidden { display: none !important; }
+
+/* ---------- 屏幕 ---------- */
+.screen {
+  position: fixed; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px;
+  color: #f6ead0; text-align: center; z-index: 20;
+  background: rgba(12, 8, 5, 0.55); backdrop-filter: blur(2px);
+}
+.screen h1 { font-size: 44px; letter-spacing: 2px; text-shadow: 0 3px 0 rgba(0,0,0,0.4); }
+.screen h2 { font-size: 34px; letter-spacing: 1px; }
+.screen .subtitle { font-size: 16px; opacity: 0.85; }
+
+button { font: inherit; cursor: pointer; border: none; border-radius: 10px; }
+.btn-primary {
+  background: var(--blue); color: #fff; font-size: 22px; font-weight: 700;
+  padding: 14px 44px; min-width: 200px; box-shadow: 0 4px 0 #1d4ed8;
+}
+.btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 #1d4ed8; }
+.btn-ghost {
+  background: rgba(255,255,255,0.10); color: #f6ead0; font-size: 16px;
+  padding: 10px 22px; border: 1px solid rgba(255,255,255,0.25);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+.lang-select {
+  position: absolute; top: 14px; right: 14px; z-index: 30;
+  font-size: 14px; padding: 6px 10px; border-radius: 8px; background: var(--card); color: #f6ead0; border: 1px solid rgba(255,255,255,0.25);
+}
+
+.best-line { font-size: 14px; opacity: 0.8; }
+.results-line { font-size: 16px; opacity: 0.85; }
+.results-stats { font-size: 15px; opacity: 0.9; line-height: 1.6; }
+.results-stars { font-size: 42px; letter-spacing: 6px; color: #ffcf5a; }
+
+/* ---------- HUD ---------- */
+#hud { position: fixed; inset: 0; pointer-events: none; z-index: 15; }
+#hud button { pointer-events: auto; }
+.hud-top { position: absolute; top: 12px; left: 14px; display: flex; gap: 8px; }
+.hud-mid { position: absolute; top: 12px; right: 14px; display: flex; gap: 8px; align-items: center; }
+.hud-chip {
+  background: var(--card); color: #f6ead0; padding: 6px 12px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; white-space: nowrap;
+}
+.hud-hearts { color: var(--red); font-size: 22px; letter-spacing: 2px; text-shadow: 0 2px 2px rgba(0,0,0,0.5); }
+#btn-pause-hud { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); }
+.icon-btn { background: var(--card); color: #f6ead0; font-size: 18px; width: 44px; height: 44px; border-radius: 10px; }
+
+/* ---------- 升级 ---------- */
+#upgrade-choices { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; max-width: 900px; }
+.upgrade-card {
+  background: var(--card); color: #f6ead0; border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 14px; padding: 18px; width: 230px; text-align: left; cursor: pointer;
+}
+.upgrade-card:hover { border-color: var(--blue); }
+.upgrade-card h4 { font-size: 18px; margin-bottom: 6px; color: #ffcf5a; }
+.upgrade-card p { font-size: 13px; opacity: 0.85; }
+
+/* ---------- 引导 ---------- */
+#tutorial { position: fixed; inset: 0; z-index: 40; pointer-events: none; }
+.tutorial-spot {
+  position: absolute; border: 3px solid #ffcf5a; border-radius: 14px;
+  box-shadow: 0 0 0 9999px rgba(10, 7, 4, 0.45), 0 0 24px rgba(255, 207, 90, 0.6);
+  pointer-events: none;
+}
+.tutorial-card {
+  position: absolute; left: 50%; bottom: 60px; transform: translateX(-50%);
+  background: var(--card); color: #f6ead0; border-radius: 14px; padding: 16px 22px;
+  max-width: 360px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  pointer-events: auto;
+}
+.tutorial-card .tut-step { font-size: 12px; opacity: 0.7; }
+.tutorial-card h3 { font-size: 18px; margin: 4px 0; }
+.tutorial-card p { font-size: 14px; opacity: 0.9; margin-bottom: 10px; }
+
+/* ---------- 触屏 ---------- */
+#touch { position: fixed; bottom: 18px; left: 18px; display: flex; gap: 12px; z-index: 18; }
+.touch-btn {
+  width: 64px; height: 64px; border-radius: 50%; background: rgba(59,130,246,0.35);
+  color: #fff; font-size: 26px; border: 2px solid rgba(255,255,255,0.5);
+}
+.touch-btn.active { background: rgba(59,130,246,0.75); }
+
+/* ---------- toast ---------- */
+#toast {
+  position: fixed; left: 50%; top: 26%; transform: translateX(-50%);
+  background: var(--card); color: #ffcf5a; padding: 12px 24px; border-radius: 10px;
+  font-size: 18px; font-weight: 700; z-index: 25; pointer-events: none;
+}
+
+/* ---------- 竖屏提示 ---------- */
+#rotate { position: fixed; inset: 0; background: #0b0e1a; color: #f6ead0; display: none;
+  align-items: center; justify-content: center; flex-direction: column; gap: 14px; z-index: 60; text-align: center; }

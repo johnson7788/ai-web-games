@@ -1,0 +1,28 @@
+{
+  "url": "http://127.0.0.1:62291/",
+  "origin": "null",
+  "inputState": {
+    "locked": false,
+    "blocked": true,
+    "fallback": true,
+    "origin": "null"
+  },
+  "play": {
+    "shots": 18,
+    "dist": 5.96,
+    "dyaw": 0.112,
+    "health": 100,
+    "state": "play",
+    "alive": 6,
+    "audio": true,
+    "matchText": "0TDM4:520"
+  },
+  "kiaRespawn": {
+    "respawnHealth": 100,
+    "state": "play"
+  },
+  "errors": [],
+  "consoleErrs": [],
+  "failed": [],
+  "finishedAt": "2026-11-15T02:55:57.125Z"
+}

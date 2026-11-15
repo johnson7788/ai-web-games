@@ -1,0 +1,113 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 263378,
+      "sha256": "746ea51704066d000a9af506fcccbaef3f318f0b9ad8dfaca428da7129e6a47d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic overcast sky over stylized low-poly rally mountains, gray-blue gradient hex 94a3b8 with soft clouds, forested ridge silhouettes hex 3f6212 at the bottom edge, moody rally mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 525281,
+      "sha256": "887d1b7c01b1e6c6cbb780f0f66c35db3410000ad977a136c737abc4b0c3f473",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Dramatic key art of a stylized low-poly red rally car hex dc2626 drifting through a muddy hairpin, huge dust cloud hex d6a35c, forest green hex 3f6212 background, gravel spray, dynamic action angle, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 365960,
+      "sha256": "0646563929e2e8c1ebea95ec9b85d8e724baebb0d4b3c0383b24d3afc7408397",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized low-poly red rally car hex dc2626 with dust trail, on gravel yellow hex d6a35c background, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/gravel": {
+      "file": "assets/tex/gravel.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 483996,
+      "sha256": "5e9dbc5f3f47615691dc40d9a136353df96b5ba4f3a4a47c569751bcbeca378c",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable gravel road texture, sandy yellow-brown hex d6a35c with small stones and tire tracks, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/gravel-tex-s103.png"
+      }
+    },
+    "tex/mud": {
+      "file": "assets/tex/mud.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 195658,
+      "sha256": "69152cae557a3ddc1e21d4cb0e4ad90b9c46086fdca000957d2305d2dfea39a9",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable muddy road texture, dark brown hex 6b4423 with puddle highlights and ruts, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/mud-tex-s104.png"
+      }
+    },
+    "tex/tree": {
+      "file": "assets/tex/tree.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 47862,
+      "sha256": "7db55cc435951d98d44671e4f2c54d0fd86b3af8d368dc334e2a7f018164a5e6",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 105,
+        "prompt": "Stylized low-poly pine tree billboard texture, forest green hex 3f6212, front view on plain background, game asset, no text, no watermark",
+        "raw": "assets/_src/tree-tex-s105.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:37+00:00"
+}

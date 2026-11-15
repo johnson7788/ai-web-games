@@ -1,0 +1,159 @@
+{
+  "slug": "moto-dash-3d",
+  "genre": "racing",
+  "oneLiner": "第一人称穿车流，擦身 30cm 加分，一次撞击结束",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "weave",
+      "cost": "变道瞬间暴露侧撞",
+      "feedback": [
+        "sfx",
+        "lean",
+        "wind"
+      ],
+      "combinesWith": [
+        "throttle"
+      ]
+    },
+    {
+      "name": "throttle",
+      "cost": "越快反应窗口越短",
+      "feedback": [
+        "sfx",
+        "fov",
+        "speedlines"
+      ],
+      "combinesWith": [
+        "weave"
+      ]
+    },
+    {
+      "name": "near-miss",
+      "cost": "贴 30cm 内才给分，赌命",
+      "feedback": [
+        "sfx",
+        "slowmo-tick",
+        "score-pop"
+      ],
+      "combinesWith": [
+        "weave"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "贴车擦身拿分还是拉开安全距离",
+      "cost": "擦身失败=撞毁"
+    },
+    {
+      "atSec": 20,
+      "choice": "超慢车走左还是右（对向车道风险）",
+      "cost": "对向车更快"
+    },
+    {
+      "atSec": 40,
+      "choice": "提速冲分还是稳速保命",
+      "cost": "速度×分数但窗口更短"
+    },
+    {
+      "atSec": 65,
+      "choice": "连续两车缝隙钻还是减速等",
+      "cost": "缝隙随速度变化"
+    },
+    {
+      "atSec": 95,
+      "choice": "用最后的氮气冲记录还是留着",
+      "cost": "氮气后失控风险"
+    },
+    {
+      "atSec": 130,
+      "choice": "冲 2000m 记录还是见好就收",
+      "cost": "越远车流越密"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "同向三车道慢车流"
+    },
+    {
+      "index": 2,
+      "newElement": "对向车道（左侧超车高风险）"
+    },
+    {
+      "index": 3,
+      "newElement": "卡车长车身（遮挡视线）"
+    },
+    {
+      "index": 4,
+      "newElement": "车流密度随距离上升"
+    },
+    {
+      "index": 5,
+      "newElement": "夜间段（车灯眩光）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "ghost-frame",
+      "kind": "rule"
+    },
+    {
+      "id": "near-miss-window",
+      "kind": "rule"
+    },
+    {
+      "id": "slowmo-reflex",
+      "kind": "rule"
+    },
+    {
+      "id": "lane-sense",
+      "kind": "rule"
+    },
+    {
+      "id": "nitro-safe",
+      "kind": "rule"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "handling10",
+      "kind": "stat"
+    },
+    {
+      "id": "score-mult",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "leaderboard",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "url": "http://127.0.0.1:62205/",
+  "startedAt": "2026-11-15T02:54:28.267Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "move",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 25,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 26,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 27,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 28,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 29,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 30,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 31,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 32,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 33,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 34,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 35,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 36,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 37,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 38,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 39,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 40,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 41,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 42,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 43,
+      "act": "drag",
+      "ok": true
+    },
+    {
+      "i": 44,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 45,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 46,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 47,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 48,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 49,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 50,
+      "act": "drag",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/03-spawn.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/03b-contact.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/04-combat.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/07-pause-menu.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/08-zh-pause.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/05-firefight.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/06-engagement.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/09-kia.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/10-redeployed.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/11-mission-end.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/12-restarted.png",
+    "/Users/admin/git/webgames/games/street-warfare/tests/final/02-final.png"
+  ],
+  "fps": 37,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T02:55:35.648Z",
+  "video": "/Users/admin/git/webgames/games/street-warfare/tests/final/play.webm"
+}

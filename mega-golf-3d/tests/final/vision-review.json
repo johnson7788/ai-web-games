@@ -1,0 +1,101 @@
+{
+  "game": "mega-golf-3d",
+  "generatedAt": "2026-11-14T19:55:54.815Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.6,
+    "silhouette": 6.4,
+    "style_consistent": 8.4
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的'PLAY'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中远处小球（疑似目标）在暗色背景下对比度低，眯眼时不易辨识为可交互物",
+        "‘BEST: 0’文字偏小且颜色为黄色，在深绿背景上易被忽略",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的 PLAY 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST: 0’为黄色，与整体绿色/白色主色调不协调，易被误读为警告",
+        "背景草地纹理模糊且缺乏层次，眯眼时难以分辨球道与障碍区边界",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或拖拽高尔夫球进行击球",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "球与球洞距离较远，无辅助线/轨迹提示，新手难判断击球方向与力度",
+        "左上角HUD中'PAR 2'与'STROKES 0'间距过小，可能在小屏设备上误触",
+        "背景山体与前景草地纹理对比弱，远处目标（球洞）视觉权重偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击并拖拽高尔夫球向球洞方向瞄准",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角提示框遮挡部分球道区域（虽未压球/洞，但影响视野）",
+        "球洞旗杆过小，远距离辨识度低",
+        "左上角HUD数字‘0’在‘STROKES’下易被误读为‘O’"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的'PLAY'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景草地纹理在暗光下细节模糊，眯眼时球洞旗杆（目标）轮廓不清晰，影响silhouette得分",
+        "‘BEST: 0’文字颜色为黄色，在深绿背景上对比度偏低，部分用户可能需稍聚焦才看清",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不够明确"
+      ]
+    }
+  ]
+}

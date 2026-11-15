@@ -1,0 +1,101 @@
+{
+  "game": "moto-dash-3d",
+  "generatedAt": "2026-11-14T18:07:54.468Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 6.8,
+    "style_consistent": 8.6
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST 0 m’文字偏小且颜色较淡，易被忽略；",
+        "背景道路纹理与前景 HUD 对比度偏低，眯眼时玩家轮廓（车把）不够突出；",
+        "右上角语言/音量控件无图标仅文字，移动端可能误触或辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST 0 m’文字偏小且颜色较淡，易被忽略",
+        "背景道路纹理与前景按钮对比度不足，部分区域略显模糊",
+        "顶部语言/音效控件位置偏右上角，但未明确标注为设置项"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格或点击屏幕加速并躲避前方车辆",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家车体（黄色平台）与路面纹理对比不足，远距离辨识度偏低",
+        "左上角SCORE 15与右上角速度/距离信息字体大小不一致，视觉层级混乱",
+        "远处两辆敌车颜色相近（红白/蓝黑），在高速下易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘GOT IT’按钮或按W键开始加速追车",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角速度/距离数值（92 KM/H, 18 m）与‘DAY’标签排版拥挤，易误读",
+        "提示框内‘Hold W or tap to accelerate...’未说明‘tap’是触屏操作，桌面端语义模糊",
+        "玩家视角前方黄色平台与道路纹理对比弱，初期可能误判为路面而非载具"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'GOT IT'按钮以确认教程提示",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡部分标题'MOTO DASH 3D'，影响品牌识别",
+        "背景道路网格在暗光下细节模糊，眯眼时玩家车辆轮廓不够突出",
+        "‘START’和‘HOW TO PLAY’按钮与弹窗底部间距过小，视觉层级易混淆"
+      ]
+    }
+  ]
+}

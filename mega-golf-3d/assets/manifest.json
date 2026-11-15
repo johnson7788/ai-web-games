@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 290160,
+      "sha256": "80d7d0c866098a43f46beacc14efa7c2f81ab1d310c64fdd8b6675811eacc4c0",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic bright sky over a stylized mini-golf course, clean blue gradient hex 7dd3fc with soft clouds, rolling green course silhouettes and a red flag at the bottom edge, cheerful leisure mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 362086,
+      "sha256": "e484808ef1c0747e95dd3c527ffdece3b778d92e9a07c6942774908ec25bb67e",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Key art of a stylized mini-golf ball rolling toward the hole on a vibrant green hex 22c55e with a red flag hex ef4444, windmill obstacle in the background, blue sky hex 7dd3fc, playful dramatic close-up, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 292613,
+      "sha256": "e6c6d6005457e45c5b4531ea750706afef8fde492315188960c8ebd13ee357ce",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a white golf ball on a tee with red flag hex ef4444, green hex 22c55e on blue hex 7dd3fc background, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/green": {
+      "file": "assets/tex/green.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 513690,
+      "sha256": "24d3c0473eff4f0d755f2dbfaf6beefe00d6a73ce0a945a90149449d734c1d26",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized golf green grass texture, vibrant green hex 22c55e with subtle mowing stripes, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/green-tex-s103.png"
+      }
+    },
+    "tex/sand": {
+      "file": "assets/tex/sand.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 186684,
+      "sha256": "d4e84d8aca6d7c9e0b39ad9ce9ea08269113086e29682f01ee8e1ac34cd7f400",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized golf bunker sand texture, pale warm hex fde68a with rake lines, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/sand-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:32+00:00"
+}

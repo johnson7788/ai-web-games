@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 522369,
+      "sha256": "d6ca84c27182502201e9dfbc64fcffcb10bde3e851bf92f916b0539a2057a253",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 flat texture of yellowed backrooms wallpaper, mono-yellow hex d4c17a with faint damp stains and vertical seam lines, seamless tileable, oppressive liminal mood, no text, no watermark",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 431976,
+      "sha256": "f12afacd0b151c9dc44ee02a21e2a2ad337dcf154a692f1c6a91b89f43765e31",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Liminal horror key art of an endless yellow backrooms maze hex d4c17a under buzzing fluorescent lights, a dark entity silhouette far down a corridor, damp carpet hex 8a7340, unsettling empty atmosphere, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 302827,
+      "sha256": "a307f3a825b47e91c743186afe8c61b25257b46033639aaa549d8a01ec6f051a",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a yellow backrooms corridor corner with fluorescent light, mono-yellow hex d4c17a on dark background hex 2a2416, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/carpet": {
+      "file": "assets/tex/carpet.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 375030,
+      "sha256": "52ede4762fdc84c5ec918c12aeffe385d981815bade694a37a67ff00d63e256e",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable damp backrooms carpet texture, murky brown-yellow hex 8a7340 with subtle stains, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/carpet-tex-s103.png"
+      }
+    },
+    "tex/ceiling": {
+      "file": "assets/tex/ceiling.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 105230,
+      "sha256": "060f0c1a811a2168f118ff56b7989df08621783fb20515d943189f743ccbf25a",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable backrooms ceiling texture with fluorescent light panels, pale yellow-white hex f5f5dc, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/ceiling-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:26+00:00"
+}

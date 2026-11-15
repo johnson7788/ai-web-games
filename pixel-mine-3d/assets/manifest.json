@@ -1,0 +1,113 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 321863,
+      "sha256": "3676ca3ff7d05c32f818ba6c3472b09b49e6753bc09d409805581ffbe8c6e7cc",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic bright day sky over a stylized voxel mining camp, clean blue gradient with soft clouds, blocky green hills and a small wooden headframe silhouette at the bottom edge, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 419079,
+      "sha256": "96ebea19d40bbf33234660942d06503f2bcbecd326514ac93e4299002a1e0305",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Key art of a stylized voxel miner with a glowing pickaxe breaking into a shimmering gold vein deep underground, torch-lit tunnel in warm amber hex fbbf24, emerald ore sparkles hex 34d399, dramatic discovery moment, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 357193,
+      "sha256": "574336abf386012d5f8ed7ab68c58579531377ca07b2b1b80f474bcc43067ddd",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized voxel gold ore block with pickaxe, amber glow hex fbbf24 on dark rock background hex 4b5563, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/rock": {
+      "file": "assets/tex/rock.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 222732,
+      "sha256": "2851f4ad3ffbecba81f25e79545224e11249677a6d37f0bc705e287e7fd5a13b",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized voxel rock texture, gray hex 4b5563 with subtle cracks and mineral specks, flat front view, game texture, no text, no watermark",
+        "raw": "assets/_src/rock-tex-s103.png"
+      }
+    },
+    "tex/dirt": {
+      "file": "assets/tex/dirt.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 107864,
+      "sha256": "8071da2f5b936bf7b6223dd1ee3bc0763b51accdb11cc9a6eedbb9b64db22330",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized voxel dirt texture, warm brown hex 8b5a2b with pebbles and roots, flat front view, game texture, no text, no watermark",
+        "raw": "assets/_src/dirt-tex-s104.png"
+      }
+    },
+    "tex/ore": {
+      "file": "assets/tex/ore.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 221234,
+      "sha256": "10fc2583c6fbe73b9fd03b6c5266550f434068841d0ddeba3de552b66df5b304",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 105,
+        "prompt": "Seamless tileable stylized voxel gold ore texture, gray rock base with glowing amber gold nuggets hex fbbf24, flat front view, game texture, no text, no watermark",
+        "raw": "assets/_src/ore-tex-s105.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:08+00:00"
+}

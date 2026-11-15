@@ -1,0 +1,153 @@
+{
+  "url": "http://127.0.0.1:59707/",
+  "startedAt": "2026-11-15T02:16:22.311Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 25,
+      "act": "eval",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/02-title-ready.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/03-race-start.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/04-driving.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/05-coins-collected.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/06-paused.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/07-after-reset-drive.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/08-zh-hud.png",
+    "/Users/admin/git/webgames/games/turbo-kart/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T02:17:02.326Z",
+  "video": "/Users/admin/git/webgames/games/turbo-kart/tests/final/play.webm"
+}

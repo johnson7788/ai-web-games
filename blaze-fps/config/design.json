@@ -1,0 +1,175 @@
+{
+  "slug": "blaze-fps",
+  "genre": "action",
+  "oneLiner": "3 图 × 5 波，3 枪 12 升级，后坐力 + 爆头慢镜",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "shoot",
+      "cost": "弹药 + 后坐力抬枪口",
+      "feedback": [
+        "sfx",
+        "muzzle",
+        "recoil"
+      ],
+      "combinesWith": [
+        "dash"
+      ]
+    },
+    {
+      "name": "dash",
+      "cost": "能量条，冲刺中不能射击",
+      "feedback": [
+        "trail",
+        "sfx",
+        "fov"
+      ],
+      "combinesWith": [
+        "shoot"
+      ]
+    },
+    {
+      "name": "reload",
+      "cost": "换弹 1.6s 无防备",
+      "feedback": [
+        "sfx",
+        "anim",
+        "ammo-pop"
+      ],
+      "combinesWith": [
+        "shoot"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "先打冲锋兵还是远处射手",
+      "cost": "被近身掉血快"
+    },
+    {
+      "atSec": 25,
+      "choice": "换弹还是切手枪",
+      "cost": "手枪伤害低"
+    },
+    {
+      "atSec": 45,
+      "choice": "三选一升级：穿透/爆炸/吸血",
+      "cost": "放弃另两条 build"
+    },
+    {
+      "atSec": 70,
+      "choice": "守走廊还是退到开阔地",
+      "cost": "开阔地被包围"
+    },
+    {
+      "atSec": 100,
+      "choice": "爆头赌慢镜还是扫射稳伤",
+      "cost": "爆头窗口小"
+    },
+    {
+      "atSec": 140,
+      "choice": "第 5 波先打 Boss 还是清小怪",
+      "cost": "Boss 狂暴计时"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "仓库图 + 冲锋兵"
+    },
+    {
+      "index": 2,
+      "newElement": "射手敌人（远程）"
+    },
+    {
+      "index": 3,
+      "newElement": "地铁图 + 掩体破坏"
+    },
+    {
+      "index": 4,
+      "newElement": "自爆兵（近身爆炸）"
+    },
+    {
+      "index": 5,
+      "newElement": "屋顶图 + Boss（重甲）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "pierce",
+      "kind": "rule"
+    },
+    {
+      "id": "explosive-rounds",
+      "kind": "rule"
+    },
+    {
+      "id": "vampire",
+      "kind": "rule"
+    },
+    {
+      "id": "headshot-slowmo",
+      "kind": "rule"
+    },
+    {
+      "id": "dash-blast",
+      "kind": "rule"
+    },
+    {
+      "id": "ricochet",
+      "kind": "rule"
+    },
+    {
+      "id": "dmg10",
+      "kind": "stat"
+    },
+    {
+      "id": "ammo-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "reload-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "hp10",
+      "kind": "stat"
+    },
+    {
+      "id": "move-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "energy-regen",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "newBuild",
+    "nearMiss",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

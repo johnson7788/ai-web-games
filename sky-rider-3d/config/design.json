@@ -1,0 +1,159 @@
+{
+  "slug": "sky-rider-3d",
+  "genre": "racing",
+  "oneLiner": "飞机穿环竞速，8 机同场（bot 补位）",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "social"
+  },
+  "verbs": [
+    {
+      "name": "pitch",
+      "cost": "俯冲提速但难穿环",
+      "feedback": [
+        "sfx",
+        "wind",
+        "fov"
+      ],
+      "combinesWith": [
+        "boost"
+      ]
+    },
+    {
+      "name": "bank",
+      "cost": "大坡度转弯掉速",
+      "feedback": [
+        "sfx",
+        "roll",
+        "contrail"
+      ],
+      "combinesWith": [
+        "pitch"
+      ]
+    },
+    {
+      "name": "boost",
+      "cost": "boost 条耗尽要穿环回充",
+      "feedback": [
+        "sfx",
+        "flame",
+        "speedlines"
+      ],
+      "combinesWith": [
+        "pitch"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "俯冲抢速度还是平飞稳穿环",
+      "cost": "俯冲穿环窗口小"
+    },
+    {
+      "atSec": 25,
+      "choice": "内圈超车还是外圈稳飞",
+      "cost": "内圈环窄"
+    },
+    {
+      "atSec": 45,
+      "choice": "boost 冲直线段还是留到环段",
+      "cost": "穿环回充 boost"
+    },
+    {
+      "atSec": 70,
+      "choice": "跟尾流（省力）还是自己飞",
+      "cost": "尾流被带偏"
+    },
+    {
+      "atSec": 100,
+      "choice": "最后一圈全速还是保位",
+      "cost": "撞环=掉速"
+    },
+    {
+      "atSec": 140,
+      "choice": "终点前俯冲冲刺还是平飞稳过",
+      "cost": "俯冲赌穿环"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础环道 + 7 bot"
+    },
+    {
+      "index": 2,
+      "newElement": "移动环（上下浮动）"
+    },
+    {
+      "index": 3,
+      "newElement": "峡谷窄环段"
+    },
+    {
+      "index": 4,
+      "newElement": "高空俯冲段"
+    },
+    {
+      "index": 5,
+      "newElement": "终点冲刺环（连续窄环）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "ring-magnet",
+      "kind": "rule"
+    },
+    {
+      "id": "boost-on-ring",
+      "kind": "rule"
+    },
+    {
+      "id": "slipstream",
+      "kind": "rule"
+    },
+    {
+      "id": "auto-level",
+      "kind": "rule"
+    },
+    {
+      "id": "contrail-blade",
+      "kind": "rule"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "handling10",
+      "kind": "stat"
+    },
+    {
+      "id": "boost-cap",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "url": "http://127.0.0.1:56710/",
+  "startedAt": "2026-11-15T01:49:54.851Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 25,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 26,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 27,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 28,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 29,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 30,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 31,
+      "act": "hold",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/02-menu.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/03-drivers.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/04-circuits.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/05-session-setup.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/06-starting-grid.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/07-race-start.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/08-driving.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/09-driving-late.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/10-pause.png",
+    "/Users/admin/git/webgames/games/apex-formula/tests/final/02-final.png"
+  ],
+  "fps": 60,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T01:50:57.532Z",
+  "video": "/Users/admin/git/webgames/games/apex-formula/tests/final/play.webm"
+}

@@ -1,0 +1,103 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic bright sky with floating canyon islands, blue gradient hex 38bdf8 with fluffy white clouds hex f0f9ff, stylized low-poly floating rock islands at the bottom edge, adventurous flight mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Exhilarating key art of eight stylized low-poly racing planes banking through a glowing golden ring hex fbbf24 in a bright sky hex 38bdf8, red player plane hex ef4444 in front with boost flame, contrails, floating canyon islands, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: a stylized low-poly red racing plane hex ef4444 banking through a golden ring hex fbbf24, on sky blue hex 38bdf8, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "cloud-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized soft cloud texture, white hex f0f9ff with soft edges on transparent-looking plain background, game asset, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/cloud.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "rock-tex",
+      "kind": "image",
+      "seeds": [
+        104
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized floating island rock texture, warm gray-brown with grass top edge, front view, low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/rock.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

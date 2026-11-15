@@ -1,0 +1,85 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic night sky over a stylized low-poly party arena, deep purple gradient hex 7c3aed with colorful spotlight beams, arena roof silhouettes at the bottom edge, festive mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Chaotic fun key art of eight colorful stylized ragdoll fighters in a neon purple arena hex 7c3aed, one lifting another overhead about to throw, candy-colored characters, confetti particles, dynamic party-brawl energy, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: two stylized ragdoll fists colliding with impact star, candy red and blue on purple hex 7c3aed background, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "floor-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized arena floor texture, dark gray hex 1f2937 with faint purple hex grid lines hex 7c3aed, top-down flat view, game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/floor.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

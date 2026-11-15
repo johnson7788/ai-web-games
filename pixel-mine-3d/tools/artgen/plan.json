@@ -1,0 +1,121 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic bright day sky over a stylized voxel mining camp, clean blue gradient with soft clouds, blocky green hills and a small wooden headframe silhouette at the bottom edge, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Key art of a stylized voxel miner with a glowing pickaxe breaking into a shimmering gold vein deep underground, torch-lit tunnel in warm amber hex fbbf24, emerald ore sparkles hex 34d399, dramatic discovery moment, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: a stylized voxel gold ore block with pickaxe, amber glow hex fbbf24 on dark rock background hex 4b5563, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "rock-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized voxel rock texture, gray hex 4b5563 with subtle cracks and mineral specks, flat front view, game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/rock.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "dirt-tex",
+      "kind": "image",
+      "seeds": [
+        104
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized voxel dirt texture, warm brown hex 8b5a2b with pebbles and roots, flat front view, game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/dirt.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "ore-tex",
+      "kind": "image",
+      "seeds": [
+        105
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized voxel gold ore texture, gray rock base with glowing amber gold nuggets hex fbbf24, flat front view, game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/ore.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

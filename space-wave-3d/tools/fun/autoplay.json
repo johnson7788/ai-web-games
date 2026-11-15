@@ -1,0 +1,2389 @@
+{
+  "game": "space-wave-3d",
+  "genre": "arcade",
+  "source": "bot",
+  "version": 1,
+  "seedPolicy": "mulberry32",
+  "runs": [
+    {
+      "id": "greedy-11",
+      "policy": "greedy",
+      "durationSec": 77.12,
+      "firstInputSec": 0.03,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": 1.98,
+      "deaths": 1,
+      "actions": 714,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 11,
+      "levelsReached": 5,
+      "completed": false,
+      "progressRate": 0.86,
+      "score": 14902,
+      "topMult": 8,
+      "perfects": 34,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 0.05,
+          "type": "first_input"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.98,
+          "type": "perfect"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 4,
+          "type": "dist"
+        },
+        {
+          "t": 4.2,
+          "type": "perfect"
+        },
+        {
+          "t": 4.2,
+          "type": "combo"
+        },
+        {
+          "t": 5,
+          "type": "dist"
+        },
+        {
+          "t": 6,
+          "type": "dist"
+        },
+        {
+          "t": 6.33,
+          "type": "nearMiss"
+        },
+        {
+          "t": 7,
+          "type": "dist"
+        },
+        {
+          "t": 8,
+          "type": "dist"
+        },
+        {
+          "t": 8.45,
+          "type": "perfect"
+        },
+        {
+          "t": 8.45,
+          "type": "combo"
+        },
+        {
+          "t": 9,
+          "type": "dist"
+        },
+        {
+          "t": 10,
+          "type": "dist"
+        },
+        {
+          "t": 10.62,
+          "type": "nearMiss"
+        },
+        {
+          "t": 11,
+          "type": "dist"
+        },
+        {
+          "t": 12,
+          "type": "dist"
+        },
+        {
+          "t": 12.68,
+          "type": "nearMiss"
+        },
+        {
+          "t": 13,
+          "type": "dist"
+        },
+        {
+          "t": 14,
+          "type": "dist"
+        },
+        {
+          "t": 14.52,
+          "type": "perfect"
+        },
+        {
+          "t": 14.52,
+          "type": "combo"
+        },
+        {
+          "t": 15,
+          "type": "dist"
+        },
+        {
+          "t": 16,
+          "type": "dist"
+        },
+        {
+          "t": 16.45,
+          "type": "perfect"
+        },
+        {
+          "t": 16.45,
+          "type": "combo"
+        },
+        {
+          "t": 17,
+          "type": "dist"
+        },
+        {
+          "t": 18,
+          "type": "dist"
+        },
+        {
+          "t": 18.35,
+          "type": "perfect"
+        },
+        {
+          "t": 18.35,
+          "type": "combo"
+        },
+        {
+          "t": 19,
+          "type": "dist"
+        },
+        {
+          "t": 20,
+          "type": "dist"
+        },
+        {
+          "t": 20.3,
+          "type": "perfect"
+        },
+        {
+          "t": 20.3,
+          "type": "combo"
+        },
+        {
+          "t": 21,
+          "type": "dist"
+        },
+        {
+          "t": 22,
+          "type": "dist"
+        },
+        {
+          "t": 22.13,
+          "type": "perfect"
+        },
+        {
+          "t": 22.13,
+          "type": "combo"
+        },
+        {
+          "t": 23,
+          "type": "dist"
+        },
+        {
+          "t": 23.98,
+          "type": "perfect"
+        },
+        {
+          "t": 23.98,
+          "type": "combo"
+        },
+        {
+          "t": 24,
+          "type": "dist"
+        },
+        {
+          "t": 25,
+          "type": "dist"
+        },
+        {
+          "t": 25.58,
+          "type": "perfect"
+        },
+        {
+          "t": 25.58,
+          "type": "combo"
+        },
+        {
+          "t": 25.65,
+          "type": "segment"
+        },
+        {
+          "t": 26,
+          "type": "dist"
+        },
+        {
+          "t": 27,
+          "type": "dist"
+        },
+        {
+          "t": 27.28,
+          "type": "perfect"
+        },
+        {
+          "t": 27.28,
+          "type": "combo"
+        },
+        {
+          "t": 28,
+          "type": "dist"
+        },
+        {
+          "t": 28.83,
+          "type": "perfect"
+        },
+        {
+          "t": 28.83,
+          "type": "combo"
+        },
+        {
+          "t": 29,
+          "type": "dist"
+        },
+        {
+          "t": 30,
+          "type": "dist"
+        },
+        {
+          "t": 30.43,
+          "type": "perfect"
+        },
+        {
+          "t": 30.43,
+          "type": "combo"
+        },
+        {
+          "t": 31,
+          "type": "dist"
+        },
+        {
+          "t": 32,
+          "type": "dist"
+        },
+        {
+          "t": 32.17,
+          "type": "perfect"
+        },
+        {
+          "t": 32.17,
+          "type": "combo"
+        },
+        {
+          "t": 33,
+          "type": "dist"
+        },
+        {
+          "t": 33.67,
+          "type": "perfect"
+        },
+        {
+          "t": 33.67,
+          "type": "combo"
+        },
+        {
+          "t": 34,
+          "type": "dist"
+        },
+        {
+          "t": 35,
+          "type": "dist"
+        },
+        {
+          "t": 35.1,
+          "type": "perfect"
+        },
+        {
+          "t": 35.1,
+          "type": "combo"
+        },
+        {
+          "t": 36,
+          "type": "dist"
+        },
+        {
+          "t": 36.62,
+          "type": "nearMiss"
+        },
+        {
+          "t": 37,
+          "type": "dist"
+        },
+        {
+          "t": 38,
+          "type": "dist"
+        },
+        {
+          "t": 38.1,
+          "type": "nearMiss"
+        },
+        {
+          "t": 39,
+          "type": "dist"
+        },
+        {
+          "t": 39.45,
+          "type": "nearMiss"
+        },
+        {
+          "t": 40,
+          "type": "dist"
+        },
+        {
+          "t": 41,
+          "type": "dist"
+        },
+        {
+          "t": 41,
+          "type": "perfect"
+        },
+        {
+          "t": 41,
+          "type": "combo"
+        },
+        {
+          "t": 42,
+          "type": "dist"
+        },
+        {
+          "t": 42.4,
+          "type": "perfect"
+        },
+        {
+          "t": 42.4,
+          "type": "combo"
+        },
+        {
+          "t": 43,
+          "type": "dist"
+        },
+        {
+          "t": 43.72,
+          "type": "perfect"
+        },
+        {
+          "t": 43.72,
+          "type": "combo"
+        },
+        {
+          "t": 44,
+          "type": "dist"
+        },
+        {
+          "t": 45,
+          "type": "dist"
+        },
+        {
+          "t": 45,
+          "type": "perfect"
+        },
+        {
+          "t": 45,
+          "type": "combo"
+        },
+        {
+          "t": 45.87,
+          "type": "segment"
+        },
+        {
+          "t": 46,
+          "type": "dist"
+        },
+        {
+          "t": 46.52,
+          "type": "nearMiss"
+        },
+        {
+          "t": 47,
+          "type": "dist"
+        },
+        {
+          "t": 47.87,
+          "type": "nearMiss"
+        },
+        {
+          "t": 48,
+          "type": "dist"
+        },
+        {
+          "t": 49,
+          "type": "dist"
+        },
+        {
+          "t": 49.18,
+          "type": "perfect"
+        },
+        {
+          "t": 49.18,
+          "type": "combo"
+        },
+        {
+          "t": 50,
+          "type": "dist"
+        },
+        {
+          "t": 50.38,
+          "type": "perfect"
+        },
+        {
+          "t": 50.38,
+          "type": "combo"
+        },
+        {
+          "t": 51,
+          "type": "dist"
+        },
+        {
+          "t": 51.67,
+          "type": "perfect"
+        },
+        {
+          "t": 51.67,
+          "type": "combo"
+        },
+        {
+          "t": 52,
+          "type": "dist"
+        },
+        {
+          "t": 53,
+          "type": "dist"
+        },
+        {
+          "t": 53.02,
+          "type": "perfect"
+        },
+        {
+          "t": 53.02,
+          "type": "combo"
+        },
+        {
+          "t": 54,
+          "type": "dist"
+        },
+        {
+          "t": 54.33,
+          "type": "nearMiss"
+        },
+        {
+          "t": 55,
+          "type": "dist"
+        },
+        {
+          "t": 55.7,
+          "type": "perfect"
+        },
+        {
+          "t": 55.7,
+          "type": "combo"
+        },
+        {
+          "t": 56,
+          "type": "dist"
+        },
+        {
+          "t": 56.98,
+          "type": "perfect"
+        },
+        {
+          "t": 56.98,
+          "type": "combo"
+        },
+        {
+          "t": 57,
+          "type": "dist"
+        },
+        {
+          "t": 58,
+          "type": "dist"
+        },
+        {
+          "t": 58.23,
+          "type": "perfect"
+        },
+        {
+          "t": 58.23,
+          "type": "combo"
+        },
+        {
+          "t": 59,
+          "type": "dist"
+        },
+        {
+          "t": 59.4,
+          "type": "perfect"
+        },
+        {
+          "t": 59.4,
+          "type": "combo"
+        },
+        {
+          "t": 60,
+          "type": "dist"
+        },
+        {
+          "t": 60.57,
+          "type": "nearMiss"
+        },
+        {
+          "t": 61,
+          "type": "dist"
+        },
+        {
+          "t": 61.62,
+          "type": "nearMiss"
+        },
+        {
+          "t": 62,
+          "type": "dist"
+        },
+        {
+          "t": 62.53,
+          "type": "segment"
+        },
+        {
+          "t": 62.75,
+          "type": "perfect"
+        },
+        {
+          "t": 62.75,
+          "type": "combo"
+        },
+        {
+          "t": 63,
+          "type": "dist"
+        },
+        {
+          "t": 63.53,
+          "type": "nearMiss"
+        },
+        {
+          "t": 64,
+          "type": "dist"
+        },
+        {
+          "t": 64.35,
+          "type": "perfect"
+        },
+        {
+          "t": 64.35,
+          "type": "combo"
+        },
+        {
+          "t": 65,
+          "type": "dist"
+        },
+        {
+          "t": 65.15,
+          "type": "perfect"
+        },
+        {
+          "t": 65.15,
+          "type": "combo"
+        },
+        {
+          "t": 66,
+          "type": "dist"
+        },
+        {
+          "t": 66.08,
+          "type": "perfect"
+        },
+        {
+          "t": 66.08,
+          "type": "combo"
+        },
+        {
+          "t": 66.87,
+          "type": "pass"
+        },
+        {
+          "t": 67,
+          "type": "dist"
+        },
+        {
+          "t": 67.7,
+          "type": "pass"
+        },
+        {
+          "t": 68,
+          "type": "dist"
+        },
+        {
+          "t": 68.45,
+          "type": "nearMiss"
+        },
+        {
+          "t": 69,
+          "type": "dist"
+        },
+        {
+          "t": 69.25,
+          "type": "perfect"
+        },
+        {
+          "t": 70,
+          "type": "dist"
+        },
+        {
+          "t": 70.03,
+          "type": "pass"
+        },
+        {
+          "t": 70.92,
+          "type": "pass"
+        },
+        {
+          "t": 71,
+          "type": "dist"
+        },
+        {
+          "t": 71.67,
+          "type": "perfect"
+        },
+        {
+          "t": 72,
+          "type": "dist"
+        },
+        {
+          "t": 72.47,
+          "type": "nearMiss"
+        },
+        {
+          "t": 73,
+          "type": "dist"
+        },
+        {
+          "t": 73.18,
+          "type": "shield"
+        },
+        {
+          "t": 73.45,
+          "type": "segment"
+        },
+        {
+          "t": 74,
+          "type": "dist"
+        },
+        {
+          "t": 74.03,
+          "type": "nearMiss"
+        },
+        {
+          "t": 75,
+          "type": "dist"
+        },
+        {
+          "t": 75.05,
+          "type": "pass"
+        },
+        {
+          "t": 76,
+          "type": "dist"
+        },
+        {
+          "t": 76.08,
+          "type": "nearMiss"
+        },
+        {
+          "t": 77,
+          "type": "dist"
+        },
+        {
+          "t": 77.12,
+          "type": "fail"
+        },
+        {
+          "t": 77.12,
+          "type": "session_end"
+        }
+      ]
+    },
+    {
+      "id": "greedy-22",
+      "policy": "greedy",
+      "durationSec": 76.55,
+      "firstInputSec": 0.03,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": 1.98,
+      "deaths": 1,
+      "actions": 812,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 12,
+      "levelsReached": 5,
+      "completed": false,
+      "progressRate": 0.85,
+      "score": 12605,
+      "topMult": 8,
+      "perfects": 30,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 0.05,
+          "type": "first_input"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.98,
+          "type": "perfect"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 4,
+          "type": "dist"
+        },
+        {
+          "t": 4.03,
+          "type": "perfect"
+        },
+        {
+          "t": 4.03,
+          "type": "combo"
+        },
+        {
+          "t": 5,
+          "type": "dist"
+        },
+        {
+          "t": 6,
+          "type": "dist"
+        },
+        {
+          "t": 6.32,
+          "type": "perfect"
+        },
+        {
+          "t": 6.32,
+          "type": "combo"
+        },
+        {
+          "t": 7,
+          "type": "dist"
+        },
+        {
+          "t": 8,
+          "type": "dist"
+        },
+        {
+          "t": 8.5,
+          "type": "perfect"
+        },
+        {
+          "t": 8.5,
+          "type": "combo"
+        },
+        {
+          "t": 9,
+          "type": "dist"
+        },
+        {
+          "t": 10,
+          "type": "dist"
+        },
+        {
+          "t": 10.37,
+          "type": "nearMiss"
+        },
+        {
+          "t": 11,
+          "type": "dist"
+        },
+        {
+          "t": 12,
+          "type": "dist"
+        },
+        {
+          "t": 12.22,
+          "type": "perfect"
+        },
+        {
+          "t": 12.22,
+          "type": "combo"
+        },
+        {
+          "t": 13,
+          "type": "dist"
+        },
+        {
+          "t": 14,
+          "type": "dist"
+        },
+        {
+          "t": 14.18,
+          "type": "perfect"
+        },
+        {
+          "t": 14.18,
+          "type": "combo"
+        },
+        {
+          "t": 15,
+          "type": "dist"
+        },
+        {
+          "t": 16,
+          "type": "dist"
+        },
+        {
+          "t": 16.2,
+          "type": "perfect"
+        },
+        {
+          "t": 16.2,
+          "type": "combo"
+        },
+        {
+          "t": 17,
+          "type": "dist"
+        },
+        {
+          "t": 18,
+          "type": "dist"
+        },
+        {
+          "t": 18.03,
+          "type": "perfect"
+        },
+        {
+          "t": 18.03,
+          "type": "combo"
+        },
+        {
+          "t": 19,
+          "type": "dist"
+        },
+        {
+          "t": 19.92,
+          "type": "perfect"
+        },
+        {
+          "t": 19.92,
+          "type": "combo"
+        },
+        {
+          "t": 20,
+          "type": "dist"
+        },
+        {
+          "t": 21,
+          "type": "dist"
+        },
+        {
+          "t": 21.63,
+          "type": "perfect"
+        },
+        {
+          "t": 21.63,
+          "type": "combo"
+        },
+        {
+          "t": 22,
+          "type": "dist"
+        },
+        {
+          "t": 23,
+          "type": "dist"
+        },
+        {
+          "t": 23.32,
+          "type": "perfect"
+        },
+        {
+          "t": 23.32,
+          "type": "combo"
+        },
+        {
+          "t": 24,
+          "type": "dist"
+        },
+        {
+          "t": 24.98,
+          "type": "perfect"
+        },
+        {
+          "t": 24.98,
+          "type": "combo"
+        },
+        {
+          "t": 25,
+          "type": "dist"
+        },
+        {
+          "t": 25.65,
+          "type": "segment"
+        },
+        {
+          "t": 26,
+          "type": "dist"
+        },
+        {
+          "t": 26.65,
+          "type": "perfect"
+        },
+        {
+          "t": 26.65,
+          "type": "combo"
+        },
+        {
+          "t": 27,
+          "type": "dist"
+        },
+        {
+          "t": 28,
+          "type": "dist"
+        },
+        {
+          "t": 28.3,
+          "type": "perfect"
+        },
+        {
+          "t": 28.3,
+          "type": "combo"
+        },
+        {
+          "t": 29,
+          "type": "dist"
+        },
+        {
+          "t": 30,
+          "type": "dist"
+        },
+        {
+          "t": 30,
+          "type": "nearMiss"
+        },
+        {
+          "t": 31,
+          "type": "dist"
+        },
+        {
+          "t": 31.62,
+          "type": "perfect"
+        },
+        {
+          "t": 31.62,
+          "type": "combo"
+        },
+        {
+          "t": 32,
+          "type": "dist"
+        },
+        {
+          "t": 33,
+          "type": "dist"
+        },
+        {
+          "t": 33.12,
+          "type": "perfect"
+        },
+        {
+          "t": 33.12,
+          "type": "combo"
+        },
+        {
+          "t": 34,
+          "type": "dist"
+        },
+        {
+          "t": 34.67,
+          "type": "nearMiss"
+        },
+        {
+          "t": 35,
+          "type": "dist"
+        },
+        {
+          "t": 36,
+          "type": "dist"
+        },
+        {
+          "t": 36.12,
+          "type": "nearMiss"
+        },
+        {
+          "t": 37,
+          "type": "dist"
+        },
+        {
+          "t": 37.7,
+          "type": "perfect"
+        },
+        {
+          "t": 37.7,
+          "type": "combo"
+        },
+        {
+          "t": 38,
+          "type": "dist"
+        },
+        {
+          "t": 39,
+          "type": "dist"
+        },
+        {
+          "t": 39.32,
+          "type": "nearMiss"
+        },
+        {
+          "t": 40,
+          "type": "dist"
+        },
+        {
+          "t": 40.87,
+          "type": "nearMiss"
+        },
+        {
+          "t": 41,
+          "type": "dist"
+        },
+        {
+          "t": 42,
+          "type": "dist"
+        },
+        {
+          "t": 42.27,
+          "type": "nearMiss"
+        },
+        {
+          "t": 43,
+          "type": "dist"
+        },
+        {
+          "t": 43.82,
+          "type": "nearMiss"
+        },
+        {
+          "t": 44,
+          "type": "dist"
+        },
+        {
+          "t": 45,
+          "type": "dist"
+        },
+        {
+          "t": 45.07,
+          "type": "perfect"
+        },
+        {
+          "t": 45.07,
+          "type": "combo"
+        },
+        {
+          "t": 45.87,
+          "type": "segment"
+        },
+        {
+          "t": 46,
+          "type": "dist"
+        },
+        {
+          "t": 46.42,
+          "type": "perfect"
+        },
+        {
+          "t": 46.42,
+          "type": "combo"
+        },
+        {
+          "t": 47,
+          "type": "dist"
+        },
+        {
+          "t": 47.68,
+          "type": "nearMiss"
+        },
+        {
+          "t": 48,
+          "type": "dist"
+        },
+        {
+          "t": 49,
+          "type": "dist"
+        },
+        {
+          "t": 49.02,
+          "type": "pass"
+        },
+        {
+          "t": 50,
+          "type": "dist"
+        },
+        {
+          "t": 50.32,
+          "type": "nearMiss"
+        },
+        {
+          "t": 51,
+          "type": "dist"
+        },
+        {
+          "t": 51.58,
+          "type": "nearMiss"
+        },
+        {
+          "t": 52,
+          "type": "dist"
+        },
+        {
+          "t": 52.87,
+          "type": "perfect"
+        },
+        {
+          "t": 53,
+          "type": "dist"
+        },
+        {
+          "t": 54,
+          "type": "dist"
+        },
+        {
+          "t": 54.02,
+          "type": "perfect"
+        },
+        {
+          "t": 54.02,
+          "type": "combo"
+        },
+        {
+          "t": 55,
+          "type": "dist"
+        },
+        {
+          "t": 55.3,
+          "type": "perfect"
+        },
+        {
+          "t": 55.3,
+          "type": "combo"
+        },
+        {
+          "t": 55.65,
+          "type": "orb"
+        },
+        {
+          "t": 56,
+          "type": "dist"
+        },
+        {
+          "t": 56.58,
+          "type": "perfect"
+        },
+        {
+          "t": 56.58,
+          "type": "combo"
+        },
+        {
+          "t": 57,
+          "type": "dist"
+        },
+        {
+          "t": 57.88,
+          "type": "nearMiss"
+        },
+        {
+          "t": 58,
+          "type": "dist"
+        },
+        {
+          "t": 59,
+          "type": "dist"
+        },
+        {
+          "t": 59.1,
+          "type": "perfect"
+        },
+        {
+          "t": 59.1,
+          "type": "combo"
+        },
+        {
+          "t": 60,
+          "type": "dist"
+        },
+        {
+          "t": 60.35,
+          "type": "perfect"
+        },
+        {
+          "t": 60.35,
+          "type": "combo"
+        },
+        {
+          "t": 61,
+          "type": "dist"
+        },
+        {
+          "t": 61,
+          "type": "orb"
+        },
+        {
+          "t": 61.52,
+          "type": "perfect"
+        },
+        {
+          "t": 61.52,
+          "type": "combo"
+        },
+        {
+          "t": 62,
+          "type": "dist"
+        },
+        {
+          "t": 62.53,
+          "type": "segment"
+        },
+        {
+          "t": 62.7,
+          "type": "perfect"
+        },
+        {
+          "t": 62.7,
+          "type": "combo"
+        },
+        {
+          "t": 63,
+          "type": "dist"
+        },
+        {
+          "t": 63.62,
+          "type": "perfect"
+        },
+        {
+          "t": 63.62,
+          "type": "combo"
+        },
+        {
+          "t": 64,
+          "type": "dist"
+        },
+        {
+          "t": 64.53,
+          "type": "nearMiss"
+        },
+        {
+          "t": 65,
+          "type": "dist"
+        },
+        {
+          "t": 65.35,
+          "type": "nearMiss"
+        },
+        {
+          "t": 66,
+          "type": "dist"
+        },
+        {
+          "t": 66.28,
+          "type": "perfect"
+        },
+        {
+          "t": 66.28,
+          "type": "combo"
+        },
+        {
+          "t": 67,
+          "type": "dist"
+        },
+        {
+          "t": 67.18,
+          "type": "pass"
+        },
+        {
+          "t": 68,
+          "type": "dist"
+        },
+        {
+          "t": 68.03,
+          "type": "pass"
+        },
+        {
+          "t": 68.83,
+          "type": "perfect"
+        },
+        {
+          "t": 69,
+          "type": "dist"
+        },
+        {
+          "t": 69.65,
+          "type": "nearMiss"
+        },
+        {
+          "t": 70,
+          "type": "dist"
+        },
+        {
+          "t": 70.47,
+          "type": "nearMiss"
+        },
+        {
+          "t": 71,
+          "type": "dist"
+        },
+        {
+          "t": 71.28,
+          "type": "pass"
+        },
+        {
+          "t": 72,
+          "type": "dist"
+        },
+        {
+          "t": 72.08,
+          "type": "shield"
+        },
+        {
+          "t": 72.82,
+          "type": "pass"
+        },
+        {
+          "t": 73,
+          "type": "dist"
+        },
+        {
+          "t": 73.45,
+          "type": "segment"
+        },
+        {
+          "t": 73.52,
+          "type": "nearMiss"
+        },
+        {
+          "t": 74,
+          "type": "dist"
+        },
+        {
+          "t": 74.45,
+          "type": "nearMiss"
+        },
+        {
+          "t": 75,
+          "type": "dist"
+        },
+        {
+          "t": 75.52,
+          "type": "pass"
+        },
+        {
+          "t": 76,
+          "type": "dist"
+        },
+        {
+          "t": 76.55,
+          "type": "fail"
+        },
+        {
+          "t": 76.55,
+          "type": "session_end"
+        }
+      ]
+    },
+    {
+      "id": "greedy-33",
+      "policy": "greedy",
+      "durationSec": 70.92,
+      "firstInputSec": 0.03,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": 1.98,
+      "deaths": 1,
+      "actions": 696,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 12,
+      "levelsReached": 4,
+      "completed": false,
+      "progressRate": 0.75,
+      "score": 13038,
+      "topMult": 8,
+      "perfects": 27,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 0.05,
+          "type": "first_input"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.98,
+          "type": "perfect"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 4,
+          "type": "dist"
+        },
+        {
+          "t": 4.2,
+          "type": "perfect"
+        },
+        {
+          "t": 4.2,
+          "type": "combo"
+        },
+        {
+          "t": 5,
+          "type": "dist"
+        },
+        {
+          "t": 6,
+          "type": "dist"
+        },
+        {
+          "t": 6.47,
+          "type": "perfect"
+        },
+        {
+          "t": 6.47,
+          "type": "combo"
+        },
+        {
+          "t": 7,
+          "type": "dist"
+        },
+        {
+          "t": 8,
+          "type": "dist"
+        },
+        {
+          "t": 8.65,
+          "type": "perfect"
+        },
+        {
+          "t": 8.65,
+          "type": "combo"
+        },
+        {
+          "t": 9,
+          "type": "dist"
+        },
+        {
+          "t": 10,
+          "type": "dist"
+        },
+        {
+          "t": 10.8,
+          "type": "nearMiss"
+        },
+        {
+          "t": 11,
+          "type": "dist"
+        },
+        {
+          "t": 12,
+          "type": "dist"
+        },
+        {
+          "t": 12.93,
+          "type": "perfect"
+        },
+        {
+          "t": 12.93,
+          "type": "combo"
+        },
+        {
+          "t": 13,
+          "type": "dist"
+        },
+        {
+          "t": 14,
+          "type": "dist"
+        },
+        {
+          "t": 14.72,
+          "type": "perfect"
+        },
+        {
+          "t": 14.72,
+          "type": "combo"
+        },
+        {
+          "t": 15,
+          "type": "dist"
+        },
+        {
+          "t": 16,
+          "type": "dist"
+        },
+        {
+          "t": 16.75,
+          "type": "nearMiss"
+        },
+        {
+          "t": 17,
+          "type": "dist"
+        },
+        {
+          "t": 18,
+          "type": "dist"
+        },
+        {
+          "t": 18.63,
+          "type": "perfect"
+        },
+        {
+          "t": 18.63,
+          "type": "combo"
+        },
+        {
+          "t": 19,
+          "type": "dist"
+        },
+        {
+          "t": 20,
+          "type": "dist"
+        },
+        {
+          "t": 20.58,
+          "type": "nearMiss"
+        },
+        {
+          "t": 21,
+          "type": "dist"
+        },
+        {
+          "t": 22,
+          "type": "dist"
+        },
+        {
+          "t": 22.43,
+          "type": "perfect"
+        },
+        {
+          "t": 22.43,
+          "type": "combo"
+        },
+        {
+          "t": 23,
+          "type": "dist"
+        },
+        {
+          "t": 24,
+          "type": "dist"
+        },
+        {
+          "t": 24.13,
+          "type": "perfect"
+        },
+        {
+          "t": 24.13,
+          "type": "combo"
+        },
+        {
+          "t": 25,
+          "type": "dist"
+        },
+        {
+          "t": 25.65,
+          "type": "segment"
+        },
+        {
+          "t": 25.87,
+          "type": "perfect"
+        },
+        {
+          "t": 25.87,
+          "type": "combo"
+        },
+        {
+          "t": 26,
+          "type": "dist"
+        },
+        {
+          "t": 27,
+          "type": "dist"
+        },
+        {
+          "t": 27.53,
+          "type": "perfect"
+        },
+        {
+          "t": 27.53,
+          "type": "combo"
+        },
+        {
+          "t": 28,
+          "type": "dist"
+        },
+        {
+          "t": 29,
+          "type": "dist"
+        },
+        {
+          "t": 29.3,
+          "type": "perfect"
+        },
+        {
+          "t": 29.3,
+          "type": "combo"
+        },
+        {
+          "t": 30,
+          "type": "dist"
+        },
+        {
+          "t": 31,
+          "type": "dist"
+        },
+        {
+          "t": 31.07,
+          "type": "perfect"
+        },
+        {
+          "t": 31.07,
+          "type": "combo"
+        },
+        {
+          "t": 32,
+          "type": "dist"
+        },
+        {
+          "t": 32.8,
+          "type": "perfect"
+        },
+        {
+          "t": 32.8,
+          "type": "combo"
+        },
+        {
+          "t": 33,
+          "type": "dist"
+        },
+        {
+          "t": 34,
+          "type": "dist"
+        },
+        {
+          "t": 34.23,
+          "type": "perfect"
+        },
+        {
+          "t": 34.23,
+          "type": "combo"
+        },
+        {
+          "t": 35,
+          "type": "dist"
+        },
+        {
+          "t": 35.83,
+          "type": "perfect"
+        },
+        {
+          "t": 35.83,
+          "type": "combo"
+        },
+        {
+          "t": 36,
+          "type": "dist"
+        },
+        {
+          "t": 37,
+          "type": "dist"
+        },
+        {
+          "t": 37.33,
+          "type": "perfect"
+        },
+        {
+          "t": 37.33,
+          "type": "combo"
+        },
+        {
+          "t": 38,
+          "type": "dist"
+        },
+        {
+          "t": 38.95,
+          "type": "perfect"
+        },
+        {
+          "t": 38.95,
+          "type": "combo"
+        },
+        {
+          "t": 39,
+          "type": "dist"
+        },
+        {
+          "t": 40,
+          "type": "dist"
+        },
+        {
+          "t": 40.53,
+          "type": "nearMiss"
+        },
+        {
+          "t": 41,
+          "type": "dist"
+        },
+        {
+          "t": 42,
+          "type": "dist"
+        },
+        {
+          "t": 42,
+          "type": "nearMiss"
+        },
+        {
+          "t": 43,
+          "type": "dist"
+        },
+        {
+          "t": 43.55,
+          "type": "perfect"
+        },
+        {
+          "t": 43.55,
+          "type": "combo"
+        },
+        {
+          "t": 44,
+          "type": "dist"
+        },
+        {
+          "t": 44.82,
+          "type": "perfect"
+        },
+        {
+          "t": 44.82,
+          "type": "combo"
+        },
+        {
+          "t": 45,
+          "type": "dist"
+        },
+        {
+          "t": 45.87,
+          "type": "segment"
+        },
+        {
+          "t": 46,
+          "type": "dist"
+        },
+        {
+          "t": 46.25,
+          "type": "nearMiss"
+        },
+        {
+          "t": 47,
+          "type": "dist"
+        },
+        {
+          "t": 47.75,
+          "type": "nearMiss"
+        },
+        {
+          "t": 48,
+          "type": "dist"
+        },
+        {
+          "t": 49,
+          "type": "dist"
+        },
+        {
+          "t": 49.02,
+          "type": "nearMiss"
+        },
+        {
+          "t": 50,
+          "type": "dist"
+        },
+        {
+          "t": 50.37,
+          "type": "nearMiss"
+        },
+        {
+          "t": 51,
+          "type": "dist"
+        },
+        {
+          "t": 51.63,
+          "type": "perfect"
+        },
+        {
+          "t": 51.63,
+          "type": "combo"
+        },
+        {
+          "t": 52,
+          "type": "dist"
+        },
+        {
+          "t": 52.98,
+          "type": "perfect"
+        },
+        {
+          "t": 52.98,
+          "type": "combo"
+        },
+        {
+          "t": 53,
+          "type": "dist"
+        },
+        {
+          "t": 53.52,
+          "type": "orb"
+        },
+        {
+          "t": 54,
+          "type": "dist"
+        },
+        {
+          "t": 54.13,
+          "type": "nearMiss"
+        },
+        {
+          "t": 55,
+          "type": "dist"
+        },
+        {
+          "t": 55.52,
+          "type": "nearMiss"
+        },
+        {
+          "t": 56,
+          "type": "dist"
+        },
+        {
+          "t": 56.67,
+          "type": "nearMiss"
+        },
+        {
+          "t": 57,
+          "type": "dist"
+        },
+        {
+          "t": 57.87,
+          "type": "perfect"
+        },
+        {
+          "t": 57.87,
+          "type": "combo"
+        },
+        {
+          "t": 58,
+          "type": "dist"
+        },
+        {
+          "t": 58.93,
+          "type": "orb"
+        },
+        {
+          "t": 59,
+          "type": "dist"
+        },
+        {
+          "t": 59.13,
+          "type": "nearMiss"
+        },
+        {
+          "t": 60,
+          "type": "dist"
+        },
+        {
+          "t": 60.38,
+          "type": "perfect"
+        },
+        {
+          "t": 60.38,
+          "type": "combo"
+        },
+        {
+          "t": 61,
+          "type": "dist"
+        },
+        {
+          "t": 61.55,
+          "type": "perfect"
+        },
+        {
+          "t": 61.55,
+          "type": "combo"
+        },
+        {
+          "t": 62,
+          "type": "dist"
+        },
+        {
+          "t": 62.53,
+          "type": "segment"
+        },
+        {
+          "t": 62.62,
+          "type": "nearMiss"
+        },
+        {
+          "t": 63,
+          "type": "dist"
+        },
+        {
+          "t": 63.47,
+          "type": "nearMiss"
+        },
+        {
+          "t": 64,
+          "type": "dist"
+        },
+        {
+          "t": 64.3,
+          "type": "perfect"
+        },
+        {
+          "t": 64.3,
+          "type": "combo"
+        },
+        {
+          "t": 65,
+          "type": "dist"
+        },
+        {
+          "t": 65.13,
+          "type": "pass"
+        },
+        {
+          "t": 65.97,
+          "type": "perfect"
+        },
+        {
+          "t": 66,
+          "type": "dist"
+        },
+        {
+          "t": 66.82,
+          "type": "shield"
+        },
+        {
+          "t": 67,
+          "type": "dist"
+        },
+        {
+          "t": 68,
+          "type": "dist"
+        },
+        {
+          "t": 68.45,
+          "type": "nearMiss"
+        },
+        {
+          "t": 69,
+          "type": "dist"
+        },
+        {
+          "t": 69.25,
+          "type": "pass"
+        },
+        {
+          "t": 70,
+          "type": "dist"
+        },
+        {
+          "t": 70.07,
+          "type": "pass"
+        },
+        {
+          "t": 70.92,
+          "type": "fail"
+        },
+        {
+          "t": 70.92,
+          "type": "session_end"
+        }
+      ]
+    },
+    {
+      "id": "random-44",
+      "policy": "random",
+      "durationSec": 3.97,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 3,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 6,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.03,
+      "score": 69,
+      "topMult": 1,
+      "perfects": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "first_input"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.98,
+          "type": "shield"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 3.97,
+          "type": "fail"
+        },
+        {
+          "t": 3.97,
+          "type": "session_end"
+        }
+      ]
+    },
+    {
+      "id": "random-45",
+      "policy": "random",
+      "durationSec": 6.38,
+      "firstInputSec": 1.52,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 7,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.04,
+      "score": 112,
+      "topMult": 1,
+      "perfects": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.53,
+          "type": "first_input"
+        },
+        {
+          "t": 1.98,
+          "type": "pass"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 4,
+          "type": "dist"
+        },
+        {
+          "t": 4.28,
+          "type": "shield"
+        },
+        {
+          "t": 5,
+          "type": "dist"
+        },
+        {
+          "t": 6,
+          "type": "dist"
+        },
+        {
+          "t": 6.38,
+          "type": "fail"
+        },
+        {
+          "t": 6.38,
+          "type": "session_end"
+        }
+      ]
+    },
+    {
+      "id": "random-46",
+      "policy": "random",
+      "durationSec": 10.23,
+      "firstInputSec": 0,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 10,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.07,
+      "score": 184,
+      "topMult": 1,
+      "perfects": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "first_input"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.98,
+          "type": "pass"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 4,
+          "type": "dist"
+        },
+        {
+          "t": 4.13,
+          "type": "pass"
+        },
+        {
+          "t": 5,
+          "type": "dist"
+        },
+        {
+          "t": 6,
+          "type": "dist"
+        },
+        {
+          "t": 6.15,
+          "type": "pass"
+        },
+        {
+          "t": 7,
+          "type": "dist"
+        },
+        {
+          "t": 8,
+          "type": "dist"
+        },
+        {
+          "t": 8.33,
+          "type": "shield"
+        },
+        {
+          "t": 9,
+          "type": "dist"
+        },
+        {
+          "t": 10,
+          "type": "dist"
+        },
+        {
+          "t": 10.23,
+          "type": "fail"
+        },
+        {
+          "t": 10.23,
+          "type": "session_end"
+        }
+      ]
+    },
+    {
+      "id": "noinput-55",
+      "policy": "noinput",
+      "durationSec": 4.25,
+      "firstInputSec": 4.25,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.03,
+      "score": 74,
+      "topMult": 1,
+      "perfects": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.98,
+          "type": "shield"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 4,
+          "type": "dist"
+        },
+        {
+          "t": 4.25,
+          "type": "fail"
+        },
+        {
+          "t": 4.25,
+          "type": "session_end"
+        }
+      ]
+    },
+    {
+      "id": "noinput-56",
+      "policy": "noinput",
+      "durationSec": 4.25,
+      "firstInputSec": 4.25,
+      "inputLatencyMs": 1.2,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false,
+      "progressRate": 0.03,
+      "score": 74,
+      "topMult": 1,
+      "perfects": 0,
+      "events": [
+        {
+          "t": 0,
+          "type": "start"
+        },
+        {
+          "t": 0.02,
+          "type": "start"
+        },
+        {
+          "t": 1,
+          "type": "dist"
+        },
+        {
+          "t": 1.98,
+          "type": "shield"
+        },
+        {
+          "t": 2,
+          "type": "dist"
+        },
+        {
+          "t": 3,
+          "type": "dist"
+        },
+        {
+          "t": 4,
+          "type": "dist"
+        },
+        {
+          "t": 4.25,
+          "type": "fail"
+        },
+        {
+          "t": 4.25,
+          "type": "session_end"
+        }
+      ]
+    }
+  ]
+}

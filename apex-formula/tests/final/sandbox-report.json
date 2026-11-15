@@ -1,0 +1,22 @@
+{
+  "mode": "sandbox allow-scripts (opaque origin), lang=zh",
+  "startedAt": "2026-11-15T02:07:26.325Z",
+  "origin": "null",
+  "storageBlocked": true,
+  "titleText": "按下回车开始",
+  "zhTitle": true,
+  "menu": "menu-ready",
+  "zhMenu": true,
+  "drivers": "ready",
+  "circuits": "ready",
+  "session": "ready",
+  "grid": "grid-ready",
+  "lights": "lights-out",
+  "speed": 38,
+  "speedKmh": 38,
+  "hudZh": true,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T02:08:02.663Z"
+}

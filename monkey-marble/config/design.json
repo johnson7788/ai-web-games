@@ -1,0 +1,159 @@
+{
+  "slug": "monkey-marble",
+  "genre": "platformer",
+  "oneLiner": "滚球过坡道陷阱，收集香蕉，摔出赛道重来",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "roll",
+      "cost": "速度越快越难控",
+      "feedback": [
+        "sfx",
+        "roll",
+        "tilt"
+      ],
+      "combinesWith": [
+        "jump"
+      ]
+    },
+    {
+      "name": "jump",
+      "cost": "空中不能转向",
+      "feedback": [
+        "sfx",
+        "bounce",
+        "squash"
+      ],
+      "combinesWith": [
+        "roll"
+      ]
+    },
+    {
+      "name": "brake",
+      "cost": "刹车丢速度分",
+      "feedback": [
+        "sfx",
+        "skid",
+        "dust"
+      ],
+      "combinesWith": [
+        "roll"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "冲坡拿速度还是稳滚保控",
+      "cost": "冲坡易飞出轨"
+    },
+    {
+      "atSec": 25,
+      "choice": "绕香蕉环线还是直走",
+      "cost": "环线多 5 根但窄"
+    },
+    {
+      "atSec": 45,
+      "choice": "跳过移动锤还是等间隙",
+      "cost": "跳失误=被砸飞"
+    },
+    {
+      "atSec": 70,
+      "choice": "走窄桥近路还是宽路绕",
+      "cost": "窄桥无护栏"
+    },
+    {
+      "atSec": 100,
+      "choice": "最后大坡冲刺还是刹车稳落",
+      "cost": "冲过头=飞出"
+    },
+    {
+      "atSec": 140,
+      "choice": "终点前贪最后一串香蕉还是保时间",
+      "cost": "香蕉在边缘"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础坡道 + 香蕉"
+    },
+    {
+      "index": 2,
+      "newElement": "移动锤陷阱"
+    },
+    {
+      "index": 3,
+      "newElement": "窄桥（无护栏）"
+    },
+    {
+      "index": 4,
+      "newElement": "弹跳板 + 空中香蕉"
+    },
+    {
+      "index": 5,
+      "newElement": "终点大坡 + 计时评级"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "air-steer",
+      "kind": "rule"
+    },
+    {
+      "id": "magnet-banana",
+      "kind": "rule"
+    },
+    {
+      "id": "bounce-pad",
+      "kind": "rule"
+    },
+    {
+      "id": "ghost-rail",
+      "kind": "rule"
+    },
+    {
+      "id": "brake-grip",
+      "kind": "rule"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "jump-power",
+      "kind": "stat"
+    },
+    {
+      "id": "mass-stable",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "leaderboard"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 316310,
+      "sha256": "006d7b8d9efb7abadc09dd89a674dbd9cfd47de4bfaee1f417de1c7b29382e90",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic night sky seen through broken hospital windows, sickly green-black gradient hex 1a2e2a with faint moon glow, dead tree silhouettes at the bottom edge, oppressive horror mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 402999,
+      "sha256": "58d1229061c6c43bf290f77b1a6036e96bf5a8701c442bab5b3559fb50d91f70",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Horror key art of a dark abandoned hospital corridor in sickly green hex 1a2e2a, a flashlight cone cutting through darkness, a twisted entity silhouette barely visible at the far end, cold white emergency lights hex cbd5e1, blood-red accent hex 7f1d1d, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 315034,
+      "sha256": "e31108da8b3d4e3d885dfdfa0c7458dd67ee3f057dd318746e164adea6c2bacb",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a flashlight beam cutting through darkness with a faint ghostly face, sickly green hex 1a2e2a and warm yellow hex fde68a, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/tile": {
+      "file": "assets/tex/tile.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 293394,
+      "sha256": "fc7bce4aac1426d4b91dd6f1153958e2080593bbee4e6f74c67b939d04acb196",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable dirty hospital wall tile texture, pale green-white hex cbd5e1 with grime and cracks, front view, horror game texture, no text, no watermark",
+        "raw": "assets/_src/tile-tex-s103.png"
+      }
+    },
+    "tex/floor": {
+      "file": "assets/tex/floor.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 191374,
+      "sha256": "1379effd31c1a7ccf555642dda4be98f5af0a773cc25a6f3b2743d67d1bc1146",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable old hospital linoleum floor texture, sickly green hex 1a2e2a with scuffs and stains, top-down flat view, horror game texture, no text, no watermark",
+        "raw": "assets/_src/floor-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:22+00:00"
+}

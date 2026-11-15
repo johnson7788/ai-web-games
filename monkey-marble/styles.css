@@ -1,0 +1,128 @@
+/* styles.css — MONKEY MARBLE（糖果乐园色板） */
+:root {
+  --sky: #60a5fa;
+  --banana: #facc15;
+  --track: #f472b6;
+  --green: #4ade80;
+  --ink: #1e293b;
+  --panel: rgba(20, 30, 50, 0.82);
+  --btn: #f472b6;
+  --btn-hover: #fb7185;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; background: #0b1220; }
+body { font-family: "Trebuchet MS", "PingFang SC", system-ui, sans-serif; color: #fff; -webkit-tap-highlight-color: transparent; }
+
+#app { position: fixed; inset: 0; }
+#canvas { position: absolute; }
+#stage { position: absolute; inset: 0; }
+
+.hidden { display: none !important; }
+
+/* ---------------- HUD ---------------- */
+#hud {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 18px; pointer-events: none; z-index: 10;
+}
+.hud-box {
+  background: var(--panel); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px; padding: 7px 14px; text-align: center; min-width: 82px;
+  backdrop-filter: blur(4px);
+}
+.hud-label { display: block; font-size: 10px; letter-spacing: 0.12em; opacity: 0.72; text-transform: uppercase; }
+.hud-box b { font-size: 20px; font-variant-numeric: tabular-nums; }
+
+/* ---------------- 屏幕 ---------------- */
+.screen {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; z-index: 20; text-align: center;
+  background: radial-gradient(ellipse at 50% 30%, rgba(96,165,250,0.20), rgba(11,18,32,0.72));
+}
+.title-inner { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+#title-text {
+  font-size: 64px; font-weight: 900; letter-spacing: 0.04em; line-height: 1;
+  color: #fff; text-shadow: 0 4px 0 var(--track), 0 8px 24px rgba(0,0,0,0.45);
+}
+.subtitle { font-size: 18px; max-width: 560px; opacity: 0.9; }
+#title-best-wrap { font-size: 16px; opacity: 0.9; }
+#title-buttons { display: flex; gap: 12px; }
+#title-meta { display: flex; gap: 10px; align-items: center; }
+
+.screen h2 { font-size: 40px; margin-bottom: 10px; text-shadow: 0 3px 12px rgba(0,0,0,0.4); }
+#screen-pause, #screen-levelclear, #screen-results { background: rgba(11, 18, 32, 0.72); }
+
+.btn {
+  background: var(--btn); color: #fff; border: none; border-radius: 14px;
+  padding: 13px 26px; font-size: 18px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.25); transition: transform 0.06s, background 0.15s;
+  font-family: inherit;
+}
+.btn:hover { background: var(--btn-hover); }
+.btn:active { transform: translateY(2px); }
+.btn.primary { background: var(--banana); color: #422006; font-size: 22px; padding: 15px 34px; }
+.btn.primary:hover { background: #fde047; }
+.btn.small { padding: 8px 14px; font-size: 14px; background: rgba(255,255,255,0.16); }
+
+select {
+  background: var(--panel); color: #fff; border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px; padding: 9px 12px; font-size: 15px; font-family: inherit; cursor: pointer;
+}
+
+/* ---------------- 评级 / 结算 ---------------- */
+.rating { font-size: 88px; font-weight: 900; line-height: 1; text-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+.rating-S { color: #facc15; }
+.rating-A { color: #4ade80; }
+.rating-B { color: #60a5fa; }
+.rating-C { color: #e2e8f0; }
+#lc-stats, #res-stats { font-size: 16px; opacity: 0.92; margin: 6px 0 18px; }
+#res-record { color: var(--banana); font-weight: 700; font-size: 18px; }
+#results-buttons { display: flex; gap: 12px; }
+
+/* ---------------- 引导 ---------------- */
+#tutorial { position: absolute; inset: 0; z-index: 30; }
+#tut-highlight {
+  position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);
+  width: 280px; height: 200px; border-radius: 20px;
+  border: 3px solid var(--banana); box-shadow: 0 0 0 9999px rgba(0,0,0,0.42);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse { 50% { border-color: #fff; } }
+#tut-card {
+  position: absolute; left: 50%; bottom: 72px; transform: translateX(-50%);
+  width: min(520px, 86vw); background: var(--panel); border-radius: 18px;
+  padding: 18px 22px; text-align: center; backdrop-filter: blur(6px);
+}
+#tut-dots { display: flex; gap: 8px; justify-content: center; margin-bottom: 10px; }
+#tut-dots .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+#tut-dots .dot.on { background: var(--banana); }
+#tut-text { font-size: 17px; margin-bottom: 14px; min-height: 44px; }
+#tut-buttons { display: flex; gap: 10px; justify-content: center; }
+
+/* 从标题重看：不透明模态底 + 卡片居中，隐藏高亮遮罩（避免 HUD 遮挡判定） */
+#tutorial.modal { background: #0b1220; }
+#tutorial.modal #tut-highlight { display: none; }
+#tutorial.modal #tut-card {
+  top: 50%; bottom: auto; transform: translate(-50%, -50%);
+  width: min(420px, 86vw); background: rgba(20, 30, 50, 0.97);
+}
+
+/* ---------------- 触屏 ---------------- */
+#touch { position: absolute; inset: 0; z-index: 15; pointer-events: none; }
+#joy {
+  position: absolute; left: 26px; bottom: 26px; width: 116px; height: 116px;
+  border-radius: 50%; background: rgba(255,255,255,0.14); border: 2px solid rgba(255,255,255,0.3);
+  pointer-events: auto; touch-action: none;
+}
+#joy-knob {
+  position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px;
+  border-radius: 50%; background: rgba(255,255,255,0.55); pointer-events: none;
+}
+#touch-actions { position: absolute; right: 22px; bottom: 30px; display: flex; gap: 14px; pointer-events: auto; }
+.touch-btn {
+  width: 78px; height: 78px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.4);
+  background: rgba(244,114,182,0.75); color: #fff; font-size: 16px; font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.touch-btn:last-child { background: rgba(30,41,59,0.75); }
+.touch-btn.active { background: var(--banana); color: #422006; }

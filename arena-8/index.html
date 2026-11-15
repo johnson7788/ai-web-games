@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>ARENA 8</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="stage">
+
+    <div id="hud" class="hidden">
+      <div id="hud-tl">
+        <div class="hud-label" data-i18n="hp">HP</div>
+        <div class="bar bar-hp"><div id="hud-hp-fill"></div><b id="hud-hp-num">100</b></div>
+        <div id="hud-weapon" class="hud-chip"><span class="lbl" data-i18n="weapon">Weapon</span><b id="hud-weapon-val"></b></div>
+      </div>
+      <div id="hud-tr">
+        <span class="hud-chip"><span class="lbl" data-i18n="round">Match</span><b id="hud-match">1/5</b></span>
+        <span class="hud-chip"><span class="lbl" data-i18n="alive">Alive</span><b id="hud-alive">8</b></span>
+        <span class="hud-chip"><span class="lbl" data-i18n="time">Time</span><b id="hud-time">3:00</b></span>
+      </div>
+      <div id="hud-bl">
+        <span class="hud-chip"><span data-i18n="kills">Kills</span> <b id="hud-kills">0</b></span>
+        <span class="hud-chip"><span data-i18n="falls">Ring-outs</span> <b id="hud-falls">0</b></span>
+      </div>
+      <div id="hud-br">
+        <div class="hud-label" data-i18n="ult">ULT</div>
+        <div class="bar bar-ult"><div id="hud-ult-fill"></div></div>
+      </div>
+      <div id="hud-hint" class="hud-chip" data-i18n="hintMove">WASD move · Mouse look</div>
+      <div id="fx-layer"></div>
+    </div>
+
+    <div id="markers" class="hidden"></div>
+
+    <div id="screen-title" class="screen is-active">
+      <h1 id="title-text">ARENA 8</h1>
+      <p id="subtitle-text"></p>
+      <div id="title-best-wrap"><span class="hud-label" data-i18n="best">Best</span> <b id="title-best">0</b></div>
+      <div id="title-buttons">
+        <button id="btn-start" class="btn primary"></button>
+        <button id="btn-howto" class="btn" data-tutorial-replay></button>
+      </div>
+      <div id="title-meta">
+        <select id="lang-select" aria-label="Language"></select>
+        <button id="btn-mute" class="btn small"></button>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="btn primary"></button>
+      <button id="btn-restart-pause" class="btn"></button>
+      <button id="btn-menu-pause" class="btn"></button>
+      <select id="lang-select-pause" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+      <div id="res-rating" class="rank-C"></div>
+      <div id="res-score-wrap"><span class="hud-label" data-i18n="score">Score</span> <b id="res-score">0</b></div>
+      <div id="res-record" class="hidden"></div>
+      <div id="res-stats"></div>
+      <div id="results-buttons">
+        <button id="btn-restart" class="btn primary"></button>
+        <button id="btn-share" class="btn"></button>
+        <button id="btn-menu" class="btn"></button>
+      </div>
+    </div>
+
+    <div id="screen-upgrade" class="screen hidden">
+      <h2 id="upgrade-title"></h2>
+      <p id="upgrade-sub"></p>
+      <div id="upgrade-grid"></div>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-next" class="btn primary"></button>
+          <button id="tut-skip" class="btn" data-tutorial-skip></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <div id="rotate-card">
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" class="btn small"></button>
+      </div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <div id="joy"><div id="joy-knob"></div></div>
+      <button id="btn-touch-punch" class="touch-btn" aria-label="punch"></button>
+      <button id="btn-touch-grab" class="touch-btn" aria-label="grab"></button>
+      <button id="btn-touch-ult" class="touch-btn" aria-label="ult"></button>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

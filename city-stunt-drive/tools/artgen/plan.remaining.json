@@ -1,0 +1,103 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic dusk sky over a stylized low-poly city skyline, deep blue-purple gradient near hex 1a1f3a to warm orange horizon near hex ff9f43, scattered stylized clouds with cyan neon rim light near hex 22d3ee, distant skyscraper silhouettes at the bottom edge, clean negative space in the upper two thirds for gameplay, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Epic key art of a stylized low-poly muscle car mid-air doing a triple flip above a neon-lit rooftop stunt ramp at dusk, motion blur trails in cyan hex 22d3ee and orange hex ff9f43, deep blue-purple city skyline background hex 1a1f3a, golden coins scattering along the arc, dramatic low angle, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: a stylized low-poly orange muscle car hex ff9f43 tilted 30 degrees mid-flip with cyan neon trail hex 22d3ee, centered on deep blue-purple background hex 1a1f3a, bold simple silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "ramp-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable texture of dark asphalt ramp surface with painted orange hazard chevrons hex ff9f43 and subtle cyan edge glow hex 22d3ee, top-down flat view, stylized low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/ramp.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "road-tex",
+      "kind": "image",
+      "seeds": [
+        104
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable dark asphalt road texture with faint lane markings and subtle grain, top-down flat view, stylized low-poly game texture, neutral dark blue-gray base hex 232840, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/road.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

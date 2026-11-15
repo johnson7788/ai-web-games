@@ -1,0 +1,101 @@
+{
+  "game": "ragdoll-archers-3d",
+  "generatedAt": "2026-11-14T18:04:55.011Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 6.6,
+    "style_consistent": 7.4
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Start”按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（蓝色小人）在背景中偏暗且尺寸小，眯眼时与地面纹理混淆，silhouette得分偏低",
+        "标题‘RAGDOLL ARCHERS 3D’字体较细，在昏黄背景下对比度不足，影响快速阅读",
+        "左上角石柱结构模糊、无明确功能指示,易被误认为装饰而非可交互物"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中蓝色小人（玩家）轮廓模糊、对比度低，眯眼时难以与环境区分",
+        "左下角两个圆形虚拟按键无明确功能标识，且未说明是否为移动/射击控制",
+        "‘Best: 0s · Headshots: 0’文字偏小，距按钮过近，易被误读为按钮一部分"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应移动角色靠近敌人并射击（当前无明显操作提示，但敌我位置明确）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 6,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人标签‘ENEMY’红色边框与背景沙地对比度偏低，远距离辨识稍弱",
+        "玩家角色头顶‘YOU’标签箭头指向错误（应指向下而非上）",
+        "整体风格偏低多边形但光影不统一：角色有阴影而地面无明显光照方向"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动屏幕中央区域拉弓（按教程提示）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色头顶‘YOU’标签箭头指向错误（应指角色本体而非标签框）",
+        "敌人标签‘ENEMY’红色三角指示器方向与角色朝向不一致，易误导",
+        "教程弹窗遮挡部分地面纹理，轻微影响空间判断"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程提示框（1/4）位于屏幕底部中央，与主菜单按钮区域重叠风险高，可能干扰操作",
+        "背景中左右两侧角色轮廓较模糊，眯眼时与环境对比度不足，影响 silhouette 得分",
+        "‘Best: 0s · Headshots: 0’文字字号偏小，弱光环境下易误读"
+      ]
+    }
+  ]
+}

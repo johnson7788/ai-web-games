@@ -1,0 +1,121 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic dusk sky over a stylized low-poly fortress valley, slate blue gradient hex 334155 with warm amber horizon hex f59e0b, distant mountain and keep silhouettes at the bottom edge, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Key art of a stylized low-poly fortress defense: arrow towers and cannon towers on green hills hex 65a30d firing at red enemy waves hex dc2626, earthen walls redirecting the path, amber dusk light hex f59e0b, slate blue sky hex 334155, isometric-ish dramatic angle, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: a stylized low-poly stone keep tower with amber banner hex f59e0b on slate blue background hex 334155, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "grass-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized grass field texture, moss green hex 65a30d with subtle darker patches, top-down flat view, low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/grass.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "stone-tex",
+      "kind": "image",
+      "seeds": [
+        104
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable stylized stone block wall texture, slate gray hex 334155 with mortar lines, front view, low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/stone.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "path-tex",
+      "kind": "image",
+      "seeds": [
+        105
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable dirt path texture, warm brown hex 8b5a2b with footprints and pebbles, top-down flat view, low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/path.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

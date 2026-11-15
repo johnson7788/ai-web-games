@@ -1,0 +1,113 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 299544,
+      "sha256": "1f05dd441c451d6e93063786a5f6cb77f91c28c39d46797bca5caf631f4207a6",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic bright tropical sky, clean blue gradient hex 38bdf8 with fluffy white clouds, turquoise sea horizon and a small voxel island silhouette at the bottom edge, cheerful sunny mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 449933,
+      "sha256": "12a35b20a45ff7ac64e07ede95420acc69b39491b74dc685adb8e0b2c669ba6b",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Cheerful key art of a stylized voxel island with a cozy animal pen, blocky chicken and sheep, a peacock displaying rainbow feathers, sandy beach hex fde68a and green grass hex 4ade80, turquoise sea hex 38bdf8, sunny sky, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 352617,
+      "sha256": "471195d9fd268d6d931f38fa897bbae058fe09b878b5779934edc6f74c8bb51f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized voxel island with a tiny peacock, green hex 4ade80 and sand hex fde68a on sea blue hex 38bdf8, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/grass": {
+      "file": "assets/tex/grass.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 394038,
+      "sha256": "fd1c3a9ba51d536709c01c97c3a8f344a0dc737d3b04cc6fbd283ce63556bf9d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized voxel grass texture, bright green hex 4ade80 with tiny flowers, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/grass-tex-s103.png"
+      }
+    },
+    "tex/sand": {
+      "file": "assets/tex/sand.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 116710,
+      "sha256": "f869c07bb656e379847ecd0e329d731d2322ded8455c204f1a75499a15089e4a",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized voxel sand texture, warm pale yellow hex fde68a with shell specks, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/sand-tex-s104.png"
+      }
+    },
+    "tex/water": {
+      "file": "assets/tex/water.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 161088,
+      "sha256": "ea838daf765ed53701f602a0cbf366a264fcc94f3aa6921d2fe246543aabc32f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 105,
+        "prompt": "Seamless tileable stylized voxel water texture, turquoise hex 38bdf8 with soft wave highlights, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/water-tex-s105.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:13+00:00"
+}

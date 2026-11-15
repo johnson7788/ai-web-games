@@ -1,0 +1,101 @@
+{
+  "game": "rally-dust-3d",
+  "generatedAt": "2026-11-14T18:49:32.882Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.2,
+    "silhouette": 6.6,
+    "style_consistent": 7.6
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start Rally”按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘RALLY DUST 3D’下方小字‘Point-to-point rally · pace notes · mud drift’在深背景上对比度偏低，弱光下可能难读",
+        "红色车模型部分遮挡‘BEST’标签与‘Damage 100% = DNF’提示，存在轻微视觉干扰",
+        "右上角语言选择与静音按钮间距过近，且‘Mute’按钮无悬停反馈提示（截图静态无法确认交互）"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start Rally”按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘RALLY DUST 3D’红白描边在深灰背景上对比度略低，部分字母边缘轻微模糊",
+        "红色小车模型位于文字下方，但未明确标识为玩家车辆，需依赖上下文推断",
+        "右上角语言切换与静音按钮间距过近，可能误触（桌面截图不扣分，但属潜在UX问题）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按W键或空格键启动车辆前进",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 6,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'PACE NOTE'右侧进度条过短且无刻度，难以判断当前节奏状态",
+        "远处终点拱门与背景山体对比度低，目标虽可见但辨识度不足",
+        "车辆后部黑色区域与红色车身色差小，轮廓在远距离易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "按 W 键或点击 'Next' 按钮继续教程",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 6,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角教程弹窗遮挡部分远景与赛道终点线，影响目标感知",
+        "HUD 中 'PACE NOTE' 进度条无明确刻度或单位，语义模糊",
+        "车辆与地面材质风格不一致（低多边形车体 vs 纹理地面），存在拼接感"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Skip tutorial”按钮跳过教程",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景文字‘RALLY DUST 3D’模糊且与教程框重叠，可能干扰焦点",
+        "教程框顶部三点指示器未明确当前步骤（如高亮第1点），易造成认知负担",
+        "‘Next’按钮为浅棕底白字，对比度偏低，弱光环境下可读性下降"
+      ]
+    }
+  ]
+}

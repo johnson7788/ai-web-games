@@ -1,0 +1,121 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic night sky over a stylized low-poly military compound, dark charcoal gradient near hex 14181f with faint orange ember glow near hex ff6b35 at the horizon, smoke plumes and distant watchtower silhouettes at the bottom edge, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Intense key art of a stylized low-poly soldier firing a rifle with orange muzzle flash hex ff6b35 in a dark warehouse hex 14181f, enemy silhouettes rushing through smoke, ember particles, dramatic rim lighting, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: a stylized low-poly rifle muzzle with orange flame burst hex ff6b35 on charcoal background hex 14181f, bold simple silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "crate-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable military crate texture, dark olive wood hex 4a5d43 with steel bands and hazard stencil marks without readable text, front view, low-poly game asset, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/crate.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "metal-tex",
+      "kind": "image",
+      "seeds": [
+        104
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable dark corrugated metal wall texture, charcoal hex 14181f with subtle rust streaks and rivets, front view, low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/metal.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "concrete-tex",
+      "kind": "image",
+      "seeds": [
+        105
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable dark concrete floor texture with cracks and faint oil stains, top-down flat view, charcoal gray hex 23272e, low-poly game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/concrete.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

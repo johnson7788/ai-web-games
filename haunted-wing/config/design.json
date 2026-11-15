@@ -1,0 +1,159 @@
+{
+  "slug": "haunted-wing",
+  "genre": "narrative",
+  "oneLiner": "手电筒医院逃生：找钥匙 / 躲实体 / 电力管理",
+  "fun": {
+    "primary": "curiosity",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "search",
+      "cost": "搜柜花时间，暴露位置",
+      "feedback": [
+        "sfx",
+        "drawer",
+        "item-glow"
+      ],
+      "combinesWith": [
+        "light"
+      ]
+    },
+    {
+      "name": "light",
+      "cost": "手电耗电，光会引实体",
+      "feedback": [
+        "flashlight-cone",
+        "battery-tick",
+        "flicker"
+      ],
+      "combinesWith": [
+        "hide"
+      ]
+    },
+    {
+      "name": "hide",
+      "cost": "柜内不能动，错过时机",
+      "feedback": [
+        "sfx",
+        "breath",
+        "heartbeat"
+      ],
+      "combinesWith": [
+        "light"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 10,
+      "choice": "开手电搜房还是摸黑省电",
+      "cost": "摸黑慢但安全"
+    },
+    {
+      "atSec": 30,
+      "choice": "听到脚步躲柜还是绕路",
+      "cost": "躲柜赌不被查"
+    },
+    {
+      "atSec": 55,
+      "choice": "用电池充手电还是留备用",
+      "cost": "电池稀缺"
+    },
+    {
+      "atSec": 80,
+      "choice": "走走廊快但暴露还是穿病房慢但隐蔽",
+      "cost": "走廊有实体巡逻"
+    },
+    {
+      "atSec": 110,
+      "choice": "修发电机开灯（引实体）还是继续摸黑",
+      "cost": "开灯看全图但危险"
+    },
+    {
+      "atSec": 150,
+      "choice": "拿最后钥匙直接冲出口还是再搜补给",
+      "cost": "冲出口赌体力"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "一层病房 + 手电 + 1 钥匙"
+    },
+    {
+      "index": 2,
+      "newElement": "实体巡逻（听觉）"
+    },
+    {
+      "index": 3,
+      "newElement": "躲柜机制"
+    },
+    {
+      "index": 4,
+      "newElement": "发电机 + 电力管理"
+    },
+    {
+      "index": 5,
+      "newElement": "二层手术室 + 最终钥匙 + 出口"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "silent-step",
+      "kind": "rule"
+    },
+    {
+      "id": "battery-eff",
+      "kind": "rule"
+    },
+    {
+      "id": "peek-hide",
+      "kind": "rule"
+    },
+    {
+      "id": "entity-sense",
+      "kind": "rule"
+    },
+    {
+      "id": "sprint-burst",
+      "kind": "rule"
+    },
+    {
+      "id": "battery-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "search-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "stamina-cap",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "growth",
+    "unlock"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

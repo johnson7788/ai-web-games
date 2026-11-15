@@ -31,9 +31,8 @@ const tutorial = {
   get current() { return TUT_STEPS[this.step]; },
   start() {
     this.active = true; this.step = 0;
-    // 从标题重看时暂隐标题，避免弹窗遮挡标题内容；结束恢复
+    // 从标题重看时保留标题屏作背景（左侧菜单+右侧留白），弹窗放右侧留白处，避免遮挡玩法画面
     this._fromTitle = !el.title.classList.contains('hidden');
-    if (this._fromTitle) el.title.classList.add('hidden');
     el.tut.classList.toggle('from-title', this._fromTitle);
     el.tut.classList.remove('hidden');
     this.render();
@@ -41,7 +40,7 @@ const tutorial = {
   skip() {
     this.active = false;
     el.tut.classList.add('hidden');
-    if (this._fromTitle) { el.title.classList.remove('hidden'); this._fromTitle = false; }
+    this._fromTitle = false;
     save.set('tutDone', true);
   },
   next() {

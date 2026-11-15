@@ -1,0 +1,159 @@
+{
+  "slug": "rocket-derby",
+  "genre": "racing",
+  "oneLiner": "车辆足球 2v2，加速撞球，球速越快分越高",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "social"
+  },
+  "verbs": [
+    {
+      "name": "boost",
+      "cost": " boost 条耗尽要等回充",
+      "feedback": [
+        "sfx",
+        "flame",
+        "fov"
+      ],
+      "combinesWith": [
+        "hit"
+      ]
+    },
+    {
+      "name": "hit",
+      "cost": "撞球角度决定球路",
+      "feedback": [
+        "sfx",
+        "shake",
+        "ball-trail"
+      ],
+      "combinesWith": [
+        "boost"
+      ]
+    },
+    {
+      "name": "jump",
+      "cost": "空中撞球后落地硬直",
+      "feedback": [
+        "sfx",
+        "dust",
+        "air-spin"
+      ],
+      "combinesWith": [
+        "hit"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "抢开局球还是先守门",
+      "cost": "失位被反击"
+    },
+    {
+      "atSec": 25,
+      "choice": "boost 撞球射门还是传给队友",
+      "cost": "队友 AI 会失误"
+    },
+    {
+      "atSec": 45,
+      "choice": "跳起空中撞球还是地面稳推",
+      "cost": "空中落地硬直"
+    },
+    {
+      "atSec": 70,
+      "choice": "回防救险球还是继续压上",
+      "cost": "体力条限制"
+    },
+    {
+      "atSec": 100,
+      "choice": "远射赌高分还是近距离稳射",
+      "cost": "球速×分数"
+    },
+    {
+      "atSec": 140,
+      "choice": "加时赛全力进攻还是保平",
+      "cost": "被绝杀风险"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础 2v2 场 + 球物理"
+    },
+    {
+      "index": 2,
+      "newElement": "boost  pickups 分布"
+    },
+    {
+      "index": 3,
+      "newElement": "对手 AI 升级（会守门）"
+    },
+    {
+      "index": 4,
+      "newElement": "场地障碍柱"
+    },
+    {
+      "index": 5,
+      "newElement": "决胜局（金球制）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "aerial-control",
+      "kind": "rule"
+    },
+    {
+      "id": "boost-on-hit",
+      "kind": "rule"
+    },
+    {
+      "id": "curve-shot",
+      "kind": "rule"
+    },
+    {
+      "id": "demo-bump",
+      "kind": "rule"
+    },
+    {
+      "id": "quick-recover",
+      "kind": "rule"
+    },
+    {
+      "id": "boost-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "hit-power",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

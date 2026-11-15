@@ -1,0 +1,106 @@
+{
+  "game": "blaze-fps",
+  "generatedAt": "2026-11-15T03:10:20.712Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "FAIL",
+  "means": {
+    "readable": 7.4,
+    "silhouette": 5.4,
+    "style_consistent": 8.2
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [
+    "tests/final/desktop.png: 目标不可见",
+    "tests/final/tutorial-first.png: HUD 遮挡"
+  ],
+  "lowMeans": [
+    "silhouette 5.4 < 6"
+  ],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": false,
+      "first_action_guess": "玩家第一眼该寻找敌人或开火，但画面中无可见目标",
+      "readable": 3,
+      "silhouette": 4,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标不可见：Wave 1 无敌人出现，玩家无法判断行动方向",
+        "视野过暗：主体区域几乎全黑，仅枪械与准星可见",
+        "HP/STAMINA数值与条形图对比度低，64值在红条末端不易辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的START按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中多个低多边形物体（如红/黄/棕锥体）轮廓模糊，眯眼时难以区分功能（敌方？道具？障碍？）",
+        "‘BEST 0’中数字‘0’字号略小且无高亮，与标题对比度不足，易被忽略",
+        "右上角语言切换与Mute按钮间距过近，可能误触（虽为桌面截图，但UI布局风险存在）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "等待倒计时结束，准备应对第一波敌人",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "倒计时数字'2'与'GET READY'间距过小，易误读为'2 GET READY'",
+        "枪械模型在暗背景下轮廓模糊，与背景对比度不足，影响silhouette得分",
+        "左上角'WAREHOUSE'按钮无悬停/选中态视觉反馈，可能被误认为静态标签"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘Next’按钮继续教程或跳过教程",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": true,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角教程面板部分遮挡枪械前部（HUD overlap）",
+        "‘Wave 1’倒计时框与枪械瞄准镜区域重叠，可能干扰视线",
+        "背景星空与深色地面对比弱，玩家轮廓不突出（silhouette偏低）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'Next'按钮继续教程",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题'How to play'使用橙色发光字体，但无明确层级区分（如加粗/大小），在深背景上略显浮于表面",
+        "进度点（三个小圆点）颜色过暗且尺寸过小，不易察觉当前步骤",
+        "‘Skip tutorial’按钮边框与背景对比度低，视觉权重弱于‘Next’，可能误导用户必须点Next"
+      ]
+    }
+  ]
+}

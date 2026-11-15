@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 324829,
+      "sha256": "e3a594e311c85bcc279599a7adaf24fea79047bebd98584e1b429f0c02f371e7",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic bright sky over a stylized voxel battle island, blue gradient with soft clouds, blocky terrain and building silhouettes at the bottom edge, faint blue zone-wall glow on the horizon, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 458561,
+      "sha256": "12b44c816a6a647061ec8ae36a7c98ff4ea56dbab94d86fc6270ecc8b7b1d4c7",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Key art of a stylized voxel battle royale: blocky soldier building a voxel wall under fire, blue shrinking zone wall hex 3b82f6 in the background, loot crate glowing, green island hex 65a30d, dramatic action, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 322653,
+      "sha256": "066a8bd93bee42084db3345e0c5adb7e652fd6bd9b032d93dc88c5a2df2f7ae4",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized voxel soldier helmet with crosshair, green hex 65a30d and blue hex 3b82f6 on dark background, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/grass": {
+      "file": "assets/tex/grass.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 306602,
+      "sha256": "b6c23c903b3d428d5adf25beb4e61bf3e7bf964dd32d8da334dd42a8477142de",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized voxel grass texture, olive green hex 65a30d, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/grass-tex-s103.png"
+      }
+    },
+    "tex/brick": {
+      "file": "assets/tex/brick.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 65636,
+      "sha256": "52c6a052a53b9952f665272f026e949ce7a02cf9f331b2818c91f21837906d8a",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized voxel building brick texture, warm tan hex ca8a04, front view, game texture, no text, no watermark",
+        "raw": "assets/_src/brick-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:17+00:00"
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PIXEL MINE 3D</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-pill" id="hud-coins">0</div>
+        <div class="hud-pill" id="hud-depth">0m</div>
+        <div class="hud-pill" id="hud-goal"></div>
+      </div>
+      <div class="hud-mid">
+        <div class="stamina"><div id="hud-stamina-fill"></div><span id="hud-stamina-txt"></span></div>
+        <div class="hud-pill" id="hud-bag">0/20</div>
+      </div>
+      <div id="hud-crack"><div id="hud-crack-fill"></div></div>
+      <div id="reticle"></div>
+      <div id="hud-hint"></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <button id="btn-mute" class="corner-btn mute">♪</button>
+      <div class="title-panel">
+        <h1 id="title-text">PIXEL MINE 3D</h1>
+        <p class="subtitle" id="subtitle-text">Dig deep. Sell ore. Buy upgrades.</p>
+        <div class="title-stats">
+          <span id="title-best"></span>
+        </div>
+        <button id="btn-start" class="btn">Start</button>
+        <button id="btn-howto" class="btn ghost">How to play</button>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="btn">Resume</button>
+      <button id="btn-restart-pause" class="btn ghost">Restart</button>
+      <button id="btn-menu-pause" class="btn ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select bottom" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title">Cashed Out!</h2>
+      <p class="subtitle" id="res-sub">Your haul this run</p>
+      <div id="res-stats" class="res-stats"></div>
+      <div id="res-record" class="record hidden"></div>
+      <button id="btn-restart" class="btn">Mine again</button>
+      <button id="btn-menu" class="btn ghost">Title</button>
+    </div>
+
+    <div id="screen-upgrade" class="screen hidden">
+      <h2 id="upg-title">Upgrade Station</h2>
+      <div id="upg-grid" class="upg-grid"></div>
+      <button id="btn-upg-close" class="btn ghost">Close</button>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div class="tut-card">
+        <span class="tut-step" id="tut-dots"></span>
+        <p id="tut-text"></p>
+        <div class="tut-actions">
+          <button id="btn-tut-next">Next</button>
+          <button id="btn-tut-skip" data-tutorial-skip>Skip</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="fx-layer"></div>
+
+    <div id="touch" class="hidden">
+      <div id="joy"><div id="joy-knob"></div></div>
+      <div class="touch-btns">
+        <button id="btn-mine" class="tbtn mine">MINE</button>
+        <button id="btn-ladder" class="tbtn">LADDER</button>
+        <button id="btn-jump" class="tbtn">JUMP</button>
+        <button id="btn-camp" class="tbtn">CAMP</button>
+        <button id="btn-bag" class="tbtn">BAG</button>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <p id="rotate-text">Rotate your device for the best view</p>
+      <button id="btn-rotate-skip">Continue</button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

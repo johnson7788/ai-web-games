@@ -1,0 +1,159 @@
+{
+  "slug": "pixel-mine-3d",
+  "genre": "sim",
+  "oneLiner": "第一人称体素挖矿：越深越值钱，修矿道买升级",
+  "fun": {
+    "primary": "curiosity",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "mine",
+      "cost": "体力 + 镐耐久",
+      "feedback": [
+        "sfx",
+        "crack",
+        "block-pop"
+      ],
+      "combinesWith": [
+        "sell"
+      ]
+    },
+    {
+      "name": "sell",
+      "cost": "回地面要爬矿道",
+      "feedback": [
+        "sfx",
+        "coin",
+        "count-up"
+      ],
+      "combinesWith": [
+        "upgrade"
+      ]
+    },
+    {
+      "name": "upgrade",
+      "cost": "金币 invested 才有回报",
+      "feedback": [
+        "sfx",
+        "glow",
+        "stat-pop"
+      ],
+      "combinesWith": [
+        "mine"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 10,
+      "choice": "挖浅层煤矿稳赚还是直奔深层",
+      "cost": "深层体力消耗大"
+    },
+    {
+      "atSec": 30,
+      "choice": "背包满了回地面还是丢低价值矿",
+      "cost": "丢矿=损失"
+    },
+    {
+      "atSec": 55,
+      "choice": "买镐升级还是买体力药剂",
+      "cost": "投资 vs 续航"
+    },
+    {
+      "atSec": 80,
+      "choice": "修矿道梯子（安全）还是裸爬（快）",
+      "cost": "裸爬摔落掉矿"
+    },
+    {
+      "atSec": 110,
+      "choice": "挖稀有金矿脉还是清普通层",
+      "cost": "金矿脉要绕路"
+    },
+    {
+      "atSec": 150,
+      "choice": "冲深度纪录还是见好就收",
+      "cost": "深层有岩浆风险"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "表层土/石 + 煤矿"
+    },
+    {
+      "index": 2,
+      "newElement": "铁矿层 + 体力管理"
+    },
+    {
+      "index": 3,
+      "newElement": "金矿脉（稀有）+ 梯子"
+    },
+    {
+      "index": 4,
+      "newElement": "钻石层 + 岩浆危险"
+    },
+    {
+      "index": 5,
+      "newElement": "基岩宝藏房（终局目标）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "auto-smelt",
+      "kind": "rule"
+    },
+    {
+      "id": "vein-sense",
+      "kind": "rule"
+    },
+    {
+      "id": "double-drop",
+      "kind": "rule"
+    },
+    {
+      "id": "lava-proof",
+      "kind": "rule"
+    },
+    {
+      "id": "backpack-sort",
+      "kind": "rule"
+    },
+    {
+      "id": "pick-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "backpack-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "stamina-cap",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "growth",
+    "unlock",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

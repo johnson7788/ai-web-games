@@ -1,0 +1,159 @@
+{
+  "slug": "block-battle-royale",
+  "genre": "action",
+  "oneLiner": "30 人 bot 体素大逃杀：缩圈 / 建造 / 落地成盒",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "shoot",
+      "cost": "弹药稀缺",
+      "feedback": [
+        "sfx",
+        "muzzle",
+        "hitmark"
+      ],
+      "combinesWith": [
+        "build"
+      ]
+    },
+    {
+      "name": "build",
+      "cost": "方块库存，建造时暴露",
+      "feedback": [
+        "sfx",
+        "place",
+        "ghost"
+      ],
+      "combinesWith": [
+        "shoot"
+      ]
+    },
+    {
+      "name": "loot",
+      "cost": "舔包花时间",
+      "feedback": [
+        "sfx",
+        "pickup",
+        "glow"
+      ],
+      "combinesWith": [
+        "shoot"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "落热点抢装备还是落野区稳发育",
+      "cost": "热点早期交火"
+    },
+    {
+      "atSec": 25,
+      "choice": "捡到的方块建掩体还是留着跑圈",
+      "cost": "库存有限"
+    },
+    {
+      "atSec": 45,
+      "choice": "听到枪声去劝架还是绕开",
+      "cost": "劝架可能被夹"
+    },
+    {
+      "atSec": 70,
+      "choice": "缩圈时直穿还是沿边摸",
+      "cost": "直穿暴露"
+    },
+    {
+      "atSec": 100,
+      "choice": "决赛圈先建堡垒还是先找人",
+      "cost": "建堡垒被投掷"
+    },
+    {
+      "atSec": 140,
+      "choice": "最后一搏冲脸还是苟圈边",
+      "cost": "冲脸赌枪法"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "跳伞落地 + 基础 loot"
+    },
+    {
+      "index": 2,
+      "newElement": "第一次缩圈"
+    },
+    {
+      "index": 3,
+      "newElement": "建造掩体（墙/坡）"
+    },
+    {
+      "index": 4,
+      "newElement": "空投（稀有枪）"
+    },
+    {
+      "index": 5,
+      "newElement": "决赛圈（1v1 bot）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "wall-auto",
+      "kind": "rule"
+    },
+    {
+      "id": "loot-magnet",
+      "kind": "rule"
+    },
+    {
+      "id": "zone-sense",
+      "kind": "rule"
+    },
+    {
+      "id": "headshot-chain",
+      "kind": "rule"
+    },
+    {
+      "id": "build-fast",
+      "kind": "rule"
+    },
+    {
+      "id": "armor-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "ammo-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "move-speed",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

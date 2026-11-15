@@ -1,0 +1,158 @@
+{
+  "slug": "tower-climb",
+  "genre": "platformer",
+  "oneLiner": "十层霓虹塔：缺口 / 移动平台 / 塌方块，摔下从头",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "落点误判=坠落",
+      "feedback": [
+        "sfx",
+        "dust",
+        "squash"
+      ],
+      "combinesWith": [
+        "dash"
+      ]
+    },
+    {
+      "name": "dash",
+      "cost": "空中冲刺一次，落地回充",
+      "feedback": [
+        "trail",
+        "sfx",
+        "fov"
+      ],
+      "combinesWith": [
+        "jump"
+      ]
+    },
+    {
+      "name": "wait",
+      "cost": "移动平台有窗口期",
+      "feedback": [
+        "platform-glow",
+        "tick"
+      ],
+      "combinesWith": [
+        "jump"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "走缺口短线还是绕平台长线",
+      "cost": "短线容错低"
+    },
+    {
+      "atSec": 25,
+      "choice": "空中冲刺抢平台还是等下一班",
+      "cost": "冲刺用完无保命"
+    },
+    {
+      "atSec": 45,
+      "choice": "踩塌方块快过还是绕路",
+      "cost": "塌方块 0.6s 后消失"
+    },
+    {
+      "atSec": 70,
+      "choice": "第 5 层存档点继续还是重刷完美",
+      "cost": "重刷耗时"
+    },
+    {
+      "atSec": 100,
+      "choice": "顶层大风段贴内圈还是外圈",
+      "cost": "外圈短但风推"
+    },
+    {
+      "atSec": 140,
+      "choice": "最后三层连跳还是稳扎稳打",
+      "cost": "连跳失误=回底层"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "1–2 层：静态平台 + 缺口"
+    },
+    {
+      "index": 2,
+      "newElement": "3–4 层：水平移动平台"
+    },
+    {
+      "index": 3,
+      "newElement": "5–6 层：塌方块（踩上倒计时）"
+    },
+    {
+      "index": 4,
+      "newElement": "7–8 层：垂直升降台 + 风推"
+    },
+    {
+      "index": 5,
+      "newElement": "9–10 层：旋转平台 + 终点光环"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "double-dash",
+      "kind": "rule"
+    },
+    {
+      "id": "coyote-plus",
+      "kind": "rule"
+    },
+    {
+      "id": "platform-freeze",
+      "kind": "rule"
+    },
+    {
+      "id": "collapse-delay",
+      "kind": "rule"
+    },
+    {
+      "id": "wind-resist",
+      "kind": "rule"
+    },
+    {
+      "id": "jump-height",
+      "kind": "stat"
+    },
+    {
+      "id": "move-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "dash-cd",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "growth",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

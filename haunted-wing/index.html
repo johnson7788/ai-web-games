@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>HAUNTED WING</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="stage">
+
+    <div id="hud" class="hidden">
+      <div id="vignette"></div>
+      <div id="fx-layer"></div>
+      <div id="hud-top">
+        <span id="hud-floor"></span>
+        <span id="hud-time"></span>
+        <span id="hud-best"></span>
+      </div>
+      <div id="hud-battery-box">
+        <span class="hud-label" data-i18n="battery">BAT</span>
+        <div id="hud-battery"><div id="hud-battery-fill"></div></div>
+      </div>
+      <div id="hud-lives"></div>
+      <div id="hud-keys">
+        <span class="key-dot key-red"></span>
+        <span class="key-dot key-blue"></span>
+        <span class="key-dot key-gold"></span>
+      </div>
+      <div id="hud-objective" data-i18n="objective"></div>
+      <div id="hud-hint"></div>
+      <div id="hud-gen" class="hidden">
+        <span id="gen-title" data-i18n="genTitle"></span>
+        <span id="gen-step"></span>
+        <div id="gen-levers">
+          <button class="lever" data-lever="1">1</button>
+          <button class="lever" data-lever="2">2</button>
+          <button class="lever" data-lever="3">3</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <div id="title-inner">
+        <h1 id="title-text">HAUNTED WING</h1>
+        <p id="subtitle-text"></p>
+        <div id="title-best-wrap"><span class="hud-label" data-i18n="best">BEST</span> <b id="title-best">0</b></div>
+        <div id="title-buttons">
+          <button id="btn-start" class="btn primary"></button>
+          <button id="btn-howto" class="btn" data-tutorial-replay></button>
+        </div>
+        <div id="title-meta">
+          <select id="lang-select" aria-label="Language"></select>
+          <button id="btn-mute" class="btn small"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="btn primary"></button>
+      <button id="btn-restart-pause" class="btn"></button>
+      <button id="btn-menu-pause" class="btn"></button>
+      <select id="lang-select-pause" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+      <div id="res-rating"></div>
+      <div id="res-record" class="hidden"></div>
+      <div id="res-stats"></div>
+      <div id="results-buttons">
+        <button id="btn-restart" class="btn primary"></button>
+        <button id="btn-share" class="btn"></button>
+        <button id="btn-menu" class="btn"></button>
+      </div>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-next" class="btn primary"></button>
+          <button id="tut-skip" class="btn" data-tutorial-skip></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <div id="rotate-card">
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" class="btn small"></button>
+      </div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <button id="btn-touch-flash" class="touch-btn" aria-label="flashlight">💡</button>
+      <button id="btn-touch-interact" class="touch-btn" aria-label="interact">👆</button>
+      <button id="btn-touch-sprint" class="touch-btn" aria-label="run">🏃</button>
+      <div id="touch-hint"></div>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

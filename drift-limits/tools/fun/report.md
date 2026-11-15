@@ -1,16 +1,16 @@
 # Fun Gate 报告（bot 遥测） — drift-limits
 
-> 品类 `default` · 8 条记录 · 数据 `tools/fun/autoplay.json` · 2026-11-14T13:47:54.246Z
+> 品类 `default` · 8 条记录 · 数据 `tools/fun/autoplay.json` · 2026-11-14T15:30:06.503Z
 
 **结论：PASS**（10 pass / 0 warn / 0 fail）
 
 | 指标 | 观测 | 门槛 | 判定 | 怎么修 |
 | --- | --- | --- | --- | --- |
 | 首次输入中位数 | 3s | 10s | ✅ pass | — |
-| 输入→动作延迟中位数 | 1ms | 120ms | ✅ pass | — |
+| 输入→动作延迟中位数 | 16ms | 120ms | ✅ pass | — |
 | 首胜中位数 | 11s | 90s | ✅ pass（仅 3/3 条 greedy 成功） | — |
 | 至少成功一次的 run 比例 | 100% | 80% | ✅ pass | — |
-| 每分钟操作数 | 108/min | 40/min | ✅ pass | — |
+| 每分钟操作数 | 98/min | 40/min | ✅ pass | — |
 | 空转时间占比 | 11% | 20% | ✅ pass | — |
 | 事件最大间隔 | 2s | 4s | ✅ pass | — |
 | 前 3 分钟事件种类 | 19种 | 8种 | ✅ pass | — |
@@ -21,14 +21,14 @@
 
 | run | 策略 | 时长 | 首输入 | 延迟 | 首胜 | 行动/分 | 空转 | 最大间隔 | 事件种类 | 关卡 | 死亡 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| greedy-11 | greedy | 90s | 3s | 1ms | 26s | 79 | 12% | 1.9s | 19 | 3 | 0 |
-| greedy-22 | greedy | 87s | 3s | 1ms | 9s | 71 | 10% | 1.7s | 18 | 3 | 0 |
-| greedy-33 | greedy | 88s | 3s | 1ms | 11s | 76 | 11% | 1.7s | 19 | 3 | 0 |
-| random-44 | random | 8s | 0s | 1ms | — | 156 | 6% | 1.5s | 11 | 1 | 1 |
-| random-45 | random | 8s | 0s | 1ms | — | 137 | 9% | 1.6s | 11 | 1 | 1 |
-| random-46 | random | 8s | 0s | 1ms | — | 143 | 10% | 1.6s | 10 | 1 | 1 |
-| noinput-55 | noinput | 9s | 9s | 1ms | — | 0 | 34% | 3.4s | 6 | 1 | 1 |
-| noinput-56 | noinput | 9s | 9s | 1ms | — | 0 | 34% | 3.4s | 6 | 1 | 1 |
+| greedy-11 | greedy | 90s | 3s | 16ms | 26s | 79 | 12% | 1.9s | 19 | 3 | 0 |
+| greedy-22 | greedy | 87s | 3s | 16ms | 9s | 71 | 10% | 1.7s | 18 | 3 | 0 |
+| greedy-33 | greedy | 88s | 3s | 16ms | 11s | 76 | 11% | 1.7s | 19 | 3 | 0 |
+| random-44 | random | 9s | 0s | 16ms | — | 134 | 5% | 1.5s | 11 | 1 | 1 |
+| random-45 | random | 12s | 0s | 16ms | — | 118 | 16% | 1.9s | 11 | 1 | 1 |
+| random-46 | random | 8s | 0s | 16ms | — | 135 | 8% | 1.5s | 11 | 1 | 1 |
+| noinput-55 | noinput | 9s | 9s | 16ms | — | 0 | 34% | 3.4s | 6 | 1 | 1 |
+| noinput-56 | noinput | 9s | 9s | 16ms | — | 0 | 34% | 3.4s | 6 | 1 | 1 |
 
 ## 怎么读
 

@@ -1,0 +1,30 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      2048,
+      1152
+    ]
+  },
+  "items": [
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "size": [
+        2048,
+        1152
+      ],
+      "seeds": [
+        41
+      ],
+      "prompt": "Stylized 3D game key art, wide cinematic composition: a blocky voxel sandbox world at golden hour, first-person view of a hand placing a grass block, rolling cubic hills with blocky oak trees, a small crafted wooden shelter with crafting table and furnace, sheep and pigs on the grass, exposed stone and coal ore in a small cliff, soft warm sunlight and long shadows, vibrant saturated Minecraft-like voxel aesthetic, high detail, no text, no watermark, no logo",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "model": "qwen-image-xl"
+    }
+  ]
+}

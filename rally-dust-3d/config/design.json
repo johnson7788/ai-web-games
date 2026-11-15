@@ -1,0 +1,158 @@
+{
+  "slug": "rally-dust-3d",
+  "genre": "racing",
+  "oneLiner": "点对点拉力：路书提示 / 泥地漂移 / 车损",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "drift",
+      "cost": "漂移过度=甩尾撞树",
+      "feedback": [
+        "sfx",
+        "dust",
+        "skid"
+      ],
+      "combinesWith": [
+        "throttle"
+      ]
+    },
+    {
+      "name": "throttle",
+      "cost": "泥地抓地低",
+      "feedback": [
+        "sfx",
+        "engine",
+        "gravel"
+      ],
+      "combinesWith": [
+        "drift"
+      ]
+    },
+    {
+      "name": "listen",
+      "cost": "路书报错=进弯速度错",
+      "feedback": [
+        "co-driver-voice",
+        "pace-icon"
+      ],
+      "combinesWith": [
+        "drift"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "按路书 3 档进弯还是赌 4 档",
+      "cost": "赌快但易甩"
+    },
+    {
+      "atSec": 25,
+      "choice": "泥地漂移过弯还是减速抓地",
+      "cost": "漂移快但损车"
+    },
+    {
+      "atSec": 45,
+      "choice": "抄近路（颠簸）还是走主路",
+      "cost": "近路伤悬挂"
+    },
+    {
+      "atSec": 70,
+      "choice": "车损后保守开还是继续冲",
+      "cost": "转向会偏"
+    },
+    {
+      "atSec": 100,
+      "choice": "最后赛段全速还是保车完赛",
+      "cost": "爆胎=退赛"
+    },
+    {
+      "atSec": 140,
+      "choice": "冲终点线前超车还是稳位",
+      "cost": "超车赌弯心"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "赛段 1：砂石直路 + 缓弯"
+    },
+    {
+      "index": 2,
+      "newElement": "赛段 2：泥地发夹弯"
+    },
+    {
+      "index": 3,
+      "newElement": "赛段 3：林间窄路（树障）"
+    },
+    {
+      "index": 4,
+      "newElement": "赛段 4：颠簸近路选择"
+    },
+    {
+      "index": 5,
+      "newElement": "赛段 5：终点冲刺（混合路面）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "drift-boost",
+      "kind": "rule"
+    },
+    {
+      "id": "damage-resist",
+      "kind": "rule"
+    },
+    {
+      "id": "pace-perfect",
+      "kind": "rule"
+    },
+    {
+      "id": "gravel-grip",
+      "kind": "rule"
+    },
+    {
+      "id": "repair-kit",
+      "kind": "rule"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "handling10",
+      "kind": "stat"
+    },
+    {
+      "id": "suspension",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "leaderboard"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

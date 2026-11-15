@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>MONKEY MARBLE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="stage">
+
+    <div id="hud" class="hidden">
+      <div class="hud-box"><span class="hud-label" data-i18n="time">TIME</span><b id="hud-time">0:00</b></div>
+      <div class="hud-box"><span class="hud-label" data-i18n="level">LEVEL</span><b id="hud-level">1</b></div>
+      <div class="hud-box"><span class="hud-label" data-i18n="bananas">BANANAS</span><b id="hud-bananas">0</b></div>
+      <div class="hud-box"><span class="hud-label" data-i18n="best">BEST</span><b id="hud-best">0:00</b></div>
+    </div>
+
+    <div id="screen-title" class="screen">
+      <div class="title-inner">
+        <h1 id="title-text">MONKEY MARBLE</h1>
+        <p id="subtitle-text" class="subtitle"></p>
+        <div id="title-best-wrap"><span class="hud-label" data-i18n="best">BEST</span> <b id="title-best">0:00</b></div>
+        <div id="title-buttons">
+          <button id="btn-start" class="btn primary"></button>
+          <button id="btn-howto" class="btn" data-tutorial-replay></button>
+        </div>
+        <div id="title-meta">
+          <select id="lang-select" aria-label="Language"></select>
+          <button id="btn-mute" class="btn small"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title" data-i18n="paused">Paused</h2>
+      <button id="btn-resume" class="btn primary"></button>
+      <button id="btn-restart-pause" class="btn"></button>
+      <button id="btn-menu-pause" class="btn"></button>
+      <select id="lang-select-pause" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-levelclear" class="screen hidden">
+      <h2 data-i18n="levelClear">Level Clear</h2>
+      <div id="lc-rating" class="rating"></div>
+      <div id="lc-stats"></div>
+      <button id="btn-next" class="btn primary"></button>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 data-i18n="results">Run Complete</h2>
+      <div id="res-rating" class="rating"></div>
+      <div id="res-record" class="hidden"></div>
+      <div id="res-stats"></div>
+      <div id="results-buttons">
+        <button id="btn-restart" class="btn primary"></button>
+        <button id="btn-share" class="btn"></button>
+        <button id="btn-menu" class="btn"></button>
+      </div>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-next" class="btn primary"></button>
+          <button id="tut-skip" class="btn" data-i18n="skip" data-tutorial-skip></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <div id="joy"><div id="joy-knob"></div></div>
+      <div id="touch-actions">
+        <button id="btn-jump" class="touch-btn"></button>
+        <button id="btn-brake" class="touch-btn"></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

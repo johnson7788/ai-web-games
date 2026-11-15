@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:59807/",
+  "startedAt": "2026-11-15T02:17:39.172Z",
+  "iframeOrigin": "http://127.0.0.1:59807",
+  "booted": true,
+  "stateAfterStart": "playing",
+  "posAfterDrive": {
+    "x": 55,
+    "z": 23
+  },
+  "autopilot": {
+    "coins": 5,
+    "score": 80
+  },
+  "zhHud": "得分： 80",
+  "fps": 56,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T02:18:15.614Z"
+}

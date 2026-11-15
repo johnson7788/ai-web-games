@@ -1,0 +1,159 @@
+{
+  "slug": "arena-8",
+  "genre": "action",
+  "oneLiner": "8 人布偶死斗，先 1 真人 + 7 bot 补位",
+  "fun": {
+    "primary": "social",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "punch",
+      "cost": "挥空硬直 0.4s",
+      "feedback": [
+        "sfx",
+        "swing",
+        "hitshake"
+      ],
+      "combinesWith": [
+        "grab"
+      ]
+    },
+    {
+      "name": "grab",
+      "cost": "抓举时移速减半",
+      "feedback": [
+        "sfx",
+        "grab",
+        "ragdoll-lift"
+      ],
+      "combinesWith": [
+        "throw"
+      ]
+    },
+    {
+      "name": "throw",
+      "cost": "扔出后自己空手",
+      "feedback": [
+        "sfx",
+        "whoosh",
+        "ragdoll-fly"
+      ],
+      "combinesWith": [
+        "punch"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "先打最近的还是捡武器",
+      "cost": "空手伤害低"
+    },
+    {
+      "atSec": 25,
+      "choice": "抓人扔出场外还是揍血",
+      "cost": "扔出场外=秒杀但难抓"
+    },
+    {
+      "atSec": 45,
+      "choice": "混战时躲边缘还是冲中心",
+      "cost": "中心武器多但被夹"
+    },
+    {
+      "atSec": 70,
+      "choice": "用大招（震地）还是留着",
+      "cost": "大招 CD 长"
+    },
+    {
+      "atSec": 100,
+      "choice": "追杀残血还是保自己血",
+      "cost": "追杀可能被反杀"
+    },
+    {
+      "atSec": 140,
+      "choice": "决胜 1v1 抓扔还是对拳",
+      "cost": "抓扔赌命中"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础竞技场 + 拳"
+    },
+    {
+      "index": 2,
+      "newElement": "武器拾取（球棒/平底锅）"
+    },
+    {
+      "index": 3,
+      "newElement": "抓举扔出场外"
+    },
+    {
+      "index": 4,
+      "newElement": "场地陷阱（弹板/落石）"
+    },
+    {
+      "index": 5,
+      "newElement": "决胜圈（场地缩小）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "grab-range",
+      "kind": "rule"
+    },
+    {
+      "id": "throw-power",
+      "kind": "rule"
+    },
+    {
+      "id": "shockwave",
+      "kind": "rule"
+    },
+    {
+      "id": "weapon-master",
+      "kind": "rule"
+    },
+    {
+      "id": "counter-punch",
+      "kind": "rule"
+    },
+    {
+      "id": "hp10",
+      "kind": "stat"
+    },
+    {
+      "id": "move-speed",
+      "kind": "stat"
+    },
+    {
+      "id": "punch-dmg",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

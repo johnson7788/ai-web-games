@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 454105,
+      "sha256": "2a3d45bbb3438fe9fdc47f36a01bb7d1371f8924c030a82c15d29a06d8c118d4",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a special-forces soldier in tactical gear firing a rifle from behind concrete cover in a sunlit middle-eastern market street, bright muzzle flash and ejected shell casing, bullet tracers and dust impacts, enemy silhouettes returning fire down the alley, modular concrete buildings with awnings and crates, dramatic low camera angle, warm desert light with volumetric dust, vibrant saturated military shooter aesthetic, high detail PBR materials, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T03:13:13+00:00"
+}

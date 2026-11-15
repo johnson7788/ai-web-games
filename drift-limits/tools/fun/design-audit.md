@@ -1,6 +1,6 @@
 # 趣味设计审计 — drift-limits
 
-> 设计源 `config/design.json` · 品类 `racing` · 2026-11-14T13:37:35.946Z
+> 设计源 `config/design.json` · 品类 `racing` · 2026-11-14T15:29:34.376Z
 
 **结论：PASS** · 分数 100/100（26 pass / 0 warn / 0 fail）
 

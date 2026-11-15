@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Apex Formula — a free 3D F1 racing game in your browser. Twenty procedural cars, six circuits, qualifying, pit stops and dynamic weather. Keyboard or gamepad." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0e'/%3E%3Cpath d='M14 50 L30 14 h8 L26 50 z' fill='%23e10600'/%3E%3Cpath d='M34 50 L46 22 h6 L42 50 z' fill='%23ffffff'/%3E%3Crect x='10' y='52' width='44' height='4' fill='%23e10600'/%3E%3C/svg%3E" />
+    <title>Apex Formula — Free 3D Racing Game</title>
+    <style>
+      html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      #app { position: fixed; inset: 0; }
+      #game-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      #ui-root { position: absolute; inset: 0; pointer-events: none; }
+      #ui-root > * { pointer-events: auto; }
+      /* Keep the HUD weather column clear of the platform language toggle (top-right). */
+      #ui-root .af-rightcol { top: calc(3.2vh + 34px); }
+      /* Open-source credit line on the title screen. */
+      .af-title-credit { position: absolute; left: 0; right: 0; bottom: 0.9vh; text-align: center; font-size: .6em; letter-spacing: .08em; color: rgba(255,255,255,.34); opacity: 0; animation: af-fade .6s 1.6s forwards; }
+      /* Scrollbars in the game's own visual language (results table, pause settings). */
+      #ui-root .af-rtable, #ui-root .af-pause-settings .af-rows { scrollbar-width: thin; scrollbar-color: #e10600 rgba(255,255,255,.08); }
+      #ui-root .af-rtable::-webkit-scrollbar, #ui-root .af-pause-settings .af-rows::-webkit-scrollbar { width: 6px; }
+      #ui-root .af-rtable::-webkit-scrollbar-track, #ui-root .af-pause-settings .af-rows::-webkit-scrollbar-track { background: rgba(255,255,255,.08); }
+      #ui-root .af-rtable::-webkit-scrollbar-thumb, #ui-root .af-pause-settings .af-rows::-webkit-scrollbar-thumb { background: #e10600; border-radius: 3px; }
+      #ui-root .af-rtable::-webkit-scrollbar-thumb:hover, #ui-root .af-pause-settings .af-rows::-webkit-scrollbar-thumb:hover { background: #ff2b1f; }
+      /* Language toggle styled to match the broadcast UI. */
+      #pipy-lang-btn { font-style: italic !important; letter-spacing: .08em !important; border-color: rgba(225,6,0,.65) !important; background: rgba(10,10,14,.82) !important; border-radius: 2px !important; }
+      #pipy-lang-btn:hover { border-color: #e10600 !important; background: rgba(225,6,0,.28) !important; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+      <div id="ui-root"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

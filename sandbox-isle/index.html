@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SANDBOX ISLE</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="stage">
+
+    <div id="hud" class="hidden">
+      <div class="hud-box" id="hud-day-box"><span class="hud-label" data-i18n="day">DAY</span><b id="hud-day">1</b></div>
+      <div class="hud-box" id="hud-gold-box"><span class="hud-label" data-i18n="gold">GOLD</span><b id="hud-gold">0</b></div>
+      <div class="hud-box" id="hud-carrots-box"><span class="hud-label" data-i18n="carrots">CARROTS</span><b id="hud-carrots">0</b></div>
+      <div id="hud-goals"></div>
+      <div id="hud-stamina-row">
+        <div id="hud-stamina-label" data-i18n="stamina">STAMINA</div>
+        <div id="hud-stamina-val">100</div>
+      </div>
+      <div id="hud-stamina"><div id="hud-stamina-fill"></div></div>
+      <div id="hud-rainbow"></div>
+      <div id="hud-crosshair"></div>
+      <div id="fx-layer"></div>
+    </div>
+
+    <div id="hotbar" class="hidden"></div>
+    <button id="btn-bridge" class="btn primary hidden" data-i18n="buildBridge">Build Rainbow Bridge</button>
+
+    <div id="screen-title" class="screen is-active">
+      <div id="title-inner">
+        <h1 id="title-text">SANDBOX ISLE</h1>
+        <p id="subtitle-text"></p>
+        <div id="title-buttons">
+          <button id="btn-start" class="btn primary"></button>
+          <button id="btn-howto" class="btn" data-tutorial-replay></button>
+        </div>
+        <div id="title-meta">
+          <select id="lang-select" aria-label="Language"></select>
+          <button id="btn-mute" class="btn small"></button>
+        </div>
+        <p id="controls-hint" class="small" data-i18n="controls"></p>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="btn primary"></button>
+      <button id="btn-restart-pause" class="btn"></button>
+      <button id="btn-menu-pause" class="btn"></button>
+      <select id="lang-select-pause" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+      <div id="res-stats"></div>
+      <div id="results-buttons">
+        <button id="btn-restart" class="btn primary"></button>
+        <button id="btn-share" class="btn"></button>
+        <button id="btn-menu" class="btn"></button>
+      </div>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-next" class="btn primary"></button>
+          <button id="tut-skip" class="btn" data-tutorial-skip></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <div id="rotate-card">
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" class="btn small"></button>
+      </div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <div id="joy"></div>
+      <button id="btn-view" class="touch-btn" aria-label="view">⇅</button>
+      <button id="btn-dig" class="touch-btn" aria-label="dig">⛏</button>
+      <button id="btn-place" class="touch-btn" aria-label="place">＋</button>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

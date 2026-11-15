@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 253876,
+      "sha256": "b965a13c846b256876688b64d8f62601f0b1be58b85582655bcf1c3a7002ee6c",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic warm afternoon sky over a stylized low-poly roman arena, sandy gold gradient near hex d9b26f with soft clouds, arena colonnade silhouettes at the bottom edge, open negative space above, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 409481,
+      "sha256": "a9f4b4234e616fc4872d2a353db87aff5ae85a9c7df02c0b3b0f0310cfc66702",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Key art of a stylized ragdoll archer in blue hex 3b82f6 drawing a bow with a glowing arrow, an opposing red ragdoll hex ef4444 flying backwards with an arrow in its shoulder, sandy arena background hex d9b26f, dynamic slow-motion feel, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 321197,
+      "sha256": "c2f2773f737ca43698eea671ec4c2a3257b7bb69623c4a31aa4ab592b86e76e0",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized ragdoll archer head and drawn bow with arrow, blue accent hex 3b82f6 on sandy background hex d9b26f, bold simple silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/sand": {
+      "file": "assets/tex/sand.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 399374,
+      "sha256": "b98414ded89e982fdd5b16e0916d4264fbfd4fd2902317273564f438126d3c23",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized arena sand texture, warm gold hex d9b26f with subtle rake marks and pebbles, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/sand-tex-s103.png"
+      }
+    },
+    "tex/wood": {
+      "file": "assets/tex/wood.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 148688,
+      "sha256": "71ae5d8c5f6a6763c1979f590d572bf6aeb9e92d25e1de21d18fd34564ba1df7",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized wooden crate texture, warm planks with iron bands, front view, low-poly game asset, no text, no watermark",
+        "raw": "assets/_src/wood-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:44:40+00:00"
+}

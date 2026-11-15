@@ -1,0 +1,101 @@
+{
+  "game": "block-battle-royale",
+  "generatedAt": "2026-11-14T17:44:14.476Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.2,
+    "silhouette": 6,
+    "style_consistent": 7.6
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景岛屿与文字‘BLOCK BATTLE ROYALE’部分重叠，弱化标题对比度",
+        "‘30-player voxel battle · shrink · build · last one standing’描述文字较小且灰度高，远距离阅读吃力",
+        "左下角‘BEST 0’位置偏低且字号过小，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景岛屿轮廓与文字‘30-player voxel battle’部分重叠，轻微干扰阅读",
+        "‘BEST 0’左下角位置偏低且字号小，易被忽略",
+        "‘MUTE’按钮无悬停/选中反馈，交互状态不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "左键点击空中红色方块选择空投点",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色方块与背景云层对比度低，眯眼时难以快速区分可交互物",
+        "右上角小地图红点密集且无图例，新手难理解其含义",
+        "‘E to loot’提示悬浮于空投箱上方但无明确指向，易误判目标"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色‘NEXT’按钮继续教程",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央教程弹窗遮挡部分红色方块目标物，影响空间判断",
+        "右上角小地图与背景云层对比度低，细节难辨",
+        "‘Left-click / tap to pick your drop spot’提示文字偏小且居中悬浮，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的 START 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡部分岛屿背景，可能影响沉浸感",
+        "‘30-player voxel battle · shrink · build · last one standing’ 字体过小且灰度高，远距离阅读困难",
+        "‘HOW TO PLAY’标题被截断为‘HOW’（实际应为‘HOW TO PLAY’），位于弹窗顶部中央"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 304269,
+      "sha256": "f0cb2a44cdc84ea7c0a7b0f1305b72c42ac210a83798d994d0629ae3d37fd39d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic night sky over a stylized low-poly party arena, deep purple gradient hex 7c3aed with colorful spotlight beams, arena roof silhouettes at the bottom edge, festive mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 512942,
+      "sha256": "2292be9f5da114e31d7b2e3962e292dc4668675249c29b83deff1ebe2bf51621",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Chaotic fun key art of eight colorful stylized ragdoll fighters in a neon purple arena hex 7c3aed, one lifting another overhead about to throw, candy-colored characters, confetti particles, dynamic party-brawl energy, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 345914,
+      "sha256": "004b06f527b252d4bc05da6eb600fb4e1f1e37a6e8b65d572ec60ad8b1e8b384",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: two stylized ragdoll fists colliding with impact star, candy red and blue on purple hex 7c3aed background, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/floor": {
+      "file": "assets/tex/floor.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 152314,
+      "sha256": "3bebce101b18fbc27b64b0f496c82a83422f5045a4a1cff18fe512af9ddf4ab4",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized arena floor texture, dark gray hex 1f2937 with faint purple hex grid lines hex 7c3aed, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/floor-tex-s103.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:19+00:00"
+}

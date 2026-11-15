@@ -1,0 +1,121 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      1024,
+      1024
+    ],
+    "steps": 20
+  },
+  "items": [
+    {
+      "name": "sky",
+      "kind": "image",
+      "seeds": [
+        100
+      ],
+      "size": [
+        2048,
+        1024
+      ],
+      "prompt": "A 16:9 panoramic overcast sky over stylized low-poly rally mountains, gray-blue gradient hex 94a3b8 with soft clouds, forested ridge silhouettes hex 3f6212 at the bottom edge, moody rally mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/sky.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "seeds": [
+        101
+      ],
+      "size": [
+        2048,
+        1152
+      ],
+      "prompt": "Dramatic key art of a stylized low-poly red rally car hex dc2626 drifting through a muddy hairpin, huge dust cloud hex d6a35c, forest green hex 3f6212 background, gravel spray, dynamic action angle, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "steps": 20
+    },
+    {
+      "name": "icon-raw",
+      "kind": "image",
+      "seeds": [
+        102
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "App icon subject: a stylized low-poly red rally car hex dc2626 with dust trail, on gravel yellow hex d6a35c background, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+      "prep": {
+        "out": "assets/icon-raw.png",
+        "cutout": false,
+        "width": 512
+      },
+      "steps": 20
+    },
+    {
+      "name": "gravel-tex",
+      "kind": "image",
+      "seeds": [
+        103
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable gravel road texture, sandy yellow-brown hex d6a35c with small stones and tire tracks, top-down flat view, game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/gravel.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "mud-tex",
+      "kind": "image",
+      "seeds": [
+        104
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Seamless tileable muddy road texture, dark brown hex 6b4423 with puddle highlights and ruts, top-down flat view, game texture, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/mud.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    },
+    {
+      "name": "tree-tex",
+      "kind": "image",
+      "seeds": [
+        105
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "prompt": "Stylized low-poly pine tree billboard texture, forest green hex 3f6212, front view on plain background, game asset, no text, no watermark",
+      "prep": {
+        "out": "assets/tex/tree.webp",
+        "cutout": false,
+        "width": 1024
+      },
+      "steps": 20
+    }
+  ]
+}

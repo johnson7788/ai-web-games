@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>RAGDOLL ARCHERS 3D</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- HUD（游玩中） -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <span id="hud-level" class="hud-chip"></span>
+        <span id="hud-wind" class="hud-chip"></span>
+      </div>
+      <div class="hud-mid">
+        <span id="hud-hearts" class="hud-hearts"></span>
+        <span id="hud-quiver" class="hud-chip"></span>
+        <span id="hud-headshots" class="hud-chip"></span>
+      </div>
+      <button id="btn-pause-hud" class="icon-btn" aria-label="Pause">⏸</button>
+    </div>
+
+    <!-- 标题 -->
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text"></h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start" class="btn-primary"></button>
+      <button id="btn-howto" class="btn-ghost"></button>
+      <div id="best-line" class="best-line"></div>
+    </div>
+
+    <!-- 暂停 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="btn-primary"></button>
+      <button id="btn-restart-pause" class="btn-ghost"></button>
+      <button id="btn-menu" class="btn-ghost"></button>
+      <button id="btn-mute" class="btn-ghost"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 结算 -->
+    <div id="screen-results" class="screen hidden">
+      <h2 id="results-title"></h2>
+      <div id="results-stars" class="results-stars"></div>
+      <div id="results-line" class="results-line"></div>
+      <div id="results-stats" class="results-stats"></div>
+      <button id="btn-retry" class="btn-primary"></button>
+      <button id="btn-share" class="btn-ghost"></button>
+      <button id="btn-menu-results" class="btn-ghost"></button>
+    </div>
+
+    <!-- 升级三选一 -->
+    <div id="screen-upgrade" class="screen hidden">
+      <h2 id="upgrade-title"></h2>
+      <div id="upgrade-hint"></div>
+      <div id="upgrade-choices"></div>
+    </div>
+
+    <!-- 首次交互引导 -->
+    <div id="tutorial" data-tutorial class="hidden">
+      <div class="tutorial-spot"></div>
+      <div class="tutorial-card">
+        <span class="tut-step" data-step></span>
+        <h3 data-title></h3>
+        <p data-text></p>
+        <button class="btn-ghost" data-tutorial-skip></button>
+      </div>
+    </div>
+
+    <!-- 触屏按钮 -->
+    <div id="touch" class="hidden">
+      <button id="btn-left" class="touch-btn" aria-label="Move left">◀</button>
+      <button id="btn-right" class="touch-btn" aria-label="Move right">▶</button>
+    </div>
+
+    <div id="toast" class="hidden"></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

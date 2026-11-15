@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BLOCK BATTLE ROYALE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div id="hud-top">
+        <span id="hud-alive">ALIVE 30</span>
+        <span id="hud-kills">KILLS 0</span>
+        <span id="hud-zone">ZONE 1</span>
+      </div>
+      <div id="hud-bottom">
+        <div class="bar" id="bar-health"><div id="hud-health-fill"></div><span id="hud-health-text">100</span></div>
+        <div class="bar" id="bar-armor"><div id="hud-armor-fill"></div><span id="hud-armor-text">0</span></div>
+        <span id="hud-weapon">PISTOL</span>
+        <span id="hud-ammo">12 / 24</span>
+        <span id="hud-blocks">⬛ 6</span>
+        <span id="hud-meds">✚ 1</span>
+      </div>
+      <div id="crosshair" data-tutorial-target="crosshair"></div>
+      <div id="hitmarker" class="hidden"></div>
+      <div id="reload-hint" class="hidden">RELOADING…</div>
+      <div id="pickup-hint" class="hidden" data-tutorial-target="pickup-hint">E to loot</div>
+      <div id="build-hint" class="hidden" data-tutorial-target="build-hint">Right-click to build</div>
+      <div id="drop-hint">Pick your drop spot</div>
+      <canvas id="minimap" width="160" height="160"></canvas>
+    </div>
+
+    <!-- 背包 -->
+    <div id="backpack" class="hidden">
+      <h3 id="backpack-title">BACKPACK</h3>
+      <div id="backpack-items"></div>
+    </div>
+
+    <!-- 触屏控制 -->
+    <div id="touch" class="hidden">
+      <div id="stick-move"><div id="stick-knob"></div></div>
+      <button id="btn-fire" class="touch-btn">FIRE</button>
+      <button id="btn-build" class="touch-btn">BUILD</button>
+      <button id="btn-pickup" class="touch-btn">LOOT</button>
+      <button id="btn-reload" class="touch-btn">R</button>
+    </div>
+
+    <!-- 标题 -->
+    <div id="screen-title" class="screen is-active">
+      <h1 id="title-text">BLOCK BATTLE ROYALE</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start" class="primary">START</button>
+      <button id="btn-howto">HOW TO PLAY</button>
+      <div id="title-best"></div>
+      <button id="btn-mute">MUTE</button>
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 暂停 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">PAUSED</h2>
+      <button id="btn-resume" class="primary">RESUME</button>
+      <button id="btn-restart-pause">RESTART</button>
+      <button id="btn-menu-pause">MENU</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 结算 -->
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+      <div id="res-rating"></div>
+      <div id="res-stats"></div>
+      <div id="res-best"></div>
+      <div id="res-record" class="hidden"></div>
+      <button id="btn-restart" class="primary">PLAY AGAIN</button>
+      <button id="btn-share">SHARE</button>
+      <button id="btn-menu">MENU</button>
+    </div>
+
+    <!-- 引导 -->
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-highlight" class="hidden"></div>
+      <div id="tut-card">
+        <span id="tut-step">1 / 4</span>
+        <p id="tut-text"></p>
+        <div id="tut-dots"></div>
+        <button id="tut-next">NEXT</button>
+        <button id="tut-skip" data-tutorial-skip>SKIP</button>
+      </div>
+    </div>
+
+    <!-- 竖屏提示 -->
+    <div id="rotate" class="hidden">
+      <p id="rotate-text"></p>
+      <button id="btn-rotate-skip"></button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

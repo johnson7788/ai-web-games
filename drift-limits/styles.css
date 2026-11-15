@@ -215,15 +215,17 @@ select {
 }
 @keyframes pulse { 50% { border-color: var(--cyan); } }
 #tut-card {
-  position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
-  width: 380px;
+  position: absolute; right: 24px; top: 118px; transform: none;
+  width: 320px;
   background: rgba(12, 19, 38, 0.92);
   border: 2px solid var(--cyan); border-radius: 14px;
   box-shadow: 0 0 30px rgba(40, 224, 255, 0.25);
-  padding: 18px 22px;
-  display: flex; flex-direction: column; gap: 12px;
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 10px;
 }
-#tutorial.from-title #tut-card { left: 16px; right: auto; top: 24px; transform: none; width: 360px; }
+#tutorial.from-title { background: radial-gradient(120% 95% at 50% 40%, rgba(8, 14, 32, 0.985), rgba(5, 7, 15, 0.995)); }
+#tutorial.from-title #tut-card { left: 50%; right: auto; top: 50%; transform: translate(-50%, -50%); width: 420px; }
+#tutorial.from-title #tut-highlight { display: none; }
 #tut-text { font-size: 17px; line-height: 1.55; }
 #tut-dots { display: flex; gap: 7px; }
 .dot { width: 10px; height: 10px; border-radius: 50%; background: #223452; transition: background .15s ease, box-shadow .15s ease; }

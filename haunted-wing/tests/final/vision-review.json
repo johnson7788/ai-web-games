@@ -1,0 +1,101 @@
+{
+  "game": "haunted-wing",
+  "generatedAt": "2026-11-14T18:52:24.036Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.6,
+    "silhouette": 6.2,
+    "style_consistent": 7.6
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景纹理在屏幕底部边缘与主菜单框轻微重叠，可能造成视觉干扰",
+        "‘Best 0’数字字体过小且无衬线，与标题字体风格不一致",
+        "右上角语言/静音控件为深色按钮配浅字，对比度偏低，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best 0’数字与‘Best’标签间距过小，易误读为‘Best0’",
+        "背景暗绿色纹理在中央区域模糊，可能干扰主菜单聚焦",
+        "右上角语言/静音控件边框与主菜单风格略有差异（圆角 vs 直角）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "向左移动进入黑色门洞",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家手持物（右下）与背景墙纹理对比度低，眯眼时不易辨识轮廓",
+        "左上角目标提示框无边框/背景，暗色背景下部分文字略显模糊",
+        "墙面纹理重复明显且有拼接感，影响风格统一性"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Skip tutorial”按钮跳过教程",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡部分场景，影响空间感知",
+        "右下角彩色圆点按钮无标签，功能不明",
+        "‘Floor 1’与目标提示框间距过小，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗右上角‘Mute’按钮文字过小且无图标，易误触或忽略",
+        "‘Best 0’数值显示偏小、对比度低，与背景融合度高，不易察觉",
+        "背景暗绿色纹理与主菜单黑底对比弱，整体层次感不足"
+      ]
+    }
+  ]
+}

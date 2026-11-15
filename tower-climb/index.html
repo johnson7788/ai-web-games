@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TOWER CLIMB</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div id="hud-left">
+        <div id="hud-floor" class="hud-chip"></div>
+        <div id="hud-falls" class="hud-chip"></div>
+        <div id="hud-time" class="hud-chip big"></div>
+        <div id="hud-goal" class="hud-chip goal"></div>
+      </div>
+      <div id="hud-right">
+        <div id="hud-wind" class="hud-chip hidden"></div>
+        <div id="hud-best" class="hud-chip"></div>
+      </div>
+    </div>
+
+    <!-- 标题 -->
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">TOWER CLIMB</h1>
+      <p id="subtitle-text" class="subtitle"></p>
+      <button id="btn-start" class="btn-primary"></button>
+      <button id="btn-howto" class="btn-ghost"></button>
+      <p id="title-controls" class="controls-hint"></p>
+    </div>
+
+    <!-- 暂停 -->
+    <div id="screen-pause" class="screen hidden">
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="btn-primary"></button>
+      <button id="btn-restart-pause" class="btn-ghost"></button>
+      <button id="btn-menu-pause" class="btn-ghost"></button>
+      <button id="btn-howto-pause" class="btn-ghost"></button>
+      <button id="btn-mute" class="btn-ghost"></button>
+    </div>
+
+    <!-- 结算 -->
+    <div id="screen-results" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div id="result-rating" class="rating">S</div>
+      <div id="result-time" class="result-row"></div>
+      <div id="result-falls" class="result-row"></div>
+      <div id="result-best" class="result-best"></div>
+      <button id="btn-restart" class="btn-primary"></button>
+      <button id="btn-menu" class="btn-ghost"></button>
+      <button id="btn-share" class="btn-ghost"></button>
+    </div>
+
+    <!-- 首次交互引导 -->
+    <div id="tutorial" data-tutorial class="hidden">
+      <div class="tut-box">
+        <div class="tut-icon">▲</div>
+        <div id="tut-title" class="tut-title"></div>
+        <div id="tut-highlight" class="tut-highlight"></div>
+        <div id="tut-step" class="tut-step"></div>
+        <button id="tut-skip" data-tutorial-skip class="btn-ghost"></button>
+      </div>
+    </div>
+
+    <!-- 触屏控制 -->
+    <div id="touch" class="hidden">
+      <div id="joy"><div id="joy-knob"></div></div>
+      <button id="btn-jump" class="touch-btn">A</button>
+      <button id="btn-dash" class="touch-btn">B</button>
+    </div>
+
+    <!-- 竖屏提示 -->
+    <div id="rotate" class="hidden">
+      <div id="rotate-text"></div>
+      <button id="btn-rotate-skip" class="btn-ghost"></button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* No external fonts (offline/sandbox-safe): use a chunky local system stack */
+html,
+body {
+    overflow: hidden;
+    font-family: 'Arial Rounded MT Bold', 'Trebuchet MS', 'Verdana', system-ui, sans-serif;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+/* Updated Nintendo-style GitHub button */
+#button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FF3D00; /* Match reset button */
+    box-shadow: 0 6px 0 #C53000, 0 8px 15px rgba(0,0,0,0.3); /* 3D effect */
+    opacity: 1;
+    z-index: 999;
+    transition: transform 0.1s, box-shadow 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid white; /* White border for cartoon look */
+}
+
+#button:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 9px 0 #C53000, 0 11px 17px rgba(0,0,0,0.3);
+}
+
+#button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #C53000, 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#button img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1); /* Make icon white */
+}
+
+#button.text {
+    border-radius: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #ffffff;
+    opacity: 1;
+    font-weight: 500;
+}
+
+#reset {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 2.0em;
+    height: 2.0em;
+    padding: 12px;
+    border-radius: 50%;
+    margin-bottom: 0px;
+    background-color: #00BFA5; /* Teal green Nintendo style */
+    opacity: .9;
+    z-index: 999;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#reset:hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Reset button removed - using keyboard R to reload */

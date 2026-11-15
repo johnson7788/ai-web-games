@@ -1,0 +1,101 @@
+{
+  "game": "monkey-marble",
+  "generatedAt": "2026-11-14T19:55:16.845Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 6.6,
+    "style_consistent": 8.4
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST 0:00’文字较小且位置偏上，易被忽略；",
+        "背景房屋与前景按钮层级关系略模糊，可能影响视觉焦点；",
+        "‘English’下拉菜单无展开箭头，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST 0:00’文字与背景云层融合度高，弱对比下可能难辨识",
+        "左下虚拟摇杆半透明但无明确边界，易误触或忽略",
+        "右下‘Jump’和‘Brake’按钮颜色相近（紫/灰），功能区分不够直观"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击屏幕中央的球体或沿轨道滑动以控制其移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD 时间/香蕉数显示为 '0:00' 和 '0'，但游戏尚未开始，数值可能误导（顶部居中）",
+        "轨道尽头的香蕉目标较小且无高亮，远距离辨识度偏低（中上部）",
+        "球体与轨道边界对比度不足，部分场景下易混淆（中下部）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色 'Next' 按钮继续教程",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央教程框遮挡轨道中段，影响对路径与香蕉位置的预判",
+        "‘Hold W (or push the joystick)’提示未说明当前平台（PC/移动端），易混淆",
+        "背景云层与前景轨道对比度低，眯眼时轨道轮廓不够突出"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Next”按钮继续教程",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "提示文字中‘joystick’为英文，未本地化；若面向中文用户应译为‘摇杆’",
+        "进度指示器（三个圆点）中仅第一个亮起，但无明确当前步骤编号，易混淆",
+        "‘Skip’按钮颜色偏粉，与整体深色UI对比过强，可能分散注意力"
+      ]
+    }
+  ]
+}

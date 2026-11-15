@@ -1,0 +1,159 @@
+{
+  "slug": "city-stunt-drive",
+  "genre": "racing",
+  "oneLiner": "立体车库起飞→空中转体→落地连跳，金币解锁新车",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "launch",
+      "cost": "速度不足会摔",
+      "feedback": [
+        "sfx",
+        "shake",
+        "trail"
+      ],
+      "combinesWith": [
+        "flip"
+      ]
+    },
+    {
+      "name": "flip",
+      "cost": "转体圈数越多落地越难",
+      "feedback": [
+        "sfx",
+        "spin-blur",
+        "score-pop"
+      ],
+      "combinesWith": [
+        "launch"
+      ]
+    },
+    {
+      "name": "land",
+      "cost": "落地角度歪=掉连击",
+      "feedback": [
+        "sfx",
+        "dust",
+        "combo-pop"
+      ],
+      "combinesWith": [
+        "flip"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "冲大坡拿高分还是走小坡保连击",
+      "cost": "大坡落地窗口窄"
+    },
+    {
+      "atSec": 25,
+      "choice": "空中转 2 圈贪分还是 1 圈稳落",
+      "cost": "转多落地角度难控"
+    },
+    {
+      "atSec": 45,
+      "choice": "金币路线绕远还是直冲终点坡",
+      "cost": "绕远耗时但解锁新车"
+    },
+    {
+      "atSec": 70,
+      "choice": "用氮气抢最后一个大坡还是留着保速度",
+      "cost": "氮气只有一罐"
+    },
+    {
+      "atSec": 100,
+      "choice": "换新车（稳）还是旧车冲榜（飘）",
+      "cost": "新车手感不同"
+    },
+    {
+      "atSec": 140,
+      "choice": "最后一跳做 3 圈还是稳落拿结算评级",
+      "cost": "摔了评级掉一档"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础坡道 + 落地判定"
+    },
+    {
+      "index": 2,
+      "newElement": "连续跳台（连击窗口）"
+    },
+    {
+      "index": 3,
+      "newElement": "移动平台坡道"
+    },
+    {
+      "index": 4,
+      "newElement": "金币空中环线"
+    },
+    {
+      "index": 5,
+      "newElement": "断裂高速路（极限起跳）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "air-control",
+      "kind": "rule"
+    },
+    {
+      "id": "double-flip",
+      "kind": "rule"
+    },
+    {
+      "id": "perfect-land-window",
+      "kind": "rule"
+    },
+    {
+      "id": "coin-magnet",
+      "kind": "rule"
+    },
+    {
+      "id": "nitro-refill",
+      "kind": "rule"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "grip10",
+      "kind": "stat"
+    },
+    {
+      "id": "nitro-cap",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "unlock",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

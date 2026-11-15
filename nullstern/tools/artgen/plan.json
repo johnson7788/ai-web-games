@@ -1,0 +1,30 @@
+{
+  "outDir": "assets/_src",
+  "defaults": {
+    "model": "qwen-image-xl",
+    "size": [
+      2048,
+      1152
+    ]
+  },
+  "items": [
+    {
+      "name": "poster-raw",
+      "kind": "image",
+      "size": [
+        2048,
+        1152
+      ],
+      "seeds": [
+        41
+      ],
+      "prompt": "Stylized 3D game key art, wide cinematic composition: top-down view of a lone soldier in a dark abandoned sci-fi med-bay firing a rifle into a swarming horde of pale humanoid replika enemies teleporting in through green signal rifts, muzzle flash and tracer lines, spent casings and blood decals on the metal floor, sodium amber emergency lights and phosphor green bulkhead glow, film grain atmosphere, vibrant saturated survival horror aesthetic, high detail, no text, no watermark, no logo",
+      "prep": {
+        "out": "assets/poster-raw.jpg",
+        "cutout": false,
+        "width": 2048
+      },
+      "model": "qwen-image-xl"
+    }
+  ]
+}

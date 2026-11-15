@@ -1,0 +1,96 @@
+// config/locales.js — 文案：en 默认，zh 必做。ja/ko/ar/ru 不做 → 整块不暴露。
+export const locales = {
+  en: {
+    title: 'MONKEY MARBLE',
+    subtitle: 'Roll, hop, collect bananas — don’t fall off the sky track!',
+    start: 'Start',
+    resume: 'Resume',
+    restart: 'Restart',
+    menu: 'Menu',
+    paused: 'Paused',
+    time: 'Time',
+    best: 'Best',
+    level: 'Level',
+    bananas: 'Bananas',
+    target: 'Target',
+    language: 'Language',
+    howto: 'How to play',
+    mute: 'Sound',
+    next: 'Next',
+    skip: 'Skip',
+    share: 'Share',
+
+    // 操作提示
+    controlsTitle: 'Controls',
+    controlsW: 'W A S D — roll the ball',
+    controlsSpace: 'Space — jump',
+    controlsShift: 'Shift — brake',
+    controlsR: 'R — back to checkpoint',
+
+    // 引导（≥3 步，真实动作推进）
+    tutStep1: 'Hold W (or push the joystick) to roll forward.',
+    tutStep2: 'Press Space to jump over the swinging hammer.',
+    tutStep3: 'Roll into a banana to collect it (+1s).',
+    tutStep4: 'Hold Shift to brake before a narrow bridge.',
+
+    // 结算
+    results: 'Run Complete',
+    levelClear: 'Level Clear',
+    rating: 'Rating',
+    newRecord: 'New record!',
+    totalTime: 'Total time',
+    totalBananas: 'Bananas',
+    deaths: 'Falls',
+
+    // 移动端
+    rotate: 'Rotate your device for the best experience.',
+    rotateSkip: 'Got it',
+    jumpBtn: 'Jump',
+    brakeBtn: 'Brake',
+  },
+
+  zh: {
+    title: '滚球猴',
+    subtitle: '滚球、跳跃、吃香蕉——别摔出天际赛道！',
+    start: '开始',
+    resume: '继续',
+    restart: '重开',
+    menu: '菜单',
+    paused: '暂停',
+    time: '时间',
+    best: '最佳',
+    level: '关卡',
+    bananas: '香蕉',
+    target: '目标',
+    language: '语言',
+    howto: '玩法说明',
+    mute: '声音',
+    next: '下一关',
+    skip: '跳过',
+    share: '分享',
+
+    controlsTitle: '操作',
+    controlsW: 'W A S D — 滚球',
+    controlsSpace: '空格 — 跳跃',
+    controlsShift: 'Shift — 刹车',
+    controlsR: 'R — 回检查点',
+
+    tutStep1: '按住 W（或推动摇杆）向前滚。',
+    tutStep2: '按空格跳过摆动的锤子。',
+    tutStep3: '滚进香蕉就能吃到（+1 秒）。',
+    tutStep4: '过窄桥前按住 Shift 刹车。',
+
+    results: '一局完成',
+    levelClear: '过关！',
+    rating: '评级',
+    newRecord: '新纪录！',
+    totalTime: '总用时',
+    totalBananas: '香蕉',
+    deaths: '摔落',
+
+    rotate: '旋转设备获得最佳体验。',
+    rotateSkip: '知道了',
+    jumpBtn: '跳',
+    brakeBtn: '刹',
+  },
+};

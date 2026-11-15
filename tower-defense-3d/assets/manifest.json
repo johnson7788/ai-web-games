@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 456774,
+      "sha256": "830f70625c966760369de3b850e06cd2c23c19cdd5baa66cd4b047f429bd2f96",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a charming low-poly grass battlefield floating in dark space, three cute stone cannon towers with glowing blue crystals firing bright orange cannonballs at a marching column of round dark slime enemies along a dirt path, one enemy popping into coins, green start portal and red end portal glowing at opposite corners, warm sunset rim light, soft ambient occlusion, vibrant saturated cartoon strategy aesthetic, high detail PBR materials, dramatic diagonal composition, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T23:53:54+00:00"
+}

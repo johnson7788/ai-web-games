@@ -1,0 +1,101 @@
+{
+  "game": "space-wave-3d",
+  "generatedAt": "2026-11-14T19:13:10.988Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7.4,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的 LAUNCH 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST 0’数字‘0’颜色为橙色，与主色调（青蓝）不一致，易被忽略",
+        "背景星云与前景环形波纹层次略混，眯眼时玩家立方体与环线对比度不足",
+        "‘HOW TO PLAY’按钮边框为细线，视觉权重低于 LAUNCH，但功能同等重要"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的 LAUNCH 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST 0’中数字‘0’为橙色，与主色调青蓝不一致，略突兀",
+        "背景星云与中心隧道环线在视觉上略有融合，降低玩家立方体轮廓对比度",
+        "‘HOW TO PLAY’按钮边框为青蓝细线，与LAUNCH实色块风格稍异，一致性可提升"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按住屏幕让角色上升，对准中心蓝色圆环目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中心目标圆环内有像素块干扰，可能误判为可收集物",
+        "底部操作提示文字较小（约12px），在低分辨率屏可能难读",
+        "左上角‘x1’倍率标识颜色与背景对比度偏低（黄底黑字但背景暗紫）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "按住空格键（或触摸屏幕）让角色上升",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 'x1' 倍率标识颜色过小且与分数紧邻，易误读为分数一部分",
+        "底部提示栏左侧圆点指示器无明确语义，新手可能忽略",
+        "右上角 'S1' 标签图标与文字间距过窄，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的 LAUNCH 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部提示栏‘HOLD SPACE (or touch) to rise.’中‘(or touch)’在桌面环境下易误导，应区分平台",
+        "‘BEST 0’分数显示字号过小且无背景衬底，弱光下可能难辨",
+        "中心立方体与同心圆波纹视觉层次接近，眯眼时玩家轮廓不够突出"
+      ]
+    }
+  ]
+}

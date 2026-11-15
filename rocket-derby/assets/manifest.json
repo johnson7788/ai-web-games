@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 311520,
+      "sha256": "df1fec19f84150963e11c5c7f7c1019102afb1c8d853d6301542107714490204",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic night sky over a stylized low-poly neon soccer arena, deep purple gradient near hex 1e1b3a with glowing stadium light halos in green hex 4ade80 and blue hex 38bdf8, arena roof silhouettes at the bottom edge, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 371908,
+      "sha256": "12ee409df1b641fd4cdb3cbd5d0ef3b4cd81012db9c10d6086b883a792ccf220",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Explosive key art of two stylized low-poly rocket cars colliding with a glowing soccer ball mid-air in a neon arena, one orange hex fb923c one blue hex 38bdf8, ball trailing green fire hex 4ade80, deep purple background hex 1e1b3a, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 315889,
+      "sha256": "960a0ab1453c727ab06d595ae625ecc3207ac116c71fca3dd6df86ed1aca883d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized low-poly rocket car with flame boost hitting a glowing soccer ball, orange hex fb923c and green hex 4ade80 on deep purple hex 1e1b3a, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/turf": {
+      "file": "assets/tex/turf.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 368872,
+      "sha256": "602d2449b77ea2d935f4c5e93f5bd343e787ad0aeccf441543f9329a776085af",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized neon soccer field turf texture, dark purple-green base hex 1e2b3a with faint grid lines and glowing center circle arc, top-down flat view, game texture, no text, no watermark",
+        "raw": "assets/_src/turf-tex-s103.png"
+      }
+    },
+    "tex/wall": {
+      "file": "assets/tex/wall.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 90186,
+      "sha256": "5c956cccae20ca0ca6ffa3fae1047c3865ef198ca62f533cdfd584f4eeb4a150",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable dark arena wall texture with neon green trim line hex 4ade80, low-poly game texture, deep purple base hex 1e1b3a, no text, no watermark",
+        "raw": "assets/_src/wall-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:44:54+00:00"
+}

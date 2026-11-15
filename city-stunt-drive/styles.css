@@ -1,0 +1,169 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; background: #0b0e1a; overflow: hidden; }
+body {
+  color: #f2f4ff;
+  font-family: 'Segoe UI', system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans', 'Microsoft YaHei', 'Noto Sans Arabic', sans-serif;
+  -webkit-user-select: none; user-select: none;
+}
+
+#stage {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 1280px; height: 720px;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+#game-container { position: relative; width: 1280px; height: 720px; overflow: hidden; }
+canvas { display: block; width: 100%; height: 100%; background: #1a1f3a; }
+
+.hidden { display: none !important; }
+
+/* ---------------------------------------------------------------- HUD */
+#hud { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+.hud-box {
+  position: absolute;
+  background: rgba(10, 12, 26, 0.55);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 10px;
+  padding: 8px 14px;
+  backdrop-filter: blur(2px);
+}
+#hud-score-box { top: 14px; left: 14px; min-width: 150px; }
+#hud-bars-box { top: 14px; left: 178px; min-width: 170px; }
+#hud-zone-box { top: 14px; right: 14px; min-width: 140px; text-align: right; }
+#hud-time-box { top: 14px; right: 168px; min-width: 130px; text-align: right; }
+.hud-row { display: flex; align-items: baseline; gap: 8px; justify-content: space-between; }
+.hud-row .lbl, .res-line .lbl { font-size: 11px; letter-spacing: 1px; opacity: 0.7; text-transform: uppercase; }
+.hud-row b { font-size: 20px; color: #ff9f43; }
+#hud-combo.hot { color: #22d3ee; text-shadow: 0 0 8px #22d3ee; }
+#hud-combo { color: #fff; }
+#hud-coins { color: #ffcf4d; }
+#nitro-wrap { margin-top: 5px; position: relative; height: 12px; background: rgba(255,255,255,0.12); border-radius: 6px; overflow: hidden; }
+#nitro-wrap .lbl { position: absolute; right: 4px; top: -2px; font-size: 9px; opacity: 0.8; }
+#hud-nitro-fill { height: 100%; width: 0; background: linear-gradient(90deg, #22d3ee, #7ff2ff); border-radius: 6px; transition: width 0.1s; }
+#nitro-wrap.ready #hud-nitro-fill { box-shadow: 0 0 10px #22d3ee; }
+
+/* ---------------------------------------------------------------- 屏幕 */
+.screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  background: rgba(13, 15, 32, 0.78);
+  z-index: 10;
+}
+.screen h1 { font-size: 54px; letter-spacing: 2px; color: #ff9f43; text-shadow: 0 0 18px rgba(255,159,67,0.5); }
+.screen h2 { font-size: 34px; letter-spacing: 2px; color: #22d3ee; margin-bottom: 14px; }
+.screen .subtitle { font-size: 16px; opacity: 0.75; margin: 8px 0 18px; max-width: 620px; text-align: center; }
+.screen button {
+  min-width: 220px; padding: 13px 30px; margin: 7px 0;
+  font-size: 18px; letter-spacing: 1px;
+  background: #ff9f43; color: #1a1208; border: none; border-radius: 10px;
+  cursor: pointer; font-family: inherit; font-weight: 700;
+}
+.screen button:hover { background: #ffb368; }
+.screen button:focus-visible { outline: 3px solid #22d3ee; outline-offset: 2px; }
+.screen button.ghost { background: transparent; color: #cfd6ff; border: 1px solid rgba(207,214,255,0.4); }
+.screen button.ghost:hover { border-color: #22d3ee; color: #22d3ee; }
+.screen button.icon { min-width: auto; padding: 8px 12px; font-size: 14px; background: transparent; border: 1px solid rgba(207,214,255,0.4); color: #cfd6ff; position: absolute; top: 14px; left: 14px; }
+.screen .lang-select {
+  position: absolute; top: 14px; right: 16px;
+  padding: 7px 12px; background: #141832; color: #ff9f43;
+  border: 1px solid #ff9f43; border-radius: 8px; font-family: inherit; font-size: 14px; cursor: pointer;
+}
+.best-chip { font-size: 14px; opacity: 0.85; margin-bottom: 10px; }
+
+/* 车库 */
+#garage { display: flex; gap: 10px; margin-bottom: 8px; }
+.car-card {
+  min-width: 0 !important; width: 170px; padding: 10px !important;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: rgba(20, 24, 50, 0.85) !important; color: #dfe4ff !important;
+  border: 1px solid rgba(207,214,255,0.25) !important; border-radius: 10px !important;
+  font-size: 14px !important; font-weight: 700 !important;
+}
+.car-card .chip { width: 60px; height: 22px; border-radius: 4px; display: inline-block; }
+.car-card small { font-size: 11px; opacity: 0.75; font-weight: 400; }
+.car-card.on { border-color: #ff9f43 !important; box-shadow: 0 0 12px rgba(255,159,67,0.4); }
+.car-card.locked { opacity: 0.5; }
+
+/* 结算 */
+#screen-results { background: rgba(13, 15, 32, 0.88); }
+#res-rating { font-size: 96px; font-weight: 900; line-height: 1; }
+.rank-S { color: #ffcf4d; text-shadow: 0 0 24px rgba(255,207,77,0.8); }
+.rank-A { color: #22d3ee; text-shadow: 0 0 20px rgba(34,211,238,0.7); }
+.rank-B { color: #8fe9ff; }
+.rank-C { color: #b8bfe0; }
+.res-line { display: flex; gap: 16px; justify-content: space-between; width: 240px; font-size: 20px; margin: 4px 0; }
+.res-line b { color: #ff9f43; }
+.record { color: #ffcf4d; font-size: 18px; margin: 6px 0; animation: pop 0.5s; }
+#res-stats { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 520px; margin: 12px 0; }
+#res-stats .stat { background: rgba(20,24,50,0.85); border-radius: 8px; padding: 8px 12px; text-align: center; min-width: 96px; }
+#res-stats .stat span { display: block; font-size: 11px; opacity: 0.7; }
+#res-stats .stat b { font-size: 18px; color: #22d3ee; }
+
+/* ---------------------------------------------------------------- 教学 */
+#tutorial { position: absolute; inset: 0; z-index: 20; }
+#tutorial.from-title { background: rgba(13,15,32,0.45); }
+#tutorial.from-title #tut-card { left: 24px; right: auto; top: 50%; bottom: auto; transform: translateY(-50%); width: 360px; }
+#tutorial.from-title #tut-highlight { display: none; }
+#tut-highlight { position: absolute; border: 3px solid #ff9f43; border-radius: 12px; box-shadow: 0 0 0 9999px rgba(8,10,22,0.6), 0 0 18px rgba(255,159,67,0.6); pointer-events: none; }
+#tut-card {
+  position: absolute; left: 50%; bottom: 60px; transform: translateX(-50%);
+  width: 560px; max-width: 92%;
+  background: rgba(16, 19, 40, 0.95); border: 1px solid #22d3ee; border-radius: 14px;
+  padding: 18px 22px; text-align: center;
+}
+#tut-card p { font-size: 17px; line-height: 1.45; margin-bottom: 12px; }
+#tut-dots { display: flex; gap: 8px; justify-content: center; margin-bottom: 12px; }
+#tut-dots .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+#tut-dots .dot.on { background: #ff9f43; }
+.tut-actions { display: flex; gap: 12px; justify-content: center; }
+.tut-actions button { padding: 10px 22px; border-radius: 8px; border: none; font-size: 15px; font-family: inherit; cursor: pointer; font-weight: 700; }
+#tut-skip { background: transparent; color: #aab2d8; border: 1px solid rgba(170,178,216,0.4) !important; }
+#tut-next { background: #ff9f43; color: #1a1208; }
+
+/* ---------------------------------------------------------------- 触屏 */
+#touch { position: absolute; inset: 0; z-index: 6; pointer-events: none; }
+#touch button {
+  position: absolute; pointer-events: auto;
+  border: 1px solid rgba(255,255,255,0.4); border-radius: 50%;
+  background: rgba(20, 24, 50, 0.6); color: #fff;
+  font-family: inherit; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+#touch button.active { background: rgba(255,159,67,0.55); }
+#btn-gas { width: 76px; height: 76px; left: 30px; bottom: 34px; }
+#btn-brake { width: 64px; height: 64px; left: 118px; bottom: 28px; }
+#steer-row { position: absolute; right: 30px; bottom: 120px; display: flex; gap: 12px; }
+#steer-row .steer { position: relative; width: 60px; height: 60px; }
+#btn-flip-l { width: 60px; height: 60px; right: 122px; bottom: 26px; }
+#btn-flip-r { width: 60px; height: 60px; right: 50px; bottom: 26px; }
+#btn-nitro { width: 64px; height: 64px; right: 30px; bottom: 120px; background: rgba(34,211,238,0.35); font-size: 11px; }
+
+/* ---------------------------------------------------------------- 弹层 */
+#fx { position: absolute; inset: 0; pointer-events: none; z-index: 7; overflow: hidden; }
+.popup {
+  position: absolute; left: 50%; top: 34%;
+  transform: translate(-50%, -50%);
+  font-size: 40px; font-weight: 900; letter-spacing: 1px;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+  animation: pop 0.4s ease-out;
+}
+.popup.good { color: #ffcf4d; }
+.popup.flip { color: #22d3ee; }
+.popup.bad { color: #ff5a5f; }
+.popup.coin { color: #ffcf4d; font-size: 24px; }
+.popup.nitro { color: #7ff2ff; }
+@keyframes pop { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; } 60% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
+
+/* ---------------------------------------------------------------- 横屏提示 */
+#rotate { position: absolute; inset: 0; z-index: 30; background: rgba(8,10,22,0.92); display: flex; align-items: center; justify-content: center; }
+#rotate-card { text-align: center; padding: 24px; }
+#rotate-card p { font-size: 18px; margin-bottom: 16px; }
+#rotate-card button { padding: 10px 20px; border-radius: 8px; border: 1px solid #ff9f43; background: transparent; color: #ff9f43; font-size: 15px; cursor: pointer; font-family: inherit; }
+
+@media (max-width: 900px) {
+  #hud-score-box, #hud-bars-box, #hud-zone-box, #hud-time-box { padding: 5px 9px; }
+  .hud-row b { font-size: 16px; }
+}

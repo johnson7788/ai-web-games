@@ -1,0 +1,101 @@
+{
+  "game": "sky-rider-3d",
+  "generatedAt": "2026-11-14T20:05:29.420Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.2,
+    "style_consistent": 7.8
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“START RACE”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BEST’标签下黄色高亮边框与背景云层对比度偏低，可能影响快速识别",
+        "红色飞机模型在云墙前略显模糊，轮廓锐度不足（silhouette扣分原因）",
+        "底部控制提示文字字号偏小，远距离阅读易混淆（如‘W/S pitch’等）"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘START RACE’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色飞机模型在云墙后半遮挡，轮廓辨识度略低（silhouette扣分）",
+        "‘BEST’标签下划线为虚线但颜色过淡，易被忽略",
+        "背景云墙纹理重复明显，有拼接感（影响style_consistent）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格或点击屏幕触发加速（BOOST条满且显眼）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色环形目标与背景云纹图案对比度低，部分环在远处易混淆",
+        "玩家角色（彩色小车）轮廓较细，与地面颜色接近，眯眼时辨识度不足",
+        "左上角RANK 8与右上角LAP/RING信息间距过近，视觉层级弱"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "按W/S键下潜加速或上浮减速以通过前方黄色环形障碍",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（白色球体）与前方红色平台几乎同高，轮廓在绿色地面背景下对比不足，易误判位置",
+        "左上角RANK 8与右上角LAP/RING信息间距过近，视觉层级混乱",
+        "底部操作提示文字‘W / S to dive and climb...’与GOT IT/SKIP按钮紧贴，小屏可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'GOT IT' 按钮以确认操作说明",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景云层与平台纹理重复拼接明显，有网格感，影响沉浸感",
+        "玩家角色（小黑点）在远处几乎不可辨， silhouette 分辨率低",
+        "提示框居中但未适配宽屏比例，左右留白过大，视觉重心偏上"
+      ]
+    }
+  ]
+}

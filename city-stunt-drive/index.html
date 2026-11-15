@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>CITY STUNT DRIVE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="stage">
+    <div id="game-container">
+      <canvas id="canvas"></canvas>
+
+      <!-- HUD -->
+      <div id="hud" class="hidden">
+        <div id="hud-score-box" class="hud-box">
+          <div class="hud-row"><span data-i18n="score" class="lbl">SCORE</span><b id="hud-score">0</b></div>
+          <div class="hud-row"><span data-i18n="combo" class="lbl">COMBO</span><b id="hud-combo">×0</b></div>
+        </div>
+        <div id="hud-bars-box" class="hud-box">
+          <div class="hud-row"><span data-i18n="coins" class="lbl">COINS</span><b id="hud-coins">0</b></div>
+          <div id="nitro-wrap"><div id="hud-nitro-fill"></div><span data-i18n="nitro" class="lbl">NITRO</span></div>
+        </div>
+        <div id="hud-zone-box" class="hud-box">
+          <div class="hud-row"><span data-i18n="zone" class="lbl">ZONE</span><b id="hud-zone">1/5</b></div>
+          <div class="hud-row"><span data-i18n="flip" class="lbl">FLIPS</span><b id="hud-flips">0</b></div>
+        </div>
+        <div id="hud-time-box" class="hud-box">
+          <div class="hud-row"><span data-i18n="kmh" class="lbl">KM/H</span><b id="hud-speed">0</b></div>
+          <div class="hud-row"><span data-i18n="time" class="lbl">TIME</span><b id="hud-time">0:00</b></div>
+        </div>
+      </div>
+
+      <!-- 标题 -->
+      <div id="screen-title" class="screen is-active">
+        <h1 id="title-text">CITY STUNT DRIVE</h1>
+        <p class="subtitle" id="subtitle-text"></p>
+        <div id="title-best" class="best-chip"></div>
+        <div id="garage"></div>
+        <button id="btn-start">START</button>
+        <button id="btn-howto" class="ghost">HOW TO PLAY</button>
+        <button id="btn-mute" class="icon" aria-label="mute"></button>
+        <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      </div>
+
+      <!-- 暂停 -->
+      <div id="screen-pause" class="screen hidden">
+        <h2 id="pause-title">PAUSED</h2>
+        <button id="btn-resume">RESUME</button>
+        <button id="btn-restart-pause">RETRY</button>
+        <button id="btn-menu-pause">MENU</button>
+        <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+      </div>
+
+      <!-- 结算 -->
+      <div id="screen-results" class="screen hidden">
+        <h1 id="res-title">RUN COMPLETE!</h1>
+        <div id="res-rating" class="rank-S">S</div>
+        <div class="res-line"><span data-i18n="score" class="lbl">SCORE</span><b id="res-score">0</b></div>
+        <div class="res-line"><span data-i18n="best" class="lbl">BEST</span><b id="res-best">0</b></div>
+        <div id="res-record" class="record hidden"></div>
+        <div id="res-stats"></div>
+        <button id="btn-restart">RETRY</button>
+        <button id="btn-menu" class="ghost">MENU</button>
+        <button id="btn-share" class="ghost">SHARE</button>
+      </div>
+
+      <!-- 教学 -->
+      <div id="tutorial" class="hidden" data-tutorial>
+        <div id="tut-highlight" class="hidden"></div>
+        <div id="tut-card">
+          <p id="tut-text"></p>
+          <div id="tut-dots"></div>
+          <div class="tut-actions">
+            <button id="tut-skip" data-tutorial-skip>SKIP</button>
+            <button id="tut-next">GOT IT</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 触屏 -->
+      <div id="touch" class="hidden">
+        <button id="btn-brake" class="pedal">BRAKE</button>
+        <button id="btn-gas" class="pedal">GAS</button>
+        <div id="steer-row">
+          <button id="btn-steer-l" class="steer" data-steer="-1">◀</button>
+          <button id="btn-steer-r" class="steer" data-steer="1">▶</button>
+        </div>
+        <button id="btn-flip-l" class="flip" data-flip="-1">FLIP</button>
+        <button id="btn-flip-r" class="flip" data-flip="1">FLIP</button>
+        <button id="btn-nitro" class="nitro">NITRO</button>
+      </div>
+
+      <!-- 弹层 -->
+      <div id="fx"></div>
+
+      <!-- 横屏提示 -->
+      <div id="rotate" class="hidden">
+        <div id="rotate-card">
+          <p data-i18n="rotate"></p>
+          <button id="btn-rotate-skip" data-i18n="rotateSkip"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

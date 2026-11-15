@@ -1,0 +1,43 @@
+import * as CANNON from 'cannon-es'
+// import CannonDebugger from 'cannon-es-debugger'
+import Experience  from './Experience.js'
+
+export default class PhysicsWorld {
+    constructor() {
+        this.experience = new Experience()
+        this.scene = this.experience.scene
+        this.setWorldPhysics()
+    }
+
+    setWorldPhysics() {
+        this.instance = new CANNON.World()
+        this.instance.gravity.set(0, -9.82, 0)
+        this.instance.broadphase = new CANNON.SAPBroadphase(this.instance)
+        this.instance.solver.iterations = 10
+
+        // Default material - smooth, no bounce
+        const defaultMaterial = new CANNON.Material('default')
+        const defaultContactMaterial = new CANNON.ContactMaterial(defaultMaterial, defaultMaterial, {
+            friction: 0.3,
+            restitution: 0.0
+        })
+        this.instance.addContactMaterial(defaultContactMaterial)
+        this.instance.defaultContactMaterial = defaultContactMaterial
+
+        // Debugger disabled for cleaner visuals
+        // Uncomment below to enable physics debug visualization
+        // this.cannonDebugger = new CannonDebugger(this.scene, this.instance, {
+        //     color: 0x00ff00,
+        //     scale: 1,
+        // })
+        this.cannonDebugger = null
+    }
+
+    update() {
+        this.instance.fixedStep()
+        
+        if (this.cannonDebugger) {
+            this.cannonDebugger.update()
+        }
+    }
+}

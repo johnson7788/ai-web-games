@@ -1,0 +1,158 @@
+{
+  "slug": "mega-golf-3d",
+  "genre": "racing",
+  "oneLiner": "24 洞 3D 迷你高尔夫：风力 / 坡地 / 机关",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "瞄准线受风偏移",
+      "feedback": [
+        "aim-line",
+        "wind-flag",
+        "power-bar"
+      ],
+      "combinesWith": [
+        "putt"
+      ]
+    },
+    {
+      "name": "putt",
+      "cost": "力度过大冲出果岭",
+      "feedback": [
+        "sfx",
+        "roll",
+        "trail"
+      ],
+      "combinesWith": [
+        "aim"
+      ]
+    },
+    {
+      "name": "read",
+      "cost": "坡地判读错=多杆",
+      "feedback": [
+        "slope-arrows",
+        "contour"
+      ],
+      "combinesWith": [
+        "aim"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "直攻洞口还是绕开坡地",
+      "cost": "坡地会拐弯"
+    },
+    {
+      "atSec": 25,
+      "choice": "顺风加力还是减力",
+      "cost": "风推球出界"
+    },
+    {
+      "atSec": 45,
+      "choice": "打机关开关（捷径）还是稳走",
+      "cost": "机关失误+2 杆"
+    },
+    {
+      "atSec": 70,
+      "choice": "第 10 洞赌一杆进洞还是两杆稳",
+      "cost": "赌输+3 杆"
+    },
+    {
+      "atSec": 100,
+      "choice": "用掉唯一的重打机会还是留着",
+      "cost": "重打耗 1 杆"
+    },
+    {
+      "atSec": 140,
+      "choice": "最后 3 洞冲鸟还是保帕",
+      "cost": "冲鸟可能爆杆"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "1–6 洞：平地 + 基础瞄准"
+    },
+    {
+      "index": 2,
+      "newElement": "7–12 洞：坡地（球会滚）"
+    },
+    {
+      "index": 3,
+      "newElement": "13–18 洞：风（旗标提示）"
+    },
+    {
+      "index": 4,
+      "newElement": "19–22 洞：机关（风车/弹板/移动门）"
+    },
+    {
+      "index": 5,
+      "newElement": "23–24 洞：复合机关终局洞"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "wind-reader",
+      "kind": "rule"
+    },
+    {
+      "id": "slope-preview",
+      "kind": "rule"
+    },
+    {
+      "id": "magnet-hole",
+      "kind": "rule"
+    },
+    {
+      "id": "undo-putt",
+      "kind": "rule"
+    },
+    {
+      "id": "power-fine",
+      "kind": "rule"
+    },
+    {
+      "id": "aim-length",
+      "kind": "stat"
+    },
+    {
+      "id": "power-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "spin-control",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "daily"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

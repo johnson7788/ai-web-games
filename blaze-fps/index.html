@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>BLAZE FPS</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="stage">
+
+    <div id="hud" class="hidden">
+      <div id="crosshair"><div id="crosshair-dot"></div><i class="ch t"></i><i class="ch b"></i><i class="ch l"></i><i class="ch r"></i></div>
+      <div id="vignette"></div>
+      <div id="damage-flash"></div>
+      <div id="slowmo-flash"></div>
+      <div id="hud-top">
+        <span id="hud-map" class="chip">WAREHOUSE</span>
+        <span id="hud-wave" class="chip">WAVE 1</span>
+        <span id="hud-kills" class="chip">KILLS 0</span>
+      </div>
+      <div id="hud-bottom-left">
+        <div class="bar hp"><span class="bar-label">HP</span><div class="bar-bg"><div id="hp-fill"></div></div><span id="hp-text">100</span></div>
+        <div class="bar energy"><span class="bar-label">STAMINA</span><div class="bar-bg"><div id="energy-fill"></div></div></div>
+      </div>
+      <div id="hud-bottom-right">
+        <div id="weapon-name">RIFLE</div>
+        <div id="ammo"><span id="ammo-mag">30</span><span id="ammo-sep">/</span><span id="ammo-reserve">120</span></div>
+        <div id="reload-hint" class="hidden">RELOADING</div>
+      </div>
+      <div id="hud-banner" class="hidden"><span id="banner-text"></span></div>
+      <div id="hud-intro" class="hidden">
+        <div id="intro-wave"></div>
+        <div id="intro-getready"></div>
+        <div id="intro-count"></div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <div id="title-inner">
+        <h1 id="title-text">BLAZE FPS</h1>
+        <p id="subtitle-text">3 maps · 5 waves · 3 guns · 12 upgrades</p>
+        <div id="title-best-wrap"><span class="hud-label">BEST</span> <b id="title-best">0</b></div>
+        <div id="title-buttons">
+          <button id="btn-start" class="btn primary">START</button>
+          <button id="btn-howto" class="btn" data-tutorial-replay>How to play</button>
+        </div>
+        <div id="title-meta">
+          <select id="lang-select" aria-label="Language"></select>
+          <button id="btn-mute" class="btn small">Mute</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="btn primary">Resume</button>
+      <button id="btn-restart-pause" class="btn">Restart</button>
+      <button id="btn-menu-pause" class="btn">Menu</button>
+      <select id="lang-select-pause" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-upgrade" class="screen hidden">
+      <h2 id="upgrade-title">CHOOSE AN UPGRADE</h2>
+      <p id="upgrade-hint">Press 1 / 2 / 3</p>
+      <div id="upgrade-cards"></div>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+      <div id="res-rating"></div>
+      <div id="res-stats"></div>
+      <div id="res-record" class="hidden"></div>
+      <div id="results-buttons">
+        <button id="btn-restart" class="btn primary">Play again</button>
+        <button id="btn-share" class="btn">Share</button>
+        <button id="btn-menu" class="btn">Menu</button>
+      </div>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-title"></div>
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-next" class="btn primary">Next</button>
+          <button id="tut-skip" class="btn" data-tutorial-skip>Skip tutorial</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <div id="rotate-card"><p id="rotate-text"></p><button id="btn-rotate-skip" class="btn small">Skip</button></div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <div id="touch-joy"><div id="touch-joy-knob"></div></div>
+      <button id="btn-touch-fire" class="touch-action fire">FIRE</button>
+      <button id="btn-touch-aim" class="touch-action">AIM</button>
+      <button id="btn-touch-sprint" class="touch-action">SPRINT</button>
+      <button id="btn-touch-reload" class="touch-action">RELOAD</button>
+      <div id="touch-weapons">
+        <button class="touch-w" data-w="rifle">1</button>
+        <button class="touch-w" data-w="shotgun">2</button>
+        <button class="touch-w" data-w="pistol">3</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

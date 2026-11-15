@@ -1,0 +1,79 @@
+{
+  "url": "http://127.0.0.1:60102/",
+  "startedAt": "2026-11-15T02:22:00.602Z",
+  "checks": [
+    {
+      "name": "opaque origin",
+      "ok": true,
+      "detail": "null"
+    },
+    {
+      "name": "localStorage throws (expected)",
+      "ok": true
+    },
+    {
+      "name": "Storage probe degraded safely",
+      "ok": true
+    },
+    {
+      "name": "game initialized",
+      "ok": true
+    },
+    {
+      "name": "Input knows sandbox is permanent",
+      "ok": true
+    },
+    {
+      "name": "i18n layer loaded",
+      "ok": true
+    },
+    {
+      "name": "pointer lock denied -> free-mouse fallback",
+      "ok": true,
+      "detail": "{\"fallback\":true,\"locked\":true,\"plEl\":false,\"paused\":false}"
+    },
+    {
+      "name": "game not paused/crashed after lock denial",
+      "ok": true
+    },
+    {
+      "name": "mouse-look works without pointer lock",
+      "ok": true,
+      "detail": "{\"pitch\":-0.7854,\"target\":true}"
+    },
+    {
+      "name": "mining works via click (no pointer lock)",
+      "ok": true,
+      "detail": "{\"blockNow\":0,\"inv\":[]}"
+    },
+    {
+      "name": "item pickup after mining",
+      "ok": true,
+      "detail": "count=1"
+    },
+    {
+      "name": "placing works via right-click (no pointer lock)",
+      "ok": true,
+      "detail": "1 -> 0"
+    },
+    {
+      "name": "save degrades to memory (no localStorage)",
+      "ok": true,
+      "detail": "{\"ok\":true,\"hasMemory\":true,\"hasSave\":true,\"storageOk\":false}"
+    },
+    {
+      "name": "Esc pauses in free-mouse mode",
+      "ok": true
+    },
+    {
+      "name": "zh translation applies in sandbox",
+      "ok": true,
+      "detail": "游戏菜单"
+    }
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T02:22:14.740Z"
+}

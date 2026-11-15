@@ -1,8 +1,8 @@
 {
   "ok": true,
   "passRMS": true,
-  "maxRMS": 0.08566992871091839,
-  "maxPeak": 0.24052947759628296,
+  "maxRMS": 0.0698801339688048,
+  "maxPeak": 0.21207499504089355,
   "consoleErrors": [],
   "failed": [],
   "samples": 25,

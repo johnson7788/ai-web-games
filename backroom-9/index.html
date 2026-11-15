@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>BACKROOM 9</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="stage">
+
+    <div id="hud" class="hidden">
+      <div id="hud-top">
+        <span id="hud-objective"></span>
+        <span id="hud-time">0:00</span>
+      </div>
+      <div id="hud-bottom">
+        <div class="bar-row">
+          <span class="hud-label" data-i18n="stamina">STAMINA</span>
+          <div class="bar"><div id="hud-stamina-fill"></div></div>
+        </div>
+        <div class="hud-stat-row">
+          <span id="hud-exits">0/9</span>
+          <span id="hud-caught"></span>
+        </div>
+      </div>
+      <div id="hud-hint" class="hidden"></div>
+      <canvas id="minimap" class="hidden" width="150" height="150"></canvas>
+    </div>
+
+    <div id="screen-title" class="screen">
+      <div id="title-inner">
+        <h1 id="title-text">BACKROOM 9</h1>
+        <p id="subtitle-text"></p>
+        <div id="title-best-wrap"><span class="hud-label" data-i18n="best">BEST</span> <b id="title-best">0:00</b></div>
+        <div id="howto-list">
+          <p data-i18n="howMove"></p>
+          <p data-i18n="howSprint"></p>
+          <p data-i18n="howHide"></p>
+        </div>
+        <div id="title-buttons">
+          <button id="btn-start" class="btn primary"></button>
+          <button id="btn-howto" class="btn" data-tutorial-replay></button>
+        </div>
+        <div id="title-meta">
+          <select id="lang-select" aria-label="Language"></select>
+          <button id="btn-mute" class="btn small"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="btn primary"></button>
+      <button id="btn-restart-pause" class="btn"></button>
+      <button id="btn-menu-pause" class="btn"></button>
+      <select id="lang-select-pause" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+      <div id="res-record" class="hidden"></div>
+      <div id="res-stats"></div>
+      <div id="results-buttons">
+        <button id="btn-restart" class="btn primary"></button>
+        <button id="btn-share" class="btn"></button>
+        <button id="btn-menu" class="btn"></button>
+      </div>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-skip" class="btn" data-tutorial-skip></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <div id="rotate-card">
+        <p id="rotate-title"></p>
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" class="btn small"></button>
+      </div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <button id="btn-sprint" class="touch-action"></button>
+      <button id="btn-hide" class="touch-action"></button>
+      <button id="btn-map" class="touch-action"></button>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

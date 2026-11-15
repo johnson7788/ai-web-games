@@ -1,0 +1,19 @@
+{
+  "condition": "iframe sandbox=\"allow-scripts\" (opaque origin), ACAO:*",
+  "url": "http://127.0.0.1:59607/",
+  "origin": "http://127.0.0.1:59607",
+  "battleReached": true,
+  "pointerLockRefused": true,
+  "kos": 48,
+  "hudName": "Zhao Yun",
+  "kosAfterClicks": 206,
+  "clickAttacksWork": true,
+  "zhName": "趙雲",
+  "zhKoLabel": "擊破擊破數",
+  "enNameRestored": "Zhao Yun",
+  "pauseWorks": true,
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": []
+}

@@ -1,0 +1,116 @@
+{
+  "url": "http://127.0.0.1:57218/",
+  "startedAt": "2026-11-15T00:14:58.148Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "shot",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/03-game-start.png",
+    "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/04-build-menu.png",
+    "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/05-towers-built.png",
+    "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/06-combat.png",
+    "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/07-combat-late.png",
+    "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/02-final.png"
+  ],
+  "fps": 60,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T00:15:30.367Z",
+  "video": "/Users/admin/git/webgames/games/tower-defense-3d/tests/final/play.webm"
+}

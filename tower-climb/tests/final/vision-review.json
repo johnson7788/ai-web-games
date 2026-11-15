@@ -1,0 +1,101 @@
+{
+  "game": "tower-climb",
+  "generatedAt": "2026-11-14T19:19:54.138Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.6,
+    "silhouette": 6.4,
+    "style_consistent": 8.4
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色渐变的'CLIMB'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中央竖条光效与标题文字轻微融合，可能影响远距离辨识度",
+        "‘How to play’按钮边框为青色细线，在深色背景下对比度偏低",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色渐变的'CLIMB'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中垂直光带与标题文字轻微重叠，可能影响‘TOWER’和‘CLIMB’字形辨识度",
+        "‘How to play’按钮边框为细线，低对比度下易被忽略，且无悬停反馈提示",
+        "底部操作说明字体过小（约10px），在非高清屏上可能难以阅读"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格或点击屏幕开始向上移动，避开两侧障碍物并到达顶部平台",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "紫色路径与青色障碍物对比度偏低，眯眼时易混淆边界",
+        "左上角HUD按钮文字‘Reach the top’无图标辅助，新手可能忽略目标提示",
+        "右上角‘Best —’未显示数值，信息不完整"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "按WASD或左摇杆向上移动，避开两侧障碍物冲向顶部目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角提示框边框发光过强，轻微干扰背景路径辨识",
+        "左侧HUD按钮‘Reach the top’图标与文字间距过小，略显拥挤",
+        "紫色路径与青色侧墙对比度偏低，眯眼时边缘易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Skip' 按钮或按 WASD/左摇杆向上移动",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标三角图标与文字‘Reach the top’间距过小，易误读为标题装饰",
+        "WASD / 左摇杆提示中图标（红色摇杆）尺寸过小且对比度低，辨识度不足",
+        "整体UI居中悬浮，无背景遮罩，深色背景下边缘光晕可能干扰视线"
+      ]
+    }
+  ]
+}

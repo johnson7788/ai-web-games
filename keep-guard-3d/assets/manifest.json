@@ -1,0 +1,113 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 237508,
+      "sha256": "6b899f63cad4984257ef33043fadf5b3d5ef3eb0bacba6819529f6ffb35c567f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic dusk sky over a stylized low-poly fortress valley, slate blue gradient hex 334155 with warm amber horizon hex f59e0b, distant mountain and keep silhouettes at the bottom edge, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 415720,
+      "sha256": "3683632e9240291e0abf8e999b58d84a9710678ec3ab98d26d92f97efd8adcbe",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Key art of a stylized low-poly fortress defense: arrow towers and cannon towers on green hills hex 65a30d firing at red enemy waves hex dc2626, earthen walls redirecting the path, amber dusk light hex f59e0b, slate blue sky hex 334155, isometric-ish dramatic angle, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 313687,
+      "sha256": "eefca1f8007b4effdb4750e453e197ea753c07a904312de0663968468cbe738b",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized low-poly stone keep tower with amber banner hex f59e0b on slate blue background hex 334155, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/grass": {
+      "file": "assets/tex/grass.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 352054,
+      "sha256": "9d49b0a87faf73d1215a4ff523d307be6f316c6d98e3688b72e036ab051201e3",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized grass field texture, moss green hex 65a30d with subtle darker patches, top-down flat view, low-poly game texture, no text, no watermark",
+        "raw": "assets/_src/grass-tex-s103.png"
+      }
+    },
+    "tex/stone": {
+      "file": "assets/tex/stone.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 119330,
+      "sha256": "f1ca69e9c8192e1cd1518c9c763f41e39dfffa1f8de81d06e14b458e562f7f2c",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized stone block wall texture, slate gray hex 334155 with mortar lines, front view, low-poly game texture, no text, no watermark",
+        "raw": "assets/_src/stone-tex-s104.png"
+      }
+    },
+    "tex/path": {
+      "file": "assets/tex/path.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 194606,
+      "sha256": "880d1dae3bfc2dca1d137d7c63d5dd9c385cc7ff1916351aa25cb8a195cb2756",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 105,
+        "prompt": "Seamless tileable dirt path texture, warm brown hex 8b5a2b with footprints and pebbles, top-down flat view, low-poly game texture, no text, no watermark",
+        "raw": "assets/_src/path-tex-s105.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:04+00:00"
+}

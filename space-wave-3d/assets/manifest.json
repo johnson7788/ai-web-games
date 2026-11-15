@@ -1,0 +1,77 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 404322,
+      "sha256": "34c7b117d22d08c47b921f255ebaee987b38edfa8ed6cb5dc2e3c8847b525b78",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic deep space nebula, black hex 050510 with cyan hex 06b6d4 and magenta hex d946ef nebula wisps, scattered stars, no ground elements, wide open space, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 497837,
+      "sha256": "b761ccf7efdc89e9e720a97c21d0bb4cf60d7ab60b229c558684b4138ce7fc86",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Neon key art of a stylized low-poly spaceship threading a glowing narrow gap between cyan hex 06b6d4 and magenta hex d946ef tunnel rings in deep space hex 050510, light trails, dramatic sense of speed, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 334110,
+      "sha256": "966524fdc1648d39a8747b1dc5a1d5f33f193c777abc410a6498537f0ddb5c3f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized low-poly spaceship with cyan trail hex 06b6d4 threading a magenta ring hex d946ef, on black hex 050510, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/hull": {
+      "file": "assets/tex/hull.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 198666,
+      "sha256": "6be2554617dc8e26d16248159005b707cc954045b9474fa60f5f0152ab1f4c6b",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Stylized low-poly spaceship hull texture, dark metal with cyan glow lines hex 06b6d4, front view, game asset, no text, no watermark",
+        "raw": "assets/_src/hull-tex-s103.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:39+00:00"
+}

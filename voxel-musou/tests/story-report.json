@@ -1,0 +1,13 @@
+{
+  "prologueVisible": true,
+  "prologueText": "190 AD.Dong Zhuo holds the boy emperor hostage and rules the capital by terror.",
+  "prologueEnClass": true,
+  "battleReached": true,
+  "objective": "Break Dong Zhuo's army on the plain",
+  "dialogue": "If only Yan Liang or Wen Chou were here! With either of them, who would fear Hua Xiong?",
+  "zhObjective": "擊破汜水關前的董卓軍",
+  "zhName": "劉備",
+  "enObjectiveRestored": "Break Dong Zhuo's army on the plain",
+  "errors": [],
+  "consoleErrs": []
+}

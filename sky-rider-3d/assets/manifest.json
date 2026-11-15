@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 324811,
+      "sha256": "82f4c9e58733157b9a386bc74c780e9eb1a94e21d22ab90b07583dfa6e88d97d",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic bright sky with floating canyon islands, blue gradient hex 38bdf8 with fluffy white clouds hex f0f9ff, stylized low-poly floating rock islands at the bottom edge, adventurous flight mood, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 453854,
+      "sha256": "ec9df5dd4d0c74554876c3f26b1666ca2e1f40c8013e5cbc4185694cd78bfde3",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Exhilarating key art of eight stylized low-poly racing planes banking through a glowing golden ring hex fbbf24 in a bright sky hex 38bdf8, red player plane hex ef4444 in front with boost flame, contrails, floating canyon islands, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 341158,
+      "sha256": "26548833d5b15669f2ddc04982d7fd33bd1268795c532a0a3ab027fe87f7f09f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized low-poly red racing plane hex ef4444 banking through a golden ring hex fbbf24, on sky blue hex 38bdf8, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/cloud": {
+      "file": "assets/tex/cloud.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 132858,
+      "sha256": "cd820e39583de0ca39335526b987416e661fa13ccc3b74b4e1f378cde4ca1486",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable stylized soft cloud texture, white hex f0f9ff with soft edges on transparent-looking plain background, game asset, no text, no watermark",
+        "raw": "assets/_src/cloud-tex-s103.png"
+      }
+    },
+    "tex/rock": {
+      "file": "assets/tex/rock.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 108702,
+      "sha256": "1e1986163a8e2fe432d4d5ea27f47cd05cb65b446986e6a7ce00696086095d3e",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized floating island rock texture, warm gray-brown with grass top edge, front view, low-poly game texture, no text, no watermark",
+        "raw": "assets/_src/rock-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:42+00:00"
+}

@@ -1,0 +1,103 @@
+{
+  "game": "rocket-derby",
+  "generatedAt": "2026-11-15T03:10:21.459Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "FAIL",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.2,
+    "style_consistent": 8.2
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [
+    "tests/final/tutorial-after-skip.png: 目标不可见"
+  ],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央或使用方向键移动己方单位（左侧两个棕色单位）向球推进",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家单位（左）与敌方单位（右）颜色对比弱，眯眼时易混淆；红色敌人偏暗，棕色玩家无高亮轮廓",
+        "中央绿圈（开球区）与地面网格线颜色接近，边界不够突出",
+        "左下BOOST条无文字标签，仅靠颜色推断功能，新手可能困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家小车在中心圆圈内，但圆圈为细绿线，与背景网格线对比度低，远距离辨识度弱",
+        "‘FASTEST GOAL’和‘WINS’数值框字体偏小，且与背景纹理融合稍强，弱光下可能难读",
+        "标题‘ROCKET DERBY’发光效果过强，轻微溢光导致边缘文字略糊（尤其‘Y’）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": false,
+      "first_action_guess": "等待倒计时结束或点击屏幕任意处开始比赛",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘KICK OFF’文字悬浮于场地中央但无明确交互提示，玩家可能不确定是否需点击",
+        "红/黑角色轮廓对比度低，眯眼时难以快速区分敌我（尤其左侧两个深色单位）",
+        "左下角BOOST条无标签，功能不直观；且绿色条与场地边缘发光带颜色近似易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角 NEXT 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角提示框遮挡部分场地边缘，可能影响新手对边界判断",
+        "‘KICK OFF’文字为浅黄，在深蓝背景上对比度偏低，弱光下易误读",
+        "球员模型过小且颜色与场地纹理接近（红/暗色），远距离辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的 NEXT 按钮继续教程",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "窗口顶部三颗状态点中仅第一颗亮起，但无说明其含义，易引发困惑",
+        "‘Drive with W/S and steer with A/D’未明确区分移动/转向轴，新手可能混淆",
+        "整体为桌面UI风格，若用于移动端需重新适配按钮尺寸与间距"
+      ]
+    }
+  ]
+}

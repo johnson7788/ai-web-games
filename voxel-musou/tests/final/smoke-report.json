@@ -1,0 +1,305 @@
+{
+  "url": "http://127.0.0.1:60029/",
+  "startedAt": "2026-11-15T02:21:07.953Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 25,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 26,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 27,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 28,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 29,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 30,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 31,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 32,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 33,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 34,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 35,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 36,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 37,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 38,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 39,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 40,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 41,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 42,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 43,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 44,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 45,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 46,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 47,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 48,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 49,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 50,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 51,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 52,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 53,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 54,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 55,
+      "act": "key",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/02-title-menu.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/03-battlefield.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/04-difficulty.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/05-select.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/06-select-zhaoyun.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/07-battle-start.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/08-combat.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/09-combat-late.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/10-pause.png",
+    "/Users/admin/git/webgames/games/voxel-musou/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T02:21:46.543Z",
+  "video": "/Users/admin/git/webgames/games/voxel-musou/tests/final/play.webm"
+}

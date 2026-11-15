@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 309847,
+      "sha256": "940f7b02d9a905f87e23e8351f40af66b7fb6a2729fa8a4a3ca22b9d0c608654",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic bright day sky over a stylized low-poly highway, clean blue gradient near hex 7ec8e3 with soft white clouds, distant green hills and city silhouettes at the bottom edge, wide open negative space above, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 397780,
+      "sha256": "a0708702ee36695fc8d3749a23eb2bdf34c9236e1dbeeef73fbadc070d9bcf5c",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Dynamic key art of a first-person view from a stylized low-poly orange motorcycle hex ff7a1a weaving between two trucks with centimeters to spare on a sunlit highway, motion blur, red tail lights hex ef4444, blue sky hex 7ec8e3, dramatic sense of speed, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 366675,
+      "sha256": "c7de6bd7e5caef5f99f91b9733e6fdab9cbab200dec8f276feacc59c7d2e9b42",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: front view of a stylized low-poly orange sport motorcycle hex ff7a1a with rider helmet, centered on asphalt-gray background hex 2b2f36 with speed lines, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/road": {
+      "file": "assets/tex/road.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 297898,
+      "sha256": "3665a8152cacd4dbc6fa0753e5bdd47c4e73c1028a3c27e8398007edec2c03cb",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable highway asphalt texture with white dashed lane markings, top-down flat view, stylized low-poly game texture, dark gray base hex 2b2f36, no text, no watermark",
+        "raw": "assets/_src/road-tex-s103.png"
+      }
+    },
+    "tex/cockpit": {
+      "file": "assets/tex/cockpit.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 77272,
+      "sha256": "42db23cd8aa77bd85386f29d021d3d1e720ad9c7ae5f521e870d3bfa563b4d5f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Stylized low-poly motorcycle cockpit dashboard texture, orange fuel tank hex ff7a1a, black handlebars, simple gauges with no readable numbers, front view, game asset, no text, no watermark",
+        "raw": "assets/_src/dash-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:44:36+00:00"
+}

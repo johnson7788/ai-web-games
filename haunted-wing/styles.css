@@ -1,0 +1,194 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  background: #050806;
+  color: #cbd5e1;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Apple SD Gothic Neo', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', 'Microsoft YaHei', 'Yu Gothic', 'Malgun Gothic', Tahoma, monospace;
+  height: 100%;
+  overflow: hidden;
+}
+#app { position: relative; width: 100vw; height: 100vh; }
+#stage { position: absolute; inset: 0; }
+canvas {
+  display: block;
+  background: #050806;
+}
+
+/* ---------------- HUD ---------------- */
+#hud { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+#hud-top {
+  position: absolute; top: 14px; left: 18px; right: 18px;
+  display: flex; gap: 18px; font-size: 16px; letter-spacing: 1px;
+  text-shadow: 0 1px 3px #000;
+}
+#hud-floor { color: #f2f5f3; }
+#hud-time { margin-left: auto; color: #fde68a; }
+#hud-best { color: #cbd5e1; }
+.hud-label { font-size: 11px; opacity: 0.9; display: block; letter-spacing: 1px; color: #dbe4e0; }
+
+#hud-battery-box { position: absolute; bottom: 20px; left: 18px; width: 190px; }
+#hud-battery {
+  height: 12px; border: 1px solid #cbd5e1; background: #0d1512;
+  border-radius: 2px; overflow: hidden;
+}
+#hud-battery-fill { height: 100%; width: 100%; background: #fde68a; transition: width 0.2s; }
+#hud-battery-fill.low { background: #7f1d1d; }
+#hud-lives { position: absolute; bottom: 20px; left: 220px; color: #ff5a5a; font-size: 20px; letter-spacing: 4px; text-shadow: 0 0 8px rgba(255, 90, 90, 0.6); }
+#hud-keys { position: absolute; bottom: 20px; right: 18px; display: flex; gap: 10px; }
+.key-dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #cbd5e1; opacity: 0.5; }
+.key-dot.have { opacity: 1; box-shadow: 0 0 8px currentColor; }
+.key-red { background: #7f1d1d; color: #7f1d1d; }
+.key-blue { background: #245a8a; color: #245a8a; }
+.key-gold { background: #b08a1e; color: #b08a1e; }
+
+#hud-objective { position: absolute; top: 52px; left: 18px; font-size: 16px; opacity: 1; letter-spacing: 1px; color: #fff; text-shadow: 0 1px 4px #000; background: rgba(10, 16, 13, 0.85); padding: 6px 14px; border-radius: 4px; border: 1px solid #6a7a72; }
+#hud-hint {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, 40px);
+  font-size: 16px; color: #fde68a; letter-spacing: 2px; text-shadow: 0 1px 4px #000;
+}
+#hud-gen {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(10, 18, 15, 0.92); border: 1px solid #33403b; padding: 18px 22px;
+  text-align: center; border-radius: 6px;
+}
+#gen-title { font-size: 14px; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+#gen-step { font-size: 22px; color: #fde68a; display: block; margin-bottom: 12px; }
+#gen-levers { display: flex; gap: 14px; justify-content: center; }
+.lever {
+  width: 52px; height: 52px; font-size: 20px; border-radius: 6px; cursor: pointer;
+  background: #1a2e2a; color: #cbd5e1; border: 1px solid #cbd5e1; font-family: inherit;
+  pointer-events: auto;
+}
+.lever:active { background: #fde68a; color: #000; }
+
+#vignette { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.3s;
+  box-shadow: inset 0 0 140px 40px rgba(127, 29, 29, 0.55); }
+#vignette.on { opacity: 1; }
+
+#fx-layer { position: absolute; top: 60px; left: 50%; transform: translateX(-50%); }
+.popup { font-size: 16px; letter-spacing: 1px; padding: 4px 0; text-align: center; text-shadow: 0 1px 3px #000; animation: pop 1.4s ease forwards; }
+.popup.good { color: #fde68a; }
+.popup.bad { color: #ff5a5a; }
+.popup.warn { color: #e8c07a; }
+.popup.scare { color: transparent; }
+@keyframes pop { 0% { opacity: 0; transform: translateY(8px); } 12% { opacity: 1; transform: none; } 80% { opacity: 1; } 100% { opacity: 0; } }
+
+/* ---------------- 屏幕 ---------------- */
+.screen {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; z-index: 10;
+  background: radial-gradient(ellipse at center, rgba(18, 32, 28, 0.94), rgba(4, 8, 6, 0.98));
+}
+#screen-title {
+  background: rgba(4, 8, 6, 0.32);
+}
+#title-inner {
+  background: rgba(5, 8, 6, 0.86);
+  padding: 26px 44px 30px;
+  border-radius: 14px;
+  border: 1px solid #33403b;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.screen.hidden, .hidden { display: none !important; }
+.screen h1 { font-size: 3.2rem; letter-spacing: 5px; color: #f5f7f5; margin-bottom: 22px; text-shadow: 0 2px 8px #000, 0 0 18px rgba(253, 230, 138, 0.22); }
+.screen h2 { font-size: 2rem; letter-spacing: 4px; margin-bottom: 1rem; color: #cbd5e1; }
+.screen .subtitle { font-size: 1rem; margin-bottom: 1.6rem; opacity: 0.75; max-width: 560px; text-align: center; }
+#subtitle-text { font-size: 1.05rem; line-height: 1.5; letter-spacing: 1px; opacity: 0.85; max-width: 640px; text-align: center; margin: 0 0 1.7rem; color: #dbe4e0; }
+#title-best-wrap {
+  font-size: 1.3rem; letter-spacing: 2px; color: #fde68a; margin-bottom: 1.8rem;
+}
+#title-best-wrap .hud-label { opacity: 1; display: inline; margin-right: 12px; font-weight: bold; }
+#title-best-wrap b { color: #fff; font-size: 2.2rem; font-weight: bold; text-shadow: 0 0 12px rgba(253, 230, 138, 0.5); }
+#title-buttons { display: flex; gap: 12px; }
+#title-meta {
+  position: absolute; top: 14px; right: 16px; display: flex; gap: 10px; align-items: center;
+  padding: 8px 12px; background: rgba(10, 16, 13, 0.9); border: 1px solid #4a5a52; border-radius: 8px;
+}
+
+.btn {
+  padding: 12px 30px; font-size: 1.1rem; letter-spacing: 2px; cursor: pointer;
+  background: #24403a; color: #f2f5f3; border: 2px solid #dbe4e0; font-family: inherit;
+}
+.btn:hover { background: #2a443d; }
+.btn.primary { background: #7f1d1d; border-color: #7f1d1d; color: #f5e9d0; }
+.btn.primary:hover { background: #9a2a2a; }
+.btn.small { padding: 7px 12px; font-size: 0.85rem; }
+.lang-select {
+  padding: 7px 12px; background: #0d1512; color: #cbd5e1; border: 1px solid #33403b;
+  cursor: pointer; font-family: inherit; font-size: 0.9rem;
+}
+
+#res-rating { font-size: 3.4rem; font-weight: bold; margin-bottom: 8px; letter-spacing: 4px; }
+.rank-S { color: #fde68a; text-shadow: 0 0 20px #fde68a; }
+.rank-A { color: #cbd5e1; }
+.rank-B { color: #9aa8b0; }
+.rank-C { color: #7f1d1d; }
+#res-record { color: #fde68a; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 12px; }
+#res-stats { display: flex; gap: 22px; margin: 14px 0 22px; }
+#res-stats .stat { text-align: center; }
+#res-stats .stat span { display: block; font-size: 11px; opacity: 0.6; letter-spacing: 1px; }
+#res-stats .stat b { font-size: 1.3rem; }
+#results-buttons { display: flex; gap: 12px; }
+#results.escaped #res-rating { color: #fde68a; }
+
+/* ---------------- 教学 ---------------- */
+#tutorial { position: absolute; inset: 0; z-index: 30; }
+/* 从标题重看：卡片浮在右上，不遮居中标题/按钮，也不盖 3D 场景主体 */
+#tutorial.modal { background: none; }
+#tutorial.modal #tut-highlight { display: none; }
+#tutorial.modal #tut-card {
+  position: absolute; top: 84px; right: 18px; left: auto; bottom: auto;
+  transform: none; width: 360px; max-width: calc(100% - 36px);
+  text-align: left; padding: 16px 18px;
+}
+#tutorial.modal #tut-dots, #tutorial.modal #tut-buttons { justify-content: flex-start; }
+#tutorial.modal #tut-buttons .btn { padding: 9px 16px; }
+#tut-highlight {
+  position: absolute; border: 2px solid #fde68a; border-radius: 4px;
+  background: rgba(253, 230, 138, 0.12);
+  box-shadow: 0 0 14px 3px rgba(253, 230, 138, 0.55);
+  pointer-events: none;
+}
+#tut-card {
+  position: absolute; top: 84px; left: 50%; transform: translateX(-50%);
+  width: 360px; max-width: calc(100% - 36px);
+  background: rgba(10, 18, 15, 0.94); border: 1px solid #4a5a52;
+  border-radius: 8px; padding: 16px 18px; text-align: left;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+#tut-dots { display: flex; gap: 8px; justify-content: flex-start; margin-bottom: 10px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #33403b; }
+.dot.on { background: #fde68a; }
+#tut-text { font-size: 0.95rem; line-height: 1.5; margin-bottom: 14px; }
+#tut-buttons { display: flex; gap: 12px; justify-content: flex-start; }
+#tut-buttons .btn { padding: 9px 16px; font-size: 0.95rem; }
+
+/* ---------------- 触屏 / 旋转 ---------------- */
+#touch { position: absolute; inset: 0; z-index: 6; pointer-events: none; }
+.touch-btn {
+  position: absolute; width: 56px; height: 56px; border-radius: 50%; font-size: 22px;
+  background: rgba(26, 46, 42, 0.85); color: #fde68a; border: 1px solid #cbd5e1;
+  pointer-events: auto;
+}
+#btn-touch-flash { bottom: 24px; left: 24px; }
+#btn-touch-interact { bottom: 24px; right: 110px; }
+#btn-touch-sprint { bottom: 24px; right: 24px; }
+#touch-hint { position: absolute; top: 14px; left: 18px; font-size: 12px; opacity: 0.7; }
+
+#rotate { position: absolute; inset: 0; z-index: 40; background: rgba(4, 8, 6, 0.96);
+  display: flex; align-items: center; justify-content: center; }
+#rotate-card { text-align: center; }
+#rotate-card p { font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 1px; }
+
+@media (max-width: 700px) {
+  .screen h1 { font-size: 2.2rem; letter-spacing: 3px; }
+  #hud-battery-box { width: 140px; }
+  #hud-lives { left: 172px; font-size: 16px; }
+}
+@media (max-height: 500px) {
+  .screen h1 { font-size: 2rem; letter-spacing: 3px; margin-bottom: 10px; text-shadow: 0 1px 5px #000; }
+  #subtitle-text { font-size: 0.9rem; margin-bottom: 0.8rem; }
+  #title-best-wrap { margin-bottom: 0.8rem; }
+  #title-inner { padding: 14px 24px 16px; }
+  .btn { padding: 8px 18px; font-size: 0.95rem; }
+}

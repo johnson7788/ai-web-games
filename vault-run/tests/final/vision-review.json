@@ -1,0 +1,101 @@
+{
+  "game": "vault-run",
+  "generatedAt": "2026-11-14T18:13:09.158Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 6.6,
+    "style_consistent": 8.2
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best 0’数字‘0’字号过小且无单位说明，易被忽略",
+        "背景建筑剪影在远处渐变模糊，部分结构边界不清，影响深度判断",
+        "‘How to play’按钮边框与‘Start’不一致（圆角半径/描边粗细），风格微瑕"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best 0’数字‘0’颜色偏黄，与背景暖色调对比不足，易被忽略",
+        "‘How to play’按钮边框为紫色，与主按钮橙色风格略有冲突",
+        "背景建筑剪影层次丰富但缺乏明确玩家位置指示（如角色模型或起始点标记）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该向前移动（沿屋顶路径前进）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "屋顶前景过暗，玩家角色未明确显示，难以分辨自身位置与边界",
+        "远处建筑剪影层次模糊，关键目标‘ROOFTOPS’虽标出但无视觉引导箭头或高亮",
+        "Stamina条颜色与背景融合度高，低对比下易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格键跃过前方墙壁",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色未显示（仅见屋顶路径），无法确认当前角色位置与轮廓",
+        "教程弹窗遮挡部分远景建筑，影响空间判断",
+        "Stamina条无标签文字说明（仅图标+颜色），新手可能不解其意"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "按下空格键 vault 过墙",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "对话框顶部三圆点（窗口控件）与游戏UI风格不一致，疑似系统窗口样式混入",
+        "‘Skip tutorial’按钮边框为橙色描边但无填充色，视觉层级弱于主提示文本",
+        "背景渐变过强，可能干扰深色HUD的对比度（尤其在低亮度设备上）"
+      ]
+    }
+  ]
+}

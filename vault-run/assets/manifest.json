@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 280142,
+      "sha256": "6d88bb22bb8fd913ab3bcc1f20f05c87bc7ed6d1934d1667ef6f3f4d5e896441",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic sunset sky over a stylized low-poly city rooftops, warm orange gradient hex f97316 to purple hex 7c3aed, water towers and antenna silhouettes at the bottom edge, scattered warm clouds, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 376444,
+      "sha256": "219da8838a989bb224364271a2423afea693dee80ceabcfc6e0739c1fd4165ea",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Dynamic first-person key art of hands vaulting over a rooftop wall at sunset, stylized low-poly cityscape in orange hex f97316 and purple hex 7c3aed, motion blur, dust particles, dramatic forward momentum, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 333171,
+      "sha256": "8cbf230ae84d1adf28bd77f64414f6acd594975616a0a670e04f720fe4f84aea",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a stylized low-poly runner silhouette vaulting a rooftop wall, orange hex f97316 on purple hex 7c3aed background, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/roof": {
+      "file": "assets/tex/roof.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 284534,
+      "sha256": "b0909878be8ece06d4cf1d60e30003f654cedd54f4e835aba3367b5668c62c5f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable rooftop concrete texture with tar patches and faint cracks, top-down flat view, warm gray hex 6b7280, low-poly game texture, no text, no watermark",
+        "raw": "assets/_src/roof-tex-s103.png"
+      }
+    },
+    "tex/brick": {
+      "file": "assets/tex/brick.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 84852,
+      "sha256": "a23d09ad634600d4f51833790375d56a3e9eceff8ceeaf0ecec469dd013389fb",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Seamless tileable stylized red brick wall texture hex b45309 with warm mortar lines, front view, low-poly game texture, no text, no watermark",
+        "raw": "assets/_src/brick-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:44:59+00:00"
+}

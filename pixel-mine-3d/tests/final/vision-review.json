@@ -1,0 +1,149 @@
+{
+  "game": "pixel-mine-3d",
+  "generatedAt": "2026-11-14T18:32:09.340Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.25,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best depth: 0m’文字偏小且与主标题对比度不足，易被忽略",
+        "‘How to play’按钮边框较细，视觉权重低于‘Start’，可能被误认为不可点",
+        "左上角‘Mute’图标无文字说明，依赖图标语义，对非英语用户不友好"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色平台中央的加号启动下潜",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "深度目标‘Reach depth 24m’文字偏小，3秒内需细看才能确认数值单位",
+        "右上角0/20计数器无标签，不知代表什么（如鱼群/任务数）",
+        "黑色箭头流线密集区与黄色平台边缘接近，可能误判为障碍物"
+      ]
+    },
+    {
+      "shot": "tests/final/03-mining.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央黄色平台开始下潜",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黑色箭头状物体密集且方向混乱，难以区分是障碍、水流还是敌人，影响 silhouette 评分",
+        "中央十字准星与下方灰色横条位置接近，易误操作，UI布局略拥挤",
+        "左上角 '0' 和 '0m' 标签间距过小，视觉上易误读为单个元素"
+      ]
+    },
+    {
+      "shot": "tests/final/05-results.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Mine again”按钮重新开始挖矿",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Daily goal’数值显示为‘—’，可能应为具体数字或‘0’，易引发困惑",
+        "背景箭头状图形密集且方向杂乱，轻微干扰中心信息聚焦",
+        "‘NEW DEPTH RECORD!’文字无明确归属（是本次达成？还是历史？），语义模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best depth: 0m’文字偏小且颜色较浅，弱对比度易被忽略",
+        "‘How to play’按钮边框与背景对比不足，视觉层级偏低",
+        "标题‘PIXEL MINE 3D’字体为像素风但副标题为常规无衬线体，风格微冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile-game.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角黄色圆点（玩家）开始移动或操作",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘0m’与‘Reach depth 24m’间距过小，易误读为‘0m Reach depth’",
+        "右下角按钮组（MINE/LADDER/JUMP/CAMP/BAG）中‘MINE’为矩形其余为圆形，风格不一致",
+        "中央黄色平台无明确交互提示（如闪烁/高亮），新手可能不知可点击"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best depth: 0m’文字偏小且灰度高，弱光下可能难辨",
+        "‘How to play’按钮无悬停反馈或视觉层级区分，易被忽略",
+        "左上角‘Mute’图标与右上角语言选择按钮尺寸过小（约24px），非桌面端不安全"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色平台中心的加号按钮开始下潜",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘0m’与‘Reach depth 24m’间距过小，易误读为‘0m Reach depth’",
+        "右上角‘0/20’计数器无标签，不知代表什么（如：目标数/收集物）",
+        "黄色平台下方灰色横条疑似进度条但无刻度/说明，功能模糊"
+      ]
+    }
+  ]
+}

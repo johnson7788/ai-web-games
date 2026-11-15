@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "sky": {
+      "file": "assets/sky.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1028,
+      "aspect": 1.9922,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 353571,
+      "sha256": "8027e4ad78bbe99f3e024f0e035cd575dec67528ba3f3c5637a46e0fb0888cc0",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 100,
+        "prompt": "A 16:9 panoramic bright candy sky, blue gradient hex 60a5fa with fluffy clouds and floating pastel islands, cheerful playful mood, wide open space, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/sky-s100.png"
+      }
+    },
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 337320,
+      "sha256": "f08547b66992241db1da3880960f34d67d66c83187799a2ec0ef0c44f04f9d1f",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 101,
+        "prompt": "Playful key art of a transparent marble ball with a cute monkey inside rolling along a narrow candy-pink sky bridge hex f472b6, bananas hex facc15 floating along the path, blue sky hex 60a5fa, cheerful dynamic angle, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/poster-raw-s101.png"
+      }
+    },
+    "icon-raw": {
+      "file": "assets/icon-raw.png",
+      "group": "",
+      "w": 512,
+      "h": 512,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 317383,
+      "sha256": "6f2a4d637bd528349f57711acf064543e41ce2aaaf62f84a8ea66d8b59cd4e65",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 102,
+        "prompt": "App icon subject: a transparent marble ball with a cute monkey face inside, yellow banana accent hex facc15 on sky blue hex 60a5fa, bold silhouette readable at 64px, Stylized low-poly 3D game art, clean readable silhouettes, saturated accent colors on dark neutral base, soft ambient occlusion, high production value, no text, no letters, no numbers, no watermark, no UI.",
+        "raw": "assets/_src/icon-raw-s102.png"
+      }
+    },
+    "tex/track": {
+      "file": "assets/tex/track.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 444074,
+      "sha256": "9127f484fd9e6043821b48b69260dbec3b5e38aea2b093902b29d216b202225c",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 103,
+        "prompt": "Seamless tileable candy-pink track surface texture hex f472b6 with subtle stripes, top-down flat view, low-poly game texture, no text, no watermark",
+        "raw": "assets/_src/track-tex-s103.png"
+      }
+    },
+    "tex/monkey": {
+      "file": "assets/tex/monkey.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1.0,
+      "pivot": "top",
+      "alpha": true,
+      "bytes": 130532,
+      "sha256": "c463af79b893201c0265e242c8191ebf2f9644788073231e556b6a98744167da",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 104,
+        "prompt": "Cute stylized low-poly monkey face texture for inside a marble ball, brown fur with big eyes, front view, game asset, no text, no watermark",
+        "raw": "assets/_src/monkey-tex-s104.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-14T15:45:29+00:00"
+}

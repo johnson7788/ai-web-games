@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SKY RIDER 3D</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="importmap">{"imports":{"three":"./lib/three.module.js"}}</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="canvas"></canvas>
+  <div id="stage">
+
+    <div id="hud" class="hidden">
+      <div id="fx-layer"></div>
+      <div class="hud-box" id="hud-speed-box">
+        <b id="hud-speed">0</b><span class="hud-label" data-i18n="kmh">KM/H</span>
+      </div>
+      <div class="hud-box" id="hud-rank-box"><span class="hud-label" data-i18n="rank">RANK</span><b id="hud-rank">8</b></div>
+      <div class="hud-box" id="hud-race-box">
+        <span><span class="hud-label" data-i18n="lap">LAP</span> <b id="hud-lap">1/3</b></span>
+        <b id="hud-time">0:00</b>
+        <span id="hud-penalty" class="penalty"></span>
+      </div>
+      <div class="hud-box" id="hud-ring-box">
+        <span class="hud-label" data-i18n="ring">RING</span><b id="hud-ring">1/16</b>
+        <div id="ring-arrow"><span id="ring-arrow-up">▲</span><span id="ring-arrow-down">▼</span><span id="ring-arrow-sym">➤</span></div>
+      </div>
+      <div class="hud-box" id="hud-bars-box">
+        <div class="bar-row"><span class="hud-label" data-i18n="boost">BOOST</span>
+          <div class="bar" id="hud-boost-wrap"><div id="hud-boost-fill"></div></div></div>
+      </div>
+      <div id="countdown"><b id="countdown-text">3</b></div>
+    </div>
+
+    <div id="screen-title" class="screen">
+      <div id="title-inner">
+        <h1 id="title-text">SKY RIDER 3D</h1>
+        <p id="subtitle-text"></p>
+        <div id="title-best-wrap"><span class="hud-label" data-i18n="best">BEST</span> <b id="title-best">--</b></div>
+        <div id="track-cards"></div>
+        <div id="title-buttons">
+          <button id="btn-start" class="btn primary"></button>
+          <button id="btn-howto" class="btn" data-tutorial-replay></button>
+        </div>
+        <div id="title-meta">
+          <select id="lang-select" aria-label="Language"></select>
+          <button id="btn-mute" class="btn small"></button>
+        </div>
+        <div id="controls-hint"></div>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title"></h2>
+      <button id="btn-resume" class="btn primary"></button>
+      <button id="btn-restart-pause" class="btn"></button>
+      <button id="btn-menu-pause" class="btn"></button>
+      <select id="lang-select-pause" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-results" class="screen hidden">
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+      <div id="res-rating" class="rank-B"></div>
+      <div id="res-rank"></div>
+      <div id="res-score-wrap"><span class="hud-label" data-i18n="time">TIME</span> <b id="res-time">0:00</b></div>
+      <div id="res-best-wrap"><span class="hud-label" data-i18n="best">BEST</span> <b id="res-best">0:00</b></div>
+      <div id="res-record" class="hidden"></div>
+      <div id="res-stats"></div>
+      <div id="results-buttons">
+        <button id="btn-restart" class="btn primary"></button>
+        <button id="btn-share" class="btn"></button>
+        <button id="btn-menu" class="btn"></button>
+      </div>
+    </div>
+
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-highlight"></div>
+      <div id="tut-card">
+        <div id="tut-dots"></div>
+        <p id="tut-text"></p>
+        <div id="tut-buttons">
+          <button id="tut-next" class="btn primary"></button>
+          <button id="tut-skip" class="btn" data-tutorial-skip></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate" class="hidden">
+      <div id="rotate-card">
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" class="btn small"></button>
+      </div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <div id="joy"><div id="joy-knob"></div></div>
+      <button id="btn-boost" class="touch-action"></button>
+      <button id="btn-brake" class="touch-action"></button>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+{
+  "slug": "vault-run",
+  "genre": "platformer",
+  "oneLiner": "第一人称屋顶跑：翻越 / 滑铲 / 蹬墙，5 分钟一局",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "vault",
+      "cost": "翻越时机错=撞停",
+      "feedback": [
+        "sfx",
+        "hand-plant",
+        "camera-tilt"
+      ],
+      "combinesWith": [
+        "sprint"
+      ]
+    },
+    {
+      "name": "slide",
+      "cost": "滑铲中不能转向",
+      "feedback": [
+        "sfx",
+        "spark",
+        "low-fov"
+      ],
+      "combinesWith": [
+        "sprint"
+      ]
+    },
+    {
+      "name": "wallrun",
+      "cost": "蹬墙最多 2 步",
+      "feedback": [
+        "sfx",
+        "tilt",
+        "dust"
+      ],
+      "combinesWith": [
+        "vault"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "翻越矮墙还是绕路",
+      "cost": "绕路丢时间"
+    },
+    {
+      "atSec": 25,
+      "choice": "滑铲过管道还是跳上管道",
+      "cost": "管道上方有障碍"
+    },
+    {
+      "atSec": 45,
+      "choice": "蹬墙抄近道还是走天台正路",
+      "cost": "蹬墙失误=坠落"
+    },
+    {
+      "atSec": 70,
+      "choice": "捡时间加成（绕远）还是直冲",
+      "cost": "加成 +10s"
+    },
+    {
+      "atSec": 100,
+      "choice": "连续障碍连招还是逐个稳过",
+      "cost": "连招加分但易撞"
+    },
+    {
+      "atSec": 140,
+      "choice": "最后冲刺段用尽体力还是留余量",
+      "cost": "体力耗尽减速"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "基础屋顶 + 翻越矮墙"
+    },
+    {
+      "index": 2,
+      "newElement": "滑铲管道段"
+    },
+    {
+      "index": 3,
+      "newElement": "蹬墙窄巷段"
+    },
+    {
+      "index": 4,
+      "newElement": "移动吊臂平台"
+    },
+    {
+      "index": 5,
+      "newElement": "终点高楼速降段"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "vault-chain",
+      "kind": "rule"
+    },
+    {
+      "id": "slide-jump",
+      "kind": "rule"
+    },
+    {
+      "id": "wallrun-3",
+      "kind": "rule"
+    },
+    {
+      "id": "auto-grab",
+      "kind": "rule"
+    },
+    {
+      "id": "sprint-boost",
+      "kind": "rule"
+    },
+    {
+      "id": "stamina-cap",
+      "kind": "stat"
+    },
+    {
+      "id": "speed10",
+      "kind": "stat"
+    },
+    {
+      "id": "recover-speed",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "leaderboard"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 50,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}
