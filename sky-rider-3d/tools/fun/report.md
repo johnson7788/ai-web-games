@@ -1,13 +1,13 @@
 # Fun Gate 报告（bot 遥测） — sky-rider-3d
 
-> 品类 `default` · 8 条记录 · 数据 `tools/fun/autoplay.json` · 2026-11-15T09:42:09.283Z
+> 品类 `default` · 8 条记录 · 数据 `tools/fun/autoplay.json` · 2026-11-15T12:47:26.296Z
 
 **结论：PASS**（10 pass / 0 warn / 0 fail）
 
 | 指标 | 观测 | 门槛 | 判定 | 怎么修 |
 | --- | --- | --- | --- | --- |
 | 首次输入中位数 | 0s | 10s | ✅ pass | — |
-| 输入→动作延迟中位数 | 2ms | 120ms | ✅ pass | — |
+| 输入→动作延迟中位数 | 1ms | 120ms | ✅ pass | — |
 | 首胜中位数 | 15s | 90s | ✅ pass（仅 3/3 条 greedy 成功） | — |
 | 至少成功一次的 run 比例 | 100% | 80% | ✅ pass | — |
 | 每分钟操作数 | 158/min | 40/min | ✅ pass | — |
@@ -21,14 +21,14 @@
 
 | run | 策略 | 时长 | 首输入 | 延迟 | 首胜 | 行动/分 | 空转 | 最大间隔 | 事件种类 | 关卡 | 死亡 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| greedy-11 | greedy | 132s | 0s | 2ms | 16s | 253 | 7% | 1.2s | 9 | 3 | 3 |
-| greedy-22 | greedy | 132s | 0s | 2ms | 15s | 260 | 7% | 1.2s | 10 | 3 | 3 |
-| greedy-33 | greedy | 133s | 0s | 2ms | 15s | 255 | 7% | 1.2s | 10 | 3 | 4 |
-| random-44 | random | 240s | 0s | 2ms | — | 59 | 18% | 1.9s | 10 | 1 | 11 |
-| random-45 | random | 240s | 0s | 2ms | — | 63 | 20% | 1.9s | 10 | 1 | 13 |
-| random-46 | random | 240s | 1s | 2ms | — | 62 | 20% | 2.0s | 10 | 1 | 5 |
-| noinput-55 | noinput | 240s | 240s | 2ms | — | 0 | 16% | 1.2s | 6 | 1 | 0 |
-| noinput-56 | noinput | 240s | 240s | 2ms | — | 0 | 16% | 1.2s | 6 | 1 | 0 |
+| greedy-11 | greedy | 132s | 0s | 1ms | 16s | 253 | 7% | 1.2s | 9 | 3 | 3 |
+| greedy-22 | greedy | 132s | 0s | 1ms | 15s | 260 | 7% | 1.2s | 10 | 3 | 3 |
+| greedy-33 | greedy | 133s | 0s | 1ms | 15s | 255 | 7% | 1.2s | 10 | 3 | 4 |
+| random-44 | random | 240s | 0s | 1ms | — | 59 | 18% | 1.9s | 10 | 1 | 11 |
+| random-45 | random | 240s | 0s | 1ms | — | 63 | 20% | 1.9s | 10 | 1 | 13 |
+| random-46 | random | 240s | 1s | 1ms | — | 62 | 20% | 2.0s | 10 | 1 | 5 |
+| noinput-55 | noinput | 240s | 240s | 1ms | — | 0 | 16% | 1.2s | 6 | 1 | 0 |
+| noinput-56 | noinput | 240s | 240s | 1ms | — | 0 | 16% | 1.2s | 6 | 1 | 0 |
 
 ## 怎么读
 

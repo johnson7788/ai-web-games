@@ -1,26 +1,26 @@
 {
   "root": ".",
   "ok": true,
-  "totalBytes": 1361383,
-  "entries": 5,
+  "totalBytes": 2544608,
+  "entries": 9,
   "errors": [],
   "warnings": [],
   "results": [
     {
       "id": "size",
       "ok": true,
-      "msg": "素材总量 1329KB（仅统计，无体积硬线）"
+      "msg": "素材总量 2485KB（仅统计，无体积硬线）"
     },
     {
       "id": "count",
       "ok": true,
-      "msg": "5 项素材"
+      "msg": "9 项素材"
     },
     {
       "id": "refs",
       "ok": true,
-      "msg": "代码里 4/4 处素材引用可解析"
+      "msg": "代码里 5/5 处素材引用可解析"
     }
   ],
-  "at": "2026-11-15T09:40:21.704Z"
+  "at": "2026-11-15T12:46:50.316Z"
 }

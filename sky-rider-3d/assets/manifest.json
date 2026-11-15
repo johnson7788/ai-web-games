@@ -41,7 +41,7 @@
       "group": "",
       "w": 512,
       "h": 512,
-      "aspect": 1.0,
+      "aspect": 1,
       "pivot": "top",
       "alpha": true,
       "bytes": 341158,
@@ -59,7 +59,7 @@
       "group": "tex",
       "w": 1024,
       "h": 1024,
-      "aspect": 1.0,
+      "aspect": 1,
       "pivot": "top",
       "alpha": true,
       "bytes": 132858,
@@ -77,19 +77,76 @@
       "group": "tex",
       "w": 1024,
       "h": 1024,
-      "aspect": 1.0,
+      "aspect": 1,
       "pivot": "top",
-      "alpha": true,
-      "bytes": 108702,
-      "sha256": "1e1986163a8e2fe432d4d5ea27f47cd05cb65b446986e6a7ce00696086095d3e",
+      "alpha": false,
+      "bytes": 273654,
+      "sha256": "9fc8a99204297234d6edc271b6f09b07719c7472f4152fc0d4961bd043a8b133",
       "source": {
         "kind": "image",
-        "model": "qwen-image-xl",
-        "seed": 104,
-        "prompt": "Seamless tileable stylized floating island rock texture, warm gray-brown with grass top edge, front view, low-poly game texture, no text, no watermark",
-        "raw": "assets/_src/rock-tex-s104.png"
+        "model": "blender+qwen-image-xl"
+      }
+    },
+    "tex/rock_n": {
+      "file": "assets/tex/rock_n.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 204150,
+      "sha256": "167d0176f71e4181c63e1bb2dcad22d99e97d0abc76fd11cea0e55135f0ec61e",
+      "source": {
+        "kind": "image",
+        "model": "blender+qwen-image-xl"
+      }
+    },
+    "tex/ground": {
+      "file": "assets/tex/ground.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 291410,
+      "sha256": "7a2a3ff50622a6a0f151deaeae2d5372e401ba9c73b08fd4af3e3f72b6b2f518",
+      "source": {
+        "kind": "image",
+        "model": "blender+qwen-image-xl"
+      }
+    },
+    "tex/ground_n": {
+      "file": "assets/tex/ground_n.webp",
+      "group": "tex",
+      "w": 1024,
+      "h": 1024,
+      "aspect": 1,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 224994,
+      "sha256": "df1503478f80d90fec1e634814fc24aa1f2bb774a5a7e6156e8a0aa44e170db5",
+      "source": {
+        "kind": "image",
+        "model": "blender+qwen-image-xl"
+      }
+    },
+    "tex/sky": {
+      "file": "assets/tex/sky.jpg",
+      "group": "tex",
+      "w": 2048,
+      "h": 1024,
+      "aspect": 2,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 297719,
+      "sha256": "5e9bff84f7b300676b8bc3e2455f2d6398343e28596ba6b022576e255f535b8b",
+      "source": {
+        "kind": "image",
+        "model": "blender-nishita"
       }
     }
   },
-  "generatedAt": "2026-11-14T15:45:42+00:00"
+  "generatedAt": "2026-11-15T12:42:29.775Z"
 }

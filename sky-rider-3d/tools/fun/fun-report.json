@@ -4,7 +4,7 @@
   "mode": "auto",
   "source": "tools/fun/autoplay.json",
   "sessions": 8,
-  "generatedAt": "2026-11-15T09:42:09.283Z",
+  "generatedAt": "2026-11-15T12:47:26.296Z",
   "overall": "PASS",
   "metrics": [
     {
@@ -24,7 +24,7 @@
       "label": "输入→动作延迟中位数",
       "unit": "ms",
       "why": "输入延迟：>120ms 会有拖泥带水感",
-      "observed": 2,
+      "observed": 0.8,
       "threshold": 120,
       "verdict": "pass",
       "note": ""

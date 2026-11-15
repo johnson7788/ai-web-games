@@ -1,6 +1,6 @@
 # 趣味设计审计 — sky-rider-3d
 
-> 设计源 `config/design.json` · 品类 `racing` · 2026-11-15T09:40:21.568Z
+> 设计源 `config/design.json` · 品类 `racing` · 2026-11-15T12:46:50.256Z
 
 **结论：PASS** · 分数 100/100（26 pass / 0 warn / 0 fail）
 

@@ -186,11 +186,14 @@ export function createRenderer(canvas) {
   scene.fog = new THREE.Fog(skyColor, 260, 1200);
   const camera = new THREE.PerspectiveCamera(62, 16 / 9, 0.1, 4000);
 
-  // 天空贴图（缺图回退程序化渐变）
-  new THREE.TextureLoader().load('assets/sky.jpg', (t) => {
+  // 天空全景（写真级 HDRI）：作背景 + 环境反射光源
+  new THREE.TextureLoader().load('assets/tex/sky.jpg', (t) => {
     t.mapping = THREE.EquirectangularReflectionMapping;
     t.colorSpace = THREE.SRGBColorSpace;
     scene.background = t;
+    const pm = new THREE.PMREMGenerator(renderer);
+    scene.environment = pm.fromEquirectangular(t).texture;
+    pm.dispose();
   }, undefined, () => { scene.background = makeSkyTexture(); });
 
   // 灯光
@@ -210,12 +213,23 @@ export function createRenderer(canvas) {
   scene.add(key);
   scene.add(key.target); // 阴影相机跟随玩家（renderGame/renderTitle 里更新 target）
 
-  // 静态世界：地面 + 峡谷浮岛
-  const ground = new THREE.Mesh(new THREE.PlaneGeometry(8000, 8000), new THREE.MeshStandardMaterial({ color: 0x2e7d5b, roughness: 1, metalness: 0 }));
+  // 静态世界：沙漠地面 + 峡谷浮岛
+  const groundMat = new THREE.MeshStandardMaterial({ color: 0xc2a878, roughness: 0.95, metalness: 0 });
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(8000, 8000), groundMat);
   ground.rotation.x = -Math.PI / 2;
   ground.position.y = -0.5;
   ground.receiveShadow = true;
   scene.add(ground);
+  // 写真级沙漠地面纹理 + 法线
+  new THREE.TextureLoader().load('assets/tex/ground.webp', (t) => {
+    t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(48, 48);
+    t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+    groundMat.map = t; groundMat.color.set(0xffffff); groundMat.needsUpdate = true;
+  }, undefined, () => {});
+  new THREE.TextureLoader().load('assets/tex/ground_n.webp', (t) => {
+    t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(48, 48);
+    groundMat.normalMap = t; groundMat.normalScale = new THREE.Vector2(0.35, 0.35); groundMat.needsUpdate = true;
+  }, undefined, () => {});
   const rockGeo = new THREE.IcosahedronGeometry(1, 0);
   const rockMat = new THREE.MeshStandardMaterial({ color: 0x8a6f4d, roughness: 0.9, metalness: 0, flatShading: true });
   const rocks = new THREE.InstancedMesh(rockGeo, rockMat, 40);
@@ -260,23 +274,7 @@ export function createRenderer(canvas) {
     rockMat.needsUpdate = true;
   }, undefined, () => {});
 
-  // 远景云带（assets/tex/cloud.webp，透明贴图；缺图不生成，天空贴图自带云）
-  new THREE.TextureLoader().load('assets/tex/cloud.webp', (t) => {
-    t.wrapS = t.wrapT = THREE.RepeatWrapping;
-    t.repeat.set(2, 1.5);
-    t.colorSpace = THREE.SRGBColorSpace;
-    const cloudMat = new THREE.MeshBasicMaterial({ map: t, transparent: true, opacity: 0.85, side: THREE.DoubleSide, depthWrite: false });
-    const cloudGeo = new THREE.PlaneGeometry(1, 1);
-    for (let i = 0; i < 14; i++) {
-      const m = new THREE.Mesh(cloudGeo, cloudMat);
-      const a = (i / 14) * Math.PI * 2 + 0.23;
-      const rad = 430 + ((i * 37) % 130);
-      m.position.set(Math.cos(a) * rad, 28 + ((i * 53) % 150), Math.sin(a) * rad);
-      m.scale.set(200 + ((i * 61) % 130), 110 + ((i * 37) % 70), 1);
-      m.rotation.y = Math.PI / 2 - a; // 面向环心，镜头在环内侧
-      scene.add(m);
-    }
-  }, undefined, () => {});
+  // 远景云带已移除：写真级天空全景自带云层，避免人工矩形云板穿帮
 
   // 环（金环发光）——按当前赛道重建。
   // holder Group 承载全部玩法引用：scale=r.radius、quaternion(+Z→环法线)、userData.ring/base、移动环 position。
