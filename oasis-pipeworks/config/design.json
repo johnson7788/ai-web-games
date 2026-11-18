@@ -1,0 +1,111 @@
+{
+  "slug": "oasis-pipeworks",
+  "genre": "puzzle",
+  "oneLiner": "开闸前的倒计时里，从滑落的管件队列中抓管子铺进沙漠网格，让水一路灌到绿洲的出水口——岩石逼你绕路，花朵引你抄远路。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "grab",
+      "cost": "只能从队列顶端按先来后到拿，拿了就得放：等待区一旦取走，后面的管子立刻补位，拿到不合适的管只能硬找位置",
+      "feedback": ["sfx", "hapticShake", "glowHighlight"],
+      "combinesWith": ["place"]
+    },
+    {
+      "name": "place",
+      "cost": "格子铺下即定型（每局只有 1 次铲除机会），放错一格可能让水流断在半路",
+      "feedback": ["sfx", "dustPuff", "pipeSnap"],
+      "combinesWith": ["grab"]
+    },
+    {
+      "name": "dig",
+      "cost": "每局仅 1 次（可看广告补充 1 次）：铲掉已铺的管子回收成空格，但队列不返还",
+      "feedback": ["sfx", "sandExplosion"],
+      "combinesWith": ["place"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "第一根弯管到手：先铺安全直行，还是赌后面的十字管走最短路线",
+      "cost": "先铺直路 = 放弃绕开花朵的高分；赌十字管 = 万一不来就断流"
+    },
+    {
+      "atSec": 25,
+      "choice": "水已经过了半程：用铲除拆掉死路的弯头重来，还是留着赌下一个出口",
+      "cost": "铲除只有 1 次，拆了就没后悔药"
+    },
+    {
+      "atSec": 45,
+      "choice": "水即将流完：抄近路直接进终点 1 星，或绕开花田多吃 2 朵再进终点 3 星",
+      "cost": "绕路多铺 3-4 根管，倒计时可能不够"
+    },
+    {
+      "atSec": 60,
+      "choice": "队列顶端是死管件（当前路线用不上）：现在就铺进空当占位，还是等流头逼近再扔",
+      "cost": "占位消耗空格；不占则队列被它堵住，后面的好管下不来"
+    },
+    {
+      "atSec": 80,
+      "choice": "岩石走廊只留 1 条 2 格宽的缝：从上绕（长但顺直管）还是从下绕（短但全要弯管）",
+      "cost": "弯管在队列里稀有，赌它就是赌整局"
+    },
+    {
+      "atSec": 100,
+      "choice": "水头已经流进倒数第 3 格：留 1 次铲除给失误，还是立刻用掉铲除改道抢花",
+      "cost": "留着的铲除如果没失误就浪费；用掉后任何失误都终结本局"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基本管型（直/弯），3x4 小网格，45s 无压力倒计时" },
+    { "index": 2, "newElement": "队列更长（4 槽），水速稍快，需要提前 2 步规划" },
+    { "index": 3, "newElement": "岩石格（block 障碍）：必须绕路的第一个地形动词" },
+    { "index": 4, "newElement": "花朵格（bloom 奖励）：绕路换分数的取舍" },
+    { "index": 5, "newElement": "十字管（cross）加入队列：直角死路也能过" },
+    { "index": 6, "newElement": "起点改到底部、终点在顶部：第一次逆向布管" },
+    { "index": 7, "newElement": "双岩石走廊 + 窄缝：空间压缩" },
+    { "index": 8, "newElement": "水速 +30%：放置节奏要跟上流头" },
+    { "index": 9, "newElement": "三连花田：高分与时间的正面冲突" },
+    { "index": 10, "newElement": "管件队列带 1 个锁定件（必须先解锁）" },
+    { "index": 11, "newElement": "5x7 大网格：长距离规划的耐心考验" },
+    { "index": 12, "newElement": "终章：岩石+花田+快水三轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockCross", "kind": "rule", "desc": "第 5 关起队列出现十字管，直角死路有了第二种解" },
+    { "id": "unlockDig", "kind": "rule", "desc": "第 3 关起解锁铲除，铺错不再等于重来" },
+    { "id": "bloomStars", "kind": "rule", "desc": "第 4 关起花朵计入星级，绕路成为得分策略" },
+    { "id": "queuePreview", "kind": "rule", "desc": "第 2 关起队列常驻显示 4 格，规划从当帧变成长线" },
+    { "id": "reverseStart", "kind": "rule", "desc": "第 6 关起起点/终点对调，布管方向感被打破" },
+    { "id": "lockedPiece", "kind": "rule", "desc": "第 10 关起队列出现锁定件，先铺指定数量才解锁" },
+    { "id": "flowSpeed", "kind": "stat", "desc": "第 8 关起水速 +30%，放置节奏匹配流头" },
+    { "id": "gridScale", "kind": "stat", "desc": "第 11 关 5x7 大网格，规划半径翻倍" },
+    { "id": "extraDig", "kind": "stat", "desc": "看激励广告补 1 次铲除（每局封顶 2 次）" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

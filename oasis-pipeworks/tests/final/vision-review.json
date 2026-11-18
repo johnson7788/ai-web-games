@@ -1,0 +1,149 @@
+{
+  "game": "oasis-pipeworks",
+  "generatedAt": "2026-11-18T15:06:11.531Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 7,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "小狐狸角色位于按钮正下方，若按钮被点击时有动画反馈可能遮挡角色（视觉干扰）",
+        "‘0 / 36’星星计数文字偏小，且与标题间距过近，易被忽略",
+        "右上角语言切换下拉框无展开指示图标，移动端交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角橙色‘Got it’按钮确认教程提示",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡下方管道交互区，可能影响操作判断",
+        "右上角‘NEXT’队列中第三根管道图标与背景沙丘颜色接近，辨识度略低",
+        "左上角计时器‘45s’字体偏小，远距离阅读稍吃力"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Oasis Fed!’标题与三颗星重叠轻微，视觉层级稍乱",
+        "左下角狐狸角色在暗背景下轮廓不够突出，影响silhouette得分",
+        "右上角NEXT提示图标与管道结构距离过近，易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角带绿色三角旗的竖管装置，将其旋转或移动以连接路径",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘NEXT’按钮与右侧拼图块部分重叠，可能误触",
+        "左上角‘Level 3’和‘45s’间距过小，小屏可能阅读困难",
+        "两个梯形障碍物阴影过淡，与背景对比度不足，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night-scene.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角带绿色三角旗的橙色装置（当前选中状态）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Level 9’与‘55s’间距过小，易误读为‘Level955s’",
+        "右侧‘NEXT’按钮与下方装置重叠视觉区域，可能误触",
+        "四个红色花状目标图标无明确状态区分（如是否已收集），需依赖记忆"
+      ]
+    },
+    {
+      "shot": "tests/final/06-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘0 / 36’ 星标计数与标题间距过小，略显拥挤",
+        "关卡按钮（1-8）无明确选中态或进度标识，仅靠星数暗示难度，新手可能困惑",
+        "背景植物剪影与地面交界处轻微融合，降低可交互区域辨识度"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角橙色‘Got it’按钮确认教程提示",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡中央管道区域，可能影响对可交互物的初始定位",
+        "左上角‘Level 1 43s’与右上功能按钮间距过小，视觉拥挤",
+        "狐狸角色轮廓较细、颜色偏淡，在沙色背景中辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡按钮（1-12）无明确选中态或进度标识，仅靠星星数量区分难度，新手易混淆",
+        "小狐狸角色位于按钮下方中央，但未与任何交互元素关联，视觉上略显孤立",
+        "右上角语言切换按钮文字‘中文’与下拉箭头间距过小，可能误触"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OASIS PIPEWORKS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level"></span>
+          <span id="hud-time" class="hud-pill"></span>
+          <span id="hud-blooms" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-valve" class="hud-btn hud-valve" aria-label="Open valve">⏻</button>
+          <button id="btn-dig" class="hud-btn" aria-label="Dig"><span id="dig-badge" class="badge"></span></button>
+          <button id="btn-howto" class="hud-btn" aria-label="Replay guide" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">OASIS PIPEWORKS</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="total-stars"><span id="stars-total"></span></div>
+      <button id="btn-start">Start</button>
+      <div id="level-grid" class="level-grid"></div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">Replay Guide</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-time" id="result-time"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-next">Next Level</button>
+        <button id="btn-double" class="hidden">Watch Ad ×2</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
