@@ -40,6 +40,8 @@ export const locales = {
     chapter2: 'Dusk Canyon',
     chapter3: 'Night Oasis',
     locked: 'Locked',
+    rotateHint: 'Rotate for a bigger board',
+    rotateSkip: 'Play anyway',
   },
   zh: {
     title: '绿洲水工',
@@ -77,5 +79,7 @@ export const locales = {
     chapter2: '黄昏峡谷',
     chapter3: '夜晚绿洲',
     locked: '未解锁',
+    rotateHint: '转成横屏，棋盘更大更清楚',
+    rotateSkip: '就这样玩',
   },
 };

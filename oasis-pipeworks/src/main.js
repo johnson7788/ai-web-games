@@ -412,6 +412,10 @@ function bind() {
   });
   on('btn-howto', () => { if (phase === 'playing' || phase === 'result') startTutorial(); });
   on('btn-dig', () => { if (run && phase === 'playing') { armDig = !armDig; updateHud(); } });
+  on('btn-rotate-skip', () => {
+    const rs = $('rotate-screen');
+    if (rs) rs.style.display = 'none';
+  });
   on('tut-next', tutorialNext);
   on('tut-skip', endTutorial);
 
@@ -444,6 +448,10 @@ function bind() {
       renderTutorialStep();
       buildLevelGrid();
       if (run) updateHud();
+      const rt = $('rotate-text');
+      const rb = $('btn-rotate-skip');
+      if (rt) rt.textContent = t('rotateHint');
+      if (rb) rb.textContent = t('rotateSkip');
     });
   }
 }
@@ -598,6 +606,12 @@ window.__ll = {
 bind();
 syncDocumentLang();
 ui.applyLang();
+{
+  const rt = $('rotate-text');
+  const rb = $('btn-rotate-skip');
+  if (rt) rt.textContent = t('rotateHint');
+  if (rb) rb.textContent = t('rotateSkip');
+}
 buildLevelGrid();
 $('btn-mute').classList.toggle('is-muted', muted);
 Sdk.track('load', {});

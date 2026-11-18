@@ -1,0 +1,45 @@
+TITLE
+Oasis Pipeworks — Free Pipe Puzzle Game
+
+CATEGORY
+Puzzle
+
+TAGS
+pipe puzzle, water, connect pipes, brain teaser, casual, logic, desert, oasis, family friendly, browser game
+
+SHORT DESCRIPTION
+Grab falling pipe pieces and lay a water path across the desert before the valve bursts open.
+
+LONG DESCRIPTION
+OASIS PIPEWORKS is a free pipe-connection puzzle game about bringing water to a dying desert oasis.
+
+The clock is ticking: grab pipe pieces from the sliding queue on the right, tap empty grid cells to lay them, and build an unbroken line from the intake to the oasis tap before the countdown ends and the water breaks loose. Watch your route fill with flowing water in real time — every elbow you placed pays off, every rock you ignored punishes you.
+
+12 handcrafted levels across three worlds: Dawn Desert, Dusk Canyon and Night Oasis. Rocks force you to reroute, blooming flowers reward brave detours, cross pipes open dead corners, and the fox foreman cheers on every drop you deliver.
+
+Three stars per level: clear the stage, water every flower, and finish with time to spare. One dig per run lets you fix a mistake — spend it wisely.
+
+Easy to learn in ten seconds, tricky to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+绿洲水工 — 免费拼水管益智游戏
+
+CATEGORY
+益智
+
+TAGS
+拼水管, 接水管, 益智, 休闲, 逻辑, 解谜, 沙漠, 绿洲, 全年龄, 网页游戏
+
+SHORT DESCRIPTION
+在开闸倒计时结束前，从滑落的管件队列中取管铺设，把水一路引到绿洲龙头。
+
+LONG DESCRIPTION
+《绿洲水工》是一款免费的水管连接益智游戏：给干渴的沙漠绿洲引水。
+
+倒计时开始：从右侧滑落的管件队列里抓取管子，点击网格空格铺设，赶在水闸打开前铺出一条从进水口到绿洲龙头的完整水路。开闸后，水流会实时灌满你拼出的整条管路——每一个弯头都算数，每一块岩石都在逼你绕路。
+
+12 个手工关卡横跨三大场景：晨曦沙漠、黄昏峡谷、夜晚绿洲。岩石逼你改道，花朵奖励勇敢的绕路，十字管救活死角，守水井的小狐狸为每一滴水欢呼。
+
+每关三星：通关、浇满全部花朵、留足剩余时间。每局一次铲除机会，铺错了能救一次——省着用。
+
+十秒上手，越玩越烧脑。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。
