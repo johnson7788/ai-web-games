@@ -1,0 +1,85 @@
+{
+  "game": "nightfall-veil",
+  "generatedAt": "2026-11-19T19:34:55.706Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 6.25,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘NIGHTFALL VEIL’部分字母（如‘I’‘L’）在深蓝背景上对比度偏低，弱光下可能辨识困难",
+        "‘?How to play’按钮文字为粉紫色，与整体蓝紫科技风略有冲突，风格一致性可提升",
+        "网格背景线在底部红色地平线处轻微断续，存在轻微视觉断裂"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击数字键盘输入‘7’并按DISPEL按钮，因为0+7=7且该式子高亮显示",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角‘3+4’悬浮框无对应输入区或操作提示，易被误认为待解题但未激活",
+        "顶部‘7+3’部分被截断（仅显示‘7+3’无等号/结果），疑似UI溢出",
+        "数字键盘与底部红光带间距过小，视觉上可能误判为不可触区域"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Veil Held!’标题与三颗星间距过小，可能影响视觉层级区分",
+        "底部红色横线疑似界面分割线但无明确功能，易被误认为UI元素",
+        "右上角三个图标（音量/重试/设置）尺寸过小且无文字标签，桌面端可接受，但若为响应式设计则移动端风险高"
+      ]
+    },
+    {
+      "shot": "tests/final/04-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击数字键输入9+5的结果14",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'7+1=8'提示框与主目标'9+5=14'并存，易造成目标混淆",
+        "输入框无占位符或当前输入显示，玩家无法确认已输入内容",
+        "DISPEL按钮文字为全大写且缩写，语义不明确（应为'DISPLAY'或'DISMISS'）"
+      ]
+    }
+  ]
+}

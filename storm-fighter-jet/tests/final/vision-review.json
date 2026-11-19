@@ -1,0 +1,149 @@
+{
+  "game": "storm-fighter-jet",
+  "generatedAt": "2026-11-19T19:45:09.651Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 7.5,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下区域发射子弹或移动飞船",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色威胁标记（右上）与黄色+号目标距离过近，易误判为可收集物",
+        "顶部HUD按钮文字‘COMBO’‘THREATS 1’字号略小，弱光下辨识度下降",
+        "网格线在中远景处与黄色+号部分重叠，轻微干扰目标识别"
+      ]
+    },
+    {
+      "shot": "tests/final/02-coins.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏上区域发射子弹击中红色三角威胁目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色威胁目标（右上）旁有小红感叹号图标，尺寸过小易忽略；",
+        "顶部HUD按钮文字‘COMBO’与‘THREATS 1’颜色相近（粉紫），在低对比下可能混淆；",
+        "网格线在深色背景上部分区域亮度偏低，远距离辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/03-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏上区域的红色三角形威胁目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'SHIELD'按钮右侧图标（问号、设置等）间距过密，可能误触",
+        "红色威胁目标（带感叹号）与蓝色玩家飞船重叠，视觉优先级冲突",
+        "网格线在深色背景上对比度偏低，部分区域难以分辨深度层次"
+      ]
+    },
+    {
+      "shot": "tests/final/04-shield.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Retry”按钮重新开始本关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘JET DOWN’标题使用渐变色（紫→粉），与下方黄色星标/分数风格略冲突，轻微割裂感",
+        "背景中多个+号图标亮度接近，眯眼时难以区分敌我或功能类型，影响silhouette",
+        "顶部HUD状态栏（WAVE 3等）文字较小且灰度高，弱光环境下可能辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Retry”按钮重新开始本关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中多个+号光点与得分星星视觉干扰，可能影响目标识别",
+        "‘JET DOWN’标题渐变色在深底上对比度略低，部分用户可能辨识稍慢",
+        "顶部HUD状态栏（WAVE 3等）字体偏小且灰度高，弱光下易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的 START 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家飞船（中心偏下蓝紫三角）与下方指南针图标重叠，可能干扰识别",
+        "右上角语言选择框无下拉箭头或视觉反馈，易被忽略",
+        "‘BEST 0’文字颜色为黄橙色，与背景深紫对比度偏低，弱光下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/07-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家飞船（中心蓝紫图标）与下方‘How to play’按钮间距过近，可能误触",
+        "右上角语言切换下拉框无展开指示，交互意图不明确",
+        "‘BEST 4’文字颜色偏黄，在深紫背景上对比度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该移动飞船躲避并准备开火",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家飞船轮廓较细，与背景网格线对比度不足，眯眼时易混淆",
+        "左下角黄色+号图标无说明，功能不明（可能为增益/暂停）",
+        "HUD中'COMBO'和'THREATS'标签颜色突兀（粉/黄），略破坏深空统一色调"
+      ]
+    }
+  ]
+}

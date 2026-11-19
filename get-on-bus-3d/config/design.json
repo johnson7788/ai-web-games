@@ -1,0 +1,72 @@
+{
+  "slug": "get-on-bus-3d",
+  "genre": "arcade",
+  "oneLiner": "你开一辆永远停不下来的霓虹穿梭巴士，按住油门在车流里抢 gap、松开刹车掐点避让，接客送客攒金币，擦肩而过连击上分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "accelerate",
+      "cost": "车速越快越难避让横穿车，贴脸擦过才涨连击——全速冲等于把命押在反应上",
+      "feedback": ["speedLines", "motionBlur", "engineSfx"],
+      "combinesWith": ["brake"]
+    },
+    {
+      "name": "brake",
+      "cost": "松手只能减速到怠速、永远停不下来，等 gap 太久会错过下一个接客点的连击节奏",
+      "feedback": ["brakeLight", "skidSfx", "speedDrop"],
+      "combinesWith": ["accelerate"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "开局第一辆横穿车在路口：全速抢过，还是松油门等它先走", "cost": "抢过 = 赌对方没到中线；等 = 丢一点时间" },
+    { "atSec": 12, "choice": "贴脸擦过横穿车赚连击，还是保持安全距离", "cost": "贴脸 = 连击金币翻倍但可能撞；保守 = 金币少" },
+    { "atSec": 22, "choice": "看到护盾道具：要不要为捡它临时变道贴向车流", "cost": "捡护盾能挡一次撞车；靠近车流本身就在冒险" },
+    { "atSec": 35, "choice": "氮气道具就在前方：开氮气硬冲密集路口，还是留给更难的路段", "cost": "氮气期间无法减速避让，冲错就是翻车" },
+    { "atSec": 50, "choice": "大货车慢吞吞横过路口：提前刹到怠速等它，还是绕到它车尾后抢过", "cost": "等 = 耗时；抢 = 货车更宽更容易撞" },
+    { "atSec": 75, "choice": "最后一波连击：贪最后一擦把金币乘满，还是稳一点保 3 星", "cost": "撞车归零重来 vs 少拿连击少拿金币" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "油门/刹车 + 接客送客 + 基础横穿车流" },
+    { "index": 2, "newElement": "车流更密，护盾/金币道具首次出现" },
+    { "index": 3, "newElement": "慢速大货车（更宽、挡更久）加入路口" },
+    { "index": 4, "newElement": "氮气道具 + 双货车夹击的密集路段" },
+    { "index": 5, "newElement": "全部机制叠加的高峰车流（终章）" }
+  ],
+  "upgrades": [
+    { "id": "nearMissCombo", "kind": "rule", "desc": "擦肩而过叠加连击，送客金币按连击翻倍" },
+    { "id": "shieldPickup", "kind": "rule", "desc": "捡护盾可挡一次撞车（新机制）" },
+    { "id": "turboPickup", "kind": "rule", "desc": "氮气道具短时极速冲过路口（新机制）" },
+    { "id": "starRating", "kind": "rule", "desc": "星级结算：金币 + 擦肩数决定 1-3 星（新机制）" },
+    { "id": "slowTruck", "kind": "rule", "desc": "第 3 关起慢速大货车挡道，改变避让节奏" },
+    { "id": "trafficDensity", "kind": "stat", "desc": "逐关提高车流密度与车速" },
+    { "id": "comboCap", "kind": "stat", "desc": "连击倍率封顶 ×6" },
+    { "id": "coinValue", "kind": "stat", "desc": "金币道具面额与星级门槛随关提升" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "unlock"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 2,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

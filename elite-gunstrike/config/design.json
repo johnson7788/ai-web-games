@@ -1,0 +1,91 @@
+{
+  "slug": "elite-gunstrike",
+  "genre": "action",
+  "oneLiner": "你是霓虹炮塔操作员：拖拽甩出能量弹，靠反弹与能量核心链爆，在熔毁倒计时内击倒所有敌机并保护俘虏。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "拖拽瞄准时无法开火，且炮塔暴露在敌弹弹幕里",
+      "feedback": ["drag-line", "trajectory-dots", "charge-hum"],
+      "combinesWith": ["launch"]
+    },
+    {
+      "name": "launch",
+      "cost": "每发消耗一发有限弹量，弹体受重力下坠",
+      "feedback": ["sfx", "muzzle-flash", "bolt-trail", "impact-spark"],
+      "combinesWith": ["aim", "detonate"]
+    },
+    {
+      "name": "detonate",
+      "cost": "射击能量核心引爆会波及俘虏与自身弹道，赌范围伤害",
+      "feedback": ["sfx", "blast-ring", "chain-glow"],
+      "combinesWith": ["launch"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "先打最近侦察机，还是提前瞄准远处炮塔机", "cost": "近敌先清 vs 被远程点射" },
+    { "atSec": 18, "choice": "直射重甲还是先打能量核心赌链爆", "cost": "稳定耗弹 vs 赌范围伤害" },
+    { "atSec": 35, "choice": "反弹弹绕掩体打后排，还是正面击碎玻璃", "cost": "弹速衰减 vs 直线暴露" },
+    { "atSec": 55, "choice": "用多余弹药刷连击，还是省弹冲三星", "cost": "高分数 vs 高星级" },
+    { "atSec": 80, "choice": "顶着炮塔弹幕先清远程，还是先打贴身重甲", "cost": "掉血 vs 被集火" },
+    { "atSec": 110, "choice": "绕开俘虏保险弹道，还是为三星冒险擦边", "cost": "安全 vs 高星级" },
+    { "atSec": 140, "choice": "熔毁倒计时下速杀 Boss，还是先引爆双核心清场", "cost": "时间 vs 弹药" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "侦察机：只教拖拽瞄准 + 松手发射的基础循环" },
+    { "index": 2, "newElement": "玻璃掩体：一碰即碎，弹体可穿透" },
+    { "index": 3, "newElement": "炮塔机登场：远程还击逼你加速决策" },
+    { "index": 4, "newElement": "俘虏登场：带护盾的平民机，误中即败" },
+    { "index": 5, "newElement": "换章铸造厂→反应堆 + 能量核心链爆机制" },
+    { "index": 6, "newElement": "重装机甲：三血厚甲，需多次命中" },
+    { "index": 7, "newElement": "双核心：一次引爆连锁清场的策略窗口" },
+    { "index": 8, "newElement": "砖墙：高耐久掩体，逼你反弹弹绕后" },
+    { "index": 9, "newElement": "换章反应堆→堡垒：密集炮塔火力网" },
+    { "index": 10, "newElement": "核心+俘虏同场：链爆收益与误伤风险的博弈" },
+    { "index": 11, "newElement": "三重重甲：弹量管理与反弹精度的压力测试" },
+    { "index": 12, "newElement": "Boss 关：全机制收束，四重甲双核心一俘虏" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule", "desc": "连击系统：窗口内连杀获得分数乘数（改计分规则）" },
+    { "id": "chain-core", "kind": "rule", "desc": "能量核心链爆：引爆核心对周围敌人造成范围伤害" },
+    { "id": "ricochet", "kind": "rule", "desc": "反弹弹道：弹体撞墙撞掩体会反弹，可绕后" },
+    { "id": "star-rating", "kind": "rule", "desc": "星级评级：按用弹数评 1-3 星，驱动重玩" },
+    { "id": "protect-captive", "kind": "rule", "desc": "俘虏保护：误中护盾平民机立即失败（改判定规则）" },
+    { "id": "bolt-speed", "kind": "stat", "desc": "弹速强化：出膛速度提升（数值）" },
+    { "id": "ammo-cap", "kind": "stat", "desc": "弹量扩容：每区可用弹量增加（数值）" },
+    { "id": "hull", "kind": "stat", "desc": "炮塔耐久：最大血量提升（数值）" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "能量核心被击中瞬间，连锁引爆相邻核心，整片敌机在霓虹爆环中灰飞烟灭，连击乘数叠满",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "霓虹街机风格：程序化 Canvas 渲染（三场景色板/网格/扫描线/霓虹辉光），UI 线框 CSS，封面海报用游戏战斗画面截图"
+}

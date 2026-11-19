@@ -1,0 +1,96 @@
+{
+  "slug": "kingdom-rush-guard",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹要塞的三条防线上布置激光、特斯拉、轨道炮与无人机塔，拦截从右侧涌来的故障虫群，靠连击超载与轨道炮守住基地。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "build",
+      "cost": "消耗金币并永久占据建造点；造错类型只能出售，回收不到全价",
+      "feedback": ["sfx", "glow", "placementFlash"],
+      "combinesWith": ["upgrade"]
+    },
+    {
+      "name": "upgrade",
+      "cost": "继续投入金币，等于放弃用这笔钱再铺一座新塔",
+      "feedback": ["sfx", "tierUp", "aura"],
+      "combinesWith": ["build"]
+    },
+    {
+      "name": "orbital",
+      "cost": "消耗集满的核心充能，用掉后本波次的清屏底牌消失",
+      "feedback": ["sfx", "screenFlash", "shake"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "先造便宜的激光塔铺开火力，还是攒钱直接上轨道炮塔",
+      "cost": "激光攻速快但单体；轨道炮溅射更贵"
+    },
+    {
+      "atSec": 20,
+      "choice": "第二波来袭：升级现有塔，还是在新路口补一座无人机塔",
+      "cost": "升级立竿见影；补塔覆盖面更广但更贵"
+    },
+    {
+      "atSec": 40,
+      "choice": "重甲兽人进场：用特斯拉减速拖住，还是堆轨道炮溅射硬打",
+      "cost": "特斯拉单体减速；轨道炮伤害高但射速慢"
+    },
+    {
+      "atSec": 60,
+      "choice": "连击已到超载线：现在开轨道炮清一波，还是留到最终波",
+      "cost": "现在用=本波轻松；留=最终波保底但可能被压线"
+    },
+    {
+      "atSec": 85,
+      "choice": "能量核心掉在没塔的角落：绕过去捡，还是继续盯正面输出",
+      "cost": "捡核心+金币且充能；分心可能漏怪"
+    },
+    {
+      "atSec": 110,
+      "choice": "最终波压境：卖掉侧路塔回血，还是硬扛靠剩余基地血量",
+      "cost": "卖塔回金币重建正面；血量不足则翻车"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "四类基础塔（激光/特斯拉/轨道炮/无人机）" },
+    { "index": 2, "newElement": "疾速敌人 + 部分建造点被岩石封锁" },
+    { "index": 3, "newElement": "重甲精英成群 + 核心掉落加速" }
+  ],
+  "upgrades": [
+    { "id": "laserOvercharge", "kind": "rule", "desc": "激光塔连杀后短暂超载射速" },
+    { "id": "teslaSnare", "kind": "rule", "desc": "特斯拉塔命中附加减速" },
+    { "id": "railSplash", "kind": "rule", "desc": "轨道炮塔溅射伤害" },
+    { "id": "droneRapid", "kind": "rule", "desc": "无人机塔近身急速射击" },
+    { "id": "orbitalStrike", "kind": "rule", "desc": "集满核心可发射轨道炮清屏" },
+    { "id": "coreDrop", "kind": "rule", "desc": "连击杀敌掉落能量核心" },
+    { "id": "goldUp", "kind": "stat", "desc": "击杀金币奖励提升" },
+    { "id": "rangeUp", "kind": "stat", "desc": "塔射程提升" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 55,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

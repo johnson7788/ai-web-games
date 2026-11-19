@@ -1,0 +1,71 @@
+{
+  "slug": "nightfall-veil",
+  "genre": "arcade",
+  "oneLiner": "算式符文从天而降，玩家在小键盘输入答案、按下化解，赶在符文越过底部结界前把数值匹配的全部击散——连击加分，金符爆分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "type",
+      "cost": "每按一位数字都占用思考时间，输入串最长 10 位，按错只能退格逐位改",
+      "feedback": ["sfx", "keyGlow", "inputEcho"],
+      "combinesWith": ["dispel"]
+    },
+    {
+      "name": "dispel",
+      "cost": "按下立刻清空输入并结算：答错断连击、不计分，答对才消掉匹配符文",
+      "feedback": ["sfx", "burst", "shake", "scorePop"],
+      "combinesWith": ["type"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一道符文落下：先心算这道，还是等更危险的符文逼近再一起算", "cost": "算慢的题不会消失，只会越积越多" },
+    { "atSec": 15, "choice": "金色符文出现：先解金符拿高分，还是先清最靠近结界的普通符", "cost": "贪金符 = 底部符文继续逼近结界" },
+    { "atSec": 30, "choice": "多道符文同屏：先解最靠近结界的，还是先解结果最好算的", "cost": "先解好算的 = 危险符文继续下落" },
+    { "atSec": 50, "choice": "输入串已经很长：立刻按化解，还是退格重算一遍", "cost": "按错就是一次错误输入，直接断连击" },
+    { "atSec": 75, "choice": "最后十秒：求稳只解最危险的，还是冲连击刷分", "cost": "冲分 = 更容易漏题" },
+    { "atSec": 110, "choice": "下一关更难：立刻进下一关，还是先稳住当前手速", "cost": "立刻进 = 更快更难的生成节奏" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "两位数以内的加减符文（1 题/秒）" },
+    { "index": 2, "newElement": "生成速度翻倍（2 题/秒）" },
+    { "index": 3, "newElement": "三项算式混入（a+b-c）" },
+    { "index": 4, "newElement": "下落提速（0.2×屏高/秒）" },
+    { "index": 5, "newElement": "三项算式占比升至一半" },
+    { "index": 7, "newElement": "四项算式登场（a+b+c-d）" },
+    { "index": 8, "newElement": "容错解锁：允许 1 次遗漏" },
+    { "index": 9, "newElement": "金色符文每 8 题必现" }
+  ],
+  "upgrades": [
+    { "id": "goldenRune", "kind": "rule", "desc": "第 9 关起每第 8 道符文变金色，解出额外爆分" },
+    { "id": "comboBonus", "kind": "rule", "desc": "连击加成：连续答对时每超出 1 连击额外加分" },
+    { "id": "unlockMiss", "kind": "rule", "desc": "第 8 关起允许 1 次遗漏，容错松绑" },
+    { "id": "tripleSigil", "kind": "rule", "desc": "第 3 关起出现三项算式，心算链变长" },
+    { "id": "quadSigil", "kind": "rule", "desc": "第 7 关起出现四项算式，最长的运算链" },
+    { "id": "spawnRate", "kind": "stat", "desc": "生成速度从 1 题/秒逐步提到 5 题/秒" },
+    { "id": "fallSpeed", "kind": "stat", "desc": "下落速度从 0.1 逐步提到 0.2×屏高/秒" },
+    { "id": "scoreBase", "kind": "stat", "desc": "基础得分 + 金符爆分 + 连击加成的数值线" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

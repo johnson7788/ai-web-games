@@ -1,0 +1,121 @@
+{
+  "url": "http://127.0.0.1:8131/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "3 个关卡格",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 3"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "建了 3 座塔",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().towers.length === 3"
+    },
+    {
+      "name": "有敌人或击杀",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().killCount > 0 || window.__ll.debug.state().enemies.length > 0"
+    },
+    {
+      "name": "进入结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 1"
+    },
+    {
+      "name": "L2 有岩石封锁",
+      "ok": true,
+      "detail": "eval: window.__ll.run().buildSpots().filter(function(s){return s.blocked}).length > 0"
+    },
+    {
+      "name": "L3 已进入",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 3"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.65,\"fps\":60.1,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 外部请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-combat.png",
+    "04-result.png",
+    "05-rock-level.png",
+    "06-boss-level.png",
+    "07-restart.png",
+    "08-mobile.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.65,
+    "fps": 60.1,
+    "frames": 120
+  },
+  "pass": true
+}

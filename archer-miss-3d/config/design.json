@@ -1,0 +1,58 @@
+{
+  "slug": "archer-miss-3d",
+  "genre": "action",
+  "oneLiner": "水晶守卫在霓虹竞技场里边跑边自动张弓，用连击与穿透清掉成群的虚空碎片，捡强化水晶升到三星。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "移动时无法张弓，自动射击停摆，等于把输出窗口让给逼近的敌人",
+      "feedback": ["sfx", "trail", "shadow"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "必须站定才自动瞄准，站定即暴露在敌人的弹道与包围之下",
+      "feedback": ["sfx", "arrow", "hitFlash"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "upgrade",
+      "cost": "三选一，选了穿透就放弃双重射击，build 不可回头",
+      "feedback": ["sfx", "glow", "statChange"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先向哪边拉扯拉开距离，还是站定先射一箭", "cost": "移动丢输出 / 站定被包夹" },
+    { "atSec": 10, "choice": "先打远程施法者还是先清贴脸的近战碎片", "cost": "留施法者持续吃弹 / 留近战被贴脸" },
+    { "atSec": 20, "choice": "冲过去捡急速水晶，还是保持安全距离", "cost": "冒进吃伤害 / 放弃爆发窗口" },
+    { "atSec": 30, "choice": "第一件强化：双重射击 vs 穿透 vs 加生命", "cost": "永久放弃另外两条 build" },
+    { "atSec": 45, "choice": "躲在岩石后卡敌人弹道，还是拉到开阔地风筝", "cost": "岩石也挡自己的箭 / 开阔地吃满弹幕" },
+    { "atSec": 60, "choice": "优先集火最近的，还是先削掉血厚的", "cost": "被群殴 / 被残血补刀" },
+    { "atSec": 90, "choice": "第二件强化：冰霜控场 vs 灼烧输出", "cost": "放弃另一种控场/输出风格" },
+    { "atSec": 120, "choice": "第三件强化：连锁闪电 vs 急速射击", "cost": "定死终局 build" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "move + auto-shoot（近战碎片）" },
+    { "index": 2, "newElement": "caster：远程弹道 + 预警圈" },
+    { "index": 3, "newElement": "rock：挡箭也挡弹道的掩体" },
+    { "index": 4, "newElement": "rapid power-up：急速射击爆发" }
+  ],
+  "upgrades": [
+    { "id": "double", "kind": "rule" },
+    { "id": "pierce", "kind": "rule" },
+    { "id": "ice", "kind": "rule" },
+    { "id": "fire", "kind": "rule" },
+    { "id": "lightning", "kind": "rule" },
+    { "id": "rapid", "kind": "rule" },
+    { "id": "atk", "kind": "stat" },
+    { "id": "spd", "kind": "stat" },
+    { "id": "hp", "kind": "stat" },
+    { "id": "crit", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 45, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

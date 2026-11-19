@@ -1,0 +1,85 @@
+{
+  "game": "starwar-defense",
+  "generatedAt": "2026-11-19T19:36:12.252Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.25,
+    "silhouette": 6.25,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格键或点击屏幕发射子弹",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色为纯黑圆球，无高亮/轮廓，在深蓝背景中辨识度低（silhouette问题）",
+        "右上角'Super'按钮与'RestMenu'按钮间距过近，可能误触",
+        "目标计数'TARGETS 18'用红色边框但未突出显示当前波次重点"
+      ]
+    },
+    {
+      "shot": "tests/final/02-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格键或点击屏幕发射子弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家黑色圆球与底部蓝线对比度低，眯眼时易混淆为背景元素",
+        "右上角'SUPER'按钮无明确功能提示，且紫色边框与HUD其他元素风格微异",
+        "‘Breach 0/5’目标状态文字较小，远距离辨识略吃力"
+      ]
+    },
+    {
+      "shot": "tests/final/03-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格键或点击屏幕发射子弹",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（黑色圆球）与底部蓝线几乎重合，轮廓不清晰，易误判位置",
+        "右上角'Super'按钮为圆形紫色，与HUD其他元素风格略异，且无明确功能提示",
+        "目标计数'TARGETS 43'用红色边框突出，但未说明当前波次目标总数，信息不完整"
+      ]
+    },
+    {
+      "shot": "tests/final/04-battle-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格或鼠标左键开火",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家黑球与地面线几乎无对比，眯眼时易误判为背景；",
+        "右上角‘护盾 0’与‘10’间距过近，易混淆数值归属；",
+        "底部‘按住空格 / 鼠标开火’提示文字偏小且灰度高，弱光下难辨"
+      ]
+    }
+  ]
+}

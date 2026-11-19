@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>STORM FIGHTER JET</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+    <div id="action-hint" class="hidden"></div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level" class="hud-pill"></span>
+          <span id="hud-score" class="hud-pill"></span>
+          <span id="hud-best" class="hud-pill"></span>
+          <span id="hud-combo" class="hud-pill"></span>
+          <span id="hud-threats" class="hud-pill"></span>
+          <span id="hud-shield" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">STORM FIGHTER JET</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best-line"><span id="best-label">BEST</span> <span id="best-value">0</span></div>
+      <button id="btn-start">START</button>
+      <button id="btn-howto-title" class="btn-ghost" data-tutorial-replay>How to play</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">JET DOWN</h2>
+      <div class="result-stars" id="result-stars"></div>
+      <div class="result-score" id="result-score"></div>
+      <div class="result-meta" id="result-meta"></div>
+      <div class="result-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a wider view</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

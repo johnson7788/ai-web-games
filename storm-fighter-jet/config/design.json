@@ -1,0 +1,108 @@
+{
+  "slug": "storm-fighter-jet",
+  "genre": "arcade",
+  "oneLiner": "驾驶霓虹喷气战机穿梭风暴，躲避追踪导弹与岩石，连击金色能量核心冲击最高分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "改变航向的同时战机仍在高速前进，转弯有半径，指错方向就冲进弹幕",
+      "feedback": ["sfx", "afterburner", "headingTurn"],
+      "combinesWith": ["dodge"]
+    },
+    {
+      "name": "collect",
+      "cost": "追金币会偏离安全航线，主动暴露在导弹的锁定路径上",
+      "feedback": ["sfx", "scorePop", "glow"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "dodge",
+      "cost": "急转躲弹消耗反应时间，可能撞进另一颗导弹或岩石",
+      "feedback": ["sfx", "nearMissFlash", "shake"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "第一颗追踪导弹锁定你：先追眼前金币还是先拉开距离",
+      "cost": "追金币 = 吃下导弹锁定的风险；拉开 = 放弃这波连击起手"
+    },
+    {
+      "atSec": 10,
+      "choice": "金币群和来袭导弹同向：抢连击还是放弃保命",
+      "cost": "抢连击可能被导弹堵死；放弃则倍率上不去"
+    },
+    {
+      "atSec": 20,
+      "choice": "护盾刷在弹幕深处：冒死去吃还是继续绕",
+      "cost": "去吃可能被击中提前交盾；不去则没有第二次容错"
+    },
+    {
+      "atSec": 35,
+      "choice": "直线导弹封锁对角线：从中间穿还是贴边绕",
+      "cost": "中间穿快但窗口极小；贴边绕慢且可能被追踪弹包抄"
+    },
+    {
+      "atSec": 55,
+      "choice": "岩石入场通道变窄：贴岩石擦过续连击还是求稳",
+      "cost": "擦过续连击有撞击风险；求稳会断连击丢倍率"
+    },
+    {
+      "atSec": 80,
+      "choice": "连击窗口快结束：一次急转冒险续连还是让它断掉",
+      "cost": "急转可能撞弹；不续则倍率归零重新攒"
+    },
+    {
+      "atSec": 110,
+      "choice": "倍率已到顶：继续刷分还是专心活到下一波",
+      "cost": "刷分放大被击落风险；求稳少拿大量分数"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "三型追踪导弹（慢/中/快）" },
+    { "index": 2, "newElement": "导弹频率上升、同时在场数量+1" },
+    { "index": 3, "newElement": "岩石障碍物加入" },
+    { "index": 4, "newElement": "直线导弹封锁对角线" },
+    { "index": 5, "newElement": "直线导弹连发" },
+    { "index": 6, "newElement": "全威胁密度巅峰" }
+  ],
+  "upgrades": [
+    { "id": "comboMult", "kind": "rule", "desc": "连击倍率系统：连续吃金币得分翻倍" },
+    { "id": "shieldBubble", "kind": "rule", "desc": "护盾道具：可挡下一次撞击" },
+    { "id": "rockHazard", "kind": "rule", "desc": "第 3 波起岩石障碍加入" },
+    { "id": "straightSalvo", "kind": "rule", "desc": "第 4 波起直线导弹连发" },
+    { "id": "speedUp", "kind": "stat", "desc": "航速逐波提升" },
+    { "id": "missileSpeed", "kind": "stat", "desc": "导弹速度逐波提升" },
+    { "id": "spawnRate", "kind": "stat", "desc": "生成间隔逐波缩短" },
+    { "id": "turnRate", "kind": "stat", "desc": "转向逐波更灵活" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

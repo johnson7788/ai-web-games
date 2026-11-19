@@ -1,0 +1,149 @@
+{
+  "game": "bouncy-ball-run3d",
+  "generatedAt": "2026-11-19T19:37:57.110Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 6.625,
+    "style_consistent": 8.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的 'Start' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景抽象几何图形与标题/按钮存在视觉干扰，眯眼时难以区分可交互元素与装饰",
+        "‘Best 0’ 字体偏小且颜色较淡（青色），在深背景下对比度不足，易被忽略",
+        "右上角语言选择框边框过细，与整体霓虹风格不完全统一"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央发光蓝球（玩家角色）附近区域以移动或触发交互",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标‘GOAL 30’虽可见，但‘Floor 0’与‘0’钻石计数间距过近易混淆",
+        "中央蓝球为玩家，但周围紫色结构无明确边界，眯眼时难区分可交互平台与背景",
+        "左上角HUD文字小且对比度偏低（深紫底+白字），弱光环境下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/03-depth.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央发光球体以触发 combo 或移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "COMBO x8 文字轻微遮挡发光球体上缘，可能影响识别",
+        "紫色结构与背景对比度偏低，部分边缘在暗处易混淆",
+        "左上角 'Floor 8' 与 'GOAL 30' 间距过近，视觉层级稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/04-gem.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央蓝色光球（玩家角色）进行移动或跳跃",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "COMBO x17 文字紧贴蓝色光球，可能被动态效果遮挡",
+        "右下角黄色菱形目标物与红色障碍物颜色对比不足，易混淆",
+        "顶部 HUD 中 'Floor 17' 与 'GOAL 30' 间距过小，小屏可能误读"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的'Play Again'按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景抽象几何图形干扰主体，眯眼时‘Cleared!’与星星易混淆为背景元素",
+        "‘New Best!’后接‘Gems 5’无明确分隔，可能误读为‘New Best! Gems 5’整体为一句",
+        "顶部HUD中‘Floor 17’‘GOAL 30’‘♦ 5’间距过小，小屏可能挤压"
+      ]
+    },
+    {
+      "shot": "tests/final/06-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央发光蓝球（玩家角色）附近区域以移动或触发交互",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标值 'GOAL 30' 与 'Floor 0' 高度接近，易误读为同一组信息",
+        "右上按钮无图标仅文字，小屏可能辨识度低（虽为桌面截图，但影响一致性）",
+        "紫色结构体部分重叠于蓝球下方，轻微干扰玩家轮廓识别"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中紫色几何结构模糊，可能干扰玩家对可交互元素的识别（silhouette偏低）",
+        "‘Neon Helix Drop’与‘Best 0’字体颜色/大小不一致，轻微风格断层",
+        "右上角语言选择框边框过细，低对比度下易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘开始’按钮",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景抽象几何图形与标题/按钮存在视觉干扰，眯眼时难以区分可交互元素与装饰",
+        "‘Best 0’字体过小且颜色偏淡（青色），在深背景下对比度不足，易被忽略",
+        "右上角语言切换框边框过细、无悬停反馈，不符合桌面端常见交互规范"
+      ]
+    }
+  ]
+}

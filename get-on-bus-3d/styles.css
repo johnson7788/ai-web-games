@@ -1,0 +1,321 @@
+/* GET ON BUS 3D · 霓虹街机主题 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0618;
+  --panel: rgba(12, 7, 28, 0.96);
+  --ink: #eafcff;
+  --cyan: #22e6ff;
+  --magenta: #ff3ec8;
+  --gold: #ffd166;
+  --green: #4ade80;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Apple SD Gothic Neo', 'Noto Sans Arabic', 'Segoe UI', 'Microsoft YaHei', 'Malgun Gothic', Tahoma, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16 / 9;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD（不透明顶栏） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  background: rgba(10, 6, 24, 0.92);
+  border-bottom: 2px solid rgba(34, 230, 255, 0.35);
+  pointer-events: none;
+}
+.hud-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  gap: 8px;
+}
+.hud-left, .hud-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hud-right { pointer-events: auto; }
+.hud-pill {
+  background: #1a1140;
+  color: var(--ink);
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid rgba(34, 230, 255, 0.25);
+  white-space: nowrap;
+}
+.hud-combo {
+  color: var(--gold);
+  font-size: 1.15rem;
+  font-weight: 900;
+  min-width: 40px;
+  text-align: center;
+}
+.hud-goal {
+  color: var(--green);
+  border-color: rgba(74, 222, 128, 0.5);
+  font-weight: 900;
+}
+.hud-btn {
+  background: #1a1140;
+  color: var(--ink);
+  border: 1px solid rgba(255, 62, 200, 0.4);
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.hud-btn:hover { background: #241a55; }
+
+/* ---------- 全屏层 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(10, 6, 24, 0.88);
+  text-align: center;
+}
+.screen h1 {
+  font-size: 3.4rem;
+  letter-spacing: 0.06em;
+  color: var(--cyan);
+  text-shadow: 0 0 18px rgba(34, 230, 255, 0.8), 0 0 40px rgba(255, 62, 200, 0.4);
+  margin-bottom: 0.4rem;
+}
+.screen h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+  text-shadow: 0 0 14px rgba(255, 209, 102, 0.6);
+}
+.screen .subtitle {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+  color: var(--magenta);
+}
+.hold-hint {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  margin-bottom: 1.4rem;
+}
+.screen button {
+  padding: 12px 36px;
+  font-size: 1.15rem;
+  background: linear-gradient(180deg, var(--cyan), #0fb8d6);
+  color: #04121a;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 900;
+  margin-top: 0.7rem;
+  letter-spacing: 0.04em;
+}
+.screen button:hover { filter: brightness(1.1); }
+.screen .btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(34, 230, 255, 0.5);
+  font-weight: 700;
+}
+.screen .lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #14102e;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+.screen .lang-select:focus { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* ---------- 关卡格 ---------- */
+.level-grid {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.level-cell {
+  width: 84px;
+  height: 68px;
+  border-radius: 10px;
+  background: #1a1140;
+  border: 1px solid rgba(34, 230, 255, 0.35);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: inherit;
+  gap: 2px;
+}
+.level-cell:disabled { cursor: default; opacity: 0.55; }
+.level-cell .lv-num { font-size: 1.2rem; font-weight: 900; }
+.level-cell .lv-stars { color: var(--gold); font-size: 0.8rem; }
+.level-cell.max { border-color: var(--gold); }
+
+/* ---------- 结算 ---------- */
+.win-stars { font-size: 3rem; color: var(--gold); text-shadow: 0 0 16px rgba(255, 209, 102, 0.7); margin-bottom: 0.4rem; }
+.win-coins { font-size: 1.3rem; color: var(--gold); margin-bottom: 0.4rem; }
+.win-meta { font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem; }
+.win-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- 倒计时 ---------- */
+#countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: 0 0 24px rgba(255, 209, 102, 0.9);
+  pointer-events: none;
+}
+
+/* ---------- 教程卡（固定底部居中） ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(10, 6, 24, 0.5);
+  pointer-events: auto;
+}
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 520px;
+  max-width: 92vw;
+  background: var(--panel);
+  border: 1px solid rgba(34, 230, 255, 0.5);
+  border-radius: 14px;
+  padding: 18px 22px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(34, 230, 255, 0.25);
+}
+#tut-card h3 {
+  color: var(--cyan);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+#tut-card p {
+  font-size: 1rem;
+  line-height: 1.45;
+  margin-bottom: 14px;
+  opacity: 0.92;
+}
+.tut-btns { display: flex; gap: 10px; justify-content: center; }
+.tut-btns button {
+  padding: 10px 22px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  background: linear-gradient(180deg, var(--cyan), #0fb8d6);
+  color: #04121a;
+}
+.tut-btns .btn-ghost { background: transparent; color: var(--ink); border: 1px solid rgba(34, 230, 255, 0.5); }
+
+/* ---------- 竖屏提示 ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: rgba(10, 6, 24, 0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.rotate-card {
+  background: var(--panel);
+  border: 1px solid var(--magenta);
+  border-radius: 16px;
+  padding: 30px 34px;
+  text-align: center;
+  max-width: 86vw;
+}
+.rotate-icon { font-size: 3rem; margin-bottom: 10px; }
+.rotate-card p { font-size: 1.05rem; margin-bottom: 16px; }
+.rotate-card button {
+  padding: 12px 28px;
+  font-size: 1.05rem;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--magenta), #d120a0);
+  color: #1a0110;
+  cursor: pointer;
+}
+
+/* 竖屏 + 触屏才显示（横屏桌面默认隐藏） */
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen[data-rotate] { display: flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* 移动端小屏适配 */
+@media (max-width: 640px) {
+  .screen h1 { font-size: 2.2rem; }
+  .hud-pill { font-size: 0.8rem; padding: 3px 7px; }
+  .hud-btn { width: 34px; height: 34px; }
+  #tut-card { bottom: 20px; max-width: 92vw; }
+}

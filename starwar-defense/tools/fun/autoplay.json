@@ -1,0 +1,59 @@
+{
+  "game": "starwar-defense",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 3,
+      "durationSec": 27.73,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 8.12,
+      "deaths": 0,
+      "actions": 158,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 10,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 13.48,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 5,
+      "idleSec": 0,
+      "maxEventGapSec": 1.92,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 11.72,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0.63,
+      "maxEventGapSec": 3.63,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

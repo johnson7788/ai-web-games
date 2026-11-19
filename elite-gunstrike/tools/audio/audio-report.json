@@ -1,0 +1,244 @@
+{
+  "generatedAt": "2026-11-19T19:40:49.250Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shoot": {
+      "rms": 0.1601,
+      "peak": 0.5747,
+      "nan": 0,
+      "zcRate": 2495.1,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.0903,
+      "peak": 0.2601,
+      "nan": 0,
+      "zcRate": 1860.8,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.1719,
+      "peak": 0.466,
+      "nan": 0,
+      "zcRate": 462.6,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "enemyShot": {
+      "rms": 0.04,
+      "peak": 0.1433,
+      "nan": 0,
+      "zcRate": 6344.1,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "playerHit": {
+      "rms": 0.2016,
+      "peak": 0.5584,
+      "nan": 0,
+      "zcRate": 295.5,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "explosion": {
+      "rms": 0.2134,
+      "peak": 0.5999,
+      "nan": 0,
+      "zcRate": 481,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "chainExplosion": {
+      "rms": 0.1455,
+      "peak": 0.6134,
+      "nan": 0,
+      "zcRate": 319.7,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "bounce": {
+      "rms": 0.107,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 510.2,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.1258,
+      "peak": 0.3099,
+      "nan": 0,
+      "zcRate": 919,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.1023,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 353.2,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0241,
+      "peak": 0.05,
+      "nan": 0,
+      "zcRate": 867.3,
+      "samples": 1323,
+      "durSec": 0.03,
+      "pass": true
+    },
+    "levelCleared": {
+      "rms": 0.1368,
+      "peak": 0.4949,
+      "nan": 0,
+      "zcRate": 839.5,
+      "samples": 25137,
+      "durSec": 0.57,
+      "pass": true
+    },
+    "levelStart": {
+      "rms": 0.0767,
+      "peak": 0.14,
+      "nan": 0,
+      "zcRate": 380.1,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "sceneEnter": {
+      "rms": 0.1162,
+      "peak": 0.4513,
+      "nan": 0,
+      "zcRate": 343.6,
+      "samples": 37926,
+      "durSec": 0.86,
+      "pass": true
+    },
+    "captiveHit": {
+      "rms": 0.2577,
+      "peak": 0.4795,
+      "nan": 0,
+      "zcRate": 157.5,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2113,
+      "peak": 0.5436,
+      "nan": 0,
+      "zcRate": 350.5,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "victory": {
+      "rms": 0.1565,
+      "peak": 0.6032,
+      "nan": 0,
+      "zcRate": 782.7,
+      "samples": 43218,
+      "durSec": 0.98,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1078,
+      "peak": 0.2421,
+      "nan": 0,
+      "zcRate": 910.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "stars": {
+      "rms": 0.1369,
+      "peak": 0.4415,
+      "nan": 0,
+      "zcRate": 881.6,
+      "samples": 16758,
+      "durSec": 0.38,
+      "pass": true
+    }
+  },
+  "loops": {
+    "foundry": {
+      "rms": 0.1,
+      "peak": 0.4219,
+      "nan": 0,
+      "zcRate": 294.6,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "reactor": {
+      "rms": 0.1,
+      "peak": 0.4894,
+      "nan": 0,
+      "zcRate": 1612.8,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "citadel": {
+      "rms": 0.1,
+      "peak": 0.4288,
+      "nan": 0,
+      "zcRate": 1671,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "kill.comboUpPitchUp": {
+      "comboLow": 0,
+      "comboHigh": 12,
+      "zcRateLow": 459.4,
+      "zcRateHigh": 668.8,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 23,
+    "passed": 23,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="ELITE GUNSTRIKE — a neon arcade rail-turret slingshot: drag to launch energy bolts, bounce shots off walls, chain-explode cores, and protect captives before the reactor melts down.">
+  <meta name="theme-color" content="#0a1226">
+  <title>ELITE GUNSTRIKE · Neon Arcade Sniper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <div id="rotate-screen" data-rotate aria-hidden="true">
+      <div class="rotate-inner">
+        <span class="rotate-icon">↻</span>
+        <span class="rotate-text" data-i18n="set.rotate">Rotate for the best view</span>
+        <button id="btn-rotate-skip" type="button" onclick="document.getElementById('rotate-screen').style.display='none'">✕</button>
+      </div>
+    </div>
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <span data-i18n="set.loading">Loading…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

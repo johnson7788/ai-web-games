@@ -1,0 +1,374 @@
+{
+  "game": "gun-god-arena",
+  "generatedAt": "2026-11-19T19:37:10.040Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds=16",
+      "ok": true,
+      "loopSeconds": 16,
+      "bpm": 120,
+      "bars": 8
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 16.5
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.022953020481480166
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.024907878869034797
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.02168840390662486
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.13439878821372986
+    },
+    {
+      "name": "sfx-shot-rms>0.01",
+      "ok": true,
+      "rms": 0.01931653959371084
+    },
+    {
+      "name": "sfx-shot-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.04319727891156463
+    },
+    {
+      "name": "sfx-shot-peak<=0.98",
+      "ok": true,
+      "peak": 0.08671998977661133
+    },
+    {
+      "name": "sfx-reflect-rms>0.01",
+      "ok": true,
+      "rms": 0.024235114627678717
+    },
+    {
+      "name": "sfx-reflect-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.027732426303854876
+    },
+    {
+      "name": "sfx-reflect-peak<=0.98",
+      "ok": true,
+      "peak": 0.06361500918865204
+    },
+    {
+      "name": "sfx-kill-rms>0.01",
+      "ok": true,
+      "rms": 0.027734871849758046
+    },
+    {
+      "name": "sfx-kill-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.25272108843537416
+    },
+    {
+      "name": "sfx-kill-peak<=0.98",
+      "ok": true,
+      "peak": 0.19860385358333588
+    },
+    {
+      "name": "sfx-crate-rms>0.01",
+      "ok": true,
+      "rms": 0.018806391435460413
+    },
+    {
+      "name": "sfx-crate-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.18582766439909298
+    },
+    {
+      "name": "sfx-crate-peak<=0.98",
+      "ok": true,
+      "peak": 0.10079331696033478
+    },
+    {
+      "name": "sfx-rock-rms>0.01",
+      "ok": true,
+      "rms": 0.023239972116929453
+    },
+    {
+      "name": "sfx-rock-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.22941043083900226
+    },
+    {
+      "name": "sfx-rock-peak<=0.98",
+      "ok": true,
+      "peak": 0.11115333437919617
+    },
+    {
+      "name": "sfx-pickup-rms>0.01",
+      "ok": true,
+      "rms": 0.01901764189138474
+    },
+    {
+      "name": "sfx-pickup-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.10297052154195012
+    },
+    {
+      "name": "sfx-pickup-peak<=0.98",
+      "ok": true,
+      "peak": 0.08431459963321686
+    },
+    {
+      "name": "sfx-combo-rms>0.01",
+      "ok": true,
+      "rms": 0.022143988876615135
+    },
+    {
+      "name": "sfx-combo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.1663265306122449
+    },
+    {
+      "name": "sfx-combo-peak<=0.98",
+      "ok": true,
+      "peak": 0.06433697044849396
+    },
+    {
+      "name": "sfx-boom-rms>0.01",
+      "ok": true,
+      "rms": 0.03613560362018931
+    },
+    {
+      "name": "sfx-boom-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.4112471655328798
+    },
+    {
+      "name": "sfx-boom-peak<=0.98",
+      "ok": true,
+      "peak": 0.25223779678344727
+    },
+    {
+      "name": "sfx-noAmmo-rms>0.01",
+      "ok": true,
+      "rms": 0.019572156546347644
+    },
+    {
+      "name": "sfx-noAmmo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.02217687074829932
+    },
+    {
+      "name": "sfx-noAmmo-peak<=0.98",
+      "ok": true,
+      "peak": 0.0494837760925293
+    },
+    {
+      "name": "sfx-levelclear-rms>0.01",
+      "ok": true,
+      "rms": 0.019072448502280896
+    },
+    {
+      "name": "sfx-levelclear-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.266281179138322
+    },
+    {
+      "name": "sfx-levelclear-peak<=0.98",
+      "ok": true,
+      "peak": 0.08885519206523895
+    },
+    {
+      "name": "sfx-vipfail-rms>0.01",
+      "ok": true,
+      "rms": 0.023132171003809994
+    },
+    {
+      "name": "sfx-vipfail-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.35426303854875285
+    },
+    {
+      "name": "sfx-vipfail-peak<=0.98",
+      "ok": true,
+      "peak": 0.0778905525803566
+    },
+    {
+      "name": "sfx-fail-rms>0.01",
+      "ok": true,
+      "rms": 0.024552904409566558
+    },
+    {
+      "name": "sfx-fail-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.44886621315192743
+    },
+    {
+      "name": "sfx-fail-peak<=0.98",
+      "ok": true,
+      "peak": 0.17690937221050262
+    },
+    {
+      "name": "sfx-win-rms>0.01",
+      "ok": true,
+      "rms": 0.017735916729085987
+    },
+    {
+      "name": "sfx-win-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.31517006802721087
+    },
+    {
+      "name": "sfx-win-peak<=0.98",
+      "ok": true,
+      "peak": 0.08541788905858994
+    },
+    {
+      "name": "sfx-crush-rms>0.01",
+      "ok": true,
+      "rms": 0.02551753242525282
+    },
+    {
+      "name": "sfx-crush-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.14408163265306123
+    },
+    {
+      "name": "sfx-crush-peak<=0.98",
+      "ok": true,
+      "peak": 0.12939491868019104
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 16,
+      "bpm": 120,
+      "bars": 8,
+      "duration": 16.5,
+      "rms": 0.022953020481480166,
+      "peak": 0.13439878821372986,
+      "headRms": 0.024907878869034797,
+      "spliceRms": 0.02168840390662486
+    },
+    {
+      "kind": "sfx",
+      "name": "shot",
+      "event": "shot",
+      "rms": 0.01931653959371084,
+      "peak": 0.08671998977661133,
+      "activeDuration": 0.04319727891156463
+    },
+    {
+      "kind": "sfx",
+      "name": "reflect",
+      "event": "reflect",
+      "rms": 0.024235114627678717,
+      "peak": 0.06361500918865204,
+      "activeDuration": 0.027732426303854876
+    },
+    {
+      "kind": "sfx",
+      "name": "kill",
+      "event": "kill",
+      "rms": 0.027734871849758046,
+      "peak": 0.19860385358333588,
+      "activeDuration": 0.25272108843537416
+    },
+    {
+      "kind": "sfx",
+      "name": "crate",
+      "event": "crate",
+      "rms": 0.018806391435460413,
+      "peak": 0.10079331696033478,
+      "activeDuration": 0.18582766439909298
+    },
+    {
+      "kind": "sfx",
+      "name": "rock",
+      "event": "rock",
+      "rms": 0.023239972116929453,
+      "peak": 0.11115333437919617,
+      "activeDuration": 0.22941043083900226
+    },
+    {
+      "kind": "sfx",
+      "name": "pickup",
+      "event": "pickup",
+      "rms": 0.01901764189138474,
+      "peak": 0.08431459963321686,
+      "activeDuration": 0.10297052154195012
+    },
+    {
+      "kind": "sfx",
+      "name": "combo",
+      "event": "combo",
+      "rms": 0.022143988876615135,
+      "peak": 0.06433697044849396,
+      "activeDuration": 0.1663265306122449
+    },
+    {
+      "kind": "sfx",
+      "name": "boom",
+      "event": "boom",
+      "rms": 0.03613560362018931,
+      "peak": 0.25223779678344727,
+      "activeDuration": 0.4112471655328798
+    },
+    {
+      "kind": "sfx",
+      "name": "noAmmo",
+      "event": "noAmmo",
+      "rms": 0.019572156546347644,
+      "peak": 0.0494837760925293,
+      "activeDuration": 0.02217687074829932
+    },
+    {
+      "kind": "sfx",
+      "name": "levelclear",
+      "event": "levelclear",
+      "rms": 0.019072448502280896,
+      "peak": 0.08885519206523895,
+      "activeDuration": 0.266281179138322
+    },
+    {
+      "kind": "sfx",
+      "name": "vipfail",
+      "event": "vipfail",
+      "rms": 0.023132171003809994,
+      "peak": 0.0778905525803566,
+      "activeDuration": 0.35426303854875285
+    },
+    {
+      "kind": "sfx",
+      "name": "fail",
+      "event": "fail",
+      "rms": 0.024552904409566558,
+      "peak": 0.17690937221050262,
+      "activeDuration": 0.44886621315192743
+    },
+    {
+      "kind": "sfx",
+      "name": "win",
+      "event": "win",
+      "rms": 0.017735916729085987,
+      "peak": 0.08541788905858994,
+      "activeDuration": 0.31517006802721087
+    },
+    {
+      "kind": "sfx",
+      "name": "crush",
+      "event": "crush",
+      "rms": 0.02551753242525282,
+      "peak": 0.12939491868019104,
+      "activeDuration": 0.14408163265306123
+    }
+  ]
+}

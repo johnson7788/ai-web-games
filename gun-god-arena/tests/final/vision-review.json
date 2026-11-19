@@ -1,0 +1,149 @@
+{
+  "game": "gun-god-arena",
+  "generatedAt": "2026-11-19T19:37:05.772Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 8.125,
+    "style_consistent": 9.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的白色箭头（玩家飞船）发射子弹向上击中三个琥珀色全息无人机",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部目标提示文字‘Shatter every amber holo-drone’无背景衬底，在深蓝网格背景下对比度略低，弱光下可能难辨",
+        "左下角VIP目标环为绿色，与其余琥珀色目标视觉区分过强，易误判为非目标或特殊机制",
+        "玩家飞船（底部白箭头）与子弹轨迹（虚线）亮度接近，眯眼时可能混淆主体与弹道"
+      ]
+    },
+    {
+      "shot": "tests/final/02-battle2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部白色箭头状玩家图标发射子弹",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标提示文字‘Shatter every amber holo-drone’位于屏幕中央偏上，与垂直虚线路径重叠，可能干扰瞄准",
+        "左上角状态栏（Level 1, Targets 2等）字体较小，远距离辨识度略低",
+        "蓝色问号方块（可交互物）与下方玩家图标间距过近，易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/03-battle3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下白色箭头状玩家角色发射子弹",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标提示文字 'Shatter every amber holo-drone' 位于屏幕顶部中央，与上方 HUD 按钮间距过小，可能在窄屏设备上被遮挡",
+        "左下角 VIP 目标环为绿色，与其他 amber（琥珀色）目标颜色不一致，易造成混淆",
+        "中间紫色小点（疑似目标或弹道终点）无明确标识，视觉层级弱，需依赖上下文推断"
+      ]
+    },
+    {
+      "shot": "tests/final/04-battle4.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部白色箭头（玩家飞船）发射子弹向上击中琥珀色全息无人机",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标提示文字 'Shatter every amber holo-drone' 位于屏幕中央偏上，与中间紫色数字3轻微重叠（视觉干扰）",
+        "四个琥珀色无人机大小一致、无朝向/状态差异，难以区分优先级或行为模式",
+        "玩家飞船为白色发光箭头，但未明确显示射击方向指示线（仅虚线辅助，非主动引导）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-m-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央下方的白色锥形玩家图标发射子弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字 'Shatter every amber holo-drone' 与中间琥珀色目标重叠，可能干扰识别",
+        "左下角 VIP 目标绿色环较细，与背景网格对比度偏低，远距离易混淆",
+        "顶部 HUD 按钮（如 ?、音量、重试）无明确触控反馈提示，移动端需确认尺寸"
+      ]
+    },
+    {
+      "shot": "tests/final/06-m-battle2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部白色锥形玩家图标发射子弹",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字‘Shatter every amber holo-drone’居中悬浮，无明确指向性，易误判为装饰文本",
+        "三个琥珀色全息无人机外形完全一致，无朝向/状态差异，难以区分是否已被击中",
+        "紫色数字‘3’（可能为弹药计数）紧贴子弹轨迹，与子弹视觉冲突，易误读为敌人标识"
+      ]
+    },
+    {
+      "shot": "tests/final/07-zh-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部白色箭头状玩家角色发射弹药击中上方琥珀色目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部目标提示文字‘击碎所有琥珀色全息靶’为黑底黄字，与深蓝背景对比度偏低，弱光环境下可能辨识困难",
+        "左下角VIP标识绿色圆环与目标样式高度相似，易造成视觉混淆",
+        "中间虚线轨迹未标注方向或速度，新手可能误判弹道路径"
+      ]
+    },
+    {
+      "shot": "tests/final/08-battle5.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央带问号的蓝色方块目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央问号目标与下方玩家箭头间虚线过细，弱化引导性",
+        "右下VIP绿色圆环与背景网格对比度偏低，易被忽略",
+        "顶部‘击碎所有琥珀色全息靶’提示框无明确指向性，未关联具体靶子"
+      ]
+    }
+  ]
+}

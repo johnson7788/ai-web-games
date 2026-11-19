@@ -1,0 +1,101 @@
+{
+  "game": "get-on-bus-3d",
+  "generatedAt": "2026-11-19T19:35:37.783Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 6.6,
+    "style_consistent": 8.6
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Start”按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’按钮文字被下方半透明横条轻微遮挡，影响可读性",
+        "底部5个关卡按钮中仅第1个解锁，其余4个锁图标颜色过暗（接近背景），辨识度低",
+        "标题‘GET ON BUS 3D’与副标题间距过小，部分字母在深色背景下对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色‘PICK UP’按钮拾取物品",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧紫色方块目标物无明确交互提示，仅靠‘Next: pick up’文字推断，易误判为装饰",
+        "‘READY’文字发光过强，轻微遮挡上方小车轮廓，影响 silhouette 分辨",
+        "左上角‘0/2’图标与‘Level 1’间距过近，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/03-driving.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色‘PICK UP’按钮拾取物品",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧方块状物体（如红色矩形）无明确交互提示，易误判为障碍物而非可拾取物",
+        "‘Next: pick up’文字颜色偏淡（青绿），在深紫背景下对比度不足，影响快速识别",
+        "中央道路虚线与‘PICK UP’按钮垂直对齐但间距过小，可能造成视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景道路虚线与HUD文字轻微视觉干扰，可能影响快速扫读",
+        "三颗星评分中第一颗星为实心、后两颗为空心，但未标注含义，易误解为1/3星",
+        "‘Shift complete!’文字无描边，在深色背景下对比度略低（尤其边缘发虚）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部绿色‘NEXT · PICK UP’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘GO!’文字与上方小车图标轻微重叠，可能影响识别",
+        "左侧紫色方块UI元素（疑似道具栏）无明确功能说明，易混淆",
+        "‘Next: pick up’提示文字颜色为亮绿，在深紫背景上对比度略低，弱光下可读性下降"
+      ]
+    }
+  ]
+}

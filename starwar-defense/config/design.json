@@ -1,0 +1,40 @@
+{
+  "slug": "starwar-defense",
+  "genre": "arcade",
+  "oneLiner": "玩家指挥星港三道炮台，按住主炮连射击落俯冲的外星战机，攒满能量放清屏大招守住基地。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "fire", "cost": "主炮有射速上限，连续开火会进入短暂冷却", "feedback": ["枪口闪光", "sfx", "命中火花", "击落爆炸"], "combinesWith": ["blast"] },
+    { "name": "blast", "cost": "消耗整管能量（击杀积累）", "feedback": ["全屏光束", "sfx", "震屏", "得分弹出"], "combinesWith": ["fire"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "按住主炮连射，还是点射控温", "cost": "连射冷却 / 点射漏敌" },
+    { "atSec": 12, "choice": "能量满立刻清屏，还是留给 Boss", "cost": "早放浪费 / 晚放被包围" },
+    { "atSec": 25, "choice": "先打最接近基座的敌人，还是先拆高血量坦克", "cost": "漏穿或火力分散" },
+    { "atSec": 45, "choice": "追道具（速射/冰冻/护盾），还是保持位置持续输出", "cost": "漏接道具 / 漏敌" },
+    { "atSec": 70, "choice": "副炮解锁后把主炮火力压在哪一路", "cost": "另一路失守" },
+    { "atSec": 120, "choice": "Boss 战先磨血还是攒能量一波", "cost": "时间 / 血量" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "主炮连射" },
+    { "index": 2, "newElement": "自动副炮上线" },
+    { "index": 3, "newElement": "第二副炮 + 护盾道具" },
+    { "index": 4, "newElement": "冰冻 / 速射道具" },
+    { "index": 5, "newElement": "Boss 波" }
+  ],
+  "upgrades": [
+    { "id": "rapid", "kind": "rule" },
+    { "id": "freeze", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "turret2", "kind": "rule" },
+    { "id": "turret3", "kind": "rule" },
+    { "id": "blast", "kind": "rule" },
+    { "id": "combo", "kind": "rule" },
+    { "id": "dmg", "kind": "stat" },
+    { "id": "firerate", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 3, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

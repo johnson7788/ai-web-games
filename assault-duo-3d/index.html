@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ASSAULT DUO 3D</title>
+  <link rel="stylesheet" href="styles.css?v=ad1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">ASSAULT DUO 3D</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="title-hints" id="title-hints"></div>
+      <button id="btn-start">START</button>
+      <button id="btn-howto-title" class="btn-ghost" data-tutorial-replay>HOW TO PLAY</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">PAUSED</h2>
+      <button id="btn-resume">RESUME</button>
+      <button id="btn-restart2" class="btn-ghost">RESTART</button>
+      <button id="btn-howto2" class="btn-ghost" data-tutorial-replay>HOW TO PLAY</button>
+      <button id="btn-home2" class="btn-ghost">MENU</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">AREA CLEARED</h2>
+      <div class="win-stars" id="result-stars">★★★</div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">RETRY</button>
+        <button id="btn-next">NEXT LEVEL</button>
+        <button id="btn-home3" class="btn-ghost">MENU</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for the best view</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-bar">
+        <div class="hud-left">
+          <span id="hud-level" class="hud-pill">L1</span>
+          <span id="hud-targets" class="hud-pill">TARGETS 0</span>
+          <span id="hud-wave" class="hud-pill">W1</span>
+        </div>
+        <div class="hud-center">
+          <div class="hp-wrap">
+            <span id="hp-text">HP</span>
+            <div class="bar"><div id="hp-fill"></div></div>
+          </div>
+          <div class="duo-wrap">
+            <span id="duo-text">DUO</span>
+            <div class="bar duo"><div id="duo-fill"></div></div>
+          </div>
+        </div>
+        <div class="hud-right">
+          <span id="hud-score" class="hud-pill">0</span>
+          <span id="hud-combo" class="hud-pill hidden">COMBO x1</span>
+          <span id="hud-weapon" class="hud-pill">PULSE PISTOL</span>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">♪</button>
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="touch-ctl" class="touch-only">
+      <div id="joy" class="joy"><div id="joy-knob" class="joy-knob"></div></div>
+      <div class="touch-btns">
+        <button id="ctl-fire" class="ctl-btn ctl-fire">FIRE</button>
+        <button id="ctl-jump" class="ctl-btn">JUMP</button>
+        <button id="ctl-switch" class="ctl-btn">SWITCH</button>
+        <button id="ctl-blast" class="ctl-btn ctl-blast">BLAST</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=ad1"></script>
+</body>
+</html>

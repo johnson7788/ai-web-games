@@ -1,0 +1,41 @@
+{
+  "slug": "bouncy-ball-run3d",
+  "genre": "arcade",
+  "oneLiner": "玩家左右旋转霓虹螺旋塔，让弹球穿过缺口一路下坠，躲红块、吃宝石，冲击第 30 层通关。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "rotate", "cost": "转动方向的同时，缺口也在移动，可能错过刚对准的落点", "feedback": ["tower spin", "sfx"], "combinesWith": ["drop"] },
+    { "name": "drop", "cost": "下落时无法再微调上方缺口，必须预判下一层", "feedback": ["combo streak", "pass flash"], "combinesWith": ["rotate"] },
+    { "name": "bounce", "cost": "撞到方块会打断连击，且同一块上停留 3 次即判死", "feedback": ["bounce sfx", "ring pulse"], "combinesWith": ["rotate"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先转哪个方向对准首个缺口", "cost": "转错方向可能撞上相邻红块" },
+    { "atSec": 9, "choice": "为了吃宝石绕远，还是直奔缺口保连击", "cost": "贪宝石可能错过落点" },
+    { "atSec": 16, "choice": "连续多个缺口时是否保持加速下落", "cost": "加速更快但更难对准红块" },
+    { "atSec": 25, "choice": "撞上岩石要不要再踩一次让它碎裂", "cost": "再踩一次打断连击并消耗时间" },
+    { "atSec": 38, "choice": "面对密集红块层，是稳扎稳打还是拼速度", "cost": "求稳降速，求快易死" },
+    { "atSec": 55, "choice": "临近第 30 层，要不要赌一条最短路径", "cost": "赌错前功尽弃" },
+    { "atSec": 78, "choice": "是否用一次容错去换更高连击倍率", "cost": "容错用掉后更容易死" },
+    { "atSec": 110, "choice": "冲高分纪录还是稳妥通关", "cost": "冲高分风险更高" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "rotate + gap：学会旋转对准缺口" },
+    { "index": 2, "newElement": "danger：红色方块一击致死" },
+    { "index": 3, "newElement": "rock：岩石方块踩一次碎裂成缺口" },
+    { "index": 4, "newElement": "gem + combo：宝石奖励与连击倍率" }
+  ],
+  "upgrades": [
+    { "id": "slow-fall", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "magnet-gem", "kind": "rule" },
+    { "id": "extra-bounce", "kind": "rule" },
+    { "id": "speed-up", "kind": "stat" },
+    { "id": "bigger-ball", "kind": "stat" },
+    { "id": "score-x2", "kind": "stat" },
+    { "id": "gem-value", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

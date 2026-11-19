@@ -1,0 +1,45 @@
+{
+  "slug": "gun-god-arena",
+  "genre": "arcade",
+  "oneLiner": "玩家拖拽炮台发射会反弹的子弹，击碎霓虹竞技场里的全息靶，用最少弹药通关拿三星。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "aim", "cost": "瞄准耗时，且期间炮台朝向暴露下一发意图", "feedback": ["炮管旋转", "瞄准线", "准星高亮"], "combinesWith": ["shoot"] },
+    { "name": "shoot", "cost": "消耗有限弹药，落空即浪费一星评价", "feedback": ["枪口火花", "子弹拖尾", "命中爆炸"], "combinesWith": ["aim"] }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "直接打最近的全息靶，还是先撞墙弹射绕后", "cost": "弹射角度不对会落空" },
+    { "atSec": 12, "choice": "先清靶，还是先打道具箱拿补给", "cost": "打箱会花掉一颗子弹" },
+    { "atSec": 20, "choice": "省子弹冲三星，还是稳扎稳打保一星", "cost": "贪三星容易空枪失败" },
+    { "atSec": 30, "choice": "打落岩石碾压靶子，还是直接射击", "cost": "打岩石额外费一颗子弹" },
+    { "atSec": 45, "choice": "贴着 VIP 弹射打靶，还是拉开安全角度", "cost": "碰到 VIP 立即失败" },
+    { "atSec": 60, "choice": "捡炸弹道具清场，还是留着子弹打连击", "cost": "炸弹随机炸，可能浪费" },
+    { "atSec": 80, "choice": "用三连发铺开弹幕，还是单发精准", "cost": "三连发同耗一颗子弹但散布大" },
+    { "atSec": 100, "choice": "打高价值靶冲高分，还是保命清完", "cost": "贪分可能错过关键目标" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 50, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基础瞄准射击 + 单靶" },
+    { "index": 2, "newElement": "多靶 + 道具箱(补给)" },
+    { "index": 3, "newElement": "VIP 中立目标(误伤即败) + 三连发" },
+    { "index": 4, "newElement": "三靶连击节奏" },
+    { "index": 5, "newElement": "坠落岩石(碾压靶)" },
+    { "index": 6, "newElement": "高低双排靶 + VIP 居中" },
+    { "index": 7, "newElement": "双道具箱(加分/炸弹)" },
+    { "index": 8, "newElement": "四靶密集 + 岩石 + VIP" },
+    { "index": 9, "newElement": "终局四靶 + 双 VIP + 双箱" }
+  ],
+  "upgrades": [
+    { "id": "ricochet", "kind": "rule" },
+    { "id": "triple", "kind": "rule" },
+    { "id": "bomb", "kind": "rule" },
+    { "id": "pierce", "kind": "rule" },
+    { "id": "ammoUp", "kind": "stat" },
+    { "id": "scoreUp", "kind": "stat" },
+    { "id": "speedUp", "kind": "stat" },
+    { "id": "magnet", "kind": "rule" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

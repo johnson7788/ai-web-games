@@ -1,0 +1,310 @@
+{
+  "game": "hero-vs-aliens",
+  "generatedAt": "2026-11-19T19:42:09.518Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds≈15",
+      "ok": true,
+      "loopSeconds": 15,
+      "bpm": 128,
+      "bars": 8
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 15.5
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.021739251256983644
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.021974929889412066
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.01924393177002923
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.12619292736053467
+    },
+    {
+      "name": "sfx-launch-rms>0.01",
+      "ok": true,
+      "rms": 0.015650867914649334
+    },
+    {
+      "name": "sfx-launch-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.2845578231292517
+    },
+    {
+      "name": "sfx-launch-peak<=0.98",
+      "ok": true,
+      "peak": 0.10069826990365982
+    },
+    {
+      "name": "sfx-perfect-rms>0.01",
+      "ok": true,
+      "rms": 0.021425060483673524
+    },
+    {
+      "name": "sfx-perfect-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.19551020408163267
+    },
+    {
+      "name": "sfx-perfect-peak<=0.98",
+      "ok": true,
+      "peak": 0.0946909561753273
+    },
+    {
+      "name": "sfx-bounce-rms>0.01",
+      "ok": true,
+      "rms": 0.025377228687083298
+    },
+    {
+      "name": "sfx-bounce-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.08782312925170067
+    },
+    {
+      "name": "sfx-bounce-peak<=0.98",
+      "ok": true,
+      "peak": 0.11906949430704117
+    },
+    {
+      "name": "sfx-smash-rms>0.01",
+      "ok": true,
+      "rms": 0.03002517692348098
+    },
+    {
+      "name": "sfx-smash-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.1999546485260771
+    },
+    {
+      "name": "sfx-smash-peak<=0.98",
+      "ok": true,
+      "peak": 0.24216024577617645
+    },
+    {
+      "name": "sfx-combo-rms>0.01",
+      "ok": true,
+      "rms": 0.025505520565521238
+    },
+    {
+      "name": "sfx-combo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.0963718820861678
+    },
+    {
+      "name": "sfx-combo-peak<=0.98",
+      "ok": true,
+      "peak": 0.07047146558761597
+    },
+    {
+      "name": "sfx-collect-rms>0.01",
+      "ok": true,
+      "rms": 0.027614048213808657
+    },
+    {
+      "name": "sfx-collect-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.05875283446712018
+    },
+    {
+      "name": "sfx-collect-peak<=0.98",
+      "ok": true,
+      "peak": 0.10893642157316208
+    },
+    {
+      "name": "sfx-spring-rms>0.01",
+      "ok": true,
+      "rms": 0.03120981451984997
+    },
+    {
+      "name": "sfx-spring-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.2031065759637188
+    },
+    {
+      "name": "sfx-spring-peak<=0.98",
+      "ok": true,
+      "peak": 0.15586338937282562
+    },
+    {
+      "name": "sfx-train-rms>0.01",
+      "ok": true,
+      "rms": 0.018534570924165536
+    },
+    {
+      "name": "sfx-train-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.14605442176870748
+    },
+    {
+      "name": "sfx-train-peak<=0.98",
+      "ok": true,
+      "peak": 0.11449573934078217
+    },
+    {
+      "name": "sfx-levelClear-rms>0.01",
+      "ok": true,
+      "rms": 0.02862970686272329
+    },
+    {
+      "name": "sfx-levelClear-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.32476190476190475
+    },
+    {
+      "name": "sfx-levelClear-peak<=0.98",
+      "ok": true,
+      "peak": 0.07789629697799683
+    },
+    {
+      "name": "sfx-win-rms>0.01",
+      "ok": true,
+      "rms": 0.020290344490177355
+    },
+    {
+      "name": "sfx-win-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "name": "sfx-win-peak<=0.98",
+      "ok": true,
+      "peak": 0.09354979544878006
+    },
+    {
+      "name": "sfx-lose-rms>0.01",
+      "ok": true,
+      "rms": 0.026192276580420993
+    },
+    {
+      "name": "sfx-lose-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.25011337868480726
+    },
+    {
+      "name": "sfx-lose-peak<=0.98",
+      "ok": true,
+      "peak": 0.12555216252803802
+    },
+    {
+      "name": "countdown-gated-above5",
+      "ok": true,
+      "rms": 0
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 15,
+      "bpm": 128,
+      "bars": 8,
+      "duration": 15.5,
+      "rms": 0.021739251256983644,
+      "peak": 0.12619292736053467,
+      "headRms": 0.021974929889412066,
+      "spliceRms": 0.01924393177002923
+    },
+    {
+      "kind": "sfx",
+      "name": "launch",
+      "event": "launch",
+      "rms": 0.015650867914649334,
+      "peak": 0.10069826990365982,
+      "activeDuration": 0.2845578231292517
+    },
+    {
+      "kind": "sfx",
+      "name": "perfect",
+      "event": "perfect",
+      "rms": 0.021425060483673524,
+      "peak": 0.0946909561753273,
+      "activeDuration": 0.19551020408163267
+    },
+    {
+      "kind": "sfx",
+      "name": "bounce",
+      "event": "bounce",
+      "rms": 0.025377228687083298,
+      "peak": 0.11906949430704117,
+      "activeDuration": 0.08782312925170067
+    },
+    {
+      "kind": "sfx",
+      "name": "smash",
+      "event": "smash",
+      "rms": 0.03002517692348098,
+      "peak": 0.24216024577617645,
+      "activeDuration": 0.1999546485260771
+    },
+    {
+      "kind": "sfx",
+      "name": "combo",
+      "event": "combo",
+      "rms": 0.025505520565521238,
+      "peak": 0.07047146558761597,
+      "activeDuration": 0.0963718820861678
+    },
+    {
+      "kind": "sfx",
+      "name": "collect",
+      "event": "collect",
+      "rms": 0.027614048213808657,
+      "peak": 0.10893642157316208,
+      "activeDuration": 0.05875283446712018
+    },
+    {
+      "kind": "sfx",
+      "name": "spring",
+      "event": "spring",
+      "rms": 0.03120981451984997,
+      "peak": 0.15586338937282562,
+      "activeDuration": 0.2031065759637188
+    },
+    {
+      "kind": "sfx",
+      "name": "train",
+      "event": "train",
+      "rms": 0.018534570924165536,
+      "peak": 0.11449573934078217,
+      "activeDuration": 0.14605442176870748
+    },
+    {
+      "kind": "sfx",
+      "name": "levelClear",
+      "event": "levelClear",
+      "rms": 0.02862970686272329,
+      "peak": 0.07789629697799683,
+      "activeDuration": 0.32476190476190475
+    },
+    {
+      "kind": "sfx",
+      "name": "win",
+      "event": "win",
+      "rms": 0.020290344490177355,
+      "peak": 0.09354979544878006,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "kind": "sfx",
+      "name": "lose",
+      "event": "lose",
+      "rms": 0.026192276580420993,
+      "peak": 0.12555216252803802,
+      "activeDuration": 0.25011337868480726
+    }
+  ]
+}

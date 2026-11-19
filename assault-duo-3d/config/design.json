@@ -1,0 +1,43 @@
+{
+  "slug": "assault-duo-3d",
+  "genre": "action",
+  "oneLiner": "玩家与 AI 搭档在霓虹城顶双人突击，移动走位、自动瞄准开火、连击蓄能、清空成波无人机",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "move", "cost": "走位会暴露在敌方弹幕里，跳起时无法稳定开火", "feedback": ["trail", "sfx"], "combinesWith": ["shoot"] },
+    { "name": "jump", "cost": "离地时二段跳次数受限，落地有短暂硬直", "feedback": ["sfx", "dust"], "combinesWith": ["move"] },
+    { "name": "shoot", "cost": "开火有换弹/冷却窗口，站桩时会被近战摸到", "feedback": ["muzzle", "hitflash", "sfx"], "combinesWith": ["move"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先清近身小兵还是先打远程枪手", "cost": "清近身时被远程白嫖" },
+    { "atSec": 15, "choice": "贴脸输出还是拉开距离风筝", "cost": "贴脸吃近战 / 拉开丢射程" },
+    { "atSec": 30, "choice": "现在切火箭筒清群还是留着手枪保连击", "cost": "火箭冷却长断连击" },
+    { "atSec": 50, "choice": "把连击用来加伤还是攒满 DUO 爆破", "cost": "二选一，节奏不同" },
+    { "atSec": 80, "choice": "先破护盾兵还是先点杀枪手", "cost": "护盾兵慢但硬 / 枪手快但脆" },
+    { "atSec": 110, "choice": "现在开 Boss 还是再清一波攒资源", "cost": "时间与血量" },
+    { "atSec": 150, "choice": "用 DUO 爆破保命还是留着冲三星", "cost": "爆发窗口有限" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基础移动与自动瞄准开火" },
+    { "index": 2, "newElement": "高速近战 striker 突进" },
+    { "index": 3, "newElement": "远程 gunner 交叉火力" },
+    { "index": 4, "newElement": "带护盾的盾牌兵" },
+    { "index": 5, "newElement": "首领战" }
+  ],
+  "upgrades": [
+    { "id": "pierce", "kind": "rule" },
+    { "id": "ricochet", "kind": "rule" },
+    { "id": "duo-link", "kind": "rule" },
+    { "id": "combo-window", "kind": "rule" },
+    { "id": "blast-cascade", "kind": "rule" },
+    { "id": "dmg10", "kind": "stat" },
+    { "id": "hp10", "kind": "stat" },
+    { "id": "speed10", "kind": "stat" },
+    { "id": "cd10", "kind": "stat" },
+    { "id": "magnet", "kind": "rule" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 45, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

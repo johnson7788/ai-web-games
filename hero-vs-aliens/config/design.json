@@ -1,0 +1,106 @@
+{
+  "slug": "hero-vs-aliens",
+  "genre": "arcade",
+  "oneLiner": "发射英雄砸进垂直战场，空中转向躲尖刺，看准时机下落攻击砸碎外星人、吃弹簧续弹力、追母舰三关。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "launch",
+      "cost": "发射角度越偏，水平漂移越大、越难落准；只有贴近正中才是完美发射",
+      "feedback": ["sfx", "arrowHighlight", "trail"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "steer",
+      "cost": "空中转向会损失一部分爬升高度，转得越狠升得越慢",
+      "feedback": ["sfx", "trail", "particles"],
+      "combinesWith": ["launch", "drop"]
+    },
+    {
+      "name": "drop",
+      "cost": "下砸即锁定落点（不再能转向），可能砸进尖刺地雷里",
+      "feedback": ["sfx", "screenShake", "smashBurst"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "箭头摆到正中再发射拿「完美」，还是不等它直接发射抢时间",
+      "cost": "等完美要多等半秒；抢发则漂移大、难落准"
+    },
+    {
+      "atSec": 12,
+      "choice": "第一跳要不要直接下砸：砸中开场外星人拿连击，还是先爬升观察地雷分布",
+      "cost": "下砸锁定落点，可能砸进雷区"
+    },
+    {
+      "atSec": 22,
+      "choice": "弹力快见底：转向去吃弹簧续命，还是硬顶着爬向关卡线",
+      "cost": "吃弹簧要横向偏离航道；硬爬可能半路耗尽"
+    },
+    {
+      "atSec": 38,
+      "choice": "头顶一排水晶和大外星人：下砸拿高分连击，还是绕开保命",
+      "cost": "下砸必锁落点，雷区就在旁边"
+    },
+    {
+      "atSec": 55,
+      "choice": "列车冲过来：撞它借横向推力改道，还是躲开保持航向",
+      "cost": "撞车获得速度但轨道不可控；躲开则放弃加速"
+    },
+    {
+      "atSec": 75,
+      "choice": "母舰就在上方：攒满连击一波下砸速杀，还是求稳慢慢磨",
+      "cost": "速杀吃雷风险；磨则连击断掉丢星"
+    },
+    {
+      "atSec": 95,
+      "choice": "第二关地雷更密：全程贴中央安全航道，还是切边路捡水晶",
+      "cost": "安全航道稳但分低；边路分高但雷多"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 60,
+    "twistSec": 55,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "发射+下落攻击+弹簧（近地轨道，低密度地雷）" },
+    { "index": 2, "newElement": "地雷密度上升，出现横向列车（小行星带）" },
+    { "index": 3, "newElement": "密集雷区+高速列车+更高分水晶（母舰核心）" }
+  ],
+  "upgrades": [
+    { "id": "perfectBonus", "kind": "rule", "desc": "完美发射额外 +5% 弹力" },
+    { "id": "springReset", "kind": "rule", "desc": "弹簧直接重置弹力到满" },
+    { "id": "trainPush", "kind": "rule", "desc": "列车改变航向角并补充弹力" },
+    { "id": "comboChain", "kind": "rule", "desc": "连击不因空砸断档，只在下砸砸空时清零" },
+    { "id": "hazardDeath", "kind": "rule", "desc": "尖刺地雷：碰到即死，是唯一失败来源之一" },
+    { "id": "starRating", "kind": "rule", "desc": "按击碎/水晶/连击给 1-3 星评级" },
+    { "id": "climbSpeed", "kind": "stat", "desc": "更高弹力带来更长爬升" },
+    { "id": "dropRadius", "kind": "stat", "desc": "下落攻击半径随弹力放大" },
+    { "id": "steerRange", "kind": "stat", "desc": "转向幅度与爬升损失成比例" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

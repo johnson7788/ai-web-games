@@ -1,0 +1,5 @@
+ELITE GUNSTRIKE — Neon Arcade Sniper
+精英枪袭 — 霓虹街机弹射炮塔射击
+
+拖拽甩出霓虹能量弹，击倒所有敌机：重力弹道 + 撞墙反弹 + 能量核心链爆 + 熔毁倒计时 + 俘虏保护 + 星级评级。
+Aim, launch, bounce shots off walls, chain-explode energy cores, and protect captives before the reactor melts down.

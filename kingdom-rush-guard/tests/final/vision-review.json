@@ -1,0 +1,149 @@
+{
+  "game": "kingdom-rush-guard",
+  "generatedAt": "2026-11-19T19:38:56.633Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 6.75,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡2和3的锁图标与数字间距过小，可能误触",
+        "‘0/9’星星计数未明确说明是收集目标还是关卡进度，易混淆",
+        "标题‘KINGDOM RUSH GUARD’发光效果在深色背景上略显过曝，部分边缘有光晕溢出"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色‘开始’按钮进入游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡2、3图标锁形符号过小，可能影响辨识；",
+        "‘0/9’星级显示位置偏上，与标题间距略紧，易误读为标题一部分；",
+        "背景深紫渐变过暗，导致底部关卡按钮边框对比度偏低（尤其关卡1下划线模糊）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧标有'DEFEND'的菱形塔防单位进行操作或部署",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部右上角'ENEMIES'标签为红色小字且无背景，低对比度易忽略",
+        "三条路径上的六边形节点（可能为炮塔位）轮廓过细、亮度低，与路径线区分度不足",
+        "右端敌人图标（红圈+符号）与路径终点重叠，视觉上易误判为路径终点而非敌方单位"
+      ]
+    },
+    {
+      "shot": "tests/final/03-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧标有'DEFEND'的菱形发光塔",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人路径上的六边形虚线节点在部分位置与路径线重叠，易误判为可交互点",
+        "右上角'ENEMIES'标签无背景，深色背景下对比度偏低",
+        "顶部'WAVE 3/7'与'COMBO 0'间距过近，小屏可能误读为'WAVE 3/7 COMBO 0'"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧未点亮的按钮（第三个交互元素）继续流程",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三个水平按钮中，最右侧按钮为灰色空心轮廓，与前两个实心红按钮对比度低，易误判为不可交互",
+        "‘Rating: 3/3 · 20 HP left’文字字号偏小，在低分辨率下可能难以辨识",
+        "无玩家角色或敌人 silhouette 可见，无法评估战斗场景中的对象区分度"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧发光的黄色菱形‘DEFEND’区域开始防守",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三条路径终点红色敌人图标与加号按钮重叠，可能误触",
+        "‘ENEMIES’标签为粉色且无背景，暗背景下对比度偏低",
+        "路径上的六边形节点（虚线）与X标记大小/样式不一致，易混淆功能"
+      ]
+    },
+    {
+      "shot": "tests/final/06-boss-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧标有'DEFEND'的蓝色菱形塔状物以部署防御",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人路径上的六边形节点（如中路第二个）与路径线宽相近，易混淆为可交互点而非障碍/检查点",
+        "右上角'ENEMIES'标签无背景，深色背景下对比度偏低，可能影响快速识别",
+        "顶部HUD中'ORBITAL 0/3'图标与文字间距过小，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/07-restart.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧标有'DEFEND'的菱形塔防单位以部署或激活它",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部右上角'ENEMIES'标签为红色小字且无背景，低对比度易忽略",
+        "波次信息'WAVE 2/7'与'COMBO 0'间距过近，视觉拥挤",
+        "敌人路径上的六边形节点（虚线）与路径线宽接近，部分节点在动态时可能混淆为障碍物"
+      ]
+    }
+  ]
+}
