@@ -1,0 +1,62 @@
+{
+  "slug": "merge-melon-drop",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹罐里左右瞄准并投放水果，同阶相碰合成更高阶，直到合成星爆瓜。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "瞄准越久塔越高，时间压力逼近溢出线",
+      "feedback": ["sfx", "guide-line", "hold-glow"],
+      "combinesWith": ["drop"]
+    },
+    {
+      "name": "drop",
+      "cost": "松手后落点不可撤销，选错会堵住同阶果",
+      "feedback": ["sfx", "fall", "land-thud"],
+      "combinesWith": ["aim", "crush"]
+    },
+    {
+      "name": "crush",
+      "cost": "用大果压碎岩石 = 放弃一次直接合成机会",
+      "feedback": ["sfx", "shatter-particles", "shake"],
+      "combinesWith": ["drop"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一球往左还是往右放", "cost": "决定后续堆叠起点" },
+    { "atSec": 12, "choice": "直接落小果还是等一个更好落点", "cost": "等待会让塔变高" },
+    { "atSec": 30, "choice": "先合成两个小果还是先压碎岩石", "cost": "压碎岩石放弃本次合成" },
+    { "atSec": 55, "choice": "把大果放在哪一侧避免堆高", "cost": "占据一侧空间" },
+    { "atSec": 80, "choice": "是否留着高阶果等连击窗口", "cost": "占用罐内空间" },
+    { "atSec": 110, "choice": "塔快满时冒险继续合成还是稳放空档", "cost": "冒险失败直接判负" },
+    { "atSec": 150, "choice": "是否用大果压碎岩石腾出空间", "cost": "损失一次合成得分" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 50, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "落球 + 同阶合成" },
+    { "index": 2, "newElement": "岩石障碍（不可合成、可被大果压碎）" },
+    { "index": 3, "newElement": "连击系统（1.5s 连续合成加分）+ 星爆瓜目标" }
+  ],
+  "upgrades": [
+    { "id": "rockCrush", "kind": "rule" },
+    { "id": "comboChain", "kind": "rule" },
+    { "id": "cascade", "kind": "rule" },
+    { "id": "novaBonus", "kind": "rule" },
+    { "id": "rockEvery", "kind": "rule" },
+    { "id": "bigRadius", "kind": "stat" },
+    { "id": "scoreMult", "kind": "stat" },
+    { "id": "comboWindow", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

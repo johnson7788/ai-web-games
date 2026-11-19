@@ -1,0 +1,57 @@
+{
+  "slug": "unblock-cars",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹停车场里滑动车流，把发光主车送到右侧出口，用最少步数拿三星",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "drag",
+      "cost": "消耗 1 步（计入步数上限，超过即失败）",
+      "feedback": ["车身滑动 + 霓虹拖尾", "滑动音效", "步数/连击计数刷新"],
+      "combinesWith": ["hint", "undo"]
+    },
+    {
+      "name": "hint",
+      "cost": "消耗 1 个提示（每局 3 个）",
+      "feedback": ["目标车脉冲高亮 + 方向箭头", "提示音效"],
+      "combinesWith": ["drag"]
+    },
+    {
+      "name": "undo",
+      "cost": "撤回上一手（连击回到上一手）",
+      "feedback": ["车身回弹动画", "撤回音效"],
+      "combinesWith": ["drag"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先挪挡在出口的车，还是先挪侧边腾路", "cost": "多花 2-3 步" },
+    { "atSec": 15, "choice": "用提示还是自己继续推演", "cost": "消耗 1 个提示道具" },
+    { "atSec": 30, "choice": "撤回上一手重排，还是硬推新路线", "cost": "连击中断 / 步数浪费" },
+    { "atSec": 55, "choice": "冲 3 星（压步数）还是 1 星过关", "cost": "多试错或奖励变少" },
+    { "atSec": 90, "choice": "先清近路还是绕远路避开岩石", "cost": "多步数或绕路" },
+    { "atSec": 130, "choice": "挑战限步内完成还是重开重排", "cost": "失败风险" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 60, "twistSec": 45, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "基础滑动：把主车滑到右侧出口" },
+    { "index": 2, "newElement": "纵向车辆加入（交叉堵塞）" },
+    { "index": 3, "newElement": "岩石障碍（不可移动）" },
+    { "index": 4, "newElement": "连击计分解锁" },
+    { "index": 5, "newElement": "限步上限收紧" },
+    { "index": 6, "newElement": "提示道具 + 撤回连招" }
+  ],
+  "upgrades": [
+    { "id": "hint", "kind": "rule" },
+    { "id": "undo", "kind": "rule" },
+    { "id": "combo", "kind": "rule" },
+    { "id": "rock", "kind": "rule" },
+    { "id": "hero-trail", "kind": "rule" },
+    { "id": "night-scene", "kind": "rule" },
+    { "id": "exit-glow", "kind": "rule" },
+    { "id": "move-budget", "kind": "stat" },
+    { "id": "score-bonus", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

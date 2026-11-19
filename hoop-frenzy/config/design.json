@@ -1,0 +1,76 @@
+{
+  "slug": "hoop-frenzy",
+  "genre": "arcade",
+  "oneLiner": "在霓虹球场里看准力量条时机把能量球抛进左右交替发光的环，连续空心攒连击、追金环双倍分，抢在单球倒计时耗尽前拿到 22 分通关。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "shoot",
+      "cost": "单球倒计时在烧，出手越早越稳但空心率低，越晚越容易空心却可能超时扣命",
+      "feedback": ["sfx", "trail", "ringFlash"],
+      "combinesWith": ["time"]
+    },
+    {
+      "name": "time",
+      "cost": "蓄力等待力量条扫进绿色区会持续消耗倒计时，等错节奏就直接失球",
+      "feedback": ["sfx", "meterGlow", "chargePulse"],
+      "combinesWith": ["shoot"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "力量条第一次进绿区立刻出手，还是等下一次更稳的扫动", "cost": "等待烧倒计时，超时扣 1 命" },
+    { "atSec": 12, "choice": "追求空心攒连击，还是擦板求稳保分", "cost": "空心容差更窄，失误直接没分且连击清零" },
+    { "atSec": 20, "choice": "金环出现：追双倍分的小目标，还是保守打普通环", "cost": "金环更小且只有这一球，失手浪费双倍机会" },
+    { "atSec": 30, "choice": "阶段升级环开始上下漂移：预判提前量，还是等它回到中位", "cost": "预判偏移可能擦板或失手" },
+    { "atSec": 40, "choice": "倒计时逼近红区：马上出手，还是赌最后一刻的空心连击", "cost": "赌失败 = 扣 1 命" },
+    { "atSec": 55, "choice": "连击已 3+ 触发烈焰加成：继续追高连击，还是收手擦板保命", "cost": "追连击容错更低，一次擦板全清空" },
+    { "atSec": 70, "choice": "环缩小到高速漂移：改用提前量短点射，还是保持蓄力节奏", "cost": "短点射空心率低，蓄力更容易错位" },
+    { "atSec": 90, "choice": "差 2 分通关：冲 3 星高分的金环，还是打普通环稳妥收分", "cost": "金环失手可能拖进扣命循环" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "静态霓虹环 + 力量条空心/擦板判定" },
+    { "index": 2, "newElement": "金色之环（双倍分 + 回补时间）" },
+    { "index": 3, "newElement": "环开始上下漂移，理想出手点随之移动" },
+    { "index": 4, "newElement": "环缩小、漂移加速，容差收紧" },
+    { "index": 5, "newElement": "极速漂移 + 最小容差，冲刺 22 分通关" }
+  ],
+  "upgrades": [
+    { "id": "goldenRing", "kind": "rule", "desc": "每 4 球出现金环，双倍分并回补倒计时" },
+    { "id": "comboHeat", "kind": "rule", "desc": "连击 ≥3 触发烈焰：每球额外 +1 分" },
+    { "id": "movingRing", "kind": "rule", "desc": "阶段 3 起环上下漂移，理想点随动" },
+    { "id": "shrinkRing", "kind": "rule", "desc": "阶段 4 起环缩小，空心/擦板容差收紧" },
+    { "id": "nearMiss", "kind": "rule", "desc": "差一点失手给 SO CLOSE 反馈，鼓励再试" },
+    { "id": "clockSpeed", "kind": "stat", "desc": "每进一球单球倒计时递减，节奏加快" },
+    { "id": "lives", "kind": "stat", "desc": "3 条命容错，超时扣命" },
+    { "id": "starRating", "kind": "stat", "desc": "结算按得分评 1-3 星" },
+    { "id": "bestScore", "kind": "stat", "desc": "跨局保存最佳分，通关冲新纪录" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "growth",
+    "newBuild"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

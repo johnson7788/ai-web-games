@@ -1,0 +1,59 @@
+{
+  "game": "brain-checkup",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 3,
+      "durationSec": 3.15,
+      "firstInputSec": 0.02,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.07,
+      "deaths": 0,
+      "actions": 6,
+      "idleSec": 0,
+      "maxEventGapSec": 1.02,
+      "uniqueEvents": 6,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 0.15,
+      "firstInputSec": 0.02,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.13,
+      "deaths": 2,
+      "actions": 5,
+      "idleSec": 0,
+      "maxEventGapSec": 0.03,
+      "uniqueEvents": 4,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 15,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 1,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

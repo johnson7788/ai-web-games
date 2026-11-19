@@ -1,0 +1,110 @@
+{
+  "slug": "candy-crush-pop",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹街机上滑动发光糖果，凑出三连爆裂；冰封岩石挡住去路，连锁消除敲碎冰层、填满连击条，抢在步数耗尽前冲到目标分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "swap",
+      "cost": "一步只换相邻两颗糖；换不出消除就白换（弹回原位），等于浪费一次机会",
+      "feedback": ["sfx", "slideGlow", "snapBack"],
+      "combinesWith": ["match"]
+    },
+    {
+      "name": "match",
+      "cost": "必须精准排成 3+ 同款；冰封岩石会切断连线，逼你先消它旁边",
+      "feedback": ["sfx", "burst", "scoreFly"],
+      "combinesWith": ["swap"]
+    },
+    {
+      "name": "combo",
+      "cost": "连锁消除越深越爽，但每一步都要提前看下落结构，否则连击条空转",
+      "feedback": ["sfx", "meterGlow", "bonusMove"],
+      "combinesWith": ["match"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "第一颗糖：先消顺手的三连，还是先敲碎离目标分更近的冰封岩石",
+      "cost": "先敲冰 = 牺牲一步当前得分；先消糖 = 冰层还挡着更肥的连线"
+    },
+    {
+      "atSec": 20,
+      "choice": "出现四连/五连机会：立刻拿走高分，还是留着凑一步更大的连锁",
+      "cost": "留着可能被下落打散；拿走则放弃一次连击爆发"
+    },
+    {
+      "atSec": 35,
+      "choice": "步数过半分数落后：赌下方落糖能续出第二波连锁，还是稳健三连稳步追分",
+      "cost": "赌连锁失败 = 白费一步；稳健追分 = 可能追不上目标"
+    },
+    {
+      "atSec": 50,
+      "choice": "连击条差一波就奖励加步：主动制造一次低分连锁，还是先吃眼前的高分",
+      "cost": "制造连锁要牺牲当前最佳解；不吃高分则总分继续落后"
+    },
+    {
+      "atSec": 70,
+      "choice": "冰封岩石连成一片：从外围逐层敲，还是从中间一次打穿两条线",
+      "cost": "打穿中线风险大（可能只破一层）；外围稳但慢"
+    },
+    {
+      "atSec": 90,
+      "choice": "最后几步：all-in 冲目标分，还是留一步给可能出现的救命连锁",
+      "cost": "all-in 冲不动就输；留一步也可能等不到好牌"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础三连消除（教学）" },
+    { "index": 2, "newElement": "步数 + 目标分结算闭环" },
+    { "index": 3, "newElement": "冰封岩石（1 层）" },
+    { "index": 4, "newElement": "双层冰封岩石" },
+    { "index": 5, "newElement": "连击倍率（连击条）" },
+    { "index": 6, "newElement": "连击奖励加步" },
+    { "index": 7, "newElement": "密集冰封阵" },
+    { "index": 8, "newElement": "目标分跳涨" },
+    { "index": 9, "newElement": "岩石 + 冰封混合阵" },
+    { "index": 10, "newElement": "双层岩石群" },
+    { "index": 11, "newElement": "高分马拉松" },
+    { "index": 12, "newElement": "终章三轴（岩石 + 连击 + 高分）" }
+  ],
+  "upgrades": [
+    { "id": "unlockRocks", "kind": "rule", "desc": "第 3 关起出现冰封岩石，切断连线的新约束" },
+    { "id": "unlockDoubleRock", "kind": "rule", "desc": "第 4 关起出现双层冰封，需两次相邻消除才破" },
+    { "id": "unlockCombo", "kind": "rule", "desc": "第 5 关起连锁计入连击倍率，鼓励摆位" },
+    { "id": "unlockComboMove", "kind": "rule", "desc": "第 6 关起连击满 3 波奖励 1 步" },
+    { "id": "unlockShuffle", "kind": "rule", "desc": "无可消时自动洗牌，杜绝死局" },
+    { "id": "targetRamp", "kind": "stat", "desc": "目标分随关卡持续抬升，压缩容错" },
+    { "id": "movesRamp", "kind": "stat", "desc": "步数预算随关卡递增，关卡变长" },
+    { "id": "rockDensity", "kind": "stat", "desc": "冰封岩石密度逐步加大，通路更窄" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,260 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  background: #0c0a20;
+  color: #eef;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Segoe UI', 'Microsoft YaHei', Tahoma, monospace;
+  height: 100%;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: manipulation;
+}
+
+/* ---------- HUD（不透明条，避免遮挡判定） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  z-index: 5;
+  pointer-events: none;
+}
+.hud-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  padding: 0 14px;
+  background: rgba(10, 8, 26, 0.92);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.35);
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 8px; }
+.hud-pill {
+  display: inline-block;
+  background: #1c1338;
+  color: #cfe9ff;
+  border: 1px solid rgba(0, 229, 255, 0.45);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 15px;
+  font-weight: 700;
+  min-width: 40px;
+  text-align: center;
+}
+#hud-score { color: #ffe27a; border-color: #ffd54a; }
+#hud-lives { color: #ff8a9a; border-color: #ff5a7a; }
+.hud-btn {
+  pointer-events: auto;
+  background: #1c1338;
+  color: #cfe9ff;
+  border: 1px solid rgba(0, 229, 255, 0.5);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.hud-btn:hover { background: #2a1c55; }
+.hud-btn.is-muted { color: #7a5bd6; border-color: #7a5bd6; }
+
+/* ---------- 全屏屏幕 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(12, 8, 30, 0.92);
+  z-index: 10;
+  text-align: center;
+}
+.screen.hidden, .hidden { display: none !important; }
+.screen h1 {
+  font-size: 3.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+  color: #00e5ff;
+  text-shadow: 0 0 18px rgba(0, 229, 255, 0.8);
+}
+.screen h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #ffe27a; text-shadow: 0 0 14px rgba(255, 210, 90, 0.7); }
+.screen h2.lose { color: #ff5a7a; text-shadow: 0 0 14px rgba(255, 90, 122, 0.7); }
+.screen .subtitle { font-size: 1.15rem; margin-bottom: 1.6rem; opacity: 0.85; color: #ff2d78; letter-spacing: 2px; }
+.title-best { font-size: 1rem; margin-bottom: 1.4rem; color: #ffd54a; opacity: 0.9; }
+.screen button {
+  padding: 13px 36px;
+  font-size: 1.25rem;
+  background: #00e5ff;
+  color: #081320;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.6);
+}
+.screen button:hover { background: #4df0ff; }
+.screen .btn-ghost {
+  background: transparent;
+  color: #cfe9ff;
+  border: 1px solid rgba(0, 229, 255, 0.5);
+  box-shadow: none;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 10px 22px;
+}
+.screen .btn-ghost:hover { background: rgba(0, 229, 255, 0.12); }
+.screen .lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #141428;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.screen .lang-select:focus { outline: 2px solid #00e5ff; outline-offset: 2px; }
+/* 标题/结算半透明，露出背后霓虹球场，保证剪影可辨 */
+#screen-title { background: rgba(12, 8, 30, 0.52); }
+#screen-result { background: rgba(12, 8, 30, 0.72); }
+
+/* 结算 */
+.win-stars { font-size: 3rem; margin: 0.4rem 0; letter-spacing: 8px; color: #ffd54a; text-shadow: 0 0 16px rgba(255, 213, 74, 0.8); }
+.win-meta { font-size: 1.15rem; margin-bottom: 1rem; color: #cfe9ff; }
+.win-btns { display: flex; gap: 12px; }
+
+/* ---------- 竖屏提示（仅触屏竖屏显示） ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 5, 20, 0.94);
+}
+#rotate-screen[data-rotate] { }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen[data-rotate] { display: flex; }
+}
+.rotate-card {
+  text-align: center;
+  color: #cfe9ff;
+  padding: 28px;
+  max-width: 92vw;
+}
+.rotate-icon { font-size: 3rem; margin-bottom: 12px; }
+#rotate-text { font-size: 1.1rem; margin-bottom: 18px; }
+#btn-rotate-skip {
+  background: #00e5ff;
+  color: #081320;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ---------- 教程卡（固定底部居中，不遮 HUD/环） ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+#tutorial.hidden { display: none !important; }
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 460px;
+  max-width: 92vw;
+  pointer-events: auto;
+  background: rgba(14, 10, 34, 0.97);
+  border: 1px solid rgba(0, 229, 255, 0.6);
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.35);
+  color: #eaf6ff;
+}
+#tut-card h3 { font-size: 1.15rem; margin-bottom: 8px; color: #00e5ff; }
+#tut-card p { font-size: 0.98rem; line-height: 1.5; margin-bottom: 14px; }
+.tut-btns { display: flex; justify-content: flex-end; gap: 10px; }
+.tut-btns button {
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  background: #00e5ff;
+  color: #081320;
+  border: none;
+  font-weight: 700;
+}
+.tut-btns .btn-ghost { background: transparent; color: #cfe9ff; border: 1px solid rgba(0, 229, 255, 0.5); font-weight: 400; }
+
+/* ---------- 浮动 popup 文案 ---------- */
+#popups {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  overflow: hidden;
+}
+.popup {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffe27a;
+  text-shadow: 0 0 14px rgba(255, 210, 90, 0.9);
+  animation: popup-rise 0.9s ease-out forwards;
+  white-space: nowrap;
+}
+.popup.gold { color: #ffd54a; text-shadow: 0 0 16px rgba(255, 213, 74, 1); }
+.popup.fire { color: #ff5a3c; text-shadow: 0 0 16px rgba(255, 90, 60, 1); }
+.popup.miss { color: #9aa7c9; text-shadow: 0 0 10px rgba(154, 167, 201, 0.7); }
+@keyframes popup-rise {
+  0% { opacity: 0; margin-top: 60px; }
+  20% { opacity: 1; }
+  100% { opacity: 0; margin-top: -40px; }
+}
+
+@media (max-width: 760px) {
+  .screen h1 { font-size: 2rem; }
+  .hud-pill { font-size: 12px; padding: 3px 7px; }
+  .hud-btn { width: 34px; height: 34px; font-size: 14px; }
+}

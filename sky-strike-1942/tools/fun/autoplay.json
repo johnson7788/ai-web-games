@@ -1,0 +1,56 @@
+{
+  "game": "sky-strike-1942",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 102.47,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 2.1,
+      "deaths": 3,
+      "actions": 6148,
+      "idleSec": 0,
+      "maxEventGapSec": 0.17,
+      "uniqueEvents": 14,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 34.82,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 1.8,
+      "deaths": 3,
+      "actions": 49,
+      "idleSec": 0,
+      "maxEventGapSec": 0.17,
+      "uniqueEvents": 11,
+      "levelsReached": 2,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 1,
+      "durationSec": 107.95,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 5.27,
+      "deaths": 3,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.17,
+      "uniqueEvents": 14,
+      "levelsReached": 3,
+      "completed": false
+    }
+  ]
+}

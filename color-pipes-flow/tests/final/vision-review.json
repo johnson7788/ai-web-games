@@ -1,0 +1,149 @@
+{
+  "game": "color-pipes-flow",
+  "generatedAt": "2026-11-19T13:16:31.699Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 8.125,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景彩色波浪线与数字按钮区域视觉干扰，可能影响快速定位可交互元素",
+        "‘0 / 36’星星计数文字较小且无高对比度，弱光环境下易误读",
+        "数字按钮1高亮色（青绿）与背景波浪线颜色相近，部分用户可能混淆选中状态"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“开始”按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡按钮（1-12）星标文字过小，眯眼时难以辨识星级数量",
+        "背景彩色曲线与关卡按钮存在轻微视觉干扰，影响按钮聚焦",
+        "‘0 / 36’进度显示颜色偏暗，对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角蓝色发光端口开始拖线连接同色端口",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡左下橙色端口，可能影响首次操作定位",
+        "顶部‘Moves 0/17’与灯泡图标间距过小，视觉拥挤",
+        "网格背景暗色渐变导致部分空单元格边界模糊，轻微影响可交互区域辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景电路图元素与弹窗部分重叠，可能干扰‘Board Lit!’主标题识别（尤其在低对比度下）",
+        "三颗星图标与‘Perfect Flow!’文字间距过小，轻微视觉拥挤",
+        "‘Moves 17 / Par 17’字体偏小，远距离阅读易误读为‘Moves 17/Par 1’"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角绿色圆点，向右连接同色红色圆点",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Moves 0/15’与灯泡图标间距过小，可能误触",
+        "中间灰色三角形障碍物无明确交互提示，新手易忽略其阻挡作用",
+        "部分空格内小灰点（未激活单元）与背景对比度偏低，弱视用户可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/05-big-grid.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏右的橙色圆点，尝试连接同色圆点形成路径",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Moves 0/25’与灯泡图标间距过小，可能误触",
+        "中间灰色三角形障碍物无明确交互提示，易被忽略",
+        "部分发光圆点外圈光晕轻微溢出格子边界，影响精确点击判断"
+      ]
+    },
+    {
+      "shot": "tests/final/06-partial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角孤立的蓝色圆点，将其与下方蓝色路径连接",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Moves 4/17’与灯泡图标间距过小，可能误触",
+        "右上角蓝色目标点发光过强，略干扰路径识别",
+        "部分空格内灰色圆点对比度偏低，弱视用户可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/07-hint.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色空方块，连接右侧蓝色圆点与下方蓝色圆点形成通路",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Moves 4/17' 与灯泡图标间距过小，可能误触",
+        "右上角功能图标（问号、手、重试、主页）无文字标签，新用户难理解",
+        "蓝色目标圆点发光过强，与背景对比度略高，可能干扰视觉焦点"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "game": "soko-warehouse",
+  "generatedAt": "2026-11-19T13:09:58.230Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 8.125,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择按钮（1-12）中，数字与星标间距过小，部分星标在低分辨率下可能模糊",
+        "‘0 / 36’ 星标计数文字偏小，对比度不足，弱光环境下辨识度下降",
+        "背景仓库格子轮廓线过细且半透明，眯眼时与主标题区域融合，影响可交互元素识别"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色方块（货物）将其移动到绿色圆圈（目标位）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Moves 0/12' 和 'Cargo 0/1' 标签文字较小，弱光下可能辨识困难",
+        "右上角按钮组无明确功能图标语义（如问号、重试图标风格不统一）",
+        "黄色圆点（玩家）与绿色圆圈（目标）亮度接近，部分色觉障碍用户可能混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间‘Docked!’弹窗未居中对齐（左偏约5px）",
+        "‘Perfect!’文字颜色偏浅（#66FF99），在深背景上对比度略低",
+        "右上角图标组间距不均，问号与菜单图标间距明显大于其他"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色圆形角色（玩家）使其移动到橙色方块处收集货物",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色角色与左上角蓝色边框间距过小，可能误触边界",
+        "紫色三角形目标物无明确标识，易被误认为障碍物",
+        "右上角按钮组未标注功能，依赖图标语义（如问号、重置等）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色带眼图标（玩家）向右移动，靠近橙色方块货物",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Moves 0/30' 和 'Cargo 0/3' 按钮间距过小，可能误触",
+        "右上角功能按钮（重玩、帮助等）无文字标签，仅图标，对新用户不友好",
+        "紫色三角形物体形状与橙色货物相似但颜色不同，易混淆是否为可交互物"
+      ]
+    },
+    {
+      "shot": "tests/final/07-undo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色眼睛角色向右移动，靠近橙色方块货物",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三个绿色圆点目标位置分散，未明确指示优先顺序；",
+        "紫色三角形物体功能不明（是障碍？可推？），缺乏视觉提示；",
+        "HUD中'→4'图标语义模糊，可能被误认为移动次数剩余"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色泊位图标（左右圆形目标）与背景网格对比度偏低，眯眼时易混淆为装饰",
+        "关卡选择按钮1-12排布密集，第1关高亮色与其余按钮差异小，视觉层级不够清晰",
+        "‘0/36’星星计数文字偏小，且与下方‘开始’按钮间距过近，可能误读为按钮一部分"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色方块（货物）将其移动到绿色圆圈（目标位）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色圆点（玩家）与橙色方块间距过近，易误判为同一对象",
+        "绿色目标圆圈无明确边界线，与背景对比度略低",
+        "顶部‘Moves 0/12’和‘Cargo 0/1’标签字体偏小，远距离辨识稍弱"
+      ]
+    }
+  ]
+}

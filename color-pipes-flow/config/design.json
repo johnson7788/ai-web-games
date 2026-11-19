@@ -1,0 +1,61 @@
+{
+  "slug": "color-pipes-flow",
+  "genre": "puzzle",
+  "oneLiner": "霓虹电路板上，玩家拖动端口连出同色管道填满整张棋盘——岩石逼你绕路，步数卡住星级。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "draw",
+      "cost": "每铺一格消耗一次步数，走错就得回头重画，浪费步数让星级下降",
+      "feedback": ["sfx", "glowTrail", "haptic"],
+      "combinesWith": ["connect"]
+    },
+    {
+      "name": "connect",
+      "cost": "把管道连到错误端口会被弹回，该段路径作废重画",
+      "feedback": ["sfx", "flash", "pipeSnap"],
+      "combinesWith": ["draw"]
+    },
+    {
+      "name": "hint",
+      "cost": "每关只有 2 次提示，用完就没了，且提示不补步数",
+      "feedback": ["sfx", "pulse", "reveal"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一眼先连哪一对同色端口：从角落短管入手，还是先铺中间长管", "cost": "先连短管=给长管留绕行空间；先连长管=可能堵住其他颜色" },
+    { "atSec": 20, "choice": "遇到岩石：绕上还是绕下", "cost": "绕上多花 2 格步数，绕下可能与另一条管道交叉被弹回" },
+    { "atSec": 40, "choice": "一条管画错了：立即回头重画，还是先连完其他颜色再回头", "cost": "立即重画省步数但打断节奏；先连其他可能让错误段更堵" },
+    { "atSec": 65, "choice": "步数逼近 3 星线：用一次提示看答案，还是凭感觉继续", "cost": "提示只有 2 次，用了这关就没有容错" },
+    { "atSec": 90, "choice": "只剩最后两对：先连哪一对能避免交叉", "cost": "连错顺序=被迫清空重画，步数暴增掉星" },
+    { "atSec": 110, "choice": "最后一格：硬塞成蛇形，还是清空重开一次到位", "cost": "硬塞可能凑不齐 3 星；重开清零但丢掉已画进度" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "5x5 基础网格：同色端口与正交连线" },
+    { "index": 2, "newElement": "岩石格（block 障碍）：必须绕路" },
+    { "index": 3, "newElement": "6x6 网格：更长管道与更多颜色" },
+    { "index": 4, "newElement": "星级判定：步数 ≤ 完美步数才有 3 星" },
+    { "index": 5, "newElement": "三连岩石走廊：窄缝绕行" },
+    { "index": 6, "newElement": "7x7 大网格：长线规划压力" },
+    { "index": 7, "newElement": "连击：连续无回头完成多对管道触发 combo" },
+    { "index": 8, "newElement": "提示道具：每关 2 次 reveal" }
+  ],
+  "upgrades": [
+    { "id": "unlockRocks", "kind": "rule", "desc": "第 2 关起出现岩石格，强制绕路" },
+    { "id": "unlockBigGrid", "kind": "rule", "desc": "第 6 关起升级 7x7 大网格" },
+    { "id": "unlockHint", "kind": "rule", "desc": "第 8 关起解锁提示道具" },
+    { "id": "unlockCombo", "kind": "rule", "desc": "第 7 关起无回头连对触发连击加分" },
+    { "id": "starRating", "kind": "rule", "desc": "第 4 关起按步数评 1-3 星" },
+    { "id": "parTight", "kind": "stat", "desc": "三星线更紧：par 减 2" },
+    { "id": "hintsUp", "kind": "stat", "desc": "提示次数 +1" },
+    { "id": "moveLimit", "kind": "stat", "desc": "失败步数上限提高" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 60, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

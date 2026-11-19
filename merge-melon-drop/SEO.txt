@@ -1,0 +1,14 @@
+TITLE
+MERGE MELON DROP
+
+CATEGORY
+Puzzle
+
+TAGS
+merge, drop, suika, watermelon, fruit, arcade, casual, physics, neon
+
+SHORT DESCRIPTION
+Drop and merge neon fruits into the NOVA melon in this juicy arcade puzzle.
+
+LONG DESCRIPTION
+MERGE MELON DROP is a neon arcade merge-drop puzzle. Aim and drop glowing fruits into the jar; two matching fruits fuse into the next tier, all the way to the legendary NOVA melon. Dodge the rocks, chain your merges for combo bonus, and chase the 3-star harvest. Pure one-touch controls, works on desktop and mobile.

@@ -1,0 +1,101 @@
+{
+  "game": "hoop-frenzy",
+  "generatedAt": "2026-11-19T13:14:15.371Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.2,
+    "silhouette": 7,
+    "style_consistent": 8.8
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的'Start'按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧'TARGET'图标与文字间距过小，可能影响快速识别",
+        "底部'TAP!'提示与进度条紧贴，移动设备上易误触",
+        "背景网格线在远处透视变形明显，轻微干扰目标聚焦"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘开始’按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧‘目标’图标与文字间距过小，可能影响辨识",
+        "底部‘点击！’提示与进度条紧贴，视觉层级弱",
+        "右上角语言切换框边框过细，与整体线宽不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的黄色球体（玩家角色）下方的‘TAP!’提示区域",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标标识‘TARGET’文字为纯白无描边，在深紫背景上对比度略低，远距离易误读",
+        "右侧目标轮廓为半透明线框，与背景星点融合，辨识度弱于左侧目标",
+        "底部‘TAP!’提示条内绿色进度条过窄，可能被误认为装饰而非操作反馈"
+      ]
+    },
+    {
+      "shot": "tests/final/03-scored.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的‘TAP!’提示区域以发射弹丸",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标环形装置与右侧竖条部分重叠，可能影响瞄准判断",
+        "左下角半透明环形物体语义不明，易误认为可交互物",
+        "网格地面在远处透视压缩严重，可能干扰深度感知"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的'Play Again'按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘RING OUT’文字下方有半透明残留文字‘GOING OFF RING’，疑似未清除的旧状态文本",
+        "左侧圆形UI元素与背景网格线融合度高，轮廓辨识度偏低（影响silhouette）",
+        "顶部左上角‘23’‘Best 23’‘Stage 3’标签间距过小，小屏可能误触"
+      ]
+    }
+  ]
+}

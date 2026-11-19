@@ -1,0 +1,50 @@
+{
+  "slug": "bunny-gold-digger",
+  "genre": "arcade",
+  "oneLiner": "玩家操作兔兔抓钩在 60 秒矿坑里摆角度下抓金子，抓石头会扣分、抓胡萝卜蓄狂热翻倍，冲目标分过关。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "drop",
+      "cost": "下放的时机与角度决定命中；落空或抓到石头会断连击并损失节奏",
+      "feedback": ["claw_extend", "sfx", "hit_flash", "rope_sway"],
+      "combinesWith": ["power"]
+    },
+    {
+      "name": "power",
+      "cost": "消耗满格的胡萝卜能量（狂热期间不充能，错过窗口就浪费）",
+      "feedback": ["sfx", "screen_glow", "gold_double"],
+      "combinesWith": ["drop"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "先抓最近的碎金，还是等大金/钻石摆到位", "cost": "等待会消耗倒计时" },
+    { "atSec": 12, "choice": "抓胡萝卜蓄狂热，还是继续抓金攒连击", "cost": "抓胡萝卜不直接得分" },
+    { "atSec": 20, "choice": "狂热期间抓大金还是连抓小金龙连击", "cost": "抓大金回收慢，可能断连击窗口" },
+    { "atSec": 30, "choice": "提前结算保过关，还是冒险冲三星", "cost": "继续抓可能被石头扣分" },
+    { "atSec": 42, "choice": "避开石头绕角度，还是赌一把快速下抓", "cost": "赌错扣分并断连击" },
+    { "atSec": 52, "choice": "最后 8 秒用狂热冲分，还是留到下一关", "cost": "留到下关能量不继承" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "drop 下抓 + 金/石头/胡萝卜三类基础物件" },
+    { "index": 2, "newElement": "钻石高价值目标 + 石头密度上升" },
+    { "index": 3, "newElement": "更短倒计时 + 钻石大爆发" },
+    { "index": 4, "newElement": "大金与钻石混合，石头更密集" },
+    { "index": 5, "newElement": "终极矿坑：高价值高惩罚并存的终局节奏" }
+  ],
+  "upgrades": [
+    { "id": "magnet-claw", "kind": "rule" },
+    { "id": "wide-claw", "kind": "rule" },
+    { "id": "quick-rope", "kind": "rule" },
+    { "id": "rock-immunity", "kind": "rule" },
+    { "id": "fever-plus", "kind": "rule" },
+    { "id": "grip-damage", "kind": "stat" },
+    { "id": "rope-speed", "kind": "stat" },
+    { "id": "combo-time", "kind": "stat" },
+    { "id": "time-bonus", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 10, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

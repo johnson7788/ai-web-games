@@ -1,0 +1,38 @@
+{
+  "slug": "sky-strike-1942",
+  "genre": "arcade",
+  "oneLiner": "霓虹战机在 1942 夜空边躲岩雨边连击击落敌机，攒 combo 拿三星。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "move", "cost": "离开当前射击线，暂时失去对正目标的瞄准", "feedback": ["sfx", "engineGlow", "trail"], "combinesWith": ["shoot"] },
+    { "name": "shoot", "cost": "自动开火期间难以精确走位，需预判弹道", "feedback": ["sfx", "muzzleFlash", "hitSpark"], "combinesWith": ["move"] },
+    { "name": "dodge", "cost": "放弃连击窗口，combo 会衰减", "feedback": ["sfx", "nearMissFlash"], "combinesWith": ["move"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "贴脸清怪攒 combo，还是先拉开距离", "cost": "贴脸有碰撞风险" },
+    { "atSec": 20, "choice": "追敌机补刀拿连击，还是去接掉落道具", "cost": "接道具会离开射击线" },
+    { "atSec": 40, "choice": "打爆岩石换分，还是绕过去保命", "cost": "打岩石花时间，易被夹击" },
+    { "atSec": 60, "choice": "用炸弹清屏救急，还是留给更密的波次", "cost": "炸弹有限，用完没有" },
+    { "atSec": 90, "choice": "开护盾硬吃子弹抢输出，还是保守躲", "cost": "护盾只能挡一次" },
+    { "atSec": 130, "choice": "冲进敌群刷分，还是稳扎稳打保三星", "cost": "冲太深会死" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "homing divers" },
+    { "index": 2, "newElement": "asteroids" },
+    { "index": 3, "newElement": "bomber wave" }
+  ],
+  "upgrades": [
+    { "id": "spread", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "bomb", "kind": "rule" },
+    { "id": "rapid", "kind": "rule" },
+    { "id": "magnet", "kind": "rule" },
+    { "id": "dmg", "kind": "stat" },
+    { "id": "hp", "kind": "stat" },
+    { "id": "speed", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

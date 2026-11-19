@@ -1,0 +1,85 @@
+{
+  "slug": "liankan-tile-link",
+  "genre": "puzzle",
+  "oneLiner": "霓虹网格亮出几秒就翻回背面，玩家凭记忆点开两张相同图案把它们连成一对，连对越多 combo 越高、时间越多，最终在计时归零前清空整板。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "flip",
+      "cost": "翻开即锁定一张牌的位置信息，翻错会暴露给对手（时间与失误计数），且占用本组的翻牌名额",
+      "feedback": ["sfx", "cardGlow", "cardPulse"],
+      "combinesWith": ["link"]
+    },
+    {
+      "name": "link",
+      "cost": "点错会把这组已翻的牌全部翻回并清零连击，等于浪费一次记忆与时间",
+      "feedback": ["sfx", "sparkBurst", "comboPop"],
+      "combinesWith": ["flip"]
+    },
+    {
+      "name": "peek",
+      "cost": "消耗一个靠 3 次配对才攒到的充能，且只能亮 0.8 秒",
+      "feedback": ["sfx", "fullFlash", "glowAll"],
+      "combinesWith": ["flip"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "记忆阶段先扫角落的高频符号，还是先记中心成对的位置", "cost": "时间只有 5 秒，顾此失彼" },
+    { "atSec": 20, "choice": "先翻一张记得很牢的牌，还是先翻一张模糊的赌配对", "cost": "翻错直接断连击并多一次失误" },
+    { "atSec": 40, "choice": "留着 Peek 充能应对后面大棋盘，还是现在用掉救一次卡壳", "cost": "用完就没有，后面 24 张牌更难" },
+    { "atSec": 60, "choice": "追求无失误的三星（更慢、更稳），还是贪快刷连击换时间", "cost": "贪快失误多，星级会掉" },
+    { "atSec": 90, "choice": "三张一组关卡里，先凑已经亮出两张的组，还是换一张新的赌记忆", "cost": "凑不全就白翻两张" },
+    { "atSec": 120, "choice": "剩余时间不足时用 Peek 全亮速通，还是靠记忆硬翻保住 combo", "cost": "Peek 用掉后彻底裸奔" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础翻牌配对（6 符号 3×4，一对）" },
+    { "index": 2, "newElement": "符号池换新 + 4×4 大棋盘" },
+    { "index": 3, "newElement": "解锁 Peek 窥视道具（每 3 次配对充能）" },
+    { "index": 4, "newElement": "连击换奖励时间的机制正式登场" },
+    { "index": 5, "newElement": "4×5 网格：记忆半径翻倍" },
+    { "index": 6, "newElement": "24 张全满板 + 最后一组压力" },
+    { "index": 7, "newElement": "三张一组（groupOf=3）第一次出现" },
+    { "index": 8, "newElement": "5×3 三张一组：组内三张分散更远" },
+    { "index": 9, "newElement": "6×3 三张一组：横向记忆扫描" },
+    { "index": 10, "newElement": "6×4 全满三张一组终局" }
+  ],
+  "upgrades": [
+    { "id": "unlockPeek", "kind": "rule", "desc": "第 3 关起解锁 Peek 窥视道具" },
+    { "id": "unlockTriple", "kind": "rule", "desc": "第 7 关起三张一组（groupOf=3）" },
+    { "id": "comboTimer", "kind": "rule", "desc": "连击 ≥2 每次配对额外奖励时间" },
+    { "id": "perfectStar", "kind": "rule", "desc": "零失误额外 +1 星" },
+    { "id": "extraPeekStart", "kind": "rule", "desc": "每 3 次配对再补 1 个 Peek 充能" },
+    { "id": "timeBonus", "kind": "stat", "desc": "配对奖励秒数随关卡微调" },
+    { "id": "gridScale", "kind": "stat", "desc": "网格规模 12 → 24 张递增" },
+    { "id": "memorizeTight", "kind": "stat", "desc": "记忆阶段秒数保持 5s 的高压" },
+    { "id": "peekCap", "kind": "stat", "desc": "Peek 充能上限 3" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

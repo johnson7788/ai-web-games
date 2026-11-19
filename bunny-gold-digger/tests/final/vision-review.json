@@ -1,0 +1,149 @@
+{
+  "game": "bunny-gold-digger",
+  "generatedAt": "2026-11-19T13:19:50.648Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 7.875,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的黄色 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "兔子剪影过小且灰度低，与背景对比不足，眯眼时易被忽略",
+        "左上角语言切换按钮无图标，仅文字+下拉箭头，移动端辨识度低",
+        "‘Grab gold before time runs out’提示字号偏小，弱光环境下可能难读"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下的绿色小胡萝卜（唯一非几何体、带尖顶的物体）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标数字 'Target 30' 与 'Best 0' 间距过近，易误读为 'Target 30 Best 0' 连续文本",
+        "兔子角色无明显移动方向指示，仅靠位置推断其向下移动，新手可能困惑",
+        "右上角四个图标中重试按钮（循环箭头）与主页按钮（房子）形状相似，辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-grab.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Bank’按钮存钱或收集当前路径上的发光方块",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中‘40’分数与兔子角色垂直对齐，易误判为兔子属性而非全局分数",
+        "路径上部分黄色方块与灰色方块形状相似（L形 vs 纯色），可能造成操作混淆",
+        "‘Carrot Hollow’关卡名使用斜杠分隔但无空格，略影响快速阅读"
+      ]
+    },
+    {
+      "shot": "tests/final/04-fever.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Bank’按钮存钱或收集当前金币",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中‘73 ×3’数字与兔子角色垂直对齐，易误读为兔子分数而非全局计数",
+        "灰色六边形障碍物无明显交互提示，玩家可能误触导致失败",
+        "右上角图标（问号、设置等）间距过小，桌面端虽可点，但移动端易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部兔子图标模糊且无明确功能说明，可能被误认为装饰而非状态指示",
+        "底部矿石状元素部分遮挡按钮区域（尤其‘Menu’按钮右下角）",
+        "‘Perfect!’文字字号过小，与主信息层级不匹配"
+      ]
+    },
+    {
+      "shot": "tests/final/06-level3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下区域，让兔子向下移动以触碰或避开下方彩色几何体链",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标分数 'Target 60' 与 'Best 73' 字号略小且间距紧凑，易误读为同一字段",
+        "兔子角色无明显运动方向指示（如拖尾/箭头），初看难以判断其默认移动轴向",
+        "底部几何体链中绿色小锥形物（疑似关键交互点）亮度偏低，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/07-level2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕任意位置开始移动兔子向下收集彩色方块",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标数字'45'与'Best 73'间距过小，易误读为'45 Best 73'整体",
+        "兔子角色无明显运动方向指示，初始静止时玩家可能不确定操作方式",
+        "底部方块链中部分黄色五边形与橙色六边形形状相似，快速扫视易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/08-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕任意位置发射胡萝卜（或触碰兔子下方区域启动操作）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标数值‘30’与‘最佳73’字号偏小，弱光下辨识度略低",
+        "兔子角色无明显移动/交互指示，初始状态易误判为静态装饰",
+        "底部物体链中部分六边形颜色相近（黄/橙），在快速移动时可能混淆"
+      ]
+    }
+  ]
+}

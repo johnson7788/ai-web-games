@@ -1,0 +1,42 @@
+{
+  "slug": "brain-checkup",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹诊所里连破 30 项脑力扫描，靠连击与星级冲满分",
+  "fun": { "primary": "curiosity", "secondary": "mastery" },
+  "verbs": [
+    { "name": "tap", "cost": "点错会断连击并扣星", "feedback": ["发光反馈", "音效"], "combinesWith": ["hold"] },
+    { "name": "drag", "cost": "拖错方向或未到阈值不算完成，浪费时间", "feedback": ["手柄位移", "达标高亮"], "combinesWith": ["tap"] },
+    { "name": "hold", "cost": "提前松手判错断连击", "feedback": ["进度环", "音效"], "combinesWith": ["tap"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先点发光的靶标还是先扫周围格子", "cost": "点空判错" },
+    { "atSec": 18, "choice": "是否花 25 神经元买提示", "cost": "扣智慧" },
+    { "atSec": 32, "choice": "按住核心还是先试其他解法", "cost": "松手判错" },
+    { "atSec": 48, "choice": "输入答案前要不要再核对", "cost": "错答案断连击" },
+    { "atSec": 66, "choice": "拖动手柄的时机（早了不达标）", "cost": "浪费时间" },
+    { "atSec": 84, "choice": "跳过还是硬解", "cost": "跳关扣 50 智慧" },
+    { "atSec": 100, "choice": "攒连击冲 3 星还是稳过 1 星", "cost": "错一步全断" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 55, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "tap 点靶标" },
+    { "index": 2, "newElement": "hold 长按核心" },
+    { "index": 3, "newElement": "choice 三选一" },
+    { "index": 4, "newElement": "flip 翻转" },
+    { "index": 5, "newElement": "rate 五星评分" },
+    { "index": 6, "newElement": "drag 拖动手柄" }
+  ],
+  "upgrades": [
+    { "id": "extra-hint", "kind": "rule" },
+    { "id": "combo-shield", "kind": "rule" },
+    { "id": "time-freeze", "kind": "rule" },
+    { "id": "wisdom-regen", "kind": "rule" },
+    { "id": "double-star", "kind": "rule" },
+    { "id": "neuron+10", "kind": "stat" },
+    { "id": "time+10", "kind": "stat" },
+    { "id": "wisdom+20", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

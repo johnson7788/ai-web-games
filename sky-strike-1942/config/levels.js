@@ -1,0 +1,50 @@
+// SKY STRIKE 1942 · 波次（关卡）与敌机定义
+export const ENEMY_TYPES = {
+  1: { name: 'straight', speed: 130, hp: 1, w: 48, h: 48, score: 10, color: '#ff7a3b' },
+  2: { name: 'drift', speed: 150, hp: 1, w: 54, h: 54, score: 15, color: '#ff9d2e' },
+  3: { name: 'zigzag', speed: 160, hp: 1, w: 50, h: 50, score: 20, color: '#ff3b4e' },
+  4: { name: 'shooter', speed: 112, hp: 2, w: 60, h: 60, score: 30, color: '#e0552a' },
+  5: { name: 'diver', speed: 210, hp: 1, w: 46, h: 46, score: 25, color: '#ff5a4e' },
+};
+
+export const LEVELS = [
+  {
+    index: 0,
+    key: 'act1',
+    killTarget: 12,
+    spawnInterval: 1.15,
+    maxEnemies: 5,
+    types: [1, 2, 4, 5],
+    enemyFire: true,
+    rocks: false,
+    rockInterval: 0,
+    maxRocks: 0,
+    powerDrop: 0.16,
+  },
+  {
+    index: 1,
+    key: 'act2',
+    killTarget: 18,
+    spawnInterval: 1.0,
+    maxEnemies: 6,
+    types: [1, 2, 3, 4],
+    enemyFire: true,
+    rocks: true,
+    rockInterval: 3.6,
+    maxRocks: 2,
+    powerDrop: 0.18,
+  },
+  {
+    index: 2,
+    key: 'act3',
+    killTarget: 25,
+    spawnInterval: 0.82,
+    maxEnemies: 8,
+    types: [1, 2, 3, 4, 5],
+    enemyFire: true,
+    rocks: true,
+    rockInterval: 3.0,
+    maxRocks: 3,
+    powerDrop: 0.2,
+  },
+];

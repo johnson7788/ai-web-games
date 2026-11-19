@@ -1,0 +1,56 @@
+{
+  "game": "merge-melon-drop",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "v1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 151.3,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 2.22,
+      "deaths": 0,
+      "actions": 178,
+      "idleSec": 0,
+      "maxEventGapSec": 1.7,
+      "uniqueEvents": 7,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 122.47,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 2.48,
+      "deaths": 1,
+      "actions": 164,
+      "idleSec": 0,
+      "maxEventGapSec": 2.18,
+      "uniqueEvents": 9,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 10,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 0,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

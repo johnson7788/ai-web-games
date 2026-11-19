@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MERGE MELON DROP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-bar">
+        <div class="hud-left">
+          <span class="hud-label">Score</span><span id="hud-score">0</span>
+          <span class="hud-sep"></span>
+          <span class="hud-label">Best</span><span id="hud-best">0</span>
+        </div>
+        <div class="hud-center">
+          <span class="hud-label">Next</span>
+          <span id="next-orb" class="orb"></span>
+          <span id="next-name">—</span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-combo" class="hidden">COMBO ×1</span>
+          <span id="hud-stage"></span>
+          <button id="btn-howto" class="hud-btn" data-tutorial-replay aria-label="How to play">?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Sound">🔊</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">MERGE MELON DROP</h1>
+      <p class="subtitle" id="subtitle-text">Neon Fruit Merge</p>
+      <div class="best-line"><span id="title-best"></span></div>
+      <button id="btn-start">Play</button>
+      <button id="btn-howto-title" class="btn-ghost" data-tutorial-replay>How to play</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Game Over</h2>
+      <div id="result-stars" class="stars"></div>
+      <div id="result-score"></div>
+      <div id="result-best"></div>
+      <div id="result-maxtier"></div>
+      <div id="result-newbest" class="hidden">New Best!</div>
+      <div class="result-btns">
+        <button id="btn-retry">Play Again</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate your device for a bigger board</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title">How to play</h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

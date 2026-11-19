@@ -1,0 +1,149 @@
+{
+  "game": "sky-strike-1942",
+  "generatedAt": "2026-11-19T13:29:47.539Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.875,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮粉色的'Launch'按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题'SKY STRIKE 1942'与下方'NEON AIR RAID'间距过小，略显拥挤",
+        "三个圆形图标（含星标）无明确功能说明，易混淆为装饰或可点击元素",
+        "‘Best 0’文字偏小且颜色较淡（浅灰），在深背景中对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "移动绿色飞船到任一棕色敌机位置并按住开火",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示文字 'MOVE TO AIM · HOLD TO FIRE' 无背景衬底，深色星空下对比度偏低，易被忽略",
+        "左上角 'Target 1/12' 黄色高亮框与深蓝背景对比不足，部分玩家可能误读为 '1/1'",
+        "敌人图标（棕色圆+橙色符号）内部符号细节较细，眯眼时三类敌人（三角/倒梯形/箭头）区分度中等"
+      ]
+    },
+    {
+      "shot": "tests/final/03-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色玩家飞船向上发射子弹",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角八边形图标疑似未加载完成（显示为灰色空心多边形），位置在屏幕右上角，可能为敌人或道具但语义不明",
+        "目标计数 'Target 0/18' 与 Wave 2 并列，易误读为当前已击中0个而非目标总数18，建议加前缀如 'Kill'",
+        "玩家飞船下方无明显瞄准线或射击方向指示，新手可能不确定射击方向"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮粉色的'Fly Again'按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部中央的三角形图标（疑似玩家轮廓）与'Fly Again'按钮垂直距离过近，可能造成误触或视觉干扰",
+        "顶部HUD中'Target 0/12'背景为半透明深灰，与深色背景对比度偏低，弱光环境下易误读",
+        "三颗星图标无描边或阴影，在深蓝背景下边缘略糊，影响清晰度"
+      ]
+    },
+    {
+      "shot": "tests/final/05-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色‘出击’按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘霓虹空袭’与‘最佳1500’文字偏小且颜色对比度偏低，弱光环境下可能难辨",
+        "三个圆形图标符号相似、无明确功能提示，易混淆（左/中/右图标）",
+        "底部绿色图标部分被屏幕底边裁切（疑似可交互元素）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "移动飞船对准上方第一个金色目标，然后按住屏幕开火",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家飞船图标中心有粉色小点，与绿色外环对比弱，可能影响瞄准精度",
+        "‘MOVE TO AIM · HOLD TO FIRE’提示框无背景，深色星空下部分文字略显模糊",
+        "顶部HUD中‘Target 0/12’黄色高亮框边距过窄，易误触右侧Combo区域"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动屏幕任意位置来驾驶战斗机",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Pilot briefing’弹窗遮挡中部瞄准线，可能影响初始瞄准判断",
+        "目标星标（B）与上方准星视觉距离过近，易混淆目标与瞄准点",
+        "‘MOVE TO AIM · HOLD TO FIRE’提示文字字号偏小，弱光下辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的'Launch'按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’提示悬停在按钮上但无明显交互反馈，易被忽略",
+        "三个圆形图标（含星标）语义模糊，未明确指示功能或状态",
+        "‘Pilot briefing’框体边框发光过强，轻微干扰文字阅读"
+      ]
+    }
+  ]
+}

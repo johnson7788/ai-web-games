@@ -1,0 +1,149 @@
+{
+  "game": "brain-checkup",
+  "generatedAt": "2026-11-19T13:23:07.191Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 6.625,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间高亮的黄色方框内的小圆点（glitch sprite）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间方框内glitch sprite过小（直径约12px），在低分辨率下可能难以精准点击",
+        "底部'Next'按钮文字被截断（显示为'Ne...'），实际应为'Next'",
+        "顶部'30s'计时器与'100'金币图标间距过近，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next scan”继续游戏流程",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Diagnosis: BRILLIANT’与三颗星间距过小，视觉层级略混乱",
+        "底部‘Skip’和右侧按钮无明确标签，右侧按钮文字被截断（显示为‘...’或空白）",
+        "‘Flawless Scan’与下方描述文字字号/字重差异大，削弱信息主次关系"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play-hold.png",
+      "goal_visible": true,
+      "first_action_guess": "长按屏幕中央的圆形‘Hold...’区域直到上方提示的重启条填满。",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘Hold...’圆环进度条起始角度不明确（从约10点钟位置开始），易误判填充方向",
+        "‘Skip’按钮与右侧空白按钮大小/样式不一致，右侧按钮文字缺失或未激活状态不清晰",
+        "顶部提示文字‘Hold the core until the reboot bar fills.’中‘reboot bar’指代不明（图中无可见‘bar’，仅靠文字理解）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play-choice.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Red wire’、‘Blue wire’或‘Green wire’中的一个来选择供电线",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "选项按钮间距过宽，中间大片空白易误判为无交互区域",
+        "背景网格线与选项按钮边框颜色接近（青色），弱化按钮轮廓",
+        "‘Skip’和右侧按钮文字颜色过浅（灰白），对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/05-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start Scan’按钮开始扫描",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Scan 3/30’与金币/时间图标间距过小，易误触",
+        "18个扫描格子中部分星星图标亮度偏低（如格子7、10），在暗背景下辨识度不足",
+        "‘Skip’按钮右侧空白按钮无文字且无悬停反馈，功能不明"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧第一个亮黄色边框的方块（当前唯一可见的glitch sprite）",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间四个方块中仅第一个有内容，其余为空白但边框颜色不同（黄 vs 蓝），易误判为可交互状态不一致",
+        "‘Scan 1/30’与金币/计时器间距过小，视觉上粘连，影响快速读取",
+        "底部‘Skip’和‘Start’按钮文字大小不一致（Skip小、Start大），且‘Start’按钮无明确语义（应为‘Next’或‘Continue’）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧发光的黄色方框中的小圆点（glitch sprite）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧glitch sprite内小圆点尺寸过小，可能难精准点击（尤其移动端）",
+        "网格背景与方框边线颜色接近（青蓝），部分低对比区域易混淆",
+        "顶部‘Scan 1/30’等HUD文字偏小，弱光下可读性下降"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧发光的黄色方框（含白色圆点）以清除该glitch sprite",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角‘How to run a scan’提示框遮挡部分网格背景，可能影响目标定位感知",
+        "顶部‘Scan 1/30’与计时器间距过小，视觉上略拥挤",
+        "四个方框中仅最右一个高亮，但无明确指示‘当前目标’状态（如脉冲/缩放），依赖颜色区分，对色弱用户不友好"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "soko-warehouse",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹仓库里把会发光的货箱一格一格推进绿色泊位，绕开岩石、卡准步数、连击上分。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "move", "cost": "每走一步都消耗步数，方向错一次就会让后续路线更紧", "feedback": ["sfx", "footGlow", "dirArrow"], "combinesWith": ["push"] },
+    { "name": "push", "cost": "推箱消耗步数且箱子只能直推不能拉，推错一步可能把箱子卡进死角", "feedback": ["sfx", "crateGlow", "dustBurst"], "combinesWith": ["move"] },
+    { "name": "undo", "cost": "每关回退次数有限，用完就没了", "feedback": ["sfx", "rewindGhost", "hudFlash"], "combinesWith": [] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先把左边的箱子推到泊位，还是先绕到右边的箱子后面", "cost": "先推哪只都占步数，选错会绕远路" },
+    { "atSec": 15, "choice": "连续推同一只箱子刷连击，还是先落位保底", "cost": "连击要连续推箱，中途走路就断" },
+    { "atSec": 30, "choice": "把箱子推进角落再绕出来，还是用回退撤销上一步", "cost": "回退只有 3 次，用完再卡死只能重开" },
+    { "atSec": 45, "choice": "贴着岩石内侧走捷径，还是走外侧长路更稳", "cost": "内侧省步数但可能被箱子堵死" },
+    { "atSec": 60, "choice": "在只剩几步时冲 3 星 par，还是求稳只过关", "cost": "冲 par 容易超步数直接失败" },
+    { "atSec": 90, "choice": "最后一只箱子：直推进泊位 1 星，还是绕位腾出连击再进", "cost": "绕位多耗步数，可能功亏一篑" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 60, "twistSec": 40, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "基础移动 + 推一个箱子入位" },
+    { "index": 2, "newElement": "岩石障碍（内部不可推格）首次出现" },
+    { "index": 3, "newElement": "双箱 + 二选一路线" },
+    { "index": 4, "newElement": "连锁推箱（一箱顶一箱）" },
+    { "index": 5, "newElement": "窄角 + 连续推箱连击" },
+    { "index": 6, "newElement": "三箱货 + 首块中央岩石" },
+    { "index": 7, "newElement": "折返路线 + 目标分列" },
+    { "index": 8, "newElement": "双岩石夹道" },
+    { "index": 9, "newElement": "四角布局 + 步数压力" },
+    { "index": 10, "newElement": "岩石逼出的长推绕行" },
+    { "index": 11, "newElement": "三岩石宽地板 + 双回路" },
+    { "index": 12, "newElement": "仓库大关：三箱 + 三岩石 + 严苛步数" }
+  ],
+  "upgrades": [
+    { "id": "unlockUndo", "kind": "rule", "desc": "回退机制：可撤销上一步，把失败成本从「整关」降到「一步」" },
+    { "id": "comboScoring", "kind": "rule", "desc": "连击机制：连续推箱触发递增反馈，鼓励一气呵成" },
+    { "id": "rockFields", "kind": "rule", "desc": "岩石障碍：不可移动的内部格，逼出绕行路线" },
+    { "id": "starRating", "kind": "rule", "desc": "星级评级：按步数对照 par 给 1–3 星，制造重玩冲星" },
+    { "id": "moveBudget", "kind": "stat", "desc": "步数上限逐关收紧" },
+    { "id": "undoReserve", "kind": "stat", "desc": "回退次数逐关递增" },
+    { "id": "crateLoad", "kind": "stat", "desc": "箱子数量递增" },
+    { "id": "floorScale", "kind": "stat", "desc": "棋盘尺寸逐关扩大" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

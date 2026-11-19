@@ -1,0 +1,149 @@
+{
+  "game": "unblock-cars",
+  "generatedAt": "2026-11-19T13:11:07.679Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.25,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "district grid中1号格子高亮色（亮粉）与其余格子（暗紫）对比过强，可能误导玩家以为1号是唯一可选；",
+        "‘Choose a district’文字颜色偏淡（浅灰），在深紫背景上辨识度略低；",
+        "星星图标大小不一（如1号格子1星 vs 其他2-3星），且部分数字与星星间距不一致，影响视觉统一"
+      ]
+    },
+    {
+      "shot": "tests/final/02-gameplay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧青色带三角箭头的按钮，将其向右推入通道",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'How to play' 文字与右侧按钮间距过小，易误触",
+        "左上角状态栏（Level/Time/Moves/Par/Score）字体偏小，远距离辨识度低",
+        "EXIT 按钮无明确边界指示，仅靠箭头和文字识别，新手可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-gameplay-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色带箭头的EXIT按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "EXIT按钮文字与箭头图标间距过小，易误触",
+        "中间青色方块内三角符号方向模糊（向上？向右？），影响操作意图理解",
+        "背景网格线在深色区域对比度偏低，部分玩家可能忽略边界"
+      ]
+    },
+    {
+      "shot": "tests/final/04-gameplay-mid.png",
+      "goal_visible": true,
+      "first_action_guess": "点击青色带三角箭头的方块（当前高亮可移动件）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "EXIT按钮绿色箭头与右侧橙色竖条紧贴，可能误触",
+        "‘How to play’文字在右上角按钮组中偏小且无背景，低对比度",
+        "网格地面与游戏区域底座颜色相近，层次略弱"
+      ]
+    },
+    {
+      "shot": "tests/final/05-gameplay-late.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色带三角的方块（底部左一）以启动移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'How to play'文字与图标间距过小，易误触",
+        "EXIT按钮无明确边界，仅靠箭头和文字标识，辨识度偏低",
+        "顶部HUD中'Par 3'与'Score 0'之间分隔符缺失，视觉连贯性稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊的手机轮廓与弹窗重叠，可能干扰视觉焦点",
+        "‘EXIT’按钮文字过小且无明确交互反馈区域，易误触或忽略",
+        "顶部状态栏（Level 1 / Time / Moves / Par / Score）字体偏小，弱光下辨识度低"
+      ]
+    },
+    {
+      "shot": "tests/final/07-gameplay-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色带箭头的EXIT按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "EXIT按钮文字与箭头图标间距过小，易误触",
+        "中央蓝色方块内三角形方向指示不明确（向上但出口在右）",
+        "背景网格线与游戏区域边框亮度接近，边界略模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧青色带三角箭头的按钮，将其向右推入通道",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'How to play' 文字与右侧按钮间距过小，易误触",
+        "左上角状态栏（Level/Time/Moves/Par/Score）字体偏小，远距离辨识度低",
+        "EXIT 按钮无明确边界指示，仅靠箭头和文字识别，新手可能忽略"
+      ]
+    }
+  ]
+}
