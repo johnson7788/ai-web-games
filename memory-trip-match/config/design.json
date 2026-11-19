@@ -1,0 +1,65 @@
+{
+  "slug": "memory-trip-match",
+  "genre": "puzzle",
+  "oneLiner": "短暂预览记住霓虹符号的位置，翻两张配对；连击加分、岩石卡要敲裂、步数越少星级越高。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "flip", "cost": "每翻一张算一次行动；翻错两张断连击并占 1.5 秒", "feedback": ["sfx", "flipAnim", "glow"], "combinesWith": ["match"] },
+    { "name": "match", "cost": "配对成功即定型，翻错只会浪费步数；连击一断分就少", "feedback": ["sfx", "sparkle", "comboPop"], "combinesWith": ["flip"] },
+    { "name": "hint", "cost": "每关仅 2 次窥牌，用完即无", "feedback": ["sfx", "peekFlash"], "combinesWith": ["flip"] }
+  ],
+  "decisions": [
+    { "atSec": 2, "choice": "预览 1.5 秒：先记边角牌还是先记中间牌", "cost": "边角好清，中间利于规划连击" },
+    { "atSec": 6, "choice": "第一手翻哪张", "cost": "翻已知位置稳，试未知位置断了连击" },
+    { "atSec": 12, "choice": "连击到 ×3：继续冲高连击还是稳妥保底", "cost": "冲连击一旦翻错就归零" },
+    { "atSec": 20, "choice": "步数吃紧：现在用提示还是留给后面", "cost": "提示每关只有 2 次" },
+    { "atSec": 30, "choice": "岩石卡登场：先敲裂岩石还是先清普通对", "cost": "敲岩石多耗步数，留着可能卡尾" },
+    { "atSec": 45, "choice": "只剩最后两对：赌记忆直接翻还是用最后一次提示", "cost": "翻错会超步数判负" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "3 对卡 · 6 张：学会翻牌配对" },
+    { "index": 2, "newElement": "4 对卡：步数开始计星" },
+    { "index": 3, "newElement": "5 对卡：连击计分登场" },
+    { "index": 4, "newElement": "6 对卡：更宽的 5×3 网格" },
+    { "index": 5, "newElement": "岩石卡：要先敲裂才能翻开" },
+    { "index": 6, "newElement": "8 对卡：牌面压力上升" },
+    { "index": 7, "newElement": "9 对卡：步数预算收紧" },
+    { "index": 8, "newElement": "岩石卡增至 2 对" },
+    { "index": 9, "newElement": "11 对卡：长棋盘" },
+    { "index": 10, "newElement": "12 对卡：连击更值钱" },
+    { "index": 11, "newElement": "岩石卡增至 3 对" },
+    { "index": 12, "newElement": "三列窄卡：剪影辨认" },
+    { "index": 13, "newElement": "预览窗到达上限" },
+    { "index": 14, "newElement": "岩石卡封顶 4 对" },
+    { "index": 15, "newElement": "纯记忆的极限" },
+    { "index": 16, "newElement": "步数预算最难一档" },
+    { "index": 17, "newElement": "接近终章的牌海" },
+    { "index": 18, "newElement": "终章前的高压关" },
+    { "index": 19, "newElement": "隐藏加演关" },
+    { "index": 20, "newElement": "传奇终点站 44 张牌" }
+  ],
+  "upgrades": [
+    { "id": "unlockCombo", "kind": "rule", "desc": "连续配对累积连击倍率" },
+    { "id": "unlockRocks", "kind": "rule", "desc": "第 5 关起出现岩石卡" },
+    { "id": "rockCrackCost", "kind": "rule", "desc": "岩石卡要先敲裂再翻开" },
+    { "id": "unlockHint", "kind": "rule", "desc": "每关 2 次窥牌道具" },
+    { "id": "starGate", "kind": "rule", "desc": "按步数评 1–3 星" },
+    { "id": "peekRevealAll", "kind": "rule", "desc": "提示瞬间全亮未配对卡" },
+    { "id": "comboCap", "kind": "stat", "desc": "连击倍率封顶 ×9" },
+    { "id": "rockPairsScale", "kind": "stat", "desc": "岩石对数随关卡递增" },
+    { "id": "moveBudgetScale", "kind": "stat", "desc": "步数预算随配对递增" },
+    { "id": "previewScale", "kind": "stat", "desc": "预览时长随牌数递增" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

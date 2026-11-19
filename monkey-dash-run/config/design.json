@@ -1,0 +1,97 @@
+{
+  "slug": "monkey-dash-run",
+  "genre": "arcade",
+  "oneLiner": "玩家操控霓虹猴子在两条车道间切换，躲开仙人掌、黄蜂与滚石，吃香蕉攒连击、集火花触发冲刺撞碎岩石冲高分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "switch",
+      "cost": "切换后原车道可能立刻被新障碍占据；来回切会打乱收集节奏、错过连击窗口",
+      "feedback": ["sfx", "laneGlow", "trail"],
+      "combinesWith": ["collect"]
+    },
+    {
+      "name": "collect",
+      "cost": "追逐收集物会偏离安全车道，暴露在障碍的行进路线上",
+      "feedback": ["sfx", "popParticle", "comboFlash"],
+      "combinesWith": ["switch"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "第一个仙人掌迎面冲来：现在就切道，还是等它再近一点骗出擦身奖励",
+      "cost": "等太久会直接撞上；切太早可能把另一条车道的黄蜂让到眼前"
+    },
+    {
+      "atSec": 8,
+      "choice": "香蕉在另一条车道、前方有滚石：横穿去吃，还是留在安全道",
+      "cost": "吃香蕉得连击与分数，但可能迎上滚石"
+    },
+    {
+      "atSec": 15,
+      "choice": "护盾与火花分居两车道：先拿盾保命，还是先拿火花攒冲刺",
+      "cost": "拿盾 = 放弃本轮冲刺进度；拿火花 = 暴露在没有护盾的车道"
+    },
+    {
+      "atSec": 25,
+      "choice": "冲刺即将结束、前方滚石墙：撞碎它拿分，还是提前切回安全道",
+      "cost": "撞碎 = 额外分与爽感；切道 = 放弃这波冲刺收益"
+    },
+    {
+      "atSec": 45,
+      "choice": "连击 ×6 还剩 1 秒且眼前没有收集物：冒险横穿找香蕉续连击，还是接受断连",
+      "cost": "横穿可能撞障碍；不续则连击归零、分数倍率暴跌"
+    },
+    {
+      "atSec": 70,
+      "choice": "速度已到第 4 档、滚石越来越快：专注保命，还是继续贪收集物冲分",
+      "cost": "贪分 = 死亡率上升；保守 = 分数增长变慢"
+    },
+    {
+      "atSec": 100,
+      "choice": "火花只差 1 个就能冲刺，但它和仙人掌同车道：赌冲刺无敌清场，还是等下一个更安全的机会",
+      "cost": "赌 = 可能死在触达前；等 = 错过当下冲刺清场的爽点"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "左/右两车道 + 仙人掌（匀速下坠）" },
+    { "index": 2, "newElement": "黄蜂（左右摆动的横向障碍）" },
+    { "index": 3, "newElement": "滚石（高速下坠，冲刺可撞碎）" },
+    { "index": 4, "newElement": "火花冲刺条（集 3 火花触发 3 秒冲刺）" },
+    { "index": 5, "newElement": "连击倍率（连续收集叠加 ×8，断连清零）" }
+  ],
+  "upgrades": [
+    { "id": "unlockWasp", "kind": "rule", "desc": "第 2 档起黄蜂加入障碍池" },
+    { "id": "unlockRock", "kind": "rule", "desc": "第 3 档起滚石加入障碍池" },
+    { "id": "unlockRush", "kind": "rule", "desc": "第 4 档起火花可触发冲刺" },
+    { "id": "comboMultiplier", "kind": "rule", "desc": "连击倍率作用于收集与撞碎得分" },
+    { "id": "rushSmash", "kind": "rule", "desc": "冲刺/无敌期间障碍变为可撞碎加分物" },
+    { "id": "tierSpeed", "kind": "stat", "desc": "每档速度 +55 px/s" },
+    { "id": "shieldTime", "kind": "stat", "desc": "护盾无敌时长 3 秒" },
+    { "id": "comboWindow", "kind": "stat", "desc": "连击续接窗口 3 秒" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 15,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "pixel-squadron",
+  "genre": "arcade",
+  "oneLiner": "霓虹像素战机在太空里左右闪避，用自动机炮击落外星中队，连击不杀敌就衰减，岩石会劈成碎片，打完首领拿下三星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "把战机押到一侧就放弃了另一侧，压得太深会撞进子弹和岩石",
+      "feedback": ["thruster", "trail", "sfx"],
+      "combinesWith": ["aim", "dodge"]
+    },
+    {
+      "name": "aim",
+      "cost": "机炮只打正前方一列，对准一个敌人就等于放弃打别的目标",
+      "feedback": ["muzzle", "tracer", "sfx"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "dodge",
+      "cost": "躲闪会让机炮偏离目标、连击计时器继续流失",
+      "feedback": ["afterimage", "nearMiss", "sfx"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "第一块岩石落下：先躲开，还是顶着它继续打领头敌机",
+      "cost": "躲开会断连击；硬吃岩石掉血"
+    },
+    {
+      "atSec": 10,
+      "choice": "冲进火力圈追下一个连击目标，还是缩在边缘保命",
+      "cost": "追连击可能撞子弹；保守会让连击衰减"
+    },
+    {
+      "atSec": 25,
+      "choice": "先打碎挡住弹道的岩石，还是绕过去直接打敌机",
+      "cost": "打岩石浪费开火时间；绕行会断掉瞄准"
+    },
+    {
+      "atSec": 40,
+      "choice": "放掉一只残血敌机换生存，还是贴脸补最后一下",
+      "cost": "放走敌机直接判负；贴脸可能被撞"
+    },
+    {
+      "atSec": 55,
+      "choice": "劈开大岩石拿碎片分，还是留它挡子弹当掩体",
+      "cost": "碎片更难躲；留着当掩体也有撞上风险"
+    },
+    {
+      "atSec": 75,
+      "choice": "暂停开火去重新站位，还是维持火力压敌机",
+      "cost": "连击 2.5 秒不杀敌就归零"
+    },
+    {
+      "atSec": 95,
+      "choice": "和首领对轰速杀，还是绕圈慢慢磨",
+      "cost": "对轰吃更多弹幕；磨血要躲更久"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础敌机中队 + 自动机炮" },
+    { "index": 2, "newElement": "小行星带（可击碎岩石）" },
+    { "index": 3, "newElement": "连击倍率上限 ×8" },
+    { "index": 4, "newElement": "会分裂的岩石风暴" },
+    { "index": 5, "newElement": "扇形弹幕首领战" },
+    { "index": 6, "newElement": "全要素叠加 + 高速敌机" }
+  ],
+  "upgrades": [
+    { "id": "comboWindow", "kind": "rule", "desc": "连击衰减窗口延长到 3.5 秒" },
+    { "id": "pierce", "kind": "rule", "desc": "子弹可穿透第一个敌人" },
+    { "id": "asteroidSplit", "kind": "rule", "desc": "岩石被击碎后分裂成更小的碎片" },
+    { "id": "bombDrop", "kind": "rule", "desc": "击落敌机有概率掉落清屏炸弹" },
+    { "id": "fireRate", "kind": "stat", "desc": "射速 +20%" },
+    { "id": "bulletSpeed", "kind": "stat", "desc": "子弹速度 +15%" },
+    { "id": "hpUp", "kind": "stat", "desc": "最大血量 +2" },
+    { "id": "moveSpeed", "kind": "stat", "desc": "移动速度 +12%" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

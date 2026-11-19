@@ -1,0 +1,117 @@
+{
+  "game": "memory-trip-match",
+  "generatedAt": "2026-11-19T15:28:34.454Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.833333333333334,
+    "silhouette": 7.5,
+    "style_consistent": 9.166666666666666
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "数字卡片上的星标（如 '1' 卡片的 ★★）与数字间距过小，可能误读为编号的一部分",
+        "‘0 / 60’ 星标计分显示字号偏小，弱光环境下辨识度略低",
+        "右上角语言切换按钮无悬停反馈提示，交互意图不够明确"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "卡片数字下方小字‘☆☆☆’在部分卡片（如1号）中与背景对比度偏低，可能影响弱光下辨识",
+        "顶部‘霓虹记忆配对之旅’副标题字号偏小，与主标题层级区分不足",
+        "右上角语言切换按钮无悬停反馈提示，且下拉箭头与文字间距过紧"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角青色实心圆，与右下角青色实心圆配对",
+      "readable": 9,
+      "silhouette": 10,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上两个黄色星星完全相同，易误判为已配对（实际应为待匹配项）",
+        "‘Pairs 0/3’与‘Moves 0/9’之间分隔符‘—’视觉弱，可能被忽略",
+        "底部空格区域无占位提示，新手可能误点无效区"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始本关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星图标与‘Perfect!’文字间距过小，易误触或视觉拥挤",
+        "背景卡片中的图形（圆环/实心圆/星形）对比度低，眯眼时难以快速区分类型",
+        "顶部状态栏‘Level 1’与‘Match every pair’按钮文字偏小且颜色暗淡，弱光下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间第二行第二个带Y形线的卡片，与第三行第四个相同图案配对",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "眯眼时所有卡片轮廓亮度相近，仅Y形线卡片略突出，辨识度中等",
+        "‘Pairs 0/7’与‘Moves 0/21’间距过小，易误读为‘Pairs 0/7 Moves 0/21’",
+        "Hint按钮文字‘Hint ×2’字号偏小，远距离可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile-rotate.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play anyway’按钮继续游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "弹窗居中遮挡背景板格子（11-20号），影响对当前关卡布局的预判",
+        "‘Rotate for a bigger board’提示语未说明如何旋转（设备方向？手势？）",
+        "背景文字‘MEMORY TRIP MATCH’与副标题模糊，对比度偏低，影响快速识别"
+      ]
+    }
+  ]
+}

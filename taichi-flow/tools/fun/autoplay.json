@@ -1,0 +1,60 @@
+{
+  "game": "taichi-flow",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "_howto": "greedy/random/noinput 三策略；schema 见 references/playtest-protocol.md §3",
+  "runs": [
+    {
+      "id": "greedy",
+      "policy": "greedy",
+      "seed": 5,
+      "level": 3,
+      "durationSec": 0.3,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.08,
+      "deaths": 0,
+      "actions": 18,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 8,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 0.53,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 27,
+      "idleSec": 0,
+      "maxEventGapSec": 0.05,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 40.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 1,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

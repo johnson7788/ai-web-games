@@ -1,0 +1,137 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "games/pixel-squadron/tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "i18n 默认 en",
+      "ok": true,
+      "detail": "eval: window.__ll.state.lang === 'en'"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 1"
+    },
+    {
+      "name": "玩家存活",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().player.hp > 0"
+    },
+    {
+      "name": "第 2 关（小行星带）",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 2"
+    },
+    {
+      "name": "第 3 关（连击）",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 3"
+    },
+    {
+      "name": "第 4 关（岩石风暴）",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 4"
+    },
+    {
+      "name": "第 6 关（最终突袭）",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 6"
+    },
+    {
+      "name": "结算屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 1"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "移动端进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.65,\"fps\":60.1,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-playing.png",
+    "03-asteroid.png",
+    "04-wave.png",
+    "07-rockstorm.png",
+    "08-final.png",
+    "05-result.png",
+    "06-m-playing.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "[mobile] https://pipygames.com/sdk/config.json",
+    "[mobile] https://pipygames.com/api/sdk/config?appId=pipy-pixel-squadron",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-pixel-squadron",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-pixel-squadron"
+  ],
+  "fps": {
+    "avgFrameMs": 16.65,
+    "fps": 60.1,
+    "frames": 120
+  },
+  "pass": true
+}

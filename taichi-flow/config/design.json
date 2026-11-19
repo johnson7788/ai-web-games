@@ -1,0 +1,103 @@
+{
+  "slug": "taichi-flow",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹太极棋盘上，点一个格子互换左右与上下两对邻居，把每一枚阴格都推到发光标记处调和阴阳——锁石挡路、步数争星、连击刷分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "每次点击消耗 1 步，且同时互换左右、上下两对邻居：选错格子会把已经就位的阴格再次推离目标",
+      "feedback": ["sfx", "swapGlow", "shake"],
+      "combinesWith": ["undo"]
+    },
+    {
+      "name": "undo",
+      "cost": "每局只有 3 次撤销，且撤销会回退已走步数，等于放弃这条路线的时间投入",
+      "feedback": ["sfx", "reverseFlash"],
+      "combinesWith": ["tap"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "先点哪个格子：把最远的阴格往标记靠，还是先稳住已经匹配好的区域",
+      "cost": "移动远格会牵动另一对邻居，可能打乱已就位区域"
+    },
+    {
+      "atSec": 15,
+      "choice": "绕开锁石走长线，还是贴着锁石走最短路径",
+      "cost": "绕锁石多花步数（星级下降）；贴锁石则换邻操作被挡住"
+    },
+    {
+      "atSec": 30,
+      "choice": "现在用掉 1 次撤销纠正失误，还是留到后面的硬局",
+      "cost": "撤销只有 3 次，用掉就少了纠错后手"
+    },
+    {
+      "atSec": 50,
+      "choice": "追求 par 步内 3 星，还是接受多走几步拿 1 星先过关",
+      "cost": "求 3 星要精确步数，容错更低"
+    },
+    {
+      "atSec": 80,
+      "choice": "先制造连击刷分，还是先保证全部阴格匹配",
+      "cost": "连击要一次点击 ≥2 个新匹配，可能要先制造暂时错位"
+    },
+    {
+      "atSec": 120,
+      "choice": "重开本关换一个心态，还是继续硬啃当前局面",
+      "cost": "重开丢掉当前进度与最佳连击记录"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "点格换邻基础规则 + 5 枚阴格的菱形目标" },
+    { "index": 2, "newElement": "3x3 方阵目标，开始要求多步规划" },
+    { "index": 3, "newElement": "锁石（rock）首次登场：不可点不可换的障碍" },
+    { "index": 4, "newElement": "竖列目标 + 上下两枚锁石夹道" },
+    { "index": 5, "newElement": "十字目标 + 四角锁石压缩可动空间" },
+    { "index": 6, "newElement": "斜线目标：换邻沿对角方向的首次考验" },
+    { "index": 7, "newElement": "环形目标：中央锁石逼出绕行路线" },
+    { "index": 8, "newElement": "山形目标：底部满行的大面积调和" },
+    { "index": 9, "newElement": "心形目标：27 枚阴格的高密度布局" },
+    { "index": 10, "newElement": "太极半圆目标 + 两枚锁石构成阴阳分界" },
+    { "index": 11, "newElement": "四扇窗目标：多簇同时推进" },
+    { "index": 12, "newElement": "星辰终章：菱形+十字+锁石复合图案" }
+  ],
+  "upgrades": [
+    { "id": "rockTiles", "kind": "rule", "desc": "第 3 关起引入锁石，换邻操作被障碍截断" },
+    { "id": "parStars", "kind": "rule", "desc": "par 步内 3 星、par+2 内 2 星，把步数变成取舍" },
+    { "id": "comboScore", "kind": "rule", "desc": "一次点击 ≥2 个新匹配即连击，叠加刷分" },
+    { "id": "undoMoves", "kind": "rule", "desc": "每局 3 次撤销，回退步数重规划" },
+    { "id": "moveLimit", "kind": "rule", "desc": "超过 maxMoves 判负，给自由换邻设边界" },
+    { "id": "gridScale", "kind": "stat", "desc": "7x7 棋盘，可动格规模决定规划半径" },
+    { "id": "targetDensity", "kind": "stat", "desc": "目标阴格数从 5 增长到 27，密度递增" },
+    { "id": "parGrowth", "kind": "stat", "desc": "par 从 5 步逐步抬升到 13 步" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

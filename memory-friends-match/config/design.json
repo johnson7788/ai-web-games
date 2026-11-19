@@ -1,0 +1,105 @@
+{
+  "slug": "memory-friends-match",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹街机里记住每位机器朋友的名字与样子，倒计时内连续答对名字↔样子的配对，连击与星级把记忆变成街机高分挑战。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "memorize",
+      "cost": "记忆时间从倒计时里扣，拖得越久答题越紧",
+      "feedback": ["sfx", "faceGlow"],
+      "combinesWith": ["answer"]
+    },
+    {
+      "name": "answer",
+      "cost": "答错会清空连击并扣一颗星",
+      "feedback": ["sfx", "correctGlow", "wrongShake", "comboFlash"],
+      "combinesWith": ["memorize", "hint"]
+    },
+    {
+      "name": "hint",
+      "cost": "每关限 1 次，第 9 关起归零",
+      "feedback": ["sfx", "scanSweep"],
+      "combinesWith": ["answer"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "记忆阶段要不要再多看两秒，还是立刻点「我记住了」抢时间",
+      "cost": "多看两秒更稳，但倒计时已经在走"
+    },
+    {
+      "atSec": 12,
+      "choice": "第一个问题里有个朋友印象模糊：凭直觉选，还是花掉唯一的扫描",
+      "cost": "扫描用掉后，后面更难的问题就没有退路"
+    },
+    {
+      "atSec": 20,
+      "choice": "连击已到 ×3：为了保持连击放慢节奏，还是继续抢速度",
+      "cost": "放慢更稳但时间不够；抢速度一旦答错连击归零"
+    },
+    {
+      "atSec": 35,
+      "choice": "4 个选项里有两个长得像：先排除最不可能的，还是直接凭第一印象",
+      "cost": "排除消耗时间，第一印象可能踩陷阱"
+    },
+    {
+      "atSec": 50,
+      "choice": "时间只剩 10 秒，还有两题：用扫描稳过一题，还是赌两题都答对",
+      "cost": "扫描只有一次，赌输就超时"
+    },
+    {
+      "atSec": 70,
+      "choice": "结算前最后一道题：稳拿 2 星见好就收，还是冲 0 失误的 3 星完美",
+      "cost": "答错会从 3 星掉到 1 星，重开要再打一整关"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "记名字：3 位朋友 + 名字↔样子的第一轮记忆" },
+    { "index": 2, "newElement": "更多问题：连续 3 题考验记忆耐力" },
+    { "index": 3, "newElement": "3 选 1：选项从 2 个升到 3 个" },
+    { "index": 4, "newElement": "时间压力：倒计时缩短到 40s" },
+    { "index": 5, "newElement": "连击系统上线：连对得分 ×2 ×3" },
+    { "index": 6, "newElement": "更多问题：4 题长局" },
+    { "index": 7, "newElement": "4 选 1：选项升到 4 个" },
+    { "index": 8, "newElement": "6 位朋友同屏：记忆负载翻倍" },
+    { "index": 9, "newElement": "禁用扫描：本关没有任何提示道具" },
+    { "index": 10, "newElement": "7 位朋友：5 题高强度" },
+    { "index": 11, "newElement": "8 位朋友：接近记忆极限" },
+    { "index": 12, "newElement": "终局冲刺：30s 倒计时 + 8 位朋友" }
+  ],
+  "upgrades": [
+    { "id": "unlockCombo", "kind": "rule", "desc": "第 5 关起连击生效，连对得分 ×2 ×3" },
+    { "id": "unlockHint", "kind": "rule", "desc": "第 1 关起解锁扫描，每关限 1 次" },
+    { "id": "disableHint", "kind": "rule", "desc": "第 9 关起扫描归零，纯记忆裸考" },
+    { "id": "threeOptions", "kind": "rule", "desc": "第 3 关起选项升到 3 个" },
+    { "id": "morePersons", "kind": "stat", "desc": "第 8 关起 6 位朋友同屏" },
+    { "id": "tighterTime", "kind": "stat", "desc": "第 4 关起倒计时缩短到 40s" },
+    { "id": "fourOptions", "kind": "stat", "desc": "第 7 关起选项升到 4 个" },
+    { "id": "finalSprint", "kind": "stat", "desc": "第 12 关 30s 终局冲刺" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

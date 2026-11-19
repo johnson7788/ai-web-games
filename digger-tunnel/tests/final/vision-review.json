@@ -1,0 +1,149 @@
+{
+  "game": "digger-tunnel",
+  "generatedAt": "2026-11-19T15:25:07.832Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 7.5,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角黄色菱形与红色方块堆叠区域较暗，轮廓辨识度偏低（silhouette扣分）",
+        "‘1’按钮高亮但无明确指示其为当前选中关卡，可能引起新手困惑",
+        "标题‘DIGGER TUNNEL’中‘TUNNEL’字母间距略不均，轻微风格不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色圆环发射蓝色球体向上击中黄色菱形宝石",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "蓝色球体与上方暗格边界融合，目标起始位置略模糊",
+        "三个黄色宝石垂直排列但间距不均，可能误判为单个长条物体",
+        "粉色方块组合形状像Tetris块，易被误认为障碍而非可交互物"
+      ]
+    },
+    {
+      "shot": "tests/final/03-carving.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色圆环按钮发射蓝色球体",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "蓝色球体位于深色竖井中，与背景对比度偏低，可能影响目标识别",
+        "粉色方块堆叠形状不规则，易误判为障碍物而非可交互物",
+        "左上角‘Level 1 · First Drill’文字字号偏小，远距离阅读略吃力"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角有模糊菱形与方块状物体，疑似残留UI或未清理元素，位置在(170,640)附近",
+        "玩家角色（底部绿色圆环）被HUD部分遮挡，虽非严重但影响轮廓识别",
+        "‘Portal Reached!’标题发光效果过强，与深色背景对比度略高，可能造成轻微视觉疲劳"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部绿色圆环（玩家角色）开始移动",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Time 90s’等HUD按钮与右上角功能图标间距过小，可能误触",
+        "蓝色光球目标虽亮但无明确路径指引，新手可能不知需收集黄色菱形宝石",
+        "粉色方块障碍物形状相似易混淆（左中 vs 右中），缺乏方向性提示"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色椭圆发射器向上发射蓝色球体",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "蓝色球体与上方边界过近，可能被误认为已出界或卡住",
+        "三个黄色菱形宝石垂直排列但无明显路径引导，易忽略中间一个",
+        "粉色方块组合形状像Tetris块，但未明确指示其为障碍物或可互动对象"
+      ]
+    },
+    {
+      "shot": "tests/final/07-zh-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部绿色圆环发射蓝色球体向上收集黄色钻石",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "蓝色球体与上方暗格边界模糊，可能误判为不可交互区域",
+        "三个黄色钻石垂直排列但间距不均，中间钻石略偏左，影响路径预判",
+        "粉色方块堆叠形状像Tetris块，易被误认为障碍物而非可破坏目标"
+      ]
+    },
+    {
+      "shot": "tests/final/08-deep-core.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部绿色圆环发射蓝色球体",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下粉色方块群与黄色菱形宝石部分重叠，可能误判为单个可交互对象",
+        "顶部‘Time 90s’等HUD文字字号偏小，弱光环境下辨识度略低",
+        "右侧两个粉色方块组形状相似但无明显区分标识，易混淆目标"
+      ]
+    }
+  ]
+}

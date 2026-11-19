@@ -1,0 +1,101 @@
+{
+  "game": "monkey-dash-run",
+  "generatedAt": "2026-11-19T15:27:47.382Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 6.8,
+    "style_consistent": 8.6
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’按钮文字为浅蓝，与深紫背景对比度偏低，弱光下可能难辨",
+        "右上角语言选择框边框过细且无悬停反馈，易被忽略",
+        "猴子图标无明显轮廓或阴影，在深蓝背景下稍显融合"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧蓝色盾牌图标以收集或激活它",
+      "readable": 6,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧轨道中黄色月牙形物体与绿色病毒图标间距过近，易误判为同一组元素",
+        "右上角三个功能按钮（设置/重试/菜单）无文字标签，仅靠图标难以快速识别功能",
+        "背景网格线过细且颜色接近主背景，可能干扰目标物辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/03-obstacles.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Run again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊敌人剪影（左上、左下）与HUD文字层级冲突，可能干扰焦点",
+        "‘Speed tier’数值‘1’为黄色，与其他计分项颜色不一致（其他为0且同色），易误读",
+        "底部提示‘Space / R to run again’字体过小，弱对比度，部分用户可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rush.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Run again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊敌人剪影（左上、左下）与HUD距离过近，可能干扰视觉焦点",
+        "‘Speed tier’数值‘1’为黄色，与其他计分项（0）颜色一致但语义不同，易误读",
+        "‘Space / R to run again’提示字号偏小，弱对比度，3秒内不易捕捉"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Run again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊敌人/障碍物轮廓与UI元素视觉权重接近，眯眼时难以区分可交互对象（如左下笑脸图标易误判为装饰）",
+        "‘Speed tier 1’数值‘1’使用黄色字体，与其他统计项（0）颜色一致但语义不同，可能引发混淆",
+        "底部提示‘Space / R to run again’字号偏小且灰度高，弱光环境下辨识度低"
+      ]
+    }
+  ]
+}

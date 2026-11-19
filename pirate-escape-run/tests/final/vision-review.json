@@ -1,0 +1,149 @@
+{
+  "game": "pirate-escape-run",
+  "generatedAt": "2026-11-19T15:27:05.065Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 7.625,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中垂直轨道上的小图标（如箱子、星星）与主标题重叠，视觉干扰；",
+        "‘How to play’按钮边框为青色细线，对比度偏低，易被忽略；",
+        "底部星/金币计数器字号过小，且无明确标签，易误读为装饰"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊的竖线与星星元素可能干扰主视觉焦点，影响目标识别清晰度",
+        "‘玩法说明’按钮边框为浅蓝发光，与深蓝背景对比度偏低，弱光下易误触",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央向上箭头（CLIMB）开始攀爬",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角暂停按钮与音乐按钮间距过小，可能误触",
+        "‘CLIMB’文字无描边，在深蓝背景上对比度略低",
+        "玩家角色头顶帽子为黄色三角，与金币颜色接近，易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/04-playing-climb.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧红色平台上的角色图标向上攀爬",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘10m’标注与虚线对齐偏右，易误读为距离右侧平台而非当前高度",
+        "左上角‘5m Best 0m’中‘5m’与‘Best’间距过小，可能混淆为‘5mBest’",
+        "‘CLIMB’箭头与上方金币轻微重叠，视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/05-playing-action.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让角色向上跳跃到下一个红色平台",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘CLIMB’提示箭头与右侧平台轻微重叠，可能干扰目标识别",
+        "左上角‘22m Best 0m’中‘Best 0m’字号偏小，弱对比下易误读为‘Best Om’",
+        "角色头顶金币粒子特效密集，短暂遮挡角色头部轮廓"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“Retry”按钮重新开始游戏。",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊的圆点与星形元素干扰视觉焦点，可能影响 silhouette 判别",
+        "‘New Best!’文字字号偏小且无强调，易被忽略",
+        "‘Height 22m’与下方统计信息间距过近，轻微拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/07-result-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“再来一局”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星图标与‘高度 6米’文字间距过小，易误读为‘高度6米★’",
+        "‘最佳 22米’与‘金币 +6 ★ +1’行距紧凑，小字号在暗背景下对比度略低",
+        "背景隐约可见模糊UI元素（如月亮、圆点），可能干扰焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/08-playing-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央向上箭头或滑动角色向上爬",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘连击 ×11’紫色按钮与金币/星星间距过近，可能误触",
+        "右侧红色平台上的白色人形图标与金币重叠，视觉干扰",
+        "‘向上爬’提示文字偏小且无背景衬底，在深色背景下对比度略低"
+      ]
+    }
+  ]
+}

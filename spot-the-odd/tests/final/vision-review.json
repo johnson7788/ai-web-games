@@ -1,0 +1,149 @@
+{
+  "game": "spot-the-odd",
+  "generatedAt": "2026-11-19T15:24:08.877Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 9,
+    "silhouette": 7.25,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮粉色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEON ODD HUNT’副标题颜色（青蓝）与主标题（粉红）对比弱，易被忽略",
+        "‘How to play’按钮边框过细且无悬停反馈，视觉权重低",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角紫色剪刀图标（被高亮选中，疑似目标）",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第三行第五列剪刀图标被紫色边框高亮，但目标提示为'Find Critters ×3'，该图标非典型'critter'（动物/生物），易误判",
+        "第二行第五列小车图标与第一行第五列笑脸图标形状相似、颜色相近（青蓝），在低对比度下易混淆",
+        "部分图标（如第四行第一列蜘蛛、第三行第一列兔子）细节较细，眯眼时轮廓辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/03-correct.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角被紫色框选中的剪刀图标（当前高亮目标）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第三行第五列的剪刀图标被紫色高亮框部分遮挡，可能影响识别",
+        "‘Combo ×2’标签文字略小且位置偏上，与图标间距不均",
+        "右上角‘Hint 3’按钮无悬停反馈提示，桌面端可接受但移动端需注意"
+      ]
+    },
+    {
+      "shot": "tests/final/04-odd.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角第一个黄色圆环图标（目标‘Find Critters ×2’，该图标最亮且位于第一行首格）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第三行第三列的蓝色箭头图标（A形）与第四行第三列的黄色时钟图标在垂直方向间距过小，易误触",
+        "右上角‘Hint 3’按钮文字与右侧‘?’按钮间距过窄，可能误点",
+        "部分图标（如第二行第五列的蓝色双轮车）轮廓较细，在低对比度下辨识度略降"
+      ]
+    },
+    {
+      "shot": "tests/final/05-round2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间高亮的黄色建筑图标（被粉色边框选中）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Round won!’提示悬浮在图标上方，轻微遮挡第三行第三列时钟图标顶部",
+        "右上角‘Hint 3’等按钮文字与背景对比度偏低（深蓝底+浅灰字），弱光下可能难辨",
+        "部分图标（如沙漏、鱼）轮廓较细，眯眼时与背景网格融合度略高，影响快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“Retry”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间‘You Win!’区域下方三颗星与兔子图标轻微重叠，影响图标辨识",
+        "右下角高亮选中框（带对勾网格）与背景图标间距过小，易误触",
+        "‘ODD found 5 ✓ Best combo ×5’文字行距偏紧，小字号下可读性略降"
+      ]
+    },
+    {
+      "shot": "tests/final/07-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角紫色花朵图标，因为它是唯一被高亮边框选中的目标项",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第4行第5列的‘火车’图标与第5行第5列的‘风扇’图标在暗背景下轮廓相似，易混淆（silhouette扣分）",
+        "顶部‘VS ●’文字过小且无对比色，弱光环境下可能难辨（readable潜在风险）",
+        "右下角目标框（花朵）边框为紫色实线，与其他图标发光轮廓风格不一致（style_consistent扣分）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-hint.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角高亮的绿色网格状工具图标（计算器/键盘）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Round won!’提示框轻微遮挡上方时钟图标（第1行第3列）",
+        "部分图标（如鱼、兔子）轮廓较细，暗背景下辨识度略降",
+        "右上角‘Hint 2’按钮与‘?’按钮间距过小，可能误触"
+      ]
+    }
+  ]
+}

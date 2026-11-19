@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MONKEY DASH RUN</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-score" class="hud-pill"></span>
+        <span id="hud-best" class="hud-pill"></span>
+        <span id="hud-tier" class="hud-pill"></span>
+        <span id="hud-combo" class="hud-pill hud-combo"></span>
+      </div>
+      <div class="hud-right">
+        <span id="hud-shield" class="hud-pill hud-shield"></span>
+        <span id="hud-rush" class="hud-pill hud-rush"></span>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu">≡</button>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">MONKEY DASH RUN</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="title-monkey" aria-hidden="true"></div>
+      <button id="btn-start">Start</button>
+      <button id="btn-howto" class="btn-ghost">How to play</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost" data-tutorial-replay>How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">You crashed!</h2>
+      <div class="result-newbest hidden" id="result-newbest">NEW BEST!</div>
+      <div class="result-grid">
+        <div class="result-cell"><span class="result-label" id="result-score-label">Score</span><span class="result-value" id="result-score">0</span></div>
+        <div class="result-cell"><span class="result-label" id="result-best-label">Best</span><span class="result-value" id="result-best">0</span></div>
+        <div class="result-cell"><span class="result-label" id="result-tier-label">Speed tier</span><span class="result-value" id="result-tier">1</span></div>
+        <div class="result-cell"><span class="result-label" id="result-combo-label">Best combo</span><span class="result-value" id="result-combo">0</span></div>
+      </div>
+      <div class="win-btns">
+        <button id="btn-retry">Run again</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+      <p class="hint" id="result-hint">Space / R to run again</p>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate your phone for the full jungle</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title">How to play</h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

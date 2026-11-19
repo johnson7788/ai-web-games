@@ -1,0 +1,59 @@
+{
+  "slug": "digger-tunnel",
+  "genre": "puzzle",
+  "oneLiner": "拖动钻头在霓虹土壤里挖隧道，让钻核沿着重力坠落，绕过发光岩石、吃掉宝石，赶在倒计时归零前滚进传送门。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "carve",
+      "cost": "土壤挖掉就没了，时间也在倒计时里流失——错挖会把钻核带进死胡同，只能重开本关",
+      "feedback": ["sfx", "digSparks", "glowTrail"],
+      "combinesWith": ["release"]
+    },
+    {
+      "name": "release",
+      "cost": "松开手指后钻核只按重力走，无法再精确改道，路线错了就只能眼看它坠出场地",
+      "feedback": ["sfx", "fallGlow", "screenShake"],
+      "combinesWith": ["carve"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一笔往下直挖，还是先横着绕开正下方的岩石", "cost": "直挖省时间但撞岩；横挖绕路但更稳" },
+    { "atSec": 20, "choice": "顺路吃走廊宝石拿 1 星，还是绕去岩石旁的宝石冲 3 星", "cost": "绕路多挖一大段，倒计时可能不够" },
+    { "atSec": 35, "choice": "隧道挖窄一点求快，还是挖宽一点防止钻核卡在壁上", "cost": "窄隧道省时但容易卡核；宽隧道费时费土壤" },
+    { "atSec": 50, "choice": "提前松手让钻核自己坠，还是继续修整隧道再放", "cost": "提前松手抢时间但路线未定；继续修整更稳但耗时" },
+    { "atSec": 65, "choice": "面对并排的岩石墙：从上方翻过去，还是从侧缝钻过去", "cost": "翻越要横挖更远；侧缝太窄钻核会卡" },
+    { "atSec": 80, "choice": "最后 10 秒：赌现在这条窄路，还是立刻重开保时间", "cost": "赌窄路可能卡核失败；重开丢掉本局所有进度" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 55, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基本挖隧道：拖动钻头挖土、钻核沿重力坠落进传送门" },
+    { "index": 2, "newElement": "宝石矿脉：走廊外出现宝石，绕路吃宝石换星级" },
+    { "index": 3, "newElement": "岩石迷宫：不可挖的发光岩石夹住走廊，逼你规划路线" },
+    { "index": 4, "newElement": "地心深处：岩石+宝石双倍叠加，窄缝与倒计时正面冲突" }
+  ],
+  "upgrades": [
+    { "id": "rockWall", "kind": "rule", "desc": "第 3 关起出现不可挖岩石，路线必须绕行" },
+    { "id": "gemStars", "kind": "rule", "desc": "第 2 关起宝石计入星级，绕路成为得分策略" },
+    { "id": "comboScore", "kind": "rule", "desc": "连击窗口内连续吃宝石，得分翻倍" },
+    { "id": "tightCorridor", "kind": "rule", "desc": "第 4 关窄缝地形，钻核更容易卡住" },
+    { "id": "brushSize", "kind": "stat", "desc": "钻头笔刷半径，决定隧道宽度" },
+    { "id": "timeBank", "kind": "stat", "desc": "关卡倒计时，越往后越紧" },
+    { "id": "gravity", "kind": "stat", "desc": "重力强度，决定坠落节奏" },
+    { "id": "goalRadius", "kind": "stat", "desc": "传送门判定半径，越大越容易进" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

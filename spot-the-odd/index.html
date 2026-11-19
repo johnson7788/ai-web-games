@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPOT THE ODD</title>
+  <link rel="stylesheet" href="styles.css?v=sot1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <span id="hud-round" class="hud-pill"></span>
+        <span id="hud-time" class="hud-pill"></span>
+        <span id="hud-task" class="hud-task"></span>
+        <span id="hud-score" class="hud-pill"></span>
+        <span id="hud-combo" class="hud-pill"></span>
+      </div>
+      <div class="hud-race">
+        <div class="race-label" id="race-you"></div>
+        <div class="race-bar"><div id="hud-player-progress" class="race-fill player"></div></div>
+        <div class="race-vs" id="hud-vs">VS</div>
+        <div class="race-bar"><div id="hud-ai-progress" class="race-fill ai"></div></div>
+        <div class="race-label" id="race-bot"></div>
+      </div>
+      <div class="hud-btns">
+        <button id="btn-hint" class="hud-btn" aria-label="Hint"></button>
+        <button id="btn-howto-hud" class="hud-btn" aria-label="How to play">?</button>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">SPOT THE ODD</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best" id="best"></div>
+      <button id="btn-start">Start</button>
+      <button id="btn-howto" class="btn-ghost" data-tutorial-replay></button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-howto-pause" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="hidden"></div>
+  </div>
+  <script type="module" src="src/main.js?v=sot1"></script>
+</body>
+</html>

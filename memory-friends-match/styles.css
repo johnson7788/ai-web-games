@@ -1,0 +1,383 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #0B0716;
+  color: #EAF6FF;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Microsoft YaHei', 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16 / 9;
+  background: #0B0716;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD（不透明顶条，避免压住玩法区） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #160E2E;
+  border-bottom: 2px solid rgba(255, 79, 160, 0.55);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+.hud-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 8px; }
+#hud-level { font-weight: 800; letter-spacing: 1px; font-size: 1rem; color: #B9F6FF; }
+.hud-pill {
+  background: #241A4A;
+  border: 1px solid rgba(185, 246, 255, 0.4);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+.hud-score { color: #FFD12E; }
+.hud-combo { color: #FF2E97; text-shadow: 0 0 8px rgba(255, 46, 151, 0.7); }
+#hud-time.time-low { color: #FF4F4F; animation: timePulse 0.8s ease-in-out infinite; }
+@keyframes timePulse { 50% { transform: scale(1.12); } }
+
+.hud-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 143, 201, 0.6);
+  background: #241A4A;
+  color: #FFE58A;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  line-height: 1;
+}
+.hud-btn:hover { background: #37246B; }
+.hud-btn.disabled { opacity: 0.4; cursor: default; }
+.hud-btn.is-muted { opacity: 0.55; }
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #FF2E97;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ---------- 玩法区 ---------- */
+#play-area {
+  position: absolute;
+  top: 56px;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 2;
+  padding: 0 16px;
+}
+
+#prompt { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.prompt-title { font-size: 1.7rem; font-weight: 900; color: #FFE58A; text-shadow: 0 2px 0 #7C2E7C; }
+.prompt-sub { font-size: 1rem; opacity: 0.88; }
+.prompt-text { font-size: 1.55rem; font-weight: 900; color: #EAF6FF; text-shadow: 0 2px 0 #3A1E60; max-width: 900px; }
+.prompt-face { width: 120px; height: 120px; }
+.prompt-face svg { filter: drop-shadow(0 0 14px rgba(255, 79, 160, 0.6)); }
+
+.options { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; }
+
+/* 记忆阶段卡片 */
+.options.memorize .buddy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 132px;
+}
+.buddy { width: 100%; height: auto; }
+.buddy-card .buddy { width: 118px; }
+.buddy svg { filter: drop-shadow(0 0 12px rgba(255, 79, 160, 0.45)); }
+.buddy-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #B9F6FF;
+  background: rgba(22, 14, 46, 0.85);
+  border: 1px solid rgba(185, 246, 255, 0.35);
+  border-radius: 8px;
+  padding: 2px 12px;
+}
+
+/* 答题选项 */
+.option {
+  cursor: pointer;
+  border: 3px solid rgba(185, 246, 255, 0.45);
+  border-radius: 16px;
+  background: rgba(22, 14, 46, 0.92);
+  transition: transform 0.08s ease, border-color 0.08s ease, box-shadow 0.08s ease;
+}
+.option:hover { transform: translateY(-3px); border-color: #FF8FC9; }
+.option:active { transform: translateY(0) scale(0.97); }
+.option.face-option { width: 132px; height: 132px; padding: 6px; }
+.option.face-option .buddy { width: 100%; height: 100%; }
+.option.name-option {
+  min-width: 150px;
+  padding: 16px 26px;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #EAF6FF;
+  font-family: inherit;
+}
+.option.is-correct { border-color: #39FF6A; box-shadow: 0 0 18px rgba(57, 255, 106, 0.8); background: rgba(16, 60, 34, 0.92); }
+.option.is-wrong { border-color: #FF4F4F; box-shadow: 0 0 18px rgba(255, 79, 79, 0.8); animation: shake 0.35s ease; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+.btn-ready-ok {
+  padding: 14px 40px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #FF2E97, #C21D72);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #6E0F40, 0 0 20px rgba(255, 46, 151, 0.5);
+  font-family: inherit;
+}
+.btn-ready-ok:hover { filter: brightness(1.1); }
+
+/* ---------- 屏幕 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(11, 7, 22, 0.9);
+  z-index: 10;
+}
+.screen h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.4rem;
+  background: linear-gradient(180deg, #FFE95C, #FF2E97);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #5B2A86;
+  paint-order: stroke fill;
+  text-align: center;
+  padding: 0 16px;
+}
+.screen h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(180deg, #FFE95C, #FF2E97);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #5B2A86;
+  paint-order: stroke fill;
+  max-width: 900px;
+  white-space: nowrap;
+}
+.screen h2.lose { background: linear-gradient(180deg, #FF6B6B, #B03A78); -webkit-text-stroke: 1.5px #4A1230; }
+.screen .subtitle { font-size: 1.15rem; margin-bottom: 1.4rem; opacity: 0.82; }
+.screen button {
+  padding: 12px 34px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(180deg, #FF2E97, #C21D72);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 4px 0 #6E0F40;
+}
+.screen button:hover { filter: brightness(1.1); }
+.screen .btn-ghost { background: rgba(36, 26, 74, 0.9); border: 1px solid rgba(185, 246, 255, 0.4); box-shadow: none; }
+.lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #160E2E;
+  color: #FF8FC9;
+  border: 1px solid #FF8FC9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+.total-stars { font-size: 1.05rem; font-weight: 800; color: #FFD12E; margin-bottom: 4px; }
+.level-grid { display: grid; grid-template-columns: repeat(6, 58px); gap: 9px; margin-top: 18px; }
+.level-cell {
+  height: 58px;
+  border-radius: 12px;
+  border: 2px solid rgba(185, 246, 255, 0.5);
+  background: rgba(36, 26, 74, 0.9);
+  color: #EAF6FF;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  font-family: inherit;
+}
+.level-cell .lv-num { font-weight: 900; font-size: 1.05rem; }
+.level-cell .lv-stars { font-size: 0.6rem; color: #FFD12E; }
+.level-cell.locked { opacity: 0.35; cursor: default; }
+.level-cell:not(.locked):hover { border-color: #FF8FC9; transform: translateY(-2px); }
+
+/* ---------- 暂停 / 结算 ---------- */
+#screen-pause, #screen-result { background: rgba(10, 8, 22, 0.86); }
+#screen-pause button { display: block; margin: 7px auto; min-width: 200px; }
+.win-stars { font-size: 2.8rem; letter-spacing: 8px; margin: 6px 0; }
+.win-stars .star { color: rgba(255, 255, 255, 0.22); }
+.win-stars .stars { color: #FFD84E; text-shadow: 0 0 14px rgba(255, 216, 78, 0.6); }
+.win-stars em { display: block; font-style: normal; font-size: 1.05rem; font-weight: 800; color: #B9F6FF; letter-spacing: 2px; margin-top: 2px; }
+.win-time { font-size: 1.1rem; font-weight: 800; opacity: 0.92; margin-bottom: 4px; }
+.win-meta { font-size: 1rem; opacity: 0.85; margin-bottom: 1.2rem; }
+.win-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.win-btns button { margin: 0; }
+
+/* ---------- 教程高亮（卡片固定底部居中） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 20; pointer-events: none; }
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  max-width: 460px;
+  width: max-content;
+  padding: 14px 20px;
+  background: rgba(20, 16, 8, 0.96);
+  border: 1px solid rgba(255, 216, 78, 0.6);
+  border-radius: 14px;
+  text-align: left;
+  pointer-events: auto;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.5);
+}
+#tut-title { font-weight: 900; margin-bottom: 6px; color: #FFD84E; font-size: 1.05rem; }
+#tut-text { font-size: 0.95rem; line-height: 1.45; opacity: 0.94; }
+.tut-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+.tut-btns button { height: 40px; min-width: 92px; font-size: 0.95rem; margin: 0; }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 844px) {
+  #game-container { border-radius: 0; }
+  #title-text { font-size: 2.5rem; }
+  .level-grid { grid-template-columns: repeat(4, 54px); gap: 8px; margin-top: 14px; }
+  .level-cell { height: 54px; }
+  .hud-pill { padding: 3px 9px; font-size: 0.8rem; }
+  .hud-btn { width: 34px; height: 34px; }
+  .option.face-option { width: 96px; height: 96px; }
+  .option.name-option { min-width: 118px; padding: 13px 18px; font-size: 1.1rem; }
+  .prompt-text { font-size: 1.2rem; }
+  .prompt-face { width: 88px; height: 88px; }
+  .options.memorize .buddy-card { width: 92px; }
+  .buddy-card .buddy { width: 84px; }
+  #tut-card { bottom: 12px; max-width: 92vw; }
+  .win-stars { font-size: 2rem; }
+}
+
+/* ---------- 减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #hud-time.time-low { animation: none; }
+  .option, .level-cell, .hud-btn, .screen button, .btn-ready-ok { transition: none; }
+  .option.is-wrong { animation: none; }
+}
+
+/* ---------- 竖屏提示（触屏竖屏时显示，可跳过） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 30, 38, 0.9);
+  }
+}
+#rotate-screen .rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #123C5A, #0E3B43);
+  border: 2px solid #7FD8E8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: #EAF6FF;
+}
+#rotate-screen .rotate-icon { font-size: 3rem; animation: rotate-tip 2.2s ease-in-out infinite; }
+@keyframes rotate-tip { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+#rotate-screen p { font-size: 1.1rem; font-weight: 800; }
+#btn-rotate-skip {
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: none;
+  background: #FFB13C;
+  color: #3a2400;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #B87A18;
+}
+@media (prefers-reduced-motion: reduce) { #rotate-screen .rotate-icon { animation: none; } }

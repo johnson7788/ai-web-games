@@ -1,0 +1,310 @@
+{
+  "game": "pixel-squadron",
+  "generatedAt": "2026-11-19T15:22:13.797Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds",
+      "ok": true,
+      "loopSeconds": 27.82608695652174,
+      "bpm": 138,
+      "bars": 16
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 28.326122448979593
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.019057859174583327
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.01823568954703795
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.016465703798862932
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.09811292588710785
+    },
+    {
+      "name": "sfx-shot-rms>0.01",
+      "ok": true,
+      "rms": 0.028100771872014343
+    },
+    {
+      "name": "sfx-shot-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.04206349206349207
+    },
+    {
+      "name": "sfx-shot-peak<=0.98",
+      "ok": true,
+      "peak": 0.07562831044197083
+    },
+    {
+      "name": "sfx-hit-rms>0.01",
+      "ok": true,
+      "rms": 0.03392192058855294
+    },
+    {
+      "name": "sfx-hit-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.0291156462585034
+    },
+    {
+      "name": "sfx-hit-peak<=0.98",
+      "ok": true,
+      "peak": 0.1473294049501419
+    },
+    {
+      "name": "sfx-kill-rms>0.01",
+      "ok": true,
+      "rms": 0.023218949726538398
+    },
+    {
+      "name": "sfx-kill-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.26396825396825396
+    },
+    {
+      "name": "sfx-kill-peak<=0.98",
+      "ok": true,
+      "peak": 0.15154990553855896
+    },
+    {
+      "name": "sfx-combo-rms>0.01",
+      "ok": true,
+      "rms": 0.028102651177991652
+    },
+    {
+      "name": "sfx-combo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.05607709750566894
+    },
+    {
+      "name": "sfx-combo-peak<=0.98",
+      "ok": true,
+      "peak": 0.07565904408693314
+    },
+    {
+      "name": "sfx-enemyShot-rms>0.01",
+      "ok": true,
+      "rms": 0.014301416127977033
+    },
+    {
+      "name": "sfx-enemyShot-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.04458049886621315
+    },
+    {
+      "name": "sfx-enemyShot-peak<=0.98",
+      "ok": true,
+      "peak": 0.05782989040017128
+    },
+    {
+      "name": "sfx-playerHit-rms>0.01",
+      "ok": true,
+      "rms": 0.03360588255755157
+    },
+    {
+      "name": "sfx-playerHit-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.14183673469387756
+    },
+    {
+      "name": "sfx-playerHit-peak<=0.98",
+      "ok": true,
+      "peak": 0.1257583647966385
+    },
+    {
+      "name": "sfx-asteroidHit-rms>0.01",
+      "ok": true,
+      "rms": 0.01990922316774003
+    },
+    {
+      "name": "sfx-asteroidHit-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.032834467120181406
+    },
+    {
+      "name": "sfx-asteroidHit-peak<=0.98",
+      "ok": true,
+      "peak": 0.08978155255317688
+    },
+    {
+      "name": "sfx-asteroidSplit-rms>0.01",
+      "ok": true,
+      "rms": 0.017016376924686008
+    },
+    {
+      "name": "sfx-asteroidSplit-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.18226757369614513
+    },
+    {
+      "name": "sfx-asteroidSplit-peak<=0.98",
+      "ok": true,
+      "peak": 0.11962587386369705
+    },
+    {
+      "name": "sfx-bossSpawn-rms>0.01",
+      "ok": true,
+      "rms": 0.02643666096029117
+    },
+    {
+      "name": "sfx-bossSpawn-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.244421768707483
+    },
+    {
+      "name": "sfx-bossSpawn-peak<=0.98",
+      "ok": true,
+      "peak": 0.12325668334960938
+    },
+    {
+      "name": "sfx-win-rms>0.01",
+      "ok": true,
+      "rms": 0.02523113558688548
+    },
+    {
+      "name": "sfx-win-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.44346938775510203
+    },
+    {
+      "name": "sfx-win-peak<=0.98",
+      "ok": true,
+      "peak": 0.07076065987348557
+    },
+    {
+      "name": "sfx-lose-rms>0.01",
+      "ok": true,
+      "rms": 0.04115299488144197
+    },
+    {
+      "name": "sfx-lose-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.20476190476190476
+    },
+    {
+      "name": "sfx-lose-peak<=0.98",
+      "ok": true,
+      "peak": 0.16414806246757507
+    },
+    {
+      "name": "unmapped-event-silent",
+      "ok": true,
+      "rms": 0
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 27.82608695652174,
+      "bpm": 138,
+      "bars": 16,
+      "duration": 28.326122448979593,
+      "rms": 0.019057859174583327,
+      "peak": 0.09811292588710785,
+      "headRms": 0.01823568954703795,
+      "spliceRms": 0.016465703798862932
+    },
+    {
+      "kind": "sfx",
+      "name": "shot",
+      "event": "shot",
+      "rms": 0.028100771872014343,
+      "peak": 0.07562831044197083,
+      "activeDuration": 0.04206349206349207
+    },
+    {
+      "kind": "sfx",
+      "name": "hit",
+      "event": "hit",
+      "rms": 0.03392192058855294,
+      "peak": 0.1473294049501419,
+      "activeDuration": 0.0291156462585034
+    },
+    {
+      "kind": "sfx",
+      "name": "kill",
+      "event": "kill",
+      "rms": 0.023218949726538398,
+      "peak": 0.15154990553855896,
+      "activeDuration": 0.26396825396825396
+    },
+    {
+      "kind": "sfx",
+      "name": "combo",
+      "event": "combo",
+      "rms": 0.028102651177991652,
+      "peak": 0.07565904408693314,
+      "activeDuration": 0.05607709750566894
+    },
+    {
+      "kind": "sfx",
+      "name": "enemyShot",
+      "event": "enemyShot",
+      "rms": 0.014301416127977033,
+      "peak": 0.05782989040017128,
+      "activeDuration": 0.04458049886621315
+    },
+    {
+      "kind": "sfx",
+      "name": "playerHit",
+      "event": "playerHit",
+      "rms": 0.03360588255755157,
+      "peak": 0.1257583647966385,
+      "activeDuration": 0.14183673469387756
+    },
+    {
+      "kind": "sfx",
+      "name": "asteroidHit",
+      "event": "asteroidHit",
+      "rms": 0.01990922316774003,
+      "peak": 0.08978155255317688,
+      "activeDuration": 0.032834467120181406
+    },
+    {
+      "kind": "sfx",
+      "name": "asteroidSplit",
+      "event": "asteroidSplit",
+      "rms": 0.017016376924686008,
+      "peak": 0.11962587386369705,
+      "activeDuration": 0.18226757369614513
+    },
+    {
+      "kind": "sfx",
+      "name": "bossSpawn",
+      "event": "bossSpawn",
+      "rms": 0.02643666096029117,
+      "peak": 0.12325668334960938,
+      "activeDuration": 0.244421768707483
+    },
+    {
+      "kind": "sfx",
+      "name": "win",
+      "event": "win",
+      "rms": 0.02523113558688548,
+      "peak": 0.07076065987348557,
+      "activeDuration": 0.44346938775510203
+    },
+    {
+      "kind": "sfx",
+      "name": "lose",
+      "event": "lose",
+      "rms": 0.04115299488144197,
+      "peak": 0.16414806246757507,
+      "activeDuration": 0.20476190476190476
+    }
+  ]
+}

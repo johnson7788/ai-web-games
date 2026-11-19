@@ -1,0 +1,69 @@
+{
+  "slug": "sway-blocks",
+  "genre": "puzzle",
+  "oneLiner": "把摆动中的霓虹积木在正确时机松手，落到平台堆稳，扛过平衡倒计时拿下三星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "drop",
+      "cost": "松手时机决定落点：松太早或太晚会飞出平台，前面积木全部白堆",
+      "feedback": ["sfx", "ropeCut", "impactGlow"],
+      "combinesWith": ["hold"]
+    },
+    {
+      "name": "hold",
+      "cost": "多等一拍可能错过完美窗口，超时还会被系统强制松手",
+      "feedback": ["swingWhoosh", "timerGlow"],
+      "combinesWith": ["drop"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "等积木摆到中线再松，还是抢在边缘先落一块占位", "cost": "抢边缘会落偏翻倒，等中线可能错过最佳时机" },
+    { "atSec": 18, "choice": "滑溜冰砖先落中间还是先落边上", "cost": "冰砖打滑，放错位置会连累整堆" },
+    { "atSec": 32, "choice": "只剩一块：宁可慢等完美，还是尽快落完进倒计时", "cost": "完美加分 vs 提前进结算的稳定" },
+    { "atSec": 50, "choice": "弹力砖压底还是压顶", "cost": "压底弹整堆，压顶易弹飞" },
+    { "atSec": 75, "choice": "传送平台移动中，等它回到中线还是随它一起落", "cost": "等它=时间压力，随它=落点漂移" },
+    { "atSec": 100, "choice": "磐石重块放在最底还是最顶", "cost": "压底更稳但少一星，压顶冲三星但容易塌" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "方砖 + 松手落下 + 堆叠平衡" },
+    { "index": 2, "newElement": "圆球（会滚动，落点需更准）" },
+    { "index": 3, "newElement": "滑溜冰砖（低摩擦）" },
+    { "index": 4, "newElement": "弹力方块（高弹性）" },
+    { "index": 5, "newElement": "移动传送平台 + 三角积木" },
+    { "index": 6, "newElement": "磐石重块 + 侧边支点平台" }
+  ],
+  "upgrades": [
+    { "id": "unlockCircle", "kind": "rule", "desc": "第 2 关起出现圆球，落点容错变窄" },
+    { "id": "unlockSlippery", "kind": "rule", "desc": "第 3 关起出现冰砖，堆叠会打滑" },
+    { "id": "unlockBouncy", "kind": "rule", "desc": "第 4 关起出现弹力砖，弹性改变堆叠" },
+    { "id": "unlockTriangle", "kind": "rule", "desc": "第 5 关起出现三角砖，形状改变支撑" },
+    { "id": "unlockRock", "kind": "rule", "desc": "第 6 关起出现磐石重块，压稳或压塌二选一" },
+    { "id": "comboScore", "kind": "stat", "desc": "连击完美落子，分数成倍增长" },
+    { "id": "starRating", "kind": "stat", "desc": "按完美次数给 1–3 星评级" },
+    { "id": "movingPlatform", "kind": "stat", "desc": "第 5 关平台横向移动，落点需预判" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

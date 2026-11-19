@@ -1,0 +1,39 @@
+{
+  "slug": "spot-the-odd",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹杂货堆里按任务点选同类物品，同时找出闪烁伪装的异类赚时间，和霓虹机器人竞速五回合拿三星",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "tap", "cost": "点错重置连击并损失倍率", "feedback": ["sfx", "glow", "ring"], "combinesWith": ["hint"] },
+    { "name": "hint", "cost": "消耗一次提示次数（每局 3 次）", "feedback": ["sfx", "flash"], "combinesWith": ["tap"] }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先点最明显的同类，还是先找异类赚时间", "cost": "找异类会放慢任务进度，让对手机器人领先" },
+    { "atSec": 18, "choice": "连续点同类保住连击，还是冒险点一个不确定的", "cost": "点错连击归零" },
+    { "atSec": 30, "choice": "还剩 20 秒时用一次提示，还是省到最后", "cost": "提示次数有限" },
+    { "atSec": 45, "choice": "对手快满时抢时间完成本回合，还是稳着点", "cost": "抢点容易误触" },
+    { "atSec": 60, "choice": "下回合换类别，重新规划扫描顺序", "cost": "旧习惯失效" },
+    { "atSec": 90, "choice": "最后一回合是否赌高连击冲刺三星", "cost": "高连击风险更大" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "tap 点选同类物品" },
+    { "index": 2, "newElement": "异类 odd 伪装赚取额外时间" },
+    { "index": 3, "newElement": "连击倍率 combo 乘区" },
+    { "index": 4, "newElement": "对手霓虹机器人加速逼近" },
+    { "index": 5, "newElement": "提示 hint 有限次数" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule" },
+    { "id": "odd-bonus", "kind": "rule" },
+    { "id": "hint", "kind": "rule" },
+    { "id": "star-rating", "kind": "rule" },
+    { "id": "time-freeze", "kind": "rule" },
+    { "id": "extra-time", "kind": "stat" },
+    { "id": "slow-ai", "kind": "stat" },
+    { "id": "bigger-grid", "kind": "rule" }
+  ],
+  "replayHooks": ["rating", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 40, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

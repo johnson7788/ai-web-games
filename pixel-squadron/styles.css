@@ -1,0 +1,302 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  height: 100%;
+}
+body {
+  background: #05060f;
+  color: #eaf4ff;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Microsoft YaHei', 'Segoe UI', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16 / 9;
+  background: #05060f;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #05060f;
+}
+
+.hidden { display: none !important; }
+
+/* ---------------- HUD（不透明条，避免截图判遮挡） ---------------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 20;
+  background: #050816;
+  border-bottom: 2px solid rgba(80, 160, 255, 0.4);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  pointer-events: none;
+}
+.hud-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hud-left, .hud-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hud-right { pointer-events: auto; }
+.hud-pill {
+  padding: 5px 13px;
+  border-radius: 6px;
+  background: rgba(20, 30, 60, 0.95);
+  border: 1px solid rgba(80, 160, 255, 0.45);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #eaf4ff;
+}
+.hud-score { color: #ffe066; }
+.hud-kills {
+  color: #ffb347;
+  font-size: 18px;
+  border-color: rgba(255, 179, 71, 0.7);
+  box-shadow: 0 0 8px rgba(255, 179, 71, 0.35);
+}
+.hud-hp { color: #ff8899; }
+.hud-combo { color: #4ff0ff; }
+.hud-combo.dim { color: #6a7a90; }
+.hud-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(80, 160, 255, 0.4);
+  background: rgba(20, 30, 60, 0.95);
+  color: #cfeaff;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.hud-btn:hover { background: rgba(40, 60, 110, 0.95); }
+.hud-btn.is-muted { color: #6a7a90; }
+
+/* ---------------- 全屏面板 ---------------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(5, 8, 22, 0.82);
+  z-index: 30;
+  text-align: center;
+}
+.screen h1 {
+  font-size: 56px;
+  letter-spacing: 4px;
+  color: #4ff0ff;
+  text-shadow: 0 0 18px rgba(79, 240, 255, 0.65);
+  margin-bottom: 8px;
+}
+.screen h2 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #4ff0ff;
+  margin-bottom: 16px;
+}
+.screen .subtitle {
+  font-size: 17px;
+  color: #aac6e8;
+  margin-bottom: 22px;
+  max-width: 620px;
+  line-height: 1.5;
+}
+.best-line {
+  font-size: 15px;
+  color: #ffe066;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.screen button {
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: #0e4a7a;
+  color: #eaf4ff;
+  border: 1px solid #4ff0ff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 12px;
+  min-height: 48px;
+}
+.screen button:hover { background: #12609f; }
+.screen .btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(80, 160, 255, 0.45);
+  color: #aac6e8;
+  font-size: 15px;
+  padding: 10px 22px;
+  min-height: 44px;
+}
+.screen .lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 8px 14px;
+  background: #0a0f24;
+  color: #4ff0ff;
+  border: 1px solid #4ff0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  min-height: 40px;
+  z-index: 40;
+}
+.screen .lang-select:focus { outline: 2px solid #4ff0ff; outline-offset: 2px; }
+
+.win-stars {
+  font-size: 40px;
+  letter-spacing: 8px;
+  color: #ffe066;
+  margin-bottom: 12px;
+  min-height: 52px;
+}
+.win-score, .win-combo {
+  font-size: 17px;
+  color: #cfeaff;
+  margin-top: 4px;
+}
+.win-meta {
+  font-size: 14px;
+  color: #8fa6c4;
+  margin-top: 6px;
+  max-width: 560px;
+}
+.win-btns { display: flex; gap: 14px; margin-top: 18px; flex-wrap: wrap; justify-content: center; }
+#result-title.lose { color: #ff5c7a; text-shadow: 0 0 18px rgba(255, 92, 122, 0.5); }
+
+/* ---------------- 旋转提示（竖屏移动端） ---------------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 22, 0.96);
+}
+.rotate-card {
+  text-align: center;
+  padding: 28px 34px;
+  border: 1px solid rgba(80, 160, 255, 0.4);
+  border-radius: 14px;
+  background: rgba(10, 15, 36, 0.95);
+}
+.rotate-icon { font-size: 44px; margin-bottom: 12px; }
+.rotate-card p { font-size: 18px; color: #cfeaff; margin-bottom: 18px; }
+.rotate-card button {
+  padding: 14px 30px;
+  font-size: 17px;
+  background: #0e4a7a;
+  color: #eaf4ff;
+  border: 1px solid #4ff0ff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  min-height: 48px;
+}
+
+/* ---------------- 教程卡：固定底部居中 ---------------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+#tut-card {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  max-width: 560px;
+  width: max-content;
+  pointer-events: auto;
+  background: rgba(8, 12, 30, 0.96);
+  border: 1px solid rgba(79, 240, 255, 0.5);
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+#tut-card h3 {
+  font-size: 17px;
+  color: #4ff0ff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+#tut-card p {
+  font-size: 15px;
+  color: #d6e6f8;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.tut-btns { display: flex; gap: 10px; justify-content: flex-end; }
+.tut-btns button {
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  min-height: 42px;
+}
+#tut-next {
+  background: #0e4a7a;
+  color: #eaf4ff;
+  border: 1px solid #4ff0ff;
+}
+#tut-skip {
+  background: transparent;
+  color: #aac6e8;
+  border: 1px solid rgba(80, 160, 255, 0.45);
+}
+
+/* ---------------- 移动端适配 ---------------- */
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+  #tut-card { max-width: 92vw; }
+  .screen h1 { font-size: 40px; }
+  .hud-btn { width: 44px; height: 44px; }
+  .screen button { min-height: 48px; }
+}
+
+@media (max-width: 900px) {
+  #hud-combo { display: none; }
+  .hud-pill { font-size: 13px; padding: 3px 8px; }
+  .hud-left, .hud-right { gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  canvas { transition: none; }
+}

@@ -1,0 +1,56 @@
+{
+  "game": "spot-the-odd",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 0.42,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.08,
+      "deaths": 0,
+      "actions": 25,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 7,
+      "levelsReached": 5,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 2.07,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.15,
+      "deaths": 0,
+      "actions": 115,
+      "idleSec": 0,
+      "maxEventGapSec": 0.05,
+      "uniqueEvents": 7,
+      "levelsReached": 5,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 212.32,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 5,
+      "actions": 0,
+      "idleSec": 197.3,
+      "maxEventGapSec": 48.67,
+      "uniqueEvents": 3,
+      "levelsReached": 5,
+      "completed": true
+    }
+  ]
+}

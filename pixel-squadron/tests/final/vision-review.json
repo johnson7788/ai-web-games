@@ -1,0 +1,149 @@
+{
+  "game": "pixel-squadron",
+  "generatedAt": "2026-11-19T15:22:09.405Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.5,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中红色三角形图标（疑似敌人）与标题文字轻微重叠，可能干扰视觉焦点",
+        "‘How to play’按钮边框较细，对比度偏低，小屏下易误触或忽略",
+        "右上角语言选择下拉框无展开指示符（如箭头），交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕向上移动玩家飞船以避开敌人并收集白色小点",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人图标（红色倒三角）与玩家图标（蓝白三角）视觉对比度不足，眯眼时易混淆",
+        "顶部HUD中'x1'按钮无明确功能提示，可能引起新手困惑",
+        "右上角HP/帮助/音量/重试按钮间距过小，桌面截图虽不直接影响触控，但布局紧凑易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/03-asteroid.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置发射子弹或移动玩家飞船",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标计数 'Target 0/16' 显示为 0，但界面中可见 3 个红色敌人，可能目标定义不清晰或未刷新",
+        "玩家飞船（蓝三角）与下方小紫点位置接近，易误判为可交互物或子弹",
+        "HP 10/10 与右上按钮间距过小，桌面截图虽无触控问题，但移动端可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-wave.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕向上移动飞船，避开红色敌人并收集白色小点",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标 '0/20' 显示为未完成状态但无明确收集物提示（如白色小点是否为收集目标）",
+        "玩家飞船（底部蓝三角）与最近白色小点距离过近，可能误判为碰撞或可交互",
+        "顶部 HUD 按钮（? / 音乐 / 重试）图标语义模糊，需悬停提示"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Retry”按钮重新开始本关",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部中央三角形图标疑似玩家轮廓，但太小且无高亮，在深色背景中辨识度低（silhouette问题）",
+        "‘Squadron Down!’标题与三颗星间距过近，视觉层级略混乱",
+        "HP/Target/Score等HUD文字使用不同灰度与描边风格，轻微不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/06-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下区域发射子弹攻击上方红色三角敌人",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家飞船（底部蓝三角）与最近的敌方目标（左中红三角）垂直距离过近，易误判瞄准方向",
+        "HP 10/10 按钮文字为粉红底白字，与深蓝背景对比度偏低，弱光环境下可能难辨",
+        "三个红色敌人图标大小不一致（左上最大、右中次之、左中最小），疑似缩放误差"
+      ]
+    },
+    {
+      "shot": "tests/final/07-rockstorm.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置的蓝色三角形玩家飞船，准备移动或射击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标计数 '0/24' 显示为橙色高亮但无进度条或说明，新手可能不解其含义",
+        "HP 10/10 与 Level 4 等 HUD 元素间距紧凑，小屏可能拥挤（虽为桌面截图）",
+        "敌人图标外圈虚线圆环在深空背景下对比度略低，部分远距离敌人辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/08-final.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置的蓝色三角形玩家飞船进行移动或射击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标计数 '0/28' 显示为橙色高亮但无明确说明其含义（是否需击毁28个敌人？）",
+        "HP 10/10 与 Level 6 等 HUD 元素间距紧凑，小屏可能拥挤",
+        "右上角三个图标（? / 音乐 / 重试）无文字标签，功能不直观"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+assets/_src/
+tests/artifacts/
+tests/final/
+tests/*.png
+tests/*.jpg
+node_modules/
+tools/fun/
