@@ -1,0 +1,102 @@
+{
+  "slug": "klotski-numbers",
+  "genre": "puzzle",
+  "oneLiner": "霓虹街机里，把打乱的数字块沿空格一行行滑回原位——归位触发连击，步数和时间决定星级，提示与重洗是有限的救命道具。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "slide",
+      "cost": "每滑一次 +1 步数（超 movePar 丢移动星），且会打乱已经归位的邻居，必须想清楚再动",
+      "feedback": ["sfx", "neonGlow", "comboPop"],
+      "combinesWith": ["hint"]
+    },
+    {
+      "name": "hint",
+      "cost": "每关提示次数有限，用一次少一次；用完只能靠硬想",
+      "feedback": ["highlightPulse", "sfx"],
+      "combinesWith": ["slide"]
+    },
+    {
+      "name": "shuffle",
+      "cost": "清空当前步数与连击，时间照走；相当于放弃这局的移动进度",
+      "feedback": ["gridFlash", "sfx"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "先推最上面一行的数字归位，还是先清出空格走廊",
+      "cost": "先归位会锁死格子；先清路则步数变多，掉移动星"
+    },
+    {
+      "atSec": 20,
+      "choice": "这一步会打乱旁边已归位的块：滑过去换一个数字，还是绕远路保连击",
+      "cost": "直滑断连击、可能再把邻居拖出来；绕路多花 3-4 步"
+    },
+    {
+      "atSec": 40,
+      "choice": "现在用提示看下一步最优，还是把提示留给更难的后半程",
+      "cost": "提示有限，用早了后面只能硬算"
+    },
+    {
+      "atSec": 60,
+      "choice": "步数已经逼近 movePar：继续求快拿时间星，还是压步数保移动星",
+      "cost": "快与省不可兼得，二选一"
+    },
+    {
+      "atSec": 90,
+      "choice": "卡死超过 30 秒：用重洗推倒重来，还是继续抠最后两排",
+      "cost": "重洗清空步数且时间照走；继续抠可能超时判负"
+    },
+    {
+      "atSec": 130,
+      "choice": "最后一排只差两个数：拼一把直滑收尾，还是先重洗降低超时风险",
+      "cost": "直滑可能反复打乱；重洗等于从头再来但时间不等人"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "3×3 核心滑动：整行/整列朝空格滑，学会归位" },
+    { "index": 2, "newElement": "4×4 更大棋盘 + 提示道具（有限次数看下一步）" },
+    { "index": 3, "newElement": "5×5 + 连击判定（连续归位触发 combo 反馈）" },
+    { "index": 4, "newElement": "6×6 + 重洗道具（推倒重来但时间照走）" },
+    { "index": 5, "newElement": "7×7 长盘：步数与时间双门槛的终极考验" }
+  ],
+  "upgrades": [
+    { "id": "unlockHint", "kind": "rule", "desc": "第 2 关起解锁提示道具，能高亮下一个待归位的数字" },
+    { "id": "unlockShuffle", "kind": "rule", "desc": "第 4 关起解锁重洗道具，卡死时推倒重来" },
+    { "id": "comboRule", "kind": "rule", "desc": "第 3 关起连续归位触发连击，结算时计入展示" },
+    { "id": "homeGlow", "kind": "rule", "desc": "归位数字发出青色霓虹光，可读性即时反馈" },
+    { "id": "milestone", "kind": "rule", "desc": "整行/整列归位时触发里程碑高亮与音效" },
+    { "id": "timePar", "kind": "stat", "desc": "时间星门槛：≤ timePar 秒 +1 星" },
+    { "id": "movePar", "kind": "stat", "desc": "步数星门槛：≤ movePar 步 +1 星" },
+    { "id": "timeLimit", "kind": "stat", "desc": "每关超时上限，到点判负，制造失败压力" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

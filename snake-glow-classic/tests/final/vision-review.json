@@ -1,0 +1,149 @@
+{
+  "game": "snake-glow-classic",
+  "generatedAt": "2026-11-19T06:37:51.924Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 6.5,
+    "style_consistent": 8.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间亮蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘SNAKE GLOW CLASSIC’标题与副标题‘NEON ARCADE · 120s CLASSIC RUN’颜色风格不一致（青蓝 vs 紫粉），削弱统一感",
+        "‘How to play’按钮边框过细且无悬停反馈，移动端易误触或难识别",
+        "右上角语言选择下拉框无展开箭头图标，交互意图模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间亮蓝色的“开始”按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘霓虹贪吃蛇’与副标题‘霓虹街机 · 120 秒经典局’颜色对比弱（青蓝+粉紫），在低对比度环境下可能辨识困难",
+        "‘玩法说明’按钮无悬停/选中反馈，交互状态不明确",
+        "右上角语言切换下拉框边框过细且无箭头图标，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧发光星星图标（目标物）",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央进度条与星星目标紧贴，易误触；星星无明确交互反馈提示",
+        "顶部‘STAGE 1 · ORBS’文字使用双色渐变（紫/粉），与整体冷色调UI略冲突",
+        "网格背景过细且亮度低，导致中央对象对比度不足，影响快速定位"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动蛇头吃右侧紫色菱形方块",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角星形目标与最近紫色菱形距离过近，可能误判为同一物体",
+        "中间偏右有模糊绿色粒子群，疑似残留特效或未清除对象，位置在路径中",
+        "‘STAGE 2 · ROCKS’文字使用粉紫渐变，与整体霓虹蓝紫风格略冲突，但可接受"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result-win.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Play Again”按钮重新开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星评分与‘Score 0’‘Length 4’等文字垂直居中偏上，视觉重心不稳",
+        "背景紫色菱形碎片部分遮挡左上角星形图标（可能为收藏/成就），影响可识别性",
+        "‘TIME UP — YOU SURVIVED’使用破折号而非标准en dash，排版细节不严谨"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result-stars.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的'Play Again'按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星图标与'Score 1200'之间间距过小，视觉拥挤",
+        "左上角HUD信息（Score 0, Length 4等）颜色过淡、对比度低，易被忽略",
+        "‘NEW BEST’文字为黄色小字，未加粗/无背景，易被误读或忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'SNAKE GLOW CLASSIC' 与副标题 'NEON ARCADE · 120s CLASSIC RUN' 颜色不一致（青蓝 vs 紫粉），轻微风格割裂",
+        "‘How to play’按钮无背景填充，仅边框+文字，在深色背景下对比度偏低，易被忽略",
+        "右上角语言选择器‘English’下拉箭头过小且无 hover 反馈，移动端操作风险"
+      ]
+    },
+    {
+      "shot": "tests/final/08-m-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角发光星星收集它",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家主体（彩色条）与数字'8'融合，数字易被误认为装饰而非状态值",
+        "网格背景过暗且无对比度，导致小目标（如星星）边缘辨识度低",
+        "顶部HUD中'STAGE 1 · ORBS'文字颜色与背景对比不足，弱光下可能难读"
+      ]
+    }
+  ]
+}

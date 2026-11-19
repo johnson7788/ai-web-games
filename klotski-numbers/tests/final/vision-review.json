@@ -1,0 +1,149 @@
+{
+  "game": "klotski-numbers",
+  "generatedAt": "2026-11-19T06:22:18.518Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 7.5,
+    "style_consistent": 9.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的 'Start' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 GOAL 面板数字 7/8 被截断（仅显示部分边框）",
+        "‘0 / 15’ 星标计数与下方按钮间距过小，视觉拥挤",
+        "‘How to play’ 按钮文字颜色（青色）在深紫背景上对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“开始”按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角GOAL目标框内数字3/6/8部分被边框轻微遮挡（像素级裁切）",
+        "‘How to play’按钮文字为英文，与中文主界面风格不一致，易造成认知断层",
+        "底部1-5按钮星标颜色偏黄，与整体霓虹紫粉主色调略有冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角空格（黑色带蓝点的格子）以移动4到该位置",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标面板‘GOAL → 8’中箭头与数字间距过小，易误读为‘GOAL→8’连写",
+        "左上角空格内蓝点偏左上，未居中，可能影响操作意图识别",
+        "右上角工具栏图标大小不一（灯泡/重置/问号等），视觉权重不均"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next Level’按钮进入下一关",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角GOAL区域数字1-8排布与主网格方向不一致，易混淆目标位置",
+        "‘Grid Locked In!’文字与星星图标轻微重叠，影响可读性",
+        "‘Time ≤ 45s · Moves ≤ 25 · Best: 1s’行文字字号过小，3秒内难快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/04-4x4.png",
+      "goal_visible": true,
+      "first_action_guess": "点击空格（左上第二格）向上移动4到空位",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角GOAL面板中第13行'13 14 15'数字间距过窄，易误读为131415",
+        "空格位置（第二行第一列）仅用小蓝点标识，对比度偏低，弱光下可能难辨",
+        "顶部'Level 2 · 4×4'与'Moves 0'之间无分隔，视觉略拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/05-5x5.png",
+      "goal_visible": true,
+      "first_action_guess": "点击空格（左上第二行第一列的黑块）以移动14或17到其位置",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标面板中数字14被高亮但未与主网格中14同步视觉强调（主网格14为青色边框，目标面板14为深蓝底+白字，对比度不足）",
+        "空格（可移动位置）仅用小蓝点标识，缺乏足够视觉权重，易被忽略",
+        "右上角‘GOAL’面板与主网格间距过近，且部分数字（如21-24）在深背景上反差偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击空格（右上角黑格）以移动6到该位置",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标面板‘GOAL → 8’中箭头与数字间距过小，易误读为‘GOAL→8’连写",
+        "空格仅用蓝点标识，无明显凹陷/高亮对比，新手可能忽略可交互性",
+        "右上角工具栏图标尺寸偏小（约24px），桌面端尚可，但若适配移动端需放大"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击数字2所在的格子，使其所在列向空格滑动",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角GOAL面板数字1-8排布与主网格方向不一致（主网格左上→右下为1-9，GOAL是1-3/4-6/7-8），易混淆",
+        "提示框‘How to Slide the Grid’标题使用青色，与按钮颜色冲突，视觉层级弱于正文",
+        "空格用深蓝圆点表示，与背景对比度偏低，眯眼时不易识别为可交互空位"
+      ]
+    }
+  ]
+}

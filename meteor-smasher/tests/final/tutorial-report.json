@@ -1,0 +1,37 @@
+{
+  "game": "meteor-smasher",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 3,
+    "stepIds": [
+      "slam",
+      "meteor",
+      "avoid"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": [
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-meteor-smasher",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-meteor-smasher",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-meteor-smasher"
+    ]
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

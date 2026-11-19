@@ -1,0 +1,116 @@
+{
+  "url": "http://127.0.0.1:8133/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "关卡格 5 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 5"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "L1 网格 3×3",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().size === 3"
+    },
+    {
+      "name": "已滑动一次",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().moves >= 1"
+    },
+    {
+      "name": "结算屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 1"
+    },
+    {
+      "name": "L2 网格 4×4",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().size === 4"
+    },
+    {
+      "name": "L3 网格 5×5",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().size === 5"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.66,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-result.png",
+    "04-4x4.png",
+    "05-5x5.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-klotski-numbers"
+  ],
+  "fps": {
+    "avgFrameMs": 16.66,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

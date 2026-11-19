@@ -1,0 +1,149 @@
+{
+  "game": "bubble-tap-pop",
+  "generatedAt": "2026-11-19T06:25:14.599Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 7,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的蓝色 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景彩色气泡部分模糊且大小不一，可能干扰目标识别（尤其小气泡与文字层级混淆）",
+        "'Best 0' 文字颜色偏黄，在深蓝背景上对比度略低，易被忽略",
+        "右上角语言选择下拉框无展开指示图标，移动端交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "彩色泡泡大小与亮度差异大，部分小泡（如右下角紫色小点）在暗背景下易被忽略，影响可交互物辨识",
+        "‘最佳 0·’文字颜色为浅黄，在深蓝背景上对比度偏低，弱光环境下可能难读",
+        "标题‘霓虹泡泡点’使用渐变发光字，边缘轻微晕染，与背景泡泡光斑融合，存在轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间标有'ORANGE'的红色球体，因为目标色是橙色且该球体标签与目标一致但颜色不符，需选择正确颜色的橙色球（左侧蓝色球标'ORANGE'明显错误，可能需点",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧蓝色球体标签为'ORANGE'但球体为蓝色，与目标'ORANGE'冲突，易误导玩家；",
+        "顶部目标框中橙色圆点偏左，未居中对齐文字'ORANGE'；",
+        "进度条绿色部分过长且无明确终点标识，难以判断完成状态"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Retry”按钮重新开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘ORANGE’目标框与‘Game Over’文字间距过小，视觉层级略混乱",
+        "底部彩色球体标签（RED/PURPLE等）部分被模糊光晕覆盖，辨识度下降",
+        "右上角‘How to play’图标与心形生命值靠太近，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击标有'BLUE'的发光按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部进度条与球体标签间距过小，可能误触",
+        "右上角'How to play'文字与图标重叠，影响可读性",
+        "灰色六边形球体标为'ORANGE'，颜色与标签矛盾，易误导"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方标有'RED'的红色球体",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标提示框（RED）与下方第一个球体（RED）颜色/文字重复，易混淆；",
+        "‘How to play’按钮文字过小且无图标说明，桌面端尚可，但风格略突兀；",
+        "进度条绿色过亮，与下方绿色球体视觉冲突，可能误导玩家注意力"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色‘Got it’按钮关闭教程弹窗",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标词‘PURPLE’高亮框外发光边（黄+紫）与背景深色对比不足，弱光下易混淆",
+        "底部进度条无明确起止标识，难以判断当前进度",
+        "左上角‘Score 0 Best 0 Level 1’字体过小，距边缘过近，桌面端尚可，但若适配移动端易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的'Got it'按钮以关闭教程弹窗",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标词'RED'与左侧红色气泡视觉冲突，易误点；",
+        "底部进度条过细且无标签，功能不明；",
+        "右上角'How to play'文字与图标间距过小，移动端可能误触"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "game": "rps-duel-qi",
+  "generatedAt": "2026-11-19T06:20:46.178Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.285714285714286,
+    "silhouette": 8.428571428571429,
+    "style_consistent": 9.571428571428571
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的黄色 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言选择下拉框无展开箭头，可能被误认为静态文本",
+        "两个玩家图标大小与间距对称但缺乏身份区分（如无‘你’/‘对手’标识），新手易混淆",
+        "网格地面透视线在底部汇聚处略显模糊，可能影响深度判断"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间发光的‘V’符号开始游戏",
+      "readable": 7,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘V’符号无明确交互提示（如闪烁/箭头），可能误判为装饰",
+        "底部按钮‘QI BLAST’图标为水滴但文字未说明功能，新手易困惑",
+        "右上角‘Qi 0/5’与红点状态条间距过小，视觉耦合度高易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Play again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧蓝色玩家剪影与底部ROCK按钮轻微重叠（视觉干扰）",
+        "右侧红色敌人剪影与底部QI BLAST按钮区域接近，可能误触",
+        "‘COMBO x30’文字半透明且位置偏上，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言切换下拉框无展开箭头，交互意图不明确",
+        "两侧角色图标过小且缺乏动态提示，新手可能忽略其为可交互对象",
+        "网格背景线在深色区域对比度偏低，部分区域视觉干扰轻微"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间黄色圆环内的‘纸’（PAPER）图标，因为中央提示手势为出拳（对应纸），且PAPER按钮高亮。",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央手势图标为‘拳头’（代表石头），但下方PAPER按钮被高亮，易引发规则混淆（应高亮ROCK）",
+        "右上角‘Qi 0/5’与五个红点间距过小，可能误读为‘Qi 0/5●●●●●’整体",
+        "底部‘QI BLAST’按钮无图标仅文字，与其他三按钮风格不一致（缺图标+无发光边框）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Got it’按钮确认教程提示",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央教程弹窗遮挡中心手形图标，影响对目标动作的直接观察",
+        "底部技能按钮‘QI BLAST’无图标仅文字，与其余三按钮风格不一致（缺图标）",
+        "右上角‘Qi 0/5’与五颗圆点间距过小，易误读为‘Qi 0/5○○○○○’"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Got it’按钮确认教程提示",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央教程弹窗遮挡中心红光手形目标，影响目标聚焦",
+        "底部技能按钮‘QI BLAST’无图标仅文字，与其他三按钮风格不一致（缺图标）",
+        "右上角‘Qi 0/5’与五颗圆点间距过小，易误读为‘Qi 0/5○○○○○’"
+      ]
+    }
+  ]
+}

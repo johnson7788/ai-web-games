@@ -1,0 +1,68 @@
+{
+  "slug": "rps-duel-qi",
+  "genre": "arcade",
+  "oneLiner": "看穿霓虹宗师亮出的石/剪/布，用克制的一招赢下连击、攒气爆发，打满 30 回合别让怒气破体。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "choose",
+      "cost": "选错或超时都会 +1 怒气，连击清零；4 次失误（怒气到 5）直接破体出局",
+      "feedback": ["pressSfx", "beam", "spark", "scoreFloat"],
+      "combinesWith": ["qi"]
+    },
+    {
+      "name": "qi",
+      "cost": "消耗一整格气（需 5 连胜攒满），且用掉后本回合不再出手",
+      "feedback": ["whooshSfx", "shake", "sparkBurst", "qiGlow"],
+      "combinesWith": ["choose"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "宗师亮手：立刻打克制牌，还是等倒计时再看一眼", "cost": "选错 = 怒气 +1" },
+    { "atSec": 8, "choice": "快回合倒计时见底：赌一把，还是放它超时", "cost": "超时同样怒气 +1 且连击清零" },
+    { "atSec": 15, "choice": "气满了：现在爆发跳过险回合，还是留着救急", "cost": "留着 = 这回合要冒选错的风险" },
+    { "atSec": 25, "choice": "连击 ×6：继续贪连胜冲星，还是求稳", "cost": "任何一次失误连击清零" },
+    { "atSec": 40, "choice": "怒气 3/5：每一张手牌都接近致命", "cost": "再错一次就濒临破体" },
+    { "atSec": 60, "choice": "分数破 10 后计时降到 2 秒档：适应更快的亮手节奏", "cost": "犹豫 = 超时" },
+    { "atSec": 80, "choice": "第 25+ 回合：冲 3 星通关，还是保住当前最佳分", "cost": "贪连击会赌上整局" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "3.0 秒倒计时，石/剪/布克制闭环" },
+    { "index": 2, "newElement": "连击 streak（累计 + 星级）" },
+    { "index": 3, "newElement": "气功爆发（5 连胜 → 自动赢一回合）" },
+    { "index": 4, "newElement": "提速档 2.5→1.5 秒 + 4 次失误破体" }
+  ],
+  "upgrades": [
+    { "id": "comboStreak", "kind": "rule", "desc": "连胜累计连击，驱动星级与正反馈" },
+    { "id": "qiBlast", "kind": "rule", "desc": "5 连胜攒满一气，可爆发自动赢一回合" },
+    { "id": "speedRamp", "kind": "rule", "desc": "分数破 10 后，倒计时随怒气从 2.5 降到 1.5 秒" },
+    { "id": "starRating", "kind": "rule", "desc": "按分数/连击/是否通关给出 1-3 星" },
+    { "id": "timerPlus", "kind": "stat", "desc": "倒计时更宽松" },
+    { "id": "qiFaster", "kind": "stat", "desc": "攒气更快" },
+    { "id": "angerShield", "kind": "stat", "desc": "容错 +1 格怒气" },
+    { "id": "scoreBoost", "kind": "stat", "desc": "每胜得分加成" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

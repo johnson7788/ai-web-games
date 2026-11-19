@@ -1,0 +1,59 @@
+{
+  "game": "klotski-numbers",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 5,
+      "level": 3,
+      "durationSec": 30.01,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 3.06,
+      "deaths": 0,
+      "actions": 143,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 7,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 180,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 1000,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 180,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 176.98,
+      "maxEventGapSec": 179.98,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

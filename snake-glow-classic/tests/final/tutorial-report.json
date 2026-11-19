@@ -1,0 +1,30 @@
+{
+  "game": "snake-glow-classic",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 3,
+    "stepIds": [
+      "steer",
+      "eat",
+      "boost"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": []
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

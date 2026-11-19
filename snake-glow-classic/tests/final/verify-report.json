@@ -1,0 +1,130 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "首次进入出现交互引导",
+      "ok": true,
+      "detail": "eval: window.__ll.tutorial.active === true && window.__ll.tutorial.steps.length >= 3"
+    },
+    {
+      "name": "跳过引导",
+      "ok": true,
+      "detail": "eval: window.__ll.tutorial.active === false"
+    },
+    {
+      "name": "种子局进行中",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "蛇与食物存在",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().snake.length >= 4 && window.__ll.debug.state().food !== null"
+    },
+    {
+      "name": "第2段出现岩石",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stage >= 2 && window.__ll.debug.state().rocks.length > 0"
+    },
+    {
+      "name": "贪心通关到结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "胜利三星",
+      "ok": true,
+      "detail": "eval: document.getElementById('result-stars').textContent.includes('★★★')"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "回到标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 外部请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-title-zh.png",
+    "03-playing.png",
+    "04-rocks.png",
+    "05-result-win.png",
+    "06-result-stars.png",
+    "07-m-title.png",
+    "08-m-play.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

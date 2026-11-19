@@ -1,0 +1,66 @@
+{
+  "slug": "snake-glow-classic",
+  "genre": "arcade",
+  "oneLiner": "在霓虹网格上操控一条发光蛇，吃掉光球变长得分，用冲刺追连击、绕开岩石，在 120 秒经典局里活到最后。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "每次转向都是不可逆的承诺：高速下转错一格就撞墙或咬到自己的尾巴",
+      "feedback": ["sfx", "glowTrail", "headTurn"],
+      "combinesWith": ["boost"]
+    },
+    {
+      "name": "boost",
+      "cost": "消耗辉光能量，且速度翻倍后反应窗口骤减",
+      "feedback": ["sfx", "speedLines", "trailFlare"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一个弯转向最近的光球，还是先走开阔地带热身", "cost": "直奔光球可能把自己带进角落" },
+    { "atSec": 20, "choice": "长途追远处光球维持连击，还是就近吃掉保命", "cost": "长途追球更容易把自己绕死" },
+    { "atSec": 45, "choice": "在开阔地开冲刺抢节奏，还是省能量应对第 2 段岩石", "cost": "能量低时岩石出现会很被动" },
+    { "atSec": 60, "choice": "从岩石走廊中间穿过去，还是绕远路", "cost": "穿缝容错更小，绕路拖长路线" },
+    { "atSec": 90, "choice": "冒险去吃金色球（5 倍分），还是稳住别死", "cost": "金色球常刷在岩石或自己尾巴附近" },
+    { "atSec": 110, "choice": "最后 10 秒继续冲刺刷分，还是降速确保活到结算", "cost": "终点前翻车直接归零" }
+  ],
+  "loop": {
+    "teachSec": 40,
+    "practiceSec": 40,
+    "twistSec": 30,
+    "resolveSec": 10
+  },
+  "levels": [
+    { "index": 1, "newElement": "food orbs + steering (teach movement)" },
+    { "index": 2, "newElement": "neon rocks (first obstacles)" },
+    { "index": 3, "newElement": "golden orbs + faster pace" }
+  ],
+  "upgrades": [
+    { "id": "boost", "kind": "rule", "desc": "hold to glow-dash" },
+    { "id": "combo", "kind": "rule", "desc": "chain food for multiplier" },
+    { "id": "rocks", "kind": "rule", "desc": "obstacles appear" },
+    { "id": "goldOrb", "kind": "rule", "desc": "golden orb = 5x" },
+    { "id": "speedUp", "kind": "stat", "desc": "stage 3 pace up" },
+    { "id": "energy", "kind": "stat", "desc": "boost energy pool" },
+    { "id": "comboWindow", "kind": "stat", "desc": "combo grace window" },
+    { "id": "gridTight", "kind": "stat", "desc": "higher snake density" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

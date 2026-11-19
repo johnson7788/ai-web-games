@@ -1,0 +1,484 @@
+// KLOTSKI NUMBERS · 主入口：60Hz 固定步长 + 标题/选关/游戏/暂停/结算 + 教程引导 + SDK 统一出口。
+// 装配：sim（纯逻辑）/ render（canvas 程序化）/ ui（DOM）/ audio（WebAudio 程序化）。
+import { STEP, WORLD, GAME } from '../config/game.config.js';
+import { LEVELS, LEVEL_COUNT } from '../config/levels.js';
+import { createRun } from './game/sim.js';
+import { createRenderer } from './render/index.js';
+import { createAudio } from './core/audio.js';
+import { ui } from './ui/ui.js';
+import { i18n, t, syncDocumentLang } from './core/i18n.js';
+import Sdk from './core/sdk.js';
+
+const $ = (id) => document.getElementById(id);
+const canvas = $('canvas');
+const renderer = createRenderer(canvas);
+const audio = createAudio();
+
+let run = null;
+let phase = 'title'; // title | playing | paused | result
+let lastTime = performance.now();
+let accumulator = 0;
+let fpsSamples = [];
+let tutorialStep = -1;
+
+const view = { flash: 0, lastMove: null };
+
+// ---------- 存档（统一走 Sdk，localStorage 仅降级） ----------
+let muted = !!Sdk.load('muted', false);
+let unlocked = Math.max(1, Sdk.load('unlocked', 1) | 0);
+let starsByLevel = Sdk.load('stars', {}) || {};
+let bestByLevel = Sdk.load('best', {}) || {};
+let tutorialDone = !!Sdk.load('tutorialDone', false);
+let lastLevel = Sdk.load('lastLevel', 0) | 0;
+
+Sdk.ready();
+audio.setMuted(muted);
+ui.setMuted(muted);
+
+function persist() {
+  Sdk.save('unlocked', unlocked);
+  Sdk.save('stars', starsByLevel);
+  Sdk.save('best', bestByLevel);
+  Sdk.save('muted', muted);
+  Sdk.save('tutorialDone', tutorialDone);
+  Sdk.save('lastLevel', lastLevel);
+}
+
+function totalStars() {
+  return Object.values(starsByLevel).reduce((a, b) => a + (b | 0), 0);
+}
+
+// ---------- 阶段状态机 ----------
+function setPhase(p) { phase = p; }
+
+function startLevel(idx) {
+  idx = Math.max(0, Math.min(LEVEL_COUNT - 1, idx | 0));
+  lastLevel = idx;
+  run = createRun(idx, { seed: (Date.now() % 2147483647) || 1 });
+  view.flash = 0;
+  view.lastMove = null;
+  setPhase('playing');
+  ui.showGame();
+  ui.hideResult();
+  updateHud();
+  audio.startBgm();
+  Sdk.newRun({ level: idx + 1 });
+  if (!tutorialDone && idx === 0) startTutorial();
+}
+
+function pauseGame() {
+  if (phase !== 'playing') return;
+  setPhase('paused');
+  audio.stopBgm();
+  ui.showPause();
+}
+
+function resumeGame() {
+  if (phase !== 'paused') return;
+  setPhase('playing');
+  ui.hidePause();
+  audio.startBgm();
+}
+
+function restartLevel() {
+  if (run) Sdk.track('restart', { level: run.state.level });
+  startLevel(run ? run.state.level - 1 : lastLevel);
+}
+
+function goHome() {
+  run = null;
+  setPhase('title');
+  ui.hideResult();
+  ui.showTitle();
+  buildLevelGrid();
+  audio.stopBgm();
+}
+
+// ---------- HUD / 关卡格 / 结算 ----------
+function fmtTime(sec) {
+  const s = Math.floor(sec % 60);
+  const m = Math.floor(sec / 60);
+  return `${m}:${s < 10 ? '0' : ''}${s}`;
+}
+
+function updateHud() {
+  if (!run) return;
+  const h = run.getHud();
+  $('hud-level').textContent = `${t('level')} ${h.level} · ${h.size}×${h.size}`;
+  $('hud-time').textContent = fmtTime(h.time);
+  $('hud-time').classList.toggle('hud-combo', h.time >= h.timeLimit - 10);
+  $('hud-moves').textContent = `${t('moves')} ${h.moves}`;
+  const comboEl = $('hud-combo');
+  if (h.combo >= GAME.COMBO_MIN) {
+    comboEl.style.display = '';
+    comboEl.textContent = `${t('combo')} ×${h.combo}`;
+  } else {
+    comboEl.style.display = 'none';
+  }
+  $('btn-hint').textContent = `💡${h.hintLeft}`;
+  $('btn-shuffle').textContent = `🔀${h.shuffleLeft}`;
+  $('btn-hint').title = t('hint');
+  $('btn-shuffle').title = t('shuffle');
+  $('btn-hint').disabled = h.hintLeft <= 0;
+  $('btn-shuffle').disabled = h.shuffleLeft <= 0;
+}
+
+function buildLevelGrid() {
+  const grid = $('level-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  for (let i = 0; i < LEVEL_COUNT; i += 1) {
+    const cell = document.createElement('button');
+    cell.className = 'level-cell' + (i + 1 > unlocked ? ' locked' : '');
+    cell.dataset.level = i;
+    const stars = starsByLevel[i + 1] | 0;
+    const best = bestByLevel[i + 1];
+    cell.innerHTML =
+      `<span class="lv-num">${i + 1}</span>` +
+      `<span class="lv-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</span>` +
+      (best != null ? `<span class="lv-stars">${t('bestOf', { s: Math.floor(best) })}</span>` : '');
+    cell.setAttribute('aria-label', `${t('level')} ${i + 1}${i + 1 > unlocked ? ' ' + t('locked') : ''}`);
+    grid.appendChild(cell);
+  }
+  $('stars-total').textContent = `★ ${totalStars()} / ${LEVEL_COUNT * 3}`;
+}
+
+function showResult(res) {
+  const { won, stars, time, moves, best } = res;
+  $('result-title').textContent = won ? t('winTitle') : t('loseTitle');
+  $('result-title').classList.toggle('lose', !won);
+  const starsEl = $('result-stars');
+  starsEl.innerHTML = won
+    ? `<span class="stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</span>${stars >= 3 ? `<em>${t('perfect')}</em>` : ''}`
+    : '';
+  $('result-time').textContent = won ? `${t('timeLeft', { s: Math.floor(time) })} · ${t('movesN', { n: moves })}` : t('timeOut');
+  const parts = [];
+  if (won) {
+    parts.push(`${t('starTime')} ≤ ${run.state.timePar}s`);
+    parts.push(`${t('starMoves')} ≤ ${run.state.movePar}`);
+  }
+  if (best != null && won) parts.push(t('bestOf', { s: Math.floor(best) }));
+  $('result-meta').textContent = parts.join(' · ');
+  $('btn-next').style.display = won && (run.state.level < LEVEL_COUNT) ? '' : 'none';
+  ui.showResult();
+}
+
+function finishRun(ev) {
+  setPhase('result');
+  audio.stopBgm();
+  if (tutorialStep >= 0) endTutorial();
+  const st = run.state;
+  const won = ev.type === 'win';
+  const stars = won ? st.stars : 0;
+  let best = bestByLevel[st.level];
+  if (won) {
+    const idx = st.level;
+    starsByLevel[idx] = Math.max(starsByLevel[idx] | 0, stars);
+    if (idx < LEVEL_COUNT) unlocked = Math.max(unlocked, idx + 1);
+    if (best == null || st.time < best) { best = st.time; bestByLevel[idx] = st.time; }
+    buildLevelGrid();
+  }
+  persist();
+  Sdk.levelCleared({ level: st.level, stars, time: st.time, moves: st.moves });
+  showResult({ won, stars, time: st.time, moves: st.moves, best });
+  audio.event(won ? 'win' : 'lose');
+}
+
+// ---------- 教程引导 ----------
+const TUT_TRIGGER = ['slide', 'slide', 'slide'];
+const TUT_STEPS = () => [
+  { text: t('tutStep1'), spot: 'board' },
+  { text: t('tutStep2'), spot: 'board' },
+  { text: t('tutStep3'), spot: 'board' },
+];
+
+function layoutRect(which) {
+  if (which !== 'board' || !run) return null;
+  const lay = renderer.debugLayout(run.state.size);
+  return lay ? lay.grid : null;
+}
+
+function startTutorial() {
+  tutorialStep = 0;
+  renderTutorialStep();
+}
+
+function renderTutorialStep() {
+  const el = $('tutorial');
+  if (tutorialStep < 0) { el.classList.add('hidden'); return; }
+  const steps = TUT_STEPS();
+  const s = steps[tutorialStep];
+  el.classList.remove('hidden');
+  $('tut-title').textContent = t('tutTitle');
+  $('tut-text').textContent = s ? s.text : '';
+  $('tut-skip').textContent = t('tutSkip');
+  $('tut-next').textContent = t('tutNext');
+  const rect = s && s.spot && layoutRect(s.spot);
+  const spot = $('tut-spotlight');
+  if (rect) {
+    spot.style.display = 'block';
+    spot.style.left = `${rect.x - 8}px`;
+    spot.style.top = `${rect.y - 8}px`;
+    spot.style.width = `${rect.w + 16}px`;
+    spot.style.height = `${rect.h + 16}px`;
+  } else {
+    spot.style.display = 'none';
+  }
+}
+
+function tutorialNext() {
+  tutorialStep += 1;
+  if (tutorialStep >= TUT_STEPS().length) endTutorial();
+  else renderTutorialStep();
+}
+
+function endTutorial() {
+  tutorialStep = -1;
+  tutorialDone = true;
+  persist();
+  renderTutorialStep();
+}
+
+function tutorialAdvance(evType) {
+  if (tutorialStep < 0 || tutorialStep >= TUT_TRIGGER.length) return;
+  if (TUT_TRIGGER[tutorialStep] !== evType) return;
+  tutorialStep += 1;
+  if (tutorialStep >= TUT_TRIGGER.length) endTutorial();
+  else renderTutorialStep();
+}
+
+// ---------- 事件消费 ----------
+function handleEvents(events) {
+  for (const ev of events) {
+    audio.event(ev.type, ev);
+    tutorialAdvance(ev.type);
+    switch (ev.type) {
+      case 'slide':
+        view.lastMove = ev.index;
+        view.flash = 0.18;
+        break;
+      case 'win':
+      case 'lose':
+        finishRun(ev);
+        return;
+      default:
+        break;
+    }
+  }
+}
+
+// ---------- 输入 ----------
+function canvasPos(e) {
+  const rect = canvas.getBoundingClientRect();
+  return {
+    x: (e.clientX - rect.left) * (WORLD.WIDTH / rect.width),
+    y: (e.clientY - rect.top) * (WORLD.HEIGHT / rect.height),
+  };
+}
+
+function pickCell(p) {
+  if (!run) return -1;
+  const lay = renderer.debugLayout(run.state.size);
+  const { grid, cell } = lay;
+  const c = Math.floor((p.x - grid.x) / cell);
+  const r = Math.floor((p.y - grid.y) / cell);
+  if (r < 0 || r >= run.state.size || c < 0 || c >= run.state.size) return -1;
+  return r * run.state.size + c;
+}
+
+canvas.addEventListener('pointerdown', (e) => {
+  audio.unlock();
+  if (!run || phase !== 'playing') return;
+  const p = canvasPos(e);
+  const idx = pickCell(p);
+  if (idx < 0) return;
+  const res = run.move(idx);
+  if (!res.ok) audio.event('slide', { fail: true });
+  updateHud();
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'Escape' || e.code === 'KeyP') {
+    if (phase === 'playing') pauseGame();
+    else if (phase === 'paused') resumeGame();
+  }
+  if (e.code === 'KeyR' && (phase === 'playing' || phase === 'paused' || phase === 'result')) restartLevel();
+  if (e.code === 'KeyM') toggleMute();
+  if (e.code === 'KeyH' && phase === 'playing') doHint();
+  if (e.code === 'KeyS' && phase === 'playing') doShuffle();
+});
+
+function doHint() {
+  if (!run || phase !== 'playing') return;
+  const r = run.hint();
+  if (r.ok) updateHud();
+}
+
+function doShuffle() {
+  if (!run || phase !== 'playing') return;
+  const r = run.shuffle();
+  if (r.ok) updateHud();
+}
+
+function toggleMute() {
+  muted = !muted;
+  audio.setMuted(muted);
+  ui.setMuted(muted);
+  $('btn-mute').classList.toggle('is-muted', muted);
+  persist();
+}
+
+// ---------- UI 绑定 ----------
+function bind() {
+  const on = (id, fn) => {
+    const el = $(id);
+    if (el) el.addEventListener('click', () => { audio.unlock(); fn(); });
+  };
+  on('btn-start', () => startLevel(lastLevel || 0));
+  on('btn-resume', resumeGame);
+  on('btn-restart', restartLevel);
+  on('btn-restart2', restartLevel);
+  on('btn-retry', restartLevel);
+  on('btn-next', () => startLevel((run ? run.state.level : lastLevel))); // 下一关 = level(1基)
+  on('btn-home', goHome);
+  on('btn-home2', goHome);
+  on('btn-home3', goHome);
+  on('btn-mute', toggleMute);
+  on('btn-hint', doHint);
+  on('btn-shuffle', doShuffle);
+  on('btn-howto', () => { if (phase === 'playing' || phase === 'result') startTutorial(); });
+  on('btn-howto-title', () => startTutorial());
+  on('btn-tut-replay', () => {
+    if (phase === 'paused') resumeGame();
+    if (phase === 'playing') startTutorial();
+  });
+  on('btn-rotate-skip', () => {
+    const rs = $('rotate-screen');
+    if (rs) rs.style.display = 'none';
+  });
+  on('tut-next', tutorialNext);
+  on('tut-skip', endTutorial);
+
+  $('level-grid')?.addEventListener('click', (e) => {
+    const idx = e.target.closest('[data-level]')?.dataset.level;
+    if (idx == null) return;
+    const i = +idx;
+    if (i + 1 > unlocked) return;
+    startLevel(i);
+  });
+
+  for (const id of ['lang-select', 'lang-select-pause']) {
+    const sel = $(id);
+    if (!sel) continue;
+    sel.addEventListener('change', () => {
+      ui.setLang(sel.value);
+      renderTutorialStep();
+      buildLevelGrid();
+      if (run) updateHud();
+      const rt = $('rotate-text');
+      const rb = $('btn-rotate-skip');
+      if (rt) rt.textContent = t('rotateHint');
+      if (rb) rb.textContent = t('rotateSkip');
+    });
+  }
+}
+
+// ---------- 主循环 ----------
+function frame(now) {
+  const dt = Math.min(0.1, (now - lastTime) / 1000);
+  lastTime = now;
+
+  if (phase === 'playing' && run) {
+    accumulator += dt;
+    while (accumulator >= STEP) {
+      run.step(STEP);
+      accumulator -= STEP;
+    }
+    handleEvents(run.drainEvents());
+    if (run && phase === 'playing') updateHud();
+  }
+
+  if (view.flash > 0) view.flash = Math.max(0, view.flash - dt);
+  renderer.draw(run ? run.state : null, dt, view);
+
+  if (fpsSamples.length < 600 && dt > 0) fpsSamples.push(1 / dt);
+  requestAnimationFrame(frame);
+}
+
+// ---------- 调试契约 ----------
+window.__ll = {
+  state: {
+    get phase() { return phase; },
+    get lang() { return i18n.lang; },
+  },
+  run: () => run,
+  sim: () => (run ? run.state : null),
+  start: (i) => startLevel(i == null ? (lastLevel || 0) : i),
+  pause: () => pauseGame(),
+  resume: () => resumeGame(),
+  restart: () => restartLevel(),
+  home: () => goHome(),
+  save: () => Sdk,
+  ui: () => ui,
+  tutorial: {
+    get active() { return tutorialStep >= 0; },
+    get step() { return tutorialStep; },
+    get steps() { return ['slide', 'home', 'solve']; },
+    get current() { return tutorialStep >= 0 ? TUT_STEPS()[tutorialStep] : null; },
+  },
+  startTutorial: () => startTutorial(),
+  debug: {
+    state: () => (run ? run.state : null),
+    layout: () => { try { return renderer.debugLayout(run ? run.state.size : 3); } catch { return null; } },
+    loadLevel: (i) => startLevel(i),
+    startSeeded: (i, seed) => {
+      const idx = Math.max(0, Math.min(LEVEL_COUNT - 1, i | 0));
+      lastLevel = idx;
+      run = createRun(idx, { seed: seed | 0 || 1 });
+      setPhase('playing');
+      ui.showGame();
+      ui.hideResult();
+      updateHud();
+      return true;
+    },
+    move: (t) => {
+      if (!run) return { ok: false, reason: 'noRun' };
+      const r = run.move(t);
+      updateHud();
+      return r;
+    },
+    // 验收辅助：直接把当前盘面置为已解并结算
+    solve: () => {
+      if (!run) return false;
+      const s = run.state;
+      const L = s.size * s.size;
+      s.cells = [];
+      for (let v = 1; v < L; v += 1) s.cells.push(v);
+      s.cells.push(0);
+      s.blank = L - 1;
+      s.moves += 1;
+      run._updateMilestones();
+      run._win();
+      handleEvents(run.drainEvents());
+      return true;
+    },
+    hint: () => { const r = run && run.hint(); if (r && r.ok) updateHud(); return r; },
+    shuffle: () => { const r = run && run.shuffle(); if (r && r.ok) updateHud(); return r; },
+    setTutorialDone: (b) => { tutorialDone = !!b; persist(); },
+  },
+};
+
+// ---------- 启动 ----------
+bind();
+syncDocumentLang();
+ui.applyLang();
+{
+  const rt = $('rotate-text');
+  const rb = $('btn-rotate-skip');
+  if (rt) rt.textContent = t('rotateHint');
+  if (rb) rb.textContent = t('rotateSkip');
+}
+buildLevelGrid();
+$('btn-mute').classList.toggle('is-muted', muted);
+Sdk.track('load', {});
+requestAnimationFrame(frame);

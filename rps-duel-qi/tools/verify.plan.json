@@ -1,0 +1,64 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start()" },
+    { "wait": 600 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "eval": "window.__ll.tutorial.skip()" },
+    { "wait": 200 },
+    { "screenshot": "02-playing.png" },
+    { "assert": "['rock','scissors','paper'].includes(window.__ll.debug.hand())", "name": "宗师亮手合法" },
+    { "eval": "window.__ll.debug.playCorrect()" },
+    { "wait": 300 },
+    { "assert": "window.__ll.debug.state().score >= 1", "name": "打出克制手得分" },
+    { "eval": "window.__ll.debug.fastForward()" },
+    { "wait": 300 },
+    { "assert": "window.__ll.state.phase === 'result'", "name": "到结算屏" },
+    { "screenshot": "03-result.png" },
+    { "assert": "window.__ll.debug.state().result.won === true", "name": "全对通关" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "重开本局" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start(); window.__ll.tutorial.skip();"
+  },
+  "mobile": {
+    "viewport": [390, 844],
+    "steps": [
+      { "wait": 600 },
+      { "screenshot": "06-rotate.png" },
+      { "assert": "document.querySelector('#rotate-screen').getBoundingClientRect().height > 0", "name": "竖屏提示可见" },
+      { "click": "#btn-rotate-skip" },
+      { "wait": 250 },
+      { "eval": "window.__ll.start()" },
+      { "wait": 500 },
+      { "assert": "window.__ll.state.phase === 'playing'", "name": "移动端进入游戏" },
+      { "screenshot": "07-mobile-playing.png" }
+    ]
+  }
+}

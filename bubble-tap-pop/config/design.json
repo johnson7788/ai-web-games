@@ -1,0 +1,91 @@
+{
+  "slug": "bubble-tap-pop",
+  "genre": "arcade",
+  "oneLiner": "在霓虹泡泡阵列里，抢在 3 秒倒计时结束前，点中与你看到的目标颜色词真正同色的泡泡——文字是陷阱，连击是高分，岩石是死亡。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "3 秒内必须点：点错颜色或点到岩石扣 1 命并断连击",
+      "feedback": ["sfx", "burst", "scoreFloat"],
+      "combinesWith": ["combo"]
+    },
+    {
+      "name": "combo",
+      "cost": "连击越高得分越多，但一旦失误全部清零，逼你保持节奏",
+      "feedback": ["sfx", "glowPulse", "rankUp"],
+      "combinesWith": ["tap"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一个目标词出现：先扫颜色，还是先读泡泡上的字",
+      "cost": "读字会被文字干扰（斯特鲁普效应），慢半拍可能超时"
+    },
+    {
+      "atSec": 15,
+      "choice": "连击 3 次后：继续拼连击，还是稳一手慢慢点",
+      "cost": "拼连击=更快更高分但更容易失误；稳=分少但安全"
+    },
+    {
+      "atSec": 30,
+      "choice": "岩石出现：它写着颜色词却不是任何颜色，点它还是绕过",
+      "cost": "点它扣命断连击；绕过要额外分辨"
+    },
+    {
+      "atSec": 50,
+      "choice": "时间条见底：抢点一个可能的颜色，还是放弃这轮保命",
+      "cost": "抢点可能点错扣命；放弃=本轮超时也扣命"
+    },
+    {
+      "atSec": 80,
+      "choice": "分数逼近星级线：冒险追 3 星，还是保底 2 星",
+      "cost": "追高分要更快连击，容错更低"
+    },
+    {
+      "atSec": 110,
+      "choice": "连击 15+：继续极限手速，还是放慢防手滑",
+      "cost": "手速越快，误触岩石/错色概率越高"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "5 种颜色泡泡 + 斯特鲁普文字干扰：点与目标词同色的泡泡" },
+    { "index": 2, "newElement": "连击倍率：连续点对最高 ×5 得分" },
+    { "index": 3, "newElement": "岩石陷阱：灰岩泡泡写颜色词诱导误点，点它扣命" },
+    { "index": 4, "newElement": "节奏加快：等级越高每轮时间条越短" }
+  ],
+  "upgrades": [
+    { "id": "comboMultiplier", "kind": "rule", "desc": "连击倍率系统" },
+    { "id": "rockTrap", "kind": "rule", "desc": "岩石陷阱出现" },
+    { "id": "speedUp", "kind": "rule", "desc": "等级越高时间条越短" },
+    { "id": "starRating", "kind": "rule", "desc": "星级结算" },
+    { "id": "score1", "kind": "stat", "desc": "基础得分" },
+    { "id": "bestCombo", "kind": "stat", "desc": "最佳连击记录" },
+    { "id": "lives3", "kind": "stat", "desc": "3 条命" },
+    { "id": "maxGain5", "kind": "stat", "desc": "单次最高 +5 分" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

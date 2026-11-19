@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>RPS DUEL QI</title>
+  <link rel="stylesheet" href="styles.css?v=rps1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-score" class="hud-pill"></span>
+          <span id="hud-best" class="hud-pill"></span>
+          <span id="hud-wave" class="hud-pill"></span>
+          <span id="hud-combo" class="hud-pill combo hidden"></span>
+        </div>
+        <div class="hud-center">
+          <span id="hud-round" class="hud-pill"></span>
+          <span id="hud-time" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-qi" class="hud-pill qi"></span>
+          <span id="hud-anger" class="hud-pill anger" title="Anger"></span>
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="hands" class="hidden">
+      <div class="hands-inner">
+        <button id="btn-rock" class="hand-btn rock" data-hand="rock">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="16" cy="19" r="9"/><circle cx="9" cy="12" r="3.2"/><circle cx="16" cy="11" r="3.2"/><circle cx="23" cy="12" r="3.2"/></g></svg>
+          <span class="hand-label" data-i18n="rockShort">ROCK</span>
+        </button>
+        <button id="btn-scissors" class="hand-btn scissors" data-hand="scissors">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10 26 L16 14 L10 7 M22 26 L16 14 L22 7" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="hand-label" data-i18n="scissorsShort">SCISSORS</span>
+        </button>
+        <button id="btn-paper" class="hand-btn paper" data-hand="paper">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="14" width="20" height="14" rx="3.5" fill="currentColor"/><path d="M10.5 14 V7 M16 14 V5.5 M21.5 14 V7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg>
+          <span class="hand-label" data-i18n="paperShort">PAPER</span>
+        </button>
+        <button id="btn-qi" class="hand-btn qi">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 C16 4 6 12 6 20 A10 10 0 0 0 26 20 C26 12 16 4 16 4 Z" fill="currentColor" opacity="0.5"/><path d="M16 6 C16 6 9 12 9 20 A7 7 0 0 0 23 20 C23 12 16 6 16 6 Z" fill="currentColor"/></svg>
+          <span class="hand-label" data-i18n="qiBtn">QI</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">RPS DUEL QI</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start">Start</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Play again</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger arena</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=rps1"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+{
+  "game": "klotski-numbers",
+  "generatedAt": "2026-11-19T06:22:24.952Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds≈19.2",
+      "ok": true,
+      "loopSeconds": 19.2,
+      "bpm": 100,
+      "bars": 8
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 19.7
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.01747123175395275
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.017964318327596786
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.016781253592294935
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.08662567287683487
+    },
+    {
+      "name": "sfx-slide-rms>0.01",
+      "ok": true,
+      "rms": 0.026082658503598317
+    },
+    {
+      "name": "sfx-slide-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.04149659863945578
+    },
+    {
+      "name": "sfx-slide-peak<=0.98",
+      "ok": true,
+      "peak": 0.06936094164848328
+    },
+    {
+      "name": "sfx-combo-rms>0.01",
+      "ok": true,
+      "rms": 0.01746400094165861
+    },
+    {
+      "name": "sfx-combo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.19498866213151927
+    },
+    {
+      "name": "sfx-combo-peak<=0.98",
+      "ok": true,
+      "peak": 0.07471534609794617
+    },
+    {
+      "name": "sfx-hint-rms>0.01",
+      "ok": true,
+      "rms": 0.022727701910367343
+    },
+    {
+      "name": "sfx-hint-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.08564625850340137
+    },
+    {
+      "name": "sfx-hint-peak<=0.98",
+      "ok": true,
+      "peak": 0.08711162209510803
+    },
+    {
+      "name": "sfx-shuffle-rms>0.01",
+      "ok": true,
+      "rms": 0.02103378124193123
+    },
+    {
+      "name": "sfx-shuffle-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.2703628117913832
+    },
+    {
+      "name": "sfx-shuffle-peak<=0.98",
+      "ok": true,
+      "peak": 0.12532122433185577
+    },
+    {
+      "name": "sfx-win-rms>0.01",
+      "ok": true,
+      "rms": 0.020290344490177355
+    },
+    {
+      "name": "sfx-win-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "name": "sfx-win-peak<=0.98",
+      "ok": true,
+      "peak": 0.09354979544878006
+    },
+    {
+      "name": "sfx-lose-rms>0.01",
+      "ok": true,
+      "rms": 0.038225149602475916
+    },
+    {
+      "name": "sfx-lose-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.23024943310657597
+    },
+    {
+      "name": "sfx-lose-peak<=0.98",
+      "ok": true,
+      "peak": 0.1491696536540985
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 19.2,
+      "bpm": 100,
+      "bars": 8,
+      "duration": 19.7,
+      "rms": 0.01747123175395275,
+      "peak": 0.08662567287683487,
+      "headRms": 0.017964318327596786,
+      "spliceRms": 0.016781253592294935
+    },
+    {
+      "kind": "sfx",
+      "name": "slide",
+      "rms": 0.026082658503598317,
+      "peak": 0.06936094164848328,
+      "activeDuration": 0.04149659863945578
+    },
+    {
+      "kind": "sfx",
+      "name": "combo",
+      "rms": 0.01746400094165861,
+      "peak": 0.07471534609794617,
+      "activeDuration": 0.19498866213151927
+    },
+    {
+      "kind": "sfx",
+      "name": "hint",
+      "rms": 0.022727701910367343,
+      "peak": 0.08711162209510803,
+      "activeDuration": 0.08564625850340137
+    },
+    {
+      "kind": "sfx",
+      "name": "shuffle",
+      "rms": 0.02103378124193123,
+      "peak": 0.12532122433185577,
+      "activeDuration": 0.2703628117913832
+    },
+    {
+      "kind": "sfx",
+      "name": "win",
+      "rms": 0.020290344490177355,
+      "peak": 0.09354979544878006,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "kind": "sfx",
+      "name": "lose",
+      "rms": 0.038225149602475916,
+      "peak": 0.1491696536540985,
+      "activeDuration": 0.23024943310657597
+    }
+  ],
+  "sfxMap": {
+    "slide": "slide",
+    "combo": "combo",
+    "hint": "hint",
+    "shuffle": "shuffle",
+    "win": "win",
+    "lose": "lose"
+  }
+}

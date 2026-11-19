@@ -1,0 +1,133 @@
+{
+  "game": "meteor-smasher",
+  "generatedAt": "2026-11-19T06:39:02.741Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.285714285714286,
+    "silhouette": 7.428571428571429,
+    "style_consistent": 8.714285714285714
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部三个可交互物（左紫菱形、中红星、右黄圆）轮廓线风格不一致：虚线/实线/无边框，且大小比例模糊，影响快速识别",
+        "‘陨石破坏王’中文字体与英文标题发光效果不统一，中文无辉光，略显突兀",
+        "右上角语言切换下拉框边框为深蓝底+浅蓝字，对比度偏低，小屏可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部三个可交互物（左五边形、中星形、右圆点）轮廓相似且无明确状态指示，易混淆角色与障碍",
+        "‘陨石破坏王’副标题字号偏小，与主标题对比度不足，弱化层级",
+        "右上角语言切换框边框过细，与深色背景对比度低，可能被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间发光六边形角色以粉碎陨石",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Heat 0/35’与‘Level 1’间距过小，易误读为‘Level 1 Heat’",
+        "右上角按钮组（? / 飞船图标 / Restart / Menu）横向紧凑，移动端可能误触",
+        "底部蓝色线为平台边界，但未明确标示为可站立面，新手可能误判落点"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部三个可交互图形（五边形、星形、圆点）与HUD无明确关联，易误判为游戏内元素而非UI残留",
+        "‘New best!’文字颜色（浅绿）对比度偏低，在深蓝背景上略难辨识",
+        "三颗星图标发光效果过强，轻微干扰下方分数文本的视觉层级"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的蓝色六边形角色以发射向下箭头攻击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角粉色菱形敌人被虚线圆圈包围，但无明确交互提示，易误判为装饰",
+        "‘Heat 0/35’与‘Tap to smash meteors · avoid spikes’文字颜色相近（黄底黑字 vs 黄字），在暗背景上对比度略低",
+        "玩家角色下方虚线箭头指向地面，但无明确目标点，操作意图稍模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Got it’按钮关闭教程弹窗",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡中央无人机图标，影响初始目标识别",
+        "右下角粉色菱形物体（疑似障碍物）无明确标识，易误判为可交互物",
+        "顶部提示文字‘Tap to smash meteors · avoid spikes’中‘·’为全角点，与英文混排不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的六边形无人机或右侧粉色菱形目标区域以开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’弹窗遮挡部分游戏区域（中央偏下），可能影响新手对初始交互的感知",
+        "右下角粉色菱形目标被虚线圈包围，但未明确指示其为可交互对象，易与装饰混淆",
+        "顶部提示文字‘Tap to smash meteors · avoid spikes’中‘meteors’与实际画面无陨石元素，存在误导"
+      ]
+    }
+  ]
+}
