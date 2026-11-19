@@ -1,0 +1,78 @@
+{
+  "slug": "garden-bloom-tycoon",
+  "genre": "idle",
+  "oneLiner": "在程序化绘制的卡通花园里种花收金币，把六阶原创花种一路进化、砸碎岩石、攒连击与水滴，解锁九块花田成为大亨。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "harvest",
+      "cost": "收获清空当前积累进度，摘早了损失后续连击窗口里的倍数收益",
+      "feedback": ["sfx", "coinBurst", "comboGlow"],
+      "combinesWith": ["evolve"]
+    },
+    {
+      "name": "evolve",
+      "cost": "金币花在升级/进化上就暂时不能解锁新地块，且一次只能投资一个目标",
+      "feedback": ["sfx", "levelUpFlash", "petalGrow"],
+      "combinesWith": ["harvest"]
+    },
+    {
+      "name": "clear",
+      "cost": "破岩受刷新冷却限制且收益随等级成长；解锁地块要攒鲜花门槛，鲜花用来解锁还是刷榜是取舍",
+      "feedback": ["sfx", "rockCrack", "sparkle"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一笔金币：先升级花提高单产，还是先攒钱开第二块地", "cost": "升级立刻增产，开地多一块田但启动慢" },
+    { "atSec": 20, "choice": "花满级了：进化成新品种（涨鲜花解锁地块），还是先开地铺产量", "cost": "进化烧大额金币，可能推迟第二块地" },
+    { "atSec": 40, "choice": "连击窗口内：继续摘第三朵叠 ×3，还是停下来投资升级", "cost": "贪连击可能错过最佳升级时机" },
+    { "atSec": 60, "choice": "水滴快满：现在浇一朵加速，还是留给更高阶的花", "cost": "早用收益小，晚用要等更久" },
+    { "atSec": 90, "choice": "破岩刷金币 vs 专注花田复利", "cost": "时间花在破岩上，地块升级就慢" },
+    { "atSec": 120, "choice": "鲜花门槛达标：解锁下一块地，还是继续攒更多鲜花", "cost": "越早开地复利越强，但金币被锁定" },
+    { "atSec": 150, "choice": "保持连击 ×3 节奏，还是提前投资冲第 4 阶花", "cost": "连击上限 3，多余连击没有额外收益" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 25
+  },
+  "levels": [
+    { "index": 1, "newElement": "第一块花田：学会收获与升级" },
+    { "index": 2, "newElement": "进化系统：满级进化新品种，获得鲜花解锁新地块" },
+    { "index": 3, "newElement": "连击机制：2.5 秒内连续收获触发 ×2/×3 金币加成" },
+    { "index": 4, "newElement": "水滴道具：消耗水滴立即完成一轮生长" },
+    { "index": 5, "newElement": "岩石刷新：击碎岩堆换金币，周期性重生" },
+    { "index": 6, "newElement": "花园等级：进化提升等级，解锁更强花种" }
+  ],
+  "upgrades": [
+    { "id": "comboSystem", "kind": "rule", "desc": "连击系统：2.5 秒窗口内连续收获翻倍" },
+    { "id": "waterBoost", "kind": "rule", "desc": "水滴道具：立即完成一轮生长" },
+    { "id": "rockRespawn", "kind": "rule", "desc": "岩石刷新：岩堆周期性重生换金币" },
+    { "id": "gardenRank", "kind": "rule", "desc": "花园等级：进化提升等级解锁新花种" },
+    { "id": "tier1Yield", "kind": "stat", "desc": "花阶 1 基础产量" },
+    { "id": "tier2Yield", "kind": "stat", "desc": "花阶 2 产量提升" },
+    { "id": "plotSlots", "kind": "stat", "desc": "地块解锁槽位" },
+    { "id": "waterCap", "kind": "stat", "desc": "水滴上限" },
+    { "id": "comboCap", "kind": "stat", "desc": "连击上限 ×3" },
+    { "id": "rockScale", "kind": "stat", "desc": "破岩收益随花园等级成长" }
+  ],
+  "replayHooks": ["growth", "unlock", "nearMiss", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

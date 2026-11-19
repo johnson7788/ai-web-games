@@ -1,0 +1,92 @@
+{
+  "slug": "my-planet-grow",
+  "genre": "arcade",
+  "oneLiner": "拖动小行星在星海中吞噬流星不断长大，同时躲开会追踪你的黑洞——连击、进化、三星评级让你越战越勇。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "drag",
+      "cost": "移动星球等于放弃原地接流星的路线，把逐渐变大的身体挪向黑洞更密的一侧",
+      "feedback": ["trail", "sfx", "glow"],
+      "combinesWith": ["catch"]
+    },
+    {
+      "name": "catch",
+      "cost": "吞噬流星会让体积变大，命中判定随之变大，之后更难躲开黑洞",
+      "feedback": ["burst", "sfx", "scorePopup"],
+      "combinesWith": ["drag"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "第一颗流星落向左侧：立刻冲过去接，还是留在安全区等下一波",
+      "cost": "冲过去可能撞上右侧的黑洞"
+    },
+    {
+      "atSec": 20,
+      "choice": "黄金流星出现但位置靠近黑洞：冒险去接高价值，还是放弃保命",
+      "cost": "黄金流星值 5 质量 + 50 分，但去接就有被吞的风险"
+    },
+    {
+      "atSec": 40,
+      "choice": "质量越过进化档：继续追流星冲连击，还是先拉开与黑洞的距离",
+      "cost": "连击断了倍率归零；不拉开距离，变大后的身体更难躲"
+    },
+    {
+      "atSec": 65,
+      "choice": "两个黑洞从两侧夹击：从中间缝隙钻过去，还是绕到屏幕底部",
+      "cost": "钻缝省时间但容错为零，绕底会漏掉上方的流星"
+    },
+    {
+      "atSec": 90,
+      "choice": "护盾道具落在黑洞正下方：用一格生命去捡护盾，还是放弃",
+      "cost": "护盾能抵消一次撞击，但捡它可能要贴脸黑洞"
+    },
+    {
+      "atSec": 120,
+      "choice": "生命只剩一格：保守只接安全流星，还是放手冲 3 星分数线",
+      "cost": "保守稳但分低，冲分可能直接坍缩"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础流星：拖动星球吞噬流星增长质量" },
+    { "index": 2, "newElement": "黄金流星：高价值稀有，追击与安全的取舍" },
+    { "index": 3, "newElement": "追踪黑洞：会横向贴向你的致命天敌" },
+    { "index": 4, "newElement": "护盾道具：接住可抵消一次黑洞撞击" },
+    { "index": 5, "newElement": "连击倍率：快速连吞叠乘分数上限×8" }
+  ],
+  "upgrades": [
+    { "id": "unlockGold", "kind": "rule", "desc": "黄金流星加入刷新池：高价值低概率" },
+    { "id": "unlockHole", "kind": "rule", "desc": "黑洞加入并横向追踪星球" },
+    { "id": "unlockShield", "kind": "rule", "desc": "护盾道具加入，抵消一次撞击" },
+    { "id": "unlockCombo", "kind": "rule", "desc": "连击窗口内连吞叠乘倍率" },
+    { "id": "tierRadius", "kind": "stat", "desc": "进化档提升半径与护盾上限" },
+    { "id": "fallSpeed", "kind": "stat", "desc": "下落速度随时间加快" },
+    { "id": "spawnDensity", "kind": "stat", "desc": "流星/黑洞生成间隔随时间缩短" },
+    { "id": "starThreshold", "kind": "stat", "desc": "三星评级分数门槛" }
+  ],
+  "replayHooks": ["rating", "growth", "nearMiss"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 15,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

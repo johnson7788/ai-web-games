@@ -1,0 +1,1 @@
+FLAME CRAFT — 火焰工匠：霓虹街机小游戏。操控烬灵接住坠落的燃料，把篝火锻造成焰心、内焰、外焰三层火焰，躲开雨滴与灼热火星，煤块给大额燃料，连击翻倍得分。Firekeeper arcade: catch fuel, craft the three-layer flame, dodge rain and sparks. HTML5 canvas, no download, mobile friendly.

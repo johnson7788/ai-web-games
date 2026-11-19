@@ -1,0 +1,85 @@
+{
+  "game": "ant-fire-squad",
+  "generatedAt": "2026-11-19T22:09:47.270Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.5,
+    "silhouette": 7.25,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央发光圆环（玩家角色）以释放 ember",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Tap to drop embers’提示文字位置偏上，与HUD按钮区接近，可能被误认为UI元素而非操作指引",
+        "三只橙色敌人尺寸过小且无明显轮廓高亮，在深蓝网格背景下辨识度略低",
+        "Heat 0/60数值为白色，与深蓝背景对比度不足，弱光环境下可能难读"
+      ]
+    },
+    {
+      "shot": "tests/final/02-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下区域释放橙色角色周围的 ember（根据提示'Tap to drop embers'）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'x3'倍率标识与'Squad 3/3'按钮间距过小，易误触",
+        "中部提示文字'Tap to drop embers'无背景衬底，在深色网格背景下对比度偏低",
+        "右上角四个功能图标大小不一、间距不均，风格略显杂乱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-wasp.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下区域的橙色光球（可交互物）以触发‘Tap to drop embers’动作",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Tap to drop embers’提示悬浮于画面中上部，无明确指向目标，易误判为全局提示而非局部交互引导",
+        "左上角‘Heat 24/60’进度条文字与背景对比度偏低（橙黄渐变底+白字），弱光环境下可能难辨",
+        "右上角图标按钮（?、手形、重试、主页）尺寸偏小且间距紧凑，桌面截图虽不扣分，但暗示移动端适配风险"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Retry”按钮重新开始本关",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部中央圆形光效与‘Retry’/‘Next Level’按钮视觉距离过近，可能误触",
+        "左下角紫色小敌人轮廓模糊，与背景对比度低，silhouette得分偏低",
+        "顶部‘Tap to drop embers’提示文字颜色偏淡（灰白），在深色背景下辨识度不足"
+      ]
+    }
+  ]
+}

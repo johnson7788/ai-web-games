@@ -1,0 +1,74 @@
+{
+  "slug": "idle-tycoon-forever",
+  "genre": "sim",
+  "oneLiner": "点掉街区里的对手公司发起自动并购战，赚现金和扩张令，升级等级、装备部门、抬垄断度，一路拿下 12 个霓虹街区。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "strike",
+      "cost": "每次并购消耗估值血量，输了连击清零、回满血重来；越级挑 Boss 会被反收购",
+      "feedback": ["sfx", "hitFlash", "damageFloater", "shake"],
+      "combinesWith": ["invest"]
+    },
+    {
+      "name": "invest",
+      "cost": "现金/晶核只能选一条线投入：等级、部门、垄断互相抢钱，钱花错方向就卡进度",
+      "feedback": ["sfx", "statGlow", "levelUpBanner"],
+      "combinesWith": ["strike"]
+    },
+    {
+      "name": "spin",
+      "cost": "晶核沉没不可退，抽到低档奖励就是纯亏，且抽奖池随等级刷新诱惑你追高",
+      "feedback": ["sfx", "revealFlash", "flyToBackpack"],
+      "combinesWith": ["invest"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先打普通对手稳吃连击，还是直接挑 Boss 抢三倍掉落", "cost": "Boss 血厚攻高，早挑会被反杀、连击清零" },
+    { "atSec": 20, "choice": "现金拿去直接升级，还是攒着买部门装备", "cost": "升级线性成长，装备有品级加成，二选一" },
+    { "atSec": 40, "choice": "扩张令到手就用，还是留到高级街区再吃", "cost": "扩张令有限，早吃早解锁，晚吃溢出更少" },
+    { "atSec": 60, "choice": "3 件同款合成升品级，还是分开装备凑属性", "cost": "合成牺牲 2 件，但高品级面板强得多" },
+    { "atSec": 90, "choice": "晶核拿去抽 IPO，还是攒着留给下一次十连", "cost": "单抽沉没快，十连有折扣但要先憋 900 晶核" },
+    { "atSec": 120, "choice": "推进下一街区，还是留在本街区刷连击刷星", "cost": "推图换更强对手，留刷能攒连击但升级变慢" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基本并购战：点对手自动战斗" },
+    { "index": 2, "newElement": "连击系统：连胜叠加现金加成" },
+    { "index": 3, "newElement": "被动收入：挂机每秒自动入账" },
+    { "index": 4, "newElement": "部门装备：6 槽换装堆属性" },
+    { "index": 5, "newElement": "扩张令掉落：击杀掉升级芯片" },
+    { "index": 6, "newElement": "Boss Group：更强对手、三倍掉落" },
+    { "index": 7, "newElement": "街区星级：清空结算 1-3 星" },
+    { "index": 8, "newElement": "合成：3 件同款升品级" },
+    { "index": 9, "newElement": "垄断度：金币沉没换一刀斩" },
+    { "index": 10, "newElement": "总部摩天楼：蓝图进阶被动收入" },
+    { "index": 11, "newElement": "IPO 融资轮：晶核抽奖" },
+    { "index": 12, "newElement": "龙脊峰：终极街区高数值" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule", "desc": "连胜现金加成，连击上限 10 层" },
+    { "id": "idleIncome", "kind": "rule", "desc": "挂机被动收入随等级/总部/连击成长" },
+    { "id": "monopoly", "kind": "rule", "desc": "垄断度触发一刀斩，按对手估值百分比结算" },
+    { "id": "synthesize", "kind": "rule", "desc": "3 件同款同品合成，品级 +1" },
+    { "id": "levelUp", "kind": "stat", "desc": "等级提升基础攻势/守势/估值" },
+    { "id": "deptEquip", "kind": "stat", "desc": "部门装备叠加攻防血" },
+    { "id": "hqTower", "kind": "stat", "desc": "总部升级提升被动收入" },
+    { "id": "ipoPool", "kind": "stat", "desc": "抽奖池随等级档位升级" },
+    { "id": "bossLoot", "kind": "stat", "desc": "Boss 三倍现金与更多扩张令" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

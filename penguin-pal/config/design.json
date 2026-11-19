@@ -1,0 +1,72 @@
+{
+  "slug": "penguin-pal",
+  "genre": "sim",
+  "oneLiner": "养一只北极小企鹅：喂食、洗澡、陪玩、学习、打工，看它从幼崽长成 3 级的快乐大企鹅，跟着心愿气泡做连击照顾拿三星。",
+  "fun": {
+    "primary": "meaning",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "care",
+      "cost": "每次照顾（喂/洗/睡）都要花时间，喂错时机还会打断照顾连击",
+      "feedback": ["sfx", "heartBurst", "meterChange"],
+      "combinesWith": ["train"]
+    },
+    {
+      "name": "train",
+      "cost": "学习/玩耍消耗体力与饱腹度，但能赚经验升级",
+      "feedback": ["sfx", "starBurst", "xpBar"],
+      "combinesWith": ["care"]
+    },
+    {
+      "name": "work",
+      "cost": "打工消耗体力与心情，换取金币",
+      "feedback": ["sfx", "goldBurst", "coinSound"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "企鹅饿了，先喂食还是先打工攒钱买冰淇淋", "cost": "喂食=即时安抚但错过金币；打工=有钱但饿着降心情" },
+    { "atSec": 20, "choice": "体力见底，睡一觉还是硬撑学习", "cost": "睡=回体力但更饿；硬撑=可能学不动" },
+    { "atSec": 40, "choice": "心愿气泡要「玩耍」，但学习离升级更近", "cost": "跟心愿走=连击加成；去学习=放弃连击" },
+    { "atSec": 70, "choice": "金币攒够了，买玩具还是冰淇淋", "cost": "玩具=心情+经验；冰淇淋=只提心情" },
+    { "atSec": 100, "choice": "清洁很低，先洗澡还是先完成最后一次训练升 2 级", "cost": "洗澡=打断升级节奏；训练=脏着降心情" },
+    { "atSec": 130, "choice": "快 3 级了，用连击冲刺还是稳扎稳打", "cost": "连击冲刺=收益高但失误清零" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础照顾三连：喂食 / 洗澡 / 休息" },
+    { "index": 2, "newElement": "心愿气泡登场：照做累积照顾连击" },
+    { "index": 3, "newElement": "商店道具 + 打工经济，冲 3 级结算" }
+  ],
+  "upgrades": [
+    { "id": "unlockWish", "kind": "rule" },
+    { "id": "unlockCombo", "kind": "rule" },
+    { "id": "unlockShop", "kind": "rule" },
+    { "id": "unlockStars", "kind": "rule" },
+    { "id": "feedPower", "kind": "stat" },
+    { "id": "trainPower", "kind": "stat" },
+    { "id": "energyMax", "kind": "stat" },
+    { "id": "goldStart", "kind": "stat" }
+  ],
+  "replayHooks": ["growth", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切中文生效",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "开局进入 playing",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "首次进入引导出现",
+      "ok": true,
+      "detail": "eval: !!document.querySelector('[data-tutorial]') && !document.querySelector('[data-tutorial]').classList.contains('hidden')"
+    },
+    {
+      "name": "跳过引导后消失",
+      "ok": true,
+      "detail": "eval: document.querySelector('[data-tutorial]').classList.contains('hidden')"
+    },
+    {
+      "name": "市场展示 5 件商品",
+      "ok": true,
+      "detail": "eval: window.__ll.run.state.shownIds.length === 5"
+    },
+    {
+      "name": "买入一件商品入库",
+      "ok": true,
+      "detail": "eval: window.__ll.run.state.goods.some(g=>g.ownNum>0)"
+    },
+    {
+      "name": "推进一年年龄 +1",
+      "ok": true,
+      "detail": "eval: window.__ll.run.state.age === 21"
+    },
+    {
+      "name": "触发胜利结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "胜利至少 4 星",
+      "ok": true,
+      "detail": "eval: window.__ll.run.state.summary && window.__ll.run.state.summary.stars >= 4"
+    },
+    {
+      "name": "重开进入 playing",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "回到标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端开局",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-title-zh.png",
+    "03-tutorial.png",
+    "04-play.png",
+    "05-result.png",
+    "07-business.png",
+    "08-lifestyle.png",
+    "06-mobile.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

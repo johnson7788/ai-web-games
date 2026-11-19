@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>GARDEN BLOOM TYCOON</title>
+  <link rel="stylesheet" href="styles.css?v=gb1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span class="hud-stat" title="Coins">🪙 <b id="hud-coins">0</b></span>
+          <span class="hud-stat" title="Blooms">🌸 <b id="hud-blooms">0</b></span>
+          <span class="hud-stat" title="Drops">💧 <b id="hud-water">0</b></span>
+          <span class="hud-stat" title="Garden level">🌿 <b id="hud-level">1</b></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-howto" class="hud-btn" aria-label="Replay guide" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">GARDEN BLOOM TYCOON</h1>
+      <p class="subtitle" id="subtitle-text">Plant · Harvest · Evolve a blooming fortune</p>
+      <div class="title-flower" aria-hidden="true">🌸</div>
+      <button id="btn-start">Start</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">Replay Guide</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-levelup" class="screen hidden">
+      <div class="levelup-card">
+        <div class="levelup-icon">🌼</div>
+        <h2 id="levelup-title">Garden Level Up!</h2>
+        <p id="levelup-text"></p>
+        <button id="btn-levelup-ok">OK</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger garden</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=gb1"></script>
+</body>
+</html>

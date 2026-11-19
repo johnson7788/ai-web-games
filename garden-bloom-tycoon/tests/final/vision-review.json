@@ -1,0 +1,133 @@
+{
+  "game": "garden-bloom-tycoon",
+  "generatedAt": "2026-11-19T22:09:11.072Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.571428571428571,
+    "silhouette": 7.571428571428571,
+    "style_consistent": 8.857142857142858
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "紫色大花图形部分遮挡下方小花与进度条，可能影响视觉层级判断",
+        "‘English’语言切换按钮右上角无明显悬停反馈或边界留白，移动端易误触",
+        "背景云朵与太阳风格偏写实，与前景扁平插画风略有不协调"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“开始”按钮进入游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言切换按钮过小（约24px高），在移动端可能难触达",
+        "紫色大花图案部分遮挡下方小花图标，轻微影响视觉层次",
+        "背景云朵与太阳风格略偏扁平插画，与前景花朵的卡通渲染略有差异"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角已种出的Lv1花朵（显示10点阳光）以收获或互动",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Lv1’标签与阳光数值重叠，轻微遮挡数字‘10’",
+        "田地格子内图标统一为山形符号，但未说明其含义，新手可能困惑",
+        "顶部资源图标间距过小，4个图标挤在左侧，视觉权重不均"
+      ]
+    },
+    {
+      "shot": "tests/final/03-harvest.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角已种植的Lv1花朵（标有20金币）以收获或升级",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Lv1’标签与金币数20轻微重叠，可能影响小屏阅读",
+        "田地块内星标数字（1★、3★等）字号偏小，远距离辨识度略低",
+        "顶部资源图标间距紧凑，移动端可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-levelup.png",
+      "goal_visible": true,
+      "first_action_guess": "点击弹窗中的黄色OK按钮以确认升级并解锁新植物Moon Bud",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "弹窗背景为纯白，与绿色草地对比过强，可能影响视觉层次；",
+        "左上角资源图标（如99880金币）字体偏小且无单位说明，易误读；",
+        "‘Lv1’标签在左上角植物格子内，字号小、颜色浅，辨识度低"
+      ]
+    },
+    {
+      "shot": "tests/final/m-01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘GARDEN BLOOM TYCOON’与背景花朵部分重叠，可能影响视觉焦点",
+        "语言选择下拉框右上角遮挡部分太阳图形，轻微干扰背景完整性",
+        "粉色花朵与紫色花瓣层叠处边缘略糊，可能为缩放导致的像素化"
+      ]
+    },
+    {
+      "shot": "tests/final/m-02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角已种植的Lv1花朵格子，可能用于升级或收获",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Lv1标签文字偏小且紧贴花朵图标左上角，易被忽略",
+        "田地格子内数字（如1★、3★）字号过小，远距离辨识困难",
+        "顶部资源图标间距紧凑，4个图标横向排列在窄屏下可能拥挤"
+      ]
+    }
+  ]
+}

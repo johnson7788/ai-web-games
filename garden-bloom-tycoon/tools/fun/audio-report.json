@@ -1,0 +1,287 @@
+{
+  "game": "garden-bloom-tycoon",
+  "generatedAt": "2026-11-19T22:09:14.718Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds≈16.0",
+      "ok": true,
+      "loopSeconds": 16,
+      "bpm": 120,
+      "bars": 8
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 16.5
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.0232462215714961
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.024435865163148794
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.02018860591587673
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.12825700640678406
+    },
+    {
+      "name": "sfx-harvest-rms>0.01",
+      "ok": true,
+      "rms": 0.030049631372705922
+    },
+    {
+      "name": "sfx-harvest-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.16990929705215418
+    },
+    {
+      "name": "sfx-harvest-peak<=0.98",
+      "ok": true,
+      "peak": 0.17061106860637665
+    },
+    {
+      "name": "sfx-upgrade-rms>0.01",
+      "ok": true,
+      "rms": 0.031259149516907954
+    },
+    {
+      "name": "sfx-upgrade-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.1137641723356009
+    },
+    {
+      "name": "sfx-upgrade-peak<=0.98",
+      "ok": true,
+      "peak": 0.15035246312618256
+    },
+    {
+      "name": "sfx-evolve-rms>0.01",
+      "ok": true,
+      "rms": 0.03154795015190185
+    },
+    {
+      "name": "sfx-evolve-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.37045351473922905
+    },
+    {
+      "name": "sfx-evolve-peak<=0.98",
+      "ok": true,
+      "peak": 0.10891904681921005
+    },
+    {
+      "name": "sfx-bloom-rms>0.01",
+      "ok": true,
+      "rms": 0.027765473813468316
+    },
+    {
+      "name": "sfx-bloom-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.33630385487528347
+    },
+    {
+      "name": "sfx-bloom-peak<=0.98",
+      "ok": true,
+      "peak": 0.10063926875591278
+    },
+    {
+      "name": "sfx-unlockPlot-rms>0.01",
+      "ok": true,
+      "rms": 0.029764217129037984
+    },
+    {
+      "name": "sfx-unlockPlot-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.16931972789115646
+    },
+    {
+      "name": "sfx-unlockPlot-peak<=0.98",
+      "ok": true,
+      "peak": 0.16815567016601562
+    },
+    {
+      "name": "sfx-plant-rms>0.01",
+      "ok": true,
+      "rms": 0.033367631699102424
+    },
+    {
+      "name": "sfx-plant-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.07643990929705216
+    },
+    {
+      "name": "sfx-plant-peak<=0.98",
+      "ok": true,
+      "peak": 0.14090733230113983
+    },
+    {
+      "name": "sfx-rock-rms>0.01",
+      "ok": true,
+      "rms": 0.030001702276699474
+    },
+    {
+      "name": "sfx-rock-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.2868480725623583
+    },
+    {
+      "name": "sfx-rock-peak<=0.98",
+      "ok": true,
+      "peak": 0.22346754372119904
+    },
+    {
+      "name": "sfx-water-rms>0.01",
+      "ok": true,
+      "rms": 0.03585760466309238
+    },
+    {
+      "name": "sfx-water-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.06183673469387755
+    },
+    {
+      "name": "sfx-water-peak<=0.98",
+      "ok": true,
+      "peak": 0.14670927822589874
+    },
+    {
+      "name": "sfx-combo-rms>0.01",
+      "ok": true,
+      "rms": 0.027365572004754927
+    },
+    {
+      "name": "sfx-combo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.15848072562358276
+    },
+    {
+      "name": "sfx-combo-peak<=0.98",
+      "ok": true,
+      "peak": 0.09187304228544235
+    },
+    {
+      "name": "sfx-levelup-rms>0.01",
+      "ok": true,
+      "rms": 0.02266635557181602
+    },
+    {
+      "name": "sfx-levelup-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.4584580498866213
+    },
+    {
+      "name": "sfx-levelup-peak<=0.98",
+      "ok": true,
+      "peak": 0.10488525032997131
+    },
+    {
+      "name": "combo-gated-below-mult2",
+      "ok": true,
+      "rms": 0
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 16,
+      "bpm": 120,
+      "bars": 8,
+      "duration": 16.5,
+      "rms": 0.0232462215714961,
+      "peak": 0.12825700640678406,
+      "headRms": 0.024435865163148794,
+      "spliceRms": 0.02018860591587673
+    },
+    {
+      "kind": "sfx",
+      "name": "harvest",
+      "event": "harvest",
+      "rms": 0.030049631372705922,
+      "peak": 0.17061106860637665,
+      "activeDuration": 0.16990929705215418
+    },
+    {
+      "kind": "sfx",
+      "name": "upgrade",
+      "event": "upgrade",
+      "rms": 0.031259149516907954,
+      "peak": 0.15035246312618256,
+      "activeDuration": 0.1137641723356009
+    },
+    {
+      "kind": "sfx",
+      "name": "evolve",
+      "event": "evolve",
+      "rms": 0.03154795015190185,
+      "peak": 0.10891904681921005,
+      "activeDuration": 0.37045351473922905
+    },
+    {
+      "kind": "sfx",
+      "name": "bloom",
+      "event": "bloom",
+      "rms": 0.027765473813468316,
+      "peak": 0.10063926875591278,
+      "activeDuration": 0.33630385487528347
+    },
+    {
+      "kind": "sfx",
+      "name": "unlockPlot",
+      "event": "unlockPlot",
+      "rms": 0.029764217129037984,
+      "peak": 0.16815567016601562,
+      "activeDuration": 0.16931972789115646
+    },
+    {
+      "kind": "sfx",
+      "name": "plant",
+      "event": "plant",
+      "rms": 0.033367631699102424,
+      "peak": 0.14090733230113983,
+      "activeDuration": 0.07643990929705216
+    },
+    {
+      "kind": "sfx",
+      "name": "rock",
+      "event": "rock",
+      "rms": 0.030001702276699474,
+      "peak": 0.22346754372119904,
+      "activeDuration": 0.2868480725623583
+    },
+    {
+      "kind": "sfx",
+      "name": "water",
+      "event": "water",
+      "rms": 0.03585760466309238,
+      "peak": 0.14670927822589874,
+      "activeDuration": 0.06183673469387755
+    },
+    {
+      "kind": "sfx",
+      "name": "combo",
+      "event": "combo",
+      "rms": 0.027365572004754927,
+      "peak": 0.09187304228544235,
+      "activeDuration": 0.15848072562358276
+    },
+    {
+      "kind": "sfx",
+      "name": "levelup",
+      "event": "levelup",
+      "rms": 0.02266635557181602,
+      "peak": 0.10488525032997131,
+      "activeDuration": 0.4584580498866213
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "game": "earn-100-million",
+  "generatedAt": "2026-11-19T22:05:43.218Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 6.125,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘START’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊美元符号与主金币视觉冲突，可能干扰目标焦点",
+        "‘?’按钮无明确功能提示，易引发困惑",
+        "背景城市剪影过暗且细节模糊，降低整体层次感"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言切换下拉框边框与背景对比弱，易被忽略",
+        "副标题‘倒买倒卖、创业持股，一路挣到一亿’字号偏小，在暗背景下辨识度略低",
+        "背景金币光晕过强，可能干扰主金币视觉焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Buy 1’购买低价商品（如AI Core $87.99）囤积",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "市场商品卡片中‘LOW’/‘MID’标签颜色不一致（AI Core为红底白字，其余为黄底黑字），易误判稀有度",
+        "库存柱状图无坐标轴与单位说明，数值含义模糊（仅靠提示框解释）",
+        "右上角问号图标与设置图标间距过小，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘NEXT YEAR’按钮推进游戏时间",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "市场商品卡片中‘Buy 1’/‘Buy 10’按钮文字与背景对比度偏低（尤其在深紫背景下），易误读",
+        "底部柱状图无坐标轴标签或图例，无法判断其代表什么数据（如资产、技能等级等）",
+        "右上角太阳图标含美元符号，但未说明其功能，可能误导为货币来源而非时间/年份指示"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部状态栏文字（如'20/70 AGE'）字号过小且颜色偏淡，弱光下易误读",
+        "右上角问号图标与模糊美元符号重叠，视觉干扰",
+        "‘100M reached’提示文字位于底部中央但无背景衬底，暗背景下对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘NEXT YEAR’按钮推进时间，或在‘Market’中购买‘Holo Suite’等高价值资产",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘BULL’按钮文字为绿色但背景深紫，对比度偏低，易被忽略",
+        "左上角状态栏‘$50K $50K 20/70 100 0 0/100’无标签，含义需猜测（如20/70是进度？）",
+        "‘Crypto Rig’卡片无价格与操作按钮，信息不完整，疑似未加载或设计遗漏"
+      ]
+    },
+    {
+      "shot": "tests/final/07-business.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘NEXT YEAR’按钮推进时间线",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部‘100M reached’提示文字无背景，与深色图表重叠易误读",
+        "右上角太阳图标与‘Arcade OS’卡片部分视觉冲突，可能干扰目标识别",
+        "‘Found ($X)’按钮文字在小屏下可能因字号偏小影响可读性（当前桌面截图无法确认）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-lifestyle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Orbital Villa’的‘Buy house’按钮，因其价格最高、收益最优且按钮最醒目。",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘100M reached’提示框无边框/背景，与深色UI融合度高，易被忽略",
+        "右上角‘BULL’状态标签字体过小且无对比色，远距离辨识困难",
+        "房屋/车辆卡片内‘REP’和‘Health’数值单位混用（+100 / +10 / +2），格式不统一"
+      ]
+    }
+  ]
+}

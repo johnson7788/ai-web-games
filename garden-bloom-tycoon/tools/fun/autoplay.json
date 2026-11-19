@@ -1,0 +1,56 @@
+{
+  "game": "garden-bloom-tycoon",
+  "genre": "sim",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 7,
+      "durationSec": 13.43,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.13,
+      "deaths": 0,
+      "actions": 43,
+      "idleSec": 0,
+      "maxEventGapSec": 1.62,
+      "uniqueEvents": 10,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 11,
+      "durationSec": 120,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.18,
+      "deaths": 0,
+      "actions": 385,
+      "idleSec": 0.02,
+      "maxEventGapSec": 3.02,
+      "uniqueEvents": 10,
+      "levelsReached": 6,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 90,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 0,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

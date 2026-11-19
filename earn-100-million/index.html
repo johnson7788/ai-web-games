@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EARN 100 MILLION</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- 顶部 HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span class="hud-cell"><b id="hud-cash"></b><i data-i18n="cash"></i></span>
+        <span class="hud-cell"><b id="hud-assets"></b><i data-i18n="assets"></i></span>
+        <span class="hud-cell"><b id="hud-age"></b><i data-i18n="age"></i></span>
+        <span class="hud-cell"><b id="hud-hp"></b><i data-i18n="health"></i></span>
+        <span class="hud-cell"><b id="hud-rep"></b><i data-i18n="rep"></i></span>
+        <span class="hud-cell"><b id="hud-wh"></b><i data-i18n="warehouse"></i></span>
+      </div>
+      <div class="hud-goal">
+        <span class="goal-label"><b data-i18n="goal"></b> $100,000,000</span>
+        <div class="goal-track"><div id="goal-fill"></div></div>
+        <span id="hud-mood" class="mood-pill"></span>
+        <span id="hud-combo" class="combo-pill"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-mute" class="hud-btn" aria-label="Sound">🔊</button>
+        <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+      </div>
+    </div>
+
+    <!-- 标题屏 -->
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <div class="mascot" aria-hidden="true"><span class="mascot-coin">$</span></div>
+      <h1 id="title-text">EARN 100 MILLION</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="title-stars" id="title-best"></div>
+      <button id="btn-start">START</button>
+      <button id="btn-howto-title" class="btn-ghost" data-tutorial-replay>?</button>
+    </div>
+
+    <!-- 暂停屏 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart" class="btn-ghost">Restart</button>
+      <button id="btn-home" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 结算屏 -->
+    <div id="screen-result" class="screen hidden">
+      <div class="mascot mascot-small" aria-hidden="true"><span class="mascot-coin">$</span></div>
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Play again</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <!-- 主游戏面板 -->
+    <div id="board" class="hidden">
+      <div id="tabs">
+        <button class="tab is-active" data-tab="market" data-i18n="market"></button>
+        <button class="tab" data-tab="business" data-i18n="business"></button>
+        <button class="tab" data-tab="lifestyle" data-i18n="lifestyle"></button>
+        <button class="tab" data-tab="romance" data-i18n="romance"></button>
+        <button class="tab" data-tab="skills" data-i18n="skills"></button>
+      </div>
+
+      <div id="panels">
+        <section class="panel is-active" id="panel-market">
+          <div class="panel-title" data-i18n="market"></div>
+          <div id="market-list" class="card-grid"></div>
+          <div class="panel-title" data-i18n="inventory"></div>
+          <div id="inventory-list" class="card-grid"></div>
+        </section>
+        <section class="panel" id="panel-business">
+          <div class="panel-title" data-i18n="business"></div>
+          <div id="company-list" class="card-grid"></div>
+        </section>
+        <section class="panel" id="panel-lifestyle">
+          <div class="panel-title" data-i18n="lifestyle"></div>
+          <div id="house-list" class="card-grid"></div>
+          <div class="panel-title" data-i18n="lifestyle"></div>
+          <div id="car-list" class="card-grid"></div>
+          <div class="life-actions">
+            <button id="btn-treat" class="big-btn" data-i18n="treat"></button>
+            <button id="btn-bet" class="big-btn" data-i18n="bet"></button>
+          </div>
+        </section>
+        <section class="panel" id="panel-romance">
+          <div class="panel-title" data-i18n="romance"></div>
+          <div id="mate-list" class="card-grid"></div>
+        </section>
+        <section class="panel" id="panel-skills">
+          <div class="panel-title"><span data-i18n="skills"></span> · <span id="skill-points"></span></div>
+          <div id="skill-list" class="skill-list"></div>
+        </section>
+      </div>
+
+      <div id="action-bar">
+        <button id="btn-retire-now" class="big-btn ghost" data-i18n="goToRetire"></button>
+        <button id="btn-next-year" class="big-btn primary" data-i18n="nextYear"></button>
+      </div>
+    </div>
+
+    <!-- 随机事件弹窗 -->
+    <div id="event-modal" class="modal hidden">
+      <div class="modal-card">
+        <h3 data-i18n="eventQuestion"></h3>
+        <p id="event-text"></p>
+        <div class="modal-btns">
+          <button id="btn-event-y" class="big-btn primary" data-i18n="yes"></button>
+          <button id="btn-event-n" class="big-btn" data-i18n="no"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 提示 toast -->
+    <div id="toast" class="hidden"></div>
+
+    <!-- 竖屏提示 -->
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for the full neon board</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <!-- 教程引导 -->
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=1"></script>
+</body>
+</html>

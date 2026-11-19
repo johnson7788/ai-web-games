@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="FLAME CRAFT — move the ember wisp, catch falling fuel, craft the three-layer flame, dodge the rain and sparks.">
+  <meta name="theme-color" content="#0d0a18">
+  <title>FLAME CRAFT · Neon Firekeeper Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+    <div id="ui-root"></div>
+    <div id="rotate-screen" data-rotate>
+      <span class="rotate-icon">↻</span>
+      <span class="rotate-text">请旋转屏幕获得最佳体验</span>
+      <button id="btn-rotate-skip" type="button" onclick="document.getElementById('rotate-screen').style.display='none'">继续</button>
+    </div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span>Stoking the coals…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

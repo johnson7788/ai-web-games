@@ -1,0 +1,38 @@
+{
+  "slug": "cat-tactics",
+  "genre": "puzzle",
+  "oneLiner": "招募并合并霓虹猫咪，派它们上赛道巡逻赚金币，在限时内达成三关情报目标。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "recruit", "cost": "消耗金币，且招募价随次数上涨", "feedback": ["sfx", "spawn", "slotFill"], "combinesWith": ["merge"] },
+    { "name": "merge", "cost": "牺牲两只同阶猫，腾出一个车位", "feedback": ["sfx", "upgrade", "combo"], "combinesWith": ["recruit", "deploy"] },
+    { "name": "deploy", "cost": "猫离开车位去巡逻，停止前无法合并", "feedback": ["sfx", "trackGlow", "coin"], "combinesWith": ["merge"] }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "先招募新猫，还是先合并手头两只", "cost": "招募涨价 vs 占用车位" },
+    { "atSec": 25, "choice": "把高阶猫派去巡逻，还是留着等三连", "cost": "暂停合并机会换稳定收入" },
+    { "atSec": 50, "choice": "花 60 金币开加速，还是攒钱招募", "cost": "少招募一只猫" },
+    { "atSec": 90, "choice": "卖掉低阶猫腾车位，还是继续攒", "cost": "损失已有成长" },
+    { "atSec": 130, "choice": "连击窗口内追三连，还是求稳单合并", "cost": "错过连击奖励" },
+    { "atSec": 160, "choice": "冲击本关目标，还是多屯猫冲下一关三星", "cost": "时间 vs 星级" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 50, "twistSec": 40, "resolveSec": 30 },
+  "levels": [
+    { "index": 1, "newElement": "巡逻赚金币（把猫拖上赛道）" },
+    { "index": 2, "newElement": "合并连击（3 秒内连续合并有额外金币）" },
+    { "index": 3, "newElement": "战术加速（花金币让巡逻收益 2 倍 10 秒）" }
+  ],
+  "upgrades": [
+    { "id": "recruit-discount", "kind": "rule" },
+    { "id": "triple-merge", "kind": "rule" },
+    { "id": "turbo-boost", "kind": "rule" },
+    { "id": "recycle-boost", "kind": "rule" },
+    { "id": "coin+10", "kind": "stat" },
+    { "id": "income+25%", "kind": "stat" },
+    { "id": "slot+1", "kind": "stat" },
+    { "id": "magnet-track", "kind": "rule" }
+  ],
+  "replayHooks": ["rating", "growth", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 6, "firstSuccessSec": 45, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "cat-vs-dog-war",
+  "genre": "arcade",
+  "oneLiner": "猫狗从 5 个洞里钻出来，玩家在 3 波 60 秒内点掉它们刷分，躲开石头、续上连击、别放跑动物。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "点空会断连击，点错石头直接扣一颗心",
+      "feedback": ["sfx", "pop", "scoreFloat"],
+      "combinesWith": ["dodge"]
+    },
+    {
+      "name": "dodge",
+      "cost": "石头占洞时放弃该洞的分，还要抢时间点旁边的动物",
+      "feedback": ["sfx", "shake", "redFlash"],
+      "combinesWith": ["tap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先点最近的猫，还是先追金色多击怪", "cost": "追金怪可能放跑近处的小猫" },
+    { "atSec": 8, "choice": "石头钻出来：躲开它，还是冒险点它旁边的动物", "cost": "手滑点到石头就扣心" },
+    { "atSec": 15, "choice": "连击快断：冒险抢杀，还是稳一手", "cost": "抢杀失败连击清零" },
+    { "atSec": 25, "choice": "4 击猎犬值 400：点满它，还是去清 1 击小怪", "cost": "点猎犬时别的洞可能逃脱" },
+    { "atSec": 40, "choice": "波次门槛快到：冲高分，还是保命过线", "cost": "冲分可能放跑动物扣心" },
+    { "atSec": 55, "choice": "最后一波：保 3 星，还是保守 1 星", "cost": "保星需要连击一次都不能断" }
+  ],
+  "loop": {
+    "teachSec": 15,
+    "practiceSec": 30,
+    "twistSec": 25,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "1 击猫咪与 2 击金毛（基础点杀节奏）" },
+    { "index": 2, "newElement": "石头障碍（点错扣心断连击）" },
+    { "index": 3, "newElement": "4 击猎犬 + 连击倍率（冲分高潮）" }
+  ],
+  "upgrades": [
+    { "id": "comboWindow", "kind": "rule", "desc": "连击窗口 +0.5s" },
+    { "id": "comboCap", "kind": "rule", "desc": "连击倍率上限 +1" },
+    { "id": "extraHeart", "kind": "stat", "desc": "生命 +1 心" },
+    { "id": "rockShield", "kind": "rule", "desc": "点石头不再扣分（仍扣心）" },
+    { "id": "slowEscape", "kind": "rule", "desc": "动物停留时间 +0.4s" },
+    { "id": "doubleGold", "kind": "stat", "desc": "金色怪分数 ×2" },
+    { "id": "tripleHound", "kind": "rule", "desc": "猎犬分数 ×1.5" },
+    { "id": "timerBoost", "kind": "stat", "desc": "每波时间 +2s" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

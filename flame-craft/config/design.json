@@ -1,0 +1,81 @@
+{
+  "slug": "flame-craft",
+  "genre": "arcade",
+  "oneLiner": "操控霓虹烬灵左右接住坠落的燃料，填满能量条把篝火锻造成焰心→内焰→外焰三层，躲开水滴与灼热火星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "只能水平移动；追燃料就会偏离安全位，躲危险就可能漏接燃料",
+      "feedback": ["sfx", "trail", "glow-pulse"],
+      "combinesWith": ["catch", "dodge"]
+    },
+    {
+      "name": "catch",
+      "cost": "去接燃料会缩短与危险坠落物的反应时间",
+      "feedback": ["sfx", "burst", "combo-flash"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "dodge",
+      "cost": "放弃本可接到的燃料，选择贴边避开水滴/火星，错过填充进度",
+      "feedback": ["sfx", "nearmiss-shimmer"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "追最亮的燃料，还是先躲开正下方落下的水滴", "cost": "燃料进度 vs 生命" },
+    { "atSec": 15, "choice": "为锻造「焰心」连续接燃料，冒险靠近危险区", "cost": "进度加速 vs 挨打风险" },
+    { "atSec": 30, "choice": "煤块给大份燃料但落得快，值不值得横穿全场去接", "cost": "位置暴露 vs 大额燃料" },
+    { "atSec": 45, "choice": "连击即将断掉，是否冒险续一颗燃料保连击", "cost": "连击倍率 vs 生命" },
+    { "atSec": 60, "choice": "进入内焰层，危险物变多，稳扎稳打还是速通", "cost": "时间/生命 vs 过关速度" },
+    { "atSec": 85, "choice": "灼热火星锁定你的位置，向左还是向右闪避更安全", "cost": "位置 vs 下次生成" },
+    { "atSec": 110, "choice": "外焰层燃料稀缺，是等煤块还是抓普通燃料", "cost": "等待风险 vs 稳定进度" },
+    { "atSec": 140, "choice": "剩余生命 1 时是否冒险接高价值煤块", "cost": "翻盘燃料 vs 直接淘汰" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "焰心层：燃料慢速稀疏，危险少（教移动+收集）" },
+    { "index": 2, "newElement": "煤块登场：大份燃料、落下更快" },
+    { "index": 3, "newElement": "内焰层：生成更快、水滴增多" },
+    { "index": 4, "newElement": "灼热火星瞄准玩家位置（需预判闪避）" },
+    { "index": 5, "newElement": "连击窗口变短，倍率收益更高" },
+    { "index": 6, "newElement": "外焰层：高速坠落+危险密度峰值" },
+    { "index": 7, "newElement": "煤块+火星同屏，资源与威胁交织" },
+    { "index": 8, "newElement": "生成间隔压缩，全场高压" },
+    { "index": 9, "newElement": "燃料权重下降，考验取舍" },
+    { "index": 10, "newElement": "火星瞄准+水滴雨幕双重夹击" },
+    { "index": 11, "newElement": "极限速度：每颗燃料都要预判轨迹" },
+    { "index": 12, "newElement": "收官：三层火焰全速锻造，通关结算" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule", "desc": "连击窗口内连续收集，得分倍率与燃料收益递增" },
+    { "id": "coal", "kind": "rule", "desc": "煤块提供 3 倍燃料，但落速更快" },
+    { "id": "aimedSpark", "kind": "rule", "desc": "灼热火星锁定玩家位置，逼出预判闪避" },
+    { "id": "threeTierFlame", "kind": "rule", "desc": "焰心→内焰→外焰三层递进锻造，通关结构" },
+    { "id": "nearMiss", "kind": "rule", "desc": "与危险物擦肩而过触发近失奖励，鼓励贴边操作" },
+    { "id": "speedScale", "kind": "stat", "desc": "每关坠落速度递增，难度曲线" },
+    { "id": "spawnScale", "kind": "stat", "desc": "每关生成间隔压缩，事件密度上升" },
+    { "id": "lifeRestore", "kind": "rule", "desc": "过关恢复 1 生命（上限 3），鼓励连闯" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true },
+  "signatureMoment": "三层火焰锻成——焰心蓝→内焰金→外焰橙依次点亮，全屏短暂染成熔金，篝火轰然升腾",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas 霓虹街机：烬灵为发光余烬，燃料/水滴/火星/煤块均为几何发光体；三层火焰颜色区分焰心蓝/内焰金/外焰橙；BGM 程序化 WebAudio；海报用程序化玩法画面叠加标题文字"
+}

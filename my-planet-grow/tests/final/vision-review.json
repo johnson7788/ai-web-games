@@ -1,0 +1,149 @@
+{
+  "game": "my-planet-grow",
+  "generatedAt": "2026-11-19T22:04:47.602Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.625,
+    "silhouette": 7.5,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'MY PLANET GROW' 字体发光效果略过强，部分字母边缘轻微晕染影响清晰度",
+        "紫色星球背景与 'Start' 按钮有轻微视觉竞争，按钮非最突出元素",
+        "右上角语言选择下拉框无明确交互提示（如箭头图标），可能被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色‘开始’按钮进入游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "紫色星球背景与文字轻微融合，部分小字（如‘吞噬流星，躲避黑洞’）在深色背景下对比度偏低",
+        "右上角语言切换按钮无悬停反馈或边框，视觉层级弱",
+        "‘开始’按钮无阴影/浮起效果，与背景分离感不足，可能影响点击感知"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色带箭头的球体（玩家角色）开始移动",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角目标提示 'Catch meteors' 和 'Dodge holes' 颜色相近（橙/紫），在深蓝背景上对比度略低，易混淆",
+        "右上角图标按钮间距过小，桌面端无问题，但若适配移动端可能误触",
+        "绿色玩家球体顶部小三角指示方向，但未明确表示移动方式（如拖拽/点击），新手引导缺失"
+      ]
+    },
+    {
+      "shot": "tests/final/04-collect.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色带+10的球体（玩家角色）来移动或收集",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色玩家球体与+10提示文字轻微重叠，可能影响目标识别",
+        "左上角任务标签‘Catch meteors’与‘Dodge holes’间距过小，易误读",
+        "部分橙色悬挂物（如右下角）底部被屏幕边缘裁切，疑似未适配宽屏"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Grow again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中‘Catch meteors’与‘Dodge holes’标签文字过小且无明确选中态，易混淆当前目标",
+        "三颗星评分中第三颗为线框星（未填充），与前两颗实心星风格不一致，可能误导玩家理解评级",
+        "‘New best!’提示文字颜色偏黄、字号略小，对比度不足，在深蓝背景上辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/06-restarted.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色玩家球体开始移动或发射",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角目标提示 'Catch meteors' 和 'Dodge holes' 颜色相近（橙/紫），在深蓝背景上对比度略低，可能影响快速识别",
+        "右下角黄色方块图标（疑似道具）与橙色球体外形相似，易混淆功能",
+        "HUD 中 'TIER 1' 旁三颗心图标间距过小，缩放后可能误判为单个图标"
+      ]
+    },
+    {
+      "shot": "tests/final/07-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Resume”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "暂停菜单按钮垂直居中偏下，绿色圆形物体（疑似玩家）部分遮挡‘Menu’按钮底部",
+        "背景星点与悬浮球体（如右上角橙色球）视觉层级模糊，可能误判为可交互物",
+        "顶部HUD文字（如‘Catch meteors’）使用小字号+低对比度紫色圆点分隔，弱光下易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "紫色星球背景与文字‘Grow your planet...’部分重叠，轻微干扰阅读",
+        "‘English’语言选择框边框颜色与主标题发光色不完全统一，略显割裂",
+        "眯眼时星球与小点（可能为障碍物）轮廓区分度不足，易混淆"
+      ]
+    }
+  ]
+}

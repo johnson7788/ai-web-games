@@ -1,0 +1,291 @@
+/* MY PLANET GROW · 低多边形扁平太空主题 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #070a1c;
+  color: #eef2ff;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Apple SD Gothic Neo', 'Noto Sans', 'Segoe UI', 'Microsoft YaHei', Tahoma, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD（不透明顶条，不遮玩法区） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.hud-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10, 12, 32, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 8px 14px 6px;
+}
+
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 15px;
+}
+
+.hud-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.hud-goal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.hud-goal .catch { color: #fdba74; }
+.hud-goal .dodge { color: #c4b5fd; }
+.hud-goal .dot-catch { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #fb923c; }
+.hud-goal .dot-dodge { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #4c1d95; border: 1px solid #c084fc; }
+
+.hud-label {
+  opacity: 0.55;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#hud-hp { color: #f87171; font-size: 17px; letter-spacing: 1px; }
+#hud-shield { color: #93c5fd; font-size: 14px; }
+#hud-combo { color: #ffe08a; font-weight: bold; font-size: 17px; min-width: 34px; }
+#hud-combo.hot { color: #fb923c; }
+
+.hud-right {
+  display: flex;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.hud-btn {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9px;
+  background: rgba(30, 34, 70, 0.9);
+  color: #eef2ff;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.hud-btn:hover { background: rgba(50, 56, 110, 0.9); }
+.hud-btn.is-muted { color: #94a3b8; }
+
+.tier-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.10);
+}
+#hud-tier-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4ade80, #38bdf8, #a78bfa, #facc15);
+  transition: width 0.25s ease;
+}
+
+/* ---------- 全屏面板 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(ellipse at center, rgba(16, 19, 44, 0.60), rgba(6, 8, 20, 0.78));
+  z-index: 10;
+}
+
+.screen h1 {
+  font-size: 4rem;
+  letter-spacing: 0.08em;
+  color: #ffe08a;
+  text-shadow: 0 0 24px rgba(250, 204, 21, 0.35);
+  margin-bottom: 0.4rem;
+}
+
+.screen h2 { font-size: 2.1rem; margin-bottom: 0.8rem; color: #eef2ff; }
+
+.screen .subtitle { font-size: 1.15rem; margin-bottom: 0.5rem; opacity: 0.75; }
+.screen .goal { font-size: 0.95rem; margin-bottom: 2rem; opacity: 0.5; }
+
+.screen button {
+  padding: 13px 34px;
+  font-size: 1.2rem;
+  min-height: 46px;
+  background: #eab308;
+  color: #1a1200;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  margin-top: 0.9rem;
+  box-shadow: 0 6px 20px rgba(234, 179, 8, 0.35);
+}
+.screen button:hover { background: #facc15; }
+.screen .btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #eef2ff;
+  box-shadow: none;
+  font-weight: 400;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.screen .btn-ghost:hover { background: rgba(255, 255, 255, 0.16); }
+
+.screen .lang-select {
+  position: absolute;
+  top: 16px;
+  inset-inline-end: 18px;
+  padding: 8px 12px;
+  min-height: 40px;
+  background: #141a3a;
+  color: #ffe08a;
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.win-stars { font-size: 2.6rem; letter-spacing: 4px; color: #facc15; margin-bottom: 0.6rem; }
+
+.result-meta { font-size: 1.05rem; line-height: 1.7; opacity: 0.9; }
+.result-meta .newbest { color: #facc15; font-weight: 700; }
+
+.win-btns { display: flex; gap: 12px; margin-top: 0.4rem; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- 教程卡（固定底部居中，不遮玩法） ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 460px;
+  max-width: 92vw;
+  background: rgba(10, 12, 32, 0.95);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  border-radius: 14px;
+  padding: 16px 20px;
+  text-align: center;
+  pointer-events: auto;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+}
+
+#tut-card h3 { color: #ffe08a; margin-bottom: 8px; font-size: 1.1rem; }
+#tut-card p { font-size: 0.98rem; line-height: 1.5; opacity: 0.9; margin-bottom: 12px; }
+
+.tut-btns { display: flex; gap: 10px; justify-content: center; }
+.tut-btns button {
+  padding: 9px 20px;
+  min-height: 42px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+#tut-next { background: #eab308; color: #1a1200; font-weight: 700; }
+#tut-skip { background: rgba(255, 255, 255, 0.08); color: #eef2ff; border: 1px solid rgba(255, 255, 255, 0.14); }
+
+/* ---------- 竖屏提示（仅触屏竖屏显示；skip 走内联 onclick） ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(6, 8, 22, 0.94);
+}
+
+.rotate-card {
+  text-align: center;
+  padding: 28px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(18, 22, 50, 0.9);
+}
+.rotate-icon { font-size: 2.4rem; margin-bottom: 10px; }
+.rotate-card p { font-size: 1.05rem; margin-bottom: 14px; }
+.rotate-card button {
+  padding: 12px 26px;
+  min-height: 46px;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 11px;
+  background: #eab308;
+  color: #1a1200;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+}
+
+#rotate-screen[hidden] { display: none; }
+
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+}
+
+@media (max-width: 700px) {
+  #tut-card { bottom: 24px; max-width: 92vw; }
+  .hud-item { font-size: 12px; }
+  .hud-left { gap: 8px; }
+  .hud-btn { min-width: 38px; height: 38px; font-size: 15px; }
+}

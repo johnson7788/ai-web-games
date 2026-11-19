@@ -1,0 +1,269 @@
+/* SUNFLOWER SASSY · 霓虹街机 UI 样式（零外链字体，系统字体栈） */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #05010d;
+  font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif;
+  color: #fff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  background: #0d0221;
+  transform: scale(var(--scale, 1));
+  transform-origin: center center;
+}
+
+#canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD（顶部不透明条，避免遮挡判定） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background: rgba(13, 2, 33, 0.92);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.5);
+  display: flex;
+  align-items: center;
+  z-index: 30;
+}
+.hud-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+.hud-left, .hud-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hud-pill {
+  min-width: 34px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff6ff;
+  background: rgba(24, 10, 48, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.55);
+  border-radius: 15px;
+  letter-spacing: 0.5px;
+}
+#hud-time.time-low {
+  color: #ff2d95;
+  border-color: #ff2d95;
+  animation: blink 0.5s steps(2) infinite;
+}
+.hud-combo {
+  color: #39ff88;
+  border-color: #39ff88;
+}
+.hud-combo.fever-on {
+  color: #ffd23f;
+  border-color: #ff2d95;
+  box-shadow: 0 0 12px #ff2d95;
+}
+#hud-hearts {
+  color: #ff2d95;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+#hud-hearts.danger { animation: blink 0.4s steps(2) infinite; }
+.hud-btn {
+  width: 44px;
+  height: 34px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff6ff;
+  background: rgba(24, 10, 48, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.55);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.hud-btn.is-muted { color: #777; }
+
+/* ---------- 全屏覆盖屏 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 40;
+  text-align: center;
+}
+#screen-title {
+  background: radial-gradient(ellipse at 50% 40%, rgba(36, 16, 74, 0.55), rgba(13, 2, 33, 0.88));
+}
+#screen-title h1 {
+  font-size: 64px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 18px #ff2d95, 0 0 40px #a855f7;
+  color: #ffd23f;
+}
+.subtitle {
+  font-size: 19px;
+  color: #e6d9ff;
+  opacity: 0.9;
+}
+.best-row { font-size: 16px; color: #39ff88; }
+
+#screen-pause, #screen-result {
+  background: rgba(13, 2, 33, 0.82);
+  backdrop-filter: blur(2px);
+}
+#screen-pause h2, #screen-result h2 {
+  font-size: 44px;
+  color: #00e5ff;
+  text-shadow: 0 0 16px #00e5ff;
+}
+#screen-result h2.lose { color: #ff2d95; text-shadow: 0 0 16px #ff2d95; }
+
+button {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a0b2e;
+  background: linear-gradient(180deg, #ffd23f, #ff9d2f);
+  border: none;
+  border-radius: 14px;
+  padding: 14px 34px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+button:hover { filter: brightness(1.08); }
+button:active { transform: translateY(2px); }
+.btn-ghost {
+  background: transparent;
+  color: #e6d9ff;
+  border: 1px solid rgba(230, 217, 255, 0.4);
+  padding: 10px 22px;
+  font-size: 17px;
+}
+.lang-select {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 6px 10px;
+  color: #fff6ff;
+  background: rgba(24, 10, 48, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.55);
+  border-radius: 8px;
+  z-index: 50;
+}
+
+.win-stars { font-size: 46px; letter-spacing: 6px; color: #ffd23f; text-shadow: 0 0 14px #ffd23f; }
+.win-score { font-size: 26px; color: #fff6ff; }
+.win-meta { font-size: 17px; color: #e6d9ff; }
+.win-btns { display: flex; gap: 12px; align-items: center; }
+
+/* ---------- 底部动作键 ---------- */
+#btn-zone {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  z-index: 35;
+}
+.action-btn {
+  width: 250px;
+  height: 96px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  color: #0d0221;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+}
+.btn-left { background: linear-gradient(180deg, #7ff3ff, #00b8d4); box-shadow: 0 0 22px #00e5ff88; }
+.btn-dodge { background: linear-gradient(180deg, #d8c7ff, #8b7bd8); box-shadow: 0 0 22px #a855f788; }
+.btn-right { background: linear-gradient(180deg, #ff8ac2, #ff2d95); box-shadow: 0 0 22px #ff2d9588; }
+
+/* ---------- 教程卡（固定底部居中，不遮棋盘） ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 460px;
+  padding: 18px 22px;
+  background: rgba(13, 2, 33, 0.94);
+  border: 1px solid rgba(255, 210, 63, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 0 24px rgba(255, 45, 149, 0.35);
+  text-align: center;
+  pointer-events: auto;
+}
+#tut-card h3 { font-size: 20px; color: #ffd23f; margin-bottom: 8px; }
+#tut-card p { font-size: 16px; color: #fff6ff; line-height: 1.5; margin-bottom: 12px; }
+.tut-btns { display: flex; justify-content: center; gap: 12px; }
+
+/* ---------- 竖屏提示 ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 70;
+  background: rgba(5, 1, 13, 0.96);
+}
+.rotate-card {
+  text-align: center;
+  padding: 30px;
+}
+.rotate-icon { font-size: 54px; margin-bottom: 12px; }
+.rotate-card p { font-size: 20px; margin-bottom: 20px; color: #fff6ff; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+}
+@media (max-width: 720px) {
+  #tut-card { width: auto; max-width: 92vw; }
+}
+
+/* ---------- 动效 ---------- */
+@keyframes blink { 50% { opacity: 0.35; } }
+
+@media (prefers-reduced-motion: reduce) {
+  #hud-time.time-low, #hud-hearts.danger { animation: none; }
+  button { transition: none; }
+}

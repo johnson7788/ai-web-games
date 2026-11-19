@@ -1,0 +1,56 @@
+{
+  "game": "earn-100-million",
+  "genre": "sim",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 26.86,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 1.74,
+      "deaths": 0,
+      "actions": 110,
+      "idleSec": 0,
+      "maxEventGapSec": 0.5,
+      "uniqueEvents": 15,
+      "levelsReached": 4,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 28.46,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 4.98,
+      "deaths": 1,
+      "actions": 88,
+      "idleSec": 0,
+      "maxEventGapSec": 0.5,
+      "uniqueEvents": 15,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 3,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 5,
+      "idleSec": 0,
+      "maxEventGapSec": 0.5,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

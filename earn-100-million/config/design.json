@@ -1,0 +1,41 @@
+{
+  "slug": "earn-100-million",
+  "genre": "sim",
+  "oneLiner": "从 20 岁打工人起步，倒卖霓虹商品、创办公司、买房买车，一路把净资产从 5 万滚到 1 亿",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "buy", "cost": "消耗现金 + 占用仓库一格", "feedback": ["sfx", "价格变红", "连击条蓄力"], "combinesWith": ["sell"] },
+    { "name": "sell", "cost": "清空一件库存，放弃后续更高价机会", "feedback": ["sfx", "利润弹出", "连击翻倍"], "combinesWith": ["buy"] },
+    { "name": "invest", "cost": "大额现金 + 锁定期数年", "feedback": ["sfx", "分红到账", "名声上涨"], "combinesWith": [] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "低价买进的商品，现在立刻小赚卖出，还是囤着等高价档", "cost": "占用仓库、错失套现流动性" },
+    { "atSec": 20, "choice": "把钱砸进公司锁死 4 年，还是继续倒卖商品赚快钱", "cost": "锁定期内无法动用资金" },
+    { "atSec": 40, "choice": "用全部现金买房攒名声，还是留现金等市场熊转牛抄底", "cost": "放弃另一条增长曲线" },
+    { "atSec": 65, "choice": "熊市里割肉离场，还是扛到牛市", "cost": "可能继续亏损" },
+    { "atSec": 90, "choice": "约会把现金换成伴侣每年加成，还是先扩张仓储", "cost": "恋爱花费不产生直接收益" },
+    { "atSec": 120, "choice": "赌场搏一把翻倍，还是稳扎稳打", "cost": "可能血本无归" },
+    { "atSec": 150, "choice": "重仓押注最贵商品冲一亿，还是分散风险", "cost": "重仓波动大，可能拖慢进度" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 50, "twistSec": 45, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "低价买进高价卖出的倒卖循环 + 连击条" },
+    { "index": 2, "newElement": "创办公司持股分红与锁定期" },
+    { "index": 3, "newElement": "牛熊市周期 + 最贵商品冲一亿的终局博弈" }
+  ],
+  "upgrades": [
+    { "id": "logistics", "kind": "rule" },
+    { "id": "charisma", "kind": "rule" },
+    { "id": "sales", "kind": "rule" },
+    { "id": "negotiate", "kind": "rule" },
+    { "id": "heritage", "kind": "stat" },
+    { "id": "manage", "kind": "stat" },
+    { "id": "veteran", "kind": "stat" },
+    { "id": "lucky", "kind": "stat" },
+    { "id": "gearhead", "kind": "stat" },
+    { "id": "estate", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "growth", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 60, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

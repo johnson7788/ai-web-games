@@ -1,0 +1,56 @@
+{
+  "game": "idle-tycoon-forever",
+  "genre": "sim",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 18.5,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 2.02,
+      "deaths": 0,
+      "actions": 126,
+      "idleSec": 0,
+      "maxEventGapSec": 0.4,
+      "uniqueEvents": 13,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 15851,
+      "durationSec": 120.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 1.22,
+      "deaths": 0,
+      "actions": 49,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 11,
+      "levelsReached": 1,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 100,
+      "durationSec": 60.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

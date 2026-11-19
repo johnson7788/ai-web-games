@@ -1,0 +1,130 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "标题有开始与引导入口",
+      "ok": true,
+      "detail": "eval: document.getElementById('btn-start') && document.getElementById('btn-howto')"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "第 1 级开局",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 1"
+    },
+    {
+      "name": "连击累积",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().combo >= 3"
+    },
+    {
+      "name": "升级到 2 级",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level >= 2"
+    },
+    {
+      "name": "商店打开",
+      "ok": true,
+      "detail": "eval: document.getElementById('shop-panel') && !document.getElementById('shop-panel').classList.contains('hidden')"
+    },
+    {
+      "name": "结算屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "1~3 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 1 && window.__ll.debug.state().stars <= 3"
+    },
+    {
+      "name": "回标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "竖屏提示可见",
+      "ok": true,
+      "detail": "eval: document.getElementById('rotate-screen') && getComputedStyle(document.getElementById('rotate-screen')).display !== 'none'"
+    },
+    {
+      "name": "跳过竖屏提示",
+      "ok": true,
+      "detail": "eval: document.getElementById('rotate-screen').style.display === 'none'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.68,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 外部请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-caring.png",
+    "04-combo.png",
+    "05-levelup.png",
+    "06-shop.png",
+    "07-result.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.68,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

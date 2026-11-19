@@ -1,0 +1,61 @@
+{
+  "game": "flame-craft",
+  "genre": "arcade",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 261.1,
+      "actions": 14915,
+      "firstInputSec": 0.4,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 2.7,
+      "deaths": 0,
+      "idleSec": 15,
+      "maxEventGapSec": 0.93,
+      "uniqueEvents": 12,
+      "levelsReached": 12,
+      "completed": true,
+      "finalLevel": 12,
+      "finalScore": 13158
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 150.4,
+      "actions": 7444,
+      "firstInputSec": 0.4,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 7.5,
+      "deaths": 1,
+      "idleSec": 26.3,
+      "maxEventGapSec": 0.95,
+      "uniqueEvents": 12,
+      "levelsReached": 3,
+      "completed": false,
+      "finalLevel": 3,
+      "finalScore": 2338
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 17.8,
+      "actions": 1,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 15.9,
+      "deaths": 1,
+      "idleSec": 17.3,
+      "maxEventGapSec": 0.93,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false,
+      "finalLevel": 1,
+      "finalScore": 10
+    }
+  ],
+  "generatedAt": "2026-11-19T22:07:34.746Z"
+}

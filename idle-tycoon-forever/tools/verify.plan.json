@@ -1,0 +1,51 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 900 },
+    { "screenshot": "../../poster.jpg" },
+    { "screenshot": "../final/01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "window.__ll.debug.setTutorialDone(true)" },
+    { "eval": "window.__ll.start(0)" },
+    { "wait": 600 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入第 1 街区" },
+    { "screenshot": "../final/02-playing.png" },
+    { "assert": "window.__ll.debug.state().rivals.length === 10", "name": "10 个对手" },
+    { "assert": "window.__ll.debug.state().rivals.filter(r=>r.boss).length === 1", "name": "1 个 Boss" },
+    { "eval": "window.__ll.debug.pickRival(0)" },
+    { "wait": 400 },
+    { "assert": "window.__ll.debug.state().phase === 'battle'", "name": "进入战斗" },
+    { "screenshot": "../final/03-battle.png" },
+    { "eval": "window.__ll.debug.fastForward()" },
+    { "wait": 200 },
+    { "assert": "window.__ll.debug.state().combo >= 1", "name": "胜利累计连击" },
+    { "assert": "window.__ll.debug.state().player.cash > 3000", "name": "胜利现金增加" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 200 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 200 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.debug.clearDistrict()" },
+    { "wait": 300 },
+    { "assert": "window.__ll.state.phase === 'result'", "name": "街区清空结算" },
+    { "screenshot": "../final/04-result.png" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "重开本街区" }
+  ],
+  "checks": { "console": true, "failedRequests": true, "external": false },
+  "fps": { "enabled": true, "min": 50, "prepare": "window.__ll.start(0)" },
+  "mobile": {
+    "viewport": [390, 844],
+    "steps": [
+      { "wait": 600 },
+      { "assert": "!!document.getElementById('rotate-screen')", "name": "竖屏遮罩元素存在" },
+      { "eval": "document.getElementById('btn-rotate-skip').click()" },
+      { "wait": 200 },
+      { "assert": "document.getElementById('rotate-screen').style.display === 'none'", "name": "跳过竖屏遮罩" },
+      { "screenshot": "../final/05-mobile.png" }
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "game": "flame-craft",
+  "generatedAt": "2026-11-19T22:08:21.797Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.25,
+    "silhouette": 8.25,
+    "style_consistent": 9.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让黄色小球向上跳跃，朝向橙色加号收集物移动",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'COMBO ×0'字体偏小且与左侧状态栏间距过近，可能影响快速扫视",
+        "左下角GOAL区域虚线圆环与火箭底部轻微重叠，视觉上略显拥挤",
+        "背景星点过少且分布稀疏，可能削弱空间纵深感（非严重问题）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色小球使其向上跳跃，朝左上方的GOAL区域移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中‘连击 ×0’与燃料条间距过近，易误读为‘×0’是燃料值",
+        "GOAL标签星形图标与文字间距不均，左侧星形略压文字",
+        "右上角+号收集物无明确交互反馈提示（如脉动/缩放），新手可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-inner.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让黄色小球向上移动，朝向红色加号目标点",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'COMBO ×0'与燃料条间距过小，易误读",
+        "左下角GOAL区域虚线圆圈部分遮挡火箭底部，可能影响目标识别",
+        "红色加号目标无明确交互反馈提示（如闪烁/缩放），新手可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-outer.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏上的蓝色水滴状物体，或靠近它移动以收集",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'COMBO ×0'字体偏小且与燃料条间距过近，易误读",
+        "左下角GOAL区域虚线圆圈部分遮挡目标入口光晕，可能影响目标识别",
+        "红色+号图标无明确交互提示（是否可收集？是否为敌人？），需上下文确认"
+      ]
+    },
+    {
+      "shot": "tests/final/05-coal.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或拖动底部黄色小球向上发射，朝向目标区域的蓝色火箭",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'COMBO ×0'与'FUEL'条间距过近，易误读",
+        "左下角GOAL框内火箭图标被虚线圆环部分遮挡，细节模糊",
+        "顶部LIVES显示为3颗心但无明确数值对应，新手可能误解剩余生命"
+      ]
+    },
+    {
+      "shot": "tests/final/06-hazards.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让黄色小球向上移动，朝向左侧带‘GOAL’标签的火箭状目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘LEVEL 4’与‘SCORE 0’间距过小，易误读为‘LEVEL4SCORE0’",
+        "‘GOAL’标签边框与虚线圈轻微重叠，视觉干扰",
+        "红色加号图标无明确交互提示（是否收集？是否触发？）"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色小角色使其向上跳跃，收集蓝色水滴或橙色加号",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'FLAME'标签旁三个圆点颜色与状态不明确（第二、三圆点灰暗，疑似未激活但无说明）",
+        "‘COMBO ×0’字体偏小且与右侧橙色加号图标间距过近，易误读为‘×0+’",
+        "目标区域虚线椭圆内有模糊光晕，可能干扰对‘GOAL’文字的聚焦"
+      ]
+    },
+    {
+      "shot": "tests/final/08-forged.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让黄色小球向上跳跃，朝左上方的GOAL区域移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "GOAL标签框与虚线圈轻微重叠，视觉层级略混乱",
+        "右上角两个红色+号目标物无说明，新手可能不知其作用",
+        "底部红线疑似地面但未明确标识，易误判为边界"
+      ]
+    }
+  ]
+}

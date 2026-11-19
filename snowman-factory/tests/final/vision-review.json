@@ -1,0 +1,152 @@
+{
+  "game": "snowman-factory",
+  "generatedAt": "2026-11-19T22:17:44.993Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "FAIL",
+  "means": {
+    "readable": 8,
+    "silhouette": 8.25,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [
+    "tests/final/06-zh-playing.png: 目标不可见",
+    "tests/final/06-zh-playing.png: HUD 遮挡"
+  ],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'PLAY'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "雪人角色头部虚线轮廓在静止状态下略显模糊，可能影响初始识别",
+        "右下角棕色方框（疑似目标区）无明确标签，需结合上下文推断功能",
+        "背景中半透明矩形结构与游戏机制无关，轻微干扰视觉焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角红色'DROP'按钮释放雪人",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'CATCH 0/6'与'Combo x3'按钮间距过小，易误触",
+        "雪人头部虚线轮廓在静止时略显模糊，可能影响目标识别",
+        "背景半透明方块与地面平台颜色接近，层次感稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-cones.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角红色'DROP'按钮释放雪球",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'CATCH 0/6'黄色背景与深色栏对比度偏低，小字号易误读",
+        "雪人脚下两个三角形道具图标语义不明（疑似可拾取物），无提示",
+        "右侧棕色方框带向下箭头的UI元素功能不明确（是否为待投放物？）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角红色'DROP'按钮释放雪人下方的冰淇淋",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'CATCH 0/6'与'Combo x5'按钮间距过小，可能误触",
+        "右侧棕色方框（目标区）无明确提示其功能，仅靠箭头暗示",
+        "背景半透明矩形结构易被误认为可交互障碍物"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Retry”按钮重新开始游戏。",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "雪人角色轮廓在深色背景中对比度低，眯眼时难以辨识为玩家主体（silhouette偏低）",
+        "‘New Best!’文字颜色偏绿且字号略小，与主标题风格略有不一致",
+        "背景隐约可见模糊UI元素（如右下角箭头框），可能干扰焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/06-zh-playing.png",
+      "goal_visible": false,
+      "first_action_guess": "点击右下角红色‘发射’按钮",
+      "readable": 5,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": true,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标不明确：画面中无可见目标物（如‘接住’对象），仅顶部文字提示‘接住 0/6’，但无对应视觉元素",
+        "HUD遮挡：右下角‘发射’按钮部分覆盖地面平台边缘，可能影响对落点判断",
+        "角色与交互物混淆：雪人底部三角形与前方小三角形外观相似，易误判为同一类物体"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'PLAY'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "雪人角色与右侧锥形目标物间距过近，可能误触",
+        "右下角棕色方框（疑似目标区）无明确标识，易混淆",
+        "‘How to play’按钮文字颜色偏暗，对比度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角红色'DROP'按钮让雪人掉落冰锥",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'CATCH 0/6'与'Score 26'间距过近，易误读为'Score 26 CATCH 0/6'",
+        "雪人脚下两个黄色锥形物形状相同但功能不明（一个粉色顶、一个黄色顶），缺乏视觉区分",
+        "背景半透明矩形柱体与地面网格线颜色接近，层次感弱"
+      ]
+    }
+  ]
+}

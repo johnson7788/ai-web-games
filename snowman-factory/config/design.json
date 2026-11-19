@@ -1,0 +1,59 @@
+{
+  "slug": "snowman-factory",
+  "genre": "puzzle",
+  "oneLiner": "雪人在冬日工厂里，看准时机把冰激凌球丢进传送带上经过的蛋筒，连击接住、躲开岩石、抢金色奖励。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "drop",
+      "cost": "同一时间只能丢一颗球，丢错（落空或砸中岩石）就丢一条命",
+      "feedback": ["sfx", "splat", "shake"],
+      "combinesWith": ["wait"]
+    },
+    {
+      "name": "wait",
+      "cost": "等待让蛋筒滑近落点，但等太久蛋筒会滑过头白白错过",
+      "feedback": ["conveyorScroll", "glowHint"],
+      "combinesWith": ["drop"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一个蛋筒滑近：现在就丢，还是等它再靠近一点", "cost": "现在丢 = 命中窗口更大，但后面可能紧跟着岩石" },
+    { "atSec": 18, "choice": "已有 2 连击：稳稳接下一个蛋筒，还是等金色蛋筒搏高分", "cost": "等金色蛋筒可能滑过头；先接普通蛋筒稳连击" },
+    { "atSec": 34, "choice": "岩石挡住落点：立刻砸掉它，还是等它滑过再出手", "cost": "砸岩石丢一条命；等它滑过则连击可能断掉" },
+    { "atSec": 52, "choice": "连击 ×4 到顶前，接一个偏离中心的蛋筒保住连击吗", "cost": "偏离中心命中率低，miss 直接清空连击" },
+    { "atSec": 75, "choice": "生命只剩 2：保守只接正中心，还是冒险抢金色蛋筒回血", "cost": "金色蛋筒 +1 命，但更容易失误" },
+    { "atSec": 105, "choice": "传送带明显加速：调整节奏提前出手，还是换疯狂模式赌限时高分", "cost": "节奏变了失误率升高；限时模式翻车更快" },
+    { "atSec": 150, "choice": "冲榜最后一搏：接满 6 个升关拿更高倍率，还是见好就收", "cost": "升关后传送带更快，可能瞬间丢完剩余生命" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 45, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "基础蛋筒与传送带节奏" },
+    { "index": 2, "newElement": "岩石障碍（砸中=失误）" },
+    { "index": 3, "newElement": "金色蛋筒（+5 分 & +1 命）" },
+    { "index": 4, "newElement": "传送带加速" },
+    { "index": 5, "newElement": "蛋筒生成更快" },
+    { "index": 6, "newElement": "疯狂模式限时倒计时" }
+  ],
+  "upgrades": [
+    { "id": "comboMultiplier", "kind": "rule", "desc": "连击倍率 ×1..×5" },
+    { "id": "goldenCone", "kind": "rule", "desc": "金色蛋筒奖励 +1 命" },
+    { "id": "rockHazard", "kind": "rule", "desc": "岩石障碍加入传送带" },
+    { "id": "crazyMode", "kind": "rule", "desc": "疯狂模式 130s 限时" },
+    { "id": "beltSpeedUp", "kind": "stat", "desc": "每关传送带 +12px/s" },
+    { "id": "spawnFaster", "kind": "stat", "desc": "每关生成间隔缩短" },
+    { "id": "catchWindow", "kind": "stat", "desc": "接住窗口 ±58px" },
+    { "id": "lifeRefill", "kind": "stat", "desc": "金色蛋筒回 1 命（上限 5）" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

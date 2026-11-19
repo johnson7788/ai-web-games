@@ -1,0 +1,40 @@
+{
+  "slug": "ant-fire-squad",
+  "genre": "action",
+  "oneLiner": "玩家点击投放火种，指挥火蚁把火种搬进熔炉点燃它，同时烧掉来袭的黄蜂",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "dropEmber", "cost": "填充火花表，蓄满会触发随机特殊事件（增益或黄蜂/炸弹）", "feedback": ["sfx", "glow", "trail"], "combinesWith": ["dropSoldier"] },
+    { "name": "dropSoldier", "cost": "消耗一枚火兵充能（有限，随时间补充）", "feedback": ["sfx", "streak", "kill"], "combinesWith": ["dropEmber"] }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "把火种丢在空闲火蚁附近，还是丢在熔炉附近", "cost": "丢得远搬运慢，丢得近容易挡黄蜂路线" },
+    { "atSec": 15, "choice": "继续铺火种堆连击，还是留火兵烧黄蜂", "cost": "贪连击可能让黄蜂撞进熔炉扣热量" },
+    { "atSec": 25, "choice": "优先烧掉哪只黄蜂", "cost": "火兵充能有限，选错会漏掉另一只" },
+    { "atSec": 45, "choice": "火花表满前是否停手控制特殊事件", "cost": "停手=产能下降，不停=可能刷出炸弹" },
+    { "atSec": 70, "choice": "何时交火兵换黄蜂的击杀奖励", "cost": "早交清场，晚交留着应对连续黄蜂" },
+    { "atSec": 100, "choice": "是否放弃连击去救熔炉", "cost": "连击归零换热量安全" },
+    { "atSec": 140, "choice": "最后冲目标还是先清黄蜂", "cost": "时间/热量" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "投放火种 + 熔炉热量目标" },
+    { "index": 2, "newElement": "连击倍率系统" },
+    { "index": 3, "newElement": "火兵烧黄蜂" },
+    { "index": 4, "newElement": "炸弹陷阱" },
+    { "index": 5, "newElement": "双血黄蜂" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule" },
+    { "id": "soldier-pierce", "kind": "rule" },
+    { "id": "ember-magnet", "kind": "rule" },
+    { "id": "wasp-slow", "kind": "rule" },
+    { "id": "speed", "kind": "stat" },
+    { "id": "heat", "kind": "stat" },
+    { "id": "ant", "kind": "stat" },
+    { "id": "soldier-charge", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

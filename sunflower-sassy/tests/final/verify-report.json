@@ -1,0 +1,135 @@
+{
+  "url": "http://127.0.0.1:8132/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "队列 7 张",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().queue.length === 7"
+    },
+    {
+      "name": "阶段 1",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stage === 1"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "有得分",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().score > 0"
+    },
+    {
+      "name": "连击 ≥10",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().combo >= 10"
+    },
+    {
+      "name": "FEVER 触发",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().fever === true"
+    },
+    {
+      "name": "岩石牌",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().queue[0].dir === 'rock'"
+    },
+    {
+      "name": "阶段 2",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stage === 2"
+    },
+    {
+      "name": "结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 1"
+    },
+    {
+      "name": "标题中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "移动端进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.66,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 外部请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-playing.png",
+    "03-combo.png",
+    "05-fever.png",
+    "04-rock.png",
+    "06-result.png",
+    "08-title-zh.png",
+    "07-m-playing.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.66,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

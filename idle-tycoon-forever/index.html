@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDLE TYCOON FOREVER</title>
+  <link rel="stylesheet" href="styles.css?v=itf1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level" class="hud-pill cyan"></span>
+          <span id="hud-cash" class="hud-pill gold"></span>
+          <span id="hud-gems" class="hud-pill magenta"></span>
+          <span id="hud-power" class="hud-pill"></span>
+          <span id="hud-targets" class="hud-pill red"></span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-combo" class="hud-pill green"></span>
+          <span id="hud-idle" class="hud-pill gold"></span>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-howto" class="hud-btn" aria-label="Replay guide" data-tutorial-replay>?</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="action-bar" class="hidden">
+      <button class="ab-btn" id="ab-district" data-panel="district">🏙 District</button>
+      <button class="ab-btn" id="ab-invest" data-panel="invest">📈 Invest</button>
+      <button class="ab-btn" id="ab-market" data-panel="market">🛒 Market</button>
+      <button class="ab-btn" id="ab-hq" data-panel="hq">🏢 HQ</button>
+      <button class="ab-btn" id="ab-monopoly" data-panel="monopoly">👑 Monopoly</button>
+      <button class="ab-btn" id="ab-ipo" data-panel="ipo">💎 IPO</button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">IDLE TYCOON FOREVER</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start">Start</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">Replay Guide</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger board</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="panels">
+      <div class="panel hidden" id="panel-district">
+        <div class="panel-head"><h3 data-i18n="panelDistrict">Districts</h3><button class="panel-close" data-close>✕</button></div>
+        <div class="panel-body" id="district-grid"></div>
+      </div>
+      <div class="panel hidden" id="panel-invest">
+        <div class="panel-head"><h3 data-i18n="panelInvest">Invest</h3><button class="panel-close" data-close>✕</button></div>
+        <div class="panel-body">
+          <div class="inv-stats" id="inv-stats"></div>
+          <button class="big-btn" id="inv-levelup">Level Up</button>
+          <button class="big-btn" id="inv-usecchip">Use Chip</button>
+          <div class="inv-section" id="inv-slots"></div>
+          <div class="inv-section" id="inv-backpack"></div>
+        </div>
+      </div>
+      <div class="panel hidden" id="panel-market">
+        <div class="panel-head"><h3 data-i18n="panelShop">Market</h3><button class="panel-close" data-close>✕</button></div>
+        <div class="panel-body" id="market-body"></div>
+      </div>
+      <div class="panel hidden" id="panel-hq">
+        <div class="panel-head"><h3 data-i18n="panelHq">HQ Tower</h3><button class="panel-close" data-close>✕</button></div>
+        <div class="panel-body" id="hq-body"></div>
+      </div>
+      <div class="panel hidden" id="panel-monopoly">
+        <div class="panel-head"><h3 data-i18n="panelMonopoly">Monopoly</h3><button class="panel-close" data-close>✕</button></div>
+        <div class="panel-body" id="monopoly-body"></div>
+      </div>
+      <div class="panel hidden" id="panel-ipo">
+        <div class="panel-head"><h3 data-i18n="panelIpo">Funding Round</h3><button class="panel-close" data-close>✕</button></div>
+        <div class="panel-body" id="ipo-body"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=itf1"></script>
+</body>
+</html>

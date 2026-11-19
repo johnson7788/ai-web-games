@@ -1,0 +1,62 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh' && document.documentElement.dir === 'ltr'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "切回英文" },
+    { "eval": "window.__ll.start()" },
+    { "wait": 600 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "eval": "window.__ll.tutorial.skip()" },
+    { "wait": 300 },
+    { "screenshot": "02-playing.png" },
+    { "wait": 1800 },
+    { "screenshot": "03-harvest.png" },
+    { "eval": "(()=>{const r=window.__ll.run(); if(!r) return false; r.state.coins=100000; r.state.blooms=60; const p=r.state.plots[0]; p.species=1; p.level=4; p.growthStart=r.state.time; return r.evolve(0).ok;})()" },
+    { "wait": 350 },
+    { "screenshot": "04-levelup.png" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "重开花园" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": true
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()"
+  },
+  "mobile": {
+    "viewport": [844, 390],
+    "steps": [
+      { "wait": 800 },
+      { "screenshot": "m-01-title.png" },
+      { "eval": "window.__ll.start()" },
+      { "wait": 500 },
+      { "eval": "window.__ll.tutorial.skip()" },
+      { "wait": 300 },
+      { "screenshot": "m-02-playing.png" },
+      { "eval": "window.__ll.pause()" },
+      { "wait": 200 },
+      { "eval": "window.__ll.resume()" },
+      { "wait": 200 }
+    ]
+  }
+}

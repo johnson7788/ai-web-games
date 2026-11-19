@@ -1,0 +1,37 @@
+{
+  "slug": "sunflower-sassy",
+  "genre": "arcade",
+  "oneLiner": "踩着霓虹节拍，读懂向日葵脚下滚动的方向牌：左右匹配、岩石闪避，连击点燃狂热让花王疯狂舞动，40 秒抢下最高分。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "match", "cost": "每次按下方向就锁定判断：按错方向会断连击并掉一颗心", "feedback": ["sfx", "popGlow", "comboCounter"], "combinesWith": ["dodge"] },
+    { "name": "dodge", "cost": "闪避只对岩石有效：对普通方向牌按闪避同样断连击并掉心", "feedback": ["sfx", "whoosh", "speedLine"], "combinesWith": ["match"] }
+  ],
+  "decisions": [
+    { "atSec": 2, "choice": "第一张方向牌亮起：立刻按左还是右", "cost": "按错直接掉一颗心，连击归零" },
+    { "atSec": 8, "choice": "岩石牌出现：按 DODGE 闪避，还是先看清再按", "cost": "犹豫会让倒计时环逼近，按错方向同样掉心" },
+    { "atSec": 15, "choice": "连击逼近 20：继续激进连击冲 FEVER，还是求稳", "cost": "激进有失误风险；求稳会错过狂热倍率" },
+    { "atSec": 25, "choice": "只剩一颗心：宁可慢一拍也要看清方向", "cost": "放慢节奏会断连击、分数缩水" },
+    { "atSec": 35, "choice": "冲刺三星：倒计时环越来越短，抢高分还是保命", "cost": "抢分可能猝死；保命少一星" },
+    { "atSec": 45, "choice": "FEVER 里：趁狂热疯狂刷分，还是稳住别断", "cost": "狂热中一次失误即退出并掉心" }
+  ],
+  "loop": { "teachSec": 15, "practiceSec": 35, "twistSec": 30, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基础左右反应：方向牌随节拍亮起，按对应方向键" },
+    { "index": 2, "newElement": "岩石牌登场：不能按左右，必须按 DODGE 闪避" },
+    { "index": 3, "newElement": "FEVER 狂热：连击 20 点燃狂热，舞速与得分翻倍" }
+  ],
+  "upgrades": [
+    { "id": "rockTiles", "kind": "rule", "desc": "第 2 阶段起岩石牌进入队列，多一个闪避动词" },
+    { "id": "feverMode", "kind": "rule", "desc": "连击 20 触发 FEVER，得分倍率 +1 且舞速拉满" },
+    { "id": "comboMultiplier", "kind": "rule", "desc": "连击每 +10 提升得分倍率，封顶 6 倍" },
+    { "id": "threeHearts", "kind": "rule", "desc": "失误只掉一颗心而非即死，3 心容错" },
+    { "id": "tileDeadline", "kind": "rule", "desc": "每张牌带倒计时环，超时视为失误并掉心" },
+    { "id": "speedTier", "kind": "stat", "desc": "里程碑表驱动舞速：连击越顺向日葵跳得越快" },
+    { "id": "rockFrequency", "kind": "stat", "desc": "岩石出现频率随阶段递增（0% → 22% → 30%）" },
+    { "id": "starRating", "kind": "rule", "desc": "结算按分数给 1–3 星，高分解锁三星" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}
