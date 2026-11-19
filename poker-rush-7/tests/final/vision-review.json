@@ -1,0 +1,149 @@
+{
+  "game": "poker-rush-7",
+  "generatedAt": "2026-11-19T23:21:31.254Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.75,
+    "silhouette": 6.75,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的粉色 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 '0/60' 星标计数与 'Start' 按钮间距过小，易误触",
+        "左右两侧卡牌（Q♠、6♠）半透明且无交互提示，可能被误认为背景元素",
+        "关卡编号按钮（1-20）星标数量统一为3颗，但第1关高亮显示1颗星，视觉不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标卡牌（Q♠、A♥、K♦、6♠）与背景融合度高，部分卡牌轮廓在暗背景下辨识度偏低",
+        "星级图标颜色过浅（黄星在粉紫底上对比不足），第1关高亮色与其余关卡差异略突兀",
+        "‘0/60’计数器字体偏小，且未明确说明单位（如‘匹配数’），易引发歧义"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一张蓝色背景、带白色心形图案的6点牌（如第二行第二列的6♥）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标栏中'Blue'文字与蓝色方块间距过小，易误读为'Blue6'",
+        "左上角'Level 1'与'60s'标签无明确分隔，视觉上略粘连",
+        "部分卡牌（如第三行左一橙色♣6）图标偏小，与同列其他牌不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的'Next Level'按钮继续游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星中仅第一颗为实心黄色，后两颗为空心轮廓，易误读为1星（应统一为实心或明确星级逻辑）",
+        "‘Score 0 · Max combo x0’文字过小且对比度偏低，弱光环境下可能难辨",
+        "按钮无悬停/选中反馈状态，影响交互确认感"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一张绿色的5♠（黑桃5）卡片，因为目标是‘5♠ Green’且多数卡片为该组合",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Level 3’与‘60s’间距过小，可能在小屏设备上误触",
+        "目标栏中‘TARGET’文字偏小且无对比色，弱光下辨识度略低",
+        "右上‘Miss 0/4’橙色背景与深蓝底色对比不足，部分用户可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result-lose.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮粉色的“Retry”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Rush Over’标题与副文本间距过小，可能影响可读性",
+        "‘Retry’按钮有发光效果但无明确焦点指示（如高亮边框），在暗背景下易误触",
+        "眯眼时两个按钮亮度接近，难以快速区分主次操作"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的'Start'按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部指令文字‘Memorize the card...’部分被截断（右端不可见）",
+        "左上和右上卡牌图标模糊、细节丢失，难以辨识花色与数字",
+        "‘0/60’星星计数与‘Start’按钮间距过小，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一张7♥（红心7）卡片，因为目标是7点且花色为Cyan（青色），而图中多张7♥为青色背景",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "TARGET提示框轻微遮挡顶部一排卡片的上边缘（如第3列7♥）",
+        "‘Miss 0/4’文字颜色为橙色，在深蓝背景上对比度偏低，易被忽略",
+        "部分卡片（如左下角10♠、K♣）花色符号与数字大小比例不一致，影响快速识别"
+      ]
+    }
+  ]
+}

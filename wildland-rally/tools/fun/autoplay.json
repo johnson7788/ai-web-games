@@ -1,0 +1,56 @@
+{
+  "game": "wildland-rally",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 20.7,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 3.97,
+      "deaths": 1,
+      "actions": 1242,
+      "idleSec": 0,
+      "maxEventGapSec": 1.05,
+      "uniqueEvents": 11,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 43.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 4.38,
+      "deaths": 1,
+      "actions": 2599,
+      "idleSec": 0,
+      "maxEventGapSec": 2.02,
+      "uniqueEvents": 14,
+      "levelsReached": 4,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 7,
+      "durationSec": 7.32,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 4.33,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 8,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

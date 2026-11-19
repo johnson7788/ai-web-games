@@ -1,0 +1,136 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "开始按钮存在",
+      "ok": true,
+      "detail": "eval: document.getElementById('btn-start') !== null"
+    },
+    {
+      "name": "进入答题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "第一题",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().questionIndex === 0"
+    },
+    {
+      "name": "答对前进",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().questionIndex === 1"
+    },
+    {
+      "name": "到第三题",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().questionIndex === 2"
+    },
+    {
+      "name": "切换到 Leo",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().travelerIndex === 1"
+    },
+    {
+      "name": "连击累计",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().combo >= 5"
+    },
+    {
+      "name": "结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "至少 7 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 7"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "中文进入答题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本局",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "移动标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动进入答题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 外部请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-playing.png",
+    "03-q2.png",
+    "04-q3.png",
+    "05-rider.png",
+    "06-combo.png",
+    "07-result.png",
+    "08-zh.png",
+    "m-playing.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

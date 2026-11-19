@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-11-19T23:24:59.542Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "tap": {
+      "rms": 0.155,
+      "peak": 0.3653,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "drag": {
+      "rms": 0.0583,
+      "peak": 0.2486,
+      "nan": 0,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "drop": {
+      "rms": 0.1897,
+      "peak": 0.4781,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "wrong": {
+      "rms": 0.1811,
+      "peak": 0.32,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "clear": {
+      "rms": 0.1672,
+      "peak": 0.5823,
+      "nan": 0,
+      "samples": 28665,
+      "durSec": 0.65,
+      "pass": true
+    },
+    "roast": {
+      "rms": 0.0921,
+      "peak": 0.2593,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "hint": {
+      "rms": 0.1467,
+      "peak": 0.26,
+      "nan": 0,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "help": {
+      "rms": 0.1122,
+      "peak": 0.3763,
+      "nan": 0,
+      "samples": 12789,
+      "durSec": 0.29,
+      "pass": true
+    },
+    "cupid": {
+      "rms": 0.1205,
+      "peak": 0.26,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "doctor": {
+      "rms": 0.1205,
+      "peak": 0.26,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "invert": {
+      "rms": 0.0992,
+      "peak": 0.3974,
+      "nan": 0,
+      "samples": 14112,
+      "durSec": 0.32,
+      "pass": true
+    },
+    "star": {
+      "rms": 0.0993,
+      "peak": 0.18,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1344,
+      "peak": 0.3034,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "hold": {
+      "rms": 0.1551,
+      "peak": 0.3599,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "seq": {
+      "rms": 0.099,
+      "peak": 0.22,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "kiss": {
+      "rms": 0.1303,
+      "peak": 0.3807,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "streak": {
+      "rms": 0.1344,
+      "peak": 0.408,
+      "nan": 0,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.15,
+      "peak": 0.4682,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "ambient": {
+      "rms": 0.0107,
+      "peak": 0.0641,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

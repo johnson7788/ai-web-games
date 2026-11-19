@@ -1,0 +1,75 @@
+{
+  "slug": "frenzy-racer",
+  "genre": "racing",
+  "oneLiner": "双车四道的霓虹反应赛车：左右各控制一辆车换道，吃光能量球、躲开红色闸门，护盾球兜底，连击冲三星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "每辆车只有两条道，换道等于放弃当前道即将到来的球，且换道后立刻要面对另一条道的闸门",
+      "feedback": ["sfx", "carTilt", "neonTrail"],
+      "combinesWith": ["collect"]
+    },
+    {
+      "name": "collect",
+      "cost": "贪球会把车开进闸门车道，必须预判下一道闸门；漏球会断连击、掉收集率",
+      "feedback": ["sfx", "orbBurst", "comboFlash"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一波球在左车右道：立刻换道去吃，还是先稳住看闸门位置", "cost": "换道吃球可能撞进同侧闸门" },
+    { "atSec": 12, "choice": "两道闸门逼近左右两车：先躲左边还是先躲右边", "cost": "先躲的一侧要放弃那颗即将到手的球" },
+    { "atSec": 25, "choice": "护盾球出现在远处：绕过去吃护盾，还是守在原道吃连击", "cost": "吃护盾要横跨，途中可能漏球断连击" },
+    { "atSec": 45, "choice": "速度上来了：为了保连击贪边角球，还是保守吃稳球", "cost": "贪边角球容错更低，撞闸即死" },
+    { "atSec": 70, "choice": "护盾在手：故意吃一颗危险位置的球冲三星，还是留着护盾兜底", "cost": "护盾挡一次撞车后清零，漏球照样断连击" },
+    { "atSec": 100, "choice": "收集率已达标：最后十秒拼三星还是稳过线", "cost": "拼三星要多吃球，暴露在更多闸门里" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "双车双道基础换道 + 能量球 + 红色闸门" },
+    { "index": 2, "newElement": "速度 1.1×，反应提前量缩短" },
+    { "index": 3, "newElement": "并发闸门上限提到 3，开始需要预判两车" },
+    { "index": 4, "newElement": "护盾球加入生成池" },
+    { "index": 5, "newElement": "波次间隔缩短到 0.75s，节奏更密" },
+    { "index": 6, "newElement": "连击加分系数生效，三星需要更高收集率" },
+    { "index": 7, "newElement": "并发闸门上限 4，双道同时封堵出现" },
+    { "index": 8, "newElement": "提前量降到 1.2s，考验瞬时反应" },
+    { "index": 9, "newElement": "球与闸门密度同时拉满" },
+    { "index": 10, "newElement": "提前量 1.0s，进入纯反应区间" },
+    { "index": 11, "newElement": "五车道球雨 + 双车换道极限" },
+    { "index": 12, "newElement": "终章：0.8s 反应 + 5 闸门并发" }
+  ],
+  "upgrades": [
+    { "id": "shield", "kind": "rule", "desc": "护盾球：收集后获得 1 层护盾，可挡一次撞车" },
+    { "id": "combo", "kind": "rule", "desc": "连击：连续吃球连击翻倍，漏球清零" },
+    { "id": "threeStar", "kind": "rule", "desc": "星级：收集率 + 峰值连击决定 1-3 星" },
+    { "id": "nearMiss", "kind": "rule", "desc": "擦肩：贴闸门通过记一次近失分" },
+    { "id": "speedUp", "kind": "stat", "desc": "速度逐关 +10%" },
+    { "id": "leadDown", "kind": "stat", "desc": "反应提前量逐关缩短" },
+    { "id": "densityUp", "kind": "stat", "desc": "波次间隔逐关缩短" },
+    { "id": "barrierCap", "kind": "stat", "desc": "并发闸门上限逐关提高" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

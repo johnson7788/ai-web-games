@@ -1,0 +1,76 @@
+{
+  "slug": "retro-racer-gt",
+  "genre": "racing",
+  "oneLiner": "霓虹高速路上，你驾驶改装车在 4 车道车流里变道、超车、开氮气，躲开岩石并收集能量星，用连击把分数一路刷上去。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "变道有约 0.3s 转向硬直，期间不能二次变道；选错车道等于把自己送进车流",
+      "feedback": ["sfx", "carTilt", "laneGlow"],
+      "combinesWith": ["boost"]
+    },
+    {
+      "name": "boost",
+      "cost": "消耗氮气并进入冷却；氮气只对车无敌，对岩石无效，速度越高反应窗口越短",
+      "feedback": ["sfx", "flameTrail", "speedLines"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "draft",
+      "cost": "贴车擦身才有 near-miss 奖励，贴太近撞车直接结束",
+      "feedback": ["sfx", "whooshFlash", "comboPop"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "起步就抢边道追星，还是稳居中道先加速", "cost": "边道对向车更快，中道同向车更密" },
+    { "atSec": 15, "choice": "现在开氮气冲分，还是留氮气过下一波车流", "cost": "氮气冷却 9 秒，用完窗口期裸奔" },
+    { "atSec": 30, "choice": "绕路追能量星，还是贴车叠连击", "cost": "追星可能撞车；不追星连击会断" },
+    { "atSec": 55, "choice": "遇到岩石：变道绕行，还是赌氮气硬冲", "cost": "氮气对岩石无效，硬冲必撞" },
+    { "atSec": 85, "choice": "高连击下继续贴车保连击，还是拉开距离保命", "cost": "连击断了少分；贴太近会撞" },
+    { "atSec": 130, "choice": "难度升级后：降速求稳，还是满速刷分", "cost": "满速反应窗口更短" },
+    { "atSec": 160, "choice": "冲刺抢新纪录，还是稳收金币", "cost": "贪分可能提前撞车" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础车流：4 车道、中道同向慢车 + 边道对向快车" },
+    { "index": 2, "newElement": "能量星：捡星加分数并充氮气冷却" },
+    { "index": 3, "newElement": "岩石障碍：氮气也撞，必须绕行" },
+    { "index": 4, "newElement": "连击计分：连续超车叠乘分数" },
+    { "index": 5, "newElement": "氮气无敌：对车流免疫，冲刺清场" },
+    { "index": 6, "newElement": "密度攀升：车流与岩石生成间隔随难度缩短" }
+  ],
+  "upgrades": [
+    { "id": "oncomingLanes", "kind": "rule", "desc": "边车道出现对向快车，道路分两种威胁" },
+    { "id": "nitroInvincible", "kind": "rule", "desc": "氮气期间撞车免疫，可以冲开同向车" },
+    { "id": "comboScore", "kind": "rule", "desc": "连续超车叠连击，分数按连击层数加成" },
+    { "id": "rockHazard", "kind": "rule", "desc": "岩石无视氮气，永远是硬威胁" },
+    { "id": "starNitro", "kind": "rule", "desc": "能量星减免氮气冷却" },
+    { "id": "speedCap", "kind": "stat", "desc": "常规极速 850 px/s" },
+    { "id": "nitroSpeed", "kind": "stat", "desc": "氮气极速 1200 px/s" },
+    { "id": "turnSpeed", "kind": "stat", "desc": "变道横向速度 500 px/s" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 18,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

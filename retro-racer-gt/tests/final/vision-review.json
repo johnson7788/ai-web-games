@@ -1,0 +1,101 @@
+{
+  "game": "retro-racer-gt",
+  "generatedAt": "2026-11-19T23:27:32.814Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.6,
+    "silhouette": 8,
+    "style_consistent": 9.2
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-race.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角播放按钮开始或继续游戏",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'SCORE 573 KM/H 85 BEST 0' 数值间距过密，易误读为单个数字",
+        "黄色星形目标偏右下，与玩家车距离较远，新手可能忽略",
+        "底部中央 'NITRO' 按钮无图标仅文字，功能意图稍弱于左右方向键"
+      ]
+    },
+    {
+      "shot": "tests/final/02-race-nitro.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部黄色 BOOST 按钮加速",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'COMBO x2' 和 'TIER 1' 按钮间距过小，可能误触",
+        "左上角 'BEST 0' 数值与 'KM/H 94' 对齐不一致，视觉层级混乱",
+        "右侧黄色星星目标偏右，靠近边界，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-race-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始游戏。",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Wrecked · New best!’标题中‘·’与文字间距过小，略显拥挤",
+        "背景网格线与HUD边框同为霓虹紫/青色，部分区域视觉干扰稍强",
+        "‘Stars’值为0但未用灰色弱化显示，易被误读为可收集项"
+      ]
+    },
+    {
+      "shot": "tests/final/04-race-traffic.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best’数值1135用黄色高亮，但‘Score’同值未高亮，视觉优先级不一致",
+        "背景中车辆轮廓与HUD边框颜色接近（青蓝/紫），弱化玩家车辨识度",
+        "‘Max combo x3’与‘Coins earned +66’行距略紧，小屏可能误读"
+      ]
+    },
+    {
+      "shot": "tests/final/05-race-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best’数值750用黄色高亮，但‘Score’同值未高亮，视觉优先级不一致",
+        "背景网格线与HUD边框颜色接近（紫/粉），轻微干扰阅读",
+        "‘Max combo x2’中‘x2’为斜体小字号，与列表其他项格式不统一"
+      ]
+    }
+  ]
+}

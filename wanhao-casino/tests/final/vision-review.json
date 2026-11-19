@@ -1,0 +1,149 @@
+{
+  "game": "wanhao-casino",
+  "generatedAt": "2026-11-19T23:22:21.441Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 6.875,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间橙色的“Start”按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’按钮被‘Start’部分遮挡，悬停时才可见，易误触",
+        "‘MOON’标签被‘Start’按钮覆盖，仅下半部分可见",
+        "右上角‘DICE’图标与文字间距过小，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一个门（如SUN区域的问号牌）下注，然后点ROLL按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "MOON区域上方两个问号牌与HOUSE标签轻微重叠，视觉层级模糊",
+        "底部芯片按钮‘100’被黄色高亮圆角遮挡部分数字，易误读为‘10’",
+        "右上角DICE区域两个空框无明确功能提示，新手可能困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/03-reveal.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的ROLL按钮开始掷骰子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "MOON区域下方'Revealing...'文字与蓝色椭圆芯片重叠，易误读",
+        "HOUSE区1/2牌与MOON区8/8牌垂直对齐但间距过小，视觉干扰",
+        "右上角两个黄色骰子（6,6）无明确归属标识，可能误认为玩家掷出"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮黄色的'Play Again'按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘You Beat the House!’文字与下方三颗星图标轻微重叠，视觉层次略乱",
+        "左侧SUN区域和右侧STAR区域的骰子数字（2/6、JOKER/6）与背景卡片对比度偏低，眯眼时易混淆",
+        "顶部右上角‘4’‘2’骰子标签无明确归属说明，可能误认为是玩家当前骰子"
+      ]
+    },
+    {
+      "shot": "tests/final/05-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间‘月亮门’区域下方的100筹码进行押注",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘在门上押注，然后开牌’提示文字较小且颜色偏淡（浅灰），在深色背景下对比度不足，易被忽略",
+        "庄家区域两个问号卡牌无边框/高亮，与下方三门卡牌视觉层级不一致，易误判为不可交互",
+        "右上角DICE图标下方两个空方块无标签，功能不明，可能引发困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色 'ROLL' 按钮开始掷骰子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'DICE' 标签与下方两个问号卡牌轻微重叠，视觉层级模糊",
+        "‘Round 1/8’ 和 ‘Chips 49,700’ 字体大小不一致，且与右上角图标间距不均",
+        "中间 MOON 区域上方两个问号卡牌未被容器框包围，与其他区域结构不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/07-streak.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的ROLL按钮开始掷骰子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "MOON区域下方显示'Revealing...'但无明确进度指示，易误判为卡顿",
+        "HOUSE区域的1/2牌与MOON区域上边缘轻微重叠，视觉层级模糊",
+        "左上角'Streak ×2'按钮颜色与SUN框色相近，可能被误认为可交互区域"
+      ]
+    },
+    {
+      "shot": "tests/final/08-joker.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的ROLL按钮开始掷骰子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "MOON区域下方显示'Revealing...'但无进度指示，易误判为卡顿",
+        "HOUSE区域的1/2牌与MOON区域9/9牌视觉层级混淆，1/2牌略压在MOON框上",
+        "右上角两个黄色骰子标签'6 6'与'DICE'文字间距过小，可能误读为单个元素"
+      ]
+    }
+  ]
+}

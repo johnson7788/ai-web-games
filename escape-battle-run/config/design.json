@@ -1,0 +1,39 @@
+{
+  "slug": "escape-battle-run",
+  "genre": "arcade",
+  "oneLiner": "玩家驾驶霓虹飞行器在竞技场收集能量晶体、躲避追击无人机，攒满能量爆发清场并冲高生存波次",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "dodge", "cost": "绕路会远离晶体与得分点", "feedback": ["trail", "nearMissFlash"], "combinesWith": ["burst"] },
+    { "name": "collect", "cost": "冲向晶体时暴露在无人机追击路径上", "feedback": ["sparkle", "combo"], "combinesWith": ["burst"] },
+    { "name": "burst", "cost": "消耗全部能量且冷却期间无自保", "feedback": ["shockwave", "screenFlash"], "combinesWith": ["dodge"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "冲向第一颗晶体还是先拉开安全距离", "cost": "贪晶体可能被包夹" },
+    { "atSec": 15, "choice": "贴边绕行还是穿中场拿连击", "cost": "中场无人机更密" },
+    { "atSec": 30, "choice": "现在交能量爆发清场，还是攒到下一波", "cost": "早交则下一波无自保" },
+    { "atSec": 50, "choice": "穿过岩石减速带抄近路，还是绕远路", "cost": "穿过会被短暂减速" },
+    { "atSec": 75, "choice": "追高倍连击晶体还是保命优先", "cost": "连击断了分数归零" },
+    { "atSec": 100, "choice": "引诱敌人聚团再爆发，还是逐个甩开", "cost": "聚团时被擦到即死" },
+    { "atSec": 140, "choice": "为三星冲分还是稳健收尾", "cost": "冲分容错更低" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "追击无人机与能量晶体收集" },
+    { "index": 2, "newElement": "漂移岩石减速带" },
+    { "index": 3, "newElement": "提速无人机与能量爆发清场" }
+  ],
+  "upgrades": [
+    { "id": "magnet", "kind": "rule" },
+    { "id": "doubleBurst", "kind": "rule" },
+    { "id": "slowRocks", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "ghost", "kind": "rule" },
+    { "id": "speedPlus", "kind": "stat" },
+    { "id": "energyPlus", "kind": "stat" },
+    { "id": "comboPlus", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

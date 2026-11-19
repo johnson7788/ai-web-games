@@ -1,0 +1,133 @@
+{
+  "game": "swim-or-sink",
+  "generatedAt": "2026-11-19T23:25:42.552Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 9,
+    "silhouette": 7.142857142857143,
+    "style_consistent": 8.428571428571429
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Depth 2 和 Depth 3 按钮上的锁图标与文字间距过小，可能影响辨识",
+        "左下角白色潜水员剪影亮度偏低，在深蓝背景中对比度不足",
+        "‘Keys 1–3 answer’等提示文字字号偏小，弱光环境下易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "深度2/3按钮的锁图标与文字间距过小，易误触",
+        "左下角发光椭圆（疑似玩家轮廓）亮度偏低，与背景对比不足，影响silhouette得分",
+        "‘按1-3作答’等操作提示字体偏小，弱光环境下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击选项1“Stay calm and avoid thrashing”",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色发光过强，边缘轻微光晕溢出，可能影响深度感知",
+        "选项按钮无悬停/选中反馈，交互状态不明确",
+        "顶部‘Q1/’标签字体偏小，与主问题间距过近"
+      ]
+    },
+    {
+      "shot": "tests/final/03-three-option.png",
+      "goal_visible": true,
+      "first_action_guess": "点击选项1（ Inhalate through the nose, exhale through the nose）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色轮廓较细，与背景条纹对比度偏低，远距离辨识稍弱",
+        "顶部‘Depth 2 · Deep’与‘Q1/’字号偏小，略影响层级感知",
+        "选项按钮无悬停/选中反馈视觉提示（仅靠编号区分）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Try Again”按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧圆形声呐图标与背景融合度高，眯眼时不易识别为可交互元素",
+        "顶部状态栏（如Q4/、Score 1360）字体偏小且对比度不足，远距离辨识困难",
+        "‘Menu’按钮为灰色小方块，视觉权重过低，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击选项1“Stay calm and avoid thrashing”",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（发光椭圆）轮廓较模糊，与背景光柱对比不足，眯眼时不易快速识别为可交互主体",
+        "选项按钮文字行距偏小，长句在窄屏可能换行异常（当前截图未显，但存在风险）",
+        "顶部‘Q 1 /’标签字体略小，与右侧图标大小不协调，轻微风格断层"
+      ]
+    },
+    {
+      "shot": "tests/final/m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Depth 2 和 Depth 3 按钮上的锁图标与文字间距过小，可能影响辨识",
+        "左上角小鱼剪影亮度低、轮廓模糊，眯眼时易与背景混淆",
+        "语言选择下拉框边框与背景对比度偏低，悬停状态不明显"
+      ]
+    }
+  ]
+}

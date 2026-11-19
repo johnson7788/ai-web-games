@@ -1,0 +1,59 @@
+{
+  "game": "retro-racer-gt",
+  "genre": "racing",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 6,
+      "durationSec": 22.57,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 7.1,
+      "deaths": 1,
+      "actions": 17,
+      "idleSec": 0,
+      "maxEventGapSec": 0.7,
+      "uniqueEvents": 9,
+      "levelsReached": 6,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 6.27,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 20,
+      "idleSec": 0,
+      "maxEventGapSec": 0.58,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 4.45,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.68,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

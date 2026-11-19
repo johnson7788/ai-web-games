@@ -1,0 +1,80 @@
+{
+  "slug": "wanhao-casino",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹赌场里用筹码押注太阳/月亮/星三扇门，掷骰发牌后与庄家比点数，用连胜倍率与多门连击把庄家打爆。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "bet",
+      "cost": "筹码押上即锁定，输门血本无归",
+      "feedback": ["sfx", "chipPile", "doorGlow"],
+      "combinesWith": ["roll"]
+    },
+    {
+      "name": "roll",
+      "cost": "一旦开牌所有下注不可反悔，判断失误只能等下一轮",
+      "feedback": ["sfx", "diceTumble", "tileReveal"],
+      "combinesWith": ["bet"]
+    },
+    {
+      "name": "allin",
+      "cost": "孤注一掷把全部筹码押一门，输了直接破产出局",
+      "feedback": ["sfx", "bigChipDump", "screenShake"],
+      "combinesWith": ["bet"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一笔押哪扇门：太阳/月亮/星，三门赔率相同但花色不同", "cost": "押错门直接输掉这一注" },
+    { "atSec": 8, "choice": "选多大的筹码：小额稳扎还是大额搏一注", "cost": "下得越大，输门的亏损越大" },
+    { "atSec": 15, "choice": "再补一门分散风险，还是立刻开牌锁定单门", "cost": "分散会摊薄单门收益，单门则孤注一掷" },
+    { "atSec": 25, "choice": "上一轮输了：加倍追回还是收缩筹码保本金", "cost": "追损可能连输，收缩则回本变慢" },
+    { "atSec": 40, "choice": "连胜已起：继续押注骑连胜倍率，还是见好就收", "cost": "骑倍率可能中断连胜，收手则放弃高倍收益" },
+    { "atSec": 60, "choice": "万能牌时代：是否专门押一门赌万能牌对子", "cost": "万能牌概率低，赌错了就是白亏" },
+    { "atSec": 80, "choice": "多门连击开启：押三门吃连击奖励，还是专注单门", "cost": "三门分散但触发连击，单门集中但不稳定" },
+    { "atSec": 100, "choice": "决胜轮：全押冲刺三倍评价，还是留本金拿一星保底", "cost": "全押可能清空，保底则评价上不去" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础下注与开牌：三门 vs 庄家，比点数" },
+    { "index": 2, "newElement": "万能牌 Joker 进入牌堆：万能+任意=对子，双万能=最大" },
+    { "index": 3, "newElement": "连胜倍率：连续赢轮给下一轮 ×1.5/×2/×3 赔付" },
+    { "index": 4, "newElement": "多门连击：同一轮赢两门以上送额外奖励" },
+    { "index": 5, "newElement": "高额桌：筹码翻倍，风险与回报同时放大" },
+    { "index": 6, "newElement": "暗门：开牌前有一门被迷雾遮住，读牌靠猜测" },
+    { "index": 7, "newElement": "万能牌概率提升，对子大战更频繁" },
+    { "index": 8, "newElement": "终局：全部机制叠加 + 最高倍率冲刺" }
+  ],
+  "upgrades": [
+    { "id": "unlockJoker", "kind": "rule", "desc": "第 2 轮起牌堆加入万能牌，万能+任意=对子" },
+    { "id": "unlockStreak", "kind": "rule", "desc": "第 3 轮起连续赢轮触发赔付倍率" },
+    { "id": "unlockCombo", "kind": "rule", "desc": "第 4 轮起多门同胜送连击奖励" },
+    { "id": "unlockShadow", "kind": "rule", "desc": "第 6 轮起随机一门开牌前被迷雾遮住" },
+    { "id": "jokerOdds", "kind": "stat", "desc": "第 7 轮万能牌出现概率提升" },
+    { "id": "stakeUp", "kind": "stat", "desc": "第 5 轮筹码档位翻倍放大" },
+    { "id": "streakCap", "kind": "rule", "desc": "连胜倍率上限 ×3 封顶" },
+    { "id": "payoutBoost", "kind": "stat", "desc": "高额桌赔付线性放大" },
+    { "id": "bankrollGuard", "kind": "rule", "desc": "破产前有一次保底缓降机会" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "kiss-collector",
+  "genre": "puzzle",
+  "oneLiner": "你在丘比特的甜甜谜题里收集亲亲：点、拖、长按、翻转，破解 24 个反直觉整蛊机关。",
+  "fun": {
+    "primary": "curiosity",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "点错算一次失误，累计 3 次解锁「丘比特帮你」半自动通关（过关只 1 星）",
+      "feedback": ["sfx", "pulse", "wrong-flash"],
+      "combinesWith": ["drag"]
+    },
+    {
+      "name": "drag",
+      "cost": "拖错目标也算失误；拖走遮挡物可能反而暴露真正的答案",
+      "feedback": ["sfx", "trail", "drop-glow"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "hold",
+      "cost": "长按约 1.2 秒才触发；按在错误物体上算失误，且打断连击",
+      "feedback": ["sfx", "ring-grow", "sparkle"],
+      "combinesWith": ["drag"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第 1 关：直接点爱心，还是先观察其它物体", "cost": "点错=失误数 +1" },
+    { "atSec": 25, "choice": "第 4 关：长按神灯，还是忍不住先点它", "cost": "点错=失误 +1，长按才触发" },
+    { "atSec": 45, "choice": "第 6 关：按屏幕编号顺序点，还是抢跑", "cost": "顺序错=进度重置 + 失误" },
+    { "atSec": 70, "choice": "先用提示，还是自己继续试错", "cost": "用提示=该关少 1 星" },
+    { "atSec": 100, "choice": "倒置关：拖旋转把手，还是先观察其它物体", "cost": "拖错=失误 +1" },
+    { "atSec": 140, "choice": "卡关 3 次后是否用「丘比特帮你」半自动通关", "cost": "用=1 星，且计入速通成绩" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 40, "twistSec": 35, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "点选交互：点中唯一脸红的心" },
+    { "index": 2, "newElement": "拖拽交互：把巧克力拖进礼物盒" },
+    { "index": 3, "newElement": "遮挡物：掀开海报找真亲亲" },
+    { "index": 4, "newElement": "长按：按住神灯召唤亲亲精灵" },
+    { "index": 5, "newElement": "连点计数：点三下脸颊" },
+    { "index": 6, "newElement": "顺序点：按编号顺序点棒棒糖、纸杯蛋糕、爱心" },
+    { "index": 7, "newElement": "浇水：把水壶拖到玫瑰上" },
+    { "index": 8, "newElement": "影子点击：连点灯泡但第三下点影子" },
+    { "index": 9, "newElement": "分类陷阱：点出不是花的台灯" },
+    { "index": 10, "newElement": "拨草：拨开草丛找戒指" },
+    { "index": 11, "newElement": "合并：把左半边心拖到右半边" },
+    { "index": 12, "newElement": "Boss 种花：种子进盆、浇水、叫太阳" },
+    { "index": 13, "newElement": "瞄准：把爱之箭拖到靶心" },
+    { "index": 14, "newElement": "倒置：拖旋转把手翻转魔镜" },
+    { "index": 15, "newElement": "融化：把冰心拖到暖灯上" },
+    { "index": 16, "newElement": "敲钟：点三下婚礼钟" },
+    { "index": 17, "newElement": "掀面纱：掀开面纱找戒指" },
+    { "index": 18, "newElement": "Boss 求婚：戒指进盒后长按盒子" },
+    { "index": 19, "newElement": "找不同：点出不是星星的心" },
+    { "index": 20, "newElement": "接流星：把流星拖回天空" },
+    { "index": 21, "newElement": "月下顺序：按月亮、星星、爱心顺序点" },
+    { "index": 22, "newElement": "双瓶双杯：两瓶香槟倒进两个酒杯" },
+    { "index": 23, "newElement": "倒置+长按：翻转后长按蜡烛" },
+    { "index": 24, "newElement": "Boss 盛大之吻：刷卡、拉杆、倒置、长按新人" }
+  ],
+  "upgrades": [
+    { "id": "kissJar", "kind": "rule", "desc": "每关通关按星级获得亲亲；亲亲罐累计，连击 ≥3 额外 +1 亲亲" },
+    { "id": "loveStreak", "kind": "rule", "desc": "连续零失误通关累积连击，连击越高亲亲越多" },
+    { "id": "hintRefund", "kind": "rule", "desc": "用提示后 30 秒内通关，返还被扣的星星" },
+    { "id": "streakShield", "kind": "rule", "desc": "连续 3 关零失误时，下一关的第一次失误不计入" },
+    { "id": "cupidDiscount", "kind": "rule", "desc": "「丘比特帮你」改为 2 次失误即解锁" },
+    { "id": "doubleTap", "kind": "stat", "desc": "连点判定窗口 +50ms" },
+    { "id": "dragMagnet", "kind": "stat", "desc": "拖拽吸附半径 +30%" },
+    { "id": "retrySpeed", "kind": "stat", "desc": "关卡重开动画缩短 40%" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "leaderboard"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true },
+  "signatureMoment": "过关瞬间丘比特扑腾翅膀欢呼，弹出一句甜甜吐槽，亲亲罐 +N",
+  "antiScope": [
+    "不做联网/在线排行榜（只用本地最佳时间榜）",
+    "不做皮肤商店/内购",
+    "不做每日任务",
+    "不做剧情对话长文本",
+    "不做竖屏专属模式（横竖 letterbox 兼容）"
+  ],
+  "artSource": "甜蜜手绘卡通风：程序化 Canvas 矢量绘制（4 套场景包 + 丘比特角色 + 机关道具），UI 玫瑰粉 CSS；BGM/SFX 程序化 WebAudio 合成"
+}

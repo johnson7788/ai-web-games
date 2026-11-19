@@ -1,0 +1,39 @@
+{
+  "slug": "traffic-commute",
+  "genre": "quiz",
+  "oneLiner": "玩家扮演两位霓虹都市通勤者，在倒计时下点选安全的出行选择，连击赢星拿评级。",
+  "fun": { "primary": "mastery", "secondary": "meaning" },
+  "verbs": [
+    { "name": "answer", "cost": "倒计时在流逝，答错会打断连击", "feedback": ["sfx", "选项发光", "连击数字跳动"], "combinesWith": ["hint"] },
+    { "name": "hint", "cost": "消耗每局 1 次的提示令牌，且本题不再计连击", "feedback": ["sfx", "错误选项变暗"], "combinesWith": ["answer"] }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "先扫一眼信号灯，还是凭直觉直接点斑马线", "cost": "点错会丢失本题的星与连击" },
+    { "atSec": 20, "choice": "黄灯闪烁时等待还是抢行", "cost": "抢行判错，原地重试" },
+    { "atSec": 34, "choice": "过街天桥更绕但安全，还是横穿省时间", "cost": "横穿直接判错" },
+    { "atSec": 48, "choice": "公交车与货车停在路边，选对载具", "cost": "选错载具判错并重试" },
+    { "atSec": 62, "choice": "坐系安全带的座位，还是站在过道", "cost": "站过道/挤门口都不安全" },
+    { "atSec": 76, "choice": "车上扶好扶手，还是探头出窗看风景", "cost": "危险动作判错" },
+    { "atSec": 95, "choice": "下车选靠人行道一侧，还是靠车流一侧", "cost": "靠车流一侧会被判错" },
+    { "atSec": 110, "choice": "提示令牌现在用掉排除错误项，还是留着冲高星", "cost": "用提示本题不计连击，留则可能点错" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "斑马线与信号灯（步行场景）" },
+    { "index": 2, "newElement": "公交载具与车内座位（乘车场景）" },
+    { "index": 3, "newElement": "连击奖励 + 星级评级（结算）" }
+  ],
+  "upgrades": [
+    { "id": "hint-reveal", "kind": "rule" },
+    { "id": "freeze-timer", "kind": "rule" },
+    { "id": "fifty-fifty", "kind": "rule" },
+    { "id": "combo-shield", "kind": "rule" },
+    { "id": "double-score", "kind": "rule" },
+    { "id": "extra-time", "kind": "stat" },
+    { "id": "extra-hint", "kind": "stat" },
+    { "id": "star-boost", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "growth", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

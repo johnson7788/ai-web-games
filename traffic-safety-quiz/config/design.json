@@ -1,0 +1,58 @@
+{
+  "slug": "traffic-safety-quiz",
+  "genre": "quiz",
+  "oneLiner": "玩家扮演交通安全小卫士，在 30 秒倒计时内判断 10 张交通场景图是安全还是危险，连击加分、冲三星评级。",
+  "fun": {
+    "primary": "meaning",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "judge",
+      "cost": "答错会重置连击并锁按钮 0.35 秒，白白消耗倒计时",
+      "feedback": ["sfx", "flash", "combo-pill"],
+      "combinesWith": ["navigate"]
+    },
+    {
+      "name": "navigate",
+      "cost": "翻题不推进已答进度，却继续消耗整局倒计时",
+      "feedback": ["sfx", "card-slide"],
+      "combinesWith": ["judge"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "判断第一张场景图是安全还是危险", "cost": "答错连击清零且本题不推进" },
+    { "atSec": 8, "choice": "第二题拿不准时，先翻回上一题确认再答", "cost": "翻题动作继续消耗倒计时" },
+    { "atSec": 14, "choice": "面对第三题是否抢时间秒答", "cost": "秒答答错反而浪费更多时间" },
+    { "atSec": 22, "choice": "连击已 ×3，是否冒险答不确定的题冲三星", "cost": "答错连击归零、损失大量加分" },
+    { "atSec": 35, "choice": "时间剩 15 秒时是否放慢节奏稳答", "cost": "慢答可能超时失败" },
+    { "atSec": 48, "choice": "最后 5 秒剩 2 题，是否秒答赌一把", "cost": "可能答错无法通关" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 55, "twistSec": 55, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "judge + 人行道基础题组（斑马线/人行道/滑板）" },
+    { "index": 2, "newElement": "navigate 翻题 + 过马路题组（护栏/左右观察/斑马线）" },
+    { "index": 3, "newElement": "连击加分 + 信号灯与危险题组（红绿灯/追车/推搡）" }
+  ],
+  "upgrades": [
+    { "id": "combo-bonus", "kind": "rule" },
+    { "id": "double-check", "kind": "rule" },
+    { "id": "time-freeze", "kind": "rule" },
+    { "id": "star-thresholds", "kind": "rule" },
+    { "id": "streak-shield", "kind": "rule" },
+    { "id": "extra-time", "kind": "stat" },
+    { "id": "base-score", "kind": "stat" },
+    { "id": "combo-cap", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 10,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "game": "frenzy-racer",
+  "generatedAt": "2026-11-19T23:26:28.546Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7.857142857142857,
+    "style_consistent": 9.285714285714286
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1按钮（左上）高亮色与背景渐变融合，可能弱化可点击感",
+        "右下角黄色光标状元素位置异常，疑似UI残留或误放",
+        "‘0 / 36’星星计数文字偏小，远距离辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色车切换到蓝色车道以避开障碍物",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标进度 'Target 30%' 与 'x2' 倍率按钮间距过小，易误触",
+        "右上角图标（问号、手、重试、主页）无文字标签，新手难理解功能",
+        "红色障碍物为斜线条纹，与背景网格线在低对比下可能混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中间偏右的蓝色车，使其向右变道避开障碍物",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角按钮组（?、音量、重试、主页）间距过小，可能误触",
+        "目标进度 'Target 30%' 与 'x7' 倍率标签紧邻，视觉拥挤",
+        "红色障碍物图标为斜杠条纹，与常见‘禁止通行’符号不一致，易误解"
+      ]
+    },
+    {
+      "shot": "tests/final/04-shield.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色车右侧的红色障碍物以清除它",
+      "readable": 7,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标进度 '7/10' 与 'Target 30%' 语义冲突（完成数 vs 百分比），易混淆",
+        "左上角 'Level 1' 和 '10s' 字体过小，远距离辨识度低",
+        "黄色光点（疑似目标）无明确交互提示，玩家可能误判为装饰"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部三个车辆剪影被半透明遮罩覆盖，轮廓辨识度下降（silhouette扣分）",
+        "‘Track Cleared!’与‘Perfect Run!’字体大小/风格略有差异，轻微风格不一致",
+        "左上角HUD元素（如‘x7’图标）无明确语义，需上下文理解"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1和2的星级图标颜色（粉/蓝）与其余灰色关卡对比突兀，可能误导玩家优先级",
+        "右下角黄色光标（+号）位置异常，疑似误显示或未隐藏的调试元素",
+        "底部两辆赛车被两侧霓虹边框轻微遮挡，轮廓辨识度略降"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧发光的橙色十字目标点",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标点（橙色十字）与右侧竖线间距过小，易误触；",
+        "左侧紫色区域与右侧游戏区边界为亮粉色竖线，视觉上像障碍而非分界，可能误导玩家；",
+        "‘1/4’进度指示无明确图示含义（如4格中1格亮），需依赖文字理解"
+      ]
+    }
+  ]
+}

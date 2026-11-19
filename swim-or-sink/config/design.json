@@ -1,0 +1,96 @@
+{
+  "slug": "swim-or-sink",
+  "genre": "quiz",
+  "oneLiner": "落水后面对一道道水下险情，在空气耗尽前选对自救动作，靠连击回气游出三片海域，拿星级评分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "answer",
+      "cost": "答错扣 1 格空气，3 格耗尽即沉没，且本题要重答",
+      "feedback": ["sfx", "glowFlash", "splashFx"],
+      "combinesWith": ["recover"]
+    },
+    {
+      "name": "recover",
+      "cost": "连击一旦中断就清零，之前的回气机会作废",
+      "feedback": ["sfx", "comboArp", "airBubble"],
+      "combinesWith": ["answer"]
+    },
+    {
+      "name": "buoy",
+      "cost": "每局仅 1 次，用完本局不能再消错",
+      "feedback": ["sfx", "sonarPing", "eliminate"],
+      "combinesWith": ["answer"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "第一题读题后选哪个自救动作",
+      "cost": "选错扣一格空气"
+    },
+    {
+      "atSec": 18,
+      "choice": "三连击回气触手可及：求稳还是冒险刷连击",
+      "cost": "连击中断前功尽弃"
+    },
+    {
+      "atSec": 32,
+      "choice": "空气只剩 1 格：用浮标消错还是硬猜",
+      "cost": "浮标每局仅 1 次"
+    },
+    {
+      "atSec": 48,
+      "choice": "深水区 3 选 1：靠常识还是靠排除法",
+      "cost": "错选扣空气且退回本题"
+    },
+    {
+      "atSec": 66,
+      "choice": "远海选项被打乱：记住正确语义而不是位置",
+      "cost": "习惯性按位置选会错"
+    },
+    {
+      "atSec": 82,
+      "choice": "体力见底却快通关：保空气拿高星还是速通",
+      "cost": "保空气多花时间，速通星级低"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础 2 选 1 判断 + 空气条 3 格 + 连击计分" },
+    { "index": 2, "newElement": "深水区 3 选 1 题（多选题型）" },
+    { "index": 3, "newElement": "远海选项随机打乱 + 浮标道具实战" }
+  ],
+  "upgrades": [
+    { "id": "unlock3Option", "kind": "rule" },
+    { "id": "unlockShuffle", "kind": "rule" },
+    { "id": "unlockBuoy", "kind": "rule" },
+    { "id": "streakRegen", "kind": "rule" },
+    { "id": "comboMult", "kind": "rule" },
+    { "id": "baseScore", "kind": "stat" },
+    { "id": "starThreshold", "kind": "stat" },
+    { "id": "bonusAir", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

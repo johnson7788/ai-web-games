@@ -1,0 +1,69 @@
+{
+  "game": "wildland-rally",
+  "generatedAt": "2026-11-19T23:26:58.736Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.666666666666667,
+    "silhouette": 7.333333333333333,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕向右上方移动并射击红色三角敌人",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家飞船（青色三角）亮度略低于部分红色敌人，弱化了主体识别",
+        "左上角‘WAVE 1/4’与‘SCORE 0’间距过小，易误读为单个标签",
+        "右上角‘TARGETS 3’背景红框与文字对比度偏低，远距离辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/02-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏右的蓝色三角形玩家角色进行移动或射击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色敌人头顶血条颜色（绿/黄）与敌方红色主体对比弱，易误判状态",
+        "右上角‘TARGETS 3’按钮文字无背景衬底，深色背景下略显模糊",
+        "网格线过细且亮度偏低，在暗色区域辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/03-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下蓝色三角形玩家飞船进行移动或射击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色敌人三角形与黄色/绿色血条标签过小，眯眼时易混淆为纯装饰图形",
+        "右上角'LV 1'按钮与'?'按钮间距过窄，可能误触",
+        "部分深色陨石轮廓线较细，在暗背景中对比度偏低"
+      ]
+    }
+  ]
+}

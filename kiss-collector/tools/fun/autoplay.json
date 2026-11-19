@@ -1,0 +1,61 @@
+{
+  "game": "kiss-collector",
+  "genre": "puzzle",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 10.7,
+      "actions": 602,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0,
+      "deaths": 583,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 14,
+      "levelsReached": 24,
+      "completed": true,
+      "maxLevel": 24,
+      "actionsPerMin": 3381
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 120,
+      "actions": 3600,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.5,
+      "deaths": 1,
+      "idleSec": 60,
+      "maxEventGapSec": 0.03,
+      "uniqueEvents": 8,
+      "levelsReached": 1,
+      "completed": false,
+      "maxLevel": 1,
+      "actionsPerMin": 1800
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 120,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 120,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 1,
+      "levelsReached": 1,
+      "completed": false,
+      "maxLevel": 1,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T23:24:12.987Z"
+}

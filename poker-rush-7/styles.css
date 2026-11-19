@@ -1,0 +1,316 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #05060f;
+  color: #eaf2ff;
+  font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans', 'Microsoft YaHei', 'Noto Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  background: #0b0b22;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 扫描线（霓虹街机质感） */
+#scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.14) 0px,
+    rgba(0, 0, 0, 0.14) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.5;
+  z-index: 4;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  padding: 0 12px;
+  background: linear-gradient(180deg, rgba(8, 8, 24, 0.92), rgba(8, 8, 24, 0.55));
+  border-bottom: 1px solid rgba(120, 120, 255, 0.25);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+}
+.hud-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.hud-left, .hud-right { display: flex; align-items: center; gap: 8px; }
+#hud-level { font-weight: 800; font-size: 1rem; letter-spacing: 0.5px; color: #d9e4ff; }
+.hud-pill {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(20, 22, 48, 0.9);
+  border: 1px solid rgba(120, 120, 255, 0.3);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #cfe0ff;
+}
+#hud-time.time-low { color: #ff5c7a; border-color: #ff5c7a; animation: time-pulse 1s ease-in-out infinite; }
+#hud-combo { color: #ffd23d; }
+#hud-miss { color: #ff8a3d; }
+@keyframes time-pulse { 50% { opacity: 0.6; } }
+.hud-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 255, 0.35);
+  background: rgba(20, 22, 48, 0.9);
+  color: #cfe0ff;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hud-btn:hover { background: rgba(40, 44, 90, 0.9); }
+.hud-btn.is-muted { opacity: 0.55; }
+
+/* ---------- 目标卡面板 ---------- */
+#target-panel {
+  position: absolute;
+  top: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 14px;
+  background: rgba(12, 12, 32, 0.94);
+  border: 1px solid rgba(180, 92, 255, 0.55);
+  box-shadow: 0 0 18px rgba(180, 92, 255, 0.35);
+  z-index: 7;
+}
+#target-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #b45cff;
+  text-transform: uppercase;
+}
+.target-suit { font-size: 2rem; line-height: 1; }
+.target-rank { font-size: 1.9rem; font-weight: 900; line-height: 1; }
+.target-color {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+.target-color-name { font-size: 0.9rem; font-weight: 700; color: #eaf2ff; }
+
+/* ---------- 屏幕 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(6, 7, 20, 0.86);
+  z-index: 10;
+}
+/* 结算/暂停必须不透明背板，避免底下的卡牌透出被判 HUD 遮挡 */
+#screen-result, #screen-pause { background: #070818; }
+.screen h1 {
+  font-size: 3.4rem;
+  margin-bottom: 0.4rem;
+  color: #fff;
+  text-shadow: 0 0 12px #b45cff, 0 0 30px #4d7cff;
+  letter-spacing: 2px;
+}
+.screen h2 { font-size: 2rem; margin-bottom: 1rem; }
+.screen .subtitle { font-size: 1.15rem; margin-bottom: 1.6rem; opacity: 0.78; }
+.screen button {
+  padding: 12px 32px;
+  font-size: 1.2rem;
+  background: linear-gradient(180deg, #ff4f8f, #c43b6c);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  margin-top: 0.9rem;
+  box-shadow: 0 4px 0 #8a2750, 0 0 16px rgba(255, 79, 143, 0.5);
+}
+.screen button:hover { filter: brightness(1.08); }
+.screen button.btn-ghost {
+  background: rgba(20, 22, 48, 0.9);
+  color: #cfe0ff;
+  border: 1px solid rgba(120, 120, 255, 0.4);
+  box-shadow: none;
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 180px;
+}
+.screen .lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: rgba(12, 12, 32, 0.9);
+  color: #cfe0ff;
+  border: 1px solid #b45cff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.total-stars { font-size: 1.05rem; font-weight: 700; color: #ffd23d; margin-bottom: 6px; }
+
+/* 关卡格 */
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 52px);
+  gap: 10px;
+  margin-top: 22px;
+}
+.level-cell {
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 255, 0.4);
+  background: rgba(20, 22, 48, 0.85);
+  color: #cfe0ff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+.level-cell .lv-num { font-weight: 800; font-size: 0.95rem; }
+.level-cell .lv-stars { font-size: 0.6rem; color: #ffd23d; letter-spacing: 1px; }
+.level-cell.locked { opacity: 0.4; cursor: not-allowed; }
+
+/* ---------- 暂停 / 结算 ---------- */
+#screen-pause button { display: block; margin: 8px auto; min-width: 200px; }
+.win-stars { font-size: 2.8rem; letter-spacing: 8px; margin: 6px 0; }
+.win-stars .stars { display: block; font-size: 2.8rem; letter-spacing: 10px; color: #ffd23d; text-shadow: 0 0 14px rgba(255, 210, 61, 0.55); }
+.win-stars .stars:empty { display: none; }
+.win-stars em { display: block; font-style: normal; font-size: 1.05rem; font-weight: 800; color: #b9f6ff; letter-spacing: 2px; margin-top: 2px; }
+.win-meta { font-size: 1rem; opacity: 0.85; margin-bottom: 1.1rem; text-align: center; }
+#screen-result h2 { max-width: 900px; white-space: nowrap; overflow: visible; }
+#result-title.lose { color: #ff5c7a; }
+.win-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.win-btns button { margin: 0; }
+
+/* ---------- 教程 ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 20; pointer-events: none; }
+#tut-spotlight {
+  position: absolute;
+  border: 3px solid #ffd23d;
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 210, 61, 0.6);
+}
+#tut-card {
+  position: absolute;
+  max-width: 380px;
+  padding: 14px 18px;
+  background: rgba(14, 12, 30, 0.96);
+  border: 1px solid rgba(255, 210, 61, 0.5);
+  border-radius: 14px;
+  text-align: left;
+  pointer-events: auto;
+}
+#tut-title { font-weight: 900; margin-bottom: 6px; color: #ffd23d; }
+#tut-text { font-size: 0.95rem; line-height: 1.45; opacity: 0.92; }
+.tut-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+.tut-btns button { height: 40px; min-width: 92px; font-size: 0.95rem; margin: 0; }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 844px) {
+  #game-container { border-radius: 0; box-shadow: none; }
+  #title-text { font-size: 2.6rem; }
+  #level-grid { grid-template-columns: repeat(5, 56px); gap: 10px; margin-top: 18px; }
+  .level-cell { height: 56px; }
+  .hud-pill { padding: 0 8px; font-size: 0.78rem; }
+  #hud-level { font-size: 0.82rem; }
+  .hud-btn { width: 34px; height: 34px; }
+  #target-panel { gap: 6px; padding: 6px 12px; }
+  .target-suit { font-size: 1.6rem; }
+  .target-rank { font-size: 1.5rem; }
+  .target-color { width: 28px; height: 28px; }
+}
+
+/* ---------- 减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #hud-time.time-low { animation: none; }
+  #rotate-screen .rotate-icon { animation: none; }
+  .screen button, .hud-btn, .level-cell { transition: none; }
+}
+
+/* ---------- 教程卡片固定底部居中（视觉评审修复） ---------- */
+#tut-card { left: 50% !important; top: auto !important; bottom: 36px; transform: translateX(-50%); }
+@media (max-width: 900px) {
+  #tut-card { bottom: 12px; max-width: 92vw; }
+}
+
+/* ---------- 竖屏提示（触屏竖屏时显示，可跳过） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 26, 0.9);
+  }
+}
+#rotate-screen .rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #1c1240, #0b0b22);
+  border: 2px solid #b45cff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+#rotate-screen .rotate-icon { font-size: 3rem; animation: rotate-tip 2.2s ease-in-out infinite; }
+@keyframes rotate-tip { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+#rotate-screen p { color: #eaf2ff; font-size: 1.1rem; font-weight: 700; }
+#btn-rotate-skip {
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: none;
+  background: #ffb13c;
+  color: #3a2400;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b87a18;
+}

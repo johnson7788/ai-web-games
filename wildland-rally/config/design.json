@@ -1,0 +1,39 @@
+{
+  "slug": "wildland-rally",
+  "genre": "arcade",
+  "oneLiner": "玩家驾驶霓虹悬浮赛车在废土竞技场里躲避三型敌人围攻，用自动炮、闪烁与新星爆发连杀清波拿三星",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "move", "cost": "冲向敌人会迎面吃子弹", "feedback": ["引擎拖尾", "漂移音效", "速度线"], "combinesWith": ["dash"] },
+    { "name": "dash", "cost": "冷却期内无法再次闪烁", "feedback": ["残影", "嗖声", "短暂无敌"], "combinesWith": ["move", "nova"] },
+    { "name": "nova", "cost": "长冷却且必须贴近敌人", "feedback": ["冲击波环", "爆音", "全屏闪光"], "combinesWith": ["dash"] }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "冲上去吃回复道具，还是继续风筝", "cost": "吃伤害 vs 错过回血" },
+    { "atSec": 18, "choice": "穿过岩石用闪烁逃生，还是留闪烁保命", "cost": "交冷却 vs 冒被围风险" },
+    { "atSec": 35, "choice": "现在对扎堆敌人放新星，还是留给带盾波次", "cost": "失去爆发 vs 持续挨打" },
+    { "atSec": 60, "choice": "抢磁吸道具刷连击，还是抢护盾保命", "cost": "进攻 vs 防守" },
+    { "atSec": 95, "choice": "先集火重装，还是先清突击", "cost": "硬抗重装 vs 被突击持续磨血" },
+    { "atSec": 130, "choice": "压进波次速清，还是后撤回血", "cost": "冒死 vs 拖慢节奏" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 30, "twistSec": 40, "resolveSec": 30 },
+  "levels": [
+    { "index": 1, "newElement": "basic racers + repair pickups" },
+    { "index": 2, "newElement": "rock obstacles + dash blink" },
+    { "index": 3, "newElement": "shielded racers + nova burst" },
+    { "index": 4, "newElement": "champion brute + combo star rush" }
+  ],
+  "upgrades": [
+    { "id": "shield", "kind": "rule" },
+    { "id": "magnet", "kind": "rule" },
+    { "id": "combo", "kind": "rule" },
+    { "id": "rock-block", "kind": "rule" },
+    { "id": "dmg", "kind": "stat" },
+    { "id": "hp", "kind": "stat" },
+    { "id": "speed", "kind": "stat" },
+    { "id": "cd", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 40, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}
