@@ -1,0 +1,51 @@
+{
+  "slug": "coil",
+  "at": "2026-11-18T23:48:46.396Z",
+  "checks": {
+    "desktop": {
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+      ],
+      "badReqs": [
+        "502 http://api.flattr.com/js/0.6/load.js?mode=auto",
+        "http://api.flattr.com/js/0.6/load.js?mode=auto"
+      ],
+      "rendered": true,
+      "stateChange": false,
+      "shot": "games/coil/tests/final/desktop.png"
+    },
+    "mobile": {
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "console: Failed to load resource: net::ERR_NETWORK_CHANGED",
+        "console: Failed to load resource: net::ERR_NETWORK_CHANGED"
+      ],
+      "badReqs": [
+        "502 unt&show_faces=false&width=90&action=like&font=arial&colorscheme=light&height=21",
+        "502 http://fonts.googleapis.com/css?family=Molengo",
+        "http://fonts.googleapis.com/css?family=Molengo",
+        "502 http://fonts.googleapis.com/css?family=Ubuntu",
+        "http://fonts.googleapis.com/css?family=Ubuntu",
+        "502 http://platform.twitter.com/widgets.js",
+        "http://platform.twitter.com/widgets.js",
+        "502 http://api.flattr.com/js/0.6/load.js?mode=auto",
+        "http://api.flattr.com/js/0.6/load.js?mode=auto"
+      ],
+      "rendered": true,
+      "stateChange": null,
+      "shot": "games/coil/tests/final/mobile.png"
+    }
+  },
+  "pass": false,
+  "problems": [
+    "desktop: 1 个运行错误（console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)）",
+    "desktop: 2 个失败请求（502 http://api.flattr.com/js/0.6/load.js?mode=auto）",
+    "desktop: 交互后画面无变化（可能是纯死页）",
+    "mobile: 7 个运行错误（console: Failed to load resource: the server responded with a status of 502 (Bad Gateway)）",
+    "mobile: 9 个失败请求（502 unt&show_faces=false&width=90&action=like&font=arial&colorscheme=light&height=21）"
+  ]
+}

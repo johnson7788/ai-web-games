@@ -1,0 +1,33 @@
+{
+  "slug": "asteroids-classic",
+  "at": "2026-11-18T23:46:32.929Z",
+  "checks": {
+    "desktop": {
+      "errors": [
+        "pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD",
+        "pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD"
+      ],
+      "badReqs": [],
+      "rendered": false,
+      "stateChange": true,
+      "shot": "games/asteroids-classic/tests/final/desktop.png"
+    },
+    "mobile": {
+      "errors": [
+        "pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD",
+        "pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD"
+      ],
+      "badReqs": [],
+      "rendered": false,
+      "stateChange": null,
+      "shot": "games/asteroids-classic/tests/final/mobile.png"
+    }
+  },
+  "pass": false,
+  "problems": [
+    "desktop: 2 个运行错误（pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD）",
+    "desktop: 画面疑似空白/未渲染",
+    "mobile: 2 个运行错误（pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD）",
+    "mobile: 画面疑似空白/未渲染"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "crappy-bird",
+  "at": "2026-11-18T23:49:22.520Z",
+  "checks": {
+    "desktop": {
+      "errors": [
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+        "pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD"
+      ],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": true,
+      "shot": "games/crappy-bird/tests/final/desktop.png"
+    },
+    "mobile": {
+      "errors": [
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+        "pageerror: NotAllowedError: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD"
+      ],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": null,
+      "shot": "games/crappy-bird/tests/final/mobile.png"
+    }
+  },
+  "pass": false,
+  "problems": [
+    "desktop: 3 个运行错误（console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED）",
+    "mobile: 3 个运行错误（console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED）"
+  ]
+}

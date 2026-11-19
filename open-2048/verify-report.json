@@ -1,0 +1,22 @@
+{
+  "slug": "open-2048",
+  "at": "2026-11-18T23:45:42.316Z",
+  "checks": {
+    "desktop": {
+      "errors": [],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": true,
+      "shot": "games/open-2048/tests/final/desktop.png"
+    },
+    "mobile": {
+      "errors": [],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": null,
+      "shot": "games/open-2048/tests/final/mobile.png"
+    }
+  },
+  "pass": true,
+  "problems": []
+}

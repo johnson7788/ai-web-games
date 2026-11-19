@@ -1,0 +1,22 @@
+{
+  "slug": "blockrain",
+  "at": "2026-11-18T23:47:17.707Z",
+  "checks": {
+    "desktop": {
+      "errors": [],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": true,
+      "shot": "games/blockrain/tests/final/desktop.png"
+    },
+    "mobile": {
+      "errors": [],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": null,
+      "shot": "games/blockrain/tests/final/mobile.png"
+    }
+  },
+  "pass": true,
+  "problems": []
+}

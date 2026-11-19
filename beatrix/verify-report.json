@@ -1,0 +1,22 @@
+{
+  "slug": "beatrix",
+  "at": "2026-11-18T23:46:45.497Z",
+  "checks": {
+    "desktop": {
+      "errors": [],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": true,
+      "shot": "games/beatrix/tests/final/desktop.png"
+    },
+    "mobile": {
+      "errors": [],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": null,
+      "shot": "games/beatrix/tests/final/mobile.png"
+    }
+  },
+  "pass": true,
+  "problems": []
+}

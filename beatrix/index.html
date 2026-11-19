@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<title>Beatrix</title>
+<html>
+    <head>
+<script src="./config/sdk.config.js"></script>
+<script src="./src/core/sdk-boot.js"></script>
+<script src="./src/core/cors-img.js"></script>
+<script src="./config/locales.js"></script>
+<script src="./src/core/i18n.js"></script>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <script src="scripts/phaser.min.js"></script>
+        <script src="scripts/graphics.js"></script>
+        <script src="scripts/beat.js"></script>
+        <script src="scripts/indicator.js"></script>
+        <script src="scripts/drum.js"></script>
+        <script src="scripts/levels/0.js"></script>
+        <script src="scripts/levels/1.js"></script>
+        <script src="scripts/levels/2.js"></script>
+        <script src="scripts/levels/3.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/preload.js"></script>
+        <script src="scripts/boot.js"></script>
+        <style type="text/css">
+        body{
+        margin: 0;
+        padding: 0
+        }
+        </style>
+    </head>
+    <body>
+        <div id="gameContainer"></div>
+
+        <script type="text/javascript">
+        
+        window.onload = function() {
+            var game = new Phaser.Game(GRID_SIZE*PIXEL_SIZE, GRID_SIZE*PIXEL_SIZE, Phaser.AUTO, 'gameContainer');
+            game.state.add('boot', BasicGame.Boot);
+            game.state.add('preload', BasicGame.Preload);
+            game.state.add('game', GameState);
+            game.state.start('boot');
+        
+        };
+        
+        </script>
+    </body>
+</html>
