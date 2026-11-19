@@ -1,0 +1,37 @@
+{
+  "slug": "ring-fusion",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹 3×3 星环盘上拖拽同心环到空位，凑成横竖斜三连融合消环，连击充能后一键爆发清盘。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "place", "cost": "占用一个空位，可能堵死其他环的落点", "feedback": ["sfx", "glow", "burst"], "combinesWith": ["burst"] },
+    { "name": "burst", "cost": "消耗连击攒满的能量，且这次清除不计连击", "feedback": ["sfx", "flash", "shake"], "combinesWith": ["place"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先凑三连消环，还是先占位铺场", "cost": "占位过多会提前把棋盘堵死" },
+    { "atSec": 15, "choice": "把三环放进同一环点，还是分散到一条线上", "cost": "同一环点清得快，但点满即死" },
+    { "atSec": 30, "choice": "连击能量满了：现在爆发清堵点，还是留到更关键时", "cost": "爆发后连击能量归零" },
+    { "atSec": 45, "choice": "面对岩石槽位：先在其环点做消行震碎，还是绕开", "cost": "绕开会让岩石长期占位" },
+    { "atSec": 70, "choice": "限时模式：追求大额连击，还是稳妥快速消环续命", "cost": "贪连击可能超时" },
+    { "atSec": 100, "choice": "把高价值环留给即将成线的空位，还是塞进任意空位保安全", "cost": "保安全会降低连击上限" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "三色星环 + 拖拽放置" },
+    { "index": 2, "newElement": "岩石槽位（消行震碎）" },
+    { "index": 3, "newElement": "连击充能爆发" }
+  ],
+  "upgrades": [
+    { "id": "burst", "kind": "rule" },
+    { "id": "stone-shatter", "kind": "rule" },
+    { "id": "combo-multiplier", "kind": "rule" },
+    { "id": "extra-hand", "kind": "rule" },
+    { "id": "rock-slow", "kind": "rule" },
+    { "id": "color-up", "kind": "stat" },
+    { "id": "time-extend", "kind": "stat" },
+    { "id": "score-boost", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 40, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

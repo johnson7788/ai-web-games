@@ -1,0 +1,101 @@
+{
+  "game": "mr-hat-escape",
+  "generatedAt": "2026-11-19T17:24:43.568Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.2,
+    "silhouette": 8,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择网格（1-11）中，第10格内有星形图标与数字重叠，可能干扰识别",
+        "底部角色与平台边缘紧贴，眯眼时角色轮廓易与地面混淆",
+        "右上角语言切换按钮边框过细，与深色背景对比不足，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让角色向右移动以收集星星和钥匙，避开粉色三角障碍物，到达右侧红色终点门。",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Level 1’与星标/时间标签间距过小，可能在小屏设备上拥挤",
+        "右上角按钮（?、手形、Restart、Menu）无明确视觉层级区分，图标语义模糊（如手形图标用途不明）",
+        "终点门上的‘T’字符偏小且无描边，在深色背景下对比度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“Next”按钮继续关卡",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部角色与三角障碍物轮廓较弱，眯眼时易混淆为背景元素",
+        "‘Door Opened!’文字无描边，在深蓝背景下对比度略低",
+        "右下角绿色方块（终点门）未明确标识为可交互目标，仅靠位置暗示"
+      ]
+    },
+    {
+      "shot": "tests/final/04-blade.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或移动角色向右走到红色终点门",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Level 4’与星标/时间框间距过小，可能误触",
+        "角色与钥匙图标大小接近，初期易混淆主次",
+        "终点门内‘T’符号无说明，新手可能不解其意"
+      ]
+    },
+    {
+      "shot": "tests/final/05-crate.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或移动角色向右走到红色T形门处",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "钥匙图标与上方星星重叠，可能误判为单个收集物",
+        "左下角星星与橙色方块间距过近，易混淆为可交互对象",
+        "HUD中'0/3'星标与'Level 5'文字间距紧凑，小屏可能误读"
+      ]
+    }
+  ]
+}

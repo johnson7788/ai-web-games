@@ -1,0 +1,149 @@
+{
+  "game": "ring-fusion",
+  "generatedAt": "2026-11-19T17:36:56.215Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.625,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言选择下拉框无展开箭头，可能被误认为静态标签",
+        "部分环形元素在深色背景上对比度偏低（如左下角紫红环），弱光环境下易混淆",
+        "‘Match 3 rings · fuse the neon’副标题字号偏小，距主标题过近，略影响层级清晰度"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“开始”按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘环环相扣’下方副标题‘三环同色·霓虹融合’字号过小，弱对比度，3秒内不易捕捉",
+        "左上角环形图案部分重叠（如第一行第1、2个），可能干扰目标识别",
+        "右上角语言切换下拉框无展开箭头或悬停反馈，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部三个待融合的环形目标之一，准备与上方同色环匹配融合",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'Burst'按钮区域无明确触发反馈提示，玩家可能不确定是否可交互",
+        "‘Fused: 0/12’中‘0/12’字体略小，远距离辨识度稍低",
+        "右侧虚线轨迹起始点模糊，未明确指示发射源或操作路径"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next level”按钮继续游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Level cleared!’文字与下方星星评分间距过小，视觉拥挤",
+        "左上角‘Fused: 0/12’与‘Level 1’标签间距紧凑，易误读为单个元素",
+        "右上角‘Burst’区域按钮灰显且无明确状态反馈，功能意图模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部三个待选环形图案之一，尝试与上方已存在图案匹配融合",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'Burst'按钮区域无明确触发条件提示，玩家可能不知何时可用",
+        "左上角'Fused: 0/16'未说明融合规则，目标达成路径不清晰",
+        "中间空白区域有微弱虚线轨迹，疑似引导线但无上下文，易造成困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/06-time.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角亮黄色双环目标（最显眼且唯一带实心外环的活跃目标）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角‘Burst 0%’区域与主游戏区无明确分隔，视觉上略显孤立；",
+        "底部三个小环目标尺寸明显小于上方九宫格，可能造成操作误判；",
+        "‘Time: 60’按钮边框与背景对比度偏低，弱光环境下易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部三个彩色圆环中的一个（如黄色）以选择起始元素",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Burst’弹窗无明确触发条件提示，玩家可能不知何时可用",
+        "九宫格目标区域与底部操作区间距过大，视觉动线断裂",
+        "‘Fused: 0/12’未说明‘Fused’含义，新手易困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中间的黄粉双环按钮进行融合操作",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'Burst'面板与主游戏区无明显视觉分隔，可能干扰注意力",
+        "‘Fused: 0/12’文字较小且与背景对比度偏低，弱光下易误读",
+        "九宫格目标圆环中心点过小，眯眼时难以快速定位可交互焦点"
+      ]
+    }
+  ]
+}

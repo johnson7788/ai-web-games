@@ -1,0 +1,5 @@
+assets/_src/
+tests/artifacts/
+tests/final/
+tools/fun/
+node_modules/

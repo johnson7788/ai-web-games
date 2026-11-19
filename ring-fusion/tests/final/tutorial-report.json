@@ -1,0 +1,31 @@
+{
+  "game": "ring-fusion",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 4,
+    "stepIds": [
+      "Drag a ring tile from the bottom and drop it onto an empty slot on the board.",
+      "Match 3 rings of the same color in a row, column or diagonal to fuse them.",
+      "Reach the target to clear the level. Chain fusions to build your combo.",
+      "Fill the Burst meter, then tap any ring point to clear it in one shot."
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": []
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

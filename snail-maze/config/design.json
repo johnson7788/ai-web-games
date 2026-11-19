@@ -1,0 +1,74 @@
+{
+  "slug": "snail-maze",
+  "genre": "puzzle",
+  "oneLiner": "玩家操控霓虹蜗牛在发光管道里自动疾走，看准拐角与岩石的时机点击转向、击碎障碍、收集星尘冲刺三星。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "turn",
+      "cost": "点错时机（段中点击）会随机偏离撞墙，直接失败",
+      "feedback": ["sfx", "cornerFlash", "screenShake"],
+      "combinesWith": ["bash"]
+    },
+    {
+      "name": "bash",
+      "cost": "必须在岩石前的小窗口内点击，早/晚都会撞上岩石打断连击",
+      "feedback": ["sfx", "shardBurst", "screenShake"],
+      "combinesWith": ["turn"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一个拐角：提前一点转，还是等到发光箭头最亮再转", "cost": "提前转向会切角，晚了直接撞墙" },
+    { "atSec": 8, "choice": "连击已到 ×3：是稳扎稳打过弯，还是为了抢星尘贴内线", "cost": "贴内线省时间但离墙更近" },
+    { "atSec": 15, "choice": "岩石预警亮起：在窗口内点击击碎拿奖励，还是让它打断连击保命", "cost": "壳击时机错了连击清零" },
+    { "atSec": 22, "choice": "旋转关卡里方向被转 90°：凭感觉点击，还是等箭头出现再点", "cost": "凭感觉点错即撞墙" },
+    { "atSec": 30, "choice": "高速段连续拐角：跟着节奏点，还是减速节奏重新对齐", "cost": "节奏一乱就错过下一个拐角" },
+    { "atSec": 40, "choice": "终点前的最后一颗星尘：绕都不绕直接冲线，还是贴过去收满三星", "cost": "贴过去风险翻倍，冲线则少一星" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 40, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "基础拐角转向（第一课）" },
+    { "index": 2, "newElement": "拐角相机旋转 90°" },
+    { "index": 3, "newElement": "岩石障碍 + 壳击时机" },
+    { "index": 4, "newElement": "随机旋转干扰" },
+    { "index": 5, "newElement": "更密集的星尘连击路线" },
+    { "index": 6, "newElement": "提速 + 拐角旋转叠加" },
+    { "index": 7, "newElement": "连续短段落高频转向" },
+    { "index": 8, "newElement": "随机旋转 + 长直道" },
+    { "index": 9, "newElement": "双岩石窄窗口" },
+    { "index": 10, "newElement": "更长的段落提速" },
+    { "index": 11, "newElement": "三段岩石连发" },
+    { "index": 12, "newElement": "高速拐角旋转" },
+    { "index": 13, "newElement": "随机旋转 + 岩石叠加" },
+    { "index": 14, "newElement": "长赛道耐力战" },
+    { "index": 15, "newElement": "拐角旋转 + 星尘分散" },
+    { "index": 16, "newElement": "反向开局（向下走）" },
+    { "index": 17, "newElement": "高频拐角 + 壳击混合" },
+    { "index": 18, "newElement": "随机旋转高频切换" },
+    { "index": 19, "newElement": "岩石群 + 星尘夹缝" },
+    { "index": 20, "newElement": "满速长直道冲刺" },
+    { "index": 21, "newElement": "拐角旋转连续 4 弯" },
+    { "index": 22, "newElement": "随机旋转 + 长距离" },
+    { "index": 23, "newElement": "高密度星尘 + 岩石" },
+    { "index": 24, "newElement": "极速反应考验" },
+    { "index": 25, "newElement": "拐角旋转 + 双岩石" },
+    { "index": 26, "newElement": "长段落回环路线" },
+    { "index": 27, "newElement": "随机旋转满速" },
+    { "index": 28, "newElement": "岩石连发收尾" },
+    { "index": 29, "newElement": "三岩石 + 满速 + 旋转" },
+    { "index": 30, "newElement": "终极综合考验" }
+  ],
+  "upgrades": [
+    { "id": "rockObstacle", "kind": "rule", "desc": "第 3 关起出现岩石，撞上即断连击" },
+    { "id": "bashTiming", "kind": "rule", "desc": "岩石前窗口内点击可击碎并加分" },
+    { "id": "comboMultiplier", "kind": "rule", "desc": "连击倍率 ×1..×5，星尘分数翻倍" },
+    { "id": "starRating", "kind": "rule", "desc": "三星评级：满星尘 + 无撞岩" },
+    { "id": "cameraRotate", "kind": "rule", "desc": "拐角相机旋转 90°，方向感被打乱" },
+    { "id": "randomRotate", "kind": "rule", "desc": "每 3 秒随机旋转画面" },
+    { "id": "speedUp", "kind": "stat", "desc": "速度从 6 提升到 14" },
+    { "id": "longerTracks", "kind": "stat", "desc": "后期赛道段落更长更密" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 3, "firstSuccessSec": 40, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

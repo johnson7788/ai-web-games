@@ -1,0 +1,149 @@
+{
+  "game": "bubble-shooter-pop",
+  "generatedAt": "2026-11-19T17:29:52.481Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 8.75,
+    "style_consistent": 9.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play-basic.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的蓝色发射器向上发射子弹击中三个球体",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'WAVE 1'与'COMBO ×0'间距过小，易误读为'WAVE1COMBO'",
+        "右上角三个图标（?、空框、U、锁）无文字说明，功能不明确",
+        "黄色球体亮度显著高于粉色球体，可能误导玩家优先目标"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play-rock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置发射子弹击中带数字5的紫色球体",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'COMBO ×0'与'MISS 0/6'间距过小，易误读为'COMBO×0MISS'",
+        "紫色球体上的数字'5'字体略小且无描边，在深色背景上对比度偏低",
+        "底部玩家发射器图标与地面条带颜色接近（均为暗红），边界不够清晰"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play-gold.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色发射器向上发射粉色球体击中上方敌人",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'COMBO x1'与'MISS 0/6'间距过小，易误读为'COMBO x1MISS'",
+        "右上角三个图标（?、空框、U、铃铛）无文字说明，功能不明确",
+        "粉色球体与敌人垂直对齐但无轨迹提示，新手可能不确定是否需预判"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play-bomb.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置的蓝色玩家图标，准备发射或瞄准上方三个彩色球体",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'COMBO x1'与'MISS 0/6'之间间距过小，易误读为'COMBO x1MISS'",
+        "右上角'?'按钮无悬停提示，且图标语义模糊（可能被误认为设置）",
+        "红色球体上的数字'2'字体略小，在快速移动时可能辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/05-play-mix.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的玩家图标向上发射子弹击中上方带数字的球体",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'COMBO x1'与'MISS 0/6'之间间距过小，易误读为'COMBO x1MISS'",
+        "紫色5号球体内部箭头图标与数字5轻微重叠，影响辨识",
+        "右上角'?'按钮无悬停提示或说明，功能不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/06-play-powerup.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色玩家图标发射子弹击中粉色或蓝色球体",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'COMBO x1'与'MISS 0/6'间距过小，易误读",
+        "中间黄色闪电图标与右侧小矩形图标功能不明，无提示",
+        "底部玩家图标与深色底栏融合度高，边缘对比略弱"
+      ]
+    },
+    {
+      "shot": "tests/final/07-play-triple.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击或按对应颜色的球（蓝/绿/黄）来匹配下方发射器射出的颜色",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'COMBO x1'与'MISS 0/6'间距过小，易误读为'COMBO x1MISS'",
+        "绿色球下方三个小光点位置偏高，可能被误认为是目标而非指示器",
+        "底部玩家图标发光过强，与背景网格线对比度低，弱光环境下可能辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部玩家图标（发射器）与标题文字垂直距离过近，可能在小屏设备上产生视觉干扰",
+        "‘Dodge the falling bubbles...’提示文字字号偏小、颜色偏淡（粉红），在深色背景下对比度不足",
+        "右上角语言切换按钮边框为青色，与主标题风格一致但未加阴影/发光，略显突兀"
+      ]
+    }
+  ]
+}

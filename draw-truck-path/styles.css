@@ -1,0 +1,239 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: #05060f;
+  color: #eaf6ff;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Segoe UI', 'Microsoft YaHei', 'Apple SD Gothic Neo', Tahoma, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  background: #070818;
+  overflow: hidden;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(6, 8, 22, 0.82);
+  z-index: 10;
+  padding: 24px;
+}
+.screen.hidden, .hidden { display: none !important; }
+#screen-title { background: rgba(6, 8, 22, 0.6); }
+.screen h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.4rem;
+  color: #2ef2ff;
+  letter-spacing: 4px;
+  text-shadow: 0 0 18px rgba(46, 242, 255, 0.7);
+}
+.screen h2 { font-size: 2rem; margin-bottom: 1rem; }
+.screen .subtitle { font-size: 1.05rem; margin-bottom: 1.4rem; opacity: 0.78; }
+.screen button {
+  padding: 12px 34px;
+  font-size: 1.2rem;
+  background: #2ef2ff;
+  color: #04121a;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  margin-top: 1rem;
+  box-shadow: 0 0 16px rgba(46, 242, 255, 0.55);
+}
+.screen button:hover { background: #7efaff; }
+.screen .btn-ghost { background: transparent; color: #cfeaff; border: 1px solid rgba(207, 234, 255, 0.4); box-shadow: none; }
+.screen .lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #0a0f26;
+  color: #2ef2ff;
+  border: 1px solid #2ef2ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.screen .lang-select:focus { outline: 2px solid #2ef2ff; outline-offset: 2px; }
+
+.total-stars { font-size: 1.05rem; margin-bottom: 0.4rem; color: #ffd23e; letter-spacing: 2px; }
+.level-grid { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; justify-content: center; }
+.level-cell {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 84px; height: 84px; border-radius: 14px;
+  background: #0a1030; border: 2px solid #2ef2ff;
+  color: #eaf6ff; cursor: pointer; font-family: inherit;
+}
+.level-cell .lv-num { font-size: 1.3rem; font-weight: 800; }
+.level-cell .lv-stars { font-size: 0.85rem; color: #ffd23e; }
+.level-cell.locked { opacity: 0.38; border-color: #444; cursor: not-allowed; }
+
+/* ---------- HUD（不透明条，避免遮挡判定） ---------- */
+#hud {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 46px;
+  background: #070a18;
+  border-bottom: 2px solid #16203a;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 12px;
+  z-index: 5;
+}
+.hud-row { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+.hud-left { display: flex; align-items: center; gap: 10px; }
+.hud-right { display: flex; align-items: center; gap: 6px; }
+#hud-level { font-weight: 800; font-size: 1.05rem; color: #cfeaff; }
+.hud-pill {
+  padding: 4px 11px; border-radius: 999px;
+  background: #101a3a; border: 1px solid #26315c;
+  font-size: 0.95rem; color: #eaf6ff;
+}
+.hud-pill.time-low { color: #ff7a6a; border-color: #ff7a6a; animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0.45; } }
+.hud-btn {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: #101a3a; border: 1px solid #2a3766; color: #cfeaff;
+  cursor: pointer; font-size: 1rem; line-height: 1;
+}
+.hud-btn:hover { border-color: #2ef2ff; }
+
+/* ---------- 方向控制（底部两侧，≥44px） ---------- */
+#drive-controls { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
+.drive-btn {
+  position: absolute;
+  bottom: 18px;
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  background: rgba(8, 12, 30, 0.86);
+  border: 2px solid #2ef2ff;
+  color: #2ef2ff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: 0 0 16px rgba(46, 242, 255, 0.35);
+}
+.drive-btn:active { background: #12303f; }
+#btn-left { left: 18px; }
+#btn-right { right: 18px; }
+
+/* ---------- 结算屏 ---------- */
+.win-stars .stars { display: block; font-size: 2.8rem; letter-spacing: 10px; color: #FFD84E; text-shadow: 0 0 14px rgba(255, 216, 78, 0.55); }
+.win-stars .stars:empty { display: none; }
+.win-stars em { display: block; font-style: normal; font-size: 1rem; font-weight: 800; color: #B9F6FF; letter-spacing: 2px; margin-top: 4px; text-shadow: none; }
+.win-meta { font-size: 1rem; opacity: 0.9; margin-bottom: 1.1rem; }
+#result-title.lose { color: #ff7a6a; }
+.win-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.win-btns button { margin: 0; }
+
+/* ---------- 教程高亮（卡片固定底部居中） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 20; pointer-events: none; }
+#tut-spotlight {
+  position: absolute;
+  border: 3px solid #FFD84E;
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 216, 78, 0.6);
+}
+#tut-card {
+  position: absolute;
+  max-width: 420px;
+  padding: 14px 18px;
+  background: rgba(10, 12, 28, 0.96);
+  border: 1px solid rgba(46, 242, 255, 0.5);
+  border-radius: 14px;
+  text-align: left;
+  pointer-events: auto;
+  left: 50%;
+  top: auto;
+  bottom: 36px;
+  transform: translateX(-50%);
+}
+#tut-title { font-weight: 900; margin-bottom: 6px; color: #2ef2ff; }
+#tut-text { font-size: 0.95rem; line-height: 1.45; opacity: 0.94; }
+.tut-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+.tut-btns button { height: 40px; min-width: 92px; font-size: 0.95rem; margin: 0; }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 844px) {
+  #game-container { border-radius: 0; box-shadow: none; }
+  #title-text { font-size: 2.4rem; }
+  .level-cell { width: 64px; height: 64px; }
+  .hud-pill { padding: 3px 8px; font-size: 0.78rem; }
+  #hud-level { font-size: 0.82rem; }
+  .hud-btn { width: 32px; height: 32px; }
+  .drive-btn { width: 52px; height: 52px; bottom: 12px; }
+  .win-stars .stars { font-size: 2rem; }
+}
+@media (max-width: 900px) {
+  #tut-card { bottom: 12px; max-width: 92vw; }
+}
+
+/* ---------- 减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hud-pill.time-low { animation: none; }
+  .btn, .screen button, .hud-btn, .level-cell, .drive-btn { transition: none; }
+}
+
+/* ---------- 竖屏提示（触屏竖屏时显示，可跳过） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 8, 22, 0.9);
+  }
+}
+#rotate-screen .rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #101a3a, #0a1030);
+  border: 2px solid #2ef2ff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+#rotate-screen .rotate-icon { font-size: 3rem; animation: rotate-tip 2.2s ease-in-out infinite; }
+@keyframes rotate-tip { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+#rotate-screen p { color: #eaffff; font-size: 1.1rem; font-weight: 700; }
+#btn-rotate-skip {
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: none;
+  background: #ffd23e;
+  color: #2a1c00;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b8891a;
+}
+@media (prefers-reduced-motion: reduce) { #rotate-screen .rotate-icon { animation: none; } }

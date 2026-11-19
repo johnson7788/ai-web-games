@@ -1,0 +1,114 @@
+{
+  "slug": "mr-hat-escape",
+  "genre": "puzzle",
+  "oneLiner": "帽子先生在霓虹牢房里向右奔跑跳跃，捡钥匙开门、躲尖刺锯片，一路收集星星换三星评级逃出 11 扇门。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "run",
+      "cost": "需要持续按住方向键，一旦停下，身后的锯片/尖刺窗口就缩短",
+      "feedback": ["neonTrail", "sfx"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "jump",
+      "cost": "跳起后在空中保持惯性，落点要提前算，撞上锯片直接重开本关",
+      "feedback": ["sfx", "airPose"],
+      "combinesWith": ["run"]
+    },
+    {
+      "name": "grab",
+      "cost": "钥匙/吊桥/木箱都要先靠近才能交互；捡起钥匙会激活门，也可能把下一波锯片引出来",
+      "feedback": ["sfx", "glowHighlight"],
+      "combinesWith": ["run"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "先绕路捡近处的星星，还是直奔钥匙",
+      "cost": "绕路捡星会多暴露在尖刺前，直奔钥匙会丢掉三星评级"
+    },
+    {
+      "atSec": 14,
+      "choice": "现在跳过尖刺，还是等锯片转到安全角度再走",
+      "cost": "早跳省时间但可能正好撞上锯片，等太久会打乱连击"
+    },
+    {
+      "atSec": 24,
+      "choice": "把木箱推去垫高台，还是留着挡尖刺",
+      "cost": "木箱只有一次位置，推错就得重开本关"
+    },
+    {
+      "atSec": 38,
+      "choice": "按住锚定上升的钥匙，还是放它升到更高处再跳",
+      "cost": "锚太久会错过最佳起跳时机，放太高又够不着"
+    },
+    {
+      "atSec": 55,
+      "choice": "把吊桥拖下来架住缺口，还是直接长跳过去",
+      "cost": "拖桥稳但慢，长跳失败会直接掉坑重来"
+    },
+    {
+      "atSec": 70,
+      "choice": "收集第三颗星换三星评级，还是立刻进门",
+      "cost": "三星需要多绕一段危险路，贪心可能撞上锯片"
+    },
+    {
+      "atSec": 90,
+      "choice": "把 KEY 两个字母拖到门上，还是先清空路上的尖刺",
+      "cost": "拖字母时角色不能移动，等于把自己暴露在危险里"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "跑步 + 跳跃 + 钥匙开门的核心循环" },
+    { "index": 2, "newElement": "浮空单向台阶（跳上去、从下面穿）" },
+    { "index": 3, "newElement": "连续尖刺巷（节奏跳）" },
+    { "index": 4, "newElement": "旋转锯片（顺时针/逆时针）" },
+    { "index": 5, "newElement": "可推动的木箱垫脚" },
+    { "index": 6, "newElement": "上升的滑轮钥匙（按住锚定）" },
+    { "index": 7, "newElement": "可拖动的吊桥" },
+    { "index": 8, "newElement": "超长横向关卡（钥匙在最左、门在最右）" },
+    { "index": 9, "newElement": "垂直天梯爬升" },
+    { "index": 10, "newElement": "拖拽 KEY 字母开门" },
+    { "index": 11, "newElement": "终章：尖刺+锯片+木箱+高台四轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockStars", "kind": "rule", "desc": "第 1 关起星星计入 1–3 星评级" },
+    { "id": "unlockCombo", "kind": "rule", "desc": "第 2 关起连击窗口内吃星翻倍得分" },
+    { "id": "unlockBlade", "kind": "rule", "desc": "第 4 关起旋转锯片登场，需要读时机" },
+    { "id": "unlockCrate", "kind": "rule", "desc": "第 5 关起木箱可推动，成为垫脚/挡刺工具" },
+    { "id": "airControl", "kind": "stat", "desc": "空中横向微调，落点更可控" },
+    { "id": "moveSpeed", "kind": "stat", "desc": "终章移速 +12%，节奏更紧凑" },
+    { "id": "jumpPower", "kind": "stat", "desc": "天梯关跳跃高度 +8%" },
+    { "id": "starScore", "kind": "stat", "desc": "每颗星基础分 100，连击递增" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

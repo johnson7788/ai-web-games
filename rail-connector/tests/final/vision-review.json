@@ -1,0 +1,149 @@
+{
+  "game": "rail-connector",
+  "generatedAt": "2026-11-19T17:25:39.651Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 7.5,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的 'Start' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'RAIL CONNECTOR' 与下方轨道图形轻微重叠，可能影响视觉焦点",
+        "星标计数 '★ 0 / 36' 字体偏小，远距离辨识度略低",
+        "右上角语言选择框边框过细，与深色背景对比不足，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击上方红色方框内的黄色圆点（被虚线框选中的目标）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中‘60s’计时器与左侧‘Score 0/40’间距过小，易误触",
+        "右上角图标组（雪flake、?、重试、主页）密集且无分隔，视觉拥挤",
+        "两个矩形路径的灰色轮廓亮度偏低，在深色背景下对比度不足，影响路径识别"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊路径与前景UI元素（如星星、按钮）存在轻微视觉干扰，可能影响快速识别可交互区域",
+        "顶部HUD中‘60s’计时器与左侧‘Score 0/40’间距过近，小屏下易误读",
+        "‘Line Clear!’标题字体略显纤细，在低对比度环境下辨识度稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色圆点（R目标）或蓝色圆点（B目标）以触发对应路径",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中‘80s’计时器与左侧‘Score 0/60’间距过小，易误触",
+        "右上角图标组（雪flake、?、重置、主页）密集且无分隔，辨识度略低",
+        "两个方框内灰色小方块（疑似可移动物）与背景网格对比度不足，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/05-frost.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色圆圈内的黄色方块（红队起点）开始移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中‘R→’与‘B→’图标紧邻且无间距，易误触或混淆",
+        "左上角‘Level 2’和‘Score 0/60’按钮间距过小，可能在小屏设备上误点",
+        "两个虚线框内黄色方块（玩家）被虚线框部分遮挡，轮廓清晰度略降"
+      ]
+    },
+    {
+      "shot": "tests/final/06-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的 'Start' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'RAIL CONNECTOR' 与背景轨道图形部分重叠，轻微干扰识别",
+        "星标计数 '0 / 36' 字体偏小，远距离辨识度略低",
+        "右上角语言选择框边框与背景网格线对比度不足，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击上方红色方块（红队目标点）或下方蓝色方块（蓝队目标点）以激活对应路径",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 HUD 中‘60s’右侧小圆点按钮无标签且功能不明，易误触",
+        "两个路径框内黄色虚线框物体（疑似开关）与同色圆点视觉冲突，辨识度低",
+        "红/蓝菱形目标点发光过强，与路径边框亮度接近，削弱目标突出性"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色‘开始’按钮启动游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘轨道连接’与下方副标题间距偏小，略显拥挤",
+        "左上角红色装置与右下角蓝色装置视觉权重相近，玩家初始焦点不唯一",
+        "星标计数‘0 / 36’字体偏小，远距离辨识度较低"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "02-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.debug.setTutorialDone(true)" },
+    { "eval": "window.__ll.start(0)" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入游戏" },
+    { "screenshot": "03-playing.png" },
+    { "assert": "window.__ll.debug.state().floors > 2", "name": "楼层已生成" },
+    { "assert": "window.__ll.debug.state().nextDir === 1 || window.__ll.debug.state().nextDir === -1", "name": "下一层方向有效" },
+    { "eval": "window.__ll.debug.climbCorrectN(6)" },
+    { "wait": 300 },
+    { "assert": "window.__ll.debug.state().score > 0", "name": "已得分" },
+    { "screenshot": "04-mid-climb.png" },
+    { "eval": "window.__ll.debug.climbWrong()" },
+    { "wait": 700 },
+    { "assert": "window.__ll.state.phase === 'result'", "name": "坠亡结算" },
+    { "screenshot": "05-result.png" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "一键重开" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" }
+  ],
+  "checks": { "console": true, "failedRequests": true, "external": true },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.debug.setTutorialDone(true); window.__ll.start(0)"
+  },
+  "mobile": {
+    "viewport": [844, 390],
+    "steps": [
+      { "wait": 700 },
+      { "eval": "window.__ll.debug.setTutorialDone(true)" },
+      { "eval": "window.__ll.start(0)" },
+      { "wait": 400 },
+      { "assert": "window.__ll.state.phase === 'playing'", "name": "移动端进入游戏" },
+      { "eval": "window.__ll.debug.climbCorrectN(4)" },
+      { "wait": 300 },
+      { "screenshot": "06-mobile-playing.png" }
+    ]
+  }
+}

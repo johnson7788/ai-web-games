@@ -1,0 +1,286 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+[hidden] { display: none !important; }
+.hidden { display: none !important; }
+
+:root {
+  --bg: #0a0a20;
+  --ink: #e9f6ff;
+  --cyan: #5ee6ff;
+  --magenta: #ff6bd6;
+  --amber: #ffd75e;
+  --panel: rgba(10, 12, 30, 0.96);
+  --panel-border: rgba(94, 230, 255, 0.5);
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  background: #05050f;
+  color: var(--ink);
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Segoe UI', 'Microsoft YaHei', 'Malgun Gothic', Tahoma, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #0a0a20;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---------- HUD（不透明顶部条，避免遮挡玩法区） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 5;
+  background: linear-gradient(180deg, rgba(6, 8, 22, 0.97), rgba(6, 8, 22, 0.9));
+  border-bottom: 1px solid rgba(94, 230, 255, 0.25);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+.hud-row {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 10px;
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 10px; }
+.hud-pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(20, 26, 48, 0.9);
+  border: 1px solid rgba(94, 230, 255, 0.3);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--cyan);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+#hud-score { color: var(--amber); border-color: rgba(255, 215, 94, 0.4); }
+#hud-combo { color: var(--magenta); border-color: rgba(255, 107, 214, 0.4); }
+#hud-combo.combo-hot { animation: combo-glow 0.4s ease-in-out infinite alternate; }
+#hud-ammo.ammo-low { color: #ff5d7a; border-color: rgba(255, 93, 122, 0.6); animation: ammo-blink 0.6s steps(2) infinite; }
+@keyframes combo-glow { from { box-shadow: 0 0 4px rgba(255,107,214,0.3); } to { box-shadow: 0 0 14px rgba(255,107,214,0.8); } }
+@keyframes ammo-blink { 50% { opacity: 0.5; } }
+
+.hud-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(94, 230, 255, 0.4);
+  background: rgba(20, 26, 48, 0.95);
+  color: var(--cyan);
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+}
+.hud-btn:hover { background: rgba(40, 52, 90, 0.95); }
+.hud-btn.is-muted { color: #6a7388; border-color: rgba(120, 130, 150, 0.4); }
+
+/* 目标提示横幅（开局短暂显示，位于 HUD 下方、玩法区上方，不遮实体） */
+#goal-hint {
+  position: absolute;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  padding: 8px 22px;
+  background: rgba(8, 10, 24, 0.72);
+  border: 1px solid rgba(94, 230, 255, 0.5);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 0 18px rgba(94, 230, 255, 0.35);
+}
+
+/* ---------- 屏幕 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(70, 120, 255, 0.22), transparent 60%),
+    linear-gradient(180deg, rgba(8, 10, 26, 0.9), rgba(12, 8, 30, 0.95));
+  backdrop-filter: blur(2px);
+}
+.screen.hidden { display: none !important; }
+.screen h1 {
+  font-size: 4.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.4rem;
+  color: #fff;
+  text-shadow:
+    0 0 8px rgba(94, 230, 255, 0.9),
+    0 0 24px rgba(94, 230, 255, 0.55),
+    0 0 48px rgba(255, 107, 214, 0.4);
+}
+.screen h2 { font-size: 2.4rem; margin-bottom: 1.2rem; color: #fff; text-shadow: 0 0 14px rgba(94,230,255,0.6); }
+.screen .subtitle { font-size: 1.15rem; margin-bottom: 1rem; opacity: 0.85; letter-spacing: 1px; }
+.title-best { font-size: 0.95rem; color: var(--amber); margin-bottom: 1.4rem; letter-spacing: 1px; }
+
+.screen button {
+  padding: 14px 40px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #34d7f5, #1a9fd0);
+  color: #041018;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 0.7rem;
+  box-shadow: 0 0 18px rgba(94, 230, 255, 0.5), 0 4px 0 rgba(20, 90, 120, 0.9);
+}
+.screen button:hover { filter: brightness(1.1); }
+.screen button.btn-ghost {
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid rgba(94, 230, 255, 0.5);
+  box-shadow: none;
+  padding: 10px 22px;
+  font-size: 1rem;
+}
+
+.lang-select {
+  position: absolute;
+  top: 16px;
+  inset-inline-end: 16px;
+  padding: 8px 14px;
+  background: #0d1020;
+  color: var(--cyan);
+  border: 1px solid rgba(94, 230, 255, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.lang-select:focus { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* 结算 */
+#result-stars .stars { display: block; font-size: 3rem; letter-spacing: 12px; color: var(--amber); text-shadow: 0 0 16px rgba(255,215,94,0.6); margin-bottom: 6px; }
+#result-time { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; color: #fff; }
+#result-score { font-size: 1.05rem; opacity: 0.9; margin-bottom: 4px; color: var(--cyan); }
+#result-best { font-size: 1rem; color: var(--amber); margin-bottom: 1.1rem; }
+.win-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.win-btns button { margin: 0; }
+
+/* ---------- 教程高亮（卡片固定底部居中） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 20; pointer-events: none; }
+#tut-spotlight {
+  position: absolute;
+  border: 3px solid var(--amber);
+  border-radius: 14px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.55), 0 0 22px rgba(255, 215, 94, 0.65);
+}
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  max-width: 380px;
+  padding: 14px 18px;
+  background: rgba(10, 12, 26, 0.97);
+  border: 1px solid rgba(255, 215, 94, 0.6);
+  border-radius: 14px;
+  text-align: left;
+  pointer-events: auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+#tut-title { font-weight: 900; margin-bottom: 6px; color: var(--amber); }
+#tut-text { font-size: 0.95rem; line-height: 1.5; opacity: 0.94; }
+.tut-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+.tut-btns button { height: 40px; min-width: 92px; font-size: 0.95rem; margin: 0; padding: 8px 18px; }
+
+/* ---------- 竖屏提示（触屏竖屏时显示，可跳过） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 5, 15, 0.92);
+  }
+}
+#rotate-screen .rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #141a3c, #0d1030);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+#rotate-screen .rotate-icon { font-size: 3rem; animation: rotate-tip 2.2s ease-in-out infinite; }
+@keyframes rotate-tip { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+#rotate-screen p { color: var(--cyan); font-size: 1.1rem; font-weight: 700; }
+#btn-rotate-skip {
+  padding: 11px 26px;
+  border-radius: 12px;
+  border: none;
+  background: var(--amber);
+  color: #3a2400;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b8860b;
+}
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 844px) {
+  #game-container { border-radius: 0; box-shadow: none; }
+  #title-text { font-size: 2.8rem; }
+  .hud-pill { padding: 3px 9px; font-size: 0.8rem; }
+  #hud { height: 54px; }
+  .hud-btn { width: 44px; height: 44px; }
+  .screen h1 { font-size: 3rem; }
+}
+@media (max-width: 900px) {
+  #tut-card { bottom: 12px; max-width: 92vw; }
+}
+
+/* ---------- 减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #hud-combo.combo-hot, #hud-ammo.ammo-low { animation: none; }
+  #rotate-screen .rotate-icon { animation: none; }
+  .screen button, .hud-btn { transition: none; }
+}

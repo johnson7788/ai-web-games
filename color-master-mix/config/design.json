@@ -1,0 +1,83 @@
+{
+  "slug": "color-master-mix",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹街机风的分格画布上，用 8×8 色板把图形一格一格点亮——封印格要等邻居上色才解锁，连击上色抢时间换三星。",
+  "fun": {
+    "primary": "expression",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "paint",
+      "cost": "颜色一旦涂上就定型，想改只能撤销，而撤销会打断当前连击",
+      "feedback": ["sfx", "glowFlash", "comboPop"],
+      "combinesWith": ["magicFill"]
+    },
+    {
+      "name": "undo",
+      "cost": "只回退最近一次上色，并让连击计数归零",
+      "feedback": ["sfx", "shake"],
+      "combinesWith": ["paint"]
+    },
+    {
+      "name": "magicFill",
+      "cost": "每关只有 1 次，用掉就没有了",
+      "feedback": ["sfx", "fullFlash"],
+      "combinesWith": ["paint"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "先选哪个色系起手：亮色打轮廓，还是暗色铺底色", "cost": "亮色更醒目，暗色能让后续亮色对比更跳" },
+    { "atSec": 12, "choice": "先涂中心还是先涂边缘", "cost": "边缘定形，中心决定连击节奏" },
+    { "atSec": 25, "choice": "先涂能解锁封印格的那一格，还是在开放格子上追连击", "cost": "封印格不解锁，后面可能卡住一大片区域" },
+    { "atSec": 40, "choice": "现在就把魔法填充用在最大的分格，还是留给难解锁的格子", "cost": "每关只有 1 次，用了就没有" },
+    { "atSec": 55, "choice": "撤销一个涂错的颜色（断连击），还是留着继续叠连击", "cost": "撤销会打断连击" },
+    { "atSec": 75, "choice": "最后几格抢时间拿时间星，还是稳住节奏拿连击星", "cost": "时间与连击很难同时拉满" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 35,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "paint your first region" },
+    { "index": 2, "newElement": "full 8×8 neon palette" },
+    { "index": 3, "newElement": "sealed rocks unlock by neighbors" },
+    { "index": 4, "newElement": "combo multiplier streaks" },
+    { "index": 5, "newElement": "double rock chains" },
+    { "index": 6, "newElement": "six-petal symmetry" },
+    { "index": 7, "newElement": "wing-span canvas" },
+    { "index": 8, "newElement": "hex finale max rocks" }
+  ],
+  "upgrades": [
+    { "id": "rockKey", "kind": "rule", "desc": "封印格：必须邻居上色才解锁，改变上色顺序" },
+    { "id": "comboChain", "kind": "rule", "desc": "连击窗口内连续上色叠乘分数" },
+    { "id": "starTime", "kind": "rule", "desc": "剩余时间 ≥33% 额外 +1 星" },
+    { "id": "starCombo", "kind": "rule", "desc": "最大连击 ≥4 额外 +1 星" },
+    { "id": "magicFill", "kind": "rule", "desc": "每关 1 次魔法填充，免费点亮一格" },
+    { "id": "freeUndo", "kind": "rule", "desc": "撤销不设次数上限，只断连击" },
+    { "id": "shadeBoost", "kind": "stat", "desc": "连击附加分 +5/级" },
+    { "id": "timeBoost", "kind": "stat", "desc": "高关卡时限更长（50–60s）" },
+    { "id": "paletteBright", "kind": "stat", "desc": "霓虹色板亮度随关卡提升" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

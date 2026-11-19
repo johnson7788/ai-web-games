@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LADDER CLIMBER</title>
+  <link rel="stylesheet" href="styles.css?v=lc1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-score" class="hud-pill" data-i18n="score"></span>
+        <span id="hud-best" class="hud-pill" data-i18n="best"></span>
+        <span id="hud-floor" class="hud-pill" data-i18n="floor"></span>
+      </div>
+      <div class="hud-right">
+        <span id="hud-combo" class="hud-pill hud-combo hidden" data-i18n="combo"></span>
+        <span id="hud-stars" class="hud-pill hud-stars" data-i18n="stars"></span>
+        <span id="hud-shield" class="hud-pill hud-shield" data-i18n="shield"></span>
+        <span id="hud-freeze" class="hud-pill hud-freeze hidden" data-i18n="freeze"></span>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+        <button id="btn-howto" class="hud-btn" aria-label="Replay guide" data-tutorial-replay>?</button>
+        <button id="btn-pause" class="hud-btn" aria-label="Pause">⏸</button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+      </div>
+    </div>
+
+    <div id="controls" class="hidden">
+      <button id="btn-left" class="dir-btn dir-left"><span class="dir-ico">◀</span><span class="dir-label" data-i18n="left"></span></button>
+      <button id="btn-right" class="dir-btn dir-right"><span class="dir-ico">▶</span><span class="dir-label" data-i18n="right"></span></button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">LADDER CLIMBER</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start" class="big-btn" data-i18n="start"></button>
+      <button id="btn-howto-title" class="ghost-btn" data-tutorial-replay data-i18n="howto"></button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 data-i18n="pause"></h2>
+      <button id="btn-resume" class="big-btn" data-i18n="resume"></button>
+      <button id="btn-restart2" class="ghost-btn" data-i18n="restart"></button>
+      <button id="btn-home2" class="ghost-btn" data-i18n="home"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title" data-i18n="resultTitle"></h2>
+      <div id="result-floors" class="result-big"></div>
+      <div id="result-score" class="result-line"></div>
+      <div id="result-best" class="result-line"></div>
+      <div id="result-meta" class="result-line"></div>
+      <div class="result-btns">
+        <button id="btn-retry" class="big-btn" data-i18n="retry"></button>
+        <button id="btn-home3" class="ghost-btn" data-i18n="home"></button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="ghost-btn" data-tutorial-skip data-i18n="tutSkip"></button>
+          <button id="tut-next" class="big-btn" data-i18n="tutNext"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="rotate-screen" data-rotate hidden>
+    <div class="rotate-card">
+      <div class="rotate-icon">📱↻</div>
+      <p id="rotate-text" data-i18n="rotateHint"></p>
+      <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js?v=lc1"></script>
+</body>
+</html>

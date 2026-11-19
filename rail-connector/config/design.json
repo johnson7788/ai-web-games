@@ -1,0 +1,39 @@
+{
+  "slug": "rail-connector",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹轨道网上切换道岔，引导红蓝列车拾取同色能量核心并送达同色终端，填满得分条过关。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "switch", "cost": "改变一条轨道方向，可能把列车导向死路或相撞", "feedback": ["sfx", "glow", "track"], "combinesWith": ["frost"] },
+    { "name": "frost", "cost": "消耗投递积累的充能", "feedback": ["sfx", "tint", "slow"], "combinesWith": ["switch"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先切红道岔还是蓝道岔", "cost": "另一色列车继续驶向危险" },
+    { "atSec": 12, "choice": "是否切错路换取避撞空间", "cost": "牺牲投递节奏或触发脱轨" },
+    { "atSec": 25, "choice": "是否用霜冻减速争取改道时间", "cost": "消耗一次充能，关键时刻无减速可用" },
+    { "atSec": 40, "choice": "先清红核心还是先送蓝终端", "cost": "先送的一方暂时无人照看另一回路" },
+    { "atSec": 60, "choice": "撞车扣分还是宁可绕远路", "cost": "绕路浪费倒计时" },
+    { "atSec": 85, "choice": "冲三星零失误，还是快速过关", "cost": "零失误要求零容错" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "switch（切道岔）" },
+    { "index": 2, "newElement": "双回路并行管理" },
+    { "index": 3, "newElement": "三道岔高速" },
+    { "index": 4, "newElement": "岩石障碍" },
+    { "index": 5, "newElement": "交叉对撞" }
+  ],
+  "upgrades": [
+    { "id": "frost", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "reroute", "kind": "rule" },
+    { "id": "magnet", "kind": "rule" },
+    { "id": "slowStart", "kind": "rule" },
+    { "id": "doubleScore", "kind": "stat" },
+    { "id": "extraTime", "kind": "stat" },
+    { "id": "quickCharges", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

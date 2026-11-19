@@ -1,0 +1,110 @@
+{
+  "slug": "ladder-climber",
+  "genre": "arcade",
+  "oneLiner": "玩家在霓虹竖塔上判断下一根横杆在左还是右，连击上攀、收集星星锻造护盾，赶在脚下楼层坍塌吞掉自己之前越爬越高。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "climbLeft",
+      "cost": "选错方向就会坠落或抓住断裂横杆直接终结本局",
+      "feedback": ["sfx", "jumpArc", "comboFlash"],
+      "combinesWith": ["climbRight"]
+    },
+    {
+      "name": "climbRight",
+      "cost": "选错方向就会坠落或抓住断裂横杆直接终结本局",
+      "feedback": ["sfx", "jumpArc", "comboFlash"],
+      "combinesWith": ["climbLeft"]
+    },
+    {
+      "name": "collect",
+      "cost": "星星/冰冻道具只长在特定楼层，够不到就等于放弃护盾与减速收益",
+      "feedback": ["sfx", "starSparkle", "shieldGlow"],
+      "combinesWith": ["climbLeft", "climbRight"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 2,
+      "choice": "第一层横杆在左还是右：读准方向立刻跳，还是等它再靠近一点确认",
+      "cost": "犹豫越久，脚下的塌陷倒计时越接近你"
+    },
+    {
+      "atSec": 10,
+      "choice": "看到带 ★ 的楼层：为了护盾绕过去踩它，还是直线快爬保命",
+      "cost": "踩星楼层不增加风险，但你可能为了等它调整节奏而慢下来"
+    },
+    {
+      "atSec": 20,
+      "choice": "冰冻道具出现：花一步去接它冻结塌陷 3 秒，还是继续按当前节奏硬爬",
+      "cost": "接道具的楼层方向若读错，护盾会先被消耗掉"
+    },
+    {
+      "atSec": 35,
+      "choice": "塌陷已经加速：连续快爬维持连击，还是放慢一拍保住准确性",
+      "cost": "快爬失误率高、慢爬连击会断"
+    },
+    {
+      "atSec": 55,
+      "choice": "手里有 1 面护盾：用它搏一把看不清的方向，还是留给更关键的楼层",
+      "cost": "护盾只能挡一次，挡完就没了"
+    },
+    {
+      "atSec": 80,
+      "choice": "护盾满 2 面：是冒险连续抢分冲高分，还是稳健每层确认再爬",
+      "cost": "护盾让容错变高，但分数封顶靠连击与收集"
+    },
+    {
+      "atSec": 110,
+      "choice": "塌陷几乎追上脚底：赌下一层方向立刻跳，还是用冰冻争取一次喘息",
+      "cost": "冰冻只有收集到才有，赌错方向就是坠落"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "左右横杆 + 底部塌陷追逼" },
+    { "index": 2, "newElement": "星星收集（3 星锻造 1 护盾）" },
+    { "index": 3, "newElement": "冰冻道具（冻结塌陷 3 秒）" },
+    { "index": 4, "newElement": "装饰断裂横杆陷阱密度上升" },
+    { "index": 5, "newElement": "塌陷加速、连击封顶压力拉满" },
+    { "index": 6, "newElement": "双星楼层 + 连击结算冲刺" }
+  ],
+  "upgrades": [
+    { "id": "shieldForge", "kind": "rule", "desc": "3 星锻造 1 面护盾，护盾挡一次跳错" },
+    { "id": "freezeOrb", "kind": "rule", "desc": "冰冻道具冻结塌陷 3 秒" },
+    { "id": "comboBoost", "kind": "rule", "desc": "连击窗口内每层加分递增，越连越赚" },
+    { "id": "starMagnet", "kind": "rule", "desc": "星星楼层必定出现在正式横杆上，够得到" },
+    { "id": "safeLanding", "kind": "rule", "desc": "抓住断裂横杆时若还有护盾可弹回当前层" },
+    { "id": "graceStart", "kind": "rule", "desc": "开局前 3 层不塌陷，给新手读方向的时间" },
+    { "id": "collapseFloor", "kind": "stat", "desc": "塌陷间隔下限从 350ms 调到 420ms" },
+    { "id": "comboWindow", "kind": "stat", "desc": "连击窗口从 1.0s 放宽到 1.2s" },
+    { "id": "orbScore", "kind": "stat", "desc": "冰冻道具分值 +10" },
+    { "id": "starScore", "kind": "stat", "desc": "星星分值 +5" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

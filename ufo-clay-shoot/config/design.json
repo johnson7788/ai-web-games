@@ -1,0 +1,38 @@
+{
+  "slug": "ufo-clay-shoot",
+  "genre": "arcade",
+  "oneLiner": "驾驶霓虹飞船在深空靶场击落黏土飞碟，躲避弹幕收集金币与弹药，用连击和道具把存活时间与星级刷到最高。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "move", "cost": "平移会错开当前瞄准目标", "feedback": ["引擎尾焰", "移动音效"], "combinesWith": ["shoot"] },
+    { "name": "shoot", "cost": "消耗弹药，连击窗口内没打中会断连", "feedback": ["激光拖尾", "命中爆炸", "得分飘字"], "combinesWith": ["move"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先打最近的飞碟，还是先捡正在下落的弹药", "cost": "追飞碟会漏掉补给" },
+    { "atSec": 18, "choice": "追击高价值大飞碟，还是先清小飞碟", "cost": "大飞碟血厚会持续开火" },
+    { "atSec": 35, "choice": "冒险上移捡三连发道具，还是守住底部安全位", "cost": "上移暴露在弹幕里" },
+    { "atSec": 50, "choice": "留着金币凑护盾，还是优先吃金币刷分", "cost": "凑盾期间更容易被打中" },
+    { "atSec": 70, "choice": "维持连击倍率继续打，还是稳妥避弹", "cost": "贪连击会被逼到死角" },
+    { "atSec": 100, "choice": "在弹幕里补枪，还是放弃目标拉开距离", "cost": "不补枪飞碟逃走会断连" },
+    { "atSec": 140, "choice": "冲进陨石带吃补给，还是绕行", "cost": "撞上陨石直接死亡" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "小/中飞碟 + 小行星 + 金币" },
+    { "index": 2, "newElement": "大飞碟扇形弹幕" },
+    { "index": 3, "newElement": "三连发道具 + 敌人刷新加速" }
+  ],
+  "upgrades": [
+    { "id": "triple", "kind": "rule" },
+    { "id": "pierce", "kind": "rule" },
+    { "id": "magnet", "kind": "rule" },
+    { "id": "comboBoost", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "speedUp", "kind": "stat" },
+    { "id": "ammoUp", "kind": "stat" },
+    { "id": "damageUp", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

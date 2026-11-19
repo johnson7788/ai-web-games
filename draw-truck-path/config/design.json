@@ -1,0 +1,95 @@
+{
+  "slug": "draw-truck-path",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹仓库的缺口上徒手画出公路，让卡车沿着它一路开到终点平台，途中躲开火花束、穿过能量核心——用笔越少，星星越多。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "draw",
+      "cost": "每画一笔消耗一格墨（关卡墨量有限），且用笔越少星级越高；画得断、画得偏，卡车就会中途坠入火池",
+      "feedback": ["sfx", "glowTrail", "roadSnap"],
+      "combinesWith": ["drive"]
+    },
+    {
+      "name": "drive",
+      "cost": "按下方向就烧掉剩余倒计时；走错路（穿过火花束）会立即烧毁，停在半路会让核心过热",
+      "feedback": ["sfx", "exhaust", "wheelSpin"],
+      "combinesWith": ["draw"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "第一笔是从车头直接平铺到终点，还是先画半段留余量观察火花束",
+      "cost": "平铺直路省墨但可能撞上火花束；分笔则多花墨、掉星"
+    },
+    {
+      "atSec": 18,
+      "choice": "火花束横在路中：从上方拱过去（路陡）还是从下方贴着火池钻过去（更险）",
+      "cost": "上拱安全但坡度大；下钻贴火池，容错空间小"
+    },
+    {
+      "atSec": 32,
+      "choice": "能量核心在岔路上：绕路去吃核心拿星，还是直取终点先过关",
+      "cost": "绕路多花墨且更接近火花束；直取终点少 1 星"
+    },
+    {
+      "atSec": 48,
+      "choice": "墨只剩两格：用一格把断口补上，还是留着应对车前方的未知路段",
+      "cost": "补上断口就少一次纠错机会；留着可能让车坠坑"
+    },
+    {
+      "atSec": 66,
+      "choice": "第二根火花束逼近：等自动发车还是手动点 ▶ 抢先通过",
+      "cost": "自动发车省操作但时机不可控；手动更稳但要分心控制"
+    },
+    {
+      "atSec": 90,
+      "choice": "车已经开到半路：继续画前路还是停下重画整条路线",
+      "cost": "边开边画省时间但易手忙；重画耗墨且浪费倒计时"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "徒手画路 + 左右发车（无火花、无核心，学基本闭环）" },
+    { "index": 2, "newElement": "火花束（垂直危险带）：必须上拱或下钻绕行" },
+    { "index": 3, "newElement": "能量核心（收集得星）+ 双火花束夹击的路线规划" }
+  ],
+  "upgrades": [
+    { "id": "unlockBeam", "kind": "rule", "desc": "第 2 关起出现火花束，公路从「随便画」变成「必须绕行」" },
+    { "id": "unlockCores", "kind": "rule", "desc": "第 3 关起出现能量核心，绕路成为得分策略" },
+    { "id": "inkStar", "kind": "rule", "desc": "用笔 ≤2 得「省墨」星，逼玩家追求一笔成形" },
+    { "id": "comboStar", "kind": "rule", "desc": "连吃两颗核心触发 combo，额外 +1 星" },
+    { "id": "autoLaunch", "kind": "rule", "desc": "首笔完成后自动发车，休闲玩家不用长按方向键" },
+    { "id": "timePressure", "kind": "rule", "desc": "倒计时归零核心过热即失败，静止也要推进" },
+    { "id": "inkUp", "kind": "stat", "desc": "关卡墨量从 3 逐关提到 5，路线越复杂容错越高" },
+    { "id": "speedUp", "kind": "stat", "desc": "车速保持恒定，让画路 → 发车的时间窗口可预期" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

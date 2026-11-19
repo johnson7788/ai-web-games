@@ -1,0 +1,58 @@
+{
+  "slug": "bubble-shooter-pop",
+  "genre": "arcade",
+  "oneLiner": "玩家滑动底部霓虹炮台，躲开从头顶坠落的泡泡，同时让自动炮火对准泡泡把它击破，连击清波冲高分。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "slide",
+      "cost": "滑到泡泡正下方会被坠落的泡泡砸中，站错位置直接死亡",
+      "feedback": ["sfx", "neonTrail", "glowPulse"],
+      "combinesWith": ["aim"]
+    },
+    {
+      "name": "aim",
+      "cost": "把炮台对准一个泡泡 = 背对另一个泡泡，顾此失彼",
+      "feedback": ["sfx", "crosshair", "bubbleShine"],
+      "combinesWith": ["burst"]
+    },
+    {
+      "name": "burst",
+      "cost": "手动连发有 0.42s 冷却，空放浪费还打断自动射击节奏",
+      "feedback": ["sfx", "muzzleFlash", "shake"],
+      "combinesWith": ["aim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "第一波泡泡落下：先站到泡泡正下方打掉它，还是先躲到空位", "cost": "站正下方得分但危险；躲开安全但放走泡泡断连击" },
+    { "atSec": 14, "choice": "黄金泡泡出现：冒险冲到它正下方拿高分+道具，还是稳守", "cost": "冲过去可能撞上旁边的普通泡泡" },
+    { "atSec": 26, "choice": "岩石泡泡多血：追着连续打 3 发，还是先清薄的泡泡", "cost": "打岩石耗时，薄的泡泡会趁机落到你头顶" },
+    { "atSec": 40, "choice": "炸弹泡泡连锁：打爆它清一片，还是留着它当定时炸弹", "cost": "打爆伤敌也断连击节奏；留着它落地更危险" },
+    { "atSec": 60, "choice": "道具落下：冲过去接急速/三连射，还是放弃道具保命", "cost": "接道具偏离安全位；不接则火力维持原样" },
+    { "atSec": 90, "choice": "连击已经 20+：继续维持高连击，还是故意放走一个低分泡泡喘口气", "cost": "维持连击分数翻倍但风险累积；断连击损失大量分" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "普通泡泡（1 点血，霓虹四色）与自动向上射击" },
+    { "index": 2, "newElement": "岩石泡泡（装甲多血，需连续命中）" },
+    { "index": 3, "newElement": "黄金泡泡（高分 + 掉落道具）" },
+    { "index": 4, "newElement": "炸弹泡泡（击破后爆炸，连锁清除周围泡泡）" },
+    { "index": 5, "newElement": "双泡泡同屏 + 下落加速" },
+    { "index": 6, "newElement": "急速射击 / 三连射道具组合登场" }
+  ],
+  "upgrades": [
+    { "id": "unlockRock", "kind": "rule", "desc": "第 2 波起出现岩石泡泡，装甲血厚逼你连续命中" },
+    { "id": "unlockGold", "kind": "rule", "desc": "第 3 波起出现黄金泡泡，高分并掉落道具" },
+    { "id": "unlockBomb", "kind": "rule", "desc": "第 4 波起出现炸弹泡泡，爆炸连锁清屏" },
+    { "id": "rapidFire", "kind": "rule", "desc": "接急速道具：自动射击频率 ×3" },
+    { "id": "tripleShot", "kind": "rule", "desc": "接三连射道具：一次三发扇形弹幕" },
+    { "id": "comboScore", "kind": "rule", "desc": "连击让每个泡泡分值累加奖励，断连击清零" },
+    { "id": "fallSpeed", "kind": "stat", "desc": "每波下落速度递增，反应窗口越来越短" },
+    { "id": "spawnRate", "kind": "stat", "desc": "每波出生间隔缩短，场上泡泡越来越多" },
+    { "id": "bulletDamage", "kind": "stat", "desc": "子弹伤害固定 2 点，岩石泡泡需要 3 发" },
+    { "id": "starThreshold", "kind": "stat", "desc": "500 / 1500 分拿 2 / 3 星" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "leaderboard", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 4, "firstSuccessSec": 15, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

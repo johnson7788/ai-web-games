@@ -1,0 +1,149 @@
+{
+  "game": "ladder-climber",
+  "generatedAt": "2026-11-19T17:30:23.069Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 8.5,
+    "style_consistent": 9.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景平台元素部分透明且颜色相近，眯眼时难以快速区分可踩踏平台与装饰性条块",
+        "'How to play' 按钮文字较小（约14px），在低分辨率下可能辨识度不足",
+        "右上角语言切换按钮无悬停反馈提示，且下拉箭头过小（<6px）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景平台条状元素颜色混用（红/蓝/黄），部分无明确交互提示，易混淆可踩踏与装饰元素",
+        "‘怎么玩’按钮尺寸偏小（目测约32px高），在移动端可能难精准点击",
+        "标题‘爬梯达人’下方副标题文字较小且灰度较高，在低对比度环境下辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Right’按钮向右移动角色以避开红色障碍并接住黄色箭头",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Score 6’‘Best 0’‘Floor 3’文字间距过小，易误读为‘Score6Best0Floor3’",
+        "黄色箭头与玩家方块重叠时视觉优先级模糊，可能误判为已收集",
+        "顶部‘Combo ×3’背景圆角与其余HUD按钮不一致（其他为直角）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-mid-climb.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角'Right'按钮向右移动角色以避开红色障碍并接住黄色平台",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'Combo x9'与星标、盾牌图标间距过小，可能误触",
+        "左上'Score 60'等HUD文字在深紫背景上对比度偏低（尤其'Best 0'）",
+        "角色下方黄色平台与角色重叠区域有轻微光晕融合，边界略模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/05-star.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角'Right'按钮向右移动方块以避开红色障碍并接住黄色平台",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Combo ×9 与星标图标间距过近，可能误触",
+        "左下'Left'按钮内箭头偏小且未居中，视觉引导弱",
+        "黄色平台带星标时与玩家方块重叠，目标意图稍模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Right’按钮向右移动方块以避开红色障碍并收集黄色星星",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Score 60’与‘Best 0’间距过小，易误读为‘Score 60 Best 0’连串；",
+        "玩家方块（白方块）与黄色平台亮度接近，部分场景下对比度不足；",
+        "顶部状态图标（星、盾、飞船等）无文字标签，新玩家可能不理解其含义"
+      ]
+    },
+    {
+      "shot": "tests/final/07-deep.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角“Right”按钮让方块向右移动以避开红色障碍、对齐蓝色通道",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Combo x9 与星标/盾牌图标间距过小，可能误触",
+        "左下‘Left’按钮边框发光过强，略干扰玩家角色轮廓",
+        "背景星点密度不均，部分区域（如中上）较密影响障碍物辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/08-orb.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Right’按钮向右移动方块以避开红色障碍并接住黄色平台",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Combo x9’与星标、盾牌图标间距过近，可能误触",
+        "左下‘Left’按钮内箭头偏小且未居中，视觉引导弱",
+        "玩家方块下方有微弱拖影/光晕，可能干扰判断实时位置"
+      ]
+    }
+  ]
+}

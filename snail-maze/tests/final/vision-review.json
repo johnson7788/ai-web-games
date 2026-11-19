@@ -1,0 +1,149 @@
+{
+  "game": "snail-maze",
+  "generatedAt": "2026-11-19T17:22:53.414Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.5,
+    "silhouette": 7.625,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡编号1按钮高亮色（亮粉）与其余按钮（暗紫）对比过强，可能误导玩家以为1是唯一可选关卡",
+        "星级计数 '0 / 90' 字体偏小且颜色较淡（黄/灰），在深背景上辨识度略低",
+        "‘Neon Slime Run’副标题使用青色，与主标题粉色风格略有冲突，削弱统一感"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央粉色螺旋目标物以启动或收集",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央目标物与多层蓝色线框重叠，可能干扰点击精度",
+        "黄色菱形收集物尺寸过小且无高亮边框，易被忽略",
+        "左上角‘Stardust 0/6’文字与进度条间距过窄，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮粉色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中隐约可见几何结构（疑似角色或关卡元素），但因过暗且无轮廓，眯眼时难以辨识玩家/障碍物",
+        "‘Time: 16s · New Best!’中‘·’符号与前后文字间距不均，轻微影响排版一致性",
+        "顶部HUD（Level 1 / Score 0 / Stardust 0/6）字体较小且灰度高，弱光环境下可能难读"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色三角形发射器启动光束路径",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "粉色目标物与橙色小方块距离过近，易误判为同一对象",
+        "左下角绿色三角发射器无明确交互提示（如高亮/脉动）",
+        "中央黑色方块区域功能不明，疑似终点但无标识"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rotate-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的粉色螺旋角色开始移动或发射光束",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角三个功能按钮（?、🔄、☰）间距过小，可能误触；",
+        "‘Stardust 0/5’中斜杠与数字间距略紧，轻微影响可读性；",
+        "部分蓝色路径线在拐角处重叠，导致局部几何结构模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/06-random-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕右侧三角形箭头按钮发射小球",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标（粉色螺旋）与小球距离过近，易误判为已命中",
+        "左上角进度条无标签，不知代表什么（时间？能量？）",
+        "网格背景在深紫底色下对比度偏低，影响空间感知"
+      ]
+    },
+    {
+      "shot": "tests/final/07-playing-mid.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央粉色目标物或其附近三角形触发机制",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央目标物周围有多个相似发光三角形，易混淆可交互对象",
+        "左侧竖条状暗区疑似门/出口但无明确标识，目标路径不唯一",
+        "网格背景与蓝色轮廓线对比度偏低，部分细线在深色区域辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/08-late-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧竖管底部的浅蓝色球体，使其向上移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标物（橙色菱形）位于左上管道拐角处，易被路径线遮挡，需仔细辨认",
+        "玩家角色（粉色螺旋）与下方浅蓝球体间距过近，可能误判为同一物体",
+        "顶部进度条无明确标签，仅靠颜色难以判断当前状态"
+      ]
+    }
+  ]
+}

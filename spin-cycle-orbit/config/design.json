@@ -1,0 +1,74 @@
+{
+  "slug": "spin-cycle-orbit",
+  "genre": "arcade",
+  "oneLiner": "霓虹轨道上两颗光球互绕旋转，轻点把旋转球甩到下一个能量节点——连击越高得分越猛，抢金核、避岩核、扛住狂热加速。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "hop",
+      "cost": "必须在旋转球进入白色命中窗口内点击，点早或点晚都会立即断环判负",
+      "feedback": ["sfx", "orbGlow", "ringFlash"],
+      "combinesWith": ["combo"]
+    },
+    {
+      "name": "combo",
+      "cost": "连续快速切换才能维持连击；超过 2.5s 或撞上岩核都会清零",
+      "feedback": ["sfx", "comboGlow", "scorePop"],
+      "combinesWith": ["hop"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "旋转球接近节点：现在点，还是等它再贴近一点", "cost": "点早=断环；点晚=漏过窗口" },
+    { "atSec": 10, "choice": "下一节点是金核：为 +3 加分冒险抢，还是求稳先保连击", "cost": "抢金核可能打乱点击节奏" },
+    { "atSec": 20, "choice": "岩核出现：它是必经之路，穿过就清零连击", "cost": "连击清零" },
+    { "atSec": 35, "choice": "每次切换旋转方向随机：预判它朝哪边转", "cost": "预判错=慢半拍，可能 overshoot" },
+    { "atSec": 55, "choice": "狂热加速期：乘势多收几个节点，还是保守等狂热结束", "cost": "狂热中角速度 ×1.5 更易失误" },
+    { "atSec": 80, "choice": "等级提升后角速度变快：调整点击时机", "cost": "旧节奏失效" },
+    { "atSec": 120, "choice": "连续高分后：冲新纪录，还是见好就收", "cost": "失误即本局清零" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础双臂互绕 + 普通能量节点链" },
+    { "index": 2, "newElement": "金核节点加入：捕获 +3 分并计入连击" },
+    { "index": 3, "newElement": "岩核节点加入：捕获后连击清零" },
+    { "index": 4, "newElement": "狂热周期：每 8 次捕获触发 4s 加速" },
+    { "index": 5, "newElement": "难度递进：角速度随捕获数上升（最高 ×1.8）" },
+    { "index": 6, "newElement": "转向收紧：新节点角度区间变窄更急" }
+  ],
+  "upgrades": [
+    { "id": "goldenNode", "kind": "rule", "desc": "第 2 级起链上出现金核，奖励分 +3" },
+    { "id": "rockNode", "kind": "rule", "desc": "第 3 级起链上出现岩核，连击清零" },
+    { "id": "comboSystem", "kind": "rule", "desc": "连续快速切换累积连击倍率" },
+    { "id": "frenzy", "kind": "rule", "desc": "第 4 级起每 8 次捕获触发狂热加速" },
+    { "id": "angleTighten", "kind": "rule", "desc": "第 6 级起新节点角度区间收紧" },
+    { "id": "gracePeriod", "kind": "rule", "desc": "首个目标 4s 宽限期内 overshoot 不判负" },
+    { "id": "speedRamp", "kind": "stat", "desc": "角速度随捕获数递进（最高 ×1.8）" },
+    { "id": "comboCap", "kind": "stat", "desc": "连击倍率上限 ×8" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

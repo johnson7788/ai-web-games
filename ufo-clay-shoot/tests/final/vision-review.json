@@ -1,0 +1,117 @@
+{
+  "game": "ufo-clay-shoot",
+  "generatedAt": "2026-11-19T17:19:08.922Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.833333333333334,
+    "silhouette": 6.333333333333333,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的蓝色‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 3,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘UFO CLAY SHOOT’与副标题间距过小，略显拥挤",
+        "‘Best time 0.0s’字体颜色偏黄，在深蓝背景下对比度不足，易被忽略",
+        "无玩家/敌人/子弹等游戏元素可见，无法评估 silhouette（当前为启动页）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的白色三角飞船发射子弹",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "紫色菱形道具（标'3'）与红色飞碟敌人距离过近，易误判为敌人或干扰瞄准",
+        "左上角'Combo x1'文字颜色（粉紫）与背景对比度偏低，弱光下可能难辨",
+        "顶部目标提示框轻微遮挡上方橙色飞碟边缘（约1-2像素）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-battle2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置发射三角形飞船的子弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "橙色飞碟状敌人与紫色菱形（可能为道具）在视觉上易混淆，轮廓相似度高",
+        "左上角'Combo ×3'文字背景为深紫渐变，与深蓝背景对比度偏低，弱光下可能难辨",
+        "底部玩家飞船发光效果过强，轻微溢光遮盖下方网格线，影响定位精度"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始游戏。",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊光斑干扰视觉焦点，可能影响‘silhouette’判断；",
+        "‘Run Over’标题与三颗星间距略紧，小屏下易误读为整体元素；",
+        "‘Best time 1.6s’使用黄色字体，与上方‘Combo ×3’颜色冲突，削弱层级区分"
+      ]
+    },
+    {
+      "shot": "tests/final/05-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央发光的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best time 0.0s’为黄色，与主标题蓝白霓虹风格略有冲突，可能削弱视觉层级",
+        "‘Neon arcade skeet · blast the clay saucers’字号过小且无描边，在深蓝背景下对比度偏低",
+        "右上角语言选择框无明确选中状态指示（如下拉箭头样式模糊）"
+      ]
+    },
+    {
+      "shot": "tests/final/06-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置发射子弹攻击红色飞碟状敌人",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色敌人轮廓发光过强，与背景网格线轻微融合，影响远距离辨识",
+        "左上角'Combo ×1'标签底色与'Score 44'不一致（黄底 vs 紫底），风格微冲突",
+        "提示框文字‘Shoot the clay saucers – survive!’中破折号为英文en-dash但字体略窄，视觉稍突兀"
+      ]
+    }
+  ]
+}

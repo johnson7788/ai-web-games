@@ -1,0 +1,95 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "竖屏提示节点存在",
+      "ok": true,
+      "detail": "eval: !!document.getElementById('rotate-screen') && !!document.getElementById('btn-rotate-skip')"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "结算屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "重开",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "移动端进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-battle.png",
+    "03-battle2.png",
+    "04-result.png",
+    "05-m-title.png",
+    "06-m-playing.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "[mobile] https://pipygames.com/sdk/config.json",
+    "[mobile] https://pipygames.com/api/sdk/config?appId=pipy-ufo-clay-shoot",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-ufo-clay-shoot",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-ufo-clay-shoot"
+  ],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

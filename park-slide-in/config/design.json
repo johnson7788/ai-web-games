@@ -1,0 +1,38 @@
+{
+  "slug": "park-slide-in",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹停车场里转动前轮、给油滑行，把发光小车无碰撞地停进车位并按时间与零碰撞拿星级",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "steer", "cost": "转向改变车头角度，占用了直线加速时间，转多了要回正", "feedback": ["wheelViz", "sfx", "turnArc"], "combinesWith": ["throttle"] },
+    { "name": "throttle", "cost": "给油/倒车产生速度，速度带来碰撞风险与入位精度压力", "feedback": ["exhaust", "sfx", "speedLines"], "combinesWith": ["steer"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先转向前轮，还是先直行到车位口再转向", "cost": "提前转会滑出线，晚转会撞到邻车" },
+    { "atSec": 8, "choice": "深踩油门快速到位，还是轻点油门慢慢蹭", "cost": "快 = 碰撞风险，慢 = 丢时间星" },
+    { "atSec": 15, "choice": "走能量球连线吃连击，还是走安全宽线", "cost": "贪球容易擦碰护栏" },
+    { "atSec": 25, "choice": "绕路去吃护盾，还是直奔车位", "cost": "护盾能挡一次碰撞，绕路花时间" },
+    { "atSec": 40, "choice": "等巡逻无人机让开，还是趁缝隙冲过去", "cost": "等 = 时间，冲 = 撞机风险" },
+    { "atSec": 70, "choice": "倒车入位，还是正车入位", "cost": "倒车视角更难，但有些车位只能倒" },
+    { "atSec": 100, "choice": "在车位里停到完全静止拿 3 星，还是压线 1 星走人", "cost": "追求完美多花时间，蹭线可能重来" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "steer + throttle 正向入位" },
+    { "index": 2, "newElement": "倒车油门直线入库" },
+    { "index": 3, "newElement": "移动巡逻无人机 + 护盾道具" }
+  ],
+  "upgrades": [
+    { "id": "shield", "kind": "rule" },
+    { "id": "magnet", "kind": "rule" },
+    { "id": "slowSteer", "kind": "rule" },
+    { "id": "wideWheels", "kind": "rule" },
+    { "id": "maxSpeedUp", "kind": "stat" },
+    { "id": "accelUp", "kind": "stat" },
+    { "id": "parkWindowUp", "kind": "stat" },
+    { "id": "comboBoost", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 60, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}
