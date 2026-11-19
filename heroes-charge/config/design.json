@@ -1,0 +1,82 @@
+{
+  "slug": "heroes-charge",
+  "genre": "action",
+  "oneLiner": "你是霓虹剑客凯，在合成都市里冲刺、挥剑、连击，清光每一关的红色敌人并冲过三关解放街区。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "strike",
+      "cost": "出招有 0.2s 硬直无法移动，收招前不能转向",
+      "feedback": ["sfx", "spark", "knockback"],
+      "combinesWith": ["dash"]
+    },
+    {
+      "name": "dash",
+      "cost": "消耗冲刺能量，且冲刺瞬间无防备",
+      "feedback": ["trail", "sfx"],
+      "combinesWith": ["strike"]
+    },
+    {
+      "name": "leap",
+      "cost": "二段跳后空中只能出一次旋转斩，落地前无法位移",
+      "feedback": ["sfx", "afterimage"],
+      "combinesWith": ["strike"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "先清最近的小兵，还是冲刺到后排", "cost": "冲刺耗能量 / 被近身围殴" },
+    { "atSec": 12, "choice": "留着冲刺能量保命，还是贴脸连击", "cost": "无位移被围 / 能量见底" },
+    { "atSec": 20, "choice": "用二段跳+旋转斩清群，还是逐个普攻", "cost": "落地硬直 / 更慢" },
+    { "atSec": 35, "choice": "集火残血精英，还是先打满血小兵", "cost": "暴露给其余敌人" },
+    { "atSec": 50, "choice": "冲去吃能量球补冲刺，还是留在安全位", "cost": "位置风险 / 放弃补充" },
+    { "atSec": 70, "choice": "硬吃护盾核心，还是省着走位", "cost": "位移换生存" },
+    { "atSec": 100, "choice": "Boss 战先清杂兵，还是直取 Boss", "cost": "时间 / 血量" },
+    { "atSec": 140, "choice": "满血贪 3 星，还是速通保 1 星", "cost": "评分 vs 安全" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础挥剑/冲刺/二段跳，小兵巡逻+追猎+攻击" },
+    { "index": 2, "newElement": "能量球补给与护盾核心掉落，连击上 10 触发奖励" },
+    { "index": 3, "newElement": "精英 Boss 大血条 + 旋转斩清群" }
+  ],
+  "upgrades": [
+    { "id": "comboChain", "kind": "rule", "desc": "连击达 5/10/15 触发额外分数与震屏" },
+    { "id": "dashStrike", "kind": "rule", "desc": "冲刺中出刀变成冲刺斩（贯穿）" },
+    { "id": "spinClear", "kind": "rule", "desc": "二段跳旋转斩范围 +30%" },
+    { "id": "orbMagnet", "kind": "rule", "desc": "能量球自动吸附" },
+    { "id": "shieldBlock", "kind": "rule", "desc": "护盾核心可挡一次致命伤" },
+    { "id": "powerStat", "kind": "stat", "desc": "普攻伤害 +5" },
+    { "id": "dashStat", "kind": "stat", "desc": "冲刺能量上限 +0.25" },
+    { "id": "hpStat", "kind": "stat", "desc": "最大生命 +1" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "newBuild"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 15,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连击数跳上 10 的瞬间，屏幕边缘泛出青色波纹，刀光把整排敌人一起劈飞",
+  "antiScope": [
+    "不做开放世界/支线/装备商店",
+    "不做联网/排行榜",
+    "不做皮肤/内购",
+    "不做每日任务"
+  ],
+  "artSource": "霓虹街机风：全程序化 Canvas（合成都市/网格地面/发光角色），UI 线框 DOM/CSS；BGM 程序化 WebAudio"
+}

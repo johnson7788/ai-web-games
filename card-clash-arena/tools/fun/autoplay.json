@@ -1,0 +1,56 @@
+{
+  "game": "card-clash-arena",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 11,
+      "durationSec": 15.1,
+      "firstInputSec": 0.9,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.92,
+      "deaths": 3,
+      "actions": 10,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 15,
+      "levelsReached": 7,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 7,
+      "durationSec": 8.62,
+      "firstInputSec": 0.9,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 3.07,
+      "deaths": 1,
+      "actions": 5,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 14,
+      "levelsReached": 4,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 110.75,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 43.05,
+      "deaths": 3,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 14,
+      "levelsReached": 5,
+      "completed": false
+    }
+  ]
+}

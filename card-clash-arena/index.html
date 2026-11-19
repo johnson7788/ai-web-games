@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CARD CLASH ARENA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- 顶部 HUD（不透明实心条） -->
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="hp-group">
+          <span class="hp-label" id="hud-rival-label">RIVAL</span>
+          <div class="hp-bar hp-enemy"><div class="hp-fill" id="hp-enemy"></div></div>
+          <span class="hp-num" id="hp-enemy-num">10</span>
+        </div>
+      </div>
+      <div class="hud-center"><span id="hud-round"></span></div>
+      <div class="hud-right">
+        <span class="pill combo-pill" id="hud-combo" style="display:none"></span>
+        <span class="pill" id="hud-coins">◈ 0</span>
+        <div class="hp-group you">
+          <span class="hp-label" id="hud-you-label">YOU</span>
+          <div class="hp-bar hp-you"><div class="hp-fill" id="hp-you"></div></div>
+          <span class="hp-num" id="hp-you-num">10</span>
+        </div>
+        <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+      </div>
+    </div>
+
+    <!-- 底部动作条（不透明实心条，位于手牌下方） -->
+    <div id="action-bar" class="hidden">
+      <button id="btn-buff" class="ability-btn"><span class="ab-name">Buff</span><span class="ab-cost">◈40</span></button>
+      <button id="btn-debuff" class="ability-btn"><span class="ab-name">Debuff</span><span class="ab-cost">◈60</span></button>
+      <button id="btn-overdrive" class="ability-btn"><span class="ab-name">Overdrive</span><span class="ab-cost">◈80</span></button>
+      <button id="btn-cancel" class="ability-btn"><span class="ab-name">Cancel</span><span class="ab-cost">◈100</span></button>
+    </div>
+
+    <!-- 标题屏 -->
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">CARD CLASH ARENA</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best-stars" id="best-stars"></div>
+      <button id="btn-start">Start</button>
+    </div>
+
+    <!-- 暂停屏 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 结算屏 -->
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Rematch</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <!-- 竖屏提示 -->
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger arena</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <!-- 教程引导 -->
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

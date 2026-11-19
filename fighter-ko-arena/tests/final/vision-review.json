@@ -1,0 +1,133 @@
+{
+  "game": "fighter-ko-arena",
+  "generatedAt": "2026-11-19T20:53:08.237Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.428571428571429,
+    "silhouette": 9,
+    "style_consistent": 9.714285714285714
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的蓝色 'FIGHT' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'FIGHTER KO ARENA' 字体发光边缘轻微模糊，可能影响小屏阅读",
+        "副标题 'Neon 1v1 · tap the rhythm · KO all three' 字号偏小，3秒内需稍聚焦才能完整识别",
+        "右上角语言切换框边框过细（约1px），在低分辨率屏可能显示不清晰"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开打’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 10,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言选择下拉框无展开箭头，可能被误认为静态标签",
+        "‘How to play’按钮文字为英文，与主界面中文风格不完全统一（次要）",
+        "标题‘霓虹格斗场’下方小字‘霓虹 1v1 · 踩准节奏 · 三连 KO’字号偏小，弱光环境下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 STRIKE 按钮发起攻击",
+      "readable": 8,
+      "silhouette": 10,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Round 1 / 3' 文字偏小且无背景，暗背景下对比度略低",
+        "右上角四个图标无文字说明，功能不明确（如问号、音符、U形、锁）",
+        "底部按钮间距紧凑，SUPER 按钮灰度偏低，易被误认为不可用"
+      ]
+    },
+    {
+      "shot": "tests/final/03-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 STRIKE 按钮发起攻击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Round 1 / 3' 文字偏小，弱光下可能辨识困难",
+        "右上角图标无文字标签，功能需记忆或猜测",
+        "玩家角色（蓝）左侧有微弱电弧特效，可能误判为受击状态"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Next Opponent”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Round 1 / 3’文字偏小且颜色暗淡，对比度不足，易被忽略",
+        "右上角四个图标无标签，功能不明确（如问号、音符等）",
+        "‘K.O. VICTORY’与下方说明文字间距略紧，轻微视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的 STRIKE 按钮发起攻击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Round 1 / 3' 字体偏小，弱光下可能辨识困难",
+        "右上角 FOE 标签与图标间距过紧，易误触",
+        "底部按钮无视觉反馈状态（如按下/禁用），影响操作确认"
+      ]
+    },
+    {
+      "shot": "tests/final/m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间蓝色的“FIGHT”按钮开始对战",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’按钮文字为浅灰，对比度偏低，弱光下可能难辨",
+        "两个角色轮廓线宽一致但颜色亮度差异大（青色更亮），可能误导玩家以为青色是己方，实际未明确标识",
+        "顶部语言选择框边框与主标题发光风格不完全统一（细线框 vs 粗霓虹光）"
+      ]
+    }
+  ]
+}

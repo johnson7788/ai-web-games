@@ -1,0 +1,100 @@
+{
+  "slug": "card-clash-arena",
+  "genre": "arcade",
+  "oneLiner": "每回合随机亮出一个属性，玩家从 5 张手牌里挑当前属性最高的卡与对手比牌，按差值百分比打 2/4/6 点伤害，先打空对手 10 点生命即赢。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "play",
+      "cost": "打出的卡离开手牌，只能补抽一张未知卡——押错属性就是白送一回合",
+      "feedback": ["sfx", "cardFlip", "damageFlash"],
+      "combinesWith": ["buff"]
+    },
+    {
+      "name": "buff",
+      "cost": "消耗 40 金币，且本回合锁定（不能与超频叠加）",
+      "feedback": ["sfx", "neonGlow", "statUp"],
+      "combinesWith": ["play"]
+    },
+    {
+      "name": "overdrive",
+      "cost": "消耗 80 金币，且本回合锁定，一次只能选一种加成",
+      "feedback": ["sfx", "doubleFlash", "statDouble"],
+      "combinesWith": ["play"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "第一回合：押当前属性最高的卡，还是留一张高卡防后面的属性",
+      "cost": "打出高卡=这回合稳；留卡=下一回合可能属性不利"
+    },
+    {
+      "atSec": 20,
+      "choice": "是否花 40 金币强化本回合",
+      "cost": "强化=赢面更大，但金币减少，离超频/取消更远"
+    },
+    {
+      "atSec": 40,
+      "choice": "金币够削弱对手：立刻削弱，还是攒到 80 开超频",
+      "cost": "削弱只 ×0.85 但便宜；超频 ×2 但更贵"
+    },
+    {
+      "atSec": 70,
+      "choice": "落后时：取消本回合止损，还是硬拼一把",
+      "cost": "取消=保命但白费一轮金币；硬拼=可能翻盘也可能更惨"
+    },
+    {
+      "atSec": 110,
+      "choice": "连击 2 层：继续进攻吃连击额外伤害，还是保守出牌",
+      "cost": "激进=连击加成但可能断连；保守=稳但无额外伤害"
+    },
+    {
+      "atSec": 150,
+      "choice": "终局对方残血：用超频一击结束，还是省金币留后手",
+      "cost": "超频=更快结束；留币=下一局更有余力"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "三属性比牌 + 百分比分档伤害（2/4/6）" },
+    { "index": 2, "newElement": "金币技能：强化（×1.1）与削弱（×0.85）" },
+    { "index": 3, "newElement": "连击额外伤害 + 超频（×2）+ 星级结算" }
+  ],
+  "upgrades": [
+    { "id": "unlockBuff", "kind": "rule", "desc": "解锁强化：本回合出牌属性 ×1.1" },
+    { "id": "unlockDebuff", "kind": "rule", "desc": "解锁削弱：敌方属性 ×0.85" },
+    { "id": "unlockOverdrive", "kind": "rule", "desc": "解锁超频：本回合出牌属性 ×2" },
+    { "id": "unlockCancel", "kind": "rule", "desc": "解锁取消：本回合互相 0 伤害" },
+    { "id": "comboBonus", "kind": "rule", "desc": "连胜 ≥2/≥4 分别 +1/+2 额外伤害" },
+    { "id": "starRating", "kind": "rule", "desc": "结算按剩余生命给 1–3 星" },
+    { "id": "coinEconomy", "kind": "stat", "desc": "赢回合金币 = 伤害 ×10，输 ×5" },
+    { "id": "handSize", "kind": "stat", "desc": "固定 5 张手牌，出牌即补" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "wushen-sword-dome",
+  "genre": "action",
+  "oneLiner": "你在霓虹剑穹中发射能量剑刃击倒对手，用闪避、连击与技能赢下三连战。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "launch", "cost": "消耗内力并进入兵器冷却", "feedback": ["sfx", "trail", "impact"], "combinesWith": ["dodge", "skill"] },
+    { "name": "dodge", "cost": "进入闪避冷却，且无敌帧内无法进攻", "feedback": ["sfx", "ghostAfterimage"], "combinesWith": ["launch"] },
+    { "name": "skill", "cost": "消耗大量内力并进入长冷却", "feedback": ["sfx", "screenFlash", "bigHit"], "combinesWith": ["launch"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先出轻剑压制，还是攒内力出重剑", "cost": "轻剑伤害低，重剑消耗高" },
+    { "atSec": 12, "choice": "对手剑刃逼近时闪避还是硬吃换血", "cost": "闪避交冷却，硬吃掉血" },
+    { "atSec": 20, "choice": "把内力留给招牌技能还是连续普攻", "cost": "技能冷却长，普攻消耗分散" },
+    { "atSec": 35, "choice": "争夺场中星陨石还是先逼退对手", "cost": "抢石可能吃到对手剑刃" },
+    { "atSec": 55, "choice": "用回气技能稳住血量还是继续输出", "cost": "回气会暂停进攻节奏" },
+    { "atSec": 80, "choice": "连击堆高时冒进还是收手保连击", "cost": "冒进可能被打断连击" },
+    { "atSec": 110, "choice": "第二关面对带毒的对手是否优先闪避", "cost": "闪避频繁会耗尽冷却" },
+    { "atSec": 140, "choice": "第三关霸主面前是否先骗出它的技能", "cost": "拖时间会持续受压" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 40, "twistSec": 35, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "三段抛物线轨迹的基础能量剑刃" },
+    { "index": 2, "newElement": "连击伤害倍率与场中星陨石 buff" },
+    { "index": 3, "newElement": "对手觉醒技能与霸主强化属性" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule" },
+    { "id": "dodge-invuln", "kind": "rule" },
+    { "id": "skill-dragon", "kind": "rule" },
+    { "id": "skill-surge", "kind": "rule" },
+    { "id": "weapon-poison", "kind": "rule" },
+    { "id": "weapon-multi", "kind": "rule" },
+    { "id": "weapon-crit", "kind": "rule" },
+    { "id": "atk-up", "kind": "stat" },
+    { "id": "hp-up", "kind": "stat" },
+    { "id": "mp-up", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 4, "firstSuccessSec": 20, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

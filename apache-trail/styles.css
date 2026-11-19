@@ -1,0 +1,264 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a1024;
+  color: #fff6df;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Microsoft YaHei', 'Segoe UI', 'Noto Sans', Tahoma, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: min(1280px, 100vw);
+  aspect-ratio: 16 / 9;
+  max-height: 100vh;
+  background: #2b1a4a;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---------- HUD（不透明条，不遮玩法区） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  z-index: 5;
+  background: #1a1024;
+  border-bottom: 2px solid #4a2438;
+  pointer-events: none;
+}
+.hud-row {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+}
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.hud-pill {
+  background: #33204a;
+  padding: 6px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.hud-pill.time-low { background: #7a1f2b; color: #ffd2a8; }
+.hud-combo { background: #4a3a10; color: #ffd24a; }
+.hud-shield { background: #123a38; color: #7fe0d0; }
+.hud-right {
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+.hud-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #33204a;
+  color: #fff6df;
+  font-size: 17px;
+  cursor: pointer;
+}
+.hud-btn:hover { background: #4a2c66; }
+.hud-btn.is-muted { opacity: 0.6; }
+
+/* ---------- 全屏层 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 16, 36, 0.66);
+  z-index: 10;
+}
+.hidden, .screen.hidden { display: none !important; }
+
+.screen h1 {
+  font-size: 3.4rem;
+  margin-bottom: 0.4rem;
+  color: #ffd24a;
+  text-shadow: 0 3px 0 #7a1f2b, 0 6px 18px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+.screen h2 { font-size: 2rem; margin-bottom: 1rem; color: #ffd24a; }
+.screen h2.lose { color: #e5484d; }
+.screen .subtitle { font-size: 1.05rem; margin-bottom: 1.4rem; opacity: 0.9; }
+.screen button {
+  padding: 12px 34px;
+  font-size: 1.15rem;
+  background: #e5484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 0.9rem;
+}
+.screen button:hover { background: #c73a40; }
+.screen .btn-ghost { background: #33204a; }
+.screen .btn-ghost:hover { background: #4a2c66; }
+
+.lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #1a1024;
+  color: #ffd24a;
+  border: 1px solid #ffd24a;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.lang-select:focus { outline: 2px solid #ffd24a; outline-offset: 2px; }
+
+.total-stars { font-size: 1.3rem; color: #ffd24a; margin-bottom: 0.4rem; }
+
+/* ---------- 关卡格 ---------- */
+.level-grid {
+  display: flex;
+  gap: 14px;
+  margin-top: 1.4rem;
+}
+.level-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 96px;
+  padding: 14px 0;
+  background: #33204a;
+  border: 2px solid #4a2c66;
+  border-radius: 12px;
+  color: #fff6df;
+  cursor: pointer;
+  font-family: inherit;
+}
+.level-cell:hover { background: #4a2c66; }
+.level-cell.locked { opacity: 0.4; cursor: not-allowed; }
+.level-cell .lv-num { font-size: 1.5rem; font-weight: bold; }
+.level-cell .lv-stars { color: #ffd24a; letter-spacing: 1px; }
+
+/* ---------- 结算 ---------- */
+.win-stars { font-size: 2.4rem; color: #ffd24a; min-height: 2.6rem; }
+.win-stars em { font-style: normal; font-size: 1rem; color: #7fe0d0; margin-left: 8px; }
+.win-time { margin-top: 0.6rem; font-size: 1.1rem; opacity: 0.9; }
+.win-meta { margin-top: 0.4rem; font-size: 1rem; opacity: 0.8; }
+.win-btns { display: flex; gap: 12px; }
+
+/* ---------- 触屏控制（仅粗指针显示） ---------- */
+#touch-controls { display: none; }
+@media (pointer: coarse) {
+  #touch-controls {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .touch-btn {
+    position: absolute;
+    bottom: 22px;
+    width: 64px;
+    height: 64px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background: rgba(51, 32, 74, 0.65);
+    color: #fff6df;
+    font-size: 1.5rem;
+    pointer-events: auto;
+    touch-action: none;
+  }
+  #btn-left { left: 22px; }
+  #btn-right { left: 100px; }
+  #btn-jump { right: 22px; width: 76px; height: 76px; background: rgba(229, 72, 77, 0.7); }
+}
+
+/* ---------- 竖屏遮罩（内联 onclick 可关） ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: none;
+  background: #1a1024;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+}
+.rotate-card { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 24px; }
+.rotate-icon { font-size: 3rem; }
+#rotate-screen p { font-size: 1.1rem; }
+#btn-rotate-skip {
+  padding: 12px 26px;
+  font-size: 1rem;
+  background: #e5484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ---------- 教程（卡片固定底部居中） ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.5);
+}
+#tut-spotlight { display: none; }
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 560px;
+  max-width: 92vw;
+  background: #1a1024;
+  border: 2px solid #ffd24a;
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+#tut-card h3 { color: #ffd24a; margin-bottom: 8px; font-size: 1.2rem; }
+#tut-card p { font-size: 1rem; line-height: 1.5; opacity: 0.95; }
+.tut-btns { display: flex; gap: 10px; margin-top: 14px; }
+.tut-btns button {
+  padding: 10px 22px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+#tut-next { background: #e5484d; color: #fff; }
+#tut-skip { background: #33204a; color: #fff6df; }
+
+/* ---------- 降低动态效果 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

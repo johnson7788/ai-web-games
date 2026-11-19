@@ -1,0 +1,117 @@
+{
+  "game": "three-kingdoms-tots",
+  "generatedAt": "2026-11-19T20:48:23.082Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.166666666666666,
+    "silhouette": 6.833333333333333,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的橙色“Battle”按钮开始战斗",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三个部队卡片下方的圆形底座颜色不一致（红/蓝/红），可能误导阵营归属",
+        "‘Yellow Scarves’卡片为亮黄，其余为灰，但未明确标示玩家方，需依赖位置推断",
+        "两侧城堡图标过小且细节模糊，眯眼时难以区分敌我旗帜颜色差异"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间橙色‘开战’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三个关卡卡片下方角色剪影与底座颜色相近（红/蓝环），眯眼时易混淆敌我单位",
+        "左上角和右上角城楼图标与背景融合度高，轮廓不够突出",
+        "‘三国小小将’标题阴影过重，部分笔画在浅棕背景上对比度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部技能栏中的‘Shield Tot’（盾牌图腾）按钮开始部署单位",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Keep 100%’与‘Enemy 100%’进度条文字过小且无明确标签，易混淆；",
+        "中间虚线分界线在沙色背景上对比度偏低，远距离不易辨识；",
+        "左右两侧塔楼图标颜色相近（红/蓝顶），未通过形状或亮度强化玩家/敌方区分"
+      ]
+    },
+    {
+      "shot": "tests/final/04-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角‘Shield Tot’技能按钮开始部署单位",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧两个玩家单位被白色圆圈高亮覆盖，可能为调试标记，非正式UI元素",
+        "顶部‘Battle 1 · Yellow Scarves’与‘180s’间距过小，略显拥挤",
+        "底部技能栏图标文字（如‘盾’‘弓’）为中文但无英文标注，对非中文用户不友好"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Next Battle”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景战场单位在暗化层下细节模糊，眯眼时部分敌我单位轮廓混淆（如左中塔与敌人）",
+        "底部技能栏图标文字过小（如‘Shield Tot’），桌面截图虽不致命，但影响可读性一致性",
+        "顶部状态栏‘Keep 100%’与‘Enemy 0%’字号偏小且对比度不足，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/06-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部技能栏中的‘Shield Tot’（盾牌图腾）准备部署防御",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家单位（左侧塔楼+旗帜）与敌方单位（右侧塔楼+旗帜）视觉权重相近，缺乏明确主次区分，易混淆己方阵地",
+        "中间虚线分界线过细且颜色浅（灰白），在深青背景上对比度不足，影响战场对称性感知",
+        "底部技能图标文字（如‘盾’‘弓’）为中文但无英文标注，非中文用户可能难以快速识别"
+      ]
+    }
+  ]
+}

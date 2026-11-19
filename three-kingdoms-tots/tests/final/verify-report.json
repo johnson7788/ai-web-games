@@ -1,0 +1,123 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "战役 3 关",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 3"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "进入第 1 战",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "9 张卡牌",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().cards.length === 9"
+    },
+    {
+      "name": "主城血量正常",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().player.keep.hp > 0"
+    },
+    {
+      "name": "已出兵",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().deployCount > 0"
+    },
+    {
+      "name": "战斗结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 1"
+    },
+    {
+      "name": "进入第 3 战",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 3"
+    },
+    {
+      "name": "第 3 战预置岩石",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().enemy.units.length > 0"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "竖屏显示旋转提示",
+      "ok": true,
+      "detail": "eval: getComputedStyle(document.getElementById('rotate-screen')).display === 'flex'"
+    },
+    {
+      "name": "跳过按钮内联 onclick",
+      "ok": true,
+      "detail": "eval: document.getElementById('btn-rotate-skip').getAttribute('onclick').indexOf('rotate-screen') >= 0"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-title-zh.png",
+    "03-playing.png",
+    "04-battle.png",
+    "05-result.png",
+    "06-boss.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

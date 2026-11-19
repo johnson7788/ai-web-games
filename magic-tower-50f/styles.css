@@ -1,0 +1,305 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #05070f;
+  color: #dbe6ff;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Segoe UI', 'Microsoft YaHei', monospace;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #070a14;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #070a14;
+  touch-action: manipulation;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD（不透明顶栏，视觉评审不判遮挡） ---------- */
+#hud {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  z-index: 12;
+  background: linear-gradient(180deg, #0c1226 0%, #0a0f20 100%);
+  border-bottom: 2px solid #2b3a5e;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 12px;
+  pointer-events: auto;
+}
+.hud-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 26px;
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 8px; }
+.hud-mid { display: flex; align-items: center; gap: 8px; }
+.hud-floor { font-weight: 900; color: #37f0ff; font-size: 1.05rem; letter-spacing: 1px; }
+.hud-pill {
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: #141b30;
+  border: 1px solid #2b3a5e;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.hud-pill.hp { color: #54ff9f; border-color: #1f6a4a; }
+.hud-keys { display: flex; gap: 4px; font-size: 0.85rem; }
+.hud-btn {
+  min-width: 30px; height: 28px;
+  background: #141b30;
+  color: #dbe6ff;
+  border: 1px solid #2b3a5e;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+.hud-btn:hover { background: #1e2947; }
+.hud-btn.is-muted { opacity: 0.5; }
+
+.hud-sub { display: flex; align-items: center; gap: 10px; height: 18px; }
+.hp-bar-wrap, .exp-bar-wrap {
+  height: 8px;
+  border-radius: 4px;
+  background: #141b30;
+  border: 1px solid #2b3a5e;
+  overflow: hidden;
+}
+.hp-bar-wrap { flex: 2; }
+.exp-bar-wrap { flex: 1; }
+#hp-bar { height: 100%; width: 100%; background: linear-gradient(90deg, #54ff9f, #37f0ff); transition: width 0.2s; }
+#exp-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #ffd84e, #ffb13c); transition: width 0.2s; }
+.hud-items { font-size: 0.75rem; color: #9fb2d8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ---------- 屏幕 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at 50% 30%, #101936 0%, #070a14 70%);
+  text-align: center;
+  gap: 10px;
+}
+.screen.is-active { z-index: 31; }
+.screen h1 { font-size: 3.2rem; letter-spacing: 6px; color: #37f0ff; text-shadow: 0 0 22px rgba(55,240,255,0.6); }
+.screen h2 { font-size: 2rem; margin-bottom: 0.4rem; color: #ffd84e; }
+.screen .subtitle { font-size: 1.05rem; opacity: 0.75; max-width: 720px; padding: 0 20px; }
+.title-logo { font-size: 4rem; color: #ff2fa0; text-shadow: 0 0 28px rgba(255,47,160,0.7); animation: pulse 2.2s ease-in-out infinite; }
+.total-stars { font-size: 1.1rem; color: #ffd84e; letter-spacing: 2px; }
+.screen button, .card button {
+  padding: 12px 34px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(180deg, #37f0ff, #1ba8d8);
+  color: #04222b;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 4px 0 #0d6a8a;
+}
+.screen button.btn-ghost, .card button.btn-ghost {
+  background: #141b30;
+  color: #dbe6ff;
+  border: 1px solid #2b3a5e;
+  box-shadow: none;
+}
+.screen button:hover { filter: brightness(1.08); }
+.lang-select {
+  position: absolute;
+  top: 16px;
+  inset-inline-end: 18px;
+  padding: 7px 12px;
+  background: #141b30;
+  color: #37f0ff;
+  border: 1px solid #37f0ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* ---------- 结算 ---------- */
+.win-stars { font-size: 2.8rem; letter-spacing: 10px; color: #ffd84e; text-shadow: 0 0 16px rgba(255,216,78,0.6); }
+.win-meta { font-size: 1.05rem; opacity: 0.85; margin: 4px 0 12px; max-width: 720px; padding: 0 20px; }
+.win-btns { display: flex; gap: 12px; }
+
+/* ---------- 卡片（战斗/商店/对话） ---------- */
+.card {
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%);
+  z-index: 35;
+  width: 400px;
+  max-width: 92vw;
+  background: rgba(12, 16, 34, 0.97);
+  border: 1px solid #2b3a5e;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+.card h3 { color: #37f0ff; margin-bottom: 10px; }
+.battle-stats { display: flex; gap: 8px; margin-bottom: 8px; }
+.battle-predict { font-size: 0.85rem; color: #9fb2d8; margin-bottom: 10px; }
+.battle-btns { display: flex; gap: 10px; justify-content: flex-end; }
+#battle-name { font-size: 1.3rem; }
+
+/* 战斗动画覆盖层 */
+#battle-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 34;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#battle-log {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffd84e;
+  text-shadow: 0 0 24px rgba(255,216,78,0.8);
+  animation: battlePop 0.5s ease-out;
+  pointer-events: none;
+}
+@keyframes battlePop {
+  0% { transform: scale(0.4); opacity: 0; }
+  30% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* 商店 */
+.shop-coins { color: #ffd84e; margin-bottom: 8px; font-weight: 700; }
+#shop-items { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+.shop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  background: #141b30;
+  border: 1px solid #2b3a5e;
+  border-radius: 8px;
+  font-size: 0.82rem;
+}
+.shop-item button { padding: 4px 10px; font-size: 0.8rem; }
+#shop-enhance { display: flex; gap: 8px; margin-bottom: 10px; }
+#shop-enhance button { padding: 8px 12px; font-size: 0.85rem; }
+
+#talk-text { font-size: 0.95rem; line-height: 1.5; color: #dbe6ff; margin-bottom: 12px; text-align: left; }
+
+/* ---------- 教程（固定底部居中，不遮棋盘） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 40; pointer-events: none; }
+#tut-backdrop { position: absolute; inset: 0; background: rgba(4, 6, 14, 0.55); }
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 460px;
+  max-width: 92vw;
+  padding: 14px 18px;
+  background: rgba(16, 20, 38, 0.98);
+  border: 1px solid rgba(55, 240, 255, 0.5);
+  border-radius: 14px;
+  text-align: left;
+  pointer-events: auto;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.6);
+}
+#tut-title { color: #37f0ff; font-weight: 900; margin-bottom: 6px; }
+#tut-text { font-size: 0.95rem; line-height: 1.5; opacity: 0.92; }
+.tut-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+.tut-btns button { padding: 9px 20px; font-size: 0.9rem; }
+
+/* ---------- 竖屏提示（触屏竖屏时显示，可跳过；内联 onclick 关闭） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 9, 18, 0.9);
+  }
+}
+#rotate-screen .rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #12214a, #0d1a3a);
+  border: 2px solid #37f0ff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+#rotate-screen .rotate-icon { font-size: 3rem; color: #37f0ff; animation: rotate-tip 2.2s ease-in-out infinite; }
+@keyframes rotate-tip { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+#rotate-screen p { color: #eaffff; font-size: 1.1rem; font-weight: 700; }
+#btn-rotate-skip {
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: none;
+  background: #ffb13c;
+  color: #3a2400;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b87a18;
+  font-family: inherit;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 844px) {
+  #game-container { border-radius: 0; }
+  #title-text, .screen h1 { font-size: 2.4rem; letter-spacing: 3px; }
+  .hud-pill { font-size: 0.7rem; padding: 2px 6px; }
+  .hud-floor { font-size: 0.9rem; }
+  .hud-btn { min-width: 44px; height: 40px; font-size: 1rem; }
+  .card { bottom: 80px; }
+  .screen button { padding: 13px 30px; }
+}
+
+/* ---------- 减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .title-logo, #rotate-screen .rotate-icon, #battle-log { animation: none; }
+  .screen button, .hud-btn, .shop-item button { transition: none; }
+}

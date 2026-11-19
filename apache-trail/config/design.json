@@ -1,0 +1,73 @@
+{
+  "slug": "apache-trail",
+  "genre": "platformer",
+  "oneLiner": "扮演峡谷跑者，在太阳落山前穿过阿帕奇小径：奔跑、二段跳、抓墙，收集太阳水晶并躲过仙人掌刺、锯盘、巨石与间歇泉，抵达发光的终点图腾。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "持续按住才有效，松手立刻停：跑过缺口前必须判断落点，冲过头就掉进峡谷",
+      "feedback": ["sfx", "dustTrail", "speedLines"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "jump",
+      "cost": "起跳后空中水平速度减半，二段跳只有一次，用错时机（太早/太晚）会撞上机关",
+      "feedback": ["sfx", "squashStretch", "doubleJumpRipple"],
+      "combinesWith": ["move", "wallclimb"]
+    },
+    {
+      "name": "wallclimb",
+      "cost": "抓墙会缓慢下滑，且只有抓着墙才能再用一次跳：依赖方向键紧贴墙面，松手即坠",
+      "feedback": ["sfx", "wallDust", "clingPose"],
+      "combinesWith": ["jump"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一段平地上加速冲，还是稳一步跳过前面的仙人掌刺", "cost": "冲过去可能撞刺；停一步损失时间" },
+    { "atSec": 12, "choice": "第一个缺口用一段跳还是二段跳", "cost": "二段跳用完，后面更宽的缺口就没有保险" },
+    { "atSec": 20, "choice": "吃主路旁的高处水晶，还是直奔终点图腾省时间", "cost": "绕路拿水晶可能超时丢时间星" },
+    { "atSec": 32, "choice": "峡谷里的风逆吹时硬闯，还是等风停再走", "cost": "硬闯被吹慢/吹退；等待消耗倒计时" },
+    { "atSec": 45, "choice": "用弹簧飞上高台拿水晶（上面有锯盘），还是走地面安全路线", "cost": "高台水晶换分数，但撞锯盘即死" },
+    { "atSec": 58, "choice": "护盾道具留给后面的喷火口，还是现在就用掉防身", "cost": "早用掉后面没有第二层保命" },
+    { "atSec": 72, "choice": "巨石在头顶巡逻时，贴地跑还是起跳越过一个更宽的缺口", "cost": "起跳会撞巨石；贴地跑要精准落点" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "奔跑/二段跳/抓墙 + 仙人掌刺 + 太阳水晶与连击" },
+    { "index": 2, "newElement": "间歇风 + 弹簧跳台 + 巡逻太阳锯盘" },
+    { "index": 3, "newElement": "巡逻巨石 + 喷火间歇泉 + 滚刺球" }
+  ],
+  "upgrades": [
+    { "id": "doubleJump", "kind": "rule", "desc": "空中可二段跳一次" },
+    { "id": "wallclimb", "kind": "rule", "desc": "贴墙可抓墙下滑并再跳一次" },
+    { "id": "combo", "kind": "rule", "desc": "3 秒内连续吃水晶触发连击倍率" },
+    { "id": "shield", "kind": "rule", "desc": "太阳护盾可抵挡一次致命机关" },
+    { "id": "wind", "kind": "stat", "desc": "峡谷风逆吹减速/顺吹加速" },
+    { "id": "spring", "kind": "stat", "desc": "弹簧跳台提供超高点起跳" },
+    { "id": "timeShard", "kind": "stat", "desc": "时间沙漏 +6 秒倒计时" },
+    { "id": "starRating", "kind": "stat", "desc": "三星评级：通关/全水晶/限时内" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

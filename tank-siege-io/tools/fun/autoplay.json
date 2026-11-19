@@ -1,0 +1,59 @@
+{
+  "game": "tank-siege-io",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 3,
+      "durationSec": 19.6,
+      "firstInputSec": 0.02,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 4.45,
+      "deaths": 0,
+      "actions": 84,
+      "idleSec": 0,
+      "maxEventGapSec": 0.42,
+      "uniqueEvents": 10,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 2,
+      "durationSec": 30.38,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 9.48,
+      "deaths": 1,
+      "actions": 1421,
+      "idleSec": 0,
+      "maxEventGapSec": 0.48,
+      "uniqueEvents": 10,
+      "levelsReached": 2,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 11.47,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 3.47,
+      "maxEventGapSec": 6.47,
+      "uniqueEvents": 4,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

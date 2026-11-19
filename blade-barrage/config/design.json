@@ -1,0 +1,91 @@
+{
+  "slug": "blade-barrage",
+  "genre": "arcade",
+  "oneLiner": "霓虹竞技场里，玩家看准时机把剑刃垂直射向上方来回穿梭的核心：命中中心翻倍、连续命中叠连击、失误撞刺掉命。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "fire",
+      "cost": "剑刃一旦射出就直线到底：没贯穿核心就撞上尖刺，损失一条命",
+      "feedback": ["sfx", "muzzleGlow", "trail"],
+      "combinesWith": ["burst"]
+    },
+    {
+      "name": "burst",
+      "cost": "剑刃飞行中再次点击把它当空引爆成扇形碎片——若范围内没有目标，这条命照样丢",
+      "feedback": ["sfx", "shardFan", "flash"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "核心正在横向穿梭：现在发射，还是等它回到中线再射",
+      "cost": "没贯穿就是一条命"
+    },
+    {
+      "atSec": 12,
+      "choice": "瞄准核心中心（×2 完美），还是擦边命中（×1 稳妥）",
+      "cost": "贪中心更容易射偏"
+    },
+    {
+      "atSec": 25,
+      "choice": "去接绿色宝石凑爆发，还是继续连击核心",
+      "cost": "接宝石可能错过一次干净的贯穿"
+    },
+    {
+      "atSec": 40,
+      "choice": "眼看要擦肩而过：当空引爆补救，还是省下这次点击",
+      "cost": "引爆落空 = 损失一条命"
+    },
+    {
+      "atSec": 60,
+      "choice": "岩石横在弹道上：从缝隙射过去，还是等它飘走",
+      "cost": "等太久剑刃会沉进底部尖刺"
+    },
+    {
+      "atSec": 90,
+      "choice": "爆发生效中：趁双倍猛贪分，还是稳扎稳打保命",
+      "cost": "贪分会提高撞刺概率"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "单核心：发射 + 贯穿，掌握时机" },
+    { "index": 2, "newElement": "能量宝石 + Surge（集满 3 颗触发子弹时间与双倍分）" },
+    { "index": 3, "newElement": "岩石障碍 + 更小更快的核心" },
+    { "index": 4, "newElement": "空中爆发（burst）：近失时二次点击当空补救" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule", "desc": "连续命中叠加连击倍数" },
+    { "id": "perfect", "kind": "rule", "desc": "命中核心中心判定 PERFECT ×2" },
+    { "id": "burst", "kind": "rule", "desc": "飞行中二次点击引爆扇形碎片补救近失" },
+    { "id": "surge", "kind": "rule", "desc": "集满 3 颗宝石触发子弹时间 + 双倍分" },
+    { "id": "coreShrink", "kind": "stat", "desc": "核心随命中次数缩小" },
+    { "id": "coreSpeed", "kind": "stat", "desc": "波次越高核心越快地穿梭" },
+    { "id": "gemScore", "kind": "stat", "desc": "宝石提供额外分数" },
+    { "id": "rockHazard", "kind": "stat", "desc": "岩石成为移动障碍" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 12,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "game": "barbarian-bash",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 3,
+      "durationSec": 6.2,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 1.35,
+      "deaths": 0,
+      "actions": 12,
+      "idleSec": 0,
+      "maxEventGapSec": 0.9,
+      "uniqueEvents": 9,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 17.07,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 10,
+      "idleSec": 0,
+      "maxEventGapSec": 1.65,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 60.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 57,
+      "maxEventGapSec": 60,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

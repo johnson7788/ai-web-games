@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>TANK SIEGE IO</title>
+  <link rel="stylesheet" href="styles.css?v=ts1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-wave" class="hud-pill"></span>
+          <span id="hud-score" class="hud-pill"></span>
+          <span id="hud-combo" class="hud-pill hud-combo"></span>
+        </div>
+        <div class="hud-center">
+          <span class="hud-core-label">CORE</span>
+          <span id="hud-core-bar" class="core-bar"><span id="hud-core-fill"></span></span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-enemies" class="hud-pill"></span>
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">TANK SIEGE IO</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best-line" id="best-line"></div>
+      <button id="btn-start" class="btn-primary">Start</button>
+      <p class="controls-hint" id="controls-hint"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="btn-primary">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry" class="btn-primary">Retry</button>
+        <button id="btn-next" class="btn-primary">Next Wave</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger battlefield</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next" class="btn-primary">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="joystick" class="touch-only hidden"><div id="joystick-knob"></div></div>
+    <button id="btn-fire" class="touch-only hidden" aria-label="Fire">FIRE</button>
+  </div>
+  <script type="module" src="src/main.js?v=ts1"></script>
+</body>
+</html>

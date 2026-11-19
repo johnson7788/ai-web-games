@@ -1,0 +1,379 @@
+{
+  "game": "card-clash-arena",
+  "generatedAt": "2026-11-19T20:50:10.911Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds≈38.4",
+      "ok": true,
+      "loopSeconds": 38.4,
+      "bpm": 100,
+      "bars": 16
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 38.9
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.022431497774472536
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.022389438416747422
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.019131960219436934
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.11698939651250839
+    },
+    {
+      "name": "sfx-cardPlayed-rms>0.01",
+      "ok": true,
+      "rms": 0.013360730110544899
+    },
+    {
+      "name": "sfx-cardPlayed-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.17235827664399092
+    },
+    {
+      "name": "sfx-cardPlayed-peak<=0.98",
+      "ok": true,
+      "peak": 0.09241154044866562
+    },
+    {
+      "name": "sfx-enemyPlayed-rms>0.01",
+      "ok": true,
+      "rms": 0.014968518894150875
+    },
+    {
+      "name": "sfx-enemyPlayed-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.18988662131519274
+    },
+    {
+      "name": "sfx-enemyPlayed-peak<=0.98",
+      "ok": true,
+      "peak": 0.12292905896902084
+    },
+    {
+      "name": "sfx-attributeReveal-rms>0.01",
+      "ok": true,
+      "rms": 0.025636365508634004
+    },
+    {
+      "name": "sfx-attributeReveal-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.048390022675736964
+    },
+    {
+      "name": "sfx-attributeReveal-peak<=0.98",
+      "ok": true,
+      "peak": 0.10067643225193024
+    },
+    {
+      "name": "sfx-roundWin-rms>0.01",
+      "ok": true,
+      "rms": 0.019474756101516433
+    },
+    {
+      "name": "sfx-roundWin-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.23607709750566894
+    },
+    {
+      "name": "sfx-roundWin-peak<=0.98",
+      "ok": true,
+      "peak": 0.09094783663749695
+    },
+    {
+      "name": "sfx-roundLose-rms>0.01",
+      "ok": true,
+      "rms": 0.024725423374571745
+    },
+    {
+      "name": "sfx-roundLose-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.2746938775510204
+    },
+    {
+      "name": "sfx-roundLose-peak<=0.98",
+      "ok": true,
+      "peak": 0.09405732899904251
+    },
+    {
+      "name": "sfx-roundDraw-rms>0.01",
+      "ok": true,
+      "rms": 0.028108180732289472
+    },
+    {
+      "name": "sfx-roundDraw-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.05605442176870748
+    },
+    {
+      "name": "sfx-roundDraw-peak<=0.98",
+      "ok": true,
+      "peak": 0.07566964626312256
+    },
+    {
+      "name": "sfx-damage-rms>0.01",
+      "ok": true,
+      "rms": 0.03499183026592813
+    },
+    {
+      "name": "sfx-damage-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.13002267573696144
+    },
+    {
+      "name": "sfx-damage-peak<=0.98",
+      "ok": true,
+      "peak": 0.15278048813343048
+    },
+    {
+      "name": "sfx-buff-rms>0.01",
+      "ok": true,
+      "rms": 0.016534328077210534
+    },
+    {
+      "name": "sfx-buff-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.08242630385487529
+    },
+    {
+      "name": "sfx-buff-peak<=0.98",
+      "ok": true,
+      "peak": 0.07331690937280655
+    },
+    {
+      "name": "sfx-debuff-rms>0.01",
+      "ok": true,
+      "rms": 0.016250613255219665
+    },
+    {
+      "name": "sfx-debuff-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.08292517006802722
+    },
+    {
+      "name": "sfx-debuff-peak<=0.98",
+      "ok": true,
+      "peak": 0.07301172614097595
+    },
+    {
+      "name": "sfx-overdrive-rms>0.01",
+      "ok": true,
+      "rms": 0.02134309706413237
+    },
+    {
+      "name": "sfx-overdrive-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.19365079365079366
+    },
+    {
+      "name": "sfx-overdrive-peak<=0.98",
+      "ok": true,
+      "peak": 0.08193579316139221
+    },
+    {
+      "name": "sfx-cancel-rms>0.01",
+      "ok": true,
+      "rms": 0.03107196725613431
+    },
+    {
+      "name": "sfx-cancel-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.14775510204081632
+    },
+    {
+      "name": "sfx-cancel-peak<=0.98",
+      "ok": true,
+      "peak": 0.123721182346344
+    },
+    {
+      "name": "sfx-combo-rms>0.01",
+      "ok": true,
+      "rms": 0.022352377780942314
+    },
+    {
+      "name": "sfx-combo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.197437641723356
+    },
+    {
+      "name": "sfx-combo-peak<=0.98",
+      "ok": true,
+      "peak": 0.08802187442779541
+    },
+    {
+      "name": "sfx-win-rms>0.01",
+      "ok": true,
+      "rms": 0.020290344490177355
+    },
+    {
+      "name": "sfx-win-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "name": "sfx-win-peak<=0.98",
+      "ok": true,
+      "peak": 0.09354979544878006
+    },
+    {
+      "name": "sfx-lose-rms>0.01",
+      "ok": true,
+      "rms": 0.04173619333872114
+    },
+    {
+      "name": "sfx-lose-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.20535147392290248
+    },
+    {
+      "name": "sfx-lose-peak<=0.98",
+      "ok": true,
+      "peak": 0.17012734711170197
+    },
+    {
+      "name": "heartbeat-not-mapped-silent",
+      "ok": true,
+      "rms": 0
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 38.4,
+      "bpm": 100,
+      "bars": 16,
+      "duration": 38.9,
+      "rms": 0.022431497774472536,
+      "peak": 0.11698939651250839,
+      "headRms": 0.022389438416747422,
+      "spliceRms": 0.019131960219436934
+    },
+    {
+      "kind": "sfx",
+      "name": "cardPlayed",
+      "event": "cardPlayed",
+      "rms": 0.013360730110544899,
+      "peak": 0.09241154044866562,
+      "activeDuration": 0.17235827664399092
+    },
+    {
+      "kind": "sfx",
+      "name": "enemyPlayed",
+      "event": "enemyPlayed",
+      "rms": 0.014968518894150875,
+      "peak": 0.12292905896902084,
+      "activeDuration": 0.18988662131519274
+    },
+    {
+      "kind": "sfx",
+      "name": "attributeReveal",
+      "event": "attributeReveal",
+      "rms": 0.025636365508634004,
+      "peak": 0.10067643225193024,
+      "activeDuration": 0.048390022675736964
+    },
+    {
+      "kind": "sfx",
+      "name": "roundWin",
+      "event": "roundWin",
+      "rms": 0.019474756101516433,
+      "peak": 0.09094783663749695,
+      "activeDuration": 0.23607709750566894
+    },
+    {
+      "kind": "sfx",
+      "name": "roundLose",
+      "event": "roundLose",
+      "rms": 0.024725423374571745,
+      "peak": 0.09405732899904251,
+      "activeDuration": 0.2746938775510204
+    },
+    {
+      "kind": "sfx",
+      "name": "roundDraw",
+      "event": "roundDraw",
+      "rms": 0.028108180732289472,
+      "peak": 0.07566964626312256,
+      "activeDuration": 0.05605442176870748
+    },
+    {
+      "kind": "sfx",
+      "name": "damage",
+      "event": "damage",
+      "rms": 0.03499183026592813,
+      "peak": 0.15278048813343048,
+      "activeDuration": 0.13002267573696144
+    },
+    {
+      "kind": "sfx",
+      "name": "buff",
+      "event": "buff",
+      "rms": 0.016534328077210534,
+      "peak": 0.07331690937280655,
+      "activeDuration": 0.08242630385487529
+    },
+    {
+      "kind": "sfx",
+      "name": "debuff",
+      "event": "debuff",
+      "rms": 0.016250613255219665,
+      "peak": 0.07301172614097595,
+      "activeDuration": 0.08292517006802722
+    },
+    {
+      "kind": "sfx",
+      "name": "overdrive",
+      "event": "overdrive",
+      "rms": 0.02134309706413237,
+      "peak": 0.08193579316139221,
+      "activeDuration": 0.19365079365079366
+    },
+    {
+      "kind": "sfx",
+      "name": "cancel",
+      "event": "cancel",
+      "rms": 0.03107196725613431,
+      "peak": 0.123721182346344,
+      "activeDuration": 0.14775510204081632
+    },
+    {
+      "kind": "sfx",
+      "name": "combo",
+      "event": "combo",
+      "rms": 0.022352377780942314,
+      "peak": 0.08802187442779541,
+      "activeDuration": 0.197437641723356
+    },
+    {
+      "kind": "sfx",
+      "name": "win",
+      "event": "win",
+      "rms": 0.020290344490177355,
+      "peak": 0.09354979544878006,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "kind": "sfx",
+      "name": "lose",
+      "event": "lose",
+      "rms": 0.04173619333872114,
+      "peak": 0.17012734711170197,
+      "activeDuration": 0.20535147392290248
+    }
+  ]
+}

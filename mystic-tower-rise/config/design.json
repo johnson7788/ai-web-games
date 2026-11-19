@@ -1,0 +1,44 @@
+{
+  "slug": "mystic-tower-rise",
+  "genre": "puzzle",
+  "oneLiner": "指挥霓虹勇者在高塔网格里规划路线：拾取宝石刀盾变强、用钥匙开门、算准伤害再打怪，一路爬到顶层击败霸主。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "move", "cost": "每一步都在靠近危险：尖刺会扣血，走进怪堆会强制开战", "feedback": ["sfx", "trail", "glowHighlight"], "combinesWith": ["fight"] },
+    { "name": "fight", "cost": "战斗按公式确定性扣生命，打不过的怪无法穿越只能绕路", "feedback": ["sfx", "hitFlash", "shake"], "combinesWith": ["move"] },
+    { "name": "unlock", "cost": "开门消耗对应钥匙，钥匙数量有限必须精打细算", "feedback": ["sfx", "doorOpen", "glowHighlight"], "combinesWith": ["move"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先拾取攻击宝石还是先拿黄钥匙", "cost": "先拿钥匙能更快上楼，但少加攻击后面打怪更疼" },
+    { "atSec": 12, "choice": "打不打挡在路口的史莱姆", "cost": "打要掉血，绕路要多走几步" },
+    { "atSec": 30, "choice": "有限钥匙先开黄门还是留着开后面的门", "cost": "黄钥匙用错就进不了蓝门区域" },
+    { "atSec": 55, "choice": "商店花钱升防御还是升攻击", "cost": "金币有限，升错一项可能卡在首领前" },
+    { "atSec": 80, "choice": "磁能镐破哪块水晶", "cost": "镐有限，选错水晶拿不到想要的加成" },
+    { "atSec": 110, "choice": "走传送星门捷径还是老老实实走主路", "cost": "星门省路但可能跳到没探索过的角落" },
+    { "atSec": 150, "choice": "要不要无伤刷连击赚双倍金币", "cost": "无伤需要找弱怪，费时间但金币翻倍" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 60, "twistSec": 40, "resolveSec": 30 },
+  "levels": [
+    { "index": 1, "newElement": "移动与自动拾取 + 黄门（钥匙开门）" },
+    { "index": 2, "newElement": "完美连击（无伤击杀金币翻倍）" },
+    { "index": 3, "newElement": "传送星门 + 商店消费" },
+    { "index": 4, "newElement": "能量水晶 + 磁能镐 + 尖刺伤害" },
+    { "index": 5, "newElement": "高塔霸主首领决战" }
+  ],
+  "upgrades": [
+    { "id": "gemAtk", "kind": "stat", "desc": "力量核心：攻击 +3" },
+    { "id": "gemDef", "kind": "stat", "desc": "守护核心：防御 +3" },
+    { "id": "blade", "kind": "stat", "desc": "铁/银/金刃：攻击 +8/+16/+30" },
+    { "id": "aegis", "kind": "stat", "desc": "铁/银/金盾：防御 +8/+16/+30" },
+    { "id": "vial", "kind": "stat", "desc": "纳米小瓶/超级大瓶：生命 +60/+180" },
+    { "id": "keyYellow", "kind": "rule", "desc": "黄钥匙：解锁黄色闸门" },
+    { "id": "keyBlue", "kind": "rule", "desc": "蓝钥匙：解锁蓝色闸门" },
+    { "id": "keyRed", "kind": "rule", "desc": "红钥匙：解锁红色闸门" },
+    { "id": "pick", "kind": "rule", "desc": "磁能镐：破开能量水晶拿加成" },
+    { "id": "tele", "kind": "rule", "desc": "星门：跨层传送抄近路" },
+    { "id": "combo", "kind": "rule", "desc": "完美连击：无伤击杀金币翻倍" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 40, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

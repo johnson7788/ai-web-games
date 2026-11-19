@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MAGIC TOWER 50F</title>
+  <link rel="stylesheet" href="styles.css?v=mt1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-floor" class="hud-floor"></span>
+          <span id="hud-lv" class="hud-pill"></span>
+          <span id="hud-combo" class="hud-pill"></span>
+          <span id="hud-stars" class="hud-pill"></span>
+        </div>
+        <div class="hud-mid">
+          <span id="hud-hp" class="hud-pill hp"></span>
+          <span id="hud-atk" class="hud-pill"></span>
+          <span id="hud-def" class="hud-pill"></span>
+          <span id="hud-exp" class="hud-pill"></span>
+          <span id="hud-coins" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-keys" class="hud-keys"></span>
+          <button id="btn-bag" class="hud-btn" aria-label="Potion">+</button>
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">M</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">R</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">H</button>
+        </div>
+      </div>
+      <div class="hud-sub">
+        <div class="hp-bar-wrap"><div id="hp-bar"></div></div>
+        <div class="exp-bar-wrap"><div id="exp-bar"></div></div>
+        <span id="hud-items" class="hud-items"></span>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <div class="title-logo">◆</div>
+      <h1 id="title-text">MAGIC TOWER 50F</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="total-stars"><span id="stars-total"></span></div>
+      <button id="btn-start">Start</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">Replay Guide</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="battle-card" class="card hidden">
+      <h3 id="battle-name"></h3>
+      <div class="battle-stats">
+        <span id="battle-hp" class="hud-pill hp"></span>
+        <span id="battle-atk" class="hud-pill"></span>
+        <span id="battle-def" class="hud-pill"></span>
+      </div>
+      <p id="battle-predict" class="battle-predict"></p>
+      <div class="battle-btns">
+        <button id="btn-fight">Fight</button>
+        <button id="btn-cancel" class="btn-ghost">Cancel</button>
+      </div>
+    </div>
+
+    <div id="battle-overlay" class="hidden">
+      <div id="battle-log"></div>
+    </div>
+
+    <div id="shop-card" class="card hidden">
+      <h3 id="shop-title"></h3>
+      <div id="shop-coins" class="shop-coins"></div>
+      <div id="shop-items"></div>
+      <div id="shop-enhance"></div>
+      <button id="btn-shop-close" class="btn-ghost">Close</button>
+    </div>
+
+    <div id="talk-card" class="card hidden">
+      <h3 id="talk-title"></h3>
+      <p id="talk-text"></p>
+      <div class="battle-btns">
+        <button id="btn-talk-ok">OK</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">↻</div>
+        <p id="rotate-text">Rotate for a bigger tower view</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-backdrop"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=mt1"></script>
+</body>
+</html>

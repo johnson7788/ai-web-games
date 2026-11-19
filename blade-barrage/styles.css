@@ -1,0 +1,174 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: #05060f;
+  color: #eafcff;
+  font-family: 'PingFang SC', 'Hiragino Sans', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 46px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(62, 245, 255, 0.15);
+}
+canvas { width: 100%; height: 100%; display: block; background: #0a0a1c; touch-action: manipulation; }
+
+.hidden { display: none !important; }
+
+/* ---------- HUD 顶栏（52px 不透明条，不遮挡战场） ---------- */
+#hud {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 52px;
+  background: linear-gradient(180deg, rgba(8, 10, 24, 0.98), rgba(10, 12, 28, 0.92));
+  border-bottom: 1px solid rgba(62, 245, 255, 0.35);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+}
+.hud-row { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 12px; gap: 8px; }
+.hud-left, .hud-right { display: flex; align-items: center; gap: 8px; }
+.hud-pill {
+  font-weight: 800; font-size: 15px; letter-spacing: 0.5px;
+  color: #eafcff; text-shadow: 0 0 8px rgba(62, 245, 255, 0.6);
+  white-space: nowrap;
+}
+.hud-score { color: #3ef5ff; font-size: 20px; }
+.hud-lives { color: #ff4d6d; font-size: 16px; }
+.hud-surge { color: #a6ff4d; text-shadow: 0 0 10px rgba(166, 255, 77, 0.8); animation: pulse 0.5s ease-in-out infinite; }
+.hud-pill.combo-hot { color: #ff3ec8; text-shadow: 0 0 10px rgba(255, 62, 200, 0.8); }
+.hud-btn {
+  width: 34px; height: 34px;
+  background: rgba(62, 245, 255, 0.08);
+  border: 1px solid rgba(62, 245, 255, 0.4);
+  color: #eafcff; font-size: 16px; font-weight: 800;
+  border-radius: 8px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.hud-btn:hover { background: rgba(62, 245, 255, 0.2); }
+.hud-btn.is-muted { opacity: 0.5; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* ---------- 屏幕基类 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  text-align: center;
+  gap: 14px;
+  background: rgba(5, 6, 15, 0.55);
+  backdrop-filter: blur(2px);
+}
+#screen-title { background: rgba(5, 6, 15, 0.4); }
+#screen-title h1 {
+  font-size: 56px; font-weight: 900; letter-spacing: 4px;
+  color: #eafcff;
+  text-shadow: 0 0 18px rgba(62, 245, 255, 0.8), 0 0 40px rgba(255, 62, 200, 0.5);
+}
+.subtitle { color: #b7e9ee; font-size: 17px; max-width: 640px; }
+.title-best { color: #a6ff4d; font-size: 15px; font-weight: 700; letter-spacing: 1px; }
+.screen h2 { font-size: 32px; font-weight: 900; letter-spacing: 2px; }
+
+.btn-primary {
+  padding: 14px 46px; font-size: 20px; font-weight: 800; letter-spacing: 2px;
+  color: #04141a; background: linear-gradient(180deg, #6ffbff, #3ef5ff);
+  border: none; border-radius: 12px; cursor: pointer;
+  box-shadow: 0 0 22px rgba(62, 245, 255, 0.7);
+}
+.btn-primary:hover { filter: brightness(1.1); }
+.btn-ghost {
+  padding: 10px 22px; font-size: 15px; font-weight: 700;
+  color: #eafcff; background: rgba(62, 245, 255, 0.08);
+  border: 1px solid rgba(62, 245, 255, 0.4); border-radius: 10px; cursor: pointer;
+}
+.btn-ghost:hover { background: rgba(62, 245, 255, 0.18); }
+
+.lang-select {
+  position: absolute; top: 14px; right: 14px;
+  padding: 6px 10px; font-size: 14px; border-radius: 8px;
+  background: rgba(10, 12, 28, 0.9); color: #eafcff; border: 1px solid rgba(62, 245, 255, 0.4);
+}
+
+/* ---------- 结算 ---------- */
+.win-stars { font-size: 44px; letter-spacing: 6px; color: #ffd84e; text-shadow: 0 0 18px rgba(255, 216, 78, 0.8); }
+.newbest { color: #a6ff4d; font-size: 20px; font-weight: 900; letter-spacing: 2px; animation: pulse 0.6s ease-in-out infinite; }
+.result-grid { display: grid; grid-template-columns: repeat(3, auto); gap: 12px 26px; }
+.result-grid > div { display: flex; flex-direction: column; gap: 2px; min-width: 110px; }
+.result-grid span { color: #7fd6dd; font-size: 13px; }
+.result-grid b { color: #eafcff; font-size: 22px; font-weight: 900; }
+.result-grid .result-cell-score b { color: #3ef5ff; font-size: 34px; text-shadow: 0 0 16px rgba(62, 245, 255, 0.8); }
+.win-btns { display: flex; gap: 12px; margin-top: 8px; }
+
+/* ---------- 教程（底部居中卡片） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 30; pointer-events: none; }
+#tut-spotlight {
+  position: absolute; display: none;
+  border: 2px solid rgba(255, 216, 78, 0.9);
+  border-radius: 14px;
+  box-shadow: 0 0 0 9999px rgba(4, 5, 12, 0.55), 0 0 24px rgba(255, 216, 78, 0.5);
+}
+#tut-card {
+  position: absolute;
+  left: 50%; bottom: 36px; transform: translateX(-50%);
+  width: 460px; max-width: 92vw;
+  background: rgba(10, 12, 28, 0.96);
+  border: 1px solid rgba(62, 245, 255, 0.5);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+  text-align: left;
+}
+#tut-card h3 { color: #3ef5ff; font-size: 17px; margin-bottom: 8px; }
+#tut-card p { color: #eafcff; font-size: 15px; line-height: 1.5; }
+.tut-btns { display: flex; justify-content: flex-end; gap: 10px; margin-top: 12px; }
+
+/* ---------- 旋转提示（竖屏 + 触屏才显示） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    position: absolute; inset: 0; z-index: 40;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(5, 6, 15, 0.92);
+  }
+}
+.rotate-card {
+  text-align: center; color: #eafcff; display: flex; flex-direction: column; gap: 16px; align-items: center;
+}
+.rotate-icon { font-size: 48px; }
+.rotate-card p { font-size: 18px; font-weight: 700; }
+.rotate-card button {
+  padding: 12px 26px; font-size: 16px; font-weight: 800;
+  color: #04141a; background: #3ef5ff; border: none; border-radius: 10px; cursor: pointer;
+}
+
+/* ---------- 触屏 / 小屏 ---------- */
+@media (max-width: 720px) {
+  #screen-title h1 { font-size: 34px; }
+  .hud-pill { font-size: 13px; }
+  .hud-score { font-size: 17px; }
+  .hud-btn { width: 44px; height: 44px; }
+}
+
+/* ---------- 减动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hud-surge, .newbest { animation: none; }
+  .rotate-icon { animation: none; }
+}

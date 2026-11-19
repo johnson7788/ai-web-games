@@ -1,0 +1,149 @@
+{
+  "game": "barbarian-bash",
+  "generatedAt": "2026-11-19T20:53:56.924Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.75,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角角色与地面网格线对比度低，眯眼时轮廓易混淆",
+        "关卡1按钮高亮色（青蓝）与其他灰色按钮色差过大，风格略突兀",
+        "‘0 / 18’星星计数文字偏小，远距离辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角角色与地面网格线对比度低，眯眼时轮廓易混淆",
+        "关卡按钮1高亮色（青蓝）与其他灰色按钮对比过强，略显突兀",
+        "‘0 / 18’星标计数文字偏小，远距离辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击玩家角色或其手持的放大镜图标以启动探测/移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标标识（红色感叹号+TARGET）文字较小且无描边，暗背景下对比度偏低，易被忽略",
+        "玩家角色手持放大镜发光效果与背景网格线亮度接近，可能影响轮廓辨识",
+        "HUD中'Robots left 1'与'Rocks 5/5'间距过近，小屏下易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/04-aim.png",
+      "goal_visible": true,
+      "first_action_guess": "点击玩家角色发射蓝色光球攻击右侧标有'TARGET'的红色方块",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'Rocks 5/5'与'Robots left 1'间距过小，易误读为'Rocks 5/5 Robots left 1'",
+        "目标物上方红色感叹号图标与'TARGET'文字垂直对齐偏上，视觉重心不稳",
+        "玩家角色左手持球部分与身体轮廓融合，轻微降低辨识度（但未影响功能）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角角色与地面边缘融合，轮廓不够清晰（silhouette扣分）",
+        "‘Arena Cleared!’文字有轻微渐变色噪点，风格略异于主UI（style_consistent扣分）",
+        "右下角‘CRIT! +250’提示部分被半透明菱形遮挡，信息不完整"
+      ]
+    },
+    {
+      "shot": "tests/final/06-tnt.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧角色手持的放大镜图标以启动探测或选择动作",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘TARGET’文字与红色感叹号图标重叠，视觉干扰；",
+        "TNT箱体标签‘TNT’字体过小且无描边，在暗背景中对比度偏低；",
+        "角色手持放大镜发光效果略过强，可能掩盖其手部轮廓"
+      ]
+    },
+    {
+      "shot": "tests/final/07-captive.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧橙色角色手持的放大镜（启动扫描或互动）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘TARGET’标签文字与红色目标箱顶部重叠，轻微遮挡图标",
+        "绿色机器人头顶感叹号过小，易被忽略，建议增大或加高对比",
+        "右上角按钮组无明确功能提示（如问号、重试图标语义模糊）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧角色手持的蓝色球体（可能是发射/瞄准按钮）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角三个图标（?、齿轮、重试、主页）间距过小，可能误触；",
+        "‘TARGET’标签文字与感叹号图标重叠轻微（中等大小屏幕下）；",
+        "TNT方块无明确交互提示，玩家可能不确定是否可点击或需避开"
+      ]
+    }
+  ]
+}

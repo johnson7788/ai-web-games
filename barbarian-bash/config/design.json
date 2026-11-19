@@ -1,0 +1,69 @@
+{
+  "slug": "barbarian-bash",
+  "genre": "arcade",
+  "oneLiner": "野蛮人在霓虹竞技场里拖拽瞄准，甩出岩石砸爆机器人大军，命中弱点核心暴击秒杀、省弹药拿三星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "拖拽瞄准时不能做其他事；拖得越远弹道越高越难控，蓄力越久越容易错失移动目标",
+      "feedback": ["trajectoryDots", "aimSfx", "armGlow"],
+      "combinesWith": ["throw"]
+    },
+    {
+      "name": "throw",
+      "cost": "每投一块岩石就永久消耗一次弹药；投偏 = 连击断掉 + 离三星更远一步",
+      "feedback": ["sfx", "boulderTrail", "impactFlash"],
+      "combinesWith": ["aim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "第一块岩石直接瞄机器人核心搏暴击，还是先砸正前方的木箱开路", "cost": "瞄核心偏一点就打空；砸木箱白耗一块弹药" },
+    { "atSec": 15, "choice": "两个机器人都在场：先打近的低威胁，还是先打远的高威胁", "cost": "先打近的留远的输出窗口；先打远的可能被近的挡住弹道" },
+    { "atSec": 28, "choice": "TNT 炸药桶离敌人很近：引爆它连锁清场，还是绕过它精准点杀", "cost": "引爆范围伤害可能误伤人质；点杀多耗弹药" },
+    { "atSec": 42, "choice": "连击已经叠到 3：继续冒险刷连击分，还是稳妥落点保三星", "cost": "冒险投偏连击清零；保守会少拿连击加分" },
+    { "atSec": 58, "choice": "玻璃挡在敌人前：打碎玻璃再打人，还是从上方高抛越过玻璃", "cost": "打碎玻璃耗弹药；高抛轨迹难控、落点不稳" },
+    { "atSec": 74, "choice": "最后一关的装甲 BOSS：攒弹药反复打核心，还是先引爆旁边 TNT 蹭血", "cost": "反复打核心容错低；引爆 TNT 也可能把自己震到没弹药" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "拖拽瞄准投掷岩石" },
+    { "index": 2, "newElement": "连击与弱点暴击" },
+    { "index": 3, "newElement": "可破坏木箱 + 装甲敌人(2HP)" },
+    { "index": 4, "newElement": "TNT 炸药桶连锁爆破" },
+    { "index": 5, "newElement": "人质保护（误伤即败）" },
+    { "index": 6, "newElement": "装甲 BOSS（需弱点暴击）" }
+  ],
+  "upgrades": [
+    { "id": "crit", "kind": "rule", "desc": "命中发光核心 = 暴击秒杀，弹道变成唯一解" },
+    { "id": "combo", "kind": "rule", "desc": "连续击杀叠加连击分，投偏清零" },
+    { "id": "tntChain", "kind": "rule", "desc": "TNT 爆炸连锁引爆范围内其它 TNT" },
+    { "id": "weakCore", "kind": "rule", "desc": "每个机器人暴露一个弱点核心" },
+    { "id": "captive", "kind": "rule", "desc": "人质存活是隐形失败条件，误伤即败" },
+    { "id": "ammo", "kind": "stat", "desc": "弹药数量决定三星评级上限" },
+    { "id": "power", "kind": "stat", "desc": "拖拽距离决定投掷力度（0.55–1.12×）" },
+    { "id": "bossArmor", "kind": "stat", "desc": "Boss 3 层装甲，非暴击只掉 1 层" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

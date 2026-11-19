@@ -1,0 +1,149 @@
+{
+  "game": "tank-siege-io",
+  "generatedAt": "2026-11-19T20:51:47.507Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7.5,
+    "style_consistent": 9.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的 'Start' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'TANK SIEGE IO' 部分字母（如 'I'）在深色背景上对比度略低，弱光下可能辨识困难",
+        "‘Best ★ 0’ 星号与数字间距过小，易误读为 ‘★0’ 或 ‘B★0’",
+        "底部操作提示文字较小（约10px），在高DPI屏或远距离观看时可能模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最佳 ★ 0’文字偏小且与背景对比度略低，弱光下可能难辨",
+        "右上角语言切换按钮无悬停反馈，且边框与背景融合度高，易被忽略",
+        "部分橙色墙体与紫色圆形单位在暗背景下色差不足，眯眼时轮廓稍混"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置的绿色玩家角色（或其上方的发射按钮）开始射击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "CORE 进度条无明确数值或单位，仅靠颜色难以判断剩余量",
+        "敌人数量显示为 'Enemies 2'，但画面中可见多于2个橙色方块结构（可能为组合体，易误判）",
+        "玩家角色下方有两小方块遮挡部分底座，疑似可交互物但未标注功能"
+      ]
+    },
+    {
+      "shot": "tests/final/04-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的青色玩家角色开始移动或射击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "CORE 进度条无明确数值或单位，仅靠颜色变化难以判断剩余量",
+        "左上角 Wave 1 / Score 0 字体偏小，暗背景下对比度略低",
+        "右上角 'Enemies 2' 按钮与相邻图标间距过窄，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next Wave’按钮继续游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（底部绿色圆形）与下方方块重叠，轮廓不够突出",
+        "‘Wave Cleared!’文字居中但背景网格干扰辨识，轻微降低可读性",
+        "左上角‘Wave 1’和‘Score 0’灰度过低，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央亮绿色的 'Start' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best ★ 0’中星号与数字间距过小，易误读为‘Best★0’",
+        "背景网格与橙色墙体线宽不一致（墙体更粗），轻微风格断裂",
+        "右上角语言选择框边框颜色与主标题发光色冲突，略显突兀"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下绿色圆形玩家单位进行移动或射击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家单位（绿色圆）与下方橙色方块紧贴，边界模糊，易误判碰撞",
+        "‘CORE’进度条无数值标注，无法判断剩余量",
+        "敌人数量‘2’未说明是当前波内剩余还是总敌数，语义不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的青色玩家单位进行移动或射击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人（红色方块）与障碍物（橙色砖块）颜色对比度偏低，眯眼时易混淆",
+        "CORE血条无数值标注，无法判断剩余量",
+        "右上角按钮组中问号图标与菜单图标间距过小，可能误触"
+      ]
+    }
+  ]
+}

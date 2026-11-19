@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>HEROES CHARGE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- HUD：不透明顶栏，避免遮挡判定 -->
+    <div id="hud" class="hidden">
+      <div class="hud-bar">
+        <div class="hud-left">
+          <span id="hud-level" class="hud-pill"></span>
+          <span id="hud-hearts" class="hud-hearts"></span>
+          <span id="hud-enemies" class="hud-pill hud-enemies"></span>
+        </div>
+        <div class="hud-center"><span id="hud-combo"></span></div>
+        <div class="hud-right">
+          <div class="hud-dash"><div id="hud-dash-fill"></div></div>
+          <span id="hud-score" class="hud-pill"></span>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-how" class="hud-btn" aria-label="Replay guide">?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 标题屏 -->
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">HEROES CHARGE</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="title-best" id="title-best"></p>
+      <button id="btn-start">Start</button>
+      <button id="btn-how2" class="btn-ghost" data-tutorial-replay>How to play</button>
+      <p class="title-hint" id="title-hint"></p>
+    </div>
+
+    <!-- 暂停屏 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart" class="btn-ghost">Restart</button>
+      <button id="btn-home" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 结算屏 -->
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div class="result-stars" id="result-stars"></div>
+      <div class="result-score" id="result-score"></div>
+      <div class="result-combo" id="result-combo"></div>
+      <div class="result-hint" id="result-hint"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <!-- 关卡横幅 -->
+    <div id="level-banner" class="hidden"></div>
+
+    <!-- 竖屏提示 -->
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for the best view</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <!-- 首次交互引导 -->
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 触屏控制（移动端） -->
+    <div id="touch-controls" class="hidden">
+      <div class="touch-left">
+        <button class="tp-btn" data-dir="left" aria-label="Move left">◀</button>
+        <button class="tp-btn" data-dir="right" aria-label="Move right">▶</button>
+      </div>
+      <div class="touch-right">
+        <button class="tp-btn tp-act" data-act="jump" aria-label="Jump">⤒</button>
+        <button class="tp-btn tp-act" data-act="attack" aria-label="Attack">⚔</button>
+        <button class="tp-btn tp-act" data-act="dash" aria-label="Dash">≫</button>
+        <button class="tp-btn tp-act" data-act="special" aria-label="Special">✦</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

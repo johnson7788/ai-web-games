@@ -1,0 +1,149 @@
+{
+  "game": "mystic-tower-rise",
+  "generatedAt": "2026-11-19T20:56:18.457Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-floor1.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动靠近黄色钥匙图标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（白色发光圆）与左上角‘GOAL: STAIRS’文字间距过近，可能误触",
+        "A8 D1 / A14 D3 文本紧贴绿色/紫色敌人图标，小屏易误读",
+        "底部红色三角形（疑似陷阱）与蓝色菱形（道具）形状相似、颜色对比弱，辨识度低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-floor2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角白色发光圆点（玩家角色）向右下移动，避开敌人并朝楼梯方向前进",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "A24 D8 和 A20 D6 敌人标签文字与角色重叠，轻微遮挡",
+        "右下角绿色三角形‘Stair’图标无文字说明，仅靠形状易误判为道具",
+        "部分敌人（如紫色A14 D3）与蓝色菱形道具颜色相近，眯眼时难区分"
+      ]
+    },
+    {
+      "shot": "tests/final/03-floor3.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动靠近橙色敌人（A38 D14）或拾取最近的金币",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（白色发光圆）与左上角网格线紧贴，可能被误判为边界；",
+        "部分敌人标签（如'A32 D10'）与角色重叠轻微，小屏下易混淆；",
+        "右下角绿色三角形'Goal'图标无文字说明，仅靠颜色暗示，新手可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-floor4.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动靠近右侧三个蓝色敌人，或向下走避开红色尖刺陷阱",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左上白球）与上方格线几乎贴边，可能被误判为边界；",
+        "部分敌人标签如'A46 D16'字体偏小且紧贴角色，远距离辨识度低；",
+        "右下角绿色三角图标无文字说明，功能不明（疑似出口？），需上下文确认"
+      ]
+    },
+    {
+      "shot": "tests/final/05-floor5.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央红色BOSS（A82 D26）进行攻击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "BOSS头顶绿色三角指示器与红色头像重叠，易误判为装饰而非状态",
+        "左上角‘ATK 1.0’‘DEF 1.0’字体过小且无单位说明，3秒内难辨数值含义",
+        "右下角白色十字光标位置偏下，与底部红色尖刺敌人视觉冲突，可能误操作"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中隐约可见三角形和小图标（左上/右上），但轮廓模糊，影响silhouette判断",
+        "‘+400 Gold’按钮无边框且字号小，视觉层级弱，易被忽略",
+        "星星图标与文字间距略紧，轻微影响可读性"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动靠近黄色钥匙图标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（白色发光圆）与左上角‘GOAL: STAIRS’文字间距过近，可能误触",
+        "A8 D1 / A14 D3 文本紧贴绿色/紫色敌人图标，小屏易误读",
+        "底部红色三角形（疑似陷阱）与蓝色菱形（道具）形状相似、颜色对比弱，辨识度低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Got it’按钮关闭教程弹窗",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡部分游戏区域（如A8 D1、A14 D3位置的图标），影响初始操作判断",
+        "左上角状态栏文字（如'HP 400'）与背景对比度偏低，弱光环境下可能难辨",
+        "网格线过细且颜色偏暗（浅青色），在深色背景下易与背景融合，降低可读性"
+      ]
+    }
+  ]
+}

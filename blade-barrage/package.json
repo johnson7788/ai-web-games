@@ -1,0 +1,12 @@
+{
+  "name": "blade-barrage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "BLADE BARRAGE — neon arcade blade-timing game (procedural art + WebAudio, zero deps)",
+  "scripts": {
+    "test": "node --test",
+    "selfplay": "node tools/selfplay.mjs",
+    "audio": "node tools/audio-check.mjs"
+  }
+}

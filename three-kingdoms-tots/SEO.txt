@@ -1,0 +1,37 @@
+TITLE
+Three Kingdoms Tots — Free Card Battle Strategy Game
+
+CATEGORY
+Strategy
+
+TAGS
+three kingdoms, card battle, tower defense, strategy, real-time, chibi, generals, browser game, casual, war
+
+SHORT DESCRIPTION
+Deploy tiny Three Kingdoms generals, smash enemy towers and conquer the enemy keep in this real-time card battle.
+
+LONG DESCRIPTION
+THREE KINGDOMS TOTS is a free real-time card battle strategy game. Command an army of chibi generals — shield soldiers, archers, cavalry, catapults and mighty tiger generals — and storm the enemy keep.
+
+Spend energy to deploy cards onto a two-lane battlefield. Your units march right and fight on their own: they smash towers, cut through rock walls and chain kills into combo energy. Cast Fire Strike, Healing Wind or Frost Rune for bursts of control, and build Rock Walls to hold the line.
+
+Three battles, one goal: destroy the enemy keep before the clock runs out. Earn up to three stars by finishing fast and keeping your own keep healthy. Easy to learn in seconds, harder to master. Works with mouse and touch on desktop and mobile. No download, play free in your browser.
+
+TITLE
+三国小小将 — 免费卡牌出兵攻城策略游戏
+
+CATEGORY
+策略
+
+TAGS
+三国, 卡牌对战, 塔防, 策略, 实时, 武将, 浏览器游戏, 休闲, 战争, 攻城
+
+SHORT DESCRIPTION
+派出迷你三国武将，一路拆掉箭塔、攻破敌方主城——实时卡牌出兵策略游戏。
+
+LONG DESCRIPTION
+《三国小小将》是一款免费的实时卡牌出兵策略游戏。指挥一群迷你武将——刀盾兵、弓箭手、轻骑兵、投石车和虎将——攻破敌方主城。
+
+消耗能量把卡牌派上两条兵线的战场。小将们会自动向右冲锋战斗：拆箭塔、破岩壁，连杀还能攒连击回能量。火攻、回春术、寒冰阵能打出爆发与控制，岩石壁垒能守住兵线。
+
+三场战役，一个目标：在时间耗尽前攻破敌方主城。快速通关、保住己方主城，最高能拿三星。十秒上手，越玩越有策略。鼠标、触屏全支持，桌面手机都能玩。无需下载，浏览器免费畅玩。

@@ -1,0 +1,69 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "assert": "document.getElementById('level-grid').children.length === 3", "name": "战役 3 关" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "02-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "eval": "window.__ll.start(0)" },
+    { "wait": 600 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入第 1 战" },
+    { "eval": "window.__ll.tutorial.skip()" },
+    { "wait": 250 },
+    { "screenshot": "03-playing.png" },
+    { "assert": "window.__ll.debug.state().cards.length === 9", "name": "9 张卡牌" },
+    { "assert": "window.__ll.debug.state().player.keep.hp > 0", "name": "主城血量正常" },
+    { "eval": "window.__ll.debug.startSeeded(0, 3)" },
+    { "wait": 200 },
+    { "eval": "window.__ll.debug.autoPlay()" },
+    { "wait": 300 },
+    { "assert": "window.__ll.debug.state().deployCount > 0", "name": "已出兵" },
+    { "screenshot": "04-battle.png" },
+    { "eval": "window.__ll.debug.fastForward()" },
+    { "wait": 300 },
+    { "assert": "window.__ll.state.phase === 'result'", "name": "战斗结算" },
+    { "screenshot": "05-result.png" },
+    { "assert": "window.__ll.debug.state().stars >= 1", "name": "通关至少 1 星" },
+    { "eval": "window.__ll.debug.loadLevel(2)" },
+    { "wait": 400 },
+    { "assert": "window.__ll.debug.state().level === 3", "name": "进入第 3 战" },
+    { "assert": "window.__ll.debug.state().enemy.units.length > 0", "name": "第 3 战预置岩石" },
+    { "screenshot": "06-boss.png" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "重开本关" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start(0)"
+  },
+  "mobile": {
+    "viewport": [844, 390],
+    "steps": [
+      { "wait": 400 },
+      { "setViewport": { "w": 390, "h": 844 } },
+      { "wait": 300 },
+      { "assert": "getComputedStyle(document.getElementById('rotate-screen')).display === 'flex'", "name": "竖屏显示旋转提示" },
+      { "assert": "document.getElementById('btn-rotate-skip').getAttribute('onclick').indexOf('rotate-screen') >= 0", "name": "跳过按钮内联 onclick" }
+    ]
+  }
+}

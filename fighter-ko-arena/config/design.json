@@ -1,0 +1,97 @@
+{
+  "slug": "fighter-ko-arena",
+  "genre": "arcade",
+  "oneLiner": "两名霓虹斗士在街机擂台上对轰：踩准节奏连出快拳叠连击，或沉住气扫腿拉开距离，攒满超必杀一击 KO 三名对手。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "strike",
+      "cost": "快按是低伤快拳但叠连击增伤，等满 1 秒变扫腿——击退敌人但连击清零、距离重置",
+      "feedback": ["sfx", "hitSpark", "screenShake", "comboCounter"],
+      "combinesWith": ["block"]
+    },
+    {
+      "name": "block",
+      "cost": "按住格挡减免伤害，但期间不能出手、超必杀能量停止增长，一直龟缩只会被磨死",
+      "feedback": ["sfx", "shieldGlow", "damageNumb"],
+      "combinesWith": ["strike"]
+    },
+    {
+      "name": "super",
+      "cost": "消耗整管能量并进入长后摇，时机不对等于白送敌方一轮反击",
+      "feedback": ["sfx", "screenFlash", "bigImpact"],
+      "combinesWith": ["strike"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 2,
+      "choice": "双方逼近：抢先快拳起连击，还是等满 1 秒扫腿拉开距离",
+      "cost": "抢先拳=贴脸挨打风险；扫腿=放弃连击增伤"
+    },
+    {
+      "atSec": 8,
+      "choice": "敌方抬手预警：硬吃这一击换一次出手，还是按住格挡减伤",
+      "cost": "格挡保血但断了自己的进攻节奏"
+    },
+    {
+      "atSec": 15,
+      "choice": "能量槽攒满：现在就放超必杀，还是留到下一关更强的对手",
+      "cost": "现在放=本关稳；留着=本关可能被反杀"
+    },
+    {
+      "atSec": 25,
+      "choice": "自己血线见底：龟缩格挡拖时间，还是赌连击先手 KO",
+      "cost": "格挡救不回血，拖久了敌方出手更快"
+    },
+    {
+      "atSec": 40,
+      "choice": "敌方被打出硬直：继续连拳把连击叠到上限，还是扫腿击退重置安全距离",
+      "cost": "继续叠=伤害爆炸但贴脸；扫腿=安全但连击清零"
+    },
+    {
+      "atSec": 60,
+      "choice": "第二关敌方出手更快：改打防守反击，还是维持高速连击压制",
+      "cost": "防反稳但慢；压制快但容错低"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础拳脚：接近→快拳/扫腿的出手节奏" },
+    { "index": 2, "newElement": "连击：连续快拳叠 combo，伤害一路爬升" },
+    { "index": 3, "newElement": "超必杀：命中蓄满能量条，释放大伤害终结" },
+    { "index": 4, "newElement": "格挡：按住格挡减伤并打断敌方节奏" }
+  ],
+  "upgrades": [
+    { "id": "comboChain", "kind": "rule", "desc": "快拳命中叠连击，连击越高单拳越痛" },
+    { "id": "kickKnockback", "kind": "rule", "desc": "扫腿击退敌方并重置距离" },
+    { "id": "perfectBlock", "kind": "rule", "desc": "精准格挡敌方刚抬手的一击，减免更多伤害" },
+    { "id": "superArmor", "kind": "rule", "desc": "释放超必杀瞬间霸体，不被打断" },
+    { "id": "drainPunch", "kind": "rule", "desc": "连击达到上限后每次命中回复少量生命" },
+    { "id": "quickStrike", "kind": "stat", "desc": "快拳后摇缩短，出手更密" },
+    { "id": "ironBody", "kind": "stat", "desc": "最大生命提升，容错更高" },
+    { "id": "meterGain", "kind": "stat", "desc": "命中积攒能量加快，超必杀更早到手" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

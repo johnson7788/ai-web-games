@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>WUSHEN SWORD DOME</title>
+  <link rel="stylesheet" href="styles.css?v=wsd1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0620'/%3E%3Cpath d='M16 5 L22 27 L16 22 L10 27 Z' fill='%2322d3ee'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div id="hud-round" class="hud-pill"></div>
+      <div class="hud-side hud-left">
+        <div class="hud-name" id="hud-self-name"></div>
+        <div class="hud-bar-wrap"><div class="hud-bar hud-hp" id="hud-self-hp"></div><span class="hud-num" id="hud-self-hp-num"></span></div>
+        <div class="hud-bar-wrap"><div class="hud-bar hud-mp" id="hud-self-mp"></div></div>
+        <div class="hud-combo" id="hud-combo"></div>
+      </div>
+      <div class="hud-side hud-right">
+        <div class="hud-name" id="hud-other-name"></div>
+        <div class="hud-bar-wrap"><div class="hud-bar hud-hp hud-hp-e" id="hud-other-hp"></div><span class="hud-num" id="hud-other-hp-num"></span></div>
+        <div class="hud-bar-wrap"><div class="hud-bar hud-mp" id="hud-other-mp"></div></div>
+      </div>
+      <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+      <button id="btn-pause" class="hud-btn" aria-label="Pause">❚❚</button>
+    </div>
+
+    <!-- 底部操作区 -->
+    <div id="action-bar" class="hidden">
+      <button id="btn-dodge" class="skill-btn dodge-btn" aria-label="Dodge"><span class="btn-icon">⤨</span><span class="btn-label" id="dodge-label"></span><span class="cd-mask" id="dodge-cd"></span></button>
+      <div class="weapon-row" id="weapon-row">
+        <button class="weapon-btn" id="wbtn-0" aria-label="Blade 1"><span class="w-icon" id="wicon-0"></span><span class="w-cost" id="wcost-0"></span><span class="cd-mask" id="wcd-0"></span></button>
+        <button class="weapon-btn" id="wbtn-1" aria-label="Blade 2"><span class="w-icon" id="wicon-1"></span><span class="w-cost" id="wcost-1"></span><span class="cd-mask" id="wcd-1"></span></button>
+        <button class="weapon-btn" id="wbtn-2" aria-label="Blade 3"><span class="w-icon" id="wicon-2"></span><span class="w-cost" id="wcost-2"></span><span class="cd-mask" id="wcd-2"></span></button>
+      </div>
+      <div class="skill-col">
+        <button class="skill-btn" id="skill-0" aria-label="Skill 1"><span class="btn-icon" id="sicon-0"></span><span class="btn-label" id="slabel-0"></span><span class="cd-mask" id="scd-0"></span></button>
+        <button class="skill-btn" id="skill-1" aria-label="Skill 2"><span class="btn-icon" id="sicon-1"></span><span class="btn-label" id="slabel-1"></span><span class="cd-mask" id="scd-1"></span></button>
+      </div>
+    </div>
+
+    <!-- 标题屏 -->
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">WUSHEN SWORD DOME</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start" class="primary-btn"></button>
+      <button id="btn-howto" class="ghost-btn" data-tutorial-replay></button>
+    </div>
+
+    <!-- 暂停屏 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="primary-btn"></button>
+      <button id="btn-restart" class="ghost-btn"></button>
+      <button id="btn-home" class="ghost-btn"></button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 结算屏 -->
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <button id="btn-retry" class="primary-btn"></button>
+      <button id="btn-home2" class="ghost-btn"></button>
+    </div>
+
+    <!-- 竖屏提示 -->
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'"></button>
+      </div>
+    </div>
+
+    <!-- 首次交互引导 -->
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="ghost-btn" data-tutorial-skip></button>
+          <button id="tut-next" class="primary-btn"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=wsd1"></script>
+</body>
+</html>

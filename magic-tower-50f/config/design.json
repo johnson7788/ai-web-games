@@ -1,0 +1,61 @@
+{
+  "slug": "magic-tower-50f",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹尖塔的方格迷宫里，玩家权衡每一格的血量代价：打哪些怪、捡哪些宝、开哪扇门，才能爬满 50 层击碎星核。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "每走一格都可能撞进怪物、深坑或触发陷阱，路线即资源",
+      "feedback": ["footstepGlow", "sfx", "tileReveal"],
+      "combinesWith": ["fight"]
+    },
+    {
+      "name": "fight",
+      "cost": "战斗扣血不可逆（除非无伤），输了就掉层重来",
+      "feedback": ["hitFlash", "damageNumber", "sfx", "screenShake"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "use",
+      "cost": "药水/钥匙/宝石/卷轴都是有限消耗品，用错时机就卡关",
+      "feedback": ["glowPulse", "statBarBump", "sfx"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "先吃门口的红晶加攻击，还是绕开强怪直奔楼梯", "cost": "加攻击要绕路并可能遭遇战斗；直奔楼梯放弃成长" },
+    { "atSec": 25, "choice": "打这只刚好能赢但会掉半血的怪，还是留着血打 boss", "cost": "半血换经验/金币；省血可能卡在 boss 前" },
+    { "atSec": 45, "choice": "用钥匙开宝箱门拿武器，还是留钥匙开下一层的门", "cost": "钥匙有限，开了这扇可能下一扇没得开" },
+    { "atSec": 70, "choice": "6 颗灵石升级武器，还是攒着升盾", "cost": "升剑输出高但更脆；升盾稳但打得慢" },
+    { "atSec": 100, "choice": "无伤击杀小怪叠连击，还是速清大怪打断节奏", "cost": "叠连击收益高但要多走位；速清大怪风险高" },
+    { "atSec": 140, "choice": "推岩石进坑开宝藏侧路，还是无视宝藏直上", "cost": "推岩石费步数且可能触发守卫；直上少拿资源" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 40, "resolveSec": 25 },
+  "levels": [
+    { "index": 1, "newElement": "方格移动 + 首只星兽（学会无伤换血）" },
+    { "index": 2, "newElement": "三种颜色钥匙与门" },
+    { "index": 3, "newElement": "连击系统（无伤击杀叠攻击/暴击）" },
+    { "index": 4, "newElement": "可推动的机关石 + 深坑" },
+    { "index": 5, "newElement": "武器/盾装备与灵石升级" },
+    { "index": 6, "newElement": "星级评价（血量/击杀率给星）" },
+    { "index": 7, "newElement": "星锻工坊（金币购买/强化）" },
+    { "index": 8, "newElement": "传送卷轴（直上楼梯）" },
+    { "index": 9, "newElement": "精英星兽（高攻高防需规划路线）" },
+    { "index": 10, "newElement": "50 层星核 boss 终战" }
+  ],
+  "upgrades": [
+    { "id": "swordTier", "kind": "rule", "desc": "武器 6 阶，灵石 6 颗升一阶" },
+    { "id": "shieldTier", "kind": "rule", "desc": "盾 6 阶，灵石 6 颗升一阶" },
+    { "id": "combo", "kind": "rule", "desc": "无伤击杀叠连击，+攻击/+暴击" },
+    { "id": "keyDoors", "kind": "rule", "desc": "三色钥匙解锁宝藏侧路" },
+    { "id": "pushRock", "kind": "rule", "desc": "推机关石进坑，开辟隐藏路线" },
+    { "id": "teleport", "kind": "rule", "desc": "传送卷轴直达楼梯" },
+    { "id": "gemAtk", "kind": "stat", "desc": "红晶 +10 攻击" },
+    { "id": "gemDef", "kind": "stat", "desc": "蓝晶 +3 防御" },
+    { "id": "enhance", "kind": "stat", "desc": "工坊强化剑/盾" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 40, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

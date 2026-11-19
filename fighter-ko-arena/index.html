@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FIGHTER KO ARENA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-side left">
+          <span class="hud-label" id="hud-you">YOU</span>
+          <div class="hp-track"><div class="hp-fill player" id="hp-player"></div></div>
+          <div class="meter-track"><div class="meter-fill player" id="meter-player"></div></div>
+        </div>
+        <div class="hud-center">
+          <span id="hud-round" class="hud-round"></span>
+          <span id="hud-combo" class="hud-combo"></span>
+        </div>
+        <div class="hud-side right">
+          <span class="hud-label" id="hud-foe">FOE</span>
+          <div class="hp-track"><div class="hp-fill enemy" id="hp-enemy"></div></div>
+        </div>
+      </div>
+      <div class="hud-btns">
+        <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute">♪</button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">FIGHTER KO ARENA</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start">FIGHT</button>
+      <button id="btn-howto-title" class="btn-ghost" data-tutorial-replay>How to play</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title-win" class="win-title">K.O. VICTORY</h2>
+      <h2 id="result-title-lose" class="lose-title hidden">K.O. DEFEAT</h2>
+      <p class="result-meta" id="result-meta"></p>
+      <div class="win-btns">
+        <button id="btn-retry">Rematch</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="controls" class="hidden">
+      <button id="btn-block" class="ctrl-btn block" data-action="block">BLOCK</button>
+      <button id="btn-strike" class="ctrl-btn strike" data-action="strike">STRIKE</button>
+      <button id="btn-super" class="ctrl-btn super" data-action="super">SUPER</button>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger arena</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

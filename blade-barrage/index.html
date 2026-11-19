@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLADE BARRAGE</title>
+  <link rel="stylesheet" href="styles.css?v=blb1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span class="hud-pill hud-score" id="hud-score">SCORE 0</span>
+          <span class="hud-pill" id="hud-combo">×1</span>
+          <span class="hud-pill" id="hud-wave">WAVE 1</span>
+          <span class="hud-pill" id="hud-gems">GEMS 0</span>
+          <span class="hud-pill hud-surge hidden" id="hud-surge">SURGE</span>
+        </div>
+        <div class="hud-right">
+          <span class="hud-pill" id="hud-best">BEST 0</span>
+          <span class="hud-pill hud-lives" id="hud-lives">♥♥♥</span>
+          <button id="btn-howto" class="hud-btn" data-tutorial-replay aria-label="How to play">?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">BLADE BARRAGE</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="title-best" id="title-best"></div>
+      <button id="btn-start" class="btn-primary">Start</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="btn-primary">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">BLADE DOWN</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div id="result-newbest" class="newbest hidden">NEW BEST!</div>
+      <div class="result-grid">
+        <div class="result-cell-score"><span id="result-label-score">Score</span><b id="result-score">0</b></div>
+        <div><span id="result-label-best">Best</span><b id="result-best">0</b></div>
+        <div><span id="result-label-combo">Max Combo</span><b id="result-maxcombo">0</b></div>
+        <div><span id="result-label-hits">Hits</span><b id="result-hits">0</b></div>
+        <div><span id="result-label-gems">Gems</span><b id="result-gems">0</b></div>
+        <div><span id="result-label-wave">Wave</span><b id="result-wave">1</b></div>
+      </div>
+      <div class="win-btns">
+        <button id="btn-retry" class="btn-primary">Retry</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger arena</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=blb1"></script>
+</body>
+</html>

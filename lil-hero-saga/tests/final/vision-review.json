@@ -1,0 +1,85 @@
+{
+  "game": "lil-hero-saga",
+  "generatedAt": "2026-11-19T20:52:19.073Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 6.5,
+    "style_consistent": 8.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景城市剪影与标题文字亮度对比不足，眯眼时标题略显模糊",
+        "‘Best 0’字号过小且颜色偏黄，在深蓝背景下辨识度偏低",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头与文字间距过紧"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘小小勇者传说’渐变色在深蓝背景上部分字母（如‘小’右下）对比度偏低，弱光下可能辨识困难",
+        "‘最佳 0’文字颜色为黄色，与主标题渐变风格不完全统一，略显突兀",
+        "背景城市剪影层次模糊，眯眼时难以区分建筑层级，影响 silhouette 得分"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色旗帜或右侧黄色箭头按钮开始移动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部红色/黄色/蓝色条无标签，难以区分对应角色或状态",
+        "左上角'Act 1 · The Hollow'与'Score 0'间距过小，易误读为单个元素",
+        "右上角黄色箭头按钮悬停在界面边缘，可能被误触或遮挡（若为移动端）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Retry”按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部中央有一个模糊小圆点（疑似玩家角色残影），与背景融合度高，轮廓不清晰",
+        "‘Perfect Prism!’文字使用黄色发光效果，在深蓝背景下略显过曝，影响部分可读性",
+        "‘Combo ×3 · New Best!’字号偏小，且与上方信息行距紧凑，易被忽略"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "game": "wushen-sword-dome",
+  "generatedAt": "2026-11-19T20:49:08.759Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.6,
+    "silhouette": 8.2,
+    "style_consistent": 9.4
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言选择下拉框边框与背景对比度低，可能影响可访问性",
+        "‘Neon blade duel arena’副标题字号偏小，在低分辨率下易被忽略",
+        "两侧角色轮廓发光效果略强，可能轻微干扰中央按钮视觉焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮进入游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言切换按钮过小（约24px宽），非桌面端可能难触达",
+        "两个角色轮廓发光效果略强，轻微干扰中央按钮视觉焦点",
+        "背景网格线在深色背景下对比度偏低，部分区域易与角色边缘混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/02-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部‘Dodge’按钮闪避，或选择技能如‘Dragon Slash’攻击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角玩家名‘neon-apprentice’与血条文字颜色过近（粉紫），小字号下易混淆",
+        "‘Round 1 / 3’居中显示但无背景衬底，在深色星空背景下对比度略低",
+        "技能按钮图标（菱形/星形）无文字说明，新手可能不知数值25/40/60代表什么"
+      ]
+    },
+    {
+      "shot": "tests/final/03-action.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部‘Dodge’按钮躲避飞来的菱形弹幕",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角玩家名‘neon-apprentice’与血条轻微重叠（文字靠右太近）",
+        "中间‘Round 1 / 3’标签无背景，深色背景下对比度偏低",
+        "弹幕轨迹线（紫色网格线）与角色脚底光晕部分融合，可能干扰落点判断"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮色的“Retry”按钮重新开始本关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧角色轮廓偏暗、细节少，与右侧敌人对比度不足，眯眼时易混淆身份",
+        "顶部‘Round 1/3’和玩家名区域模糊，部分文字边缘发虚（如‘neon-apprentice’）",
+        "星星图标无描边，小尺寸下可能误判为装饰而非评分"
+      ]
+    }
+  ]
+}

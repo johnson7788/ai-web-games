@@ -1,0 +1,76 @@
+{
+  "slug": "three-kingdoms-tots",
+  "genre": "default",
+  "oneLiner": "点卡出兵：迷你三国小将自动冲锋，连杀攒能量，一路拆掉箭塔和主城。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "deploy",
+      "cost": "消耗能量并进入该卡冷却；放错位置或放错兵种 = 浪费能量，节奏被敌方反推",
+      "feedback": ["sfx", "spawnFlash", "unitMarch"],
+      "combinesWith": ["cast"]
+    },
+    {
+      "name": "cast",
+      "cost": "法术卡消耗能量且冷却更长；火攻/冰霜落在空处 = 白给一轮推进窗口",
+      "feedback": ["sfx", "aoeBurst", "shake"],
+      "combinesWith": ["deploy"]
+    },
+    {
+      "name": "wall",
+      "cost": "建筑卡占用兵线格子并消耗能量；放太靠后会挡不住敌方攻城队",
+      "feedback": ["sfx", "rockRise", "blockFlash"],
+      "combinesWith": ["deploy"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "首轮 5 能量：出虎将压线，还是留能量等火攻清兵", "cost": "出虎将=前期强但能量见底；留火攻=空窗期被敌方先手" },
+    { "atSec": 20, "choice": "连击攒到 3：立刻出骑兵扩大优势，还是存能量上投石车拆塔", "cost": "骑兵脆、易被塔点掉；投石车慢、怕被贴脸" },
+    { "atSec": 45, "choice": "敌方箭塔残血：用火攻收塔，还是用岩壁挡在塔前骗火力", "cost": "火攻=交掉一个高价值法术；岩壁=多耗 2 能量且挡不住法术" },
+    { "atSec": 75, "choice": "我方主城半血：回春术救主城，还是把能量全押前线拼主城", "cost": "回春=暂停推进；拼主城=己方主城可能先倒" },
+    { "atSec": 105, "choice": "敌方投石车群逼近：寒冰阵减速，还是岩壁硬顶等骑兵绕后", "cost": "冰霜=控场但伤害低；岩壁=被投石车 aoe 白拆" },
+    { "atSec": 140, "choice": "时间不多且双方主城都残：全力拆塔，还是留法术保主城", "cost": "全力=可能被反推；保主城=可能超时判负" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "黄巾斥候：只会刀盾+弓箭的试探性进攻，教最基础的出兵与拆塔" },
+    { "index": 2, "newElement": "西凉壁垒：敌方会铺岩石壁垒挡路，必须换火攻/投石车拆墙" },
+    { "index": 3, "newElement": "无双之阵：吕布级敌军高等级部队 + 投石车集群的最终围攻" }
+  ],
+  "upgrades": [
+    { "id": "comboEnergy", "kind": "rule", "desc": "连杀 3 次回 1 能量，鼓励进攻节奏" },
+    { "id": "aoeCatapult", "kind": "rule", "desc": "投石车落点造成范围伤害，能一炮清掉小兵群" },
+    { "id": "frostSlow", "kind": "rule", "desc": "寒冰阵减速敌方单位 40%，控场解围" },
+    { "id": "rockBlock", "kind": "rule", "desc": "岩石壁垒拦在兵线上，逼敌方先拆墙" },
+    { "id": "healKeep", "kind": "rule", "desc": "回春术能修主城血量，翻盘的最后底牌" },
+    { "id": "cavalrySpeed", "kind": "stat", "desc": "骑兵速度 +，抢节奏绕后拆塔" },
+    { "id": "generalHp", "kind": "stat", "desc": "虎将血量 +，前线更抗揍" },
+    { "id": "energyMax", "kind": "stat", "desc": "能量上限 +，能憋一波大招爆发" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

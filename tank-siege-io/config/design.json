@@ -1,0 +1,99 @@
+{
+  "slug": "tank-siege-io",
+  "genre": "arcade",
+  "oneLiner": "驾驶霓虹坦克守住底部核心，用四向炮火击退一波波 AI 坦克，捡取掉落道具叠连击——核心被摧毁即告破城。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "离开核心正前方 = 核心暴露在敌人火力下",
+      "feedback": ["sfx", "treadTrail", "laneSnap"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "炮口朝向固定（四向），转身时无法射击，且有冷却",
+      "feedback": ["sfx", "muzzleFlash", "recoilShake"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "grab",
+      "cost": "离开防线去捡道具 = 放弃当前站位与射击角度",
+      "feedback": ["sfx", "glowRing", "hudPulse"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一波敌人分两路逼近：先清中路（最快威胁核心）还是先清侧路（防绕后）",
+      "cost": "选一路，另一路敌人会先压近"
+    },
+    {
+      "atSec": 12,
+      "choice": "追击敌人掉落的道具，还是守住核心正前方",
+      "cost": "去捡 = 核心暂时没人挡枪"
+    },
+    {
+      "atSec": 25,
+      "choice": "岩石挡在射击线上：打穿岩石（两枪）还是绕到侧面直射",
+      "cost": "打穿耗时，绕路暴露侧身"
+    },
+    {
+      "atSec": 40,
+      "choice": "速射道具在手：激进前压刷连击，还是回防核心稳一波",
+      "cost": "前压被杀风险高，回防连击会断"
+    },
+    {
+      "atSec": 60,
+      "choice": "装甲敌人（3 血）逼近：集火单点还是先清身后小兵",
+      "cost": "集火装甲会被小兵偷射"
+    },
+    {
+      "atSec": 90,
+      "choice": "核心已经掉血：继续追分还是贴脸护核",
+      "cost": "贴脸护核 = 放弃高连击收益"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础移动/射击与普通敌人波次" },
+    { "index": 2, "newElement": "岩石地形（两击可破）加入掩体" },
+    { "index": 3, "newElement": "钢墙（不可破坏）与速射敌人加入" },
+    { "index": 4, "newElement": "装甲敌人（三血）加入" },
+    { "index": 5, "newElement": "双路夹击与更高同屏敌人上限" },
+    { "index": 6, "newElement": "完整道具组合（护盾/三连发/维修）全面展开" }
+  ],
+  "upgrades": [
+    { "id": "speedBoost", "kind": "rule", "desc": "移动速度 +50%，持续 8s" },
+    { "id": "rapidFire", "kind": "rule", "desc": "射速翻倍，持续 8s" },
+    { "id": "shield", "kind": "rule", "desc": "无敌护盾 6s" },
+    { "id": "repairCore", "kind": "stat", "desc": "核心 +5 HP" },
+    { "id": "tripleShot", "kind": "rule", "desc": "三连发，持续 8s" },
+    { "id": "comboMultiplier", "kind": "rule", "desc": "连击倍率叠加" },
+    { "id": "spawnShield", "kind": "stat", "desc": "每波开场 2s 无敌" },
+    { "id": "starRating", "kind": "rule", "desc": "三星结算评级" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "lil-hero-saga",
+  "genre": "platformer",
+  "oneLiner": "玩家在霓虹空洞里混三原色施法，冲刺越障、打破晶岩、连击杀敌直到击败 Boss",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    {
+      "name": "mix",
+      "cost": "消耗参与颜色的 MP，且选择一种法术就等于放弃另外六种",
+      "feedback": ["aura", "sfx", "projectile"],
+      "combinesWith": ["move", "jump"]
+    },
+    {
+      "name": "move",
+      "cost": "离开掩体、进入敌人射程并暴露侧身",
+      "feedback": ["trail", "sfx"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "jump",
+      "cost": "消耗二段跳次数，空中无法急停转向",
+      "feedback": ["sfx", "dust"],
+      "combinesWith": ["move", "mix"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先打近处的杂兵还是先破挡路的红晶岩", "cost": "先清兵会晚破岩，先破岩会被兵咬" },
+    { "atSec": 18, "choice": "用红火球远程清弓手还是用黄冲刺贴脸", "cost": "火球耗红 MP，冲刺暴露在箭矢里" },
+    { "atSec": 30, "choice": "把蓝 MP 用来破蓝晶岩还是留着减速敌人", "cost": "破岩后蓝 MP 见底，遇敌只能硬吃" },
+    { "atSec": 45, "choice": "混红黄打橙电秒群敌还是混蓝红打紫新星清场", "cost": "橙电只打单体，紫新星范围近" },
+    { "atSec": 62, "choice": "跳过深渊直接冲旗还是先吃补瓶回 MP", "cost": "跳坑风险掉血，绕路费时间掉星" },
+    { "atSec": 80, "choice": "Boss 前保持距离用火球磨血还是贴脸速杀", "cost": "远程稳但慢，贴脸快但吃激光" },
+    { "atSec": 100, "choice": "留着三色 MP 打白爆还是拆成单色连招", "cost": "白爆清场但三色全空，连招续航更稳" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 50, "twistSec": 40, "resolveSec": 30 },
+  "levels": [
+    { "index": 1, "newElement": "三原色混色施法（红火球/黄冲刺/蓝冰）" },
+    { "index": 2, "newElement": "彩色晶岩弱点 + 连击得分" },
+    { "index": 3, "newElement": "Boss 激光战 + 星级结算" }
+  ],
+  "upgrades": [
+    { "id": "orange", "kind": "rule" },
+    { "id": "purple", "kind": "rule" },
+    { "id": "green", "kind": "rule" },
+    { "id": "white", "kind": "rule" },
+    { "id": "mp-up", "kind": "stat" },
+    { "id": "speed-up", "kind": "stat" },
+    { "id": "hp-up", "kind": "stat" },
+    { "id": "combo-up", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "leaderboard"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 55, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

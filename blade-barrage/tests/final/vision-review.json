@@ -1,0 +1,117 @@
+{
+  "game": "blade-barrage",
+  "generatedAt": "2026-11-19T20:47:39.116Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 7,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘English’下拉菜单无明显悬停/选中状态，可能影响语言切换识别",
+        "紫色核心与绿色小光点在暗背景中对比度偏低，眯眼时易混淆为同类元素",
+        "‘BEST ★0 · 0’中星号与数字间距过小，轻微视觉粘连"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘中文’下拉框无明显悬停/选中状态，可能影响语言切换识别",
+        "紫色光球与背景融合度高，眯眼时易误判为装饰而非可交互/威胁元素",
+        "‘最佳 ★0·0’文字偏小且颜色较淡（黄绿色），在深色背景下对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的紫色目标（被黄色准星框住的发光球体）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（底部青色晶体）亮度偏低，与深蓝网格背景对比不足，易在快速移动时丢失轮廓",
+        "顶部和底部红色三角锯齿边框高度一致但无功能区分，可能误导为可交互边界",
+        "‘TARGET’文字为黄色小字，位于准星内，眯眼时易与准星混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/04-hit.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的紫色目标（被黄色准星框住的发光球体）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（底部青色晶体）亮度偏低，与深蓝网格背景对比不足，易在快速移动时丢失轮廓",
+        "顶部HUD三角锯齿边框与底部重复，但底部无文字/图标，视觉重心略失衡",
+        "‘TARGET’文字为黄色小字，未加描边，在深色星空背景下远距离辨识度稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Retry”按钮重新开始本关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘TARGET’文字与中心光效重叠，略模糊，影响目标识别清晰度",
+        "三颗星评分图标无明确含义说明（如是否代表命中率/连击/难度），需上下文理解",
+        "顶部状态栏‘SCORE 200 ×1 WAVE 1 GEMS 0’中‘×1’与‘WAVE 1’间距过小，易误读为‘×1WAVE’"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕发射蓝色晶体攻击上方紫色眼球目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标‘TARGET’文字与瞄准框轻微偏移，未居中对齐",
+        "底部红色尖刺障碍物与地面线融合，边界不清晰",
+        "玩家角色（蓝色晶体）亮度偏低，在深色背景中对比度不足"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "game": "card-clash-arena",
+  "generatedAt": "2026-11-19T20:59:35.130Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 7,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的蓝色 'Start' 按钮",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘POWER’按钮文字为红色霓虹描边，与背景暗色对比度偏低，弱光下可能辨识困难",
+        "右上角语言选择下拉框无展开箭头或视觉提示，易被忽略",
+        "‘0 Best stars’星标图标与文字间距过小，可能误读为‘0Best stars’"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间亮蓝色的'SPEED'按钮开始回合",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央问号卡牌与'SPEED'按钮间距过小，视觉上易误认为一体",
+        "底部技能按钮文字（如'Buff ♦40'）字号偏小，远距离辨识度低",
+        "角色卡片边框发光色（橙/青/灰/紫/黄）与背景网格线部分同频闪烁，可能干扰聚焦"
+      ]
+    },
+    {
+      "shot": "tests/final/03-resolve.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方五个角色卡中一个（如Neon Umpire）来选择出战单位",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Round 1 · SPEED’标题与上方HUD按钮间距过小，可能误触",
+        "底部技能按钮文字（如‘Buff ◆40’）字号偏小，弱光下辨识度略低",
+        "‘YOU’标签与Grid Reaper卡片重叠轻微，视觉层级稍混乱"
+      ]
+    },
+    {
+      "shot": "tests/final/04-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方五个卡牌中的任意一张来出牌",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央问号卡牌无明确提示其为对手手牌，易误判为待选卡；",
+        "‘Combo ×2’火焰图标与‘SPEED’按钮紧邻，视觉层级略混乱；",
+        "底部技能按钮（Buff/Debuff等）文字偏小，桌面环境下尚可读，但若缩放可能影响辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Rematch”按钮重新开始对战。",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘YOU WIN’文字与角色卡牌重叠，部分遮挡卡牌信息（如SPD值）",
+        "底部技能按钮（Buff/Debuff等）无明确视觉层级区分，易误触",
+        "角色卡牌图标（菱形/三角形）颜色与背景对比度低，眯眼时难以辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央蓝色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘战力’按钮无明确交互反馈提示，易误判为状态显示而非可操作项",
+        "角色卡片底部属性值字号偏小（尤其‘速度’行），在低分辨率下可能辨识困难",
+        "‘3 最佳星数’图标与文字间距过近，星形图标略压文字基线"
+      ]
+    },
+    {
+      "shot": "tests/final/07-buff-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间绿色‘活力’按钮以确认行动",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央问号卡牌与‘活力’按钮间距过小，易误触",
+        "底部操作按钮文字与图标间距不一致（如‘强化 ◆40’图标偏左）",
+        "角色卡片中‘活力’数值高亮色与边框色冲突（如Glitch Golem紫色边框+青绿条）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间亮绿色的'VITALITY'按钮开始回合",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Tetra Titan卡片边框为红色（敌方色），但其VIT值394高于Pixel Paladin（394 vs 274），易误判为敌方单位；应统一用绿色或按阵营区分",
+        "中央问号区域无提示，玩家可能不确定是否可交互或需等待加载",
+        "底部技能按钮文字与图标间距过小，'Buff ◇40'等在小屏可能拥挤"
+      ]
+    }
+  ]
+}

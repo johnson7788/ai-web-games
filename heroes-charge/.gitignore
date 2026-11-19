@@ -1,0 +1,10 @@
+assets/_src/
+node_modules/
+tests/artifacts/
+tests/final/
+tests/title.png
+tests/title-ar.png
+tests/game.png
+tools/fun/
+tools/audio/
+poster.jpg
