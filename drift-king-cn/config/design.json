@@ -1,0 +1,77 @@
+{
+  "slug": "drift-king-cn",
+  "genre": "arcade",
+  "oneLiner": "驾驶霓虹漂移车在无尽赛道上转向漂移，收集星星为氮气充能，主动狂暴撞翻对手并靠连击刷分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "转向时车头与速度方向脱节，漂移惯性会把你甩向侧方，可能迎面撞上对手",
+      "feedback": ["trail", "sfx", "skidGlow"],
+      "combinesWith": ["boost"]
+    },
+    {
+      "name": "boost",
+      "cost": "消耗积攒的氮气进入狂暴，狂暴结束后有短暂空窗需要重新充能",
+      "feedback": ["sfx", "flash", "rampage"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "collect",
+      "cost": "为抢星星/道具要偏航离队，可能放弃安全的直行路线",
+      "feedback": ["sfx", "glow", "scorePop"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一颗星在前方偏左：转向去吃，还是直行避让迎面车流", "cost": "吃星可能撞车掉血；直行少一颗氮气" },
+    { "atSec": 15, "choice": "氮气快满：继续攒第三颗星，还是提前用两格氮气硬闯", "cost": "攒星多等几秒；提前狂暴时间更短" },
+    { "atSec": 25, "choice": "狂暴期：追最近的车还是优先撞霓虹柱刷连击", "cost": "追车分高；撞柱连击快但柱子不追你" },
+    { "atSec": 40, "choice": "炸弹道具：立刻引爆清屏，还是留给更密集的时刻", "cost": "立刻解围但浪费；留着可能错过脱身时机" },
+    { "atSec": 60, "choice": "阶段升级车流变密：绕外圈安全但费时，还是插内线赌一把", "cost": "外圈更久无分；内线贴车流高风险" },
+    { "atSec": 90, "choice": "残血且氮气满：直接开狂暴反杀，还是苟住等护盾道具", "cost": "反杀可能翻车；苟着可能等不到盾" },
+    { "atSec": 120, "choice": "连击×4：继续追车保连击，还是吃星回氮气再开下一波", "cost": "保连击高风险；回氮连击断" },
+    { "atSec": 150, "choice": "三颗星与炸弹同时在前：先吃哪个", "cost": "星稳定充能；炸弹立刻解压但亏分" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 60,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础漂移转向与第一波对手车" },
+    { "index": 2, "newElement": "星星氮气与连击系统" },
+    { "index": 3, "newElement": "霓虹柱障碍登场" },
+    { "index": 4, "newElement": "炸弹/护盾/磁吸三种道具" },
+    { "index": 5, "newElement": "狂暴与超狂暴双形态" },
+    { "index": 6, "newElement": "阶段加速：车流更密更快" }
+  ],
+  "upgrades": [
+    { "id": "driftLatch", "kind": "rule", "desc": "转向角度越大漂移越滑" },
+    { "id": "boostRampage", "kind": "rule", "desc": "氮气满可主动狂暴" },
+    { "id": "comboChain", "kind": "rule", "desc": "3s 内连续击杀翻倍连击" },
+    { "id": "pylonSmash", "kind": "rule", "desc": "狂暴期霓虹柱可撞碎刷分" },
+    { "id": "starCharge", "kind": "stat", "desc": "星星充能 +1" },
+    { "id": "shieldTime", "kind": "stat", "desc": "护盾时长 +2s" },
+    { "id": "rangeWide", "kind": "stat", "desc": "磁吸范围 +100%" },
+    { "id": "maxHp", "kind": "stat", "desc": "生命 +1" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

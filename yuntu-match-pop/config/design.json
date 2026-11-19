@@ -1,0 +1,72 @@
+{
+  "slug": "yuntu-match-pop",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹云图棋盘上点列落块，相同方块相邻合成，一路冲向每关的金色目标值——岩石逼你规划，连击给你暴分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "place",
+      "cost": "每落一块棋盘多占一格，落到满列直接锁死整局",
+      "feedback": ["sfx", "dropGlow", "mergeFlash"],
+      "combinesWith": ["bomb"]
+    },
+    {
+      "name": "bomb",
+      "cost": "消耗 50 钻石清底，钻石只能靠合成 32+ 的高值块赚取",
+      "feedback": ["sfx", "blastFlash", "screenShake"],
+      "combinesWith": ["place"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一块落在哪一列", "cost": "空列选择决定后续相邻合成的走向" },
+    { "atSec": 12, "choice": "把 2 落在已有 2 的列顶，还是铺平底行", "cost": "叠顶立即合成但可能堵列；铺平底行等横向合成" },
+    { "atSec": 20, "choice": "手上有 4：落在 4 旁还是落在短列", "cost": "落 4 旁立即合成 8；落短列留下难配的 4" },
+    { "atSec": 35, "choice": "岩石落下占列：先震碎它还是绕开", "cost": "震碎要一次相邻合成；绕开会让它继续占格" },
+    { "atSec": 55, "choice": "攒够 50 钻石：现在用炸弹清底还是留到满列救急", "cost": "现在用少一块底；留到危机可能来不及" },
+    { "atSec": 80, "choice": "接近目标值：稳妥一格一格，还是赌一次多块连锁", "cost": "连锁给连击加分；失败把高值块拆散" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 25
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础落块与相邻合成（目标 32）" },
+    { "index": 2, "newElement": "更快逼近目标（目标 64，节奏提速）" },
+    { "index": 3, "newElement": "岩石障碍首次出现：紧邻合成才能震碎（目标 128）" },
+    { "index": 4, "newElement": "岩石更密（每 5 落一块，目标 256）" },
+    { "index": 5, "newElement": "连击价值放大（目标 512）" },
+    { "index": 6, "newElement": "高值块出现，规划更长的合成链（目标 1024）" },
+    { "index": 7, "newElement": "岩石每 4 落一块（目标 2048）" },
+    { "index": 8, "newElement": "接近上限值，炸弹成为关键（目标 4096）" },
+    { "index": 9, "newElement": "终局 8192：三轴叠加（目标 8192）" }
+  ],
+  "upgrades": [
+    { "id": "rock", "kind": "rule", "desc": "第 3 关起岩石障碍：紧邻合成震碎" },
+    { "id": "combo", "kind": "rule", "desc": "一次落块多波合并触发连击加分" },
+    { "id": "bomb", "kind": "rule", "desc": "钻石购买炸弹清除底块救急" },
+    { "id": "star", "kind": "rule", "desc": "按超目标值与得分评 1-3 星" },
+    { "id": "targetUp", "kind": "stat", "desc": "每关目标值翻倍" },
+    { "id": "diamondYield", "kind": "stat", "desc": "高值合并产出钻石" },
+    { "id": "rockDensity", "kind": "stat", "desc": "后期岩石出现更频繁" },
+    { "id": "comboBonus", "kind": "stat", "desc": "连击波数越多加分越高" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

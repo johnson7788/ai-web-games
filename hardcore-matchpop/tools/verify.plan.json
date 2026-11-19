@@ -1,0 +1,66 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "assert": "window.__ll.state.lang === 'en'", "name": "i18n 默认 en" },
+    { "assert": "document.getElementById('level-grid').children.length === 12", "name": "关卡格 12 个" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.debug.setTutorialDone(true)" },
+    { "eval": "window.__ll.start(0)" },
+    { "wait": 600 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入第 1 关" },
+    { "screenshot": "02-playing.png" },
+    { "assert": "window.__ll.debug.state().gems === 100", "name": "L1 满盘 100 晶石" },
+    { "eval": "window.__ll.debug.popBest()" },
+    { "wait": 300 },
+    { "screenshot": "03-pop.png" },
+    { "eval": "window.__ll.debug.forceWin()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'result'", "name": "通关结算" },
+    { "screenshot": "04-result.png" },
+    { "eval": "window.__ll.startRush()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'playing' && window.__ll.debug.state().mode === 'rush'", "name": "进入冲刺模式" },
+    { "screenshot": "05-rush.png" },
+    { "eval": "window.__ll.start(0)" },
+    { "wait": 300 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "回闯关" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "重开本关" }
+  ],
+  "mobile": {
+    "viewport": [390, 844],
+    "steps": [
+      { "wait": 600 },
+      { "assertVisible": "#rotate-screen" },
+      { "click": "#btn-rotate-skip" },
+      { "wait": 300 },
+      { "assert": "document.getElementById('rotate-screen').style.display === 'none'", "name": "竖屏提示可跳过" }
+    ]
+  },
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start(0)"
+  }
+}

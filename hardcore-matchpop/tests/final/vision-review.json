@@ -1,0 +1,101 @@
+{
+  "game": "hardcore-matchpop",
+  "generatedAt": "2026-11-19T16:23:36.387Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.8,
+    "silhouette": 7.4,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘HARDCORE MATCHPOP’下方副标题字体过小且对比度偏低，弱光环境下可能难读",
+        "关卡编号1-12的星标评级在深色背景上部分星星颜色偏暗（如关卡4、9），辨识度略低",
+        "右上角语言切换按钮无下拉箭头视觉提示，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意两个相邻相同形状+颜色的图标进行交换以匹配消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部右上角按钮组中‘*’和‘↻’图标有红色数字角标（1），但未说明用途，易造成困惑",
+        "网格内部分图标（如粉色菱形、红色三角）在深蓝背景下对比度略低，弱光环境下可能辨识困难",
+        "‘Score 0’与‘Target 600’间距过近，视觉上易误读为‘Score 0 Target 600’整体"
+      ]
+    },
+    {
+      "shot": "tests/final/03-pop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角+45区域附近的高亮六边形或菱形以触发匹配消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角+45提示悬浮在网格上方，无明确指向目标格子，易误判操作对象",
+        "顶部‘x1’按钮与星形按钮重叠红色通知点，视觉干扰",
+        "网格内部分同色同形图标密集，眯眼时三角/菱形/六边形轮廓区分度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星中第三颗为线框空心星，与前两颗实心星视觉不一致，易误判为仅2星完成",
+        "顶部HUD文字（如'Level 1 · Neon Dawn'）过小且灰度高，在深色背景下辨识度偏低",
+        "‘Board Cleared!’标题发光效果过强，轻微光晕导致边缘模糊，影响远距离可读性"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rush.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意三个相同形状或颜色的相邻宝石进行消除",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Rush Mode' 等状态栏文字字号偏小，弱光环境下可能辨识度略低",
+        "右上角部分图标（如问号、菜单）无悬停提示，新手引导不足",
+        "网格内宝石发光效果过强，可能导致长时间游玩视觉疲劳"
+      ]
+    }
+  ]
+}

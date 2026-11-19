@@ -1,0 +1,82 @@
+{
+  "slug": "god-hand-soccer",
+  "genre": "arcade",
+  "oneLiner": "两只神手各控一名前锋在霓虹球场向上狂奔，躲开每半场一条的防守屏障与漂移岩石，接住能量晶片叠连击冲线。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "flick",
+      "cost": "左/右半场各控制一名前锋，每条手一次只能把一个前锋切到相邻车道；切错车道当场撞上屏障",
+      "feedback": ["sfx", "laneFlash", "trail"],
+      "combinesWith": ["dodge"]
+    },
+    {
+      "name": "dodge",
+      "cost": "必须提前预判滚动岩石的漂移方向，晚一步就被砸中；为躲眼前屏障可能被迫让出晶片",
+      "feedback": ["sfx", "shake", "nearMiss"],
+      "combinesWith": ["flick"]
+    },
+    {
+      "name": "collect",
+      "cost": "贪接晶片可能把你带进有屏障的车道，贪分与存活二选一",
+      "feedback": ["sfx", "comboPop", "glow"],
+      "combinesWith": ["dodge"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一排屏障逼近：把左手前锋切内道还是外道", "cost": "切错方向立即撞墙出局" },
+    { "atSec": 18, "choice": "晶片刷在空车道上，是否为了叠连击而保持在有晶片的车道", "cost": "下一排屏障可能正堵在晶片车道上" },
+    { "atSec": 40, "choice": "岩石开始漂移：预判它滚到哪条道再让位，还是提前躲到另一条", "cost": "预判错就撞上；提前躲可能错过晶片" },
+    { "atSec": 70, "choice": "护盾道具出现：吃它换 3 秒无敌硬冲，还是留在安全车道保连击", "cost": "吃道具要横穿有风险的车道" },
+    { "atSec": 110, "choice": "双重屏障前后夹击：先让哪半场前锋变道", "cost": "两只手同时操作，先动的那边暴露另一侧" },
+    { "atSec": 160, "choice": "冲线前是否绕路多吃两颗晶片冲 3 星", "cost": "绕路多切两次车道，失误就前功尽弃" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "双神手各控一名前锋，四车道躲开每半场一条的防守屏障" },
+    { "index": 2, "newElement": "能量晶片出现：接住叠连击换分" },
+    { "index": 3, "newElement": "滚动岩石：在所属半场两车道间漂移，需持续预判" },
+    { "index": 4, "newElement": "连击链：晶片链保持 4 秒窗口，断链掉倍率" },
+    { "index": 5, "newElement": "护盾道具：3 秒无敌硬吃一次碰撞" },
+    { "index": 6, "newElement": "减速道具：3 秒让屏障速度减半" },
+    { "index": 7, "newElement": "磁吸道具：3 秒吸走同半场晶片" },
+    { "index": 8, "newElement": "双重屏障：一排刷两条，前后间隔压缩" },
+    { "index": 9, "newElement": "夜间球场：暗色场景提升读取门槛" },
+    { "index": 10, "newElement": "岩石滑坡：岩石出现率大幅提升" },
+    { "index": 11, "newElement": "全场紧逼：屏障更密、岩石更快" },
+    { "index": 12, "newElement": "神之手终章：屏障+岩石+三道具三轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockOrbs", "kind": "rule", "desc": "第 2 关起刷晶片，连击成为得分策略" },
+    { "id": "unlockRocks", "kind": "rule", "desc": "第 3 关起出现漂移岩石，躲屏障升级为持续预判" },
+    { "id": "unlockShield", "kind": "rule", "desc": "第 5 关起掉落护盾，允许一次硬吃" },
+    { "id": "unlockSlow", "kind": "rule", "desc": "第 6 关起掉落减速，压缩反应窗口" },
+    { "id": "unlockMagnet", "kind": "rule", "desc": "第 7 关起掉落磁吸，晶片贪分变安全" },
+    { "id": "doubleWall", "kind": "rule", "desc": "第 8 关起刷双重屏障，前后夹击" },
+    { "id": "speedUp", "kind": "stat", "desc": "每关速度递增，反应窗口逐步收窄" },
+    { "id": "wallGapTighten", "kind": "stat", "desc": "屏障间隔随关卡缩短，决策密度提升" },
+    { "id": "rockRateUp", "kind": "stat", "desc": "后段关卡岩石出现率提高" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

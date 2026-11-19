@@ -1,0 +1,59 @@
+{
+  "game": "hardcore-matchpop",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 3,
+      "durationSec": 1.85,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.57,
+      "deaths": 0,
+      "actions": 111,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 9,
+      "levelsReached": 4,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 7.35,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 7.35,
+      "deaths": 0,
+      "actions": 47,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 10,
+      "levelsReached": 1,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 60.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1.02,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

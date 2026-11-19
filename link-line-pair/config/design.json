@@ -1,0 +1,106 @@
+{
+  "slug": "link-line-pair",
+  "genre": "puzzle",
+  "oneLiner": "在倒计时结束前，沿淡色参考线把霓虹星点依次连成星座；连错或踩中岩石就丢一条命，连击越快星评越高。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "connect",
+      "cost": "每猜错一对星点（不是路径上相邻的两点）就扣 1 命并打断连击，3 次失误直接失败",
+      "feedback": ["sfx", "neonGlow", "comboFlash"],
+      "combinesWith": ["hint", "undo"]
+    },
+    {
+      "name": "hint",
+      "cost": "每关仅 3 次：手指沿剩余路径走一遍，用完就没有后悔药",
+      "feedback": ["sfx", "fingerTrail", "pathGlow"],
+      "combinesWith": ["connect"]
+    },
+    {
+      "name": "undo",
+      "cost": "每关仅 3 次：撤回最后一笔但连击清零，撤错的笔可能让节奏断档",
+      "feedback": ["sfx", "lineRetract"],
+      "combinesWith": ["connect"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "先连星点最少的端点，还是从交叉最多、度数最高的中心星开始",
+      "cost": "从中心星开始容易一次连多段，但也更容易点错交叉点"
+    },
+    {
+      "atSec": 25,
+      "choice": "用 1 次提示看剩余路径，还是凭淡色参考线自己试",
+      "cost": "提示每关只有 3 次，早用掉后面卡住就没有了"
+    },
+    {
+      "atSec": 45,
+      "choice": "撤销刚才一笔换条顺序，还是留着撤销给后面的失误",
+      "cost": "撤销也只剩 3 次，且会清零当前连击"
+    },
+    {
+      "atSec": 60,
+      "choice": "绕过岩石走安全路线，还是贴着岩石边缘快速连",
+      "cost": "点中岩石 = 丢 1 命；绕路则多花时间"
+    },
+    {
+      "atSec": 80,
+      "choice": "追 2.5 秒连击窗口快速连段拿高分，还是慢下来稳拿 3 星",
+      "cost": "赶连击更容易点错扣命，反而掉星"
+    },
+    {
+      "atSec": 100,
+      "choice": "赶在倒计时前收尾进下一关，还是留余量把最后几段连漂亮",
+      "cost": "超时直接失败；但拖太久会掉时间星"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "三角形闭合星座，教「点选→沿淡线连相邻星」的基本循环" },
+    { "index": 2, "newElement": "开放折线星座，段数变多，连击窗口第一次出现" },
+    { "index": 3, "newElement": "岩石陷阱登场：点中扣命，路径要绕着走" },
+    { "index": 4, "newElement": "箭头形：长直线段与斜线交叉，考验交叉点选择" },
+    { "index": 5, "newElement": "十段五角星：高节点数 + 四角岩石，节奏与准度双压" },
+    { "index": 6, "newElement": "心形闭合曲线：无岩石但段数多，纯连击练手关" },
+    { "index": 7, "newElement": "波浪折线 + 中腹岩石，横向长线切换" },
+    { "index": 8, "newElement": "皇冠锯齿：顶点密集，快速换向连击" },
+    { "index": 9, "newElement": "火箭形：一条直线多次折返，撤销价值放大" },
+    { "index": 10, "newElement": "蝴蝶对称：左右镜像，中心交叉点最多" },
+    { "index": 11, "newElement": "鱼形闭合：头尾岩石贴脸，容错极低" },
+    { "index": 12, "newElement": "长蛇终章：11 节点 + 五岩石全要素叠加" }
+  ],
+  "upgrades": [
+    { "id": "rockTrap", "kind": "rule", "desc": "第 3 关起出现岩石：点中扣命，路径必须绕开" },
+    { "id": "comboWindow", "kind": "rule", "desc": "第 2 关起 2.5 秒连击窗口，连续连段叠分数" },
+    { "id": "starRating", "kind": "rule", "desc": "通关按失误与用时评 1–3 星，失误或超时各扣 1 星" },
+    { "id": "hintFinger", "kind": "rule", "desc": "提示手指沿剩余路径走一遍，每关 3 次" },
+    { "id": "undoChain", "kind": "rule", "desc": "撤销撤回最后一笔并清零连击，每关 3 次" },
+    { "id": "crossDots", "kind": "rule", "desc": "高节点星座出现同点多次经过，交叉点可连多段" },
+    { "id": "nodeCount", "kind": "stat", "desc": "从 3 节点涨到 11 节点，段数递增" },
+    { "id": "rockCount", "kind": "stat", "desc": "岩石从 0 涨到 5，容错空间收窄" },
+    { "id": "parTime", "kind": "stat", "desc": "时间上限随段数增长，压缩犹豫空间" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

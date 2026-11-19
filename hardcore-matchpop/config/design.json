@@ -1,0 +1,111 @@
+{
+  "slug": "hardcore-matchpop",
+  "genre": "puzzle",
+  "oneLiner": "霓虹街机的 10×10 晶石盘上，点爆同色连通块让石阵塌缩重组，靠连击与一次性道具在倒计时里刷爆目标分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "每次点爆消耗一次操作，点错（岩块/空格）不消除，连击计时照样流逝",
+      "feedback": ["sfx", "particleBurst", "scorePop"],
+      "combinesWith": ["combo"]
+    },
+    {
+      "name": "combo",
+      "cost": "3 秒内必须再次消除，否则连击归零、所有加成分一次丢光",
+      "feedback": ["sfx", "glowFlash", "hudPulse"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "bomb",
+      "cost": "每关只有 1 枚，用掉后本关再没有范围消除手段",
+      "feedback": ["sfx", "shockwave", "shake"],
+      "combinesWith": ["tap"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一手就点最大的同色连块，还是留着它做连击的起手",
+      "cost": "先爆大块 = 首击高分但连击从零开始；留着 = 赌后面能接上"
+    },
+    {
+      "atSec": 15,
+      "choice": "连击刚到 ×3：继续扫小块续连击，还是停手等一个更大的块",
+      "cost": "续连击 = 每块小分但倍率在涨；停手 3 秒连击就没了"
+    },
+    {
+      "atSec": 30,
+      "choice": "岩块把棋盘切成两段：先清左侧还是先清右侧",
+      "cost": "先清一侧 = 另一侧的列不会左移，空间被岩块锁死"
+    },
+    {
+      "atSec": 45,
+      "choice": "炸弹现在炸掉 3×3 救急，还是留到最后破岩块包围",
+      "cost": "炸弹只有 1 枚，现在用了最后可能被岩块困死"
+    },
+    {
+      "atSec": 55,
+      "choice": "剩下 10 秒和几个孤块：洗牌赌一把大块，还是单点保底",
+      "cost": "洗牌随机、可能更糟；单点稳定但分数低"
+    },
+    {
+      "atSec": 70,
+      "choice": "时间过半分数刚过线：继续攒 3 星，还是见好就收",
+      "cost": "攒 3 星 = 冒超时风险；见好就收 = 稳 1 星"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础消去：点同色连通块整块爆裂，重力下落 + 整列左移" },
+    { "index": 2, "newElement": "岩石障碍：不可消除的固定岩块，阻挡下落与列移动" },
+    { "index": 3, "newElement": "连击系统：3 秒内连续消除触发连击分数加成" },
+    { "index": 4, "newElement": "炸弹道具：每关 1 枚，点爆 3×3 范围" },
+    { "index": 5, "newElement": "洗牌道具：每关 1 次，重排剩余晶石破死局" },
+    { "index": 6, "newElement": "岩石增多 + 连击窗口压力叠加" },
+    { "index": 7, "newElement": "目标分抬升，必须连击 + 道具配合" },
+    { "index": 8, "newElement": "密集岩石把棋盘切成多段走廊" },
+    { "index": 9, "newElement": "星轨评级：剩余时间与超分换 3 星" },
+    { "index": 10, "newElement": "双道具都稀缺的终局博弈" },
+    { "index": 11, "newElement": "倒计时缩短 5 秒，节奏更快" },
+    { "index": 12, "newElement": "终章：岩石 + 连击 + 道具全轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockRock", "kind": "rule", "desc": "第 2 关起出现岩石障碍，下落与列移动被阻断" },
+    { "id": "unlockCombo", "kind": "rule", "desc": "第 3 关起解锁连击，3 秒内连续消除有分数加成" },
+    { "id": "unlockBomb", "kind": "rule", "desc": "第 4 关起每关 1 枚炸弹，点爆 3×3 范围" },
+    { "id": "unlockShuffle", "kind": "rule", "desc": "第 5 关起每关 1 次洗牌，重排剩余晶石" },
+    { "id": "starRating", "kind": "rule", "desc": "第 9 关起引入 3 星评级（剩余时间 + 超分）" },
+    { "id": "rockDensity", "kind": "rule", "desc": "关卡越高岩石越多，棋盘被切成走廊" },
+    { "id": "comboBonus", "kind": "stat", "desc": "连击加成随连击数线性上涨，鼓励快速扫块" },
+    { "id": "targetScale", "kind": "stat", "desc": "目标分随关卡 +100/关，逼你追求大块与连击" },
+    { "id": "timePressure", "kind": "stat", "desc": "第 11 关起倒计时缩短，节奏加压" }
+  ],
+  "replayHooks": [
+    "rating",
+    "growth",
+    "nearMiss",
+    "unlock"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

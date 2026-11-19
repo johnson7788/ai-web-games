@@ -1,0 +1,133 @@
+{
+  "game": "beach-soccer-2v2",
+  "generatedAt": "2026-11-19T16:22:01.604Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.285714285714286,
+    "silhouette": 6.571428571428571,
+    "style_consistent": 8.714285714285714
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角的白色轮盘状发射器来射出球体",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标区域（右下GOAL）与背景网格线颜色相近，低对比度易误判边界",
+        "中央粉色准星与黄色太阳部分重叠，可能干扰瞄准判断",
+        "x2道具图标偏小且无明确交互提示，新手可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing-l2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角的圆形发射器启动踢球",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（黑色棕榈树状物）轮廓过细、无高亮，与背景对比弱，易误判为装饰",
+        "目标区域（右下GOAL网格）无明确入口指示，仅靠文字‘GOAL’识别，新手可能忽略",
+        "顶部HUD中‘Kicks 7’按钮文字偏小且无图标辅助，移动端易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing-l3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角白色轮盘状发射器启动球体",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标网格框（GOAL）与下方黑色触手状物重叠，可能误判为障碍",
+        "x2 奖励图标位置偏高且无明确关联对象，易被忽略",
+        "右上角按钮组间距过小，桌面截图虽不直接影响，但布局紧凑易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next”按钮继续关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部按钮（Retry/Next/Menu）无明确视觉层级区分，且‘Menu’边框较细易误触",
+        "背景中模糊的棕榈树与星星轮廓干扰主界面焦点，影响silhouette辨识度",
+        "‘Stars 0/3’与‘New best!’文字字号偏小，在低分辨率下可能难读"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角的白色轮盘状发射器来发射球体",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标框（GOAL）右侧网格线与文字轻微错位，'GOAL'未垂直居中",
+        "x2增益图标与棕榈树重叠，可能误触或遮挡判断",
+        "粉色瞄准环部分被地平线遮挡，边界不清晰"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色 'Got it' 按钮关闭教程弹窗",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡中央踢球区域，影响首次操作视线",
+        "紫色瞄准圈与背景星轨颜色相近，轮廓辨识度低",
+        "左下角控制按钮图标过小（约32px），移动端可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色 'Got it' 按钮关闭教程弹窗",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡球体与瞄准环，影响初始操作判断",
+        "左下角控制按钮与 HUD 元素间距过小，可能误触",
+        "星星装饰物与目标线视觉层级混淆，削弱目标引导性"
+      ]
+    }
+  ]
+}

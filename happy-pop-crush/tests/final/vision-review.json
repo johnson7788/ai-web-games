@@ -1,0 +1,149 @@
+{
+  "game": "happy-pop-crush",
+  "generatedAt": "2026-11-19T16:21:12.740Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 9,
+    "silhouette": 7.875,
+    "style_consistent": 9.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择栏中第1关高亮色块与下方宝石颜色相近，可能造成视觉混淆",
+        "‘0 / 24’星星计数文字偏小，弱光环境下辨识度略低",
+        "网格背景线过细，在部分屏幕缩放下可能干扰主体元素识别"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意相邻同色方块进行消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'x1' 倍率图标与 'Moves 20' 按钮间距过小，可能误触",
+        "右上角功能图标（问号、手形等）无文字标签，新玩家难理解其功能",
+        "网格背景线在深色区域对比度偏低，部分玩家可能忽略边界"
+      ]
+    },
+    {
+      "shot": "tests/final/03-autoplay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏下区域的两个黑色方块（障碍物）以触发消除或特殊效果",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第6行第4、6列两个黑色方块无高亮/标识，与彩色方块对比度不足，易被误认为不可交互",
+        "Combo x2 文字为黄色发光体，在深色背景上略显过曝，可能影响部分色觉用户辨识",
+        "右上角图标按钮间距过密（如问号与设置图标），桌面环境下虽可点，但移动端存在误触风险"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next Level’按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星中第三颗为线框未填充，与前两颗实心星不一致，易误判完成度",
+        "背景方块网格在暗背景下对比度偏低，部分颜色（如深紫/深绿）难以区分",
+        "‘Level Cleared!’文字无描边或阴影，在深色背景上边缘略糊"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间两个黑色空格之一，尝试移动相邻彩色方块填补空位",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间两行第4列的两个黑色空格（坐标约(4,4)和(4,5)）视觉上像障碍物而非可交互空位，易误判为不可操作区域",
+        "顶部‘x1’倍率按钮图标模糊，疑似缩放/重置图标但辨识度低",
+        "网格背景线过细且与方块边框对比度不足，部分玩家可能忽略行列边界"
+      ]
+    },
+    {
+      "shot": "tests/final/06-special.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏下位置的黑色空格（唯一空位）以触发消除或移动",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第6行第4列的方块内有白色横线图标，疑似特殊功能但无说明，易混淆为普通方块",
+        "右上角按钮组中第3个图标（手形）语义模糊，未标注功能",
+        "‘Moves 10’旁的‘x1’缩放标识字体过小，与主HUD风格不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/07-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间带横线的浅蓝色方块（唯一特殊标记块）以触发匹配或消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第4行第5列的浅蓝色方块内横线图标过小，可能被误认为普通块；",
+        "底部中央黑色空格块（第7行第5列）无高亮或提示，与周围彩色块对比弱，易忽略；",
+        "顶部‘×1’倍率按钮图标模糊，疑似像素化，影响辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意两个相邻同色方块进行交换以匹配消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'x1' 倍率图标与 'Moves 20' 按钮间距过小，可能误触",
+        "右上角功能按钮（锤子、问号等）无文字标签，依赖图标识别，对新手不友好",
+        "网格背景线在深色区域对比度偏低，部分玩家可能难以分辨行列边界"
+      ]
+    }
+  ]
+}

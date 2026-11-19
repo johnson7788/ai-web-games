@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>GOD HAND SOCCER</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- 顶部 HUD：不透明条，避免遮挡判定 -->
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-dist">0m</span>
+        <span id="hud-target" class="hud-dim"></span>
+      </div>
+      <div class="hud-center">
+        <span id="hud-combo" class="hud-combo hidden"></span>
+        <span id="hud-orbs" class="hud-dim"></span>
+      </div>
+      <div class="hud-right">
+        <span id="hud-score" class="hud-dim"></span>
+        <button id="btn-hud-howto" class="icon-btn" data-tutorial-replay aria-label="How to play">?</button>
+        <button id="btn-pause" class="icon-btn" aria-label="Pause">❚❚</button>
+        <button id="btn-mute" class="icon-btn" aria-label="Mute">♪</button>
+      </div>
+    </div>
+
+    <!-- 标题屏 -->
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">GOD HAND SOCCER</h1>
+      <p class="subtitle" id="subtitle-text">神手足球</p>
+      <p class="tagline" id="tagline-text"></p>
+      <div class="title-buttons">
+        <button id="btn-start" class="btn-primary">START</button>
+        <button id="btn-levels" class="btn-ghost">LEVELS</button>
+      </div>
+      <div id="level-panel" class="hidden">
+        <h2 id="level-title" class="level-title">LEVELS</h2>
+        <div id="level-grid" class="level-grid"></div>
+        <div id="stars-total" class="stars-total"></div>
+        <button id="btn-levels-back" class="btn-ghost">BACK</button>
+      </div>
+      <button id="btn-howto" class="btn-link">HOW TO PLAY</button>
+      <div id="best-line" class="best-line"></div>
+    </div>
+
+    <!-- 开球准备屏 -->
+    <div id="screen-ready" class="screen hidden">
+      <h2 id="ready-title"></h2>
+      <p id="ready-sub"></p>
+      <p class="ready-tap" id="ready-tap"></p>
+    </div>
+
+    <!-- 暂停屏 -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart">Restart</button>
+      <button id="btn-home">Home</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <!-- 结算屏 -->
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div id="result-stars" class="result-stars"></div>
+      <div id="result-meta" class="result-meta"></div>
+      <div class="result-buttons">
+        <button id="btn-retry" class="btn-primary">Retry</button>
+        <button id="btn-next" class="btn-ghost hidden">Next</button>
+        <button id="btn-home2" class="btn-ghost">Home</button>
+      </div>
+    </div>
+
+    <!-- 首次交互引导 -->
+    <div id="tutorial" data-tutorial class="hidden">
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <strong id="tut-title"></strong>
+        <p id="tut-text"></p>
+        <div class="tut-actions">
+          <button id="tut-skip" data-tutorial-skip></button>
+          <button id="tut-next" class="btn-primary"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 竖屏提示（skip 必须内联 onclick，站点慢时也能关掉遮罩） -->
+    <div id="rotate-screen" data-rotate>
+      <div class="rotate-card">
+        <p id="rotate-text"></p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'"></button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

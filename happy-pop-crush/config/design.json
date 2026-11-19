@@ -1,0 +1,82 @@
+{
+  "slug": "happy-pop-crush",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹街机棋盘上交换相邻宝石凑成三消，用有限的步数打穿目标分——岩石挡路、连锁翻倍、特殊宝石炸屏，星星评级逼你再来一局。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "swap",
+      "cost": "每次交换消耗 1 步；步数用完没达标就失败，交换后不形成三消会弹回并暴露你的误判",
+      "feedback": ["sfx", "glowPulse", "gemPop"],
+      "combinesWith": ["hammer"]
+    },
+    {
+      "name": "hammer",
+      "cost": "每关只有 1-2 把锤子，用掉就没了；砸普通宝石不产生连锁，砸岩石才是最大收益",
+      "feedback": ["sfx", "screenShake", "shardBurst"],
+      "combinesWith": ["swap"]
+    },
+    {
+      "name": "shuffle",
+      "cost": "无可行交换时自动洗牌（不可主动触发），洗牌会重置已布局的特殊宝石",
+      "feedback": ["sfx", "swirl", "recolor"],
+      "combinesWith": ["swap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "先消眼前的三连，还是先布局靠近岩石的那一格", "cost": "先消三连 = 岩石继续挡路；先布局 = 放弃一次即时得分" },
+    { "atSec": 12, "choice": "用锤子砸岩石开路，还是砸宝石赌一次连锁", "cost": "锤子稀有，砸宝石可能不产生连锁" },
+    { "atSec": 22, "choice": "把两个特殊宝石凑到一起触发组合，还是分别引爆拿稳定分", "cost": "组合伤害更高，但需要多花一步布局" },
+    { "atSec": 35, "choice": "优先凑 4 连做特殊宝石，还是稳扎稳打连刷三消", "cost": "做特殊宝石要放弃当前的三消机会" },
+    { "atSec": 50, "choice": "步数吃紧时冲高分三星，还是保底过关", "cost": "冲三星可能耗尽步数直接失败" },
+    { "atSec": 80, "choice": "彩虹鸟清当前最多的颜色，还是留给下一波更密集的颜色", "cost": "留着彩虹鸟会占用一个格子并拖慢节奏" },
+    { "atSec": 120, "choice": "在目标分快满时继续连击刷分，还是见好就收结算", "cost": "连击刷分可能被一次误交换打断" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础三消：相邻交换凑 3 连" },
+    { "index": 2, "newElement": "岩石格：挡路，相邻消除可震碎" },
+    { "index": 3, "newElement": "六色全开 + 四角岩石" },
+    { "index": 4, "newElement": "4 连生成行/列特殊宝石" },
+    { "index": 5, "newElement": "L/T 形生成包裹爆炸（3×3）" },
+    { "index": 6, "newElement": "5 连生成彩虹鸟（清一整色）" },
+    { "index": 7, "newElement": "边缘岩石 + 双锤" },
+    { "index": 8, "newElement": "中心岩石阵 + 高目标连击收尾" }
+  ],
+  "upgrades": [
+    { "id": "rockShatter", "kind": "rule", "desc": "锤子与相邻消除都能震碎岩石" },
+    { "id": "lineClear", "kind": "rule", "desc": "4 连横排生成直线宝石（清整行）" },
+    { "id": "columnClear", "kind": "rule", "desc": "4 连竖排生成竖列宝石（清整列）" },
+    { "id": "wrapBlast", "kind": "rule", "desc": "L/T 形生成包裹宝石（3×3 爆炸）" },
+    { "id": "birdSwap", "kind": "rule", "desc": "5 连生成彩虹鸟（清一整色）" },
+    { "id": "scoreBoost", "kind": "stat", "desc": "连击倍率随连锁递增" },
+    { "id": "moveBonus", "kind": "stat", "desc": "高星评级解锁更多步数容错" },
+    { "id": "hammerPlus", "kind": "stat", "desc": "后期关卡携带双锤" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

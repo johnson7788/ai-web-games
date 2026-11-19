@@ -1,0 +1,133 @@
+{
+  "game": "bear-dash-run",
+  "genre": "arcade",
+  "mode": "auto",
+  "source": "tools/fun/autoplay.json",
+  "sessions": 3,
+  "generatedAt": "2026-11-19T16:17:47.469Z",
+  "overall": "PASS",
+  "metrics": [
+    {
+      "key": "firstInput",
+      "kind": "lower",
+      "label": "首次输入中位数",
+      "unit": "s",
+      "why": "入口太重：菜单/加载/等待点击",
+      "observed": 0,
+      "threshold": 10,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "inputLatencyMs",
+      "kind": "lower",
+      "label": "输入→动作延迟中位数",
+      "unit": "ms",
+      "why": "输入延迟：>120ms 会有拖泥带水感",
+      "observed": 0,
+      "threshold": 120,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "firstSuccess",
+      "kind": "lower",
+      "label": "首胜中位数",
+      "unit": "s",
+      "why": "奖励太晚或目标不清",
+      "observed": 10.37,
+      "threshold": 60,
+      "verdict": "pass",
+      "note": "仅 1/1 条 greedy 成功"
+    },
+    {
+      "key": "successRate",
+      "kind": "higher",
+      "label": "至少成功一次的 run 比例",
+      "unit": "%",
+      "why": "bot 都赢不了：门槛/判定/可读性有问题",
+      "observed": 1,
+      "threshold": 0.8,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "actionsPerMin",
+      "kind": "higher",
+      "label": "每分钟操作数",
+      "unit": "/min",
+      "why": "玩家没事可做，或输入没有被接受",
+      "observed": 1422.3822073664587,
+      "threshold": 60,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "idleRatio",
+      "kind": "lower",
+      "label": "空转时间占比",
+      "unit": "%",
+      "why": "死时间：等待/动画/无交互屏幕",
+      "observed": 0,
+      "threshold": 0.15,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "maxEventGap",
+      "kind": "lower",
+      "label": "事件最大间隔",
+      "unit": "s",
+      "why": "10 秒没有可感知事件 = 玩家走神",
+      "observed": 1.87,
+      "threshold": 3,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "uniqueEvents",
+      "kind": "higher",
+      "label": "前 3 分钟事件种类",
+      "unit": "种",
+      "why": "内容/反馈太单一，重复感强",
+      "observed": 8,
+      "threshold": 8,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "progressRate",
+      "kind": "higher",
+      "label": "推进到第 3 关的 run 比例",
+      "unit": "%",
+      "why": "难度墙或进度不可达",
+      "observed": 1,
+      "threshold": 0.6,
+      "verdict": "pass",
+      "note": ""
+    },
+    {
+      "key": "deathPresence",
+      "kind": "higher",
+      "label": "至少死过一次的 run 比例",
+      "unit": "%",
+      "why": "没有失败 = 没有挑战；但要配合关卡数看",
+      "observed": 0.6666666666666666,
+      "threshold": 0.5,
+      "verdict": "pass",
+      "note": ""
+    }
+  ],
+  "worst": {
+    "key": "firstInput",
+    "label": "首次输入中位数",
+    "verdict": "pass",
+    "fix": "入口太重：菜单/加载/等待点击"
+  },
+  "counts": {
+    "pass": 10,
+    "warn": 0,
+    "fail": 0
+  },
+  "caveat": ""
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "frog-hop-leaf",
+  "genre": "arcade",
+  "oneLiner": "一只卡通青蛙在池塘里自动左右走，玩家只按跳跃：借荷叶一路向上蹦，抓萤火虫攒连击、躲小虫，直到抵达顶端莲花门。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "起跳即锁定竖直轨迹，落点由起跳时脚下的位置决定；时机不对就落回原地甚至跌进池塘",
+      "feedback": ["sfx", "squashStretch", "ripple", "leafDip"],
+      "combinesWith": ["ride"]
+    },
+    {
+      "name": "ride",
+      "cost": "选择落在普通荷叶（稳但只升一格）还是弹簧叶/金叶（弹更高但更难控落点），以及是否放弃当前叶上的萤火虫",
+      "feedback": ["sfx", "bouncePuff", "scorePop", "glow"],
+      "combinesWith": ["jump"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "刚起步就连续跳，还是等青蛙走到下一片荷叶正下方再跳", "cost": "乱跳会落回原地浪费时间；等位更稳但错过头顶萤火虫" },
+    { "atSec": 12, "choice": "踩普通荷叶稳升，还是去够弹簧叶的更高弹跳", "cost": "弹簧叶跳得更高但落点难控，可能越过目标叶跌下去" },
+    { "atSec": 20, "choice": "为连击去追偏离主路线的萤火虫，还是保命直上", "cost": "追萤火虫会改变落点节奏，撞虫风险上升" },
+    { "atSec": 30, "choice": "瓢虫正朝你爬来：原地再等一拍，还是提前起跳越过它所在的那片叶", "cost": "等太久青蛙可能自己走到叶边摔下去；跳早了落点不对" },
+    { "atSec": 45, "choice": "滚石封住下一条路线时，选左边窄叶还是右边宽叶", "cost": "窄叶容错低，宽叶路径更长" },
+    { "atSec": 60, "choice": "香蒲气泡扫过来：停在原地等气泡过去，还是借弹簧叶弹到更高层躲开", "cost": "原地等会断连击；弹高则要重新判断落点" },
+    { "atSec": 80, "choice": "金叶奖励在斜上方：冒一次险去踩，还是稳妥走普通叶", "cost": "金叶有分但位置刁钻，可能踩空" },
+    { "atSec": 100, "choice": "临近莲花门：保命通关，还是回头多补几只萤火虫冲三星", "cost": "回头补虫有死亡风险；保命通关拿不到三星" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "瓢虫巡逻（教学关：只会走与跳）" },
+    { "index": 2, "newElement": "滚石 + 弹簧叶（弹跳翻倍）" },
+    { "index": 3, "newElement": "香蒲气泡 + 金叶（远程威胁与加分弹跳）" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule", "desc": "连续抓萤火虫不落地，得分按 1x/2x/3x… 递增，落地清零" },
+    { "id": "springLeaf", "kind": "rule", "desc": "弹簧叶落地弹跳翻倍，跳过更远距离" },
+    { "id": "goldenLeaf", "kind": "rule", "desc": "金叶落地加分并弹更高，是高风险高回报跳板" },
+    { "id": "ladybugPatrol", "kind": "rule", "desc": "瓢虫在叶上往复巡逻，碰到即死" },
+    { "id": "pebbleRoll", "kind": "rule", "desc": "滚石在叶上滚动，撞到叶边停顿后反向" },
+    { "id": "cattailBubble", "kind": "rule", "desc": "香蒲周期性喷出横向气泡，气泡命中即死" },
+    { "id": "leafLadder", "kind": "rule", "desc": "叶梯重叠生成：相邻荷叶中心 ±45px 随机、宽叶大量重叠，保证任何落点都能继续上爬" },
+    { "id": "gapScale", "kind": "stat", "desc": "荷叶间距与宽度随关卡逐步放大/收窄" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

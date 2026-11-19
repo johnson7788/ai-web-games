@@ -1,0 +1,149 @@
+{
+  "game": "bear-dash-run",
+  "generatedAt": "2026-11-19T16:18:23.910Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 7.75,
+    "style_consistent": 9.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央亮蓝色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'BEAR DASH RUN' 与副标题 'Neon platform dash' 间距略紧，可能影响小屏阅读",
+        "右上角语言选择框边框颜色与背景对比度偏低（深蓝底+浅蓝框）",
+        "‘How to play’按钮文字偏小，且无悬停反馈提示"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间带星标的紫色柱体（目标物）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "星标目标物与背景柱体高度接近，易误判为装饰；",
+        "右下角两个空方框交互区域无提示，功能不明；",
+        "HUD中‘★ 0’图标与文字间距过小，可能影响辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景城市剪影与前景HUD存在轻微视觉干扰，部分紫色柱体与按钮边缘光晕融合，影响层次判断",
+        "‘Level Clear!’标题使用青色发光字体，与深蓝背景对比度略低（尤其在低亮度屏幕）",
+        "星星图标未明确指示是否可交互，可能引发误触猜测"
+      ]
+    },
+    {
+      "shot": "tests/final/04-level2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧带星标的平台或黄色星星目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色星星目标被半透明圆弧部分遮挡，可能影响点击精度",
+        "左上角HUD按钮间距过小，桌面截图下无问题，但若为移动端需确认触控区是否足够",
+        "地面斜线网格与平台底部对齐不一致，存在轻微视觉错位"
+      ]
+    },
+    {
+      "shot": "tests/final/05-level3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧绿色带三角按钮（可能为跳跃或移动）",
+      "readable": 6,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标星标被粉色半圆遮挡部分，视觉层级不清晰",
+        "左侧紫色方块角色与背景柱体高度相似，辨识度偏低",
+        "HUD中‘Level 3’和‘Score 0’字体过小，远距离难读"
+      ]
+    },
+    {
+      "shot": "tests/final/06-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央亮蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言选择下拉框边框与背景对比度偏低，可能影响可访问性",
+        "‘How to play’按钮文字为白色无描边，在深色背景上略显模糊",
+        "城市剪影中部分平台边缘与背景融合较紧，远距离辨识度稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角黄色三角形按钮开始移动或跳跃",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "星形目标图标与背景建筑高度接近，易误判为装饰而非可收集物",
+        "左下角两个圆形按钮间距过近，可能误触",
+        "右上音量图标无文字说明，新手可能不理解其功能"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮启动游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘霓虹平台冲刺’副标题与主标题间距过小，略显拥挤",
+        "左下角小熊角色轮廓较细，在深色背景中对比度不足，易误判为装饰",
+        "右上角语言切换框边框过细，与整体霓虹风格轻微不协调"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "game": "god-hand-soccer",
+  "generatedAt": "2026-11-19T16:24:30.388Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 7.125,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的 START 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中文‘神手足球’与英文标题混排，字号/颜色不统一，影响视觉层级",
+        "左右两侧圆形图标（疑似玩家/敌人）轮廓模糊、对比度低，眯眼时难以区分身份",
+        "‘HOW TO PLAY’链接文字过小且无下划线/高亮，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧蓝色角色向右移动以接近中央闪光目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央闪光目标无明确交互提示（是否需触碰/经过？）",
+        "左右角色外形对称但颜色差异小，新手易混淆控制方",
+        "顶部HUD条纹图案与背景网格线轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/03-shards.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击左侧蓝色角色开始移动或选择路径",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标距离显示为'60m'但无单位说明，可能引起歧义（顶部左）",
+        "左右两侧星形收集物位置对称但未明确指示其功能，新手易忽略（中上区域）",
+        "中间四块橙色平台无交互反馈提示，是否可踩/需跳跃不明确（中央区域）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧蓝色圆形角色开始移动",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左右两侧角色亮度相近，眯眼时难以快速区分主控方（左蓝/右红）",
+        "顶部进度条与HUD文字间距过小，视觉上略显拥挤",
+        "目标距离'100m'未说明单位是否为米或游戏内单位，可能引起歧义"
+      ]
+    },
+    {
+      "shot": "tests/final/05-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击左侧蓝色角色或右侧粉色角色以开始移动或互动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标距离'60m'与当前'Distance: 0m'并列显示，易误读为已到达；建议加单位或视觉区分",
+        "左右两侧角色大小相同但颜色差异大，可能误导玩家以为仅一方可控（需确认机制）",
+        "顶部Combo ×4与Shards: 6间距过近，小屏可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Retry”按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部两个圆形图标（左蓝右红）疑似玩家/敌人，但轮廓模糊、无明确高亮，眯眼时难以区分身份",
+        "顶部HUD文字（Distance/Target/Shards/Score）字号过小且颜色偏灰，与深背景对比度不足，易被忽略",
+        "‘GOAL!’标题使用青色发光效果，与下方黄色星星色系不协调，轻微风格割裂"
+      ]
+    },
+    {
+      "shot": "tests/final/07-levels.png",
+      "goal_visible": true,
+      "first_action_guess": "点击已解锁的关卡1（左上角带3颗黄星的方块）",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1和2的星星为黄色，其余为灰色，但未明确标示‘已解锁’状态，易误判可玩性",
+        "底部进度条‘★ 1 / 36’与‘Home’按钮间距过小，可能误触",
+        "左右两侧圆形图标（蓝/红）功能不明，无标签，疑似玩家/对手但缺乏视觉区分"
+      ]
+    },
+    {
+      "shot": "tests/final/08-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击左侧蓝色角色向右移动，避开障碍并收集晶片",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中‘晶片：0’与‘得分：50’间距过小，易误读为‘晶片：0得分：50’",
+        "左右两侧星星图标位置对称但无功能说明，可能误导为可点击目标",
+        "右侧粉色角色下方有紫色小圆点（疑似阴影/残影），视觉干扰且未见于左侧角色"
+      ]
+    }
+  ]
+}

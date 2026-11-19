@@ -1,0 +1,133 @@
+{
+  "game": "meow-miao",
+  "generatedAt": "2026-11-19T16:20:11.146Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.428571428571429,
+    "silhouette": 7,
+    "style_consistent": 8.857142857142858
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧堆叠方块中部分图形（如菱形、三角形）轮廓光晕过强，导致形状辨识度略低",
+        "‘Match 3 of a kind’提示文字颜色偏淡，与深背景对比度不足，易被忽略",
+        "左下角关卡按钮（1-10）无选中态反馈，当前无法判断是否可交互或已解锁"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意三个相同形状的方块（如三个三角形）进行匹配",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部‘Match 3 of a kind’提示文字与下方空槽间距过小，可能误触",
+        "右上角‘How to play’按钮无悬停反馈，且图标语义模糊（问号缺失）",
+        "部分方块（如青色圆圈）在深蓝背景上对比度偏低，弱光下易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的粉色星形方块，尝试匹配三个星形",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部‘Match 3 of a kind’提示文字与下方空槽轻微重叠，可能影响视觉焦点",
+        "右上角‘x2 Combo’按钮与‘How to play’按钮间距过小，易误触（桌面截图但需考虑响应式）",
+        "部分灰色岩石状障碍物轮廓与背景网格线融合度高，眯眼时辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘60s left’与‘Score 1000 · x4 Combo’字号过小，对比度偏低，易被忽略",
+        "底部‘Match 3 of a kind’提示文字模糊且部分被遮挡（疑似未完全渲染）",
+        "三颗星图标与‘Perfect Combo!’文字间距过近，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏左的粉色星形方块，尝试组成三个星形匹配",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部‘Match 3 of a kind’提示文字与下方空槽间距过小，易误触",
+        "部分灰色障碍物轮廓与背景对比度低，眯眼时易混淆为背景网格",
+        "右上角‘How to play’按钮无悬停反馈，且图标语义模糊（问号缺失）"
+      ]
+    },
+    {
+      "shot": "tests/final/06-wilds.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的黄色菱形方块，尝试组成三个相同形状的组合",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部‘Match 3 of a kind’提示文字与下方空槽间距过小，易误触",
+        "右上角‘How to play’按钮无悬停反馈，且图标语义模糊（问号缺失）",
+        "部分方块（如星形）内图标尺寸偏小，眯眼时难以区分形状"
+      ]
+    },
+    {
+      "shot": "tests/final/07-lose.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色的“Retry”按钮重新开始关卡",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Shelf Overflow’标题与背景方块部分重叠，视觉干扰；",
+        "中央堆叠方块在模糊光晕下轮廓不清，影响‘silhouette’评分；",
+        "底部‘Match 3 of a kind’提示文字过小且灰度高，易被忽略"
+      ]
+    }
+  ]
+}

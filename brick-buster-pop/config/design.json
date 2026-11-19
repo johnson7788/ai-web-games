@@ -1,0 +1,107 @@
+{
+  "slug": "brick-buster-pop",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹太空里拖动炮台发射一束光球，削掉砖块上的数字，砖墙每轮下坠逼近，清空全场逐关闯关。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "瞄准方向锁死整束球的弹道：选错角度会浪费一整轮火力，且墙会因此多下坠一格",
+      "feedback": ["sfx", "guideLine", "glow"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "fire",
+      "cost": "一次射出整束球，随后整面墙下坠一格；越贴近危险线，容错越低",
+      "feedback": ["sfx", "muzzleFlash", "ballTrail"],
+      "combinesWith": ["aim"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一轮先集火中间的高耐久砖，还是先清边角低耐久砖",
+      "cost": "集火中间=球反弹覆盖面小；先清边角=中间高墙留着逼近"
+    },
+    {
+      "atSec": 15,
+      "choice": "看见激光砖：先点它清一整排，还是留着最后救急",
+      "cost": "先点激光=省球但可能清掉还想要的连击铺垫；留着=下一轮它随墙下坠更危险"
+    },
+    {
+      "atSec": 25,
+      "choice": "岩石挡住弹道：绕侧翼打角度，还是硬怼岩石浪费球",
+      "cost": "绕侧翼=弹道更难算；硬怼=岩石不掉耐久，白耗一轮"
+    },
+    {
+      "atSec": 40,
+      "choice": "连击已叠到 ×6：稳打稳扎保连击，还是冒险点炸弹砖换大范围清场",
+      "cost": "稳=连击不断但清得慢；点炸弹=可能打断连击节奏但清一片"
+    },
+    {
+      "atSec": 55,
+      "choice": "墙已逼近危险线：优先清最靠近线的底排，还是先引爆激光横向清空",
+      "cost": "清底排=解燃眉之急但慢；引爆=快但角度受限"
+    },
+    {
+      "atSec": 70,
+      "choice": "加球砖和散射砖都在场：先拿加球攒下一轮火力，还是先拿散射让当前球翻倍",
+      "cost": "加球=收益在下一轮；散射=当轮收益但弹道更乱"
+    },
+    {
+      "atSec": 90,
+      "choice": "只剩最后一两排：追求 3 星（少轮次清完），还是保命优先慢慢磨",
+      "cost": "冲 3 星=激进角度可能落空；保命=多轮下坠风险上升"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 35,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "数字砖 + 瞄准发射的基础循环" },
+    { "index": 2, "newElement": "岩石（固定不可摧毁的弹道障碍）" },
+    { "index": 3, "newElement": "横激光砖（点爆清一整排）" },
+    { "index": 4, "newElement": "竖激光砖 + 双岩石夹击" },
+    { "index": 5, "newElement": "炸弹砖（3×3 范围清场）" },
+    { "index": 6, "newElement": "加球砖 + 散射砖（火力增殖）" },
+    { "index": 7, "newElement": "六排石阵 + 高耐久墙" },
+    { "index": 8, "newElement": "终章：激光+炸弹+岩石三轴叠加的霓虹堡垒" }
+  ],
+  "upgrades": [
+    { "id": "comboChain", "kind": "rule", "desc": "连击系统：连续摧毁砖块堆叠 ×1~×8 倍率，落空即断" },
+    { "id": "starRating", "kind": "rule", "desc": "星级结算：按通关轮次数评 1~3 星，驱动少轮次高效清场" },
+    { "id": "rockObstacle", "kind": "rule", "desc": "岩石砖：固定不可摧毁，逼玩家绕弹道打角度" },
+    { "id": "hLaser", "kind": "rule", "desc": "横激光砖：点爆清空一整排" },
+    { "id": "vLaser", "kind": "rule", "desc": "竖激光砖：点爆清空一整列" },
+    { "id": "bombBrick", "kind": "rule", "desc": "炸弹砖：点爆 3×3 范围清场" },
+    { "id": "scatterBrick", "kind": "rule", "desc": "散射砖：一颗球裂成两颗" },
+    { "id": "plusBall", "kind": "stat", "desc": "加球砖：永久 +1 下轮球数" },
+    { "id": "volleyScale", "kind": "stat", "desc": "每关球数 24→30 递增，后期火力更强" },
+    { "id": "hpScale", "kind": "stat", "desc": "砖块耐久 1→5 递增，后期墙更厚" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

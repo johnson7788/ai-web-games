@@ -1,0 +1,124 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "i18n 默认 en",
+      "ok": true,
+      "detail": "eval: window.__ll.state.lang === 'en'"
+    },
+    {
+      "name": "关卡格 12 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 12"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "L1 满盘 100 晶石",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().gems === 100"
+    },
+    {
+      "name": "通关结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "进入冲刺模式",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing' && window.__ll.debug.state().mode === 'rush'"
+    },
+    {
+      "name": "回闯关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "[mobile] step 2",
+      "ok": true,
+      "detail": "visible: #rotate-screen"
+    },
+    {
+      "name": "竖屏提示可跳过",
+      "ok": true,
+      "detail": "eval: document.getElementById('rotate-screen').style.display === 'none'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.68,\"fps\":59.9,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-playing.png",
+    "03-pop.png",
+    "04-result.png",
+    "05-rush.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "[mobile] https://pipygames.com/sdk/config.json",
+    "[mobile] https://pipygames.com/api/sdk/config?appId=pipy-hardcore-matchpop",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-hardcore-matchpop",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-hardcore-matchpop"
+  ],
+  "fps": {
+    "avgFrameMs": 16.68,
+    "fps": 59.9,
+    "frames": 120
+  },
+  "pass": true
+}

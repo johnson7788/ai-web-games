@@ -1,0 +1,38 @@
+{
+  "slug": "bear-dash-run",
+  "genre": "arcade",
+  "oneLiner": "玩家操控霓虹小熊在霓虹城市横向冲刺，跳跃越过障碍、踩踏机器人、收集星星到达终点旗帜。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "run", "cost": "奔跑有惯性，需提前预判起跳点", "feedback": ["sfx", "speedLines", "trail"], "combinesWith": ["jump"] },
+    { "name": "jump", "cost": "空中方向固定，落点由起跳时机决定", "feedback": ["sfx", "arc", "landingDust"], "combinesWith": ["run"] },
+    { "name": "stomp", "cost": "必须精准落到敌人头顶，落空则侧碰身亡", "feedback": ["sfx", "squash", "bounce"], "combinesWith": ["jump"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "直接向右冲，还是先跳到出生点巡逻机器人头上", "cost": "冲太快会被巡逻机器人侧碰" },
+    { "atSec": 8, "choice": "在第一个岩块前起跳，还是贴着岩块再跳", "cost": "起跳太晚撞上岩块" },
+    { "atSec": 15, "choice": "从上方踩机器人拿连击分，还是绕开跳过去", "cost": "踩头时机更严，落空即死" },
+    { "atSec": 25, "choice": "冲加速垫拿无敌冲刺，还是绕开走稳妥路线", "cost": "加速会快速掠过下一障碍" },
+    { "atSec": 40, "choice": "走更难路线收集奖励星，还是直奔旗帜", "cost": "收星消耗节奏并增加风险" },
+    { "atSec": 55, "choice": "连续踩头维持连击，还是稳妥落地", "cost": "连击一旦落地就清零重来" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "rocks & spike grates" },
+    { "index": 2, "newElement": "patrol bots (stomp to defeat)" },
+    { "index": 3, "newElement": "chompers & boost pads" }
+  ],
+  "upgrades": [
+    { "id": "double-jump", "kind": "rule" },
+    { "id": "stomp-bounce", "kind": "rule" },
+    { "id": "magnet", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "speed", "kind": "stat" },
+    { "id": "score-up", "kind": "stat" },
+    { "id": "invuln", "kind": "stat" },
+    { "id": "gravity", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 12, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

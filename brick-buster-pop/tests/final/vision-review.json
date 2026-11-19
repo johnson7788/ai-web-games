@@ -1,0 +1,133 @@
+{
+  "game": "brick-buster-pop",
+  "generatedAt": "2026-11-19T16:22:54.556Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.428571428571429,
+    "silhouette": 7.857142857142857,
+    "style_consistent": 9.142857142857142
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的蓝色 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部模糊数字条（2,4,1,3,2,1）语义不明，疑似关卡进度但无标签，易混淆",
+        "‘0/24 · Best 0’中星标与数字间距过小，视觉上略显拥挤",
+        "底部关卡选择按钮（1-8）无当前选中状态高亮，仅1号稍亮但不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色发射器启动弹球",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Level 1 · First Contact’与‘Score 0’之间间距过小，可能影响可读性",
+        "右上角图标按钮无文字标签，依赖图标语义（如问号、重试），对新用户不友好",
+        "虚线轨迹线在深色背景上对比度偏低，部分玩家可能难以辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景粒子与‘Level Clear!’文字轻微重叠，影响部分可读性",
+        "三颗星图标未居中对齐于标题下方，视觉重心偏右",
+        "‘Balls 24 · Combo ×3’字体过小且灰度高，远距离辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色发射器向上发射球",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间黄色砖块（值3）与周围绿色砖块对比度偏低，可能影响目标识别",
+        "顶部灰色三角形指示器无明确功能说明，新手可能困惑",
+        "虚线轨迹仅显示单条路径，未体现角度/力度调节机制，操作预期不完整"
+      ]
+    },
+    {
+      "shot": "tests/final/05-laser-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色发射器调整角度，瞄准上方带数字的方块进行射击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角悬浮粒子特效部分遮挡右侧方块（如数字2绿色块），影响目标识别",
+        "发射器轨迹虚线与底部红虚线边界重叠，可能误判发射线起点",
+        "Combo ×8标签背景色与方块色系冲突（黄底黑字 vs 蓝绿黄方块），轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/06-bomb-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色发射器调整角度，瞄准左侧绿色方块堆的2号位置",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Combo ×6 的黄色背景与深色 HUD 对比度偏低，小字号在低亮度下易误读",
+        "右上角图标按钮间距过密（问号、重试、菜单），桌面端无问题，但若适配移动端可能误触",
+        "红色目标块顶部黑点偏小且无高亮边框，与下方数字块视觉权重不匹配"
+      ]
+    },
+    {
+      "shot": "tests/final/07-final-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色发射器拖拽瞄准，将球射向中间或右侧砖块堆",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角按钮组（设置/帮助/重试/菜单）间距过小，可能误触",
+        "Combo ×8 标签背景为深色圆角矩形，与浅色文字对比度略低",
+        "部分弹道轨迹虚线在密集粒子区不易辨识"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "beach-soccer-2v2",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹沙滩上拖球起脚，让球反弹过沙墙、撞弹力垫、连吃星星后坠入球门——每一脚都算次数。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "拖拽方向就是发射方向，松手即踢、不可反悔；蓄力越远力度越大",
+      "feedback": ["sfx", "aimLine", "trajectoryDots"],
+      "combinesWith": ["kick"]
+    },
+    {
+      "name": "kick",
+      "cost": "每脚消耗一次踢球机会，踢完球随机弹跳，落点受物理摆布",
+      "feedback": ["sfx", "ballTrail", "shake"],
+      "combinesWith": ["aim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "第一脚直冲球门，还是先绕路吃星", "cost": "直冲可能只拿 1 星；绕路多吃星但消耗踢球次数" },
+    { "atSec": 12, "choice": "用弹力垫借力加速，还是老实吊高弧越过沙墙", "cost": "弹力垫方向难控，可能飞出界" },
+    { "atSec": 22, "choice": "先吃能量球攒 ×2 力度，还是留着普通踢稳一点", "cost": "能量球位置偏，去捡会浪费一脚" },
+    { "atSec": 35, "choice": "连击窗口内追第二颗星，还是停手保住已有星", "cost": "追连击可能打偏落点，下一脚更难进" },
+    { "atSec": 50, "choice": "最后一脚赌反弹进洞，还是重开一局保底", "cost": "赌输=失败；重开=放弃本局进度" },
+    { "atSec": 70, "choice": "第二关中路高台：吊顶过去还是撞右下角弹力垫折返", "cost": "吊顶高度难控；折返路线更依赖反弹时机" },
+    { "atSec": 95, "choice": "第三关右侧高墙封路：走左侧狭缝还是远角擦墙进", "cost": "狭缝窄易磕墙；擦墙角度刁钻" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "低矮沙墙 + 弹力垫 + 能量球：学会起弧与借力" },
+    { "index": 2, "newElement": "中段高台：逼你吊顶或走反弹" },
+    { "index": 3, "newElement": "右侧高墙封路：只留狭缝远角，空间压缩" }
+  ],
+  "upgrades": [
+    { "id": "megaKick", "kind": "rule", "desc": "吃能量球后下一次踢球力度 ×2" },
+    { "id": "bumperBoost", "kind": "rule", "desc": "弹力垫把球速放大 1.42 倍并弹出" },
+    { "id": "comboChain", "kind": "rule", "desc": "3 秒内连吃星星触发连击，每颗星分值翻倍" },
+    { "id": "timeStar10", "kind": "rule", "desc": "10 秒内完赛额外 3 颗时间星" },
+    { "id": "timeStar20", "kind": "rule", "desc": "20 秒内完赛额外 2 颗时间星" },
+    { "id": "timeStar30", "kind": "rule", "desc": "30 秒内完赛额外 1 颗时间星" },
+    { "id": "parUp", "kind": "stat", "desc": "越靠后的关卡踢球次数上限越高" },
+    { "id": "fieldSize", "kind": "stat", "desc": "第三关球门移到左中，射程与角度被压缩" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

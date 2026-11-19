@@ -1,0 +1,84 @@
+{
+  "slug": "meow-miao",
+  "genre": "puzzle",
+  "oneLiner": "霓虹牌堆里，玩家把方块一块块搬进等待架，凑齐三个同花色（万能牌可代）即消除，清空牌堆冲三星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "collect",
+      "cost": "占用 1 个等待架格；拿错花色可能堵死后续的消除顺序",
+      "feedback": ["sfx", "glowHighlight", "shelfSlide"],
+      "combinesWith": ["match"]
+    },
+    {
+      "name": "match",
+      "cost": "必须同一花色 ×3（或万能牌代）；万能被消耗后无法再救场",
+      "feedback": ["sfx", "particleBurst", "comboFlash"],
+      "combinesWith": ["collect"]
+    },
+    {
+      "name": "prop",
+      "cost": "洗牌/撤回每局限用次数，用掉即无",
+      "feedback": ["sfx", "hudBadge", "shuffleSweep"],
+      "combinesWith": ["collect"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先拿顶层露出的方块，还是先凑已经在等待架里的花色", "cost": "先凑旧花色 = 暂时忽略更早露出的新花色" },
+    { "atSec": 20, "choice": "把万能牌留到救场，还是现在替掉一个难凑的花色", "cost": "万能只有 3 张，用了就没有" },
+    { "atSec": 40, "choice": "等待架快满：用撤回把最后一块放回，还是赌下一块正好凑三", "cost": "撤回次数有限；赌错就溢出失败" },
+    { "atSec": 55, "choice": "用洗牌打乱剩余花色，还是按当前局面硬解", "cost": "洗牌只有 1 次，用掉后局面不可预知" },
+    { "atSec": 70, "choice": "为冲连击连续快消，还是求稳慢慢凑（放弃连击星）", "cost": "快消更容易看漏；慢凑拿不到 3 星" },
+    { "atSec": 90, "choice": "时间只剩一半：优先清最上层的遮挡，还是先消最稀有的花色", "cost": "清遮挡 = 可能错过稀有花色的配对时机" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础花色 ×4，扁平牌堆，学会搬牌进等待架" },
+    { "index": 2, "newElement": "万能牌（可代替任意花色）首次登场" },
+    { "index": 3, "newElement": "岩石格首次压缩棋盘，牌堆叠得更高" },
+    { "index": 4, "newElement": "花色 ×6 且叠高加剧，遮挡更重" },
+    { "index": 5, "newElement": "花色 ×7，等待架压力开始吃紧" },
+    { "index": 6, "newElement": "万能牌 ×6，救场机会更多但更难取舍" },
+    { "index": 7, "newElement": "花色 ×8（全花色上限），辨识与规划并重" },
+    { "index": 8, "newElement": "更大棋盘 + 更深的柱子，遮挡链拉长" },
+    { "index": 9, "newElement": "高叠高 bias，顶层牌少、下层全被压" },
+    { "index": 10, "newElement": "终章：全花色 + 双万能 + 岩石 + 高叠的四面围城" }
+  ],
+  "upgrades": [
+    { "id": "wildSub", "kind": "rule", "desc": "万能牌可替任意花色（第 2 关起）" },
+    { "id": "rockShrink", "kind": "rule", "desc": "岩石格压缩棋盘（第 3 关起）" },
+    { "id": "comboStar", "kind": "rule", "desc": "连击 ≥3 计入额外星（星级策略）" },
+    { "id": "shuffleProp", "kind": "rule", "desc": "每局 1 次洗牌：打乱剩余花色" },
+    { "id": "undoProp", "kind": "rule", "desc": "每局 2 次撤回：最后一块放回牌堆" },
+    { "id": "time60", "kind": "stat", "desc": "每关约 60s 倒计时" },
+    { "id": "shelf7", "kind": "stat", "desc": "等待架 7 格" },
+    { "id": "starTime", "kind": "stat", "desc": "剩余时间 ≥40% → +1 星" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "game": "link-line-pair",
+  "generatedAt": "2026-11-19T16:25:24.914Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.375,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择按钮（1-12）无明确选中状态反馈，仅1号高亮但未说明是否已选；",
+        "‘0/36’星星计数与标题间距过小，视觉层级略弱；",
+        "右上角语言切换按钮边框与背景对比度偏低，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的“开始”按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1按钮左上角星标与数字重叠，视觉干扰",
+        "‘0 / 36’进度提示字号偏小，弱光下辨识度低",
+        "关卡按钮文字为浅灰，与背景对比度不足（尤其2-12号）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击三角形任一顶点或边以开始操作",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部左上角‘Level 1 · Triangulum’文字与背景对比度偏低，暗色背景下浅灰字略难辨",
+        "右上角按钮组中问号图标与钻石图标间距过小，可能误触",
+        "三角形顶点圆环发光效果轻微溢出边界，与深空背景融合稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三角形轮廓线与星星图标轻微重叠，可能影响视觉层级",
+        "右上角'x3'标识过小且模糊，易被忽略",
+        "‘PERFECT’文字颜色偏浅（青蓝），在深蓝背景上对比度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角带数字3的菱形图标（可能是收集目标或操作按钮）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "四个灰色碎片位置随机且无明确交互提示，玩家难以判断是否需收集或避开",
+        "菱形连线为金色细线，与深蓝背景对比度不足，眯眼时易与背景星点混淆",
+        "右上角按钮组中问号和重试图标间距过小，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night-scene.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部圆点连接到中间横线的交点，完成火箭结构闭合",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中钻石图标右上角有粉色数字'3'，与图标轻微重叠，可能误读为图标一部分",
+        "火箭结构下方两个灰色碎片位置模糊，未明确指示是否可交互或需避开",
+        "时间显示'55s'字体较小，在深色背景上对比度略低，远距离辨识稍费力"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击三角形任意顶点或边进行操作（当前无明确交互提示，需猜测）",
+      "readable": 6,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标虽可见但无交互反馈提示（如高亮、光标变化），玩家不确定如何操作",
+        "HUD右上角按钮密集且部分图标语义模糊（如问号、螺旋图标功能不明）",
+        "左上角状态栏文字‘Level 1 · Triangulum’字体较小，在低分辨率下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击三角形任意一个顶点（星形节点）来选择它",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "提示框遮挡三角形底部区域，可能影响对底边节点的精确点击",
+        "顶部状态栏‘Level 1 · Triangulum’字体偏小，弱光下辨识度略低",
+        "三角形连线为细黄线，与深蓝背景对比度中等，眯眼时节点比连线更易识别"
+      ]
+    }
+  ]
+}

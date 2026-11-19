@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>DRIFT KING CN</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css?v=dk1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-left">
+          <span id="hud-score" class="hud-pill">0</span>
+          <span id="hud-stage" class="hud-pill">STAGE 1</span>
+          <span id="hud-combo" class="hud-pill combo hidden">COMBO ×1</span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-pause" class="hud-btn" aria-label="Pause">❚❚</button>
+        </div>
+      </div>
+      <div class="hud-bottom">
+        <div class="hp-bar"><span id="hp-fill"></span><span class="bar-label">HP</span></div>
+        <button id="btn-boost" class="hud-btn boost-btn" aria-label="Boost"><span id="boost-label">BOOST</span></button>
+        <div class="boost-bar"><span id="boost-fill"></span><span class="bar-label boost-icon">⚡</span></div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">DRIFT KING CN</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best-box" id="best-box"></div>
+      <button id="btn-start">START</button>
+      <p class="controls-hint" id="controls-hint"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">PAUSED</h2>
+      <button id="btn-resume">RESUME</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">WRECKED</h2>
+      <div class="result-score" id="result-score"></div>
+      <div class="result-best" id="result-best"></div>
+      <div class="result-newbest hidden" id="result-newbest">NEW BEST!</div>
+      <button id="btn-retry">RETRY</button>
+      <button id="btn-home2" class="btn-ghost">Menu</button>
+    </div>
+
+    <div id="rotate-screen" data-rotate>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger track</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=dk1"></script>
+</body>
+</html>
