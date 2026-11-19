@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRAVEL MASTER PACK</title>
+  <link rel="stylesheet" href="styles.css?v=tmp1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-score" class="hud-pill"></span>
+        <span id="hud-combo" class="hud-pill combo hidden"></span>
+        <span id="hud-level" class="hud-pill"></span>
+        <span id="hud-shield" class="hud-pill shield hidden"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-howto" class="hud-btn" data-tutorial-replay aria-label="How to play">?</button>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+      </div>
+    </div>
+
+    <div id="controls" class="hidden">
+      <button id="btn-left" class="lane-btn" aria-label="Left">◀</button>
+      <button id="btn-right" class="lane-btn" aria-label="Right">▶</button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">TRAVEL MASTER PACK</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best-score" id="best-score"></div>
+      <button id="btn-start">START</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">PAUSED</h2>
+      <button id="btn-resume">RESUME</button>
+      <button id="btn-restart2" class="btn-ghost">RESTART</button>
+      <button id="btn-howto2" class="btn-ghost" data-tutorial-replay>How to play</button>
+      <button id="btn-home2" class="btn-ghost">MENU</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-score" id="result-score"></div>
+      <div class="win-best" id="result-best"></div>
+      <div class="win-newbest hidden" id="result-newbest"></div>
+      <div class="win-meta" id="result-stats"></div>
+      <div class="win-btns">
+        <button id="btn-retry">RUN AGAIN</button>
+        <button id="btn-home3" class="btn-ghost">MENU</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate your device for a bigger road</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=tmp1"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "slug": "travel-master-pack",
+  "genre": "arcade",
+  "oneLiner": "在霓虹高速上切换四条车道，躲开红色路障、接住带标记的绿色包裹，用连击和护盾把分数一路刷上星级结算。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    {
+      "name": "laneShift",
+      "cost": "换道要预判下一条障碍与包裹的车道，选错会被撞或漏接包裹",
+      "feedback": ["sfx", "trail", "laneGlow"],
+      "combinesWith": ["collect"]
+    },
+    {
+      "name": "collect",
+      "cost": "接包裹必须移动到对应车道，可能撞上路障；漏接会清零连击",
+      "feedback": ["sfx", "sparkBurst", "comboPop"],
+      "combinesWith": ["laneShift"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一波路障落下：贴边躲，还是提前抢到包裹车道", "cost": "抢包裹可能撞路障；贴边安全但没分" },
+    { "atSec": 15, "choice": "护盾气泡出现：主动去吃护盾，还是留在安全车道刷连击", "cost": "去接护盾要横穿危险车道" },
+    { "atSec": 30, "choice": "连击已到 10：冒险保连击接包裹，还是保守漏一个清零重来", "cost": "保连击可能送命；漏接丢掉乘数" },
+    { "atSec": 45, "choice": "两条包裹分别在左右车道：只接一个，还是贪两个", "cost": "贪两个要连续横穿，风险翻倍" },
+    { "atSec": 70, "choice": "速度提档后：靠边打保守流，还是居中吃包裹流", "cost": "居中视野好但三面受敌" },
+    { "atSec": 100, "choice": "护盾只剩 1 层：留作救命，还是用来硬吃一次换高分包裹", "cost": "用掉护盾后任何失误都终结" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 35, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基础四车道 + 红路障（锥/潭/路障三型）" },
+    { "index": 2, "newElement": "绿色包裹（带 ◆ 标记）+ 连击乘数" },
+    { "index": 3, "newElement": "青色护盾气泡（挡一次撞击）" }
+  ],
+  "upgrades": [
+    { "id": "comboMult", "kind": "rule", "desc": "连击每 10 层提升一档乘数，最高 ×3" },
+    { "id": "shield", "kind": "rule", "desc": "护盾可挡一次撞击，改变必死规则" },
+    { "id": "nearMiss", "kind": "rule", "desc": "贴边擦过路障触发近失，奖励与爽感" },
+    { "id": "starRating", "kind": "rule", "desc": "按分数结算 1-3 星，驱动重开刷星" },
+    { "id": "speedTier", "kind": "stat", "desc": "随时间升档，间隔变短、下落变快" },
+    { "id": "doubleGoods", "kind": "rule", "desc": "后期一次生成两个包裹，考验取舍" },
+    { "id": "levelUp", "kind": "stat", "desc": "每 20 分升一级，等级越高越紧张" },
+    { "id": "shieldMax", "kind": "stat", "desc": "护盾上限 2 层" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

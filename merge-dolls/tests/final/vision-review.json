@@ -1,0 +1,149 @@
+{
+  "game": "merge-dolls",
+  "generatedAt": "2026-11-19T18:31:56.500Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 7.75,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘START’按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’按钮文字与背景对比度偏低，弱光下可能难辨",
+        "部分 Doll 图标右上角小黑点（可能是等级/数量标记）位置不统一，影响视觉一致性",
+        "标题‘MERGE DOLLS’发光效果过强，轻微溢光导致边缘像素模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色渐变的“开始”按钮",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘霓虹合成工厂’文字较小且无高亮，易被忽略；",
+        "右上角语言选择下拉框无展开箭头，交互意图不明确；",
+        "部分娃娃图标右上角小黑点（可能为数量标记）尺寸过小，眯眼时难辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧黄色的“Build Lvl · 8”按钮",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘44’与‘3/s’间距过小，易误读为‘443/s’",
+        "‘GLOW’按钮高亮色（粉紫）与其他禁用按钮（灰锁）对比突兀，风格略不统一",
+        "右侧面板‘RECYCLE’按钮虚线边框在深底上辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/04-merged.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角黄色‘Build Lv2 · 18’按钮升级角色",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘50 3/s’数值与图标间距过小，易误读为‘503/s’",
+        "角色格子上方‘2’等级标识偏小且无背景，弱光下难辨",
+        "‘RECYCLE’按钮虚线边框与深底色对比度不足，视觉层级模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/05-board.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角橙色‘Build Lv3 · 39’按钮升级",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Stage 1 clear! +78’提示悬浮在网格上方，轻微遮挡第2行第1-4格角色",
+        "左上角‘142’与‘231/s’字号/颜色差异大，视觉层级混乱",
+        "右侧面板‘RECYCLE’按钮虚线边框与主风格（实线+发光）不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/06-stage.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角‘Build Lv3 · 39’按钮升级",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘166’与‘231/s’字号/颜色差异大，易误读为两个独立数值",
+        "‘+24’浮动提示无背景，暗色背景下对比度偏低",
+        "右侧面板‘RECYCLE’按钮虚线边框在深色背景中辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角的'Build Lvl · 8'按钮开始建造",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'GLOW'标签为紫色渐变，与右侧橙黄按钮色系不完全统一，轻微风格割裂",
+        "'Build Lvl · 8'中'·'符号间距过小，易误读为'Lv18'",
+        "回收按钮虚线边框颜色偏暗（粉红），在深色背景下对比度不足，辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧黄色的“Build Lvl · 8”按钮开始建造",
+      "readable": 7,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "网格背景与空格子视觉对比弱，眯眼时难以区分可交互区域与背景",
+        "左上角‘60 0/s’数值与图标间距过小，易误读为‘600/s’",
+        "‘GLOW’按钮高亮但无明确反馈说明其当前选中状态是否生效"
+      ]
+    }
+  ]
+}

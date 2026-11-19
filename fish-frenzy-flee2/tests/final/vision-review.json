@@ -1,0 +1,149 @@
+{
+  "game": "fish-frenzy-flee2",
+  "generatedAt": "2026-11-19T18:34:32.182Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 8.375,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央亮蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中紫色多边形轮廓与鱼形敌人颜色相近，眯眼时易混淆（如左上角与右下角）",
+        "‘Best 0’和‘¢ 0’按钮尺寸偏小，且图标‘¢’语义不明确，可能影响可读性",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头在深色背景下对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏左的发光白鱼（玩家角色）开始移动",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部进度条右侧无明确终点标识，可能误判剩余长度",
+        "右上角按钮组中闪电图标与问号图标间距过小，易误触",
+        "紫色岩石轮廓线较细，在深蓝背景下部分边缘对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play-grow.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该控制中央发光白鱼向上移动吃绿色小鱼",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角红色鱼与紫色岩石轮廓接近，易误判为障碍物而非可吃目标",
+        "顶部‘EAT GLOWING FISH · DODGE SHARKS & ROCKS’文字偏小，弱光环境下可能难辨",
+        "右上角按钮组（闪电/问号/眼镜/重试/主页）间距过密，桌面端无问题，但若适配移动端需调整"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play-frenzy.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央区域开始移动或吞噬发光鱼",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘FRENZY’按钮与‘Stage 1’/‘SCORE’间距过小，可能误触",
+        "右上角功能图标（闪电、问号等）无文字说明，新手难理解",
+        "中央暗区光晕遮挡部分小鱼轮廓，影响精准操作判断"
+      ]
+    },
+    {
+      "shot": "tests/final/05-play-threat.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏左的白色发光鱼（玩家角色）开始移动",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'Stage 1'与'SCORE 0'间距过小，易误读为'Stage1SCORE0'",
+        "右上角闪电图标按钮无文字说明，功能不明确（可能为加速/技能）",
+        "底部中央黄色金币图标旁有微小‘+’号，尺寸过小且与鱼重叠，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/06-play-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该控制白色鱼向左上或右下移动以吃绿色发光鱼",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角紫色闪电按钮与星形计数器间距过近，可能误触",
+        "底部中央紫色盾形UI元素部分被裁切（仅显示上半）",
+        "网格线在深蓝背景上对比度偏低，影响空间定位"
+      ]
+    },
+    {
+      "shot": "tests/final/07-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间亮蓝色的“开始”按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景小鱼与紫色多边形轮廓相似，眯眼时易混淆（silhouette扣分）",
+        "右上角语言切换按钮无悬停反馈，且文字‘中文’未居中对齐",
+        "‘最佳 0’与‘↺ 0’两个小按钮间距过近，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/08-play-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击发光小鱼（白色主角）开始移动或吞噬小鱼",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部标题‘吃发光小鱼 · 躲开红鲨和暗礁’中‘红鲨’未在画面中出现（当前仅见紫色障碍物），目标与实际内容不一致",
+        "左上角‘关卡 1’按钮文字过小，且与SCORE间距紧凑，易误触",
+        "右上角功能图标（闪电、问号等）无文字说明，新手难理解其作用"
+      ]
+    }
+  ]
+}

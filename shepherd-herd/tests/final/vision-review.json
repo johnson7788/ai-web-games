@@ -1,0 +1,149 @@
+{
+  "game": "shepherd-herd",
+  "generatedAt": "2026-11-19T18:33:39.423Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 3,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘SHEPHERD HERD’与副标题‘Neon shepherd’间距过小，易误读为单行文本",
+        "‘0 / 24’与‘Best: 0’使用不同颜色（黄/橙），视觉层级混乱，建议统一色系",
+        "无角色/场景预览，眯眼时无法识别任何游戏元素轮廓（silhouette=3主因）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部三个蓝点中的一个（可能是移动或发射）",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字 'Feed every sheep once' 与顶部 HUD 按钮间距过小，易误触",
+        "底部三蓝点无明确功能提示，玩家难以判断是移动、射击还是选择",
+        "左上角 'Feed 0/3' 中 'Feed' 为动词但未加图标，新手可能误解为状态而非任务"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘COMBO ×3’文字偏小且颜色暗淡，与背景对比度低，易被忽略",
+        "底部两个带对勾的圆形图标位置模糊，功能不明（疑似已完成目标标记），缺乏说明",
+        "‘10s left’字体过小，与主得分信息层级不匹配，可能被误读为装饰"
+      ]
+    },
+    {
+      "shot": "tests/final/04-golden.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部五个蓝色光点中的一个来发射食物",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'Feed 0/5'与'16s'间距过小，易误读为'Feed 0/516s'",
+        "右上角'How to play'文字垂直居中偏上，与按钮对齐不一致",
+        "左侧黄色带星羊轮廓发光过强，可能干扰目标识别（但未遮挡）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角粉色带星号的羊群（当前唯一被选中且有高亮提示的目标）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Feed 0/6’右侧按钮无标签，仅空矩形，功能不明",
+        "右上角‘How to play’文字与‘0’‘M’‘R’‘H’按钮垂直对齐不一致，视觉松散",
+        "底部六颗蓝点指示器无说明，玩家可能误判为生命值或进度"
+      ]
+    },
+    {
+      "shot": "tests/final/06-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部进度条左侧亮起的蓝色圆点以发射或激活技能",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'How to play' 文字与右侧按钮 M/R/H 紧密堆叠，易误触且视觉拥挤",
+        "COMBO ×2 字体过大且居中，略压住中间两个带勾图标，轻微干扰目标识别",
+        "底部进度条三圆点中仅左点亮起，但无明确指示其为可交互控件，新手可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘SHEPHERD HERD’与副标题‘Neon shepherd’间距过小，略显拥挤",
+        "‘0 / 24’和‘Best: 0’使用黄色字体，在深蓝背景上对比度偏低，易误读",
+        "右上角语言选择框无明确选中状态指示（如下拉箭头样式不清晰）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部三个蓝点中的一个来发射或移动玩家（绿色羊）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’按钮文字垂直居中偏上，与右侧M/R/H按钮基线不齐",
+        "目标提示‘Feed every sheep once’为绿色，与背景深紫对比度偏低，弱光下可能难辨",
+        "右上角‘0’计数器无单位说明，易误读为时间或分数"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LIFE RESTART SIM</title>
+  <link rel="stylesheet" href="styles.css?v=lr1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-age"></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">LIFE RESTART SIM</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div id="best-stars" class="best-stars"></div>
+      <button id="btn-start" class="btn">Insert Coin</button>
+      <button id="btn-howto" class="btn-ghost" data-tutorial-replay>How to Play</button>
+    </div>
+
+    <div id="screen-talent" class="screen hidden">
+      <h2 id="talent-title"></h2>
+      <p id="talent-hint"></p>
+      <div id="talent-grid" class="talent-grid"></div>
+      <button id="btn-confirm-talents" class="btn"></button>
+    </div>
+
+    <div id="screen-allocate" class="screen hidden">
+      <h2 id="allocate-title"></h2>
+      <p id="allocate-hint"></p>
+      <div id="alloc-list" class="alloc-list"></div>
+      <div id="alloc-left" class="alloc-left"></div>
+      <div class="alloc-btns">
+        <button id="btn-alloc-random" class="btn-ghost"></button>
+        <button id="btn-start-life" class="btn"></button>
+      </div>
+    </div>
+
+    <div id="screen-life" class="screen hidden">
+      <div id="stats-bar" class="stats-bar"></div>
+      <div id="life-log" class="life-log"></div>
+    </div>
+
+    <div id="screen-summary" class="screen hidden">
+      <h2 id="summary-title">Life Complete</h2>
+      <div id="summary-stars" class="summary-stars"></div>
+      <div id="summary-score" class="summary-line"></div>
+      <div id="summary-grade" class="summary-line"></div>
+      <div id="summary-meta" class="summary-line"></div>
+      <div class="win-btns">
+        <button id="btn-replay" class="btn"></button>
+        <button id="btn-home2" class="btn-ghost"></button>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="btn">Resume</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="action-bar" class="hidden">
+      <button id="btn-next-year" class="btn"></button>
+      <button id="btn-auto" class="btn-ghost"></button>
+      <button id="btn-speed" class="btn-ghost hidden"></button>
+    </div>
+
+    <div id="choice-card" class="hidden">
+      <div class="choice-panel">
+        <h3 id="choice-title"></h3>
+        <p id="choice-text"></p>
+        <div class="choice-btns">
+          <button id="btn-choice-a" class="btn"></button>
+          <button id="btn-choice-b" class="btn-ghost"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger view</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip></button>
+          <button id="tut-next"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=lr1"></script>
+</body>
+</html>

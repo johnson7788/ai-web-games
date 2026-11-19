@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FISH FRENZY FLEE2</title>
+  <link rel="stylesheet" href="styles.css?v=flee2">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-bar">
+        <div class="hud-left">
+          <span id="hud-stage" class="hud-pill"></span>
+          <span id="hud-score-label" class="hud-label">SCORE</span>
+          <span id="hud-score" class="hud-num">0</span>
+          <span id="hud-combo" class="hud-combo"></span>
+          <span id="hud-frenzy" class="hud-frenzy" data-i18n="frenzy" style="display:none"></span>
+        </div>
+        <div class="hud-mid">
+          <span id="hud-goal" class="hud-goal" data-i18n="goal"></span>
+          <span class="boost-meter"><span id="hud-boost-fill"></span></span>
+        </div>
+        <div class="hud-right">
+          <span class="hud-coin" title="Coins">¢ <span id="hud-gold">0</span></span>
+          <span class="hud-best" title="Best">★ <span id="hud-best">0</span></span>
+          <button id="btn-boost" class="hud-btn boost-btn" data-i18n-title="boost">⚡</button>
+          <button id="btn-howto" class="hud-btn" data-i18n-title="howto" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+          <button id="btn-restart" class="hud-btn" data-i18n-title="restart">↻</button>
+          <button id="btn-home" class="hud-btn" data-i18n-title="home">⌂</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text" data-i18n="title">FISH FRENZY FLEE2</h1>
+      <p class="subtitle" id="subtitle-text" data-i18n="subtitle"></p>
+      <div class="title-stats">
+        <span id="title-best" class="title-stat"></span>
+        <span id="title-gold" class="title-stat"></span>
+      </div>
+      <button id="btn-start" class="btn-primary" data-i18n="start">Start</button>
+      <p class="hint" data-i18n="tutStep1"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title" data-i18n="paused">Paused</h2>
+      <button id="btn-resume" class="btn-primary" data-i18n="resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost" data-i18n="restart">Restart</button>
+      <button id="btn-home3" class="btn-ghost" data-i18n="home">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title" data-i18n="resultTitle">Game Over</h2>
+      <div class="result-score" id="result-score">0</div>
+      <div class="result-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry" class="btn-primary" data-i18n="retry">Retry</button>
+        <button id="btn-revive" class="btn-ghost" style="display:none">Revive</button>
+        <button id="btn-home2" class="btn-ghost" data-i18n="home">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text" data-i18n="rotateHint">Rotate for the full deep</p>
+        <button id="btn-rotate-skip" data-i18n="rotateSkip"
+          onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div id="tut-dots" class="tut-dots"></div>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next" class="btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=flee2"></script>
+</body>
+</html>

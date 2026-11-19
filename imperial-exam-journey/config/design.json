@@ -1,0 +1,39 @@
+{
+  "slug": "imperial-exam-journey",
+  "genre": "quiz",
+  "oneLiner": "书生沿驿道进京赶考，从被擦去笔画的残卷认出四字成语向前赶路，连击拿高分、攒星夺状元。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "type", "cost": "回合时间持续流逝，答错打断连击", "feedback": ["字符浮现", "按键音效"], "combinesWith": ["submit"] },
+    { "name": "submit", "cost": "提交错误重置连击并继续耗时间", "feedback": ["对错判定", "得分动画"], "combinesWith": ["type"] },
+    { "name": "hint", "cost": "消耗一张提示笺（每5分攒1张）", "feedback": ["释义展开", "铃音"], "combinesWith": ["submit"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先看一眼提示笺还是直接猜", "cost": "提示笺有限" },
+    { "atSec": 12, "choice": "抢时间答快拿三星还是求稳慢慢认", "cost": "太快容易打错字" },
+    { "atSec": 25, "choice": "用提示笺保连击还是硬猜", "cost": "连击断了分低" },
+    { "atSec": 40, "choice": "冲高连击还是稳过每个驿站", "cost": "连击越高断了损失越大" },
+    { "atSec": 60, "choice": "困难档双倍分但笔画擦得多", "cost": "答错概率高" },
+    { "atSec": 90, "choice": "是否在驿站前用光提示笺", "cost": "后续难题没提示" }
+  ],
+  "loop": { "teachSec": 15, "practiceSec": 40, "twistSec": 45, "resolveSec": 30 },
+  "levels": [
+    { "index": 1, "newElement": "简单成语（笔画擦除少）" },
+    { "index": 2, "newElement": "复杂成语 + 连击倍率" },
+    { "index": 3, "newElement": "困难成语 + 星级评分" },
+    { "index": 4, "newElement": "驿站里程碑 + 提示笺奖励" }
+  ],
+  "upgrades": [
+    { "id": "hintScroll", "kind": "rule" },
+    { "id": "comboChain", "kind": "rule" },
+    { "id": "starRank", "kind": "rule" },
+    { "id": "waystation", "kind": "rule" },
+    { "id": "baseScoreUp", "kind": "stat" },
+    { "id": "timerExtend", "kind": "stat" },
+    { "id": "hintDiscount", "kind": "stat" },
+    { "id": "streakShield", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

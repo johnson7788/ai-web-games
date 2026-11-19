@@ -1,0 +1,149 @@
+{
+  "game": "imperial-exam-journey",
+  "generatedAt": "2026-11-19T18:36:32.127Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.875,
+    "silhouette": 6.875,
+    "style_consistent": 8.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘进京赶考’中文字体颜色偏暗（青绿色），与主标题红色对比弱，易被忽略",
+        "难度按钮下方‘+1 / word’等小字字号过小，远距离阅读困难",
+        "右上角语言切换按钮边框与背景色接近，视觉层级偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色 'Got it' 按钮以确认教程提示",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡下方输入框部分区域，影响操作可见性",
+        "‘守株待兔’四字有半透明点状伪影（疑似擦除效果残留），可能干扰识别",
+        "左下角小人与背景色对比度偏低，眯眼时轮廓易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play.png",
+      "goal_visible": true,
+      "first_action_guess": "在输入框中键入成语“守株待兔”",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘印’图标与标题框轻微重叠，可能影响识别",
+        "底部输入框与红色回车按钮间距过小，视觉拥挤",
+        "背景山丘与地面色差小，层次感弱，影响深度判断"
+      ]
+    },
+    {
+      "shot": "tests/final/04-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "在输入框中键入成语“愚公移山”",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘愚公移山’四字有白色碎点噪点，疑似字体渲染异常或特效残留",
+        "右上角红色小图标（带‘印’字）与主标题框重叠，视觉干扰",
+        "底部输入框左侧按钮（铅笔图标）无文字说明，功能不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/05-hint.png",
+      "goal_visible": true,
+      "first_action_guess": "在输入框中键入成语“卧薪尝胆”",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Hint提示框部分遮挡下方小车角色（y轴位置偏低）",
+        "右上角‘Ep’图标与卷轴边框轻微重叠，视觉干扰",
+        "‘x1.6’倍速按钮无明确状态反馈（如高亮/选中态）"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Retry”按钮重新开始关卡。",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊汉字（如‘壮’‘帆’）与主内容风格不一致，疑似残留UI元素或水印，影响视觉聚焦",
+        "20·Combo 20·Hint 1 行文字字号偏小且无强调，易被忽略",
+        "星星行共20颗，但实际得分37与星星数量无直接映射关系，可能引发困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/07-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的“开始”按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最佳: 37’文字颜色偏淡，与背景对比度不足，易被忽略",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头过小（约10px）",
+        "‘玩法说明’按钮边框为细线，与其他红色实心按钮风格不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "在输入框中输入成语“望梅止渴”并点击红色回车按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘Ep’图标与卷轴边缘轻微重叠，可能影响识别",
+        "底部输入栏左侧小车角色被部分遮挡（仅露出头部和轮子），影响玩家位置感知",
+        "‘Medium’难度标签与星级按钮间距过小，视觉拥挤"
+      ]
+    }
+  ]
+}

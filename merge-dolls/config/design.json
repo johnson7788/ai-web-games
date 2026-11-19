@@ -1,0 +1,38 @@
+{
+  "slug": "merge-dolls",
+  "genre": "sim",
+  "oneLiner": "玩家经营霓虹玩偶工厂：建造并拖拽合成人偶，等级越高产金越快，连击与故障岩推动阶段推进。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "build", "cost": "金币 + 一个空格", "feedback": ["sfx", "coin", "doll-spawn"], "combinesWith": ["merge"] },
+    { "name": "merge", "cost": "两个同等级玩偶", "feedback": ["sfx", "flash", "levelup"], "combinesWith": ["build"] },
+    { "name": "recycle", "cost": "失去该玩偶", "feedback": ["sfx", "coin", "slot-free"], "combinesWith": [] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先建造还是先合成已有玩偶", "cost": "金币被占用 vs 空格被占用" },
+    { "atSec": 15, "choice": "把金币投到升阶还是保留现金流", "cost": "短期产出低 vs 升阶慢" },
+    { "atSec": 30, "choice": "回收低阶玩偶腾位还是等待合成", "cost": "损失未来合成素材" },
+    { "atSec": 50, "choice": "追连击刷产出还是稳扎稳打", "cost": "连击断了就白攒" },
+    { "atSec": 80, "choice": "点故障岩拿金币还是先布局合成", "cost": "岩块占位 vs 少一笔金币" },
+    { "atSec": 120, "choice": "冲下一阶段解锁新收藏还是堆高产出", "cost": "冲级资源 vs 稳定收益" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "建造 + 合成升阶（基础循环）" },
+    { "index": 2, "newElement": "连击系统：4 秒窗口叠加生产加成" },
+    { "index": 3, "newElement": "故障岩 + 解锁像素机器人收藏" }
+  ],
+  "upgrades": [
+    { "id": "comboBoost", "kind": "rule" },
+    { "id": "rockMagnet", "kind": "rule" },
+    { "id": "mergeRadar", "kind": "rule" },
+    { "id": "instantCollect", "kind": "rule" },
+    { "id": "prodUp", "kind": "stat" },
+    { "id": "costDown", "kind": "stat" },
+    { "id": "sellUp", "kind": "stat" },
+    { "id": "startGoldUp", "kind": "stat" }
+  ],
+  "replayHooks": ["growth", "unlock", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 3, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

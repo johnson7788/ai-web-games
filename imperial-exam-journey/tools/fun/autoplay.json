@@ -1,0 +1,62 @@
+{
+  "game": "imperial-exam-journey",
+  "genre": "puzzle",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "difficulty": 1,
+      "durationSec": 1.7,
+      "actions": 100,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.1,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 7,
+      "levelsReached": 6,
+      "completed": true,
+      "wins": 1
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "difficulty": 2,
+      "durationSec": 15,
+      "actions": 562,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 5.6,
+      "maxEventGapSec": 0.03,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": true,
+      "wins": 0
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "difficulty": 1,
+      "durationSec": 15,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 15,
+      "maxEventGapSec": 9.98,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": true,
+      "wins": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T18:35:40.171Z"
+}

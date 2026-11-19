@@ -1,0 +1,75 @@
+{
+  "slug": "carrier-pigeon-dash",
+  "genre": "arcade",
+  "oneLiner": "信鸽在霓虹都市夜航中振翅穿越中继塔阵，投递信件、接住信封并避开漂浮岩石，用连击与星级冲击最高分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "flap",
+      "cost": "每拍一次都以重力换上升；节奏错一拍就坠向塔阵或地面",
+      "feedback": ["sfx", "dustPuff", "glowPulse"],
+      "combinesWith": ["dive"]
+    },
+    {
+      "name": "dive",
+      "cost": "松开即俯冲，高度掉得快，贴地穿塔风险陡增",
+      "feedback": ["sfx", "speedLines", "trail"],
+      "combinesWith": ["flap"]
+    },
+    {
+      "name": "collect",
+      "cost": "去接信封就要偏离安全中线，等于主动放弃一次求稳的机会",
+      "feedback": ["sfx", "sparkle", "mailFlash"],
+      "combinesWith": ["flap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一座塔逼近：现在拍一下穿过上沿，还是等更低点再拍省一次振翅", "cost": "早拍更高但更难接信；晚拍贴地风险" },
+    { "atSec": 8, "choice": "信封出现在缺口：贴过去接信，还是守住安全中线", "cost": "接信偏离安全线；不接放弃连击与奖励" },
+    { "atSec": 15, "choice": "连击 x3 在即：冒险擦边过塔保住连击，还是求稳", "cost": "擦边可能撞塔；求稳断连击" },
+    { "atSec": 25, "choice": "塔阵开始加速进区域2：提前上探还是跟住节奏", "cost": "节奏判断失误就撞上加速塔" },
+    { "atSec": 40, "choice": "漂浮岩石进入航线：从上方绕还是下方钻", "cost": "绕行消耗高度；钻缝更险" },
+    { "atSec": 60, "choice": "连击 x8 冲高分：要不要为保连击放弃这封边缘信封", "cost": "贪分与贪命二选一" },
+    { "atSec": 90, "choice": "速度逼近极限：是否接受差一点(near-miss)换取更紧凑节奏", "cost": "差一点可能直接变撞击" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基本塔阵 + 重力/振翅节奏（塔间距 300px，缺口 360px）" },
+    { "index": 2, "newElement": "塔速提升 + 缺口收窄（220px/s / 332px）" },
+    { "index": 3, "newElement": "缺口中心纵向跳变加大，逼你提前预判航线" },
+    { "index": 4, "newElement": "漂浮岩石障碍：每 3 塔 1 块，纵向正弦漂移" },
+    { "index": 5, "newElement": "极限速度 + 最窄缺口（305px/s / 262px）" }
+  ],
+  "upgrades": [
+    { "id": "comboChain", "kind": "rule", "desc": "连续过塔积累连击，里程碑额外加分" },
+    { "id": "mailDelivery", "kind": "rule", "desc": "接满 5 封信结算一次配送奖励" },
+    { "id": "rockHazard", "kind": "rule", "desc": "区域4起出现漂浮岩石，改变航线" },
+    { "id": "nearMissBonus", "kind": "rule", "desc": "差一点过塔触发 near-miss 判定与反馈" },
+    { "id": "starRating", "kind": "rule", "desc": "结算按分数评 1/2/3 星" },
+    { "id": "zonePalette", "kind": "rule", "desc": "每档难度切换霓虹配色，视觉可读" },
+    { "id": "speedTier", "kind": "stat", "desc": "每档塔速递增（190→305px/s）" },
+    { "id": "gapNarrow", "kind": "stat", "desc": "每档缺口收窄（360→262px）" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

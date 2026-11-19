@@ -1,0 +1,56 @@
+{
+  "game": "merge-dolls",
+  "genre": "sim",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 100.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.05,
+      "deaths": 0,
+      "actions": 88,
+      "idleSec": 0,
+      "maxEventGapSec": 2,
+      "uniqueEvents": 10,
+      "levelsReached": 10,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 90.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.13,
+      "deaths": 0,
+      "actions": 4608,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 9,
+      "levelsReached": 20,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 60.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 15,
+      "maxEventGapSec": 18,
+      "uniqueEvents": 1,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

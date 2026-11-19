@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="IMPERIAL EXAM JOURNEY — a scholar rides the post-road to the capital, reading half-erased idioms to advance. Type the answer, chain combos, collect stars and hint scrolls.">
+  <meta name="theme-color" content="#f3ead7">
+  <title>IMPERIAL EXAM JOURNEY · 进京赶考</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-timer" class="hud-pill">15s</span>
+          <span id="hud-score" class="hud-pill">0</span>
+          <span id="hud-combo" class="hud-pill">×1</span>
+          <span id="hud-hints" class="hud-pill">✎0</span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-diff" class="hud-pill"></span>
+          <span id="hud-stars" class="hud-pill">★0</span>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-howto-hud" class="hud-btn" aria-label="Replay guide">?</button>
+          <button id="btn-pause" class="hud-btn" aria-label="Pause">Ⅱ</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">IMPERIAL EXAM JOURNEY</h1>
+      <p class="subtitle" id="subtitle-text">进京赶考</p>
+      <div class="difficulty-row" id="difficulty-row">
+        <button class="diff-btn" data-difficulty="1" id="btn-diff-1"></button>
+        <button class="diff-btn is-active" data-difficulty="2" id="btn-diff-2"></button>
+        <button class="diff-btn" data-difficulty="3" id="btn-diff-3"></button>
+      </div>
+      <button id="btn-start">Start</button>
+      <button id="btn-howto" class="btn-ghost" data-tutorial-replay>How to play</button>
+      <div class="best-score" id="best-score"></div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Menu</button>
+      <button id="btn-howto-pause" class="btn-ghost" data-tutorial-replay>Replay Guide</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div id="result-rank"></div>
+      <div id="result-stars" class="result-stars"></div>
+      <div id="result-score"></div>
+      <div id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-home">Menu</button>
+      </div>
+    </div>
+
+    <div id="answer-bar" class="hidden">
+      <input id="answer-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="12" placeholder="" aria-label="Answer">
+      <button id="btn-hint" class="answer-btn">✎</button>
+      <button id="btn-submit" class="answer-btn answer-go">↵</button>
+    </div>
+    <div id="hint-card" class="hidden"></div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for the best view</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <span id="tut-step-badge"></span>
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span id="loading-text">Loading…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

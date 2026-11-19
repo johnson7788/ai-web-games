@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MERGE DOLLS</title>
+  <link rel="stylesheet" href="styles.css?v=md1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <div class="title-logo">
+        <h1 id="title-text">MERGE DOLLS</h1>
+        <p class="subtitle" id="subtitle-text">Neon merge factory</p>
+      </div>
+      <button id="btn-start">START</button>
+      <button id="btn-howto" class="btn-ghost" data-tutorial-replay>How to play</button>
+    </div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-gold" class="hud-gold">0</span>
+        <span id="hud-gps" class="hud-gps">0/s</span>
+        <span id="hud-combo" class="hud-pill hidden">COMBO ×1</span>
+      </div>
+      <div class="hud-center">
+        <div id="stage-bar-wrap">
+          <div id="stage-bar"></div>
+          <span id="stage-label">Stage 1</span>
+        </div>
+      </div>
+      <div class="hud-right">
+        <button id="btn-howto-hud" class="hud-btn" data-tutorial-replay aria-label="How to play">?</button>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute">♪</button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+      </div>
+    </div>
+
+    <div id="tabs" class="hidden">
+      <button class="tab is-active" data-tab="0" id="tab-0">GLOW</button>
+      <button class="tab locked" data-tab="1" id="tab-1">PIXEL</button>
+      <button class="tab locked" data-tab="2" id="tab-2">STAR</button>
+    </div>
+
+    <div id="shop" class="hidden">
+      <button id="btn-buy" class="buy-btn"><span id="buy-cost">BUY</span></button>
+      <div id="recycle-bin" title="Recycle"><span class="recycle-icon">♻</span><span id="recycle-label">RECYCLE</span></div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">PAUSED</h2>
+      <button id="btn-resume">RESUME</button>
+      <button id="btn-restart2" class="btn-ghost">RESTART</button>
+      <button id="btn-howto-pause" class="btn-ghost" data-tutorial-replay>HOW TO PLAY</button>
+      <button id="btn-menu" class="btn-ghost">MENU</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger board</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="hidden"></div>
+  </div>
+  <script type="module" src="src/main.js?v=md1"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "slug": "life-restart-sim",
+  "genre": "sim",
+  "oneLiner": "投币转生进霓虹街机，选 3 个天赋、分配初始点数，然后一年一年熬过随机人生与命运抉择，用总评星级换下一世。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "invest", "cost": "初始点数有限，加魅力就加不了才智，直接决定一生走向", "feedback": ["sfx", "glow"], "combinesWith": ["choose"] },
+    { "name": "choose", "cost": "命运抉择二选一，选 A 就得牺牲另一项属性", "feedback": ["sfx", "shake"], "combinesWith": ["advance"] },
+    { "name": "advance", "cost": "每过一年都可能遭遇变故甚至死亡，且无法回退", "feedback": ["sfx", "track"], "combinesWith": ["choose"] }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一屏选天赋：挑稀有度高但互斥的天赋，还是稳妥的保命天赋", "cost": "选稀有 = 牺牲稳定；选保命 = 牺牲上限" },
+    { "atSec": 20, "choice": "分配点数：全堆体能保命，还是均衡发展冲总评", "cost": "堆体能活得久但总评低；均衡分高但易夭折" },
+    { "atSec": 35, "choice": "6 岁命运抉择：学琴加魅力还是学棋加才智", "cost": "二选一，另一项成长被放弃" },
+    { "atSec": 50, "choice": "18 岁人生路口：读大学还是直接工作", "cost": "读大学才智+财富-；工作财富+才智-" },
+    { "atSec": 70, "choice": "25 岁事业抉择：稳定工作还是冒险创业", "cost": "稳定 = 财富+心境+；创业 = 财富+体能-" },
+    { "atSec": 100, "choice": "50 岁健康投资：规律锻炼还是拼命工作", "cost": "锻炼 = 体能+；工作 = 财富+体能-" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "新生儿期：出生判定与性别，体质为负则胎死腹中" },
+    { "index": 2, "newElement": "少年期：童年事件池与 6 岁首个命运抉择" },
+    { "index": 3, "newElement": "成年期：青年事件池与 18/25 岁事业命运抉择" },
+    { "index": 4, "newElement": "中年期：中年事件池与 50 岁健康命运抉择" },
+    { "index": 5, "newElement": "老年期：衰老事件与 90 岁后自然死亡收束" }
+  ],
+  "upgrades": [
+    { "id": "gift-luckystar", "kind": "rule", "desc": "幸运星：幸运连击累积翻倍" },
+    { "id": "gift-undying", "kind": "rule", "desc": "不朽之魂：死亡时 40% 概率逃脱一次" },
+    { "id": "gift-latebloomer", "kind": "rule", "desc": "大器晚成：40 岁才智+4（改写中年曲线）" },
+    { "id": "gift-longevity", "kind": "rule", "desc": "长寿基因：60 岁体能+3（改写晚年曲线）" },
+    { "id": "gift-echoes", "kind": "rule", "desc": "轮回之忆：全属性+2（改写开局基线）" },
+    { "id": "gift-chosen", "kind": "stat", "desc": "天命之子：初始点数+8" },
+    { "id": "gift-ironbody", "kind": "stat", "desc": "钢铁之躯：体能+3" },
+    { "id": "gift-goldentouch", "kind": "stat", "desc": "金手指：财富+3" }
+  ],
+  "replayHooks": ["rating", "growth", "unlock", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 60, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

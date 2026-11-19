@@ -1,0 +1,279 @@
+/* MERGE BASKETBALL · 霓虹街机风格 */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #0b0a1f;
+  color: #eef1ff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#game-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+}
+
+/* ---------- 顶部 HUD（不透明条，避免遮挡判定） ---------- */
+#hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 52px;
+  padding: 0 12px;
+  background: #10101c;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.25);
+  z-index: 20;
+  flex: 0 0 52px;
+}
+#hud.hidden { display: none; }
+
+.hud-left { display: flex; gap: 8px; align-items: center; }
+.hud-right { display: flex; gap: 6px; align-items: center; }
+
+.hud-pill {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #1a1b30;
+  border: 1px solid rgba(120, 90, 255, 0.4);
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.hud-combo {
+  background: #3a2a12;
+  border-color: #ffcf5a;
+  color: #ffd86a;
+}
+.hud-combo.hidden { display: none; }
+
+.hud-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 90, 255, 0.4);
+  background: #1a1b30;
+  color: #eef1ff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.hud-btn.is-muted { opacity: 0.4; }
+
+/* ---------- 舞台 ---------- */
+#stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- 底部合成阶梯（不透明条） ---------- */
+#legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 10px;
+  overflow-x: auto;
+  background: #10101c;
+  border-top: 1px solid rgba(0, 229, 255, 0.25);
+  z-index: 20;
+  flex: 0 0 44px;
+}
+#legend.hidden { display: none; }
+
+.legend-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #1a1b30;
+  border: 1px solid rgba(120, 90, 255, 0.35);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.legend-chip .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex: 0 0 12px;
+}
+.legend-chip.goal {
+  border-color: #ffcf5a;
+  color: #ffd86a;
+  box-shadow: 0 0 10px rgba(255, 207, 90, 0.5);
+}
+
+/* ---------- 全屏覆盖层 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(11, 10, 31, 0.94);
+  z-index: 40;
+}
+.screen.hidden { display: none; }
+.screen.is-active { display: flex; }
+
+.screen h1 {
+  margin: 0;
+  font-size: clamp(32px, 6vw, 60px);
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #3af0ff, #8f6bff, #ff5d7a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+.screen h2 { margin: 0; font-size: clamp(24px, 4vw, 40px); }
+.subtitle { margin: 0; opacity: 0.8; font-size: 16px; }
+.goal-line { margin: 4px 0 0; opacity: 0.7; font-size: 14px; }
+
+.lang-select {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #1a1b30;
+  color: #eef1ff;
+  border: 1px solid rgba(120, 90, 255, 0.5);
+  font-size: 14px;
+}
+
+.screen button {
+  min-width: 180px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: 0;
+  background: linear-gradient(90deg, #3af0ff, #8f6bff);
+  color: #0b0a1f;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+}
+.screen button.btn-ghost {
+  background: #1a1b30;
+  color: #eef1ff;
+  border: 1px solid rgba(120, 90, 255, 0.5);
+}
+
+.win-stars { font-size: 42px; letter-spacing: 6px; color: #ffd86a; }
+.win-meta { font-size: 16px; opacity: 0.9; }
+.win-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.win-btns button { min-width: 140px; }
+
+/* ---------- 竖屏旋转提示 ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 10, 31, 0.96);
+  z-index: 90;
+}
+#rotate-screen[data-rotate] { /* 语义占位，实际显隐由媒体查询控制 */ }
+.rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px;
+  text-align: center;
+}
+.rotate-icon { font-size: 48px; color: #3af0ff; }
+.rotate-card p { margin: 0; font-size: 18px; }
+.rotate-card button {
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(120, 90, 255, 0.5);
+  background: #1a1b30;
+  color: #eef1ff;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+}
+
+/* ---------- 教程引导 ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 20, 0.55);
+  z-index: 60;
+}
+#tutorial.hidden { display: none; }
+
+#tut-spotlight {
+  position: absolute;
+  display: none;
+  border: 2px solid #3af0ff;
+  border-radius: 10px;
+  box-shadow: 0 0 0 9999px rgba(8, 8, 20, 0.5);
+  pointer-events: none;
+}
+
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: min(440px, 92vw);
+  max-width: 92vw;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #16172b;
+  border: 1px solid rgba(120, 90, 255, 0.55);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+#tut-card h3 { margin: 0 0 8px; font-size: 18px; }
+#tut-card p { margin: 0 0 14px; font-size: 14px; line-height: 1.5; opacity: 0.92; }
+.tut-btns { display: flex; justify-content: flex-end; gap: 10px; }
+.tut-btns button {
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 0;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+#tut-next { background: linear-gradient(90deg, #3af0ff, #8f6bff); color: #0b0a1f; }
+#tut-skip { background: #262840; color: #eef1ff; border: 1px solid rgba(120, 90, 255, 0.4); }
+
+@media (max-width: 560px) {
+  #tut-card { max-width: 92vw; }
+  .hud-pill { font-size: 12px; padding: 4px 9px; }
+}
+
+/* 减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

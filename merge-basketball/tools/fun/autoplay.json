@@ -1,0 +1,56 @@
+{
+  "game": "merge-basketball",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 161.52,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 1.13,
+      "deaths": 1,
+      "actions": 497,
+      "idleSec": 0,
+      "maxEventGapSec": 0.68,
+      "uniqueEvents": 6,
+      "levelsReached": 4,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 175.9,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 2.28,
+      "deaths": 1,
+      "actions": 529,
+      "idleSec": 0,
+      "maxEventGapSec": 0.62,
+      "uniqueEvents": 6,
+      "levelsReached": 4,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 240,
+      "firstInputSec": 4.03,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 17.02,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 43.02,
+      "maxEventGapSec": 4.03,
+      "uniqueEvents": 5,
+      "levelsReached": 4,
+      "completed": false
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MERGE BASKETBALL</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span class="hud-pill" id="hud-score"></span>
+        <span class="hud-pill" id="hud-best"></span>
+        <span class="hud-pill hud-combo hidden" id="hud-combo"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-howto" class="hud-btn" data-tutorial-replay aria-label="Help">?</button>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute">♪</button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu">≡</button>
+      </div>
+    </div>
+
+    <div id="stage"><canvas id="canvas"></canvas></div>
+
+    <div id="legend" class="hidden"></div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">MERGE BASKETBALL</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start">Start</button>
+      <p class="goal-line" id="goal-line"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-meta" id="result-best"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Play Again</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">↻</div>
+        <p id="rotate-text">Rotate for a bigger board</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BRAIN CHICKEN RUN</title>
+  <link rel="stylesheet" href="styles.css?v=bcr1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+    <div id="loading">…</div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span class="hud-pill" id="hud-stage"></span>
+        <span class="hud-pill" id="hud-score"></span>
+        <span class="hud-pill" id="hud-combo"></span>
+        <span class="hud-pill" id="hud-shield"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+        <button id="btn-pause" class="hud-btn" aria-label="Pause">⏸</button>
+      </div>
+    </div>
+
+    <div id="question-card" class="hidden">
+      <div class="q-top">
+        <span id="q-category"></span>
+        <span id="q-golden" class="q-golden hidden"></span>
+      </div>
+      <div id="q-text"></div>
+      <div class="q-bottom">
+        <span id="q-hint"></span>
+        <span id="q-timer" class="q-timer"></span>
+      </div>
+    </div>
+
+    <div id="answer-bar" class="hidden">
+      <button id="btn-true" class="answer-btn answer-true" type="button"><span class="answer-label" data-i18n="q.true">TRUE</span></button>
+      <button id="btn-false" class="answer-btn answer-false" type="button"><span class="answer-label" data-i18n="q.false">FALSE</span></button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">BRAIN CHICKEN RUN</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best" id="best-score"></div>
+      <div class="title-btns">
+        <button id="btn-start" class="btn-primary" data-i18n="btn.start">Start</button>
+        <button id="btn-howto" class="btn-ghost" data-tutorial-replay data-i18n="btn.how">How to play</button>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title" data-i18n="pause.title">Paused</h2>
+      <p id="pause-hint" data-i18n="pause.hint">Press Esc to resume</p>
+      <div class="title-btns">
+        <button id="btn-resume" class="btn-primary" data-i18n="btn.resume">Resume</button>
+        <button id="btn-restart" class="btn-ghost" data-i18n="btn.restart">Restart</button>
+        <button id="btn-home" class="btn-ghost" data-i18n="btn.home">Menu</button>
+      </div>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title"></h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry" class="btn-primary" data-i18n="btn.retry">Run again</button>
+        <button id="btn-share" class="btn-ghost" data-i18n="btn.share">Share</button>
+        <button id="btn-home2" class="btn-ghost" data-i18n="btn.home">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text" data-i18n="rotate.text">Rotate for the best view</p>
+        <button id="btn-rotate-skip" type="button" onclick="document.getElementById('rotate-screen').style.display='none'"></button>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+  </div>
+  <script type="module" src="src/main.js?v=bcr1"></script>
+</body>
+</html>

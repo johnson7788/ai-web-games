@@ -1,0 +1,149 @@
+{
+  "game": "brain-melter",
+  "generatedAt": "2026-11-19T18:35:31.777Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 9,
+    "silhouette": 7.625,
+    "style_consistent": 9.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的粉色 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡编号 1-12 的星标数量显示不一致（第1关为1星，其余为3星），但未说明规则，易引发困惑",
+        "‘0/36’ 星数统计无上下文，玩家可能不知36代表什么",
+        "关卡按钮呈两行排列但无视觉分组或间距区分，略显拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡编号1-12的按钮无明确选中态区分（仅1号高亮，其余视觉差异弱）",
+        "‘0/36’进度显示字体偏小，与标题对比度不足，远距辨识稍难",
+        "背景深紫渐变+微光粒子可能干扰低对比度元素识别（如未解锁关卡星标）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该按右上角标有“1”的节点",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央粉色球体底部条纹与网格线轻微融合，可能影响可交互物辨识度",
+        "节点数字字体无描边，在深色背景边缘处对比度略低（尤其数字3）",
+        "顶部‘LV 1’与目标提示文字颜色相近，视觉层级稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/04-sum.png",
+      "goal_visible": true,
+      "first_action_guess": "点击数字3和7，因为它们与中心2相加可得10（3+7=10）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中心数字2被粉色光晕部分遮挡，可能影响快速识别",
+        "顶部LV 5标签为黄色文字在深蓝背景上，对比度略低",
+        "‘Tap numbers that add to 10’重复出现两次，冗余"
+      ]
+    },
+    {
+      "shot": "tests/final/05-pair.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间粉色三角形，再点击上方或下方同形状的三角形配对",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央粉色圆形背景光晕过强，轻微干扰三角形轮廓辨识",
+        "左上角'LV 7'与'Tap matching pairs'标题间距过小，略显拥挤",
+        "右上角图标组（灯泡/问号/工具/重试/主页）尺寸偏小，桌面截图下可接受，但若为移动端需放大"
+      ]
+    },
+    {
+      "shot": "tests/final/06-rotation.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一个箭头按钮使其方向与中心粉色球体上的条纹方向一致（即全部朝上）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中心球体条纹为水平线，但四个箭头当前方向为上、右、下、左，目标方向不明确（需玩家推断应全部朝上），易引发歧义",
+        "顶部‘LV 9’与‘Tap to align all arrows’文字间距过小，轻微视觉拥挤",
+        "四个箭头按钮大小一致但发光边框亮度差异大（青/粉/黄/绿），可能干扰优先级判断"
+      ]
+    },
+    {
+      "shot": "tests/final/07-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“Next”按钮继续关卡",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景数字1-4半透明方块位置模糊，可能误导为可交互元素",
+        "‘PERFECT’文字偏小且与星星间距过近，弱光下易误读",
+        "底部条纹图形疑似角色剪影但无明确轮廓，眯眼时辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该按标有“1”的节点",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央粉色球体与网格背景融合度高，可能弱化其作为视觉锚点的作用",
+        "节点数字字体无描边，在深色背景下对比度略低（尤其数字3）",
+        "顶部指令文字‘Tap the nodes 1 → 2 → 3 ...’重复出现两次，冗余"
+      ]
+    }
+  ]
+}

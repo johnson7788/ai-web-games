@@ -1,0 +1,68 @@
+{
+  "slug": "fish-frenzy-flee2",
+  "genre": "arcade",
+  "oneLiner": "驾驶霓虹鱼群在深渊逃亡：吞并发光小鱼壮大队伍，躲开红鲨与暗礁，收集金币与狂暴之星触发吞噬反击。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "转向受角速度限制且有惯性，方向选错会把整群鱼送进鲨鱼嘴",
+      "feedback": ["wakeTrail", "sfx", "schoolWobble"],
+      "combinesWith": ["boost"]
+    },
+    {
+      "name": "boost",
+      "cost": "消耗能量表（回复慢），且冲刺时转向变迟钝，容易冲过头撞进障碍",
+      "feedback": ["speedLines", "sfx", "screenStretch"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "frenzy",
+      "cost": "必须游到危险的星位去接，且只有 5 秒窗口；窗口结束立刻回到被追状态",
+      "feedback": ["glowAura", "sfx", "predatorEat"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先追近处的小鱼，还是先绕开从前方冲来的红鲨", "cost": "贪吃会撞进鲨鱼嘴，绕路则浪费成长窗口" },
+    { "atSec": 18, "choice": "吃掉 3 连击后是否冒险去接 4 连击加成", "cost": "连击窗口只有 4 秒，追远鱼可能断连" },
+    { "atSec": 30, "choice": "金币刷在鲨鱼附近：绕行去捡，还是留着保命", "cost": "捡 = 进入危险区；不捡 = 复活金币攒不够" },
+    { "atSec": 45, "choice": "狂暴之星出现：立刻冲过去，还是先清掉身侧鲨鱼", "cost": "冲星 = 短时间无防备；晚去 = 星可能被甩出视野" },
+    { "atSec": 60, "choice": "能量表满：用 boost 硬穿鲨鱼夹缝，还是留能量逃生", "cost": "用完能量后若遇险，无法再冲刺" },
+    { "atSec": 80, "choice": "鱼群已大：要不要贴着暗礁切内道缩短路线", "cost": "擦礁会甩掉一条鱼，但外道会被追兵截住" },
+    { "atSec": 110, "choice": "只剩最后一条鱼：稳扎稳打续命，还是吃星翻盘", "cost": "翻盘失败即终结本局" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 30, "resolveSec": 25 },
+  "levels": [
+    { "index": 1, "newElement": "基础鱼群：吞并小鱼成长，速度随存活渐进加快" },
+    { "index": 2, "newElement": "红鲨登场：从前进方向屏幕外突入的捕食者" },
+    { "index": 3, "newElement": "暗礁障碍：撞上会弹开并甩掉一条鱼，变成可追回的小鱼" },
+    { "index": 4, "newElement": "连击窗口：4 秒内连续吞并叠乘分数" },
+    { "index": 5, "newElement": "狂暴之星：吃星触发 5 秒吞噬鲨鱼 + 磁吸小鱼" },
+    { "index": 6, "newElement": "冲刺助推：消耗能量表瞬间加速，代价是转向变钝" }
+  ],
+  "upgrades": [
+    { "id": "comboWindow", "kind": "rule", "desc": "连击窗口延长，断连更宽容" },
+    { "id": "frenzyEat", "kind": "rule", "desc": "狂暴期间可反吃红鲨（改规则）" },
+    { "id": "frenzyMagnet", "kind": "rule", "desc": "狂暴期间磁吸范围扩大（改规则）" },
+    { "id": "rockBounce", "kind": "rule", "desc": "撞暗礁改为弹开不甩鱼（改规则）" },
+    { "id": "speedCap", "kind": "stat", "desc": "鱼群速度上限提高" },
+    { "id": "turnRate", "kind": "stat", "desc": "转向角速度提高" },
+    { "id": "boostCapacity", "kind": "stat", "desc": "冲刺能量表上限提高" },
+    { "id": "spawnInterval", "kind": "stat", "desc": "红鲨生成间隔拉长" }
+  ],
+  "replayHooks": ["growth", "nearMiss", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

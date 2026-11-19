@@ -1,0 +1,35 @@
+{
+  "game": "fish-frenzy-flee2",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 4,
+    "stepIds": [
+      "steer",
+      "grow",
+      "avoid",
+      "frenzy"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": [
+      "https://pipygames.com/api/sdk/config?appId=pipy-fish-frenzy-flee2",
+      "https://pipygames.com/api/sdk/config?appId=pipy-fish-frenzy-flee2",
+      "https://pipygames.com/api/sdk/config?appId=pipy-fish-frenzy-flee2"
+    ]
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

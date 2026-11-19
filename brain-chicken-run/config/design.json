@@ -1,0 +1,69 @@
+{
+  "slug": "brain-chicken-run",
+  "genre": "quiz",
+  "oneLiner": "你在霓虹鸡群大逃杀里读题判断对错：站到 TRUE 车道才能活过清场闸门，连对攒护盾、抢金题翻倍分，撑满三关做最后一只站着的鸡。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "judge",
+      "cost": "站错车道会被清场闸门/岩石扫出局；不操作按答错处理",
+      "feedback": ["sfx", "lane-move", "burst"],
+      "combinesWith": ["shield"]
+    },
+    {
+      "name": "shield",
+      "cost": "连对 3 题才得 1 个，用一次就消耗掉",
+      "feedback": ["sfx", "shield-glow", "save-flash"],
+      "combinesWith": ["judge"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "第一题：读陈述，选 TRUE 还是 FALSE 车道", "cost": "选错车道会被清场" },
+    { "atSec": 15, "choice": "没把握的题：凭直觉站边，还是拖到计时最后一秒再改", "cost": "越晚改越慌 vs 提前站错风险" },
+    { "atSec": 28, "choice": "连击快到 3：冲一把拿护盾，还是求稳慢慢来", "cost": "断连就重攒 vs 保守少分" },
+    { "atSec": 45, "choice": "金题出现：双倍分值得硬答，还是保守跳过", "cost": "金题答错照样出局" },
+    { "atSec": 62, "choice": "拿到护盾后：用它去赌一题，还是留着保命", "cost": "护盾是一次性的" },
+    { "atSec": 85, "choice": "第 2 关限时变短：抢答快一点，还是多读两遍题", "cost": "读题时间 vs 反应时间" },
+    { "atSec": 110, "choice": "第 3 关岩石清场：盯准 TRUE 车道，还是跟着多数鸡走", "cost": "从众可能一起被清" },
+    { "atSec": 140, "choice": "只剩你加几只鸡：最后几题是否冒险换车道", "cost": "换错车道前功尽弃" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "第 1 关：双车道 TRUE/FALSE 判断 + 连击得分" },
+    { "index": 2, "newElement": "第 2 关：金题（每 3 题双倍分）+ 岩石清场 + 限时收紧" },
+    { "index": 3, "newElement": "第 3 关：限时最短 + 护盾保命成为通关关键" }
+  ],
+  "upgrades": [
+    { "id": "shieldSave", "kind": "rule", "desc": "护盾可挡一次出局（改失败成本）" },
+    { "id": "doubleGolden", "kind": "rule", "desc": "金题答对得分 ×2（条件规则）" },
+    { "id": "comboSurge", "kind": "rule", "desc": "连击越高每轮附加分越高（规则成长）" },
+    { "id": "laneLock", "kind": "rule", "desc": "提交后锁定车道不可反悔（改规则）" },
+    { "id": "timerPlus", "kind": "stat", "desc": "每题时限 +1s（数值）" },
+    { "id": "shieldMax", "kind": "stat", "desc": "护盾上限 +1（数值）" },
+    { "id": "scorePlus", "kind": "stat", "desc": "基础分 +20%（数值）" },
+    { "id": "botEase", "kind": "stat", "desc": "机器人出错率上升（数值）" }
+  ],
+  "replayHooks": ["rating", "growth", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连对 3 题护盾亮起的瞬间，清场闸门扫过错误车道、成片霓虹鸡被弹飞，你一个人站在 TRUE 车道发光",
+  "antiScope": [
+    "不做联网对战/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "霓虹街机风，全程序化 canvas：双车道赛道 + 霓虹鸡群 + 清场闸门/岩石；UI 手写 CSS；音频纯 WebAudio 合成，无任何原作素材"
+}

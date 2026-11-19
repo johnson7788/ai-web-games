@@ -1,0 +1,117 @@
+{
+  "game": "travel-master-pack",
+  "generatedAt": "2026-11-19T18:37:26.607Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.333333333333333,
+    "silhouette": 7.833333333333333,
+    "style_consistent": 8.833333333333334
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角播放按钮开始移动角色",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 'x2' 倍数标识与 'Score 45' 紧邻，间距过小易误触",
+        "红色 'X' 障碍物与绿色礼物盒视觉权重接近，可能混淆可交互性",
+        "背景城市剪影与网格线在中景处轻微融合，影响深度判断"
+      ]
+    },
+    {
+      "shot": "tests/final/02-collect.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角播放按钮开始移动角色收集礼物盒",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'Score 8'与'Level 1'按钮间距过小，可能误触",
+        "橙色三角形障碍物（带×）与绿色礼物盒视觉权重接近，易混淆目标与障碍",
+        "背景网格线在中景处略显干扰，轻微影响目标聚焦"
+      ]
+    },
+    {
+      "shot": "tests/final/03-shield.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角播放按钮开始移动角色",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色六边形+号目标物与背景条纹太阳部分重叠，可能影响识别",
+        "左下角三角形障碍物图标（橙色×）与网格线颜色接近，低对比度",
+        "顶部Level 2按钮文字偏小，远距离辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/04-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角播放按钮开始移动角色",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "橙色三角形目标物（含×）与背景城市剪影对比度偏低，远距离易混淆",
+        "左上角'x3'倍数标识无明确归属对象，可能误读为得分倍率而非道具",
+        "底部玩家角色被黄色圆环高亮，但未明确指示其为当前操控单位（需依赖位置推断）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘RUN AGAIN’按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘PACK LOST’标题与背景城市剪影对比度偏低，暗光下易误读",
+        "左上角‘Score 60’等状态栏文字过小（约12px），远距离辨识困难",
+        "底部虚拟摇杆与‘RUN AGAIN’按钮间距过近，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角播放按钮开始移动角色",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色礼物盒与红色叉号目标在视觉层级上接近，易混淆优先级",
+        "左上角'Shield 1'高亮框颜色（黄底黑字）与背景对比不足，弱于其他HUD元素",
+        "背景粉色半圆建筑与黄色六边形+号图标间距过近，可能误判为同一对象"
+      ]
+    }
+  ]
+}

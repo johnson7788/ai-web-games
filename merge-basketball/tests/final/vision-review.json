@@ -1,0 +1,85 @@
+{
+  "game": "merge-basketball",
+  "generatedAt": "2026-11-19T18:31:06.134Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 6.75,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中间的4号球（被白圈高亮者）以合并",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'NEXT'按钮下方红色数字'2'与圆环重叠，易误读为'2 NEXT'",
+        "底部数字标签（2,4,8...）字体过小且无背景，暗色背景下对比度偏低",
+        "右上角功能图标（?、音乐、重试、菜单）间距过密，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中间区域发射当前4号球",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEXT’提示球与顶部虚线边界过近，可能被误认为不可交互",
+        "底部数字球标签（如‘B’、‘4’）在小尺寸下易混淆，部分球体颜色相近（黄/橙）影响快速识别",
+        "‘1024 Goal’按钮文字与背景对比度偏低，弱光环境下可读性下降"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play Again’按钮重新开始游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星图标未填充（应为全亮或按得分动态显示），与‘Score 0 · Goal 1024’矛盾，易误导玩家",
+        "‘Best 0’字体过小且颜色偏灰，对比度不足，影响可读性",
+        "背景深蓝近乎纯黑，导致部分UI元素（如顶部‘NEXT’）几乎不可见，存在视觉盲区"
+      ]
+    },
+    {
+      "shot": "tests/final/04-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部两个红色‘2’球合并成‘4’",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEXT’提示球体与顶部虚线边界过近，可能误触或视觉干扰",
+        "底部数字按钮间距紧凑，小屏设备易误触（虽桌面截图标true，但设计隐患存在）",
+        "‘ROCK’标签字体偏小且无对比色，在深背景中辨识度略低"
+      ]
+    }
+  ]
+}

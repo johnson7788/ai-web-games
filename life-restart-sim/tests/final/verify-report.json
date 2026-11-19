@@ -1,0 +1,125 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "开始按钮有文案",
+      "ok": true,
+      "detail": "eval: document.getElementById('btn-start').textContent.length > 0"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入选天赋",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'talent'"
+    },
+    {
+      "name": "天赋候选 10 个",
+      "ok": true,
+      "detail": "eval: document.querySelectorAll('.talent-card').length === 10"
+    },
+    {
+      "name": "进入分配点数",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'allocate'"
+    },
+    {
+      "name": "进入人生",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'life'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'life'"
+    },
+    {
+      "name": "命运抉择出现",
+      "ok": true,
+      "detail": "eval: window.__ll.run.state.pendingChoice !== null"
+    },
+    {
+      "name": "人生结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'summary'"
+    },
+    {
+      "name": "结算有星级与总分",
+      "ok": true,
+      "detail": "eval: window.__ll.run.state.stars >= 0 && window.__ll.run.state.summary.score > 0"
+    },
+    {
+      "name": "回标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端命运抉择",
+      "ok": true,
+      "detail": "eval: window.__ll.run.state.pendingChoice !== null"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 外部请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-talents.png",
+    "03-allocate.png",
+    "04-life.png",
+    "05-choice.png",
+    "06-summary.png",
+    "07-summary-zh.png",
+    "08-mobile.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

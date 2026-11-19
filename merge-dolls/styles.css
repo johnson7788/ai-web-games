@@ -1,0 +1,338 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root { --scale: 1; --neon: #7f8cff; --neon2: #ff6bd6; --gold: #ffd54a; }
+
+html, body {
+  height: 100%;
+  background: #05050c;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Apple SD Gothic Neo', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', 'Microsoft YaHei', 'Yu Gothic', 'Malgun Gothic', Tahoma, monospace;
+  color: #eef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1280px;
+  height: 720px;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  transform-origin: center center;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #0a0a16;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- 通用屏层 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+.screen.is-active { z-index: 30; }
+#screen-title { background: rgba(8, 8, 20, 0.74); backdrop-filter: blur(1px); }
+#screen-pause { background: rgba(8, 8, 20, 0.82); }
+
+.screen h1 {
+  font-size: 4rem;
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-shadow: 0 0 8px var(--neon), 0 0 24px var(--neon), 0 0 48px var(--neon2);
+  margin-bottom: 0.3rem;
+}
+.screen h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #fff; text-shadow: 0 0 12px var(--neon); }
+.screen .subtitle { font-size: 1.05rem; margin-bottom: 2rem; opacity: 0.8; letter-spacing: 0.2em; }
+
+.title-logo { text-align: center; }
+
+.screen button {
+  padding: 13px 40px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--neon), var(--neon2));
+  color: #0a0a16;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.08em;
+  margin-top: 0.7rem;
+  min-height: 48px;
+  box-shadow: 0 0 18px rgba(127, 140, 255, 0.5);
+}
+.screen button:hover { filter: brightness(1.12); }
+.screen .btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: #cfe0ff;
+  border: 1px solid rgba(127, 140, 255, 0.4);
+  box-shadow: none;
+  font-size: 1rem;
+  padding: 10px 22px;
+}
+
+.lang-select {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  padding: 8px 12px;
+  background: #0e0e22;
+  color: #cfe0ff;
+  border: 1px solid var(--neon);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* ---------- HUD ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 15;
+  pointer-events: none;
+}
+#hud button { pointer-events: auto; }
+.hud-left { display: flex; align-items: baseline; gap: 12px; }
+.hud-gold { font-size: 1.7rem; font-weight: 700; color: var(--gold); text-shadow: 0 0 10px rgba(255, 213, 74, 0.5); }
+.hud-gold::before { content: '🪙 '; font-size: 1.2rem; }
+.hud-gps { font-size: 0.95rem; opacity: 0.75; }
+.hud-pill {
+  font-size: 0.85rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 107, 214, 0.2);
+  color: #ff8bd0;
+  border: 1px solid rgba(255, 107, 214, 0.5);
+}
+
+.hud-center { flex: 1; max-width: 320px; margin: 0 auto; }
+#stage-bar-wrap {
+  position: relative;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(127, 140, 255, 0.3);
+}
+#stage-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  transition: width 0.3s ease;
+  border-radius: 12px;
+}
+#stage-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #e8ecff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.hud-right { display: flex; gap: 8px; }
+.hud-btn {
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+  background: rgba(127, 140, 255, 0.12);
+  color: #cfe0ff;
+  border: 1px solid rgba(127, 140, 255, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ---------- 页签 ---------- */
+#tabs {
+  position: absolute;
+  top: 64px;
+  left: 286px;
+  display: flex;
+  gap: 8px;
+  z-index: 15;
+}
+.tab {
+  min-width: 72px;
+  height: 40px;
+  padding: 0 14px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.04);
+  color: #9fb0e8;
+  border: 1px solid rgba(127, 140, 255, 0.25);
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.tab.is-active {
+  background: linear-gradient(135deg, var(--neon), var(--neon2));
+  color: #0a0a16;
+  font-weight: 700;
+  border-color: transparent;
+}
+.tab.locked { opacity: 0.55; }
+
+/* ---------- 商店/回收 ---------- */
+#shop { position: absolute; top: 122px; right: 18px; width: 360px; z-index: 15; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+#btn-buy {
+  width: 100%;
+  min-height: 88px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #ffd54a, #ff9d3c);
+  color: #20160a;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 0 24px rgba(255, 213, 74, 0.4);
+}
+#btn-buy:disabled { opacity: 0.5; cursor: default; }
+#buy-cost { font-size: 0.95rem; font-weight: 700; opacity: 0.75; display: block; }
+
+#recycle-bin {
+  width: 100%;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  color: #ff9d8b;
+  border: 2px dashed rgba(255, 130, 110, 0.5);
+  border-radius: 16px;
+  background: rgba(255, 100, 90, 0.05);
+}
+.recycle-icon { font-size: 1.6rem; }
+
+/* ---------- 教程 ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 420px;
+  max-width: 92vw;
+  background: rgba(12, 12, 28, 0.96);
+  border: 1px solid rgba(127, 140, 255, 0.5);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+}
+#tut-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; text-shadow: 0 0 10px var(--neon); }
+#tut-card p { font-size: 0.95rem; line-height: 1.5; opacity: 0.85; }
+.tut-btns { display: flex; gap: 10px; margin-top: 14px; justify-content: flex-end; }
+.tut-btns button {
+  padding: 9px 20px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  min-height: 40px;
+}
+#tut-next { background: linear-gradient(135deg, var(--neon), var(--neon2)); color: #0a0a16; font-weight: 700; }
+#tut-skip { background: rgba(255, 255, 255, 0.06); color: #cfe0ff; border: 1px solid rgba(127, 140, 255, 0.35); }
+
+.tut-highlight {
+  outline: 3px solid #ffd54a !important;
+  outline-offset: 4px;
+  animation: tut-pulse 0.9s ease-in-out infinite;
+  position: relative;
+  z-index: 45;
+}
+@keyframes tut-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 213, 74, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(255, 213, 74, 0); }
+}
+
+/* ---------- toast ---------- */
+#toast {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 10px 22px;
+  font-size: 1.05rem;
+  background: rgba(12, 12, 28, 0.95);
+  color: #fff;
+  border: 1px solid rgba(127, 140, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/* ---------- 竖屏提示 ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 5, 12, 0.94);
+}
+.rotate-card { text-align: center; padding: 24px; }
+.rotate-icon { font-size: 3rem; margin-bottom: 12px; }
+.rotate-card p { font-size: 1.1rem; margin-bottom: 16px; }
+.rotate-card button {
+  padding: 12px 26px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, var(--neon), var(--neon2));
+  color: #0a0a16;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+}
+
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+}
+
+/* ---------- 减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .tut-highlight, #stage-bar { animation: none; transition: none; }
+  #stage-bar { transition: none; }
+}

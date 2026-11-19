@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-11-19T18:36:36.060Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "ui": {
+      "rms": 0.1184,
+      "peak": 0.2678,
+      "nan": 0,
+      "zcRate": 830.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "correct": {
+      "rms": 0.1745,
+      "peak": 0.5584,
+      "nan": 0,
+      "zcRate": 689,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "wrong": {
+      "rms": 0.1641,
+      "peak": 0.4296,
+      "nan": 0,
+      "zcRate": 329.6,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.1133,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 819,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.1136,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 353.2,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "hint": {
+      "rms": 0.1318,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 879.2,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "star": {
+      "rms": 0.1178,
+      "peak": 0.22,
+      "nan": 0,
+      "zcRate": 1285.3,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "waystation": {
+      "rms": 0.1551,
+      "peak": 0.5853,
+      "nan": 0,
+      "zcRate": 839.9,
+      "samples": 26019,
+      "durSec": 0.59,
+      "pass": true
+    },
+    "low": {
+      "rms": 0.1304,
+      "peak": 0.2799,
+      "nan": 0,
+      "zcRate": 131.3,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "start": {
+      "rms": 0.1434,
+      "peak": 0.2934,
+      "nan": 0,
+      "zcRate": 561.9,
+      "samples": 18522,
+      "durSec": 0.42,
+      "pass": true
+    },
+    "finish": {
+      "rms": 0.1395,
+      "peak": 0.4876,
+      "nan": 0,
+      "zcRate": 979.7,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    },
+    "fanfare": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.14,
+      "peak": 0.4719,
+      "nan": 0,
+      "zcRate": 163.1,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "victory": {
+      "rms": 0.14,
+      "peak": 0.4476,
+      "nan": 0,
+      "zcRate": 351.2,
+      "samples": 132300,
+      "durSec": 3,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "correct.comboUpPitchUp": {
+      "comboLow": 0,
+      "comboHigh": 12,
+      "zcRateLow": 689,
+      "zcRateHigh": 972.3,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "merge-basketball",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹篮球场上左右瞄准、落球，两个相同数字的篮球合成翻倍，一路合到 1024 大篮球——岩石不能合，4 秒不操作会自动落球。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "瞄准位置决定球落在左边还是右边；落错一边会把大球挤到墙边，甚至顶过红线判负",
+      "feedback": ["ghostAim", "pointerLine"],
+      "combinesWith": ["drop"]
+    },
+    {
+      "name": "drop",
+      "cost": "落下的球按先来后到随机给（2/4/8），落点偏一点同数值球就滚开堆高，2 个在途球上限 + 0.3s 间隔锁住连发",
+      "feedback": ["sfx", "dropTrail"],
+      "combinesWith": ["merge"]
+    },
+    {
+      "name": "merge",
+      "cost": "只有两个同数值球互相碰撞才合成；岩石球永远不能合成，白占空间",
+      "feedback": ["sfx", "mergeFlash"],
+      "combinesWith": ["drop"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "第一颗 2 落在正中间，还是偏一侧留出成对空间",
+      "cost": "正中间快速堆叠但容易堆高；偏一侧为后面的同值球留出配对位"
+    },
+    {
+      "atSec": 12,
+      "choice": "手里是 2、场上已有 4：先叠两个 2 等合成，还是把 2 丢去喂 4 的缺口",
+      "cost": "叠 2 要多等一轮；喂缺口可能滚开浪费一步"
+    },
+    {
+      "atSec": 25,
+      "choice": "岩石球来了：丢到边角还是塞进中间",
+      "cost": "边角占窄位；中间会挡住合成路径"
+    },
+    {
+      "atSec": 40,
+      "choice": "连击窗口内要不要冒险连丢两颗加速合成",
+      "cost": "连丢可能瞬间堆高；不连丢则连击断了少加分"
+    },
+    {
+      "atSec": 60,
+      "choice": "快触顶了：优先合成大球清空间，还是先处理散落的小球",
+      "cost": "合成大球要等配对；处理小球可能占更多位"
+    },
+    {
+      "atSec": 85,
+      "choice": "自动落球倒计时快到了：手动丢到好位置，还是等它自动乱丢",
+      "cost": "手动控制落点；等待则随机位置可能堆歪"
+    },
+    {
+      "atSec": 110,
+      "choice": "已经 512，差一个 512 就 1024：集中合成冲大球，还是稳一点保命",
+      "cost": "集中风险高但快；稳一点拖长战线更易被堆高"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础落球与瞄准（2/4/8，合到 16）" },
+    { "index": 2, "newElement": "连击窗口与 combo 加分（合到 64）" },
+    { "index": 3, "newElement": "岩石球入场（不可合成，逼你绕开）" },
+    { "index": 4, "newElement": "自动落球倒计时（4 秒压力环）" },
+    { "index": 5, "newElement": "1024 大篮球目标与三星评级结算" }
+  ],
+  "upgrades": [
+    { "id": "unlockCombo", "kind": "rule", "desc": "连击窗口内连续合成触发 combo 加分" },
+    { "id": "unlockRock", "kind": "rule", "desc": "岩石球入场：不可合成，逼你绕开占位" },
+    { "id": "autoDrop", "kind": "rule", "desc": "4 秒不操作自动落球，制造时间压力" },
+    { "id": "starRating", "kind": "rule", "desc": "按最大球给 1-3 星结算，成为重玩钩子" },
+    { "id": "endlessBig", "kind": "rule", "desc": "1024 之后继续追更大球，无限挑战" },
+    { "id": "gravityTune", "kind": "stat", "desc": "每档球重力/恢复/密度不同，手感递进" },
+    { "id": "speedCap", "kind": "stat", "desc": "速度上限保护，避免飞出场地" },
+    { "id": "rockHeavy", "kind": "stat", "desc": "岩石更重、恢复更低，落地即定" },
+    { "id": "dropPool", "kind": "stat", "desc": "落球随机池 2/4/8 均匀" }
+  ],
+  "replayHooks": ["rating", "growth", "nearMiss"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "shepherd-herd",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹牧场上点按四处游荡的光羊，逐一喂食光种，在倒计时内喂完全部羊并靠连击与金色羊冲高分。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "feed", "cost": "消耗一次喂食并进入短暂冷却，点错已喂过的羊会打断节奏", "feedback": ["seed flight", "sfx", "score pop"], "combinesWith": ["chain"] },
+    { "name": "chain", "cost": "必须在连击窗口内持续准确点击，贪快容易点错", "feedback": ["combo pop", "pitch rise"], "combinesWith": ["feed"] }
+  ],
+  "decisions": [
+    { "atSec": 2, "choice": "先喂最近的羊，还是先追更快的金色羊", "cost": "金色羊奖励时间但更难点中" },
+    { "atSec": 8, "choice": "快速连点凑连击，还是等羊停稳再点", "cost": "点错会重置连击并浪费一次冷却" },
+    { "atSec": 15, "choice": "先喂靠墙的羊还是靠岩石的羊", "cost": "岩石反弹会让羊突然变向躲开点击" },
+    { "atSec": 30, "choice": "保住连击倍率，还是稳扎稳打逐只点", "cost": "一次失误连击归零" },
+    { "atSec": 50, "choice": "把最后几秒押在最后一只羊上，还是放弃", "cost": "超时整关失败" },
+    { "atSec": 70, "choice": "追金色羊拿 +2s，还是先清普通羊", "cost": "金色羊更快更难命中" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "feed the wandering herd" },
+    { "index": 2, "newElement": "faster sheep" },
+    { "index": 3, "newElement": "golden sheep bonus" },
+    { "index": 4, "newElement": "rocks bounce the herd" },
+    { "index": 5, "newElement": "tighter cooldown" },
+    { "index": 6, "newElement": "two golden sheep" },
+    { "index": 7, "newElement": "triple rocks" },
+    { "index": 8, "newElement": "ten-sheep rush" }
+  ],
+  "upgrades": [
+    { "id": "combo-extend", "kind": "rule" },
+    { "id": "golden-x2", "kind": "rule" },
+    { "id": "rock-magnet", "kind": "rule" },
+    { "id": "slow-motion", "kind": "rule" },
+    { "id": "double-seed", "kind": "rule" },
+    { "id": "freeze-timer", "kind": "rule" },
+    { "id": "speed-up", "kind": "stat" },
+    { "id": "score-up", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

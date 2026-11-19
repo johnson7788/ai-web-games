@@ -1,0 +1,3 @@
+LIFE RESTART SIM
+人生重开模拟器
+A neon arcade life-simulation game: pick gifts, invest points, live a random life year by year, and chase a legendary score across reincarnations.

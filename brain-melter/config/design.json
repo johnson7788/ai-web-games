@@ -1,0 +1,46 @@
+{
+  "slug": "brain-melter",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹实验室里破解顺序、异类、凑数、配对、旋转五类迷你烧脑题，赢星级逐关推进",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "tap", "cost": "每次点错消耗一次失误机会（3 次即失败）", "feedback": ["sfx", "glow", "combo"], "combinesWith": ["hint"] },
+    { "name": "hint", "cost": "消耗一次失误机会换一个正确答案", "feedback": ["sfx", "reveal"], "combinesWith": ["tap"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "顺序关先找 1 还是就近乱点", "cost": "点错消耗失误机会并重置进度" },
+    { "atSec": 20, "choice": "凑数关先选大数还是小数", "cost": "一旦超目标就失误并清空累计" },
+    { "atSec": 40, "choice": "配对关先翻哪一对", "cost": "配错消耗失误机会" },
+    { "atSec": 60, "choice": "旋转关逐个对齐还是先点转最多的", "cost": "限时内转不完就失败" },
+    { "atSec": 85, "choice": "要不要用提示换答案", "cost": "消耗一次失误机会（少一颗星）" },
+    { "atSec": 120, "choice": "限时关抢时间还是稳扎稳打", "cost": "快容易失误，慢容易超时" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 50, "resolveSec": 25 },
+  "levels": [
+    { "index": 1, "newElement": "顺序点亮（4 节点）" },
+    { "index": 2, "newElement": "顺序点亮扩展（5 节点）" },
+    { "index": 3, "newElement": "异类识别：形状" },
+    { "index": 4, "newElement": "异类识别：颜色" },
+    { "index": 5, "newElement": "凑数求和" },
+    { "index": 6, "newElement": "凑数求和（更大目标）" },
+    { "index": 7, "newElement": "配对消除" },
+    { "index": 8, "newElement": "配对消除（4 对）" },
+    { "index": 9, "newElement": "旋转对齐" },
+    { "index": 10, "newElement": "旋转对齐（6 箭头）" },
+    { "index": 11, "newElement": "限时·顺序点亮" },
+    { "index": 12, "newElement": "限时·异类识别" }
+  ],
+  "upgrades": [
+    { "id": "combo-multiplier", "kind": "rule" },
+    { "id": "star-rating", "kind": "rule" },
+    { "id": "timer", "kind": "rule" },
+    { "id": "hint-tool", "kind": "rule" },
+    { "id": "fault-shield", "kind": "rule" },
+    { "id": "extra-hint", "kind": "stat" },
+    { "id": "slow-timer", "kind": "stat" },
+    { "id": "combo-window", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 50, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}
