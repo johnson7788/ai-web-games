@@ -1,0 +1,104 @@
+{
+  "slug": "tank-classic-1990",
+  "genre": "arcade",
+  "oneLiner": "霓虹网格战场上，驾驶一辆坦克在砖墙与岩石间游走，用子弹拆墙、追连击、捡道具，击毁全部敌军并守住发光的反应堆核心。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "只能面朝一个方向推进；撞上砖墙/岩石/钢铁/水域就停下，转角与撤退都要先掉头",
+      "feedback": ["sfx", "trackGlow", "enginePitch"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "fire",
+      "cost": "开火有冷却，且子弹会打穿你能躲的砖墙/岩石，把掩体一起拆掉",
+      "feedback": ["sfx", "muzzleFlash", "shellTrail"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "开局是压出去抢中间开阔地，还是贴底边等第一波敌军露头",
+      "cost": "压出去 = 暴露在三条出生点的交叉火力里"
+    },
+    {
+      "atSec": 15,
+      "choice": "追着刚被打残的敌军补第二枪续连击，还是先躲进砖墙后面保命",
+      "cost": "续连击 = 走出掩体；保命 = 连击条清零"
+    },
+    {
+      "atSec": 40,
+      "choice": "看到空地中央的道具：冲过去捡，还是留给敌军方向做诱饵",
+      "cost": "捡道具要穿过无掩体区域，可能撞上子弹"
+    },
+    {
+      "atSec": 70,
+      "choice": "打碎面前的砖墙开一条直射通道，还是留着它当挡子弹的掩体",
+      "cost": "拆墙 = 你和敌军之间再无遮挡"
+    },
+    {
+      "atSec": 100,
+      "choice": "最后几个敌军时：主动出击结束战斗，还是退回核心旁防守",
+      "cost": "出击 = 核心短暂无人看守"
+    },
+    {
+      "atSec": 140,
+      "choice": "拿到连发道具后：原地火力压制，还是借射速推进到敌军出生点封口",
+      "cost": "推进 = 更容易被刷新出的敌军贴身包围"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "brick maze + grunt enemies" },
+    { "index": 2, "newElement": "steel walls (indestructible)" },
+    { "index": 3, "newElement": "grass cover (hides tanks)" },
+    { "index": 4, "newElement": "rock walls (2-hit)" },
+    { "index": 5, "newElement": "water lanes (blocks tanks, bullets pass)" },
+    { "index": 6, "newElement": "scout enemies (fast)" },
+    { "index": 7, "newElement": "gunner enemies (rapid fire)" },
+    { "index": 8, "newElement": "tank enemies (2 HP)" },
+    { "index": 9, "newElement": "freeze power-up" },
+    { "index": 10, "newElement": "rapid power-up" },
+    { "index": 11, "newElement": "shield power-up" },
+    { "index": 12, "newElement": "boss wave: all types + all terrain" }
+  ],
+  "upgrades": [
+    { "id": "rapid", "kind": "rule", "desc": "连发道具：射击冷却大幅缩短，火力翻倍" },
+    { "id": "shield", "kind": "rule", "desc": "护盾道具：免疫一次致命子弹" },
+    { "id": "freeze", "kind": "rule", "desc": "冻结道具：敌军停止移动与射击数秒" },
+    { "id": "rock", "kind": "rule", "desc": "岩石地形：需要两枪才能打穿的可破坏掩体" },
+    { "id": "water", "kind": "rule", "desc": "水域地形：挡住坦克但子弹能飞过" },
+    { "id": "scoutSpeed", "kind": "stat", "desc": "侦察兵：移速更快，逼你更快预判" },
+    { "id": "tankHp", "kind": "stat", "desc": "装甲师：需要两枪击毁" },
+    { "id": "gunnerFire", "kind": "stat", "desc": "速射炮手：射击间隔更短" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

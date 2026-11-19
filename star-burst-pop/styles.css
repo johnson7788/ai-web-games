@@ -1,0 +1,210 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: #05050f;
+  color: #eef;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Microsoft YaHei', 'Segoe UI', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #05050f;
+  touch-action: none;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD（不透明顶条，避免遮挡判罚） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  background: linear-gradient(180deg, #0d0c20 0%, #0a0918 100%);
+  border-bottom: 1px solid rgba(157, 123, 255, 0.35);
+  z-index: 6;
+  font-size: 1rem;
+  gap: 10px;
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 14px; }
+.hud-left span { color: #cfe9ff; }
+.hud-left #hud-score { font-weight: 700; color: #ffe14d; text-shadow: 0 0 10px rgba(255, 225, 77, 0.6); }
+.hud-left #hud-target { color: #9d7bff; }
+.hud-right span { color: #aab6d8; }
+.hud-right .hud-combo {
+  color: #ff4fd8;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 79, 216, 0.7);
+  min-width: 44px;
+  text-align: right;
+}
+.hud-btn {
+  min-width: 44px;
+  height: 40px;
+  padding: 0 10px;
+  background: #171536;
+  color: #eef;
+  border: 1px solid #3a3370;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.hud-btn:hover { border-color: #9d7bff; }
+
+/* ---------- 屏幕覆盖层 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(7, 7, 20, 0.62);
+  z-index: 10;
+  padding: 24px;
+  text-align: center;
+}
+.screen h1 {
+  font-size: 4.2rem;
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-shadow: 0 0 12px #2de2ff, 0 0 28px #ff4fd8, 0 0 52px #9d7bff;
+  margin-bottom: 0.4rem;
+}
+.screen h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #fff; text-shadow: 0 0 14px #9d7bff; }
+.screen .subtitle { font-size: 1.15rem; margin-bottom: 2rem; opacity: 0.85; color: #cfe9ff; }
+.title-best { margin-bottom: 1.2rem; color: #ffe14d; font-size: 1.05rem; }
+.screen button {
+  padding: 14px 38px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(180deg, #ff4fd8, #c22aa8);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 0.8rem;
+  box-shadow: 0 0 18px rgba(255, 79, 216, 0.5);
+}
+.screen button:hover { filter: brightness(1.12); }
+.btn-ghost {
+  background: #171536 !important;
+  box-shadow: none !important;
+  color: #cfe9ff !important;
+  border: 1px solid #3a3370 !important;
+  font-weight: 400 !important;
+  font-size: 1rem !important;
+  padding: 10px 22px !important;
+}
+.title-btns { display: flex; gap: 12px; }
+.lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #171536;
+  color: #eef;
+  border: 1px solid #3a3370;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* ---------- 结算 ---------- */
+.result-stars {
+  font-size: 3rem;
+  color: #ffe14d;
+  text-shadow: 0 0 16px rgba(255, 225, 77, 0.8);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.15em;
+}
+#result-score { font-size: 1.5rem; color: #fff; margin-bottom: 0.4rem; }
+#result-meta { color: #aab6d8; margin-bottom: 0.8rem; }
+.result-btns { display: flex; gap: 12px; }
+
+/* ---------- 旋转提示（移动竖屏显示） ---------- */
+#rotate-screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(5, 5, 15, 0.96);
+  z-index: 30;
+  text-align: center;
+  padding: 24px;
+}
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen[data-rotate] { display: flex !important; }
+}
+.rotate-card { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.rotate-icon { font-size: 3rem; }
+.rotate-card p { color: #cfe9ff; font-size: 1.1rem; }
+.rotate-card button {
+  padding: 12px 26px;
+  background: #171536;
+  color: #fff;
+  border: 1px solid #3a3370;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ---------- 教程（固定底部居中，避免 HUD 遮挡判罚） ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+}
+#tut-spotlight {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 15, 0.55);
+}
+#tut-card {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 620px;
+  max-width: 92vw;
+  background: #12102a;
+  border: 1px solid #4b3f9e;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 0 30px rgba(157, 123, 255, 0.35);
+  z-index: 21;
+}
+#tut-card h3 { color: #2de2ff; margin-bottom: 8px; font-size: 1.2rem; }
+#tut-card p { color: #e6edff; line-height: 1.5; margin-bottom: 14px; }
+.tut-btns { display: flex; justify-content: flex-end; gap: 10px; }
+.tut-btns button {
+  margin-top: 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+}

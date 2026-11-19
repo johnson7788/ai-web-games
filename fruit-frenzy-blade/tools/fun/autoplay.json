@@ -1,0 +1,56 @@
+{
+  "game": "fruit-frenzy-blade",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 90.02,
+      "firstInputSec": 0.65,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.67,
+      "deaths": 0,
+      "actions": 63,
+      "idleSec": 0,
+      "maxEventGapSec": 1.4,
+      "uniqueEvents": 12,
+      "levelsReached": 14,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 5.23,
+      "firstInputSec": 0.3,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 17,
+      "idleSec": 0,
+      "maxEventGapSec": 1.3,
+      "uniqueEvents": 4,
+      "levelsReached": 1,
+      "completed": true
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 5.73,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1.3,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": true
+    }
+  ]
+}

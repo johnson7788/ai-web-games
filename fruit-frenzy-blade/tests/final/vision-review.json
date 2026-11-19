@@ -1,0 +1,117 @@
+{
+  "game": "fruit-frenzy-blade",
+  "generatedAt": "2026-11-19T12:06:37.656Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.833333333333334,
+    "silhouette": 7.5,
+    "style_consistent": 8.833333333333334
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙红色渐变的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景水果剪影与主标题轻微重叠，可能干扰视觉焦点",
+        "‘BEST 0’字号过小且颜色偏黄，在深蓝背景下对比度不足",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙红色的“开始”按钮启动游戏。",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最佳 0’文字偏小且颜色较淡，易被忽略；",
+        "背景水果元素部分重叠（如左下炸弹与红果），可能干扰视觉焦点；",
+        "右上角语言切换按钮无悬停反馈提示，交互意图不明确。"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "向上滑动切开上方带刀的水果",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部提示框‘Swipe to slice fruit · avoid bombs’文字略小，暗背景上对比度中等，弱光下可能难读",
+        "左上角SCORE/BEST/WAVE按钮间距过窄，易误触（尤其桌面缩放后）",
+        "底部#1橙色果片与网格线颜色接近，远距离辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该滑动屏幕切开中间的红色水果",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部提示文字‘Swipe to slice fruit · avoid bombs’无背景衬底，在深色背景下对比度略低，弱光下可能难读",
+        "水果周围虚线圆环与水果边缘间距过小，可能影响切割判定视觉反馈",
+        "左上角三个状态按钮（SCORE/BEST/WAVE）字体偏小，桌面分辨率下可读但移动端需放大"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'Got it'按钮以确认教程并开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角带叉号的炸弹图标未被虚线圈选，可能误导玩家以为不可交互",
+        "右上角灰色六边形物体无说明，疑似障碍物但未在教程中解释",
+        "底部进度点（三个小圆点）中第一个为橙色，但未明确指示当前步骤"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'Got it'按钮以确认教程并开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角带叉红圈水果（炸弹）与教程弹窗底部轻微视觉干扰，虽未物理遮挡但易误判为可交互目标",
+        "右上灰色多边形图标无说明，疑似错误UI残留或未启用功能",
+        "背景网格线在深色背景下对比度偏低，可能影响部分色弱用户辨识"
+      ]
+    }
+  ]
+}

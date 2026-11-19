@@ -1,0 +1,59 @@
+{
+  "game": "tank-classic-1990",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 5,
+      "level": 3,
+      "durationSec": 15.78,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 3.68,
+      "deaths": 3,
+      "actions": 947,
+      "idleSec": 0,
+      "maxEventGapSec": 0.93,
+      "uniqueEvents": 9,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 37.15,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 15.32,
+      "deaths": 2,
+      "actions": 2229,
+      "idleSec": 0,
+      "maxEventGapSec": 0.52,
+      "uniqueEvents": 9,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 36.82,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1.48,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

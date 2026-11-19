@@ -1,0 +1,40 @@
+{
+  "slug": "fruit-frenzy-blade",
+  "genre": "arcade",
+  "oneLiner": "玩家用指尖挥刀切落飞起的水果，避开炸弹与岩石，用连击触发暴走冲高分。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "swipe", "cost": "手指划过路径之外的水果不会命中", "feedback": ["刀光拖尾", "切裂粒子"], "combinesWith": ["chain"] },
+    { "name": "chain", "cost": "停顿超过1.2秒连击清零", "feedback": ["连击计数", "暴走横幅"], "combinesWith": ["swipe"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先切慢的水果还是追远处飞得高的", "cost": "追逐会漏掉近处水果" },
+    { "atSec": 15, "choice": "炸弹混进水果堆，切不切这一刀", "cost": "切中炸弹直接结束" },
+    { "atSec": 28, "choice": "为保连击冒险连切，还是稳切一颗", "cost": "断连失去暴走与倍数" },
+    { "atSec": 42, "choice": "岩石飞过，绕开还是硬切", "cost": "切中岩石连击清零" },
+    { "atSec": 58, "choice": "暴走快结束，追金果还是收普通果", "cost": "金果价值高但更远更难切" },
+    { "atSec": 75, "choice": "连击上来了，继续冲还是保命收手", "cost": "贪刀会漏水果扣生命" },
+    { "atSec": 95, "choice": "同时三颗水果，先切哪颗", "cost": "切错顺序漏掉其他" },
+    { "atSec": 130, "choice": "生命只剩一格，激进连击还是保守", "cost": "激进失误即出局" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 50, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "swipe 切普通水果 + 炸弹即死" },
+    { "index": 2, "newElement": "岩石打断连击（wave 2 出现）" },
+    { "index": 3, "newElement": "金果高分 + 暴走 ×2（wave 3 出现）" }
+  ],
+  "upgrades": [
+    { "id": "frenzy", "kind": "rule" },
+    { "id": "comboWindow", "kind": "rule" },
+    { "id": "goldenFruit", "kind": "rule" },
+    { "id": "rockBreak", "kind": "rule" },
+    { "id": "waveScale", "kind": "rule" },
+    { "id": "speed10", "kind": "stat" },
+    { "id": "life1", "kind": "stat" },
+    { "id": "score2", "kind": "stat" },
+    { "id": "throwSpeed", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 15, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

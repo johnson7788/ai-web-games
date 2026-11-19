@@ -1,0 +1,101 @@
+{
+  "game": "doudizhu-master",
+  "generatedAt": "2026-11-19T12:08:46.209Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.6,
+    "silhouette": 7,
+    "style_consistent": 8.4
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部卡牌图标中‘2+2’符号易被误读为‘22’或‘2+2’含义不明确，缺乏说明",
+        "‘Best streak: 0’前的月亮图标语义模糊，未标注其代表什么",
+        "右上角语言切换下拉框无展开箭头或视觉反馈，可能被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的“开始”按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部牌面中‘2+2’符号排版略拥挤，+号易被误读为上标或装饰",
+        "‘最高连胜: 0’文字颜色偏淡（浅黄），在深背景上对比度不足，可能影响可读性",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角绿色'Play'按钮开始出牌",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部手牌中部分数字（如'3','4'）与花色符号重叠，视觉干扰",
+        "顶部'ROUND1'和倍率按钮间距过小，易误触",
+        "中间'EMPTY YOUR HAND = WIN'提示文字无背景衬底，在深色网格上对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-played.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部手牌中的任意一张牌（如左起第一张♦4）来出牌",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部手牌中部分牌面数字与花色重叠（如右数第二张♥2的'2'与♥符号轻微重叠）",
+        "中间'YOU - straight'提示文字颜色偏淡，对比度不足，弱光下可能难辨",
+        "顶部'Round1 ×1 0'区域图标间距过密，小屏可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Retry”按钮重新开始本局游戏。",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘FARMER 2 · single’文字颜色偏淡（浅黄），在深背景上对比度不足，易被忽略",
+        "底部‘EMPTY YOUR HAND = WIN’提示文字过小且半透明，可读性弱",
+        "‘-2 coins · ×1’中‘·’符号与前后内容间距不一致，排版略显松散"
+      ]
+    }
+  ]
+}

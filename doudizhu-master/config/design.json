@@ -1,0 +1,75 @@
+{
+  "slug": "doudizhu-master",
+  "genre": "sim",
+  "oneLiner": "三张底牌、两名 AI 农民，霓虹牌桌上先出完手牌就是赢——用顺子连队清场，用炸弹和王炸翻盘。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "select",
+      "cost": "选中的牌锁进本手，出牌失败就得重选，等于把牌型意图暴露给对手",
+      "feedback": ["cardLift", "glowHighlight", "sfx"],
+      "combinesWith": ["play"]
+    },
+    {
+      "name": "play",
+      "cost": "出掉的牌离开手牌，且牌型必须压过上家；出小或拆炸弹都可能送掉回合主动权",
+      "feedback": ["cardFly", "pileFlash", "sfx"],
+      "combinesWith": ["select", "pass"]
+    },
+    {
+      "name": "pass",
+      "cost": "放弃本回合主动权，对手继续领出并多一轮清牌机会",
+      "feedback": ["dimCards", "sfx"],
+      "combinesWith": ["play"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "拿到 20 张地主牌：先拆顺子打长手，还是留炸弹保底", "cost": "拆顺子=失去一次清场机会；留炸弹=前期少一手组合" },
+    { "atSec": 15, "choice": "农民出了单张：用小单张垫，还是用 2/王压住抢主动权", "cost": "用大牌压=后续没牌能压单；垫小牌=可能被农民再压" },
+    { "atSec": 28, "choice": "手里有三带一：带对子稳出，还是拆成单张追顺子", "cost": "带对子=对子没了；追顺子=三张拆散" },
+    { "atSec": 45, "choice": "农民连出三手：用炸弹打断，还是等王炸", "cost": "炸弹翻倍分数且可能被王炸反压；等待=农民继续领出" },
+    { "atSec": 70, "choice": "只剩 4 张：一回合出完，还是分两回合稳收", "cost": "一回合=可能被压死；分两回合=多给农民一轮" },
+    { "atSec": 95, "choice": "底牌是 2/王：起手就冲，还是先把杂牌顺出去", "cost": "先冲=大牌过早暴露；先顺=可能卡在杂牌" },
+    { "atSec": 130, "choice": "落后两个炸弹：靠连胜倍率扳本，还是本局求稳", "cost": "赌连胜=输了掉更多；求稳=放弃高分钩子" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基本牌型（单/对/三/顺/炸弹）+ 两名 AI 农民" },
+    { "index": 2, "newElement": "连胜倍率：连赢的分数逐局翻倍" },
+    { "index": 3, "newElement": "提示道具：每局 3 次高亮可出牌" },
+    { "index": 4, "newElement": "炸弹风暴：连续炸弹积累 combo 加分" },
+    { "index": 5, "newElement": "春天检测：对手未出牌即分胜负触发额外倍率" }
+  ],
+  "upgrades": [
+    { "id": "unlockHint", "kind": "rule", "desc": "第 3 局起解锁提示，机器帮你标出能压过上家的牌" },
+    { "id": "bombCombo", "kind": "rule", "desc": "第 4 局起炸弹连发计入 combo，combo 越高结算金币越多" },
+    { "id": "springBonus", "kind": "rule", "desc": "第 5 局起春天/反春额外翻倍" },
+    { "id": "streakMultiplier", "kind": "rule", "desc": "第 2 局起连胜倍率逐局上涨" },
+    { "id": "lowHandAlert", "kind": "rule", "desc": "手牌 ≤3 张时对手头顶亮出警示" },
+    { "id": "baseScore", "kind": "stat", "desc": "底分随局数 +1" },
+    { "id": "maxRounds", "kind": "stat", "desc": "生涯局数上限 +50" },
+    { "id": "coinCap", "kind": "stat", "desc": "金币上限 +1e6" }
+  ],
+  "replayHooks": ["rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "url": "http://127.0.0.1:8131/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "L1 无岩石但有敌军",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().rockCount === 0 && window.__ll.debug.state().enemiesTotal > 0"
+    },
+    {
+      "name": "L4 有岩石",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().rockCount > 0"
+    },
+    {
+      "name": "L5 有水域",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().waterCount > 0"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "清场后结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.sim().stars >= 1"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.66,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-rock-level.png",
+    "04-water-level.png",
+    "05-result.png",
+    "06-boss-level.png",
+    "07-grass-level.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-tank-classic-1990"
+  ],
+  "fps": {
+    "avgFrameMs": 16.66,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

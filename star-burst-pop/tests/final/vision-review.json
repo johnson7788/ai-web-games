@@ -1,0 +1,69 @@
+{
+  "game": "star-burst-pop",
+  "generatedAt": "2026-11-19T12:07:10.816Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.666666666666666,
+    "silhouette": 7.333333333333333,
+    "style_consistent": 8.666666666666666
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一个方块开始匹配消除",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Score 0’中‘Score’为黄色、‘0’为白色，颜色不统一，易误读为两个独立元素",
+        "网格方块无边框且间距小，眯眼时相邻同色块易融合成大块，影响目标识别",
+        "顶部HUD按钮（How to play/Mute/Pause）无悬停反馈提示，桌面端交互反馈缺失"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一颗星星以选择其同色连通区域",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "提示框遮挡下方两行星星（第5-6行），影响初始操作可视性",
+        "‘Score 0’与‘Target 4000’颜色对比度偏低（黄/紫在深蓝背景上）",
+        "‘How to play’按钮文字略小，且无悬停反馈提示"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best0’文字颜色偏黄且字号小，与主标题对比弱，易被忽略",
+        "底部提示框边框发光过强，轻微干扰内部文字阅读",
+        "背景网格线在暗处略显杂乱，影响星群轮廓辨识"
+      ]
+    }
+  ]
+}

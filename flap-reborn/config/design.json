@@ -1,0 +1,100 @@
+{
+  "slug": "flap-reborn",
+  "genre": "arcade",
+  "oneLiner": "玩家轻点屏幕，让一只霓虹光点无人机在合成波天空里上下穿梭，穿过发光光柱的间隙、贴边擦分并收集能量光珠——撞柱或落地即坠机，靠连击与星级不断刷新纪录。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "flap",
+      "cost": "每次拍翼给一股向上的冲劲后，高度就重新交还给重力：上升不可取消，只能等下一次拍翼",
+      "feedback": ["sfx", "trail", "wingFlash"],
+      "combinesWith": ["glide"]
+    },
+    {
+      "name": "glide",
+      "cost": "不拍翼 = 让重力接管，高度持续流失；贴地滑翔越久，离坠机越近",
+      "feedback": ["sfx", "speedLines"],
+      "combinesWith": ["flap"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一根光柱逼近：现在拍翼穿过间隙中心，还是先吃上方偏移的光珠",
+      "cost": "吃珠更靠近光柱边缘，用贴脸风险换护盾"
+    },
+    {
+      "atSec": 10,
+      "choice": "间隙偏上：提前拉高贴顶，还是等最后时刻急拍",
+      "cost": "拉高过头会撞顶，急拍可能来不及"
+    },
+    {
+      "atSec": 18,
+      "choice": "光珠在间隙下缘：俯冲吃珠还是放弃保命",
+      "cost": "俯冲后上升需要额外一拍，可能撞下柱"
+    },
+    {
+      "atSec": 30,
+      "choice": "护盾已满：把护盾当保险继续贴边擦分，还是稳飞中心",
+      "cost": "贴边擦分有撞柱风险，破盾后直接暴毙"
+    },
+    {
+      "atSec": 45,
+      "choice": "SECTOR 2 提速：保持连击贴边，还是减速求稳",
+      "cost": "连击断掉分数倍率归零"
+    },
+    {
+      "atSec": 60,
+      "choice": "连击 x3：继续贴边吃双倍分，还是见好就收",
+      "cost": "撞一次就前功尽弃"
+    },
+    {
+      "atSec": 90,
+      "choice": "SECTOR 3 间隙更窄：赌擦边连击冲高分，还是安全过管等结算",
+      "cost": "贴边成功率随间隙收窄下降，失误即坠机"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础拍翼与重力：穿过霓虹光柱间隙，过管 +1 分" },
+    { "index": 2, "newElement": "能量光珠：间隙内出现可收集光珠，吃珠充能护盾并加分" },
+    { "index": 3, "newElement": "擦边连击：贴光柱边缘过管触发 combo，连击叠分" },
+    { "index": 4, "newElement": "速度阶梯：SECTOR 提速 + 间隙收窄，越飞越快" }
+  ],
+  "upgrades": [
+    { "id": "unlockOrb", "kind": "rule", "desc": "SECTOR 1 起光柱间隙出现能量光珠" },
+    { "id": "unlockShield", "kind": "rule", "desc": "吃珠充能护盾，一命抵一撞" },
+    { "id": "unlockCombo", "kind": "rule", "desc": "贴边过管触发擦边连击，combo 叠分" },
+    { "id": "unlockGrazing", "kind": "rule", "desc": "擦边判定带视觉高亮 + 音效反馈" },
+    { "id": "speedUp", "kind": "stat", "desc": "SECTOR 2 起速度 +12%" },
+    { "id": "gapNarrow", "kind": "stat", "desc": "SECTOR 3 起间隙收窄" },
+    { "id": "orbScore", "kind": "stat", "desc": "光珠额外 +2 分" },
+    { "id": "comboCap", "kind": "stat", "desc": "连击倍率上限 x5" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

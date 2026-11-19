@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f2a">
+  <link rel="icon" href="data:,">
+  <title>FRUIT FRENZY BLADE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-bar">
+        <div class="hud-left">
+          <span class="hud-pill"><span class="hud-label" data-i18n="score"></span><span id="hud-score">0</span></span>
+          <span class="hud-pill"><span class="hud-label" data-i18n="best"></span><span id="hud-best">0</span></span>
+          <span class="hud-pill"><span class="hud-label" data-i18n="wave"></span><span id="hud-wave">1</span></span>
+        </div>
+        <div class="hud-right">
+          <div id="hud-lives" class="hud-lives" aria-label="Lives"></div>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute">🔊</button>
+          <button id="btn-pause" class="hud-btn" aria-label="Pause">⏸</button>
+        </div>
+      </div>
+      <div id="combo-wrap" class="hidden">
+        <span id="combo-count" class="combo-count"></span>
+      </div>
+      <div id="frenzy-banner" class="hidden" data-i18n="frenzy"></div>
+      <div id="hint" class="hidden" data-i18n="hint"></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">FRUIT FRENZY BLADE</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best-row"><span id="best-label" data-i18n="best"></span><span id="best-value">0</span></div>
+      <button id="btn-start" class="btn-primary">Start</button>
+      <button id="btn-howto" class="btn-ghost" data-tutorial-replay>How to Play</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume" class="btn-primary">Resume</button>
+      <button id="btn-restart" class="btn-ghost">Restart</button>
+      <button id="btn-home" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Game Over</h2>
+      <div id="result-stars" class="stars"></div>
+      <div id="result-score"></div>
+      <div id="result-meta"></div>
+      <button id="btn-retry" class="btn-primary">Play Again</button>
+      <button id="btn-home2" class="btn-ghost">Menu</button>
+    </div>
+
+    <div id="rotate-screen" data-rotate>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger play area</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-card">
+        <h3 id="tut-title">How to Play</h3>
+        <p id="tut-text"></p>
+        <div class="tut-dots" id="tut-dots"></div>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next" class="btn-primary">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

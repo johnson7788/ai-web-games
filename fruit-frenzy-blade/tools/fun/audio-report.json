@@ -1,0 +1,269 @@
+{
+  "game": "fruit-frenzy-blade",
+  "generatedAt": "2026-11-19T12:06:41.898Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds≈16.0",
+      "ok": true,
+      "loopSeconds": 16,
+      "bpm": 120,
+      "bars": 8
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 16.5
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.012406036764557466
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.01791453239962421
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.01267067903087138
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.1405072808265686
+    },
+    {
+      "name": "sfx-slice-rms>0.01",
+      "ok": true,
+      "rms": 0.031650089076957565
+    },
+    {
+      "name": "sfx-slice-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.09020408163265306
+    },
+    {
+      "name": "sfx-slice-peak<=0.98",
+      "ok": true,
+      "peak": 0.15597335994243622
+    },
+    {
+      "name": "sfx-golden-rms>0.01",
+      "ok": true,
+      "rms": 0.02733351025255117
+    },
+    {
+      "name": "sfx-golden-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.24609977324263038
+    },
+    {
+      "name": "sfx-golden-peak<=0.98",
+      "ok": true,
+      "peak": 0.09368246048688889
+    },
+    {
+      "name": "sfx-bomb-rms>0.01",
+      "ok": true,
+      "rms": 0.03662925893430321
+    },
+    {
+      "name": "sfx-bomb-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.33405895691609977
+    },
+    {
+      "name": "sfx-bomb-peak<=0.98",
+      "ok": true,
+      "peak": 0.17696544528007507
+    },
+    {
+      "name": "sfx-rock-rms>0.01",
+      "ok": true,
+      "rms": 0.030870177330462156
+    },
+    {
+      "name": "sfx-rock-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.11752834467120181
+    },
+    {
+      "name": "sfx-rock-peak<=0.98",
+      "ok": true,
+      "peak": 0.14333651959896088
+    },
+    {
+      "name": "sfx-combo-rms>0.01",
+      "ok": true,
+      "rms": 0.021062956516666672
+    },
+    {
+      "name": "sfx-combo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.05802721088435374
+    },
+    {
+      "name": "sfx-combo-peak<=0.98",
+      "ok": true,
+      "peak": 0.09934847056865692
+    },
+    {
+      "name": "sfx-frenzy-rms>0.01",
+      "ok": true,
+      "rms": 0.013232040944410106
+    },
+    {
+      "name": "sfx-frenzy-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.32902494331065757
+    },
+    {
+      "name": "sfx-frenzy-peak<=0.98",
+      "ok": true,
+      "peak": 0.05673496425151825
+    },
+    {
+      "name": "sfx-miss-rms>0.01",
+      "ok": true,
+      "rms": 0.03692769737257481
+    },
+    {
+      "name": "sfx-miss-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.16630385487528346
+    },
+    {
+      "name": "sfx-miss-peak<=0.98",
+      "ok": true,
+      "peak": 0.1630980670452118
+    },
+    {
+      "name": "sfx-gameover-rms>0.01",
+      "ok": true,
+      "rms": 0.019452180722776574
+    },
+    {
+      "name": "sfx-gameover-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.4745578231292517
+    },
+    {
+      "name": "sfx-gameover-peak<=0.98",
+      "ok": true,
+      "peak": 0.09346865862607956
+    },
+    {
+      "name": "sfx-throwSfx-rms>0.01",
+      "ok": true,
+      "rms": 0.01923119194700351
+    },
+    {
+      "name": "sfx-throwSfx-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.17145124716553287
+    },
+    {
+      "name": "sfx-throwSfx-peak<=0.98",
+      "ok": true,
+      "peak": 0.1163649782538414
+    },
+    {
+      "name": "unmapped-event-silent",
+      "ok": true,
+      "rms": 0
+    },
+    {
+      "name": "muted-silent",
+      "ok": true,
+      "rms": 0
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 16,
+      "bpm": 120,
+      "bars": 8,
+      "duration": 16.5,
+      "rms": 0.012406036764557466,
+      "peak": 0.1405072808265686,
+      "headRms": 0.01791453239962421,
+      "spliceRms": 0.01267067903087138
+    },
+    {
+      "kind": "sfx",
+      "name": "slice",
+      "event": "fruitSliced",
+      "rms": 0.031650089076957565,
+      "peak": 0.15597335994243622,
+      "activeDuration": 0.09020408163265306
+    },
+    {
+      "kind": "sfx",
+      "name": "golden",
+      "event": "goldenSliced",
+      "rms": 0.02733351025255117,
+      "peak": 0.09368246048688889,
+      "activeDuration": 0.24609977324263038
+    },
+    {
+      "kind": "sfx",
+      "name": "bomb",
+      "event": "bombHit",
+      "rms": 0.03662925893430321,
+      "peak": 0.17696544528007507,
+      "activeDuration": 0.33405895691609977
+    },
+    {
+      "kind": "sfx",
+      "name": "rock",
+      "event": "rockHit",
+      "rms": 0.030870177330462156,
+      "peak": 0.14333651959896088,
+      "activeDuration": 0.11752834467120181
+    },
+    {
+      "kind": "sfx",
+      "name": "combo",
+      "event": "comboUp",
+      "rms": 0.021062956516666672,
+      "peak": 0.09934847056865692,
+      "activeDuration": 0.05802721088435374
+    },
+    {
+      "kind": "sfx",
+      "name": "frenzy",
+      "event": "frenzyStart",
+      "rms": 0.013232040944410106,
+      "peak": 0.05673496425151825,
+      "activeDuration": 0.32902494331065757
+    },
+    {
+      "kind": "sfx",
+      "name": "miss",
+      "event": "lifeLost",
+      "rms": 0.03692769737257481,
+      "peak": 0.1630980670452118,
+      "activeDuration": 0.16630385487528346
+    },
+    {
+      "kind": "sfx",
+      "name": "gameover",
+      "event": "gameOver",
+      "rms": 0.019452180722776574,
+      "peak": 0.09346865862607956,
+      "activeDuration": 0.4745578231292517
+    },
+    {
+      "kind": "sfx",
+      "name": "throwSfx",
+      "event": "spawn",
+      "rms": 0.01923119194700351,
+      "peak": 0.1163649782538414,
+      "activeDuration": 0.17145124716553287
+    }
+  ]
+}

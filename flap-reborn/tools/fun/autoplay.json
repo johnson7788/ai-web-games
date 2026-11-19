@@ -1,0 +1,56 @@
+{
+  "game": "flap-reborn",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 7,
+      "durationSec": 80.62,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 5.45,
+      "deaths": 1,
+      "actions": 585,
+      "idleSec": 0,
+      "maxEventGapSec": 0.88,
+      "uniqueEvents": 9,
+      "levelsReached": 4,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 0.83,
+      "firstInputSec": 0.02,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 20,
+      "idleSec": 0,
+      "maxEventGapSec": 0.12,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 5,
+      "durationSec": 0.62,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.6,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

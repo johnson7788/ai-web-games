@@ -1,0 +1,59 @@
+{
+  "game": "happy-glass-pour",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-3",
+      "policy": "greedy",
+      "seed": 5,
+      "level": 3,
+      "durationSec": 7.28,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 2.5,
+      "deaths": 0,
+      "actions": 9,
+      "idleSec": 0,
+      "maxEventGapSec": 0.07,
+      "uniqueEvents": 8,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 0.6,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 13,
+      "idleSec": 0,
+      "maxEventGapSec": 0.07,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 20,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 0,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

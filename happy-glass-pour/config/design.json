@@ -1,0 +1,69 @@
+{
+  "slug": "happy-glass-pour",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹街机上拖动手指画发光轨道，把从喷口落下的能量液引进霓虹烧杯；墨水越省、宝石越多，星级越高。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "draw",
+      "cost": "消耗有限墨水，画错不能撤回",
+      "feedback": ["trail", "sfx"],
+      "combinesWith": ["pour"]
+    },
+    {
+      "name": "pour",
+      "cost": "一旦放水就不能再改轨道，画错只能重开",
+      "feedback": ["flow", "sfx", "fill"],
+      "combinesWith": ["draw"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一笔轨道画最短直线，还是绕去接霓虹宝石", "cost": "绕路更费墨水" },
+    { "atSec": 20, "choice": "把水直接对准杯口，还是先落在轨道上减速缓冲", "cost": "直冲可能飞过杯口洒进岩浆" },
+    { "atSec": 45, "choice": "留最后一点墨水当保险，还是用完换更稳的坡", "cost": "用光墨水就没有补救线" },
+    { "atSec": 70, "choice": "重画清除上一笔，还是接受当前布局直接放水", "cost": "重画折损墨水、耗时" },
+    { "atSec": 100, "choice": "先收集全部宝石，还是优先保证过关", "cost": "贪宝石可能洒进岩浆失败" },
+    { "atSec": 140, "choice": "提前放水抢时间，还是把轨道画满再放", "cost": "提前放水可能水量不够" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 40,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "Neon ramp (draw & pour)" },
+    { "index": 2, "newElement": "Drop crate (falls on pour)" },
+    { "index": 3, "newElement": "Neon gems (route through)" },
+    { "index": 4, "newElement": "Heavy boulders (fall & block)" },
+    { "index": 5, "newElement": "Twin spouts (two flows)" },
+    { "index": 6, "newElement": "Lava walls (overshoot spills)" }
+  ],
+  "upgrades": [
+    { "id": "hint", "kind": "rule" },
+    { "id": "eraser", "kind": "rule" },
+    { "id": "thickRamp", "kind": "rule" },
+    { "id": "slowFlow", "kind": "rule" },
+    { "id": "doubleRamp", "kind": "rule" },
+    { "id": "gemMagnet", "kind": "rule" },
+    { "id": "inkPlus", "kind": "stat" },
+    { "id": "lavaGuard", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

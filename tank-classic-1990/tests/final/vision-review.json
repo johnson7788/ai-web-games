@@ -1,0 +1,149 @@
+{
+  "game": "tank-classic-1990",
+  "generatedAt": "2026-11-19T12:05:50.575Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 7,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家坦克（左下蓝灰方块）与背景网格对比度偏低，眯眼时易混淆为障碍物",
+        "‘Best: 0’文字颜色偏黄，在深色背景下辨识度略低",
+        "顶部三个敌方坦克图标间距不均，右侧黄色图标稍偏右，轻微破坏对称感"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘经典坦克 1990’与副标题‘霓虹街机坦克大战’间距过小，略显拥挤",
+        "顶部三个彩色方块图标语义不明，未标注功能（如关卡/道具/设置）",
+        "‘最高分：0’数字颜色偏暗（橙黄），在深色背景上对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蓝色玩家角色向右移动，靠近下方带黄色菱形的平台区域",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色敌人位于右上角，与网格线对齐但无明显朝向指示，可能误判为静态障碍物",
+        "底部平台中央两个黄色菱形图标语义不明（是目标？开关？），缺乏图例或提示",
+        "HUD顶部‘Level 1’‘Lives 3’‘Enemies 6’字体偏小，在低分辨率下易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动到第一个绿色平台，避开棕色障碍物",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下蓝光方块）与底部灰色结构紧邻，易误判为可交互物",
+        "顶部‘Enemies 10’文字与右侧按钮间距过小，桌面虽无裁切但移动端可能重叠",
+        "部分棕色方块与绿色平台颜色对比度偏低，眯眼时轮廓易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/04-water-level.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动到第一个平台，避开下方敌人路径",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下蓝光方块）与左侧砖块间距过小，易误判碰撞边界",
+        "顶部‘Enemies 11’文字与网格线轻微对齐冲突，视觉略挤",
+        "中央两个灰色窗格状方块功能不明，疑似可交互但无提示"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景网格状图案与前景按钮存在轻微视觉干扰，影响焦点集中",
+        "三颗星中第三颗为线框空心星，与前两颗实心星样式不一致，易误判完成度",
+        "‘Score +0’文字偏小且颜色对比度偏低（浅灰），在深色背景下辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/06-boss-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角蓝色发光方块（玩家角色）开始移动",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下蓝光方块）与下方砖块紧贴，边界模糊，易误判碰撞",
+        "右上角4个UI按钮无文字标签，仅图标，新手难辨功能",
+        "敌人数量‘20’与‘Lives 3’字体大小不一致，轻微视觉割裂"
+      ]
+    },
+    {
+      "shot": "tests/final/07-grass-level.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应向右移动，靠近底部中央的黄色菱形目标区域",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下蓝光方块）与左侧砖块间距过近，易误判碰撞边界",
+        "顶部‘Enemies 8’文字与网格线轻微对齐冲突，视觉略拥挤",
+        "右上按钮组中重置图标（↻）与菜单图标（≡）尺寸偏小，辨识度稍低"
+      ]
+    }
+  ]
+}

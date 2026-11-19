@@ -1,0 +1,37 @@
+{
+  "slug": "star-burst-pop",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹星海中点击相连的同色星团引爆得分，用岩石碎裂与连击冲向目标星级",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "select", "cost": "选中即锁定这一团，不能反悔改选其它颜色", "feedback": ["glow", "sfx", "scorePreview"], "combinesWith": ["pop"] },
+    { "name": "pop", "cost": "消耗一次连击窗口，未连击则连击归零", "feedback": ["burst", "particles", "sfx"], "combinesWith": ["select"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先消大团拿高分，还是先碎岩石开路", "cost": "消大团可能让岩石封死更多格子" },
+    { "atSec": 10, "choice": "留着同色星群攒连击，还是立刻消掉", "cost": "攒连击风险是星群被落下的星打断" },
+    { "atSec": 20, "choice": "主动制造死局吃剩余奖励，还是尽量清空", "cost": "剩余星星越多奖励越少" },
+    { "atSec": 35, "choice": "连击窗口内继续快消保 combo，还是稳一稳", "cost": "快了选错团，慢了 combo 断" },
+    { "atSec": 50, "choice": "优先凑 3 星评级重玩，还是保底推进", "cost": "贪 3 星要重玩当前关卡，拖慢整场节奏" },
+    { "atSec": 70, "choice": "岩石出现后，用相邻星引爆还是绕开", "cost": "绕开会压缩可操作空间" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 35, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基础同色星团引爆与重力下落" },
+    { "index": 2, "newElement": "岩石障碍：不可直接消除，相邻引爆才碎裂" },
+    { "index": 3, "newElement": "连击倍率与三星评级目标" }
+  ],
+  "upgrades": [
+    { "id": "rock-shatter", "kind": "rule" },
+    { "id": "combo-x2", "kind": "rule" },
+    { "id": "star-link", "kind": "rule" },
+    { "id": "gravity-flip", "kind": "rule" },
+    { "id": "slow-fall", "kind": "rule" },
+    { "id": "score-plus", "kind": "stat" },
+    { "id": "target-down", "kind": "stat" },
+    { "id": "bonus-star", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}
