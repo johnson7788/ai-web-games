@@ -1,0 +1,133 @@
+{
+  "game": "space-pinball",
+  "generatedAt": "2026-11-19T14:31:28.967Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.571428571428571,
+    "silhouette": 6.428571428571429,
+    "style_consistent": 8.428571428571429
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘SPACE PINBALL’发光效果过强，导致部分字母边缘轻微晕染，影响远距离辨识",
+        "‘Best 0’文字颜色偏黄，在深蓝背景下对比度偏低，易被忽略",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "按住空格键为发射器充能，松开发射",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央粉色圆环（玩家）与周围蓝色目标物亮度接近，眯眼时区分度不足",
+        "左上角‘BALLS 3’与‘COMBO 0’间距过小，易误读为单行",
+        "右上角‘Skip’按钮文字偏小且无明确边界，对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-supernova.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部绿色横条（发射器）向上发射球体",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央反应堆核心区域元素密集，小球与环形目标易混淆（位置：屏幕中央偏下）",
+        "左上角‘BALLS 3’与‘COMBO 3’间距过小，视觉层级弱（位置：左上角）",
+        "右上角‘SUPERNOVA’进度条文字与条形图对齐不精确，轻微错位（位置：右上角）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Resume’按钮继续游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊导致可交互元素轮廓不清晰，影响 silhouette 判别",
+        "‘Paused’标题与按钮间距偏小，视觉层级略弱于按钮",
+        "右上角语言选择下拉框无展开指示（小三角），移动端可能误操作"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "按住空格键为发射器充能，松开发射",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡部分游戏区域（如底部发射轨道），可能影响操作预判",
+        "左上角‘BALLS 3’与‘COMBO 0’间距过小，易误读",
+        "‘Reactor wave 1’标签字体略小且无背景衬底，在深色背景下对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘太空弹珠’发光效果过强，导致部分笔画边缘模糊，影响远距离辨识",
+        "‘最高 0’文字颜色偏黄，在深蓝背景下对比度偏低，易被忽略",
+        "右上角语言切换下拉框无明确选中状态指示，可能造成操作困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/07-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’徽章与三颗星间距过小，可能误触",
+        "背景模糊元素（如箭头轮廓）与HUD边界融合，轻微干扰焦点",
+        "‘Press R to play again’提示字号偏小，低对比度，部分用户可能忽略"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "snake-neon-2048",
+  "genre": "arcade",
+  "oneLiner": "霓虹蛇在电路网格里追逐能量核心，3 秒连击翻倍、黄金核心引爆慢动作，绕过发光墙冲到三星结算。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "每次转向锁定方向直到下一次输入；想抢核心就得贴着能量墙绕远路，一步错就撞墙断链",
+      "feedback": ["sfx", "glowTrail", "tickFlash"],
+      "combinesWith": ["chain"]
+    },
+    {
+      "name": "chain",
+      "cost": "3 秒内不吃核心连击就断回 ×1；为了保连击必须贴着墙吃，而不是安全绕行",
+      "feedback": ["sfx", "comboPop", "screenGlow"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "collect",
+      "cost": "黄金核心只在吃满 5 个普通核心后出现一次，错过就得再等 5 个",
+      "feedback": ["sfx", "slowmo", "goldenBurst"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "第一个核心在墙边：直扑过去吃连击，还是先绕外圈熟悉节奏",
+      "cost": "直扑可能撞墙断链；绕圈丢掉首个 3 秒连击窗口"
+    },
+    {
+      "atSec": 20,
+      "choice": "连击已到 ×3：继续贴着核心走保连击，还是停下来调整方向",
+      "cost": "继续走风险上升；停下连击归零"
+    },
+    {
+      "atSec": 45,
+      "choice": "黄金核心出现但被墙围住：绕长路去拿 ×5 慢动作，还是放弃它去吃普通核心",
+      "cost": "绕路时间更长、暴露更多转向；放弃则失去 5 分和减速喘息"
+    },
+    {
+      "atSec": 70,
+      "choice": "蛇身变长后过窄缝：贴着尾巴绕进死胡同吃核心，还是等身体散开再进",
+      "cost": "进死胡同可能咬到自己；等待则核心可能被节奏错过"
+    },
+    {
+      "atSec": 100,
+      "choice": "速度已提上来：用慢动作窗口冲进高密度墙区，还是留在开阔区稳吃",
+      "cost": "冲高密度区回报高但失误即死；开阔区安全但推进慢"
+    },
+    {
+      "atSec": 140,
+      "choice": "离目标只差 2 个核心：冒险连击拿三星，还是逐个稳吃拿一星",
+      "cost": "冒险连击可能撞墙前功尽弃；稳吃保过但星级低"
+    },
+    {
+      "atSec": 170,
+      "choice": "黄金核心在墙后死角：用身体堵住回退路线去拿，还是放弃保命",
+      "cost": "堵路可能把自己困死；放弃则错过最后一个高分窗口"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础转向 + 吃核心（无墙）" },
+    { "index": 2, "newElement": "电路柱墙迷宫 + 黄金核心慢动作" },
+    { "index": 3, "newElement": "螺旋高密度墙 + 更短连击窗口 + 更高目标" }
+  ],
+  "upgrades": [
+    { "id": "comboWindow", "kind": "rule", "desc": "连击窗口 3 秒内，连续进食分数翻倍" },
+    { "id": "goldenCore", "kind": "rule", "desc": "吃满 5 个核心后出现黄金核心，值 ×5" },
+    { "id": "goldenSlow", "kind": "rule", "desc": "黄金核心触发 3 秒网格减速" },
+    { "id": "wallCircuit", "kind": "rule", "desc": "第 2 关起出现能量墙，必须绕行" },
+    { "id": "spiralDensity", "kind": "rule", "desc": "第 3 关墙密度翻倍，路线选择变成生存抉择" },
+    { "id": "speedUp", "kind": "stat", "desc": "每吃若干核心移速提升，越玩越快" },
+    { "id": "scoreBoost", "kind": "stat", "desc": "连击倍率直接乘进单次得分" },
+    { "id": "starRating", "kind": "stat", "desc": "按最高连击结算 1–3 星" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

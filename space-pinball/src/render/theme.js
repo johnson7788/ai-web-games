@@ -1,0 +1,40 @@
+// src/render/theme.js — 深空星云霓虹主题（单场景：深空蓝紫 + 青霓虹 + 金星）
+export const THEME = {
+  name: 'deep-space',
+  bgTop: '#050a1f',
+  bgBottom: '#02040d',
+  panel: '#04081c',
+  grid: 'rgba(65, 220, 255, 0.08)',
+  frame: '#2fd6ff',
+  frameDim: 'rgba(47, 214, 255, 0.35)',
+  accent: '#5c7cff',
+  cyan: '#41e6ff',
+  magenta: '#ff4cd8',
+  gold: '#ffe082',
+  ball: '#f2fbff',
+  ballGlow: '#41e6ff',
+  bumper: '#2fd6ff',
+  bumperLit: '#eaffff',
+  reactor: '#ff4cd8',
+  reactorLit: '#ffe082',
+  deflector: '#5c7cff',
+  launchpad: '#7dffb0',
+  blackhole: '#12021f',
+  blackholeRing: '#a06bff',
+  portal: '#ff9a3d',
+  button: '#b967ff',
+  buttonPressed: '#7dffb0',
+  gate: '#5c7cff',
+  gateActive: '#ff4cd8',
+  shard: '#41e6ff',
+  upgradePad: '#ff9a3d',
+  asteroid: '#8a93a8',
+  asteroidCrack: '#ff5d73',
+  star: '#ffe082',
+  starLit: '#eaffff',
+  supernovaTable: '#dff7ff',
+};
+
+export function sceneAt() {
+  return THEME;
+}

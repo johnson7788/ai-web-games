@@ -1,0 +1,77 @@
+{
+  "slug": "virus-buster-Cells",
+  "genre": "arcade",
+  "oneLiner": "驾驶霓虹纳米飞船守住底部，按住连射击落上方降落的带血量病毒细胞，击杀掉金币、躲开打不碎的晶体碎片，清空血条逐关推进并用金币升级火力。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "火力只覆盖正上方一列，追金币/躲晶体就意味着放弃当前瞄准的病毒，横向换位有速度上限",
+      "feedback": ["sfx", "thrusterTrail", "shipTilt"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "fire",
+      "cost": "火力集中在正上方窄列，必须贴身瞄准高血量病毒，且开火期间无法分心去接侧面的道具",
+      "feedback": ["sfx", "muzzleFlash", "hitFlash"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "bomb",
+      "cost": "每关仅 1 发清屏炸弹，用完不补；过早放掉就失去关键时刻的解围手段",
+      "feedback": ["sfx", "fullScreenFlash", "shockwave"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先瞄准最近的高血量病毒，还是先把上方一列的小病毒清掉", "cost": "贴脸打大病毒 = 被上方小病毒包围；先清小病毒 = 大病毒继续下压" },
+    { "atSec": 15, "choice": "第一波掉落的金币就在斜上方：现在侧移去吃，还是守住当前瞄准列", "cost": "吃金币放弃当前击杀连击；不吃则丢失这一波经济" },
+    { "atSec": 28, "choice": "晶体碎片朝你漂来：贴边硬吃一发还是横穿火力区躲开", "cost": "硬吃 = 掉一条命/护盾；横穿 = 放弃正在瞄准的病毒" },
+    { "atSec": 45, "choice": "连击倍率正高：冒险贴脸连杀续倍率，还是退回安全位让倍率断掉", "cost": "贴脸续倍率 = 被撞风险陡增；退后 = 连击清零" },
+    { "atSec": 70, "choice": "清屏炸弹还留着：BOSS 波现在炸，还是留到下一关", "cost": "现在炸省 8 秒但下一关无解围；留 = 本关硬啃 BOSS" },
+    { "atSec": 95, "choice": "金币够买一级火力：先升级再进下一关，还是攒着买更贵的护盾", "cost": "先升级火力 = 短期输出但少一条命；攒护盾 = 下一关更稳但打得慢" },
+    { "atSec": 120, "choice": "连击 15+ 且满屏病毒：用炸弹清屏保连击，还是继续点杀维持", "cost": "炸弹清屏稳定保倍率但消耗唯一资源；点杀可能被撞断连击" },
+    { "atSec": 150, "choice": "晶体越来越密：一直贴底边躲，还是主动上移换列抢输出", "cost": "贴底躲 = 放弃正上方瞄准；上移换列 = 暴露给更多病毒" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 25
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础病毒细胞（1/3/6 血）+ 第三波 BOSS（24 血），三波清空过关" },
+    { "index": 2, "newElement": "晶体碎片（不可击碎、撞上掉命）：第一个必须绕开的障碍" },
+    { "index": 3, "newElement": "BOSS 关（60+ 血）+ 更多晶体：输出与走位的第一次双重压力" },
+    { "index": 4, "newElement": "道具球（加速/散射/清屏/护盾/回血）：击杀概率掉落，拾取改变打法" },
+    { "index": 5, "newElement": "病毒追船：低空病毒轻微横向追踪，贴底不再绝对安全" },
+    { "index": 6, "newElement": "高密度波次：单波病毒数翻倍，连击成为主要输出来源" }
+  ],
+  "upgrades": [
+    { "id": "firePower", "kind": "stat", "desc": "每级 +1 发并行子弹，火力从单点变成扇面" },
+    { "id": "fireRate", "kind": "stat", "desc": "每级 -18% 射击间隔，射速决定 DPS 上限" },
+    { "id": "goldValue", "kind": "stat", "desc": "每级 +50% 击杀掉金，经济决定升级节奏" },
+    { "id": "shield", "kind": "rule", "desc": "每级 +1 起始护盾，可吸收一次撞击" },
+    { "id": "spread", "kind": "rule", "desc": "解锁侧翼散射，左右各多一条弹道" },
+    { "id": "pierce", "kind": "rule", "desc": "解锁穿透弹，一颗子弹可贯穿同列两个病毒" },
+    { "id": "magnet", "kind": "rule", "desc": "解锁磁吸，金币自动飞向飞船" },
+    { "id": "nukeStart", "kind": "rule", "desc": "每关开局自带 1 发清屏炸弹" }
+  ],
+  "replayHooks": ["rating", "growth", "nearMiss", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "crow-blaster",
+  "genre": "arcade",
+  "oneLiner": "在霓虹城市夜空，玩家用等离子弹弓瞄准横飞的机械乌鸦，抛射能量弹把它们击落，连击翻倍冲分并逐关推进。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "注意力：锁定一只乌鸦就会错过另一侧高分的金鸦",
+      "feedback": ["launcher-rotate", "sfx"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "消耗 1 发弹药；脱靶会清空连击",
+      "feedback": ["sfx", "muzzle-flash", "bolt-trail"],
+      "combinesWith": ["aim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先打最近的乌鸦，还是等一只高分金鸦", "cost": "弹药与连击窗口" },
+    { "atSec": 9, "choice": "打装甲乌鸦要 3 发，还是先清普通乌鸦攒连击", "cost": "弹药消耗换稳定得分" },
+    { "atSec": 16, "choice": "追金鸦赌弹药奖励，还是打稳赚的普通乌鸦", "cost": "错过稳定得分" },
+    { "atSec": 26, "choice": "留子弹给即将飞过的乌鸦，还是抢先打当前目标", "cost": "命中率与星级" },
+    { "atSec": 40, "choice": "忍住不打鬼鸦，还是手快误伤", "cost": "打中扣 150 分" },
+    { "atSec": 58, "choice": "高连击时专注高分目标，还是广撒网", "cost": "瞄准纪律换爆发" },
+    { "atSec": 80, "choice": "弹药紧张时等装甲乌鸦进入最佳角度再打", "cost": "时间压力换命中率" },
+    { "atSec": 105, "choice": "临近过关时求稳保命中率，还是冲金鸦提分", "cost": "星级 vs 分数" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 35, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "普通乌鸦横飞，教瞄准与抛射" },
+    { "index": 2, "newElement": "装甲乌鸦需 3 发命中" },
+    { "index": 3, "newElement": "金鸦命中奖励弹药" },
+    { "index": 4, "newElement": "鬼鸦误打扣分" },
+    { "index": 5, "newElement": "全部乌鸦加速混合登场" }
+  ],
+  "upgrades": [
+    { "id": "comboLonger", "kind": "rule", "desc": "连击窗口延长到 5 秒" },
+    { "id": "comboFaster", "kind": "rule", "desc": "连击乘数从 0.1 提升到 0.15" },
+    { "id": "goldenPlus", "kind": "rule", "desc": "金鸦弹药奖励 +5" },
+    { "id": "ghostShield", "kind": "rule", "desc": "每关第一次误打鬼鸦不扣分" },
+    { "id": "pierce", "kind": "rule", "desc": "能量弹可贯穿一次击中后续乌鸦" },
+    { "id": "ammoUp", "kind": "stat", "desc": "每关弹药 +4" },
+    { "id": "speedUp", "kind": "stat", "desc": "能量弹速度 +15%" },
+    { "id": "cooldownDown", "kind": "stat", "desc": "发射冷却 -0.1s" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连击 ×6 时整片天空泛起金色波纹，高分乌鸦群在霓虹中炸成粒子烟花。",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "霓虹街机风格：程序化 Canvas 渲染为主（霓虹天际线/机械乌鸦/等离子弹/粒子光效），UI 线框 CSS，封面海报与 BGM 用程序化 + 截图合成"
+}

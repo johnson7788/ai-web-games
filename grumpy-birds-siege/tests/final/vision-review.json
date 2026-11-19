@@ -1,0 +1,85 @@
+{
+  "game": "grumpy-birds-siege",
+  "generatedAt": "2026-11-19T14:33:06.237Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7.25,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡网格中部分数字（如1、2）与星标重叠，视觉层级混乱",
+        "‘0 / 300’ 星数计数器字号过小且颜色偏黄，在深背景上对比度不足",
+        "标题‘GRUMPY BIRDS SIEGE’发光效果过强，导致边缘轻微光晕溢出，影响文字锐度"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧或左侧的蓝色箭头平台，让角色跳上去",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Walls breached 0/10’文字与‘Score 0’间距过小，易误读为整体",
+        "角色无明显运动方向指示（如拖尾/箭头），仅靠位置推断目标路径略模糊",
+        "右上角按钮图标语义不明确（问号、齿轮、U形、三角），需悬停提示"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Retry”按钮重新开始关卡",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧小圆形角色（疑似玩家）在深色背景中对比度低，眯眼时易与背景混淆",
+        "‘CASTLE BREACHED!’标题发光效果过强，轻微光晕导致边缘略糊，影响可读性",
+        "背景中垂直结构线框（疑似墙体）颜色与HUD粉色按钮相近，风格稍显割裂"
+      ]
+    },
+    {
+      "shot": "tests/final/04-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕右侧的箭头按钮或滑动屏幕让角色向右移动穿过第一个蓝色平台",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Walls breached 0/10’文字与进度条间距过小，易误读为整体元素",
+        "左上角‘Level 1’与‘Score 0’标签边距不一致，视觉层级略混乱",
+        "角色下方有微弱拖影/残影效果，可能干扰判断实时位置"
+      ]
+    }
+  ]
+}

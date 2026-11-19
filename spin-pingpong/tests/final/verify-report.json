@@ -1,0 +1,110 @@
+{
+  "url": "http://127.0.0.1:8210/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "关卡格 12 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 12"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "记忆阶段棱镜可见",
+      "ok": true,
+      "detail": "eval: window.__ll.sim().mirrorsVisible === true"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "进入预测阶段",
+      "ok": true,
+      "detail": "eval: window.__ll.sim().phase === 'predict'"
+    },
+    {
+      "name": "结算屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 2 星",
+      "ok": true,
+      "detail": "eval: window.__ll.sim().stars >= 2"
+    },
+    {
+      "name": "[mobile] 进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "[mobile] 预测阶段",
+      "ok": true,
+      "detail": "eval: window.__ll.sim().phase === 'predict'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.66,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "07-title.png",
+    "08-title-zh.png",
+    "01-memorize.png",
+    "02-predict.png",
+    "03-resolving.png",
+    "04-result.png",
+    "05-m-memorize.png",
+    "06-m-predict.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.66,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

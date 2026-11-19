@@ -1,0 +1,70 @@
+{
+  "slug": "monster-melter",
+  "genre": "puzzle",
+  "oneLiner": "把发光的宝石拖上六边形棋盘，填满一整条线就会化作光束熔炼怪兽；连续成线叠连击，抢在棋盘冻死前把它的 HP 打空。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "place",
+      "cost": "拖下的宝石永久占据棋盘格，放错一格就可能堵死后续的成线空间",
+      "feedback": ["sfx", "snapGlow", "beamFly"],
+      "combinesWith": ["bomb"]
+    },
+    {
+      "name": "bomb",
+      "cost": "消耗一颗有限炸弹，清空一圈但拿不到该圈宝石的成线连击加成",
+      "feedback": ["sfx", "boomFlash", "shake"],
+      "combinesWith": ["place"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "三个托盘先拖哪一块宝石", "cost": "用掉一个形状，另两个保持不变，先手决定整盘走向" },
+    { "atSec": 15, "choice": "为了连击把宝石塞进半满的线，还是先铺安全格", "cost": "塞线可能堵死空间；铺安全格会丢掉连击节奏" },
+    { "atSec": 30, "choice": "岩石挡住了关键线，是否立刻用炸弹清掉", "cost": "炸弹有限，后面的 Boss 关更难" },
+    { "atSec": 45, "choice": "怪物残血，是否放弃连击直接成线收尾", "cost": "少拿连击分与星级" },
+    { "atSec": 70, "choice": "棋盘过半已满，优先填短边线还是继续铺长线", "cost": "短边线稳但分低；长线高分但更可能卡死" },
+    { "atSec": 100, "choice": "故意不消除，攒出大范围炸弹清场", "cost": "棋盘越满越接近失败" },
+    { "atSec": 130, "choice": "Boss 关高血量，是否开局先用炸弹开道", "cost": "炸弹耗尽后没有任何翻盘手段" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "单格与四格宝石，学会拖放成线" },
+    { "index": 2, "newElement": "连击系统：连续成线伤害与分数叠乘" },
+    { "index": 3, "newElement": "岩石障碍登场，挡线且需炸弹清除" },
+    { "index": 4, "newElement": "炸弹道具解锁，可清岩石与宝石" },
+    { "index": 5, "newElement": "Boss 怪：每 5 关高血量强化形态" },
+    { "index": 6, "newElement": "更多岩石与更高血量，节奏压缩" }
+  ],
+  "upgrades": [
+    { "id": "unlockCombo", "kind": "rule" },
+    { "id": "unlockRock", "kind": "rule" },
+    { "id": "unlockBomb", "kind": "rule" },
+    { "id": "unlockStars", "kind": "rule" },
+    { "id": "bossRamp", "kind": "rule" },
+    { "id": "colorDamage", "kind": "rule" },
+    { "id": "hpScale", "kind": "stat" },
+    { "id": "rockDensity", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

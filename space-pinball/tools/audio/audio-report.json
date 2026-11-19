@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-11-19T14:31:34.647Z",
+  "sampleRate": 44100,
+  "sfx": {
+    "flipper": {
+      "rms": 0.2401,
+      "peak": 0.3817,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "launch": {
+      "rms": 0.1013,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 14112,
+      "durSec": 0.32,
+      "pass": true
+    },
+    "bumperHit": {
+      "rms": 0.2059,
+      "peak": 0.3507,
+      "nan": 0,
+      "samples": 5733,
+      "durSec": 0.13,
+      "pass": true
+    },
+    "deflectorHit": {
+      "rms": 0.1112,
+      "peak": 0.2399,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "launchpad": {
+      "rms": 0.1004,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "blackHole": {
+      "rms": 0.0678,
+      "peak": 0.2717,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "blackHoleEject": {
+      "rms": 0.1472,
+      "peak": 0.24,
+      "nan": 0,
+      "samples": 15435,
+      "durSec": 0.35,
+      "pass": true
+    },
+    "portal": {
+      "rms": 0.0945,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "reactorHit": {
+      "rms": 0.0727,
+      "peak": 0.2796,
+      "nan": 0,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "reactorOverdrive": {
+      "rms": 0.103,
+      "peak": 0.4873,
+      "nan": 0,
+      "samples": 34398,
+      "durSec": 0.78,
+      "pass": true
+    },
+    "buttonHit": {
+      "rms": 0.1691,
+      "peak": 0.22,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "gateFlip": {
+      "rms": 0.09,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "groupComplete": {
+      "rms": 0.1418,
+      "peak": 0.5408,
+      "nan": 0,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "shardHit": {
+      "rms": 0.0537,
+      "peak": 0.2036,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "shardLevelUp": {
+      "rms": 0.1447,
+      "peak": 0.5136,
+      "nan": 0,
+      "samples": 32193,
+      "durSec": 0.73,
+      "pass": true
+    },
+    "asteroidHit": {
+      "rms": 0.2181,
+      "peak": 0.4298,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "asteroidDestroy": {
+      "rms": 0.0671,
+      "peak": 0.3227,
+      "nan": 0,
+      "samples": 19845,
+      "durSec": 0.45,
+      "pass": true
+    },
+    "asteroidClear": {
+      "rms": 0.156,
+      "peak": 0.5953,
+      "nan": 0,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "starCollect": {
+      "rms": 0.1508,
+      "peak": 0.5201,
+      "nan": 0,
+      "samples": 18522,
+      "durSec": 0.42,
+      "pass": true
+    },
+    "supernova": {
+      "rms": 0.0872,
+      "peak": 0.4136,
+      "nan": 0,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "supernovaEnd": {
+      "rms": 0.0512,
+      "peak": 0.11,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.0992,
+      "peak": 0.18,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.0892,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 6615,
+      "durSec": 0.15,
+      "pass": true
+    },
+    "drain": {
+      "rms": 0.1309,
+      "peak": 0.28,
+      "nan": 0,
+      "samples": 26460,
+      "durSec": 0.6,
+      "pass": true
+    },
+    "ballLost": {
+      "rms": 0.1483,
+      "peak": 0.4358,
+      "nan": 0,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "gameOver": {
+      "rms": 0.1346,
+      "peak": 0.4421,
+      "nan": 0,
+      "samples": 45864,
+      "durSec": 1.04,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1183,
+      "peak": 0.2706,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0418,
+      "peak": 0.08,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.0952,
+      "peak": 0.2662,
+      "nan": 0,
+      "samples": 350154,
+      "durSec": 7.94,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "bgmDurSec": 7.94,
+    "bgmLoopsOk": true
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

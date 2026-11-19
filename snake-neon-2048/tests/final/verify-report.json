@@ -1,0 +1,135 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "关卡格 3 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 3"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "第 1 关有核心",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state() && window.__ll.debug.state().fruit !== null"
+    },
+    {
+      "name": "黄金核心出现",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().goldenActive === true"
+    },
+    {
+      "name": "游戏中切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "L2 有能量墙",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().wallCount > 0"
+    },
+    {
+      "name": "L3 墙更多",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().wallCount > 10"
+    },
+    {
+      "name": "结算屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "移动端控件存在",
+      "ok": true,
+      "detail": "eval: !!document.getElementById('rotate-screen') && !!document.getElementById('btn-rotate-skip') && !!document.getElementById('dpad')"
+    },
+    {
+      "name": "移动端进入游戏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.66,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "10-title.png",
+    "11-title-zh.png",
+    "01-playing.png",
+    "02-combo.png",
+    "03-golden.png",
+    "04-slow.png",
+    "05-playing-zh.png",
+    "06-rock.png",
+    "08-rock2.png",
+    "09-result.png",
+    "07-mobile.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "[mobile] https://pipygames.com/sdk/config.json",
+    "[mobile] https://pipygames.com/api/sdk/config?appId=pipy-snake-neon-2048",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-snake-neon-2048",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-snake-neon-2048"
+  ],
+  "fps": {
+    "avgFrameMs": 16.66,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

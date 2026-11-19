@@ -1,0 +1,47 @@
+{
+  "slug": "spin-pingpong",
+  "genre": "puzzle",
+  "oneLiner": "Memorize the neon mirror angles, then predict which gate the photon exits through.",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "observe", "cost": "attention window closes in ~1s", "feedback": ["glow reveal", "countdown beep"], "combinesWith": ["peek"] },
+    { "name": "predict", "cost": "a wrong gate ends the level and resets combo", "feedback": ["gate highlight", "photon flight", "hit chime"], "combinesWith": ["peek"] },
+    { "name": "peek", "cost": "forfeits the perfect star", "feedback": ["re-reveal flash", "blip sfx"], "combinesWith": ["observe", "predict"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "keep watching the angles or blink and rely on memory", "cost": "wrong guess loses the level" },
+    { "atSec": 5, "choice": "guess the exit now for speed, or peek to refresh memory", "cost": "peek forfeits the 3rd star" },
+    { "atSec": 8, "choice": "trace the bounce chain mentally vs trust first instinct", "cost": "slow tracing risks time out" },
+    { "atSec": 20, "choice": "commit to a streak on harder grid vs replay for 3 stars", "cost": "combo reset on any miss" },
+    { "atSec": 40, "choice": "which gate among 7 on a 5x5 board", "cost": "7 choices, one correct" },
+    { "atSec": 60, "choice": "use peek early to confirm, or save it for the final bounce", "cost": "peek marks the level imperfect" }
+  ],
+  "loop": { "teachSec": 15, "practiceSec": 45, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "one diagonal mirror" },
+    { "index": 2, "newElement": "two chained mirrors" },
+    { "index": 3, "newElement": "3x3 interior grid" },
+    { "index": 4, "newElement": "four mirrors" },
+    { "index": 5, "newElement": "five mirrors, faster hide" },
+    { "index": 6, "newElement": "six mirrors" },
+    { "index": 7, "newElement": "void distractor cells" },
+    { "index": 8, "newElement": "eight mirrors" },
+    { "index": 9, "newElement": "nine mirrors" },
+    { "index": 10, "newElement": "5x5 interior grid" },
+    { "index": 11, "newElement": "eleven mirrors" },
+    { "index": 12, "newElement": "twelve mirror finale" }
+  ],
+  "upgrades": [
+    { "id": "extra-peek", "kind": "rule" },
+    { "id": "slow-motion-memory", "kind": "rule" },
+    { "id": "ghost-mirror", "kind": "rule" },
+    { "id": "double-bounce", "kind": "rule" },
+    { "id": "combo-shield", "kind": "rule" },
+    { "id": "time-plus-5", "kind": "stat" },
+    { "id": "time-plus-10", "kind": "stat" },
+    { "id": "bigger-hint", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

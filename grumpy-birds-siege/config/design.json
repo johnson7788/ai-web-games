@@ -1,0 +1,71 @@
+{
+  "slug": "grumpy-birds-siege",
+  "genre": "arcade",
+  "oneLiner": "玩家操控一只发怒的小鸟拍翅穿过霓虹城堡的城墙缺口，躲飞石、捡护盾，冲过 10 道墙破城。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "flap",
+      "cost": "消耗一次振翅惯性，只能短暂上升，之后必须让重力接管",
+      "feedback": ["sfx", "羽毛粒子", "尾迹"],
+      "combinesWith": ["dive"]
+    },
+    {
+      "name": "dive",
+      "cost": "放弃高度控制，加速下坠，撞地即死",
+      "feedback": ["风声sfx", "加速尾迹"],
+      "combinesWith": ["flap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一次振翅的时机：等墙缺口接近再点，还是先稳住高度", "cost": "点早了会撞墙顶，点晚了会砸墙底" },
+    { "atSec": 15, "choice": "面对浮动缺口：贴着缺口上沿掠过还是走中线", "cost": "贴沿给更多空间，但缺口浮动会突然夹住你" },
+    { "atSec": 30, "choice": "飞石来袭：向上拍翅躲，还是俯冲从下方穿过", "cost": "向上可能撞墙，俯冲可能砸地" },
+    { "atSec": 45, "choice": "护盾道具出现：冒险偏离缺口去捡，还是放弃", "cost": "捡盾要离开安全线，可能撞墙/中石" },
+    { "atSec": 60, "choice": "哨兵逼近：压高度从它下方溜过，还是拍翅越过它头顶", "cost": "路线二选一，都可能撞哨兵" },
+    { "atSec": 90, "choice": "连击已到 5：为保连击求稳走中线，还是为高分贴沿刷近失", "cost": "近失加分但风险翻倍，稳则连击分少" },
+    { "atSec": 120, "choice": "用护盾硬吃一颗飞石保连击，还是宁可破盾重连", "cost": "破盾清零连击，硬吃消耗唯一护盾" },
+    { "atSec": 150, "choice": "最后一堵墙：直接冲缺口，还是先等飞石过再进", "cost": "等会错过缺口窗口，冲会撞上飞石" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "flap/dive 双动词" },
+    { "index": 2, "newElement": "浮动缺口城墙" },
+    { "index": 3, "newElement": "投石车飞石" },
+    { "index": 4, "newElement": "护盾六边形道具" },
+    { "index": 5, "newElement": "哨兵敌机" },
+    { "index": 6, "newElement": "连击与星级结算" }
+  ],
+  "upgrades": [
+    { "id": "magnet-shield", "kind": "rule" },
+    { "id": "ghost-flap", "kind": "rule" },
+    { "id": "rock-breaker", "kind": "rule" },
+    { "id": "combo-double", "kind": "rule" },
+    { "id": "second-chance", "kind": "rule" },
+    { "id": "lift-plus", "kind": "stat" },
+    { "id": "drag-minus", "kind": "stat" },
+    { "id": "gap-plus", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

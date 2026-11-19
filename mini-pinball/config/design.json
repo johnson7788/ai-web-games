@@ -1,0 +1,44 @@
+{
+  "slug": "mini-pinball",
+  "genre": "puzzle",
+  "oneLiner": "玩家在霓虹街机台里拖拽发射一颗会反弹的弹球，打破所有发光方块并清空关卡",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "launch", "cost": "每次发射消耗一颗球；落空会清零连击并损失星级", "feedback": ["trail", "sfx", "particles", "score"], "combinesWith": ["ricochet"] },
+    { "name": "ricochet", "cost": "瞄准圆形挡板意味着不直接打方块，用即时清场换多段弹射链", "feedback": ["sfx", "bumperPulse", "comboPop"], "combinesWith": ["launch"] }
+  ],
+  "decisions": [
+    { "atSec": 2, "choice": "就近打安全方块，还是瞄准挡板打弹射链", "cost": "安全打清关慢；弹射链有落空风险" },
+    { "atSec": 12, "choice": "先追绿色细条拿加分光球，还是先清普通方块", "cost": "追光球路线易落空；先清方块分数低" },
+    { "atSec": 25, "choice": "把球往高处打做连击链，还是低角度稳妥一击", "cost": "高抛可能飞出；低抛浪费连击" },
+    { "atSec": 45, "choice": "追求两球内完美清关，还是接受两星继续", "cost": "完美需反复重试；稳妥少拿星" },
+    { "atSec": 70, "choice": "用远处挡板做反弹球，还是直接打直线", "cost": "反弹球可能打空" },
+    { "atSec": 100, "choice": "现在去接浮动光球，还是留位继续连方块", "cost": "绕路接光球会打断连击" },
+    { "atSec": 140, "choice": "直奔最后一块砖，还是先刷挡板攒分", "cost": "刷分拖延过关时间" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 40, "twistSec": 35, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "launch" },
+    { "index": 2, "newElement": "bumper" },
+    { "index": 3, "newElement": "rubberBar + bonusOrb" },
+    { "index": 4, "newElement": "wall formation" },
+    { "index": 5, "newElement": "doubleBumper" },
+    { "index": 6, "newElement": "fortress" },
+    { "index": 7, "newElement": "crossfire" },
+    { "index": 8, "newElement": "gauntlet" },
+    { "index": 9, "newElement": "finaleMix" }
+  ],
+  "upgrades": [
+    { "id": "combo", "kind": "rule" },
+    { "id": "star-rating", "kind": "rule" },
+    { "id": "bonus-orb", "kind": "rule" },
+    { "id": "bumper-bank", "kind": "rule" },
+    { "id": "wall-bounce", "kind": "rule" },
+    { "id": "brick-score", "kind": "stat" },
+    { "id": "rubber-score", "kind": "stat" },
+    { "id": "orb-score", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 40, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

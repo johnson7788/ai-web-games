@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SNAKE NEON 2048</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level-label" class="hud-dim">LEVEL</span><span id="hud-level" class="hud-strong">1</span>
+          <span class="hud-sep"></span>
+          <span id="hud-score-label" class="hud-dim">SCORE</span><span id="hud-score" class="hud-strong">0</span>
+          <span class="hud-sep"></span>
+          <span id="hud-best-label" class="hud-dim">BEST</span><span id="hud-best" class="hud-pill">0</span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-combo-label" class="hud-dim">COMBO</span><span id="hud-combo" class="hud-combo">×1</span>
+          <span class="hud-sep"></span>
+          <span id="hud-target-label" class="hud-dim">TARGET</span><span id="hud-target" class="hud-pill">5</span>
+          <button id="btn-howto" class="hud-btn" aria-label="Guide" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-pause" class="hud-btn" aria-label="Pause">II</button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">SNAKE NEON 2048</h1>
+      <p class="subtitle" id="subtitle-text">Feed the neon serpent before the grid shuts down</p>
+      <div class="best-line"><span id="best-label"></span><span id="best-value">0</span></div>
+      <button id="btn-start">Start</button>
+      <div id="level-grid" class="level-grid"></div>
+    </div>
+
+    <div id="screen-pause" class="screen">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to Play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <p id="pause-hint" class="pause-hint"></p>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen">
+      <h2 id="result-title" class="result-title"><span id="result-title-win">GRID CLEARED!</span><span id="result-title-lose">SIGNAL LOST</span></h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-next" class="hidden">Next Level</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger board</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="dpad" class="hidden" aria-label="Direction pad">
+      <button class="dpad-btn" data-dir="0,-1" aria-label="Up">▲</button>
+      <button class="dpad-btn" data-dir="-1,0" aria-label="Left">◀</button>
+      <button class="dpad-btn" data-dir="1,0" aria-label="Right">▶</button>
+      <button class="dpad-btn" data-dir="0,1" aria-label="Down">▼</button>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "game": "virus-buster-Cells",
+  "generatedAt": "2026-11-19T14:35:00.324Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.4,
+    "silhouette": 7.2,
+    "style_consistent": 9.2
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间亮蓝色的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘VIRUS BUSTER CELLS’无明确玩家/敌人视觉锚点，眯眼时难以区分核心交互元素",
+        "‘Nano defense · neon arcade’副标题字号过小，低对比度，部分用户可能忽略",
+        "语言选择框位于右上角，无图标辅助，易被误认为装饰而非可交互控件"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应向上移动三角形飞船躲避粉色子弹并射击绿色敌人",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角HUD图标间距过小，+与问号按钮易误触（桌面截图不扣分但需注意）",
+        "左上角'Level 1 Wave 1/3'文字偏小，弱光环境下可能辨识困难",
+        "粉色子弹为细线段，高速移动时可能视觉丢失（尤其在低帧率设备）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing-action.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕发射三角形子弹向上击中绿色星形敌人",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'Level 1 Wave 1/3'与数字'6'重叠，'6'可能为多余UI元素或未对齐",
+        "右上角心形图标显示'0 ♥♥♥'，但无明确生命值说明，易误解为已用尽",
+        "粉色竖线子弹轨迹较细，在深色背景中对比度偏低，远距离辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next Level’按钮进入下一关",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星图标无动态反馈（如闪烁/缩放），难以判断是否为可交互元素或仅装饰",
+        "‘Coins earned: 0’文字颜色过暗（浅灰），在深背景上对比度偏低，影响快速阅读",
+        "按钮边框与背景色差小（青色按钮+深蓝底），部分用户可能误判可点击区域"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击屏幕发射粉色子弹向上攻击绿色星形敌人",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部进度条右侧与右上角按钮组间距过小，可能误触",
+        "部分绿色敌人数字（如'11'）在深色背景上对比度偏低，眯眼时易混淆",
+        "玩家飞船底部粉色尖端与最下方子弹重叠，轮廓边界模糊"
+      ]
+    }
+  ]
+}

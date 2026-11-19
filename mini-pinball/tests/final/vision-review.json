@@ -1,0 +1,117 @@
+{
+  "game": "mini-pinball",
+  "generatedAt": "2026-11-19T14:32:22.391Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.166666666666666,
+    "silhouette": 8,
+    "style_consistent": 9.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择按钮（1-6）无明确选中态，当前高亮仅靠边框微亮，易误判当前选中项",
+        "星级计数 '★ 0 / 27' 字体偏小且颜色较淡，与主标题对比度不足",
+        "右上角语言切换下拉箭头在深色背景上辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方蓝色光球发射弹珠向上击中黄色目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Score 0' 和 'Shots 0' 之间连接线过细，易被忽略；",
+        "右上角四个按钮中仅第一个带问号图标，其余为空，功能不明；",
+        "黄色目标与粉色方块垂直对齐，但无明确路径指示，新手可能误判弹道"
+      ]
+    },
+    {
+      "shot": "tests/final/03-flight.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方蓝色圆环发射球体，使其弹射到上方黄色目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Score 0' 和 'Shots 1' 之间连接线过细且无语义，易被误认为装饰线",
+        "右上角四个按钮中后三个为空状态但无提示，可能引发困惑",
+        "轨迹虚影（球体运动路径）在深色网格背景下对比度偏低，部分玩家可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘Level Clear!’文字与背景模糊光斑轻微融合，降低对比度",
+        "三颗星图标与‘Perfect!’文字间距过小，视觉拥挤",
+        "顶部状态栏（Level 1 · First Bounce 等）字体过小且灰度高，远距离难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/05-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部蓝色光球发射弹珠",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘关卡1·首次反弹’文字与按钮间距过小，可能误触",
+        "右上角四个功能按钮无图标/文字说明，功能不明确",
+        "两个粉色挡板中心菱形符号过小，辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方蓝色光球发射弹珠",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Level 1 · First Bounce' 文字与 Score/Shot 按钮间距过小，可能在窄屏下拥挤",
+        "右上角四个按钮中仅第一个有图标（?），其余为空，功能不明，易造成困惑",
+        "两个粉色方块目标无明显交互反馈提示（如脉动/高亮），新手可能不确定是否可点击"
+      ]
+    }
+  ]
+}

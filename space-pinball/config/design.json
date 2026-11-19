@@ -1,0 +1,85 @@
+{
+  "slug": "space-pinball",
+  "genre": "arcade",
+  "oneLiner": "太空星云弹珠台：蓄力发射等离子球，翻挡板救球，撞击反应堆核心点灯推进波次，集齐星核点燃 10 秒超新星双倍分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "launch",
+      "cost": "蓄力时间：蓄太满打偏，蓄不够上不了台面",
+      "feedback": ["sfx", "plunger-charge", "launch-trail"],
+      "combinesWith": ["flip"]
+    },
+    {
+      "name": "flip",
+      "cost": "时机：翻早了打空，翻晚了球掉底",
+      "feedback": ["sfx", "flipper-kick", "spark"],
+      "combinesWith": ["launch"]
+    },
+    {
+      "name": "nudge",
+      "cost": "轻推有冷却，且可能把球推进掉球孔",
+      "feedback": ["sfx", "table-tilt", "screen-nudge"],
+      "combinesWith": ["flip"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "蓄满力直冲反应堆核心，还是轻发稳落中台打等离子球", "cost": "高收益但球速加快难救球 vs 稳妥刷分" },
+    { "atSec": 15, "choice": "球逼近黑洞，冒险打那侧的高分碎片还是提前救回", "cost": "被吸入等 0.8s 回球 vs 拿分" },
+    { "atSec": 28, "choice": "只差一颗星核就超新星，追第三颗还是先保命", "cost": "超新星 ×2 分 vs 掉球风险" },
+    { "atSec": 45, "choice": "球撞向小行星，主动连击打碎它还是绕开", "cost": "碎片奖励 + 清场 vs 被反弹改变落点" },
+    { "atSec": 70, "choice": "三颗通道只差一个翻转，打通道组还是打按钮组", "cost": "二选一大奖，球可能掉到另一侧" },
+    { "atSec": 95, "choice": "反应堆 3/4 灯，冒险再撞一次开超载波次还是先救球", "cost": "波次推进 + 大奖 vs 球速暴涨" },
+    { "atSec": 130, "choice": "虫洞入口开着，把球送进去换侧还是正常打", "cost": "传送改变落点路线 vs 失去当前节奏" },
+    { "atSec": 160, "choice": "球速过快，用轻推减速还是等自然衰减", "cost": "轻推可能推歪 vs 失去节奏" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 40,
+    "twistSec": 35,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础波：推杆发射 + 左右挡板 + 等离子球 bumper + 反应堆核心点灯（教核心循环）" },
+    { "index": 2, "newElement": "岩石波：三颗小行星障碍入场，打碎触发清场大奖" },
+    { "index": 3, "newElement": "超新星波：星核集齐点燃超新星，黑洞/虫洞全开刷双倍分" }
+  ],
+  "upgrades": [
+    { "id": "supernovaEcho", "kind": "rule", "desc": "超新星态下黑洞吸入改为 ×3 反弹而非回球" },
+    { "id": "comboBank", "kind": "rule", "desc": "连击 ≥10 存一颗奖励球" },
+    { "id": "asteroidChain", "kind": "rule", "desc": "打碎小行星会连锁炸碎相邻一颗" },
+    { "id": "portalOrb", "kind": "rule", "desc": "穿过虫洞额外点亮一盏反应堆灯" },
+    { "id": "flipperCharge", "kind": "rule", "desc": "充能挡板满力直接点亮一盏反应堆灯" },
+    { "id": "ballSave", "kind": "rule", "desc": "每局第一次掉球自动回弹救球" },
+    { "id": "power", "kind": "stat", "desc": "推杆蓄力速度 +20%" },
+    { "id": "bounce", "kind": "stat", "desc": "挡板击球冲量 +15%" },
+    { "id": "pointUp", "kind": "stat", "desc": "等离子球分 +10%" },
+    { "id": "drainGuard", "kind": "stat", "desc": "掉球判定线下移 40px（更宽容）" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "集齐 3 颗星核，整张台面变白蓝，球带电拖尾，所有得分 ×2 的 10 秒超新星态",
+  "antiScope": [
+    "不做联网排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "深空星云程序化 Canvas 发光渲染（径向渐变/加法混合），UI 线框 SVG/CSS，音频 WebAudio 程序化合成"
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CROW BLASTER</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <span id="hud-score"></span>
+      <span id="hud-level"></span>
+      <span id="hud-crows"></span>
+      <span id="hud-ammo"></span>
+      <span id="hud-time"></span>
+      <span id="hud-combo" class="off"></span>
+    </div>
+
+    <div id="ui-root"></div>
+
+    <div id="rotate-screen" data-rotate>
+      <div class="rotate-inner">
+        <div class="rotate-icon">↻</div>
+        <div class="rotate-text" data-i18n="set.rotate">Rotate your device for the best view</div>
+        <button id="btn-rotate-skip" type="button" onclick="document.getElementById('rotate-screen').style.display='none'">Skip</button>
+      </div>
+    </div>
+
+    <div id="loading"><div class="loading-text">CROW BLASTER</div></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

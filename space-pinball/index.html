@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="SPACE PINBALL — charge the plunger, ride the gravity wells, ignite the reactor core.">
+  <meta name="theme-color" content="#050a1f">
+  <title>SPACE PINBALL · Deep-Space Pinball</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <div id="rotate-screen" data-rotate class="rotate-hint" aria-hidden="true">
+      <span class="rotate-icon">↻</span>
+      <span data-i18n="set.rotate">Rotate for the best view</span>
+      <button id="btn-rotate-skip" type="button" class="btn btn-ghost"
+        onclick="document.getElementById('rotate-screen').style.display='none'">×</button>
+    </div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Warping in…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

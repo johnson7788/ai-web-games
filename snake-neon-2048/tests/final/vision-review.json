@@ -1,0 +1,149 @@
+{
+  "game": "snake-neon-2048",
+  "generatedAt": "2026-11-19T14:38:33.061Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7,
+    "silhouette": 7.75,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色菱形目标，使其与绿色条末端对齐",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色条末端三角形方向模糊（指向右但箭头朝左），易误判操作方向",
+        "虚线连接线过细，在暗背景下对比度不足，可能被忽略",
+        "‘Combo ×1’中‘×’为红色，与整体青紫主色调冲突，略显突兀"
+      ]
+    },
+    {
+      "shot": "tests/final/02-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色菱形目标，使其与绿色条末端对齐",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色条末端三角形方向模糊（指向右但箭头朝左），易误判操作方向",
+        "虚线连接线过细，在暗背景下对比度不足，可能被忽略",
+        "Combo ×4 中 '×' 符号为粉红，与主色系（青/紫）略冲突，轻微风格不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/03-golden.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色菱形目标，将其拖向绿色进度条末端的白色圆点",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色进度条末端白色圆点与三角箭头重叠，可能误判为单个按钮",
+        "‘Combo ×4’中‘×’符号颜色（粉红）与其他UI元素（青绿/白）不一致，略突兀",
+        "左上角‘Best 0’的圆形背景色（棕黄）与整体深蓝霓虹风格轻微冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/04-slow.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色菱形目标，使其与绿色条对齐",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色条末端三角形方向模糊（指向右但箭头朝左），易误判操作方向",
+        "黄色菱形目标与虚线连接处无明确交互提示，新手可能不知需拖动或点击",
+        "背景网格线过细且与深色背景对比度低，轻微干扰主视觉"
+      ]
+    },
+    {
+      "shot": "tests/final/05-playing-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色菱形目标，使其与绿色条末端对齐",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色条末端三角形方向模糊（指向右但可能被误读为向左）",
+        "目标数量‘5’与‘目标’标签间距过小，易误读为‘目标5’而非‘目标：5’",
+        "连击倍率‘x1’使用粉红高亮，与目标色冲突，可能干扰视觉焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/06-rock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或拖动绿色进度条末端的白色三角形，使其指向粉色菱形目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角按钮（?、II、↻、🏠）无明确功能提示，新手可能困惑",
+        "‘Combo ×1’中‘×1’为粉红小字，对比度偏低，易被忽略",
+        "目标菱形与玩家操作点之间仅用虚线连接，弱视觉引导，易误判方向"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角方向键（如右箭头）发射绿色弹丸击中上方粉色菱形目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角分数‘1 | 0 | 0’中第三个数字‘0’背景为橙色圆圈，与前两数绿色风格不一致，易误读为状态而非分数",
+        "绿色弹丸尾部与目标连线为虚线，但无明确指示该线代表轨迹/瞄准线，新手可能不解其用途",
+        "右上角按钮‘II’（暂停）图标为罗马数字，非通用符号，部分用户可能误认为关卡编号"
+      ]
+    },
+    {
+      "shot": "tests/final/08-rock2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色条末端的白色三角形按钮发射粉色菱形目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标菱形与发射器之间虚线较细，弱光下可能不易辨识路径",
+        "Combo x1 中 'x1' 字体偏小且颜色（粉）与背景对比度不足",
+        "Level/Score/Best 区域中 'Best' 旁金色圆圈图标无明确语义，易误读为数值"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 700 },
+    { "screenshot": "07-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "assert": "document.getElementById('level-grid').children.length === 12", "name": "关卡格 12 个" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "08-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start(0)" },
+    { "eval": "window.__ll.tutorial.skip()" },
+    { "wait": 3300 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入第 1 关" },
+    { "assert": "window.__ll.sim().mirrorsVisible === true", "name": "记忆阶段棱镜可见" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 200 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 200 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "screenshot": "01-memorize.png" },
+    { "wait": 1500 },
+    { "assert": "window.__ll.sim().phase === 'predict'", "name": "进入预测阶段" },
+    { "screenshot": "02-predict.png" },
+    { "eval": "window.__ll.run().predict(window.__ll.run().state.end.x, window.__ll.run().state.end.y)" },
+    { "wait": 250 },
+    { "screenshot": "03-resolving.png" },
+    { "wait": 1500 },
+    { "assert": "window.__ll.state.phase === 'result'", "name": "结算屏" },
+    { "screenshot": "04-result.png" },
+    { "assert": "window.__ll.sim().stars >= 2", "name": "通关至少 2 星" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start(0)"
+  },
+  "mobile": {
+    "viewport": [844, 390],
+    "steps": [
+      { "wait": 600 },
+      { "eval": "window.__ll.start(0)" },
+      { "eval": "window.__ll.tutorial.skip()" },
+      { "wait": 3400 },
+      { "assert": "window.__ll.state.phase === 'playing'", "name": "[mobile] 进入第 1 关" },
+      { "screenshot": "05-m-memorize.png" },
+      { "wait": 1600 },
+      { "assert": "window.__ll.sim().phase === 'predict'", "name": "[mobile] 预测阶段" },
+      { "screenshot": "06-m-predict.png" }
+    ]
+  }
+}
