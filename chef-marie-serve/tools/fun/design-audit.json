@@ -1,0 +1,225 @@
+{
+  "game": "chef-marie-serve",
+  "genre": "platformer",
+  "spec": "config/design.json",
+  "generatedAt": "2026-11-20T11:45:13.941Z",
+  "verdict": "PASS",
+  "score": 100,
+  "summary": {
+    "pass": 26,
+    "warn": 0,
+    "fail": 0,
+    "total": 26
+  },
+  "checks": [
+    {
+      "id": "fun.kind",
+      "label": "主/副乐趣合法且不同",
+      "ok": true,
+      "detail": "primary=mastery secondary=curiosity",
+      "fix": "从 mastery/curiosity/expression/meaning/social 里选 1 主 1 副，且不能相同",
+      "level": "pass"
+    },
+    {
+      "id": "oneLiner",
+      "label": "一句话能被机器读懂（10–120 字）",
+      "ok": true,
+      "detail": "119 字",
+      "fix": "写清「谁、做什么、得到什么反馈」，不要形容词堆砌",
+      "level": "pass"
+    },
+    {
+      "id": "verbs.count",
+      "label": "核心动词 1–3 个",
+      "ok": true,
+      "detail": "3 个",
+      "fix": "超过 3 个动词，S/M 档一定做不深；砍到 3 个以内",
+      "level": "pass"
+    },
+    {
+      "id": "verbs.cost",
+      "label": "每个动词都有代价",
+      "ok": true,
+      "detail": "ok",
+      "fix": "没有代价的动词只是「更强的走路」，不产生决定",
+      "level": "pass"
+    },
+    {
+      "id": "verbs.feedback",
+      "label": "每个动词 ≥2 层反馈",
+      "ok": true,
+      "detail": "ok",
+      "fix": "动作确认 + 命中/结果，至少两层；只有结果没有过程 = 反馈缺失",
+      "level": "pass"
+    },
+    {
+      "id": "verbs.combine",
+      "label": "至少一对动词能组合",
+      "ok": true,
+      "detail": "3 个动词声明了组合",
+      "fix": "两个动词能组合出第三种情况，才叫系统（冲刺 + 后坐力 = 飞行）",
+      "level": "pass"
+    },
+    {
+      "id": "decisions.first",
+      "label": "第一个有代价的决定 ≤15s",
+      "ok": true,
+      "detail": "3s",
+      "fix": "前 15 秒没有取舍，玩家只是在看画面",
+      "level": "pass"
+    },
+    {
+      "id": "decisions.density",
+      "label": "前 3 分钟 ≥6 个有代价的决定",
+      "ok": true,
+      "detail": "7 个",
+      "fix": "动作类每 10–20 秒一个；密度不够就是「看游戏」不是「玩游戏」",
+      "level": "pass"
+    },
+    {
+      "id": "decisions.cost",
+      "label": "每个决定都写了代价",
+      "ok": true,
+      "detail": "ok",
+      "fix": "选 A 要真的失去 B；否则是假决定",
+      "level": "pass"
+    },
+    {
+      "id": "loop.segments",
+      "label": "教-练-变-收每段 10–60s",
+      "ok": true,
+      "detail": "teachSec=30 practiceSec=45 twistSec=30 resolveSec=15",
+      "fix": "按任天堂四步排：教（安全）→练（加一个变量）→变（颠覆）→收（高潮+钩子）",
+      "level": "pass"
+    },
+    {
+      "id": "loop.total",
+      "label": "一轮循环 90–180s",
+      "ok": true,
+      "detail": "120s",
+      "fix": "网页游戏的黄金循环约 3 分钟；太长会掉，太短没有起伏",
+      "level": "pass"
+    },
+    {
+      "id": "levels.count",
+      "label": "至少 3 关/幕",
+      "ok": true,
+      "detail": "3 关",
+      "fix": "S 档 3 关起步；内容不够就没有「每关新东西」",
+      "level": "pass"
+    },
+    {
+      "id": "levels.novelty",
+      "label": "每关都有新元素，且不重复",
+      "ok": true,
+      "detail": "run & jump plus ground ingredients to gather / patrolling rat pest you can stomp plus a recipe card / flying pest, hot-pan hazards and the chili spice rush",
+      "fix": "新动词/新约束/新敌人行为/新地形；只换色、只加数量不算",
+      "level": "pass"
+    },
+    {
+      "id": "upgrades.count",
+      "label": "至少 8 个升级/道具",
+      "ok": true,
+      "detail": "8 个",
+      "fix": "S 档 8 个起；否则 build 不成立",
+      "level": "pass"
+    },
+    {
+      "id": "upgrades.ruleRatio",
+      "label": "「改规则」升级占比 ≥35%",
+      "ok": true,
+      "detail": "38%（3/8）",
+      "fix": "把 +10% 改成穿透/反弹/召唤/换位；规则型升级才产生 build",
+      "level": "pass"
+    },
+    {
+      "id": "replay.hooks",
+      "label": "结算 ≥2 个重玩钩子",
+      "ok": true,
+      "detail": "3 个：rating, nearMiss, unlock",
+      "fix": "差一点 / 新 build / 评级 / 解锁 / 每日 / 成长，至少两个",
+      "level": "pass"
+    },
+    {
+      "id": "replay.known",
+      "label": "重玩钩子是已知类型",
+      "ok": true,
+      "detail": "ok",
+      "fix": "可用：nearMiss / newBuild / rating / unlock / daily / growth / leaderboard",
+      "level": "pass"
+    },
+    {
+      "id": "juice.layers",
+      "label": "单事件反馈 2–4 层",
+      "ok": true,
+      "detail": "3",
+      "fix": "同事件最多 3–4 层；过量会盖住机制信息",
+      "level": "pass"
+    },
+    {
+      "id": "juice.fullscreen",
+      "label": "全屏级反馈 ≤2 次/10s",
+      "ok": true,
+      "detail": "1",
+      "fix": "震屏/闪白/慢放是标点符号，不是正文",
+      "level": "pass"
+    },
+    {
+      "id": "onboarding.menu",
+      "label": "入口 ≤1 屏（最好 0 屏）",
+      "ok": true,
+      "detail": "1 屏",
+      "fix": "网页玩家 10–20 秒决定去留；直接进玩法",
+      "level": "pass"
+    },
+    {
+      "id": "onboarding.firstInput",
+      "label": "首次输入 ≤10s",
+      "ok": true,
+      "detail": "5s",
+      "fix": "砍掉 logo/文字教学/等待点击",
+      "level": "pass"
+    },
+    {
+      "id": "onboarding.firstSuccess",
+      "label": "首次成功 ≤120s",
+      "ok": true,
+      "detail": "60s",
+      "fix": "60 秒内最好；第一次成功必须被庆祝",
+      "level": "pass"
+    },
+    {
+      "id": "onboarding.interactive",
+      "label": "首次玩有交互引导（不是说明书）",
+      "ok": true,
+      "detail": "true",
+      "fix": "必须高亮真实按钮并让玩家完成动作；文字说明不算引导",
+      "level": "pass"
+    },
+    {
+      "id": "onboarding.steps",
+      "label": "交互引导至少 3 步",
+      "ok": true,
+      "detail": "3",
+      "fix": "至少覆盖：第一个动作 / 核心循环 / 第一次成功；每一步都要有真实操作",
+      "level": "pass"
+    },
+    {
+      "id": "onboarding.skippable",
+      "label": "引导可跳过",
+      "ok": true,
+      "detail": "true",
+      "fix": "老玩家/重开不能被强制看第二遍",
+      "level": "pass"
+    },
+    {
+      "id": "onboarding.replayable",
+      "label": "引导可重看",
+      "ok": true,
+      "detail": "true",
+      "fix": "标题或暂停提供 How to play，重新进入引导",
+      "level": "pass"
+    }
+  ],
+  "topFixes": []
+}

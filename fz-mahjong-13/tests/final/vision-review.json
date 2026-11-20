@@ -1,0 +1,69 @@
+{
+  "game": "fz-mahjong-13",
+  "generatedAt": "2026-11-20T11:46:10.145Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.666666666666667,
+    "style_consistent": 8
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言选择下拉框边框与文字颜色对比度偏低，小字号易误读",
+        "‘Goal’行中‘5 melds + 1 pair’为绿色，与下方数字1/2/3颜色不一致，轻微风格断裂",
+        "星形计分显示‘★ 0 · 0’中间点号间距过小，略显拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部手牌中的‘南’字牌（因目标含1对，且‘南’为风牌易成对）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "AI区域‘夏’‘竹’‘冬’标签字号过小且无背景衬底，眯眼难辨",
+        "顶部‘Joker · 3 Dots’等状态栏文字与深紫背景对比度偏低，部分用户可能看不清",
+        "底部手牌中‘万’‘筒’‘条’小字颜色过浅（粉/青/绿），在低亮度下易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的'Play Again'按钮重新开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘YOU WIN’标题与下方三颗星间距过小，视觉拥挤",
+        "背景麻将牌模糊且部分文字（如‘夏秋梅’）辨识度低，影响信息获取",
+        "右侧竖排‘东南西北’等文字与边缘贴得太近，存在潜在裁切风险"
+      ]
+    }
+  ]
+}

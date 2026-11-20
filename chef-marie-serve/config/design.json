@@ -1,0 +1,73 @@
+{
+  "slug": "chef-marie-serve",
+  "genre": "platformer",
+  "oneLiner": "Chef Marie runs and jumps through a side-scrolling kitchen, gathering ingredients, stomping pests, and racing to serve.",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "run",
+      "cost": "momentum makes turning slow; you can only brake on the ground",
+      "feedback": ["sfx", "trail", "step-stretch"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "jump",
+      "cost": "commits you to a fixed arc; no steering in mid-air",
+      "feedback": ["sfx", "stretch", "landing-dust"],
+      "combinesWith": ["run"]
+    },
+    {
+      "name": "spiceDash",
+      "cost": "consumes the rare chili and only lasts 6 seconds",
+      "feedback": ["sfx", "glow-flash", "smash-pop"],
+      "combinesWith": ["run"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "pause to collect the first ingredient or keep sprinting", "cost": "stopping lets a pest close the gap" },
+    { "atSec": 8, "choice": "stomp the rat for points or vault over it", "cost": "stomping scores but mistiming kills you" },
+    { "atSec": 20, "choice": "grab the hover ingredient over the gap or skip it", "cost": "skip costs a star, grab risks a fall" },
+    { "atSec": 40, "choice": "take the chili for spice rush now or save it", "cost": "spice is scarce; using it early wastes the safety window" },
+    { "atSec": 70, "choice": "clear the hot-pan hazard on the left or the right edge", "cost": "the wrong line puts you over a pan" },
+    { "atSec": 110, "choice": "chain airborne ingredients for combo or rush the counter", "cost": "combo raises score but time pressure grows" },
+    { "atSec": 150, "choice": "go for 3 stars (all ingredients) or settle for 1", "cost": "full collection means re-crossing hazard zones" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "run & jump plus ground ingredients to gather" },
+    { "index": 2, "newElement": "patrolling rat pest you can stomp plus a recipe card" },
+    { "index": 3, "newElement": "flying pest, hot-pan hazards and the chili spice rush" }
+  ],
+  "upgrades": [
+    { "id": "doubleJump", "kind": "rule" },
+    { "id": "wallSlide", "kind": "rule" },
+    { "id": "spiceMagnet", "kind": "rule" },
+    { "id": "speed1", "kind": "stat" },
+    { "id": "jump1", "kind": "stat" },
+    { "id": "comboTimer", "kind": "stat" },
+    { "id": "starBonus", "kind": "stat" },
+    { "id": "smashRange", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

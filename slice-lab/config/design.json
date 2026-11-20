@@ -1,0 +1,99 @@
+{
+  "slug": "slice-lab",
+  "genre": "puzzle",
+  "oneLiner": "霓虹激光实验室里，玩家划一条直线切开随机水晶，瞄准 50/50 均分——95 分过关，切到岩核这一刀作废。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "slice",
+      "cost": "每一刀都直接结算：均分度不足 95 分本关失败重来，没有第二次机会",
+      "feedback": ["sfx", "laserLine", "splitFlash"],
+      "combinesWith": ["aim"]
+    },
+    {
+      "name": "aim",
+      "cost": "按住拖线时关卡倒计时持续燃烧，拖得越久越可能超时",
+      "feedback": ["sfx", "livePercent", "lineColor"],
+      "combinesWith": ["slice"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一刀怎么下：横切最宽处，还是斜切寻找对称轴",
+      "cost": "切错方向均分度不够，本关直接失败"
+    },
+    {
+      "atSec": 20,
+      "choice": "水晶带岩核：绕开岩核会偏离中线，赌一把还是换方向",
+      "cost": "绕岩核失之毫厘，均分度掉到 95 以下"
+    },
+    {
+      "atSec": 45,
+      "choice": "倒计时不足 10 秒：立刻出刀保 95 分过关，还是继续微调冲 100 分完美",
+      "cost": "冲完美可能超时判负"
+    },
+    {
+      "atSec": 70,
+      "choice": "连击已叠到 ×3：为保连击选更稳的切法，还是冒险冲三连完美",
+      "cost": "断连击奖励清零"
+    },
+    {
+      "atSec": 110,
+      "choice": "旋转水晶：等它转到顺手角度再切，还是凭手感提前落刀",
+      "cost": "等待烧掉剩余时间"
+    },
+    {
+      "atSec": 150,
+      "choice": "双岩核只留一条窄缝：从缝里穿线容易误触，从外围绕则均分难保",
+      "cost": "二选一，没有第三条路"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "单一水晶：学会划直线等分" },
+    { "index": 2, "newElement": "更多棱角：5 边形打破对称直觉" },
+    { "index": 3, "newElement": "岩核：切到岩核这一刀作废" },
+    { "index": 4, "newElement": "偏心岩核：绕开障碍同时保均分" },
+    { "index": 5, "newElement": "连击链：连续过关叠连击" },
+    { "index": 6, "newElement": "倒计时加速：时间压力收紧" },
+    { "index": 7, "newElement": "双岩核：只留一条窄缝" },
+    { "index": 8, "newElement": "多棱水晶：顶点增多更难找对称轴" },
+    { "index": 9, "newElement": "岩核 + 连击：双轴叠加" },
+    { "index": 10, "newElement": "旋转水晶：目标会缓慢转动" },
+    { "index": 11, "newElement": "高压切割：双岩核 + 短倒计时" },
+    { "index": 12, "newElement": "终极水晶：九边形 + 岩核 + 最快旋转" }
+  ],
+  "upgrades": [
+    { "id": "unlockRock", "kind": "rule", "desc": "第 3 关起水晶内出现岩核，切割线必须绕行" },
+    { "id": "twinRock", "kind": "rule", "desc": "第 7 关起双岩核，只留一条窄缝" },
+    { "id": "spinCrystal", "kind": "rule", "desc": "第 10 关起水晶缓慢旋转，对称轴不断移动" },
+    { "id": "comboChain", "kind": "rule", "desc": "第 5 关起连击链生效，连续过关叠加奖励" },
+    { "id": "tighterTimer", "kind": "stat", "desc": "后期关卡倒计时缩短，落刀节奏收紧" },
+    { "id": "moreVerts", "kind": "stat", "desc": "顶点数递增，更难目测对称轴" },
+    { "id": "laserSight", "kind": "stat", "desc": "拖线时实时显示均分度预览" },
+    { "id": "rockRadar", "kind": "stat", "desc": "岩核用红色高亮，避免误切" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

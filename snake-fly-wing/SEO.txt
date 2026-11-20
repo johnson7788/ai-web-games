@@ -1,0 +1,41 @@
+TITLE
+Neon Serpent — Free Arcade Flying Snake Game
+
+CATEGORY
+Arcade
+
+TAGS
+flying snake, flappy, arcade, neon, synthwave, snake, casual, browser game, high score, one tap
+
+SHORT DESCRIPTION
+Flap a glowing neon serpent through synthwave canyon gaps — grow your body, grab shields, trigger fever, and chase your best score.
+
+LONG DESCRIPTION
+NEON SERPENT is a free one-tap arcade game about piloting a glowing serpent through a synthwave canyon.
+
+Tap, click or press Space to flap and rise. Fly through the neon gaps to score — but hit a pillar and you lose a body segment, and when the segments run out you fall. Hearts grow your body, gems grant an auto-pilot shield, and collecting 3 stars triggers FEVER: invincible, magnetic and double score. Chain clean passes to stack your combo multiplier, and face the tighter rock gates for +3.
+
+Every 5 points pushes you into a new zone with faster scrolling. Chase your personal best, and beat the near-miss moments that keep you coming back.
+
+Ten seconds to learn, endlessly hard to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+霓虹飞蛇 — 免费街机飞行贪吃蛇游戏
+
+CATEGORY
+街机
+
+TAGS
+飞行贪吃蛇, 拍翼, 街机, 霓虹, 合成波, 贪吃蛇, 休闲, 网页游戏, 高分, 单手
+
+SHORT DESCRIPTION
+驾驶发光霓虹飞蛇穿越合成波峡谷缺口——吃心长身、宝石护盾、三星狂热，冲击你的最高分。
+
+LONG DESCRIPTION
+《霓虹飞蛇》是一款免费的单手街机游戏：驾驶一条发光飞蛇，穿越霓虹合成波峡谷。
+
+点按、点击或按空格拍翼上升，穿过发光缺口即可得分。撞上柱子会损失一节身体，节数耗尽就会坠落。红心加长身体，宝石开启自动巡航护盾，集齐 3 颗星触发狂热——无敌、磁吸、双倍分。连续干净过门可叠加连击倍率，更窄的岩石门值 +3 分。
+
+每 5 分进入新 zone，滚动速度越来越快。冲击个人最佳，回味每一次惊险擦肩。
+
+十秒上手，越玩越上头。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

@@ -1,0 +1,149 @@
+{
+  "game": "mahjong-room-en",
+  "generatedAt": "2026-11-20T11:47:15.591Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 6.375,
+    "style_consistent": 8.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部麻将牌图标文字颜色不一致（红/绿/蓝/黑/青），风格略显杂乱",
+        "‘MAHJONG ROOM’霓虹光效在深紫背景下对比度偏高，可能造成轻微视觉疲劳",
+        "右上角语言切换按钮无悬停反馈，且字体较小（约12px），桌面端尚可，但若适配移动端需增大"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部手牌中的某张牌（如‘1萬’或‘E’）进行出牌",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Round 1/3’与‘Score 0’按钮间距过小，易误触",
+        "中间区域‘DISCARD · PENG · GANG · HU’文字颜色过淡，对比度不足",
+        "底部手牌中‘Your turn’提示覆盖在牌上，部分遮挡牌面细节"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Play Again”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊元素干扰视觉焦点，眯眼时‘You Win!’与星形图标辨识度低，影响silhouette得分",
+        "‘Rounds won: 1/3 · Score: 3’字体偏小，弱光环境下可能不易读（但未达clipped）",
+        "按钮边框为亮粉色霓虹效果，与深紫背景对比过强，略显突兀，影响style_consistent"
+      ]
+    },
+    {
+      "shot": "tests/final/04-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部手牌中的某张牌（如9万）进行出牌或操作",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘GOAL’文字使用粉色描边+深底，对比度略低，弱光下可能辨识困难",
+        "‘Your turn’提示文字较小且无背景衬底，易被忽略",
+        "手牌区部分牌面图标（如S/W字母）与麻将符号混排，风格微冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/05-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部语言切换按钮‘中文’无下拉箭头视觉提示，易被忽略",
+        "五张麻将牌图标大小一致但颜色差异大（红/绿/蓝/黑/青），可能干扰信息层级",
+        "‘霓虹麻将房’标题发光效果过强，与下方小字对比度略低，弱光环境下可能影响阅读"
+      ]
+    },
+    {
+      "shot": "tests/final/06-playing-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部‘出牌’按钮或选择手牌中的一张牌出牌",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘目标：胡牌 — 4组面子 + 1对将’文字过小且与背景对比度偏低，弱光下可能难辨",
+        "中间区域‘DISCARD · PENG · GANG · HU’功能按钮无视觉反馈/高亮，当前轮次指示（‘轮到你’）仅靠小字+蓝圈，易忽略",
+        "手牌区‘E’‘N’等字母牌与数字牌混排，风格不统一（数字带‘万’字，字母无单位），影响快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部五张牌的发光边框在深紫背景下对比度偏低，部分文字（如‘E’）辨识度稍弱",
+        "‘MAHJONG ROOM’主标题霓虹光晕过强，导致边缘轻微模糊，影响远距离可读性",
+        "语言切换按钮位于右上角，无图标仅文字，小屏设备可能误触或忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/08-result-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“再来一局”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊元素干扰视觉焦点，眯眼时‘你赢了！’与星星亮度相近，玩家主体不突出",
+        "‘胜局: 2/3 · 分数: 3’字体偏小，弱光环境下可能辨识困难",
+        "按钮边框为霓虹粉紫渐变，与深紫背景对比度不足，部分用户可能误判可点击性"
+      ]
+    }
+  ]
+}

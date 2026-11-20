@@ -1,0 +1,72 @@
+{
+  "slug": "mahjong-room-en",
+  "genre": "puzzle",
+  "oneLiner": "Neon mahjong vs three AI: draw, discard, claim pongs and kongs, swap with energy, chain streak bonuses.",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "discard",
+      "cost": "放弃一张手牌，可能破坏潜在的顺子/刻子",
+      "feedback": ["sfx 落牌", "牌飞入牌池", "对手状态变化"],
+      "combinesWith": ["claim"]
+    },
+    {
+      "name": "claim",
+      "cost": "亮出面子并暴露牌型，拆散暗牌组合",
+      "feedback": ["sfx 碰/杠", "面子亮牌", "能量 +1"],
+      "combinesWith": ["swap"]
+    },
+    {
+      "name": "swap",
+      "cost": "消耗 3 点能量（由碰/杠积攒）换掉一张手牌",
+      "feedback": ["sfx 换牌", "旧牌换新动画", "能量条清空"],
+      "combinesWith": ["claim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一手打孤张字牌还是保留对子", "cost": "打错会拖慢听牌" },
+    { "atSec": 18, "choice": "是否碰对手打出的牌", "cost": "碰会拆散已有顺子候选" },
+    { "atSec": 30, "choice": "是否杠（明杠/暗杠）", "cost": "杠给能量但暴露信息" },
+    { "atSec": 45, "choice": "是否用 3 能量做幸运换牌", "cost": "换牌是随机，可能更糟" },
+    { "atSec": 70, "choice": "听牌后打危险张冲还是打安全张守", "cost": "冲可能点炮，守可能流局" },
+    { "atSec": 110, "choice": "决胜局赌自摸还是先点炮胡落袋", "cost": "自摸分高但慢，点炮稳但分低" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 50,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "peng/gang claiming (碰杠)" },
+    { "index": 2, "newElement": "energy & lucky swap (能量幸运换牌)" },
+    { "index": 3, "newElement": "streak multiplier (连胜加成)" }
+  ],
+  "upgrades": [
+    { "id": "peng", "kind": "rule" },
+    { "id": "gang", "kind": "rule" },
+    { "id": "luckySwap", "kind": "rule" },
+    { "id": "flushX2", "kind": "rule" },
+    { "id": "streak", "kind": "rule" },
+    { "id": "zimoBonus", "kind": "stat" },
+    { "id": "energyCap", "kind": "stat" },
+    { "id": "baseScore", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "newBuild", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

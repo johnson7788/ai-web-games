@@ -1,0 +1,149 @@
+{
+  "game": "sky-strike-alpha",
+  "generatedAt": "2026-11-20T11:49:37.383Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.75,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 3,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'SKY STRIKE ALPHA' 无明确玩家/目标 silhouette，眯眼时无法区分可交互元素",
+        "右上角语言选择框边框与背景对比弱，易被忽略",
+        "‘Best 0’ 数值颜色偏淡（青色），在深紫背景下辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应向右移动飞船以穿过两根粉色柱子之间的空隙并收集黄色金币",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Warp进度条文字'Warp'微小且偏左，与进度条对齐不清晰，易被忽略",
+        "金币图标带剪刀状装饰，可能误导为可切割物而非收集目标",
+        "飞船尾迹橙色粒子较淡，在深紫背景中对比度偏低，动态轨迹辨识度稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角小飞船图标与‘Retry’按钮间距过近，可能误触",
+        "‘Flawless Run!’文字颜色（青绿）与背景对比度偏低，弱光下易忽略",
+        "顶部‘Warp’进度条无明确刻度或标签，功能意图模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock-level.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动飞船避开左侧障碍并收集中间的黄色金币状物体",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Warp进度条文字'Warp'偏小且颜色与背景对比度低，易被忽略",
+        "左上角'Level 2'、'Score 0'、'Cores 0'间距过紧，小屏可能误读",
+        "右侧两个黄色金币状物体外形相同但位置不同，暂无法判断是否均为可收集目标"
+      ]
+    },
+    {
+      "shot": "tests/final/05-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让飞船向上移动，避开上下锯齿障碍并收集中间的黄色光球",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Warp进度条文字'Warp'偏小且颜色与背景对比度低（紫色底+浅粉字），易被忽略",
+        "左上角'Level 3'、'Score 0'、'Cores 0'间距过紧，小屏可能误读为单个标签",
+        "飞船尾迹粒子略模糊，与背景网格线融合，可能影响轨迹判断"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色‘开始’按钮进入游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最佳 0’文字偏小且无对比度，易被忽略；",
+        "标题‘天袭’发光效果过强，可能在低对比设备上泛白失真；",
+        "操作提示‘按住爬升，松开俯冲——耗尽跃迁充能闯关’为单行长句，移动端阅读吃力"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'SKY STRIKE ALPHA' 字体发光过强，部分笔画在深背景上边缘模糊，影响远距离辨识",
+        "‘Best 0’ 中数字 ‘0’ 颜色偏青蓝，与主标题色调一致但与下方按钮对比弱，易被忽略",
+        "语言选择下拉框边框为亮粉，与按钮颜色冲突，视觉层级混乱"
+      ]
+    },
+    {
+      "shot": "tests/final/08-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕发射飞船（或按空格/方向键控制飞船移动）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Warp 进度条文字 'Warp' 颜色偏淡，与背景对比不足，易被忽略",
+        "左下角飞船轨迹虚线过细且颜色暗淡，可能误判为装饰而非操作反馈",
+        "右下角金币+箭头图标未明确指示功能（收集？加速？），语义模糊"
+      ]
+    }
+  ]
+}

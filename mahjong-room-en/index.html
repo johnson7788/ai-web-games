@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MAHJONG ROOM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-goal" class="hud-pill hud-goal"></span>
+          <span id="hud-round" class="hud-pill"></span>
+          <span id="hud-score" class="hud-pill"></span>
+          <span id="hud-energy" class="hud-pill"></span>
+          <span id="hud-streak" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-howto" class="hud-btn" data-tutorial-replay aria-label="How to play">?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart">↻</button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu">⌂</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="actionbar" class="hidden">
+      <button id="btn-hu" class="act-btn act-hu hidden">HU</button>
+      <button id="btn-peng" class="act-btn act-peng hidden">PENG</button>
+      <button id="btn-gang" class="act-btn act-gang hidden">GANG</button>
+      <button id="btn-pass" class="act-btn act-pass hidden">PASS</button>
+      <button id="btn-lucky" class="act-btn act-lucky hidden">LUCKY</button>
+      <button id="btn-discard" class="act-btn act-discard hidden">DISCARD</button>
+      <div id="turn-hint" class="turn-hint hidden"></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <div class="title-tiles" aria-hidden="true">
+        <span class="tt tt-red">1萬</span>
+        <span class="tt tt-green">2條</span>
+        <span class="tt tt-blue">3筒</span>
+        <span class="tt tt-red">中</span>
+        <span class="tt tt-cyan">E</span>
+      </div>
+      <h1 id="title-text">MAHJONG ROOM</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start">Start</button>
+      <p id="best-line" class="best-line hidden"></p>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home2" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Play Again</button>
+        <button id="btn-home3" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">&#128241;&#8635;</div>
+        <p id="rotate-text">Rotate your phone for the best view</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

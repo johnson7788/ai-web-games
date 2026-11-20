@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MARIO BIRD HOP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-level" class="hud-pill"></span>
+        <span id="hud-score" class="hud-pill"></span>
+        <span id="hud-coins" class="hud-pill"></span>
+        <span id="hud-combo" class="hud-pill combo"></span>
+        <span id="hud-stars" class="hud-pill stars"></span>
+      </div>
+      <div class="hud-right">
+        <span id="hud-goal" class="hud-goal">▶ GOAL <span class="goal-track"><span id="goal-fill"></span></span></span>
+        <span id="hud-best" class="hud-pill"></span>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute">♪</button>
+        <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart">R</button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu">M</button>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <div class="title-bird" aria-hidden="true">
+        <svg viewBox="0 0 100 100" width="120" height="120">
+          <circle cx="50" cy="54" r="30" fill="#ff3df0" />
+          <path d="M46 38 q-16 -8 -26 4 q14 2 22 8 z" fill="#00e5ff" />
+          <circle cx="62" cy="46" r="8" fill="#fff" />
+          <circle cx="65" cy="46" r="3.4" fill="#111" />
+          <path d="M78 50 l14 7 -14 7 z" fill="#ffb300" />
+        </svg>
+      </div>
+      <h1 id="title-text">MARIO BIRD HOP</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="total-stars"><span id="stars-total"></span></div>
+      <button id="btn-start">Start</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-best" id="result-best"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-next">Next Level</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="touch-controls" class="hidden">
+      <div class="touch-left">
+        <button id="btn-left" aria-label="Left">◀</button>
+        <button id="btn-right" aria-label="Right">▶</button>
+      </div>
+      <div class="touch-right">
+        <button id="btn-jump" aria-label="Jump">JUMP</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">↻</div>
+        <p id="rotate-text">Rotate your phone for a bigger board</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

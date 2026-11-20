@@ -1,0 +1,67 @@
+{
+  "slug": "spider-ball-web",
+  "genre": "puzzle",
+  "oneLiner": "Fling neon orbs from a spider spinneret, bouncing them through a web of numbered nodes until every cell shatters.",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "locking an angle commits the next orb; holding still while the previous orb is still in flight risks the auto-launch",
+      "feedback": ["aim-guide", "sfx"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "each fling spends one of the limited orbs",
+      "feedback": ["trail", "sfx", "brick-flash"],
+      "combinesWith": ["aim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "aim at the dense cluster or the lone high-value node", "cost": "a bad angle wastes one orb" },
+    { "atSec": 15, "choice": "spend an orb now to trigger the laser column, or save it for a 3x3 burst", "cost": "power-ups are single-hit and gone" },
+    { "atSec": 35, "choice": "keep a chain alive across multiple nodes, or let the orb return to reset", "cost": "a floor catch resets the combo multiplier" },
+    { "atSec": 60, "choice": "clear the near column first or soften the rock-shielded far row", "cost": "rock shells absorb the first hit" },
+    { "atSec": 95, "choice": "spend orbs aggressively to 3-star this level or conserve for the next", "cost": "leftover orbs are your star currency" },
+    { "atSec": 140, "choice": "grab the +orb power-up mid-flight or ignore it to keep your angle", "cost": "chasing it may waste the current shot" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 35,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "aim & fling orbs at numbered nodes" },
+    { "index": 2, "newElement": "indestructible rock obstacles" },
+    { "index": 3, "newElement": "laser column / 3x3 burst power-ups" },
+    { "index": 4, "newElement": "mixed rock + power-up gauntlet" }
+  ],
+  "upgrades": [
+    { "id": "pierce", "kind": "rule" },
+    { "id": "ricochet", "kind": "rule" },
+    { "id": "laser-column", "kind": "rule" },
+    { "id": "burst-3x3", "kind": "rule" },
+    { "id": "extra-orb", "kind": "rule" },
+    { "id": "orb-damage", "kind": "stat" },
+    { "id": "orb-count", "kind": "stat" },
+    { "id": "combo-window", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

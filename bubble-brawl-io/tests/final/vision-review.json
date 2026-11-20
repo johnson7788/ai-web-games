@@ -1,0 +1,69 @@
+{
+  "game": "bubble-brawl-io",
+  "generatedAt": "2026-11-20T11:44:17.340Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.333333333333334,
+    "silhouette": 7,
+    "style_consistent": 8.333333333333334
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景圆环与标题文字轻微重叠，可能影响视觉焦点",
+        "‘Neon bubble duel’和‘Best: 0’字号过小，远距离阅读困难",
+        "‘How to play’按钮无悬停反馈提示，交互意图不够明确"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘霓虹气泡对决’和‘Best: 0’文字较小且灰度高，弱光环境下可能难辨",
+        "语言切换下拉框（右上角）无明确交互反馈样式，易被忽略",
+        "背景圆环与标题文字存在轻微光晕融合，部分用户可能误判为可交互元素"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色三角形发射器启动旋转轨道",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "橙色核心与绿色内环亮度接近，眯眼时可能混淆目标与边界",
+        "顶部‘Level 1’和‘Score 150’间距过小，小屏可能误读为单个标签",
+        "右上角三个图标（暂停/静音/重试）尺寸偏小，桌面截图无法确认是否≥44px"
+      ]
+    }
+  ]
+}

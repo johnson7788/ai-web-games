@@ -1,0 +1,258 @@
+/* HAPPY CHICK HOP · 手绘卡通风 UI */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #BFE3F7;
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#game-container { position: fixed; inset: 0; }
+
+#canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD ---------- */
+#hud {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  z-index: 20;
+  background: linear-gradient(180deg, #FFFFFF, #FDF2E1);
+  border-bottom: 2px solid #B97A4B;
+  pointer-events: auto;
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
+.hud-score-wrap { display: flex; flex-direction: column; line-height: 1; }
+.hud-score-wrap em {
+  font-style: normal;
+  font-size: 26px;
+  font-weight: 800;
+  color: #4E342E;
+}
+.hud-sub { font-size: 12px; color: #8D6E63; font-weight: 600; }
+.hud-pill {
+  background: #FFE0B2;
+  color: #6D4C41;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.hud-goal {
+  background: #FFF3C4;
+  color: #7A5A00;
+  border: 1px solid #F5C518;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.hud-goal b { color: #B8860B; }
+.hud-combo {
+  background: #FF9800;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  animation: pop 0.3s ease;
+}
+.hud-btn {
+  width: 44px; height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hud-btn:active { transform: scale(0.92); }
+.hud-btn.armed { background: #FFCC80; box-shadow: 0 0 0 3px #FF9800; }
+.hud-btn.is-muted { opacity: 0.5; }
+.badge {
+  position: absolute;
+  top: -3px; right: -3px;
+  min-width: 16px; height: 16px;
+  border-radius: 8px;
+  background: #E53935;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 3px;
+}
+#hammer-hint { font-size: 14px; font-weight: 700; }
+
+/* ---------- 全屏层 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  background: linear-gradient(180deg, #BFE3F7 0%, #EAF7E4 55%, #D8F0C8 100%);
+  padding: 20px;
+}
+.screen h1 {
+  font-size: clamp(34px, 7vw, 64px);
+  font-weight: 900;
+  color: #4E342E;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #FFE0B2;
+}
+.screen h2 {
+  font-size: clamp(26px, 5vw, 44px);
+  font-weight: 900;
+  color: #4E342E;
+}
+.screen h2.lose { color: #C62828; }
+.subtitle { font-size: clamp(14px, 2.4vw, 20px); color: #6D4C41; max-width: 90vw; }
+
+.screen button, .win-btns button {
+  min-width: 180px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 16px;
+  background: #FFB300;
+  color: #4E342E;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #E68900, 0 6px 14px rgba(0,0,0,0.18);
+}
+.screen button:active, .win-btns button:active { transform: translateY(2px); box-shadow: 0 2px 0 #E68900; }
+.screen button.btn-ghost, .win-btns button.btn-ghost {
+  background: #fff;
+  color: #6D4C41;
+  box-shadow: 0 3px 0 #DDD;
+}
+
+.lang-select {
+  position: absolute;
+  top: 14px; right: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 2px solid #B97A4B;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4E342E;
+}
+
+.win-stars { font-size: 48px; letter-spacing: 6px; color: #FFB300; }
+.win-score { font-size: 22px; font-weight: 800; color: #4E342E; }
+.win-meta { font-size: 15px; color: #6D4C41; max-width: 80vw; }
+.win-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- 竖屏旋转提示（触屏竖屏才出现） ---------- */
+#rotate-screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 22, 12, 0.92);
+  color: #fff;
+}
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+}
+.rotate-card {
+  text-align: center;
+  padding: 28px;
+}
+.rotate-icon { font-size: 56px; margin-bottom: 10px; }
+.rotate-card p { font-size: 20px; font-weight: 700; margin-bottom: 18px; }
+.rotate-card button {
+  padding: 14px 26px;
+  border: none;
+  border-radius: 14px;
+  background: #FFB300;
+  color: #4E342E;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* ---------- 教程 ---------- */
+#tutorial {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: auto;
+}
+#tut-spotlight {
+  position: absolute;
+  display: none;
+  border: 3px solid #FF9800;
+  border-radius: 14px;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+#tut-card {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 440px;
+  max-width: 92vw;
+  background: #fff;
+  border: 3px solid #FFB300;
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.28);
+  text-align: center;
+}
+#tut-card h3 { font-size: 20px; font-weight: 900; color: #4E342E; margin-bottom: 8px; }
+#tut-card p { font-size: 15px; color: #5D4037; line-height: 1.5; margin-bottom: 14px; }
+.tut-btns { display: flex; gap: 10px; justify-content: center; }
+.tut-btns button {
+  min-width: 96px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.tut-btns #tut-next { background: #FFB300; color: #4E342E; }
+.tut-btns #tut-skip { background: #EFEBE9; color: #6D4C41; }
+
+@keyframes pop {
+  0% { transform: scale(0.6); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 560px) {
+  .screen h1 { font-size: 34px; }
+  .hud-btn { width: 42px; height: 42px; }
+  .hud-score-wrap em { font-size: 22px; }
+}

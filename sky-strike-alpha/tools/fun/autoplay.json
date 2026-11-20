@@ -1,0 +1,59 @@
+{
+  "game": "sky-strike-alpha",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 5,
+      "level": 3,
+      "durationSec": 60.05,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 20.02,
+      "deaths": 0,
+      "actions": 179,
+      "idleSec": 0,
+      "maxEventGapSec": 1.02,
+      "uniqueEvents": 10,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 7.45,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 206,
+      "idleSec": 0,
+      "maxEventGapSec": 1.02,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 2.87,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 2.02,
+      "uniqueEvents": 4,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

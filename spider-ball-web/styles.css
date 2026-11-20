@@ -1,0 +1,249 @@
+/* Spider Ball Web — 霓虹街机风格（程序化美术，零素材零外链） */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #07071a;
+  --bg2: #0d0d24;
+  --panel: rgba(10, 12, 30, 0.94);
+  --cyan: #3cdcff;
+  --cyan-soft: #9ef0ff;
+  --magenta: #ff4dd2;
+  --amber: #ffe14d;
+  --line: rgba(60, 220, 255, 0.28);
+  --font: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Apple SD Gothic Neo', 'Segoe UI', 'Microsoft YaHei', 'Yu Gothic', 'Malgun Gothic', Tahoma, monospace;
+}
+
+body {
+  background: #05050f;
+  color: #eaf7ff;
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg);
+  border-radius: 10px;
+  box-shadow: 0 0 60px rgba(60, 220, 255, 0.14), 0 0 120px rgba(255, 77, 210, 0.08);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #0a0a1c;
+}
+
+/* ---------- 全屏覆盖层 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(6, 6, 20, 0.86);
+  z-index: 10;
+  text-align: center;
+}
+.screen.hidden, .hidden { display: none !important; }
+
+.screen h1 {
+  font-size: 3.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--cyan-soft);
+  letter-spacing: 3px;
+  text-shadow: 0 0 16px rgba(60, 220, 255, 0.85), 0 0 42px rgba(60, 220, 255, 0.45);
+}
+.screen h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--cyan-soft);
+  text-shadow: 0 0 12px rgba(60, 220, 255, 0.6);
+}
+.screen h2.lose { color: #ff5d78; text-shadow: 0 0 12px rgba(255, 60, 90, 0.6); }
+.screen .subtitle {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+  color: var(--amber);
+  letter-spacing: 1px;
+}
+
+.screen button {
+  padding: 12px 34px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(180deg, #2fe6c8, #17b8a4);
+  color: #04202a;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 0.9rem;
+  letter-spacing: 1px;
+  box-shadow: 0 0 18px rgba(60, 220, 255, 0.45), 0 4px 0 #0e7f72;
+}
+.screen button:hover { filter: brightness(1.1); }
+.screen button.btn-ghost {
+  background: rgba(20, 26, 48, 0.9);
+  color: var(--cyan-soft);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+.screen button.btn-ghost:hover { background: rgba(34, 44, 78, 0.9); }
+
+.screen .lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #12142a;
+  color: var(--cyan-soft);
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.screen .lang-select:focus { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+.total-stars { color: var(--amber); font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 0.4rem; text-shadow: 0 0 10px rgba(255, 225, 77, 0.5); }
+
+/* ---------- HUD（不透明顶条，避免压住砖块被判遮挡） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 7px 12px;
+  background: rgba(6, 6, 18, 0.94);
+  border-bottom: 1px solid var(--line);
+  pointer-events: none;
+}
+.hud-row { display: flex; justify-content: space-between; align-items: center; }
+.hud-left { display: flex; gap: 10px; align-items: center; font-weight: 800; font-size: 0.95rem; color: var(--cyan-soft); }
+.hud-right { display: flex; gap: 7px; align-items: center; }
+.hud-pill {
+  background: rgba(18, 24, 48, 0.95);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 3px 11px;
+  font-size: 0.9rem;
+  color: #d8f6ff;
+}
+#hud-combo { color: var(--amber); border-color: rgba(255, 225, 77, 0.5); }
+#hud-targets { color: #ff7a8a; border-color: rgba(255, 90, 110, 0.55); font-weight: 900; }
+.hud-btn {
+  pointer-events: auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: rgba(20, 26, 48, 0.95);
+  border: 1px solid var(--line);
+  color: var(--cyan-soft);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  font-family: inherit;
+}
+.hud-btn:hover { background: rgba(34, 44, 78, 0.95); }
+.hud-btn.is-muted { color: #8891b3; border-color: rgba(140, 150, 190, 0.4); }
+
+/* ---------- 结算 ---------- */
+.win-stars { font-size: 2.8rem; letter-spacing: 8px; margin: 6px 0; min-height: 3rem; }
+.win-stars .stars { color: var(--amber); text-shadow: 0 0 14px rgba(255, 225, 77, 0.6); }
+.win-stars .stars:empty { display: none; }
+.win-meta { color: var(--cyan-soft); font-size: 1.05rem; opacity: 0.9; margin-bottom: 0.5rem; }
+.win-btns { display: flex; gap: 12px; }
+
+/* ---------- 教程（卡片固定底部居中） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 20; pointer-events: none; }
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  max-width: 440px;
+  padding: 15px 19px;
+  background: rgba(14, 12, 30, 0.97);
+  border: 1px solid rgba(255, 216, 78, 0.55);
+  border-radius: 14px;
+  text-align: left;
+  pointer-events: auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+#tut-title { font-weight: 900; margin-bottom: 6px; color: var(--amber); letter-spacing: 1px; }
+#tut-text { font-size: 0.96rem; line-height: 1.5; opacity: 0.94; color: #eaf7ff; }
+.tut-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+.tut-btns button { height: 40px; min-width: 92px; font-size: 0.95rem; margin-top: 0; }
+
+/* ---------- 竖屏提示（触屏竖屏时显示，可跳过） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 8, 22, 0.9);
+  }
+}
+#rotate-screen .rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #12213a, #101a33);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+#rotate-screen .rotate-icon { font-size: 3rem; animation: rotate-tip 2.2s ease-in-out infinite; }
+@keyframes rotate-tip { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+#rotate-screen p { color: #eaffff; font-size: 1.1rem; font-weight: 700; }
+#btn-rotate-skip {
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: none;
+  background: var(--amber);
+  color: #3a2400;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b87a18;
+  margin-top: 0;
+}
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 900px) {
+  #game-container { border-radius: 0; box-shadow: none; }
+  .screen h1 { font-size: 2.5rem; }
+  #tut-card { bottom: 12px; max-width: 92vw; }
+  .hud-pill { padding: 2px 8px; font-size: 0.8rem; }
+  .hud-left { font-size: 0.84rem; gap: 6px; }
+  .hud-btn { width: 34px; height: 34px; }
+  .win-stars { font-size: 2rem; }
+}
+
+/* ---------- 减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #rotate-screen .rotate-icon { animation: none; }
+  #hud-combo { text-shadow: none; }
+}

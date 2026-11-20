@@ -1,0 +1,192 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0618;
+  color: #eef;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Apple SD Gothic Neo', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', 'Microsoft YaHei', 'Yu Gothic', 'Malgun Gothic', Tahoma, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #160a2b;
+}
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(12, 6, 24, 0.96);
+  z-index: 10;
+}
+.hidden { display: none !important; }
+.screen h1 { font-size: 3rem; margin-bottom: 0.5rem; color: #5cf2ff; text-shadow: 0 0 18px #5cf2ff; }
+.screen h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #5cf2ff; text-shadow: 0 0 14px #5cf2ff; }
+.screen .subtitle { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8; }
+.screen button {
+  padding: 12px 32px;
+  font-size: 1.2rem;
+  background: #5cf2ff;
+  color: #0a0618;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 16px rgba(92, 242, 255, 0.6);
+}
+.screen button:hover { background: #a8f7ff; }
+.screen .btn-ghost { background: transparent; color: #5cf2ff; border: 1px solid #5cf2ff; box-shadow: none; }
+.screen .lang-select {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 16px;
+  padding: 6px 12px;
+  background: #141428;
+  color: #5cf2ff;
+  border: 1px solid #5cf2ff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* ---------- HUD（不透明顶条，避免盖内容判 HUD 遮挡） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: rgba(10, 6, 24, 0.98);
+  border-bottom: 1px solid rgba(92, 242, 255, 0.35);
+  z-index: 6;
+}
+.hud-row { display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 12px; }
+.hud-left { display: flex; gap: 8px; }
+.hud-pill {
+  background: #141428;
+  border: 1px solid rgba(92, 242, 255, 0.4);
+  color: #5cf2ff;
+  padding: 4px 10px;
+  font-size: 1.05rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.hud-hint { color: #6cff7a; font-size: 1.05rem; font-weight: bold; text-shadow: 0 0 10px #6cff7a; white-space: nowrap; letter-spacing: 1px; }
+.hud-right { display: flex; gap: 6px; align-items: center; }
+.hud-badge { display: inline-block; min-width: 26px; height: 26px; line-height: 26px; text-align: center; border-radius: 3px; background: #141428; border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 0.85rem; }
+#badge-shield { border-color: #4d7cff; color: #8faeff; }
+#badge-slow { border-color: #b06cff; color: #cf9fff; }
+#badge-boost { border-color: #ffe14d; color: #ffe14d; }
+.hud-btn {
+  min-width: 34px;
+  height: 34px;
+  background: #141428;
+  color: #5cf2ff;
+  border: 1px solid rgba(92, 242, 255, 0.5);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.hud-btn:hover { background: #1e1e3a; }
+#btn-mute.is-muted { color: #666; border-color: #555; }
+
+/* ---------- 移动按钮（底部两角，≥44px） ---------- */
+.move-btns { position: absolute; left: 0; right: 0; bottom: 12px; display: flex; justify-content: space-between; padding: 0 20px; z-index: 7; pointer-events: none; }
+.move-btn {
+  pointer-events: auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(20, 20, 40, 0.82);
+  color: #5cf2ff;
+  border: 2px solid rgba(92, 242, 255, 0.7);
+  font-size: 1.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 0 18px rgba(92, 242, 255, 0.4);
+}
+.move-btn:active { background: rgba(92, 242, 255, 0.35); }
+.move-btn.boosted { border-color: #ffe14d; color: #ffe14d; box-shadow: 0 0 22px rgba(255, 225, 77, 0.6); }
+
+/* ---------- 结算 ---------- */
+.win-stars { font-size: 2rem; color: #ffe14d; margin-bottom: 0.4rem; text-shadow: 0 0 12px #ffe14d; }
+.win-meta { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1rem; text-align: center; max-width: 70%; }
+.win-btns { display: flex; gap: 12px; }
+
+/* ---------- 竖屏提示（不用 !important，避免压过 skip 内联 onclick） ---------- */
+#rotate-screen { position: absolute; inset: 0; z-index: 20; background: rgba(10, 6, 24, 0.97); display: none; justify-content: center; align-items: center; }
+.rotate-card { text-align: center; color: #eef; }
+.rotate-icon { font-size: 3rem; margin-bottom: 0.6rem; }
+.rotate-card p { font-size: 1.2rem; margin-bottom: 1rem; opacity: 0.9; }
+#btn-rotate-skip {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  background: #5cf2ff;
+  color: #0a0618;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ---------- 教程（卡片固定底部居中） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 8; pointer-events: none; }
+#tut-spotlight {
+  position: absolute;
+  display: none;
+  border: 2px dashed #ffe14d;
+  border-radius: 8px;
+  box-shadow: 0 0 22px rgba(255, 225, 77, 0.6);
+}
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  max-width: 560px;
+  width: max-content;
+  background: rgba(12, 6, 24, 0.96);
+  border: 1px solid #5cf2ff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  pointer-events: auto;
+  box-shadow: 0 0 26px rgba(92, 242, 255, 0.4);
+}
+#tut-card h3 { color: #ffe14d; font-size: 1.1rem; margin-bottom: 0.5rem; }
+#tut-card p { font-size: 0.95rem; line-height: 1.5; color: #eef; }
+.tut-btns { display: flex; gap: 10px; margin-top: 0.9rem; justify-content: flex-end; }
+.tut-btns button { padding: 8px 18px; font-size: 0.95rem; background: #5cf2ff; color: #0a0618; border: none; border-radius: 4px; cursor: pointer; font-family: inherit; }
+.tut-btns .btn-ghost { background: transparent; color: #5cf2ff; border: 1px solid #5cf2ff; }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 900px) {
+  .screen h1 { font-size: 2.2rem; }
+  #tut-card { max-width: 92vw; }
+  .move-btn { width: 60px; height: 60px; font-size: 1.4rem; }
+}
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen { display: flex; }
+}
+
+/* ---------- 无障碍：减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .screen h1, .screen h2, .win-stars { text-shadow: none; }
+  .move-btn, .screen button { box-shadow: none; }
+}

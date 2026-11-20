@@ -1,0 +1,104 @@
+{
+  "slug": "sky-strike-alpha",
+  "genre": "arcade",
+  "oneLiner": "按住爬升、松开俯冲，驾驶霓虹战机穿越能量闸门与陨石阵，接核心攒连击，把跃迁充能耗尽前不坠毁。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "climb",
+      "cost": "按住持续烧上冲速度，松手立刻被重力往下拽；按过头会撞顶",
+      "feedback": ["sfx", "engineTrail", "tilt"],
+      "combinesWith": ["dive"]
+    },
+    {
+      "name": "dive",
+      "cost": "松手俯冲加速，速度失控会直接砸地",
+      "feedback": ["sfx", "diveStreak"],
+      "combinesWith": ["climb"]
+    },
+    {
+      "name": "grab",
+      "cost": "核心/护盾总在闸门缝隙里，贴边去接会把自己逼进撞墙边缘",
+      "feedback": ["sfx", "glowBurst", "comboFlash"],
+      "combinesWith": ["climb", "dive"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "第一道闸门逼近：现在按住爬升抢高位，还是先俯冲等缝隙中心",
+      "cost": "抢高位容易冲过头撞顶；等中心可能来不及爬"
+    },
+    {
+      "atSec": 18,
+      "choice": "核心在缝隙上缘：贴上去接（多 10 分 × 连击）还是居中保命",
+      "cost": "贴边接核心把失误余量压到 16px 以内"
+    },
+    {
+      "atSec": 34,
+      "choice": "护盾亮起：绕过去接护盾，还是为了不掉连击直接掠过",
+      "cost": "接护盾要临时改高度，可能错过下一颗核心掉连击"
+    },
+    {
+      "atSec": 52,
+      "choice": "摆荡闸门上下晃：按当前中心过，还是预判下一帧的缝隙位置",
+      "cost": "预判错误 = 撞墙；按当前中心 = 被摆回来的墙扫中"
+    },
+    {
+      "atSec": 76,
+      "choice": "陨石阵三连：走大缝隙（安全但绕远）还是走小缝（近但要贴边）",
+      "cost": "小缝只有 190px，连击越高越不敢赌"
+    },
+    {
+      "atSec": 102,
+      "choice": "充能快耗尽、护盾还剩 1 次：拼满分收最后一颗核心，还是稳着直接通关",
+      "cost": "拼核心可能撞毁白费；稳通关会少 1 星"
+    },
+    {
+      "atSec": 130,
+      "choice": "双子门只有 180px 缝：连过两道还是等一瞬找节奏",
+      "cost": "连过保持连击但容错小；等节奏可能被后面的门追上"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "能量闸门（gate）：固定缝隙的霓虹门，学按住爬升穿缝" },
+    { "index": 2, "newElement": "陨石阵（rock）：更快、缝隙摆动的散碎小行星" },
+    { "index": 3, "newElement": "摆荡闸门：缝隙中心上下摆动，逼持续微调" },
+    { "index": 4, "newElement": "双子门：更窄缝隙 + 更密闸门节奏" },
+    { "index": 5, "newElement": "雷区：高密度陨石群夹缝求生，护盾成关键资源" },
+    { "index": 6, "newElement": "终章试炼：最快卷速 + 最大摆幅 + 陨石饱和全叠加" }
+  ],
+  "upgrades": [
+    { "id": "shield", "kind": "rule", "desc": "护盾拾取：抵挡一次撞击并摧毁障碍" },
+    { "id": "combo", "kind": "rule", "desc": "连击系统：连续接核分数乘到 ×8，漏核归 1" },
+    { "id": "stars", "kind": "rule", "desc": "三星评级：收核比例 + 无伤决定星级" },
+    { "id": "nearMiss", "kind": "rule", "desc": "贴边掠过奖励：16px 内穿缝触发额外加分" },
+    { "id": "oscGate", "kind": "rule", "desc": "摆荡闸门：缝隙中心随时间摆动" },
+    { "id": "scrollUp", "kind": "stat", "desc": "每关卷速递增，节奏越来越快" },
+    { "id": "gapDown", "kind": "stat", "desc": "缝隙逐关收窄，容错递减" },
+    { "id": "rockDensity", "kind": "stat", "desc": "陨石出现占比逐关提高" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

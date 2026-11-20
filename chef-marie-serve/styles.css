@@ -1,0 +1,160 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #4a2a18;
+  --cream: #fff3dc;
+  --red: #ff5e4a;
+  --yellow: #ffd24a;
+  --green: #5fae4a;
+  --panel: rgba(48, 28, 16, 0.86);
+}
+html, body {
+  height: 100%;
+  background: #241408;
+  color: var(--cream);
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'PingFang SC', 'Hiragino Sans', 'Noto Sans SC', 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  background: #ffd9a0;
+  overflow: hidden;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #ffd9a0;
+}
+.hidden { display: none !important; }
+
+/* ---------- HUD 顶条（不透明，避免压字误判遮挡） ---------- */
+#hud {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 46px;
+  background: rgba(30, 18, 10, 0.85);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+}
+.hud-row { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 10px; }
+.hud-left { display: flex; gap: 8px; align-items: center; font-weight: 700; font-size: 15px; }
+.hud-pill {
+  background: var(--cream); color: var(--ink);
+  padding: 3px 10px; border-radius: 12px; border: 2px solid var(--ink);
+}
+.hud-right { display: flex; gap: 6px; }
+.hud-btn {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--cream); color: var(--ink);
+  border: 2px solid var(--ink); font-weight: 800; font-size: 16px; cursor: pointer;
+}
+.hud-btn.is-muted { color: #b05a3a; }
+
+/* ---------- 全屏屏（半透明，露出背后厨房） ---------- */
+.screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: rgba(36, 20, 8, 0.62);
+  z-index: 10;
+  text-align: center;
+  padding: 20px;
+}
+.screen h1 { font-size: 3.2rem; color: var(--yellow); -webkit-text-stroke: 2px var(--ink); text-shadow: 0 4px 0 rgba(0,0,0,0.25); margin-bottom: 4px; }
+.screen h2 { font-size: 2.3rem; color: var(--yellow); -webkit-text-stroke: 2px var(--ink); margin-bottom: 12px; }
+.screen .subtitle { font-size: 1.15rem; margin-bottom: 20px; color: var(--cream); text-shadow: 0 2px 0 rgba(0,0,0,0.3); }
+.screen button {
+  padding: 13px 34px; font-size: 1.25rem; font-weight: 800;
+  background: var(--red); color: #fff; border: 3px solid var(--ink);
+  border-radius: 16px; cursor: pointer; margin-top: 12px; font-family: inherit;
+  box-shadow: 0 4px 0 var(--ink);
+}
+.screen button:hover { filter: brightness(1.08); }
+.screen button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
+.screen .btn-ghost { background: var(--cream); color: var(--ink); }
+.screen .lang-select {
+  position: absolute; top: 14px; inset-inline-end: 16px;
+  padding: 6px 12px; background: var(--cream); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 10px; cursor: pointer;
+  font-family: inherit; font-size: 0.95rem; font-weight: 700;
+}
+
+/* 关卡格 */
+.level-grid { display: flex; gap: 10px; margin-top: 14px; }
+.level-cell {
+  width: 74px; height: 62px; border-radius: 14px; border: 3px solid var(--ink);
+  background: var(--cream); color: var(--ink); cursor: pointer;
+  font-family: inherit; font-weight: 800; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0;
+}
+.level-cell .lv-num { font-size: 1.1rem; }
+.level-cell .lv-stars { font-size: 0.7rem; color: #e08a00; }
+.level-cell.locked { opacity: 0.45; filter: grayscale(0.7); cursor: not-allowed; }
+
+/* ---------- 结果 ---------- */
+.win-stars { font-size: 2.4rem; letter-spacing: 6px; color: var(--yellow); margin-bottom: 6px; }
+.win-stars em { font-style: normal; font-size: 1rem; color: var(--cream); display: block; margin-top: 4px; }
+#result-msg { font-size: 1.05rem; margin-bottom: 8px; color: var(--cream); }
+.win-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- 竖屏提示（media 不加 !important，让 skip 内联 onclick 生效） ---------- */
+#rotate-screen { display: none; position: absolute; inset: 0; z-index: 40; align-items: center; justify-content: center; background: rgba(20, 10, 4, 0.9); }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen[data-rotate] { display: flex; }
+}
+.rotate-card { text-align: center; background: var(--cream); color: var(--ink); padding: 26px 30px; border-radius: 20px; border: 4px solid var(--ink); max-width: 86vw; }
+.rotate-icon { font-size: 2.4rem; margin-bottom: 8px; }
+#rotate-text { font-size: 1.15rem; font-weight: 800; margin-bottom: 14px; }
+#btn-rotate-skip { padding: 12px 26px; font-size: 1.05rem; font-weight: 800; background: var(--red); color: #fff; border: 3px solid var(--ink); border-radius: 14px; cursor: pointer; font-family: inherit; }
+
+/* ---------- 引导（卡片固定底部居中） ---------- */
+#tutorial { position: absolute; inset: 0; z-index: 30; pointer-events: none; }
+#tut-spotlight { position: absolute; display: none; border: 3px solid var(--yellow); border-radius: 14px; box-shadow: 0 0 0 9999px rgba(20,10,4,0.55); }
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 560px;
+  max-width: 92vw;
+  background: var(--cream);
+  color: var(--ink);
+  padding: 16px 20px;
+  border: 4px solid var(--ink);
+  border-radius: 18px;
+  pointer-events: auto;
+  text-align: center;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.3);
+}
+#tut-card h3 { font-size: 1.25rem; margin-bottom: 6px; }
+#tut-card p { font-size: 1rem; margin-bottom: 10px; }
+.tut-btns { display: flex; gap: 10px; justify-content: center; }
+.tut-btns button { padding: 9px 22px; font-size: 1rem; font-weight: 800; border-radius: 12px; border: 3px solid var(--ink); cursor: pointer; font-family: inherit; }
+#tut-next { background: var(--red); color: #fff; }
+#tut-skip { background: #e8d5b8; color: var(--ink); }
+
+/* ---------- 菜谱卡 ---------- */
+.card-box { background: var(--cream); color: var(--ink); padding: 24px 30px; border-radius: 20px; border: 4px solid var(--ink); max-width: 480px; box-shadow: 0 8px 0 rgba(0,0,0,0.3); }
+.card-box h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--red); }
+.card-box p { font-size: 1.05rem; margin-bottom: 16px; }
+
+/* ---------- 触屏按钮（仅粗指针显示，≥44px） ---------- */
+#touch-controls { position: absolute; inset: auto 0 10px 0; z-index: 8; display: none; justify-content: space-between; padding: 0 14px; pointer-events: none; }
+#touch-controls.visible { display: flex; }
+.touch-btn {
+  pointer-events: auto; width: 74px; height: 74px; border-radius: 50%;
+  background: rgba(255, 243, 220, 0.92); color: var(--ink); border: 3px solid var(--ink);
+  font-size: 1.8rem; font-weight: 900; touch-action: none; user-select: none;
+}
+.touch-jump { background: rgba(255, 210, 74, 0.95); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+}

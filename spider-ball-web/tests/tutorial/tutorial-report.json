@@ -1,0 +1,30 @@
+{
+  "game": "spider-ball-web",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 3,
+    "stepIds": [
+      "Drag on the web to aim, then release to fling an orb.",
+      "Each orb bounces and chips numbered nodes. Clear them all!",
+      "Grab power-ups: +orb, laser column, violet burst. Watch the rocks!"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": []
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

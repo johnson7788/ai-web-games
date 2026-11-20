@@ -1,0 +1,102 @@
+{
+  "slug": "bubble-brawl-io",
+  "genre": "arcade",
+  "oneLiner": "在霓虹竞技场底部操控炮塔，把气泡穿过旋转圆环的缺口打进顶部核心，躲开反弹的气泡与坠落的尖刺——击破核心过关。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "fire",
+      "cost": "每次发射有冷却，且气泡若撞上实心圆环会反弹回来砸自己；乱按=自伤",
+      "feedback": ["sfx", "muzzle", "trail", "ringFlash"],
+      "combinesWith": ["dodge"]
+    },
+    {
+      "name": "dodge",
+      "cost": "左右滑动会让炮塔离开圆心，此时发射的气泡打不进缺口、无法命中核心，等于放弃输出窗口",
+      "feedback": ["sfx", "thruster", "shiftBlur"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "缺口刚接近竖直就抢发，还是等它完全对齐再发",
+      "cost": "抢发容易擦到实心环反弹；等对齐可能错过发射窗口"
+    },
+    {
+      "atSec": 12,
+      "choice": "顶着尖刺继续打连击，还是先滑动躲开",
+      "cost": "继续输出会被尖刺击中掉生命；躲开会断连击并短暂失去输出"
+    },
+    {
+      "atSec": 25,
+      "choice": "贪连击倍率快速连发，还是放慢节奏确保每一发都穿过缺口",
+      "cost": "连击越高伤害越高，但一发反弹就清零；求稳则清场更慢"
+    },
+    {
+      "atSec": 45,
+      "choice": "先花气泡打掉绕核岩石，还是找缝隙绕过岩石直接打核心",
+      "cost": "清岩石浪费气泡与时间；绕行风险高容易被岩石吞掉气泡"
+    },
+    {
+      "atSec": 70,
+      "choice": "在窄缺口上硬挤穿行，还是退开重新对齐再打",
+      "cost": "硬挤有高反弹风险；退开则拖慢推进、可能被尖刺追上"
+    },
+    {
+      "atSec": 110,
+      "choice": "多闪避保住剩余生命，还是硬吃一击换取更快击破核心",
+      "cost": "保命=输出时间变少；硬吃=可能直接进入危险血量"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "单个外圈圆环：先学对准竖直缺口发射" },
+    { "index": 2, "newElement": "内圈圆环加入：内外两圈缺口必须同时竖直" },
+    { "index": 3, "newElement": "绕核岩石登场：会吞掉气泡，需先清障" },
+    { "index": 4, "newElement": "圆环加速 + 岩石增至 3 块" },
+    { "index": 5, "newElement": "外圈反向旋转，打破既有节奏" },
+    { "index": 6, "newElement": "尖刺更密、速度更快，考验闪避" },
+    { "index": 7, "newElement": "内外圈进一步加速，缺口更窄" },
+    { "index": 8, "newElement": "5 块岩石 + 最快圆环的终局挑战" }
+  ],
+  "upgrades": [
+    { "id": "unlockInnerRing", "kind": "rule", "desc": "第 2 关起内圈圆环加入，双圈缺口对齐才能打穿" },
+    { "id": "unlockRocks", "kind": "rule", "desc": "第 3 关起绕核岩石吞掉气泡，必须先清障或绕行" },
+    { "id": "comboMultiplier", "kind": "rule", "desc": "连续命中叠加伤害倍率，反弹则清零" },
+    { "id": "rockBreakBonus", "kind": "rule", "desc": "击碎岩石额外加分并维持连击" },
+    { "id": "gapWider", "kind": "rule", "desc": "关卡圆环缺口随等级收窄，靠瞄准精度换取容错" },
+    { "id": "fasterFire", "kind": "stat", "desc": "降低发射冷却，提高输出上限" },
+    { "id": "damageUp", "kind": "stat", "desc": "提升单发基础伤害" },
+    { "id": "critUp", "kind": "stat", "desc": "提升暴击概率" },
+    { "id": "extraHeart", "kind": "stat", "desc": "提升炮塔最大生命" },
+    { "id": "spikeSlow", "kind": "stat", "desc": "降低核心尖刺下落速度" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "unlock",
+    "newBuild"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

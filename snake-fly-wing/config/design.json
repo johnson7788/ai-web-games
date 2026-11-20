@@ -1,0 +1,41 @@
+{
+  "slug": "snake-fly-wing",
+  "genre": "arcade",
+  "oneLiner": "玩家拍翼驾驶发光飞蛇穿过合成波峡谷缺口，吃心长身、宝石护盾、三星狂热，连击越高中分越多",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "flap", "cost": "消耗反应窗口，上升时更接近上柱", "feedback": ["sfx", "trail", "rise"], "combinesWith": ["hold"] },
+    { "name": "hold", "cost": "暂不拍翼加速下坠，更贴近下柱", "feedback": ["sfx", "speed-blur", "fall"], "combinesWith": ["flap"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一个缺口前是否先拍翼稳住高度", "cost": "过早拍翼会撞上柱" },
+    { "atSec": 8, "choice": "直穿缺口中心，还是先吃缺口里的红心", "cost": "追心偏离中心可能撞柱" },
+    { "atSec": 15, "choice": "吃宝石开护盾，还是保持普通飞行", "cost": "护盾期间强制直线，可能撞上缺口外的柱" },
+    { "atSec": 22, "choice": "是否连续追 3 颗星触发狂热", "cost": "追星会偏离安全航线" },
+    { "atSec": 30, "choice": "岩石门：硬穿更窄缺口还是等护盾", "cost": "岩石缺口更窄，失败掉身体节" },
+    { "atSec": 45, "choice": "满身时吃心只加分，是否为了连击去抢", "cost": "偏离航线增加风险" },
+    { "atSec": 70, "choice": "继续冲高分还是保守保命", "cost": "速度随分数上升，越来越难" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "基础水晶缺口门" },
+    { "index": 2, "newElement": "岩石门（更窄更宽，+3 分）" },
+    { "index": 3, "newElement": "连击倍率系统" },
+    { "index": 4, "newElement": "三星狂热（无敌 + 磁吸 + 双倍分）" },
+    { "index": 5, "newElement": "速度接近上限" },
+    { "index": 6, "newElement": "全要素混合冲刺" }
+  ],
+  "upgrades": [
+    { "id": "heart", "kind": "rule" },
+    { "id": "shield-gem", "kind": "rule" },
+    { "id": "star-fever", "kind": "rule" },
+    { "id": "combo-multiplier", "kind": "rule" },
+    { "id": "magnet-range", "kind": "stat" },
+    { "id": "cruise-speed", "kind": "stat" },
+    { "id": "body-cap", "kind": "stat" },
+    { "id": "invincible-window", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 3, "firstSuccessSec": 5, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

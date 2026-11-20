@@ -1,0 +1,85 @@
+{
+  "game": "spider-ball-web",
+  "generatedAt": "2026-11-20T11:48:36.861Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 6.75,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘SPIDER BALL WEB’与副标题间距过小，略显拥挤",
+        "星标计数‘★ 0 / 12’字体偏小，对比度不足，弱光下可能难辨",
+        "右上角语言选择框无明确选中状态指示（如高亮边框），易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘开始’按钮",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘蛛网弹球’发光效果过强，导致部分笔画边缘模糊，影响远距离辨识",
+        "星标计数‘0 / 12’字号偏小，与主标题对比度不足，易被忽略",
+        "右上角语言切换框无明确选中状态指示（如下拉箭头或高亮），交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央发光点发射弹珠",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色五边形目标（标2）与蓝色六边形+号图标视觉相似，易混淆功能",
+        "部分目标数字（如左上1号球）被红色小圆点轻微遮挡，影响辨识",
+        "底部弹珠队列与发射点光晕融合，边界略模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Retry”按钮重新开始关卡",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘Web Cleared!’文字与星星评分区域无明确视觉层级区分，易误读为标题而非状态反馈",
+        "左上角Level/Balls/Targets/Score信息字号过小且颜色偏淡（灰紫），在深背景中对比度不足",
+        "底部两个小圆点（可能为进度指示）位置模糊、无标签，功能不明"
+      ]
+    }
+  ]
+}

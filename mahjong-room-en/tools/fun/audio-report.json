@@ -1,0 +1,264 @@
+{
+  "game": "mahjong-room-en",
+  "generatedAt": "2026-11-20T11:47:21.273Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds≈38.4",
+      "ok": true,
+      "loopSeconds": 38.4,
+      "bpm": 100,
+      "bars": 16
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 38.9
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.022444332781280225
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.022687308360625432
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.01952990509720146
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.13693828880786896
+    },
+    {
+      "name": "sfx-draw-rms>0.01",
+      "ok": true,
+      "rms": 0.02408649888137933
+    },
+    {
+      "name": "sfx-draw-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.033605442176870746
+    },
+    {
+      "name": "sfx-draw-peak<=0.98",
+      "ok": true,
+      "peak": 0.09129177033901215
+    },
+    {
+      "name": "sfx-discard-rms>0.01",
+      "ok": true,
+      "rms": 0.0244800918315893
+    },
+    {
+      "name": "sfx-discard-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.044875283446712017
+    },
+    {
+      "name": "sfx-discard-peak<=0.98",
+      "ok": true,
+      "peak": 0.1045864000916481
+    },
+    {
+      "name": "sfx-peng-rms>0.01",
+      "ok": true,
+      "rms": 0.022299910500709452
+    },
+    {
+      "name": "sfx-peng-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.10564625850340136
+    },
+    {
+      "name": "sfx-peng-peak<=0.98",
+      "ok": true,
+      "peak": 0.06344909965991974
+    },
+    {
+      "name": "sfx-gang-rms>0.01",
+      "ok": true,
+      "rms": 0.015899915297559776
+    },
+    {
+      "name": "sfx-gang-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.1746485260770975
+    },
+    {
+      "name": "sfx-gang-peak<=0.98",
+      "ok": true,
+      "peak": 0.07318881899118423
+    },
+    {
+      "name": "sfx-hu-rms>0.01",
+      "ok": true,
+      "rms": 0.01781956481648419
+    },
+    {
+      "name": "sfx-hu-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.3241950113378685
+    },
+    {
+      "name": "sfx-hu-peak<=0.98",
+      "ok": true,
+      "peak": 0.08282612264156342
+    },
+    {
+      "name": "sfx-energy-rms>0.01",
+      "ok": true,
+      "rms": 0.019978924924643003
+    },
+    {
+      "name": "sfx-energy-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.06430839002267574
+    },
+    {
+      "name": "sfx-energy-peak<=0.98",
+      "ok": true,
+      "peak": 0.07384751737117767
+    },
+    {
+      "name": "sfx-lucky-rms>0.01",
+      "ok": true,
+      "rms": 0.02019109501580215
+    },
+    {
+      "name": "sfx-lucky-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.19385487528344672
+    },
+    {
+      "name": "sfx-lucky-peak<=0.98",
+      "ok": true,
+      "peak": 0.07090835273265839
+    },
+    {
+      "name": "sfx-win-rms>0.01",
+      "ok": true,
+      "rms": 0.020290344490177355
+    },
+    {
+      "name": "sfx-win-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "name": "sfx-win-peak<=0.98",
+      "ok": true,
+      "peak": 0.09354979544878006
+    },
+    {
+      "name": "sfx-lose-rms>0.01",
+      "ok": true,
+      "rms": 0.03884571553561059
+    },
+    {
+      "name": "sfx-lose-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.20517006802721088
+    },
+    {
+      "name": "sfx-lose-peak<=0.98",
+      "ok": true,
+      "peak": 0.149431049823761
+    },
+    {
+      "name": "unmapped-event-silent",
+      "ok": true,
+      "rms": 0
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 38.4,
+      "bpm": 100,
+      "bars": 16,
+      "duration": 38.9,
+      "rms": 0.022444332781280225,
+      "peak": 0.13693828880786896,
+      "headRms": 0.022687308360625432,
+      "spliceRms": 0.01952990509720146
+    },
+    {
+      "kind": "sfx",
+      "name": "draw",
+      "event": "draw",
+      "rms": 0.02408649888137933,
+      "peak": 0.09129177033901215,
+      "activeDuration": 0.033605442176870746
+    },
+    {
+      "kind": "sfx",
+      "name": "discard",
+      "event": "discard",
+      "rms": 0.0244800918315893,
+      "peak": 0.1045864000916481,
+      "activeDuration": 0.044875283446712017
+    },
+    {
+      "kind": "sfx",
+      "name": "peng",
+      "event": "peng",
+      "rms": 0.022299910500709452,
+      "peak": 0.06344909965991974,
+      "activeDuration": 0.10564625850340136
+    },
+    {
+      "kind": "sfx",
+      "name": "gang",
+      "event": "gang",
+      "rms": 0.015899915297559776,
+      "peak": 0.07318881899118423,
+      "activeDuration": 0.1746485260770975
+    },
+    {
+      "kind": "sfx",
+      "name": "hu",
+      "event": "hu",
+      "rms": 0.01781956481648419,
+      "peak": 0.08282612264156342,
+      "activeDuration": 0.3241950113378685
+    },
+    {
+      "kind": "sfx",
+      "name": "energy",
+      "event": "energy",
+      "rms": 0.019978924924643003,
+      "peak": 0.07384751737117767,
+      "activeDuration": 0.06430839002267574
+    },
+    {
+      "kind": "sfx",
+      "name": "lucky",
+      "event": "lucky",
+      "rms": 0.02019109501580215,
+      "peak": 0.07090835273265839,
+      "activeDuration": 0.19385487528344672
+    },
+    {
+      "kind": "sfx",
+      "name": "win",
+      "event": "win",
+      "rms": 0.020290344490177355,
+      "peak": 0.09354979544878006,
+      "activeDuration": 0.4546485260770975
+    },
+    {
+      "kind": "sfx",
+      "name": "lose",
+      "event": "lose",
+      "rms": 0.03884571553561059,
+      "peak": 0.149431049823761,
+      "activeDuration": 0.20517006802721088
+    }
+  ]
+}

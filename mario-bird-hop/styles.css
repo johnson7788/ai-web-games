@@ -1,0 +1,283 @@
+/* MARIO BIRD HOP · 霓虹街机风（零外链） */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #05070f;
+  color: #eaf6ff;
+  font-family: 'Courier New', 'PingFang SC', 'Hiragino Sans', 'Segoe UI', 'Microsoft YaHei', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#game-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 16/9;
+  background: #070a18;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD（顶部不透明条，不遮玩法） ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background: #0b1024;
+  border-bottom: 2px solid #00e5ff;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+  z-index: 5;
+  gap: 8px;
+}
+.hud-left, .hud-right { display: flex; align-items: center; gap: 8px; }
+.hud-pill {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #131a38;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: #d7fbff;
+  white-space: nowrap;
+}
+.hud-pill.combo { border-color: #ff3df0; color: #ffd7fb; background: #2a1230; }
+.hud-pill.stars { border-color: #ffd54a; color: #fff2b0; background: #2a2208; }
+.hud-goal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #37ff7e;
+  letter-spacing: 1px;
+}
+.goal-track {
+  display: inline-block;
+  width: 90px;
+  height: 8px;
+  border-radius: 999px;
+  background: #10162e;
+  border: 1px solid rgba(55, 255, 126, 0.5);
+  overflow: hidden;
+}
+#goal-fill { display: block; height: 100%; width: 0; background: #37ff7e; transition: width 0.2s; }
+.hud-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 229, 255, 0.5);
+  background: #131a38;
+  color: #d7fbff;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.hud-btn:hover { background: #1c2650; }
+
+/* ---------- 通用屏幕 ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at 50% 30%, #141a3e 0%, #070a18 70%);
+  z-index: 10;
+  text-align: center;
+}
+.screen h1 {
+  font-size: 3rem;
+  margin: 0.2rem 0 0.4rem;
+  color: #ff3df0;
+  text-shadow: 0 0 18px #ff3df0, 0 0 40px #ff3df0;
+  letter-spacing: 2px;
+}
+.screen h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #ff3df0; text-shadow: 0 0 14px #ff3df0; }
+.screen .subtitle { font-size: 1.05rem; margin-bottom: 1.2rem; opacity: 0.85; color: #bdf6ff; letter-spacing: 1px; }
+.screen button {
+  padding: 13px 36px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  background: #ff3df0;
+  color: #160014;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 0.8rem;
+  box-shadow: 0 0 20px rgba(255, 61, 240, 0.6);
+}
+.screen button:hover { background: #ff6bf5; }
+.screen .btn-ghost { background: transparent; color: #d7fbff; border: 2px solid #00e5ff; box-shadow: none; }
+
+.lang-select {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  padding: 6px 12px;
+  background: #0b1024;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.title-bird { font-size: 4rem; filter: drop-shadow(0 0 14px #ff3df0); margin-bottom: 0.2rem; }
+.total-stars { font-size: 1.1rem; color: #ffd54a; margin-bottom: 0.4rem; letter-spacing: 3px; }
+
+/* ---------- 结算屏 ---------- */
+#screen-result h2.lose { color: #ff5a3c; text-shadow: 0 0 14px #ff5a3c; }
+.win-stars { font-size: 2.6rem; letter-spacing: 8px; color: #ffd54a; margin-bottom: 0.4rem; }
+.win-stars em { display: block; font-style: normal; font-size: 1rem; color: #37ff7e; letter-spacing: 2px; }
+.win-meta { font-size: 1.1rem; color: #d7fbff; margin-bottom: 0.4rem; }
+.win-best { font-size: 1rem; color: #ffd54a; margin-bottom: 0.4rem; }
+.win-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- 触屏控制（底部，≥44px，仅触屏显示） ---------- */
+#touch-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 74px;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 16px 10px;
+  z-index: 6;
+  pointer-events: none;
+}
+#touch-controls > div { pointer-events: auto; display: flex; gap: 12px; }
+#touch-controls button {
+  width: 60px;
+  height: 56px;
+  border-radius: 16px;
+  border: 2px solid #00e5ff;
+  background: rgba(11, 16, 36, 0.82);
+  color: #00e5ff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: none;
+}
+#btn-jump {
+  width: 96px !important;
+  background: rgba(255, 61, 240, 0.85) !important;
+  border-color: #ff3df0 !important;
+  color: #160014 !important;
+}
+@media (pointer: coarse) {
+  #touch-controls { display: flex; }
+}
+
+/* ---------- 竖屏提示（触屏竖屏显示，可跳过） ---------- */
+#rotate-screen { display: none; }
+@media (orientation: portrait) and (pointer: coarse) {
+  #rotate-screen {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 10, 24, 0.92);
+  }
+}
+#rotate-screen .rotate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 34px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #141a3e, #0e1230);
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+  text-align: center;
+}
+#rotate-screen .rotate-icon { font-size: 3rem; animation: rotate-tip 2.2s ease-in-out infinite; }
+@keyframes rotate-tip { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(90deg); } }
+#rotate-screen p { color: #eaffff; font-size: 1.1rem; font-weight: 700; }
+#btn-rotate-skip {
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: none;
+  background: #ffb300;
+  color: #2a1c00;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ---------- 教程（卡片固定底部居中） ---------- */
+#tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(5, 7, 15, 0.55);
+}
+#tut-spotlight { display: none; }
+#tut-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  width: 460px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #10162e;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 26px rgba(0, 229, 255, 0.5);
+  text-align: center;
+}
+#tut-card h3 { color: #ff3df0; margin-bottom: 8px; font-size: 1.1rem; text-shadow: 0 0 10px #ff3df0; }
+#tut-card p { color: #eaf6ff; font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px; }
+.tut-btns { display: flex; justify-content: center; gap: 12px; }
+.tut-btns button {
+  padding: 8px 20px;
+  border-radius: 12px;
+  border: 2px solid #00e5ff;
+  background: transparent;
+  color: #d7fbff;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+}
+.tut-btns #tut-next { background: #ff3df0; border-color: #ff3df0; color: #160014; }
+@media (max-width: 900px) {
+  #tut-card { width: auto; max-width: 92vw; bottom: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #rotate-screen .rotate-icon { animation: none; }
+  * { transition: none !important; animation: none !important; }
+}

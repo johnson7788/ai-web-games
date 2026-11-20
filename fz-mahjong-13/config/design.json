@@ -1,0 +1,38 @@
+{
+  "slug": "fz-mahjong-13",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹牌桌上与三位 AI 对决福州麻将：抓牌、吃碰杠、凑胡型，用金币道具扭转牌运，赢星连胜。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "discard", "cost": "打出一张牌，可能喂牌给对手", "feedback": ["sfx", "tileGlow", "discardAnim"], "combinesWith": ["claim"] },
+    { "name": "claim", "cost": "亮出组合暴露手牌，并放弃其它选择", "feedback": ["sfx", "meldGlow", "handReveal"], "combinesWith": ["discard"] },
+    { "name": "useItem", "cost": "消耗金币 / 本局道具次数", "feedback": ["sfx", "coinFly", "highlight"], "combinesWith": ["discard"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "首张打哪张：拆对子还是孤张", "cost": "打错会喂牌给下家" },
+    { "atSec": 20, "choice": "上家打出可吃/碰的牌：吃还是碰", "cost": "亮牌 + 改牌型方向" },
+    { "atSec": 40, "choice": "是否杠：换一次摸牌机会", "cost": "让下家多摸一张" },
+    { "atSec": 60, "choice": "用金币换金还是摸底", "cost": "消耗金币" },
+    { "atSec": 90, "choice": "听牌后是否冒险换听更大番型", "cost": "可能放炮" },
+    { "atSec": 120, "choice": "胡还是等自摸/大番", "cost": "对手可能先胡" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "基础吃碰杠胡（第一局，凑 5 面子 + 1 对）" },
+    { "index": 2, "newElement": "金币道具（提示 / 换金 / 摸底）" },
+    { "index": 3, "newElement": "连胜连击 + 高番追分（三头金 / 金雀）" }
+  ],
+  "upgrades": [
+    { "id": "hint", "kind": "rule" },
+    { "id": "reJoker", "kind": "rule" },
+    { "id": "backDraw", "kind": "rule" },
+    { "id": "starBonus", "kind": "rule" },
+    { "id": "streakMult", "kind": "rule" },
+    { "id": "luckBoost", "kind": "rule" },
+    { "id": "coinGain", "kind": "stat" },
+    { "id": "fasterDeal", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "newBuild", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 60, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

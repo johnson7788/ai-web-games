@@ -1,0 +1,38 @@
+{
+  "slug": "snakes-ladders-classic",
+  "genre": "puzzle",
+  "oneLiner": "Race two neon rivals to cell 47 — roll dice, ride ladders, dodge snakes, grab gems, win 3 stars.",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "roll", "cost": "ends your turn, and a 6 near the finish can overshoot and bounce", "feedback": ["sfx", "dice-flash", "token-hop"], "combinesWith": ["boost"] },
+    { "name": "boost", "cost": "gems are scarce (one per cell, collected once)", "feedback": ["sfx", "sparkle", "token-slide"], "combinesWith": ["roll"] },
+    { "name": "plan", "cost": "reading the board costs time while rivals advance", "feedback": ["highlight", "hint"], "combinesWith": ["roll"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "roll now or wait to watch the first rival move", "cost": "waiting gives rivals a head start" },
+    { "atSec": 12, "choice": "ride the ladder at 16 or risk landing on the 17 snake", "cost": "the 16/17 fork: climb or slide back" },
+    { "atSec": 22, "choice": "push for a 6 for an extra turn or play safe", "cost": "a 6 near the finish can overshoot and bounce" },
+    { "atSec": 35, "choice": "chase a gem off your line or take the direct path", "cost": "the detour lets rivals close the gap" },
+    { "atSec": 50, "choice": "hold for a perfect 47 or overshoot and bounce", "cost": "waiting wastes the turn" },
+    { "atSec": 70, "choice": "gamble on the 45 snake zone or slow advance", "cost": "a snake bite sends you back to 26" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "ladders & snakes climb/slide" },
+    { "index": 2, "newElement": "rock stun (skip a turn)" },
+    { "index": 3, "newElement": "gem boost + lucky-6 combo" }
+  ],
+  "upgrades": [
+    { "id": "lucky6", "kind": "rule" },
+    { "id": "gem-boost", "kind": "rule" },
+    { "id": "rock-armor", "kind": "rule" },
+    { "id": "snake-dodge", "kind": "rule" },
+    { "id": "double-step", "kind": "stat" },
+    { "id": "start-lead", "kind": "stat" },
+    { "id": "extra-turn", "kind": "stat" },
+    { "id": "speed-rivals", "kind": "stat" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 60, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

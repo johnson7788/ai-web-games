@@ -1,0 +1,37 @@
+{
+  "slug": "mario-bird-hop",
+  "genre": "platformer",
+  "oneLiner": "玩家操控霓虹小鸟在平台间跳跃，顶箱吃币、踩怪越刺，一路冲向终点旗帜。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "move", "cost": "把身体推向障碍方向，选错方向就是送命", "feedback": ["trail", "sfx"], "combinesWith": ["jump"] },
+    { "name": "jump", "cost": "commit 一段抛物线，时机错就撞尖刺/掉坑", "feedback": ["sfx", "squash"], "combinesWith": ["move"] }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "继续向右冲，还是先跳上平台拿星", "cost": "冲则漏星，跳则可能撞尖刺" },
+    { "atSec": 8, "choice": "顶破头顶箱子拿金币，还是绕过", "cost": "顶箱要跳，落点可能有怪" },
+    { "atSec": 15, "choice": "踩怪还是跳过怪", "cost": "踩怪有分但时机错会撞上" },
+    { "atSec": 25, "choice": "吃护盾硬闯尖刺，还是绕路", "cost": "绕路费时，硬闯耗一次护盾" },
+    { "atSec": 40, "choice": "跳上岔路吃磁铁聚币，还是直接跑", "cost": "磁铁在高处，要额外冒险" },
+    { "atSec": 60, "choice": "满速冲落岩区，还是等安全窗口", "cost": "冲则可能被砸" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "金币与可顶破的箱子" },
+    { "index": 2, "newElement": "尖刺与踩敌" },
+    { "index": 3, "newElement": "落岩与磁铁/护盾道具" }
+  ],
+  "upgrades": [
+    { "id": "magnet", "kind": "rule" },
+    { "id": "shield", "kind": "rule" },
+    { "id": "doubleJump", "kind": "rule" },
+    { "id": "stompBoost", "kind": "rule" },
+    { "id": "speed1", "kind": "stat" },
+    { "id": "coinValue", "kind": "stat" },
+    { "id": "jumpPower", "kind": "stat" },
+    { "id": "comboWindow", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

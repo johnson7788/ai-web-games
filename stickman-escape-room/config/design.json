@@ -1,0 +1,117 @@
+{
+  "slug": "stickman-escape-room",
+  "genre": "puzzle",
+  "oneLiner": "霓虹密室里，你操纵火柴人在下坠的激光天花板压扁你之前，站进唯一发光的安全缺口——捡宝石、叠连击、躲熔岩，撑过 8 个房间逃出生天。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "倒计时持续流逝，每走一列就少一秒观察时间；为了捡宝石离开安全缺口，可能被天花板追上身",
+      "feedback": ["sfx", "footstepFlash", "laneHighlight"],
+      "combinesWith": ["collect"]
+    },
+    {
+      "name": "boost",
+      "cost": "每关只有一次冲刺，跳两列；跳过头或落在熔岩上都会把自己送进死局",
+      "feedback": ["sfx", "speedTrail", "screenNudge"],
+      "combinesWith": ["collect", "move"]
+    },
+    {
+      "name": "collect",
+      "cost": "宝石/护盾/减速只刷在随机柱子上，往往离安全缺口很远；去捡就得放弃提前就位的那颗星",
+      "feedback": ["sfx", "sparkleBurst", "comboRing"],
+      "combinesWith": ["move", "boost"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "天花板露出两个缺口：站到近的那个，还是赌远的那个旁边有宝石",
+      "cost": "近的稳但没分；远的可能捡到宝石，也可能来不及"
+    },
+    {
+      "atSec": 8,
+      "choice": "宝石刷在你和安全缺口之间的柱子上：绕一下捡它，还是直接去缺口",
+      "cost": "绕路燃烧倒计时，晚一秒就位就少一颗星"
+    },
+    {
+      "atSec": 15,
+      "choice": "一面塌落的岩石墙挡在边上：用唯一的冲刺跳过它，还是绕开走",
+      "cost": "冲刺每关只有一次，用了后面就没保命位移"
+    },
+    {
+      "atSec": 25,
+      "choice": "护盾刷在熔岩旁边的柱子上：冲过去拿护盾，还是留在安全缺口",
+      "cost": "护盾能挡一次压扁，但踩错熔岩直接结束"
+    },
+    {
+      "atSec": 40,
+      "choice": "连击已经到 3：去捡宝石把分数堆更高，还是稳拿两星",
+      "cost": "贪心可能把整局连击葬送掉"
+    },
+    {
+      "atSec": 60,
+      "choice": "天花板开始下落时减速道具才出现：花掉唯一的冲刺去捡，还是提前就位换星",
+      "cost": "冲刺捡道具 = 放弃提前就位那颗星；不捡 = 天花板更快"
+    },
+    {
+      "atSec": 90,
+      "choice": "三个缺口里有一个踩上去会塌：在下落前辨认出真正安全的那一列",
+      "cost": "看走眼就是被压扁"
+    },
+    {
+      "atSec": 110,
+      "choice": "连击断了一次：立刻走高风险宝石路线把分追回来，还是稳住节奏先活着",
+      "cost": "激进可能连续翻车；保守会落后目标分"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "两个发光安全缺口，学会在天花板落下前站位" },
+    { "index": 2, "newElement": "倒计时变短，宝石出现" },
+    { "index": 3, "newElement": "岩石墙（边角柱被堵死，不能站）" },
+    { "index": 4, "newElement": "熔岩地板（踩上它时天花板落下即塌陷）" },
+    { "index": 5, "newElement": "护盾与减速道具加入" },
+    { "index": 6, "newElement": "只剩一个安全缺口" },
+    { "index": 7, "newElement": "岩石墙出现在走廊中段，逼你冲刺跨越" },
+    { "index": 8, "newElement": "最快下落速度 + 全道具，终局大门" }
+  ],
+  "upgrades": [
+    { "id": "gemPickup", "kind": "stat", "desc": "宝石 +10 分" },
+    { "id": "shieldPickup", "kind": "rule", "desc": "护盾：自动挡下一次天花板压扁" },
+    { "id": "slowPickup", "kind": "rule", "desc": "减速：一次性放缓本次天花板下落" },
+    { "id": "boostMove", "kind": "rule", "desc": "冲刺：每关一次跨两列位移，可越过岩石" },
+    { "id": "comboScore", "kind": "rule", "desc": "连击：连续存活让存活分 × 连击数" },
+    { "id": "comboStar", "kind": "rule", "desc": "连击 ≥3 时存活额外 +1 星" },
+    { "id": "settleStar", "kind": "rule", "desc": "天花板落下前已就位，额外 +1 星" },
+    { "id": "rockWalls", "kind": "rule", "desc": "岩石墙堵住边角/中段柱，改变移动路线" },
+    { "id": "lavaFloor", "kind": "rule", "desc": "熔岩柱在压顶时塌陷，制造假缺口" },
+    { "id": "fasterCeiling", "kind": "stat", "desc": "越往后天花板下落越快" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

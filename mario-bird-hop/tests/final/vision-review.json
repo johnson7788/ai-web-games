@@ -1,0 +1,133 @@
+{
+  "game": "mario-bird-hop",
+  "generatedAt": "2026-11-20T11:51:25.020Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7,
+    "silhouette": 6.714285714285714,
+    "style_consistent": 8.714285714285714
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角语言选择框边框为亮青色，与主霓虹粉风格略有冲突，但未影响可读性",
+        "星星图标与分数 '0 / 9' 字体偏小，远距离可能辨识度略低",
+        "标题 'MARIO BIRD HOP' 中 'MARIO' 与 'BIRD HOP' 间距稍大，视觉重心略分散"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击粉色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "语言切换框位于右上角，边框为亮蓝，与深背景对比过强，可能分散注意力",
+        "‘霓虹街机平台跳跃’副标题字号偏小，弱光环境下辨识度略低",
+        "星星图标与分数‘0 / 9’间距紧凑，小屏可能误读为‘0/9’无空格"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角红色或紫色角色开始游戏",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角两个角色大小相近、颜色对比弱，新手难辨主控角色",
+        "中央问号方块无明确交互提示（如闪烁/光晕），是否可点不明确",
+        "右上角绿色三角形‘GOAL’指示器与背景星点融合度高，远距离易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该点“Next Level”按钮继续游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星中仅第一颗为实心，但无明确说明是否代表3星全得；易引发歧义",
+        "‘SCORE 0 · ○ 0’中圆圈符号语义不明（是目标？剩余？），未标注单位或含义",
+        "‘BEST 0’字体过小且颜色偏黄，在深蓝背景下对比度不足，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-level2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕右侧绿色三角形开始游戏",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部红色三角形障碍物与玩家角色（左下紫色鸟）间距过近，易误触",
+        "中央问号方块无明确交互提示，玩家可能忽略",
+        "右上角‘GOAL’进度条为空且无单位说明，目标距离不直观"
+      ]
+    },
+    {
+      "shot": "tests/final/05-level3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的黄色问号方块",
+      "readable": 4,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标（GOAL）进度条为空且无明确终点位置，玩家难以判断目标在哪",
+        "底部角色与多个黄色圆点视觉相似，易混淆可交互物与障碍物",
+        "问号方块无提示说明其功能，新手无法理解其作用"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角粉色 JUMP 按钮开始跳跃",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下彩色小球）与左下方向按钮部分重叠，可能误触",
+        "黄色问号方块与下方圆点间距过近，易混淆为可收集物",
+        "网格背景过密且亮度偏低，影响中远距离物体辨识"
+      ]
+    }
+  ]
+}

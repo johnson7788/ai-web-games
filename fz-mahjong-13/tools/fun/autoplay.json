@@ -1,0 +1,56 @@
+{
+  "game": "fz-mahjong-13",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 1,
+      "durationSec": 34.18,
+      "firstInputSec": 0.52,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 12.37,
+      "deaths": 2,
+      "actions": 24,
+      "idleSec": 0,
+      "maxEventGapSec": 0.83,
+      "uniqueEvents": 10,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 15.55,
+      "firstInputSec": 0.52,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "actions": 6,
+      "idleSec": 0,
+      "maxEventGapSec": 0.83,
+      "uniqueEvents": 9,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 60,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

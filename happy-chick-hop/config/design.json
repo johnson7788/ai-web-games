@@ -1,0 +1,100 @@
+{
+  "slug": "happy-chick-hop",
+  "genre": "puzzle",
+  "oneLiner": "移动手指瞄准出生的小动物，点一下丢进鸡窝；同类相撞会孵化成更大的一只，一路合并到金鸡夺冠，但别让鸡窝堆过顶上的红线。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "瞄准期间对象悬在出生点，越久越挡视线；手一抖就会偏离想合并的目标，落在错误的缝隙里",
+      "feedback": ["sfx", "guideLine", "shadowDrop"],
+      "combinesWith": ["drop"]
+    },
+    {
+      "name": "drop",
+      "cost": "丢下去就定型：落点被岩石或错位同类卡住时，只能靠下一只去救，越堆越高逼近红线",
+      "feedback": ["sfx", "particleBurst", "screenShake"],
+      "combinesWith": ["aim"]
+    },
+    {
+      "name": "smash",
+      "cost": "锤子每 4 次合并才攒 1 把（上限 3 把），砸错对象浪费一次珍贵的清理机会",
+      "feedback": ["sfx", "shatterParticles", "hudCount"],
+      "combinesWith": ["drop"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "第一只蛋出生：直接丢中间，还是丢到墙边让后面贴边排",
+      "cost": "丢中间 = 底部摊开难控制；丢墙边 = 墙会成为后面堆叠的支点"
+    },
+    {
+      "atSec": 18,
+      "choice": "手上是小鸡，场上已有一只小鸡但旁边有石头：赌它们能吸到一起合并，还是先丢去空当",
+      "cost": "赌合并 = 万一被石头弹开，两只都浪费；丢空当 = 小鸡被压在下面再也够不着"
+    },
+    {
+      "atSec": 35,
+      "choice": "锤子就 1 把：砸掉堵在中间的大石头，还是留着砸一个即将顶到红线的大家伙",
+      "cost": "砸石头 = 腾出合并空间但少一张保命牌；留着 = 石头继续挡路"
+    },
+    {
+      "atSec": 55,
+      "choice": "连击已到 x2：继续按原计划丢同类追高倍，还是停下连击节奏、先清低处",
+      "cost": "追连击 = 堆叠失控风险陡增；停下 = 分数增长变慢"
+    },
+    {
+      "atSec": 80,
+      "choice": "鸡窝左半边已经很高：把新对象丢去右边平衡，还是丢左半边凑一次同阶合并",
+      "cost": "平衡 = 放弃眼前那次合并；凑合并 = 左边可能直接顶到红线"
+    },
+    {
+      "atSec": 120,
+      "choice": "离金鸡只差最后一次合并，但上方已经很挤：冒险再叠一只，还是用锤子清掉障碍再动手",
+      "cost": "冒险 = 可能当场堆爆判负；清障 = 多花时间且锤子见底"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础孵化：同阶两只合并成更大一只，第一只蛋落窝" },
+    { "index": 2, "newElement": "岩石占位：每 7 次投放出现一块不能合并的石头" },
+    { "index": 3, "newElement": "锤子清障 + 金鸡目标：每 4 次合并攒锤子，砸出通往金鸡的路" }
+  ],
+  "upgrades": [
+    { "id": "rockObstacle", "kind": "rule", "desc": "岩石进入出生队列，不可合并、只能锤掉，逼出落点规划" },
+    { "id": "hammerClear", "kind": "rule", "desc": "锤子道具解锁：可砸掉任意对象（含石头），改变堆叠拓扑" },
+    { "id": "comboMultiplier", "kind": "rule", "desc": "3 秒内连续合并触发连击，得分额外加成，鼓励连续操作" },
+    { "id": "stageGoal", "kind": "rule", "desc": "按孵化阶数推进三阶段，孵出 10 阶金鸡即夺冠结算" },
+    { "id": "nextPreview", "kind": "rule", "desc": "下一只出生对象提前可见，把当帧反应变成两步规划" },
+    { "id": "mergeCascade", "kind": "rule", "desc": "合并产物保留在碰撞点继续参与物理，高处合并能连锁掉落" },
+    { "id": "biggerSpawn", "kind": "stat", "desc": "出生池覆盖 0-4 阶，让高价值合并更早出现" },
+    { "id": "heavierTiers", "kind": "stat", "desc": "高阶对象半径更大、更占空间，后期容错更低" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "game": "snakes-ladders-classic",
+  "generatedAt": "2026-11-20T12:01:08.767Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "FAIL",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.8,
+    "style_consistent": 8.6
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [
+    "tests/final/tutorial-first.png: HUD 遮挡",
+    "tests/final/tutorial-replay.png: HUD 遮挡"
+  ],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Neon race to cell 47’文字与棋盘部分重叠，略显干扰",
+        "右上角问号框内无内容，可能为占位符未填充",
+        "玩家（红B）与起点树形图标位置紧邻，视觉区分稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "等待骰子结果，准备移动黄色玩家棋子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色玩家棋子（标'YOU'）与绿色路径线重叠，视觉优先级略低；",
+        "右侧‘Rolling...’按钮文字无背景，暗色背景下对比度偏低；",
+        "骰子显示4点但未标注数值，依赖图形识别，对色盲用户不友好"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角黄色的ROLL按钮掷骰子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家A（蓝圈）与绿色树形图标紧邻，视觉上易混淆身份",
+        "骰子区域下方‘Dice’标签字体过小且颜色偏暗，辨识度低",
+        "右上角‘Your turn’提示框无边框/背景，与深色背景对比不足"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的'Got it'按钮以确认教程提示",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": true,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡了部分棋盘格与路径线（如13-14格区域），影响路径判断",
+        "右下角'ROLL'按钮被弹窗部分覆盖，且未高亮显示当前可操作状态",
+        "‘? ’图标在深色背景上对比度偏低，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的'Got it'按钮以确认提示",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": true,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央弹窗遮挡棋盘关键区域（如蛇梯路径与玩家位置）",
+        "玩家标记（蓝色圆圈A）与 rival 标记（红/蓝圆点）对比度低，眯眼难区分",
+        "‘Neon race to cell 47’文字颜色偏淡，与背景对比不足"
+      ]
+    }
+  ]
+}

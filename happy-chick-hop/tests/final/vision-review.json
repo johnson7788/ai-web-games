@@ -1,0 +1,149 @@
+{
+  "game": "happy-chick-hop",
+  "generatedAt": "2026-11-20T11:43:46.395Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 8.5,
+    "style_consistent": 9.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-aim.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角的 Hammer 按钮（带红点提示）来操作锤子击打橙色小鸡",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Hammer 按钮右上角红点提示未标注功能，新手可能不解其意",
+        "橙色小鸡与红色虚线高度接近，视觉上易误判为已触线",
+        "蓝色球体位置偏高且无交互提示，作用不明"
+      ]
+    },
+    {
+      "shot": "tests/final/02-merge-field.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角 Hammer 工具按钮，准备敲击蓝色球使其下落触发连锁反应",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Hammer' 按钮右上角红点通知未标注功能，易被误认为错误提示",
+        "虚线轨迹与红色水平线重叠处视觉干扰，可能误导玩家判断碰撞点",
+        "底部两个球体（橙+蓝）紧贴，边界模糊，需更明确区分可交互对象"
+      ]
+    },
+    {
+      "shot": "tests/final/03-pile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角的 Hammer 按钮来砸球",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Stage 2 标签文字（绿色）与上方红色虚线重叠，轻微视觉干扰",
+        "左上角 '50 Best 0' 数字间距过小，易误读为 '50Best0'",
+        "锤子图标右上角红点通知未标注含义，可能引起困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/04-crowded.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角被黄色圆圈高亮的橙色小鸡（当前选中目标）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'Hammer' 按钮带红点数字2，但无明确提示其功能或剩余次数含义",
+        "紫色球体上的 '+250' 文字略小且靠近边缘，远距离可能辨识困难",
+        "顶部 COMBO x2.5 标签背景为橙色，与 GOAL 标签颜色冲突，轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/05-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击顶部红色小球（金鸡）使其下落击中下方目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘锤子’按钮右上角红点通知未对齐图标中心，略显突兀",
+        "橙色球体被虚线框包围但无明确交互提示，新手可能不确定是否可操作",
+        "目标‘金鸡’文字旁图标为鸡形但球体为圆形，语义轻微不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/06-merging.png",
+      "goal_visible": true,
+      "first_action_guess": "点击锤子按钮释放锤子砸中下方小鸡",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "COMBO! 文字轻微偏上，未严格居中于虚线路径",
+        "左上角 'Best 0' 字号过小，与主分数对比不协调",
+        "右上角 Hammer 按钮红点通知遮挡部分图标边缘"
+      ]
+    },
+    {
+      "shot": "tests/final/07-rocks.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部黄色三角形区域（可能是发射器或触发点）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Hammer' 按钮右上角红点通知未对齐图标中心，略显突兀",
+        "虚线轨迹与粉色球体轻微重叠，可能影响路径判断",
+        "左下角小灰球无表情/特征，与其他角色风格不一致（疑似未完成资产）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 Hammer 按钮（右上角带红点1的按钮）来操作角色",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Hammer 按钮红点1位置偏上，可能被误认为通知而非可用次数",
+        "目标 Golden Chick 与角色垂直对齐但无明显路径提示，新手可能不知需向上击打",
+        "角色蓝色球体与黄色光环对比度不足，眯眼时易与背景混淆"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "game": "chef-marie-serve",
+  "generatedAt": "2026-11-20T11:45:35.201Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 8.25,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角小人角色与柜台边缘对齐，可能被误认为不可交互；",
+        "‘1’按钮高亮但无明确状态说明（如‘ unlocked’），易混淆；",
+        "悬挂圆点装饰与标题文字间距过近，轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“开始”按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色轮廓较细、颜色偏暗（红灰配色），在棕色背景中辨识度偏低，影响silhouette得分",
+        "‘1’按钮高亮但下方小字模糊（疑似‘关卡1’），文字尺寸过小，影响可读性",
+        "顶部悬挂圆点装饰与游戏机制无关，略显干扰，且未对齐网格"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应向右移动以接住第一个下落的煎蛋",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角红色苹果状物体位置偏右且无明确交互提示，易误判为装饰",
+        "悬挂的棕色圆点（疑似障碍物）与背景网格线颜色接近，对比度偏低",
+        "目标计数'0/10'中斜杠与数字间距过小，轻微影响可读性"
+      ]
+    },
+    {
+      "shot": "tests/final/03-goal.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧棕色门上的白色圆点（或按方向键向右移动角色靠近门）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'0/10'进度条图标与文字间距过小，可能误读为'0/10'整体是数字而非目标计数",
+        "悬挂的棕色圆点（疑似障碍物）无明显动态提示，新手可能误判为可收集物",
+        "角色头顶白色圆点与鸡蛋外观相似，存在视觉混淆风险"
+      ]
+    }
+  ]
+}

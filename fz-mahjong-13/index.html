@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FZ MAHJONG 13</title>
+  <link rel="stylesheet" href="styles.css?v=fz13">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-joker" class="hud-pill hud-joker"></span>
+        <span id="hud-goal" class="hud-pill hud-goal"></span>
+        <span id="hud-round" class="hud-pill"></span>
+        <span id="hud-streak" class="hud-pill"></span>
+        <span id="hud-coins" class="hud-pill"></span>
+        <span id="hud-wall" class="hud-pill"></span>
+        <span id="hud-listen" class="hud-pill hidden"></span>
+      </div>
+      <div class="hud-right">
+        <button id="btn-hint" class="hud-btn" aria-label="Hint"></button>
+        <button id="btn-rejoker" class="hud-btn" aria-label="Re-Joker"></button>
+        <button id="btn-backdraw" class="hud-btn" aria-label="Back Draw"></button>
+        <button id="btn-howto" class="hud-btn" aria-label="Replay guide" data-tutorial-replay>?</button>
+        <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+        <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+        <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+      </div>
+    </div>
+
+    <div id="action-menu" class="hidden">
+      <button id="btn-chi" class="act-btn act-chi hidden">Chow</button>
+      <button id="btn-peng" class="act-btn act-peng hidden">Pong</button>
+      <button id="btn-gang" class="act-btn act-gang hidden">Kong</button>
+      <button id="btn-hu" class="act-btn act-hu hidden">Hu</button>
+      <button id="btn-pass" class="act-btn act-pass hidden">Pass</button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">FZ MAHJONG 13</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <p class="title-goal" id="title-goal"></p>
+      <div class="title-tiles" aria-hidden="true">
+        <span class="tt tt-dots"><b>1</b><i>筒</i></span>
+        <span class="tt tt-chars"><b>2</b><i>万</i></span>
+        <span class="tt tt-bamboo"><b>3</b><i>条</i></span>
+        <span class="tt tt-joker"><b>金</b></span>
+        <span class="tt tt-star"><b>★</b></span>
+      </div>
+      <div class="total-stars"><span id="stars-total"></span></div>
+      <button id="btn-start">Start</button>
+      <button id="btn-howto-title" class="btn-ghost" data-tutorial-replay></button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">Replay Guide</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="win-stars" id="result-stars"></div>
+      <div class="win-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Play Again</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger table</p>
+        <button id="btn-rotate-skip" onclick="document.getElementById('rotate-screen').style.display='none'">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=fz13"></script>
+</body>
+</html>

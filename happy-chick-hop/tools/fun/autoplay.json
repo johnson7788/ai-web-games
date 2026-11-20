@@ -1,0 +1,56 @@
+{
+  "game": "happy-chick-hop",
+  "genre": "puzzle",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "durationSec": 240.77,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 5.13,
+      "deaths": 0,
+      "actions": 268,
+      "idleSec": 0,
+      "maxEventGapSec": 2.52,
+      "uniqueEvents": 6,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "durationSec": 57.37,
+      "firstInputSec": 0.53,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 2.72,
+      "deaths": 1,
+      "actions": 336,
+      "idleSec": 0,
+      "maxEventGapSec": 1.55,
+      "uniqueEvents": 7,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "durationSec": 40.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 0,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ]
+}

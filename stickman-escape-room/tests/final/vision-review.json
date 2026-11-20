@@ -1,0 +1,85 @@
+{
+  "game": "stickman-escape-room",
+  "generatedAt": "2026-11-20T11:54:02.180Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.5,
+    "silhouette": 6,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮蓝色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 0,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "silhouette评分为0：当前为标题页，无角色/敌人/可交互物轮廓，无法评估 silhouette",
+        "右上角语言选择框边框与文字颜色对比度偏低（浅青色文字+浅青色边框），在深背景上略难辨识",
+        "‘How to play’按钮为描边样式，无填充，视觉权重低于‘Start’按钮，可能被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧绿色平台（当前角色正前方的可站立区域）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘STAND IN THE GREEN GAP’提示文字偏小且无背景衬底，暗背景下对比度不足",
+        "底部平台边缘发光效果与‘EXIT’箭头颜色相近（青绿），易混淆交互意图",
+        "角色下方平台无明显高亮或边界线，与空平台视觉区分弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-descent.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角播放按钮开始游戏",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'Room 1'等HUD文字与右侧图标间距过小，易误触",
+        "'HOLD!'提示无明确指向对象，新手可能不知需按住什么",
+        "底部平台中第4格（玩家脚下）与第9格（右出口）高亮样式相同，易混淆目标"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧绿色平台上的‘EXIT’箭头进入出口",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘STAND IN THE GREEN GAP’提示文字偏小且无背景，暗背景下对比度不足",
+        "左下角菱形图标与平台边缘重叠，可能误触或干扰路径判断",
+        "两个‘EXIT’标签位置对称但无方向指示，易混淆应选哪一侧"
+      ]
+    }
+  ]
+}
