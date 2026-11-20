@@ -1,0 +1,41 @@
+TITLE
+Brick Blitz — Free Kiln Brick Breaker Arcade Game
+
+CATEGORY
+Arcade
+
+TAGS
+brick breaker, breakout, arcade, ball, paddle, kiln, ceramic, casual, browser game, family friendly
+
+SHORT DESCRIPTION
+Fire a red-hot clay bead and smash the glaze-brick wall across three kilns in this free breakout-style arcade game.
+
+LONG DESCRIPTION
+BRICK BLITZ is a free breakout-style arcade game set inside a roaring pottery kiln. Slide your paddle to bounce a red-hot clay bead into a wall of glaze bricks and shatter every one of them before you run out of lives.
+
+Every brick has its own glaze: normal bricks break in one hit, hard stoneware darkens before it shatters, gold-glazed bricks pay out big points, and blast bricks explode the neighbors around them. Chain three hits without dropping the bead and the whole kiln bursts into KILN FIRE — a full-screen warm glow that speeds up the bead for a hot scoring streak.
+
+Catch falling glazes to widen your paddle, split into extra beads, or punch straight through bricks. Twelve handcrafted levels across three kilns — the Celadon, the Jun-Red and the Sky-Blue — add moving brick columns, a descending wall that ends the run if it reaches the floor, and a final blaze that stacks every rule at once.
+
+Three stars per level: clear the kiln, keep your lives, and chase a perfect firing. Easy to learn in ten seconds, tricky to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+窑火打砖 — 免费打砖块街机游戏
+
+CATEGORY
+街机
+
+TAGS
+打砖块, 弹球, 街机, 陶窑, 釉砖, 休闲, 益智, 全年龄, 网页游戏
+
+SHORT DESCRIPTION
+点燃陶窑，弹起烧红的陶珠，在三座窑里砸穿釉砖阵——一款免费的街机打砖块游戏。
+
+LONG DESCRIPTION
+《窑火打砖》是一款发生在陶窑里的免费街机打砖块游戏。左右滑动挡板，把一颗烧红的陶珠弹向釉砖阵，在生命耗尽前砸碎每一块砖。
+
+每块砖都有不同的釉：普通砖一击即碎，硬质石器砖会先变深色再碎裂，金釉砖给高分，炸窑砖则会把邻近的砖一起炸开。连续三次击打且不让陶珠落底，整座窑就会「窑火全开」——全屏暖光亮起，陶珠加速，打出一波炽热的连击。
+
+接住掉落的釉彩道具：加宽挡板、分裂多球、直接穿透砖块。十二个手工关卡横跨三座窑——青瓷窑、钧红窑、天青窑——移动砖列、缓缓下压的砖墙（压线判负）、以及叠加全部规则的最后终局大阵，层层升级。
+
+每关三星：清窑、保命、打出完美开窑。十秒上手，越玩越上瘾。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

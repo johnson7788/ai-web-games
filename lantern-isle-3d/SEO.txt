@@ -1,0 +1,11 @@
+TITLE: LANTERN ISLE
+CATEGORY: Adventure
+TAGS: 3D, third person, exploration, time management, atmospheric, low poly, island, storm, quest, npc, singleplayer, casual
+SHORT DESCRIPTION: The storm lands before dawn. Carry lanterns across a 3D island and light every lamp before the timer runs out.
+LONG DESCRIPTION: LANTERN ISLE is a third-person 3D island game about a lighthouse keeper racing an incoming storm. Pick up lanterns at the harbour, then walk the village, dunes, rocks, pine slope and cliff path to light every lamp post. Carrying weight slows you down and weakens your jump, gusts can tear lanterns out of your hands, and oil is limited, so every night forces real choices: the shortcut along the cliff or the safe village road, the big lighthouse lamp worth triple or two cheap lamps that build a combo, drop a lantern to run faster and leave that stretch of shore dark. Three islanders remember what you carried, dropped and lit, and hand out tasks that pay in oil, seconds and permanent upgrades. Five nights, one walkable island, AI-generated 3D props and a hand-rigged animated keeper, all running in the browser with no downloads. Controls: WASD to walk, Shift to run, Space to jump, E to pick up, R to light, F to drop, T to talk, mouse to look. Touch controls included.
+
+TITLE（中文）: 灯火之岛
+CATEGORY（中文）: 冒险
+TAGS（中文）: 3D, 第三人称, 探索, 时间管理, 氛围, 海岛, 风暴, 任务, NPC, 单人, 休闲
+SHORT DESCRIPTION（中文）: 风暴天亮前登岛。搬着灯走遍 3D 海岛，在计时结束前点亮每一盏灯。
+LONG DESCRIPTION（中文）: 《灯火之岛》是一款第三人称 3D 海岛游戏：你是灯塔岛的守灯人，要在风暴登岛前把全岛七盏灯点亮。从码头搬灯出发，穿过村道、沙丘、礁石、松林坡和崖顶栈道。负重会让你走得更慢、跳得更低，阵风会把手里的灯抢走，油又只够点有限的几盏——所以每一夜都是真实取舍：走崖边近路还是村内远路，点三倍分的主塔大灯还是点两盏攒连击，要不要丢灯提速、让那段海岸一直黑着。三个岛民会记住你搬了什么、丢了什么、点亮了哪里，并给出用油、用秒数、用永久成长结算的任务。五个夜晚、一座可行走的岛、AI 生成的 3D 道具与手工绑骨的动画角色，全部在浏览器里运行，无需下载。操作：WASD 移动，Shift 奔跑，空格跳跃，E 拾取，R 点灯，F 丢弃，T 交谈，鼠标转视角；移动端有虚拟摇杆。

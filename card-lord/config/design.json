@@ -1,0 +1,92 @@
+{
+  "slug": "card-lord",
+  "genre": "puzzle",
+  "oneLiner": "你在赛博牌桌上打 1v2 斗地主：叫分、加倍、选牌压上家，用记牌器算剩牌，用炸弹轰出全屏红光，一路升到牌王段位。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "bid",
+      "cost": "叫高分赢多输更多；加倍把胜负赌注翻倍",
+      "feedback": ["sfx", "chip-flash", "bid-banner"],
+      "combinesWith": ["read"]
+    },
+    {
+      "name": "play",
+      "cost": "出大牌可能被更大牌压掉；压牌会消耗你保底的强牌",
+      "feedback": ["sfx", "card-lift", "neon-glow"],
+      "combinesWith": ["read"]
+    },
+    {
+      "name": "read",
+      "cost": "盯着记牌器数剩牌，牺牲快速出牌的直觉时间",
+      "feedback": ["counter-highlight", "sfx"],
+      "combinesWith": ["bid", "play"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "叫 1/2/3 分还是不叫", "cost": "叫高了做地主，输了赔更大" },
+    { "atSec": 20, "choice": "叫分后是否加倍", "cost": "翻倍让这一局输赢都×2，上限 64" },
+    { "atSec": 35, "choice": "拆手上的顺子去压一张单牌，还是忍住", "cost": "拆顺毁掉一条成型连牌" },
+    { "atSec": 55, "choice": "用 2 压住地主的单牌，还是放队友走", "cost": "出掉 2 后你没了压单牌的大牌" },
+    { "atSec": 75, "choice": "剩一个炸弹，现在炸还是留着保底", "cost": "炸早了失去最后一张王炸级底牌" },
+    { "atSec": 95, "choice": "记牌器显示 2 还剩 3 张，是否冒险出小单", "cost": "小单大概率被 2 吃掉" },
+    { "atSec": 120, "choice": "地主只剩 2 张，顶大单还是继续出顺子", "cost": "顶单牌会打断自己的顺子" },
+    { "atSec": 150, "choice": "三带一带哪张单牌（带小牌还是拆对）", "cost": "带错会留下孤牌拖慢出完" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 40,
+    "twistSec": 35,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基本牌型：单/对/三/顺子，跟着上家出" },
+    { "index": 2, "newElement": "记牌器解锁：按点数显示剩余张数" },
+    { "index": 3, "newElement": "加倍解锁：叫分后可加倍，倍数×2 上限 64" },
+    { "index": 4, "newElement": "底分 +1：AI 开始带顺子领出" },
+    { "index": 5, "newElement": "AI 会攒炸弹并在关键轮炸出" },
+    { "index": 6, "newElement": "AI 读记牌器，避开你藏着的炸弹" },
+    { "index": 7, "newElement": "底分 +1：AI 会拆对子跟牌" },
+    { "index": 8, "newElement": "AI 会打出飞机带单/带对组合" },
+    { "index": 9, "newElement": "AI 接近最优，叫分更激进" },
+    { "index": 10, "newElement": "底分 +1：春天/反春天计分点亮" },
+    { "index": 11, "newElement": "AI 春天防守：地主低牌时农民顶大" },
+    { "index": 12, "newElement": "牌王终局：最高底分 + 最强 AI" }
+  ],
+  "upgrades": [
+    { "id": "cardCounter", "kind": "rule", "desc": "记牌器解锁：实时显示每种点数的剩余张数" },
+    { "id": "double", "kind": "rule", "desc": "加倍解锁：叫分后一圈加倍，×2 上限 64" },
+    { "id": "springSense", "kind": "rule", "desc": "春天判定：地主胜且农民一手未出 ×2" },
+    { "id": "antiSpring", "kind": "rule", "desc": "反春天判定：农民胜且地主只出一手 ×2" },
+    { "id": "bombWarning", "kind": "rule", "desc": "记牌器高亮还缺一张就成炸弹的点数" },
+    { "id": "aiPrediction", "kind": "rule", "desc": "AI 读记牌器，预测你手里的大牌" },
+    { "id": "baseUp", "kind": "stat", "desc": "底分 +1（胜利分数更高）" },
+    { "id": "timeComfort", "kind": "stat", "desc": "你的出牌思考提示更宽容" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "daily"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "炸弹出牌瞬间，整张牌桌被红色霓虹光浪扫过并震屏，四张牌像烙铁一样砸进牌池",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "赛博霓虹牌桌：程序化 Canvas 发光渲染（径向渐变/加法混合），UI 用 SVG/CSS 线框；BGM/音效程序化合成"
+}

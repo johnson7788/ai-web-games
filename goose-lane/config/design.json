@@ -1,0 +1,94 @@
+{
+  "slug": "goose-lane",
+  "genre": "arcade",
+  "oneLiner": "早高峰地铁上，社畜大鹅三车道自动前进：换道躲车、贪宝石、捡气球保命、红灯闸机停步等绿——12 站通勤，丝滑换乘一次白鸽飞过。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "switchLane",
+      "cost": "换道有 0.12s 冷却，且可能滑进障碍/错过宝石；连续换道打断停步",
+      "feedback": ["sfx", "lane-blink", "goose-tilt"],
+      "combinesWith": ["stop", "grab"]
+    },
+    {
+      "name": "stop",
+      "cost": "停步期间里程不涨、连续换道计数清零，且停住时无法换道躲车",
+      "feedback": ["sfx", "brake-dust", "gate-light"],
+      "combinesWith": ["switchLane"]
+    },
+    {
+      "name": "grab",
+      "cost": "为了吃宝石/气球偏离安全车道，可能撞上障碍",
+      "feedback": ["sfx", "sparkle", "counter-up"],
+      "combinesWith": ["switchLane"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一排车占中道：走左边安全还是右边贪宝石", "cost": "安全 vs 分数" },
+    { "atSec": 15, "choice": "宝石与气球分在两条车道：保命捡气球还是冲分捡宝石", "cost": "生存 vs 分数" },
+    { "atSec": 30, "choice": "前方红灯闸机：提前停步稳妥，还是贴到闸机边缘再停抢时间", "cost": "稳妥 vs 更快" },
+    { "atSec": 45, "choice": "窄缝只剩一条道且远端有宝石：冒险挤缝还是绕开", "cost": "风险 vs 资源" },
+    { "atSec": 65, "choice": "已叠满 2 个气球：硬扛一次碰撞去抢宝石串，还是留着气球保命", "cost": "消费保命 vs 囤资源" },
+    { "atSec": 85, "choice": "逆行外卖车逼近：守住当前道吃宝石还是立刻让开", "cost": "分数 vs 生存" },
+    { "atSec": 110, "choice": "闸机+车流同屏：先躲车再停，还是先停再等车过", "cost": "节奏取舍" },
+    { "atSec": 150, "choice": "连续换道 2 次了：再切一次触发丝滑换乘奖励，还是稳一手", "cost": "奖励 vs 失误风险" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "车流（单车道车辆）——教左右换道" },
+    { "index": 2, "newElement": "坑（pit）——占用车道的塌陷，需绕行" },
+    { "index": 3, "newElement": "窄缝（两条道被堵，只剩一条缝）" },
+    { "index": 4, "newElement": "闸机门（红灯停 1s 等绿 / 绿灯冲过）" },
+    { "index": 5, "newElement": "逆行外卖车（反向加速逼近）" },
+    { "index": 6, "newElement": "车流+坑+逆行车三合一混合" },
+    { "index": 7, "newElement": "气球补给线（气球密集，鼓励囤保命）" },
+    { "index": 8, "newElement": "夜班场景切换 + 窄缝+闸机组合" },
+    { "index": 9, "newElement": "逆行车+窄缝双威胁" },
+    { "index": 10, "newElement": "闸机迷宫（连续红绿灯）" },
+    { "index": 11, "newElement": "静车迷宫（多辆静车错落成迷宫）" },
+    { "index": 12, "newElement": "终点冲刺（满速 + 全障碍混编）" }
+  ],
+  "upgrades": [
+    { "id": "balloon", "kind": "rule", "desc": "捡气球可抵一次碰撞，最多叠 2 层（改失败判定）" },
+    { "id": "balloonShield", "kind": "rule", "desc": "2 层气球时近距擦肩（nearMiss）额外 +1 气球" },
+    { "id": "gateSkip", "kind": "rule", "desc": "绿灯闸机通过后 +2m 冲刺奖励" },
+    { "id": "smoothTransfer", "kind": "rule", "desc": "0.5s 内连续换道 3 次触发白鸽过场 + 里程奖励" },
+    { "id": "narrow", "kind": "rule", "desc": "第 3 站起引入双车道被堵的窄缝" },
+    { "id": "reverseCar", "kind": "rule", "desc": "第 5 站起引入反向加速的逆行外卖车" },
+    { "id": "gateRhythm", "kind": "rule", "desc": "红闸机停满 1s 即开，绿灯可直冲（节奏打破器）" },
+    { "id": "nightVision", "kind": "rule", "desc": "夜班场景边缘变暗、宝石更亮（视野规则）" },
+    { "id": "speedRamp", "kind": "stat", "desc": "速度随里程渐增（8→16 m/s）" },
+    { "id": "gemCombo", "kind": "stat", "desc": "宝石提供连击分加成" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "0.5 秒内连续换道 3 次，一只白鸽从大鹅头顶掠过，屏幕闪金——「丝滑换乘」瞬间",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "程序化 Canvas 矢量渲染：扁平几何大鹅 + 三场景色板（早高峰暖白/午后青/夜班蓝紫霓虹）；UI 用 CSS 玻璃面板；音频 WebAudio 程序化合成"
+}

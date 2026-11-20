@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="PENTA CARDS — build constellations, win on the Five Star in a 3-player cosmic card game.">
+  <meta name="theme-color" content="#071326">
+  <title>PENTA CARDS · Cosmic Card Table</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+
+    <div id="hud" class="hud hidden">
+      <div class="hud-left">
+        <div class="hud-stat"><span class="hud-label" data-i18n="hud.round">Round</span><b id="hud-round">1/12</b></div>
+        <div class="hud-stat"><span class="hud-label" data-i18n="hud.bet">Bet</span><b id="hud-bet">1</b></div>
+      </div>
+      <div class="hud-center">
+        <div class="hud-stat"><span class="hud-label" data-i18n="hud.chips">Chips</span><b id="hud-chips">20</b></div>
+      </div>
+      <div class="hud-right">
+        <div class="hud-stat"><span class="hud-label" data-i18n="hud.wall">Wall</span><b id="hud-wall">0</b></div>
+        <div class="hud-stat" id="hud-scene"><b id="hud-scene-name"></b></div>
+        <div class="hud-stat" id="hud-abilities"></div>
+      </div>
+    </div>
+
+    <div id="status" class="status hidden"></div>
+
+    <div id="action-bar" class="action-bar hidden">
+      <button id="btn-draw" class="btn btn-primary" data-i18n="act.draw">Draw</button>
+      <button id="btn-stargaze" class="btn btn-primary" data-i18n="act.stargaze">Stargaze</button>
+      <button id="btn-swap" class="btn btn-primary" data-i18n="act.swap">Swap</button>
+      <button id="btn-hu" class="btn btn-win" data-i18n="act.hu">Hu</button>
+      <button id="btn-gang" class="btn btn-ghost" data-i18n="act.gang">Kong</button>
+      <button id="btn-peng" class="btn btn-ghost" data-i18n="act.peng">Pong</button>
+      <button id="btn-pass" class="btn btn-ghost" data-i18n="act.pass">Pass</button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <div class="title-inner">
+        <h1 class="title-logo">PENTA CARDS</h1>
+        <p class="title-tagline" data-i18n="title.tagline">Build constellations, win on the Five Star.</p>
+        <p class="title-best" id="title-best"></p>
+        <div class="title-actions">
+          <button id="btn-start" class="btn btn-primary" data-i18n="btn.start">Start</button>
+          <button id="btn-how" class="btn btn-ghost" data-i18n="btn.how" data-tutorial-replay>How to play</button>
+          <button id="btn-settings" class="btn btn-ghost" data-i18n="btn.settings">Settings</button>
+        </div>
+      </div>
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <div class="pause-inner">
+        <h2 class="pause-title" data-i18n="pause.title">Paused</h2>
+        <p class="pause-hint" data-i18n="pause.hint">Press Esc to resume</p>
+        <div class="pause-actions">
+          <button id="btn-resume" class="btn btn-primary" data-i18n="btn.resume">Resume</button>
+          <button id="btn-pause-settings" class="btn btn-ghost" data-i18n="btn.settings">Settings</button>
+          <button id="btn-restart" class="btn btn-ghost" data-i18n="btn.restart">Back to title</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-settings" class="screen hidden">
+      <div class="settings-inner">
+        <h2 class="settings-title" data-i18n="set.title">Settings</h2>
+        <div class="settings-row">
+          <span data-i18n="set.language">Language</span>
+          <select id="lang-select-settings" class="lang-select" aria-label="Language"></select>
+        </div>
+        <button id="btn-close-settings" class="btn btn-ghost" data-i18n="btn.close">Close</button>
+      </div>
+    </div>
+
+    <div id="screen-round" class="screen hidden">
+      <div class="result-inner">
+        <h2 id="round-title" class="result-title"></h2>
+        <div id="round-badge" class="result-badge hidden"></div>
+        <ul class="result-rows">
+          <li><span data-i18n="result.fan">Fan</span><b id="round-fan">0</b></li>
+          <li><span data-i18n="result.score">Score</span><b id="round-score">0</b></li>
+          <li><span data-i18n="result.chips">Chips</span><b id="round-chips">0</b></li>
+          <li><span data-i18n="result.round">Round</span><b id="round-num">0</b></li>
+        </ul>
+        <button id="btn-next" class="btn btn-primary" data-i18n="btn.next">Next round</button>
+      </div>
+    </div>
+
+    <div id="screen-session" class="screen hidden">
+      <div class="result-inner">
+        <h2 id="session-title" class="result-title"></h2>
+        <div id="session-badge" class="result-badge hidden" data-i18n="result.newRecord">NEW BEST RANK</div>
+        <ul class="result-rows">
+          <li><span data-i18n="result.rank">Rank</span><b id="session-rank">0</b></li>
+          <li><span data-i18n="result.chips">Chips</span><b id="session-chips">0</b></li>
+          <li><span data-i18n="result.fan">Best fan</span><b id="session-fan">0</b></li>
+        </ul>
+        <button id="btn-session-restart" class="btn btn-primary" data-i18n="btn.restart">Back to title</button>
+      </div>
+    </div>
+
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Dealing stars…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

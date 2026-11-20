@@ -1,0 +1,80 @@
+{
+  "steps": [
+    {
+      "name": "iframe-opaque-origin",
+      "ok": true,
+      "data": {
+        "origin": "http://127.0.0.1:57538"
+      }
+    },
+    {
+      "name": "title-visible",
+      "ok": true
+    },
+    {
+      "name": "localStorage-blocked-as-expected",
+      "ok": true,
+      "data": {
+        "storageThrows": true
+      }
+    },
+    {
+      "name": "battle-local-in-sandbox",
+      "ok": true,
+      "data": {
+        "net": null,
+        "td": true,
+        "state": "play",
+        "berries": 300,
+        "pads": 17
+      }
+    },
+    {
+      "name": "tower-built-in-sandbox",
+      "ok": true,
+      "data": {
+        "built": [
+          "arrow"
+        ]
+      }
+    },
+    {
+      "name": "wave-started-in-sandbox",
+      "ok": true,
+      "data": {
+        "wave": 1,
+        "running": true
+      }
+    },
+    {
+      "name": "towers-kill-enemies-in-sandbox",
+      "ok": true,
+      "data": {
+        "fallen": 9,
+        "spawned": 13,
+        "bush": 400,
+        "towers": 1
+      }
+    },
+    {
+      "name": "zh-switch-in-sandbox",
+      "ok": true,
+      "data": {
+        "url": "http://127.0.0.1:57538/index.html?map=td&from=menu&lang=zh",
+        "button": "开始防守 Enter"
+      }
+    },
+    {
+      "name": "zh-hud-in-sandbox",
+      "ok": true,
+      "data": {
+        "wave": "第 0 / 10 波",
+        "bush": "覆盆子灌木 400 / 400",
+        "goal": "保卫覆盆子灌木"
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": []
+}

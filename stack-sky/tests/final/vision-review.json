@@ -1,0 +1,149 @@
+{
+  "game": "stack-sky",
+  "generatedAt": "2026-11-19T11:51:04.951Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 6.625,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'Ascend'按钮开始游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部堆叠岛屿图形模糊且未对齐中心，难以辨识当前状态或可交互区域",
+        "‘Best 0 islands’文字颜色过浅（浅棕），在米黄背景上对比度不足，易被忽略",
+        "标题‘STACK SKY’字间距略大，部分用户可能误读为‘STACK SKY’中间有断开"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘登塔’按钮开始游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部塔形结构模糊且未对齐中心，无法辨识是否为玩家角色或可交互物",
+        "‘最高 0 层’文字颜色过浅（浅灰），在米黄背景上对比度不足，易被忽略",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央或按空格键释放岛屿开始攀爬",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框‘Tap or press Space to drop the island’与下方绿色条部分重叠，可能误触",
+        "左上角HUD数值（HEIGHT 0等）字体偏小，弱光下辨识度低",
+        "云朵剪影缺乏层次，眯眼时白色云与浅黄背景对比不足，易混淆可交互平台"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让顶部黄色块下落对齐绿色堆叠",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Dawn Clouds’标签无明确交互提示，易被误认为装饰",
+        "左侧HUD数值（HEIGHT/WIDTH/PERFECT）字体偏小，弱光下辨识度低",
+        "绿色堆叠块间虚线对齐指示线过细，远距离或小屏可能看不清"
+      ]
+    },
+    {
+      "shot": "tests/final/05-wind.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让顶部黄色块继续向上堆叠",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Dawn Clouds’标签无明确交互提示，易被误认为装饰",
+        "左侧HUD数值（HEIGHT/WIDTH/PERFECT）字体偏小，弱光下辨识度低",
+        "堆叠块中心虚线对齐标记在移动中可能难察觉，影响精准操作"
+      ]
+    },
+    {
+      "shot": "tests/final/06-cloudwrap.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让顶部黄色块继续向上堆叠",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Dawn Clouds’标签无明确交互提示，易被误认为装饰",
+        "左侧HUD数值（HEIGHT/WIDTH/PERFECT）字体偏小，弱光下辨识度低",
+        "堆叠块顶部黄色块与下方绿色块对比度不足，眯眼时轮廓略模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/07-storm.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让顶部发光方块继续向上堆叠",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD数值（HEIGHT/WIDTH/PERFECT）字体偏小，3秒内需细看才能辨识单位",
+        "‘Storm Layer’标签无明确交互提示，易被误认为装饰性文字",
+        "顶部发光方块与下方堆叠块对比度不足，弱光环境下可能难辨边界"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击顶部黄色平台使其下落或触发动作",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD数值（HEIGHT/WIDTH/PERFECT）字体偏小，3秒内需细看才能辨识单位与数值关系",
+        "顶部' Dawn Clouds'标签无明确交互指示，易被误认为装饰性文字",
+        "堆叠平台中间虚线对齐标记过细，在低分辨率下可能不可见"
+      ]
+    }
+  ]
+}

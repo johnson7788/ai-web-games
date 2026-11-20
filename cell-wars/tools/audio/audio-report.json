@@ -1,0 +1,190 @@
+{
+  "generatedAt": "2026-11-19T15:14:05.701Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "infect": {
+      "rms": 0.1766,
+      "peak": 0.3699,
+      "nan": 0,
+      "zcRate": 716.8,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "capture": {
+      "rms": 0.1629,
+      "peak": 0.4449,
+      "nan": 0,
+      "zcRate": 654,
+      "samples": 5733,
+      "durSec": 0.13,
+      "pass": true
+    },
+    "bigChain": {
+      "rms": 0.1535,
+      "peak": 0.653,
+      "nan": 0,
+      "zcRate": 1079.1,
+      "samples": 24255,
+      "durSec": 0.55,
+      "pass": true
+    },
+    "blocked": {
+      "rms": 0.1363,
+      "peak": 0.3387,
+      "nan": 0,
+      "zcRate": 271.5,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "nutrient": {
+      "rms": 0.1765,
+      "peak": 0.358,
+      "nan": 0,
+      "zcRate": 558.4,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "phage": {
+      "rms": 0.1643,
+      "peak": 0.5477,
+      "nan": 0,
+      "zcRate": 2304.9,
+      "samples": 14112,
+      "durSec": 0.32,
+      "pass": true
+    },
+    "phageReady": {
+      "rms": 0.1233,
+      "peak": 0.3274,
+      "nan": 0,
+      "zcRate": 735.8,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "turn": {
+      "rms": 0.0749,
+      "peak": 0.14,
+      "nan": 0,
+      "zcRate": 620.3,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "dishClear": {
+      "rms": 0.1575,
+      "peak": 0.6213,
+      "nan": 0,
+      "zcRate": 841.7,
+      "samples": 34398,
+      "durSec": 0.78,
+      "pass": true
+    },
+    "dishStart": {
+      "rms": 0.0965,
+      "peak": 0.2574,
+      "nan": 0,
+      "zcRate": 349,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "virus": {
+      "rms": 0.0841,
+      "peak": 0.24,
+      "nan": 0,
+      "zcRate": 1018.6,
+      "samples": 15435,
+      "durSec": 0.35,
+      "pass": true
+    },
+    "gameOver": {
+      "rms": 0.2112,
+      "peak": 0.532,
+      "nan": 0,
+      "zcRate": 341.7,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "victory": {
+      "rms": 0.1778,
+      "peak": 0.614,
+      "nan": 0,
+      "zcRate": 532.3,
+      "samples": 48510,
+      "durSec": 1.1,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1293,
+      "peak": 0.285,
+      "nan": 0,
+      "zcRate": 910.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.6,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.16,
+      "peak": 0.6186,
+      "nan": 0,
+      "zcRate": 236.9,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "capture.chainUpPitchUp": {
+      "chainLow": 0,
+      "chainHigh": 12,
+      "zcRateLow": 607.8,
+      "zcRateHigh": 1157.9,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

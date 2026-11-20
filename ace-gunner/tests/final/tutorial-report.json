@@ -1,0 +1,37 @@
+{
+  "game": "ace-gunner",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 3,
+    "stepIds": [
+      "aim",
+      "shot",
+      "survive"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": [
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-ace-gunner",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-ace-gunner",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-ace-gunner"
+    ]
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

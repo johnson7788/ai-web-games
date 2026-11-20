@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-11-19T06:30:26.817Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "pop": {
+      "rms": 0.2342,
+      "peak": 0.6293,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "avalanche": {
+      "rms": 0.1817,
+      "peak": 0.6623,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "pick": {
+      "rms": 0.1925,
+      "peak": 0.4887,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "pickReady": {
+      "rms": 0.1453,
+      "peak": 0.4747,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "wash": {
+      "rms": 0.0907,
+      "peak": 0.383,
+      "nan": 0,
+      "samples": 18522,
+      "durSec": 0.42,
+      "pass": true
+    },
+    "levelClear": {
+      "rms": 0.1662,
+      "peak": 0.6287,
+      "nan": 0,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "fail": {
+      "rms": 0.1912,
+      "peak": 0.4769,
+      "nan": 0,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "streak": {
+      "rms": 0.0906,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "thaw": {
+      "rms": 0.0772,
+      "peak": 0.14,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1178,
+      "peak": 0.22,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1659,
+      "peak": 0.6042,
+      "nan": 0,
+      "samples": 37044,
+      "durSec": 0.84,
+      "pass": true
+    }
+  },
+  "loops": {
+    "drone": {
+      "rms": 0.0586,
+      "peak": 0.1658,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "sparkle": {
+      "rms": 0.0125,
+      "peak": 0.0499,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "pulse": {
+      "rms": 0.0107,
+      "peak": 0.0736,
+      "nan": 0,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,41 @@
+TITLE
+INK PATH — Free One-Stroke Star Web Puzzle Game
+
+CATEGORY
+Puzzle
+
+TAGS
+one stroke puzzle, connect the dots, brain teaser, spider web, constellation, logic, casual, family friendly, browser game, ink
+
+SHORT DESCRIPTION
+Weave a glowing spider-silk path across star webs — visit every star once, in one unbroken thread.
+
+LONG DESCRIPTION
+INK PATH is a free one-stroke puzzle game where a firefly spider weaves silk across starry constellations in a night sky.
+
+Start at the glowing star, then weave from star to star along the silk threads without lifting a finger. Every star must be visited exactly once, and every move commits your thread — take a wrong fork and you must backtrack and reweave. Light the whole web to win, and the entire constellation ripples with light while a swarm of fireflies bursts free.
+
+12 handcrafted webs across three worlds: Dusk Forest, Aurora Ice and Deep Space. Master star wheels, bridge graphs, twin rings and dense constellations, then face the advanced weaves — one-way threads that only flow with the arrow, broken lines that unlock only after you light the trigger star, and edge-only webs where every thread must be woven exactly once.
+
+Earn up to three stars per level by weaving in the fewest moves. Easy to learn in ten seconds, tricky to master. Works with mouse, touch and keyboard on desktop and mobile. No download — play free in your browser.
+
+TITLE
+蛛丝星图 — 免费一笔画星空益智游戏
+
+CATEGORY
+益智
+
+TAGS
+一笔画, 连线, 益智, 脑力, 蜘蛛网, 星座, 逻辑, 休闲, 全年龄, 网页游戏
+
+SHORT DESCRIPTION
+萤火虫蛛在星空网上织丝：从起点出发，一条不重复不断线的蛛丝走遍每颗星子。
+
+LONG DESCRIPTION
+《蛛丝星图》是一款免费的一笔画益智游戏：萤火虫蛛在墨蓝夜空里，把星子连成发亮的丝线。
+
+从发光的起点星子出发，沿着丝线一颗星连着一颗星，中途不能抬笔——每颗星子恰好走一次，每走一步丝线即定型，走错岔路就要回退重织。织完整张星网即可过关：整张星网亮起涟漪，萤火虫群四散飞散。
+
+12 个手工星网横跨三大场景：薄暮林间、极光冰原、深空星云。从三节点丝链、星形轮盘，到桥图、双环、密集星座，再到进阶织法——单向丝只能顺箭头走、断线要先把触发星子点亮才能解锁、欧拉网每条丝线恰好走一次。
+
+用最少步数织完可拿三星。十秒上手，越玩越烧脑。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

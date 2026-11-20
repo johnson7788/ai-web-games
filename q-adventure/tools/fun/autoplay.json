@@ -1,0 +1,58 @@
+{
+  "game": "q-adventure",
+  "genre": "platformer",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 47.6,
+      "actions": 2779,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1,
+      "deaths": 3,
+      "idleSec": 1.3,
+      "maxEventGapSec": 2.33,
+      "uniqueEvents": 14,
+      "levelsReached": 4,
+      "completed": false,
+      "level": 4
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 102.9,
+      "actions": 4007,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1.4,
+      "deaths": 3,
+      "idleSec": 34.4,
+      "maxEventGapSec": 1.08,
+      "uniqueEvents": 17,
+      "levelsReached": 8,
+      "completed": false,
+      "level": 8
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 11.7,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "idleSec": 11.5,
+      "maxEventGapSec": 1.22,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false,
+      "level": 1
+    }
+  ],
+  "generatedAt": "2026-11-19T19:21:52.346Z"
+}

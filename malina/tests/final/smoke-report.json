@@ -1,0 +1,168 @@
+{
+  "url": "http://127.0.0.1:57698/",
+  "startedAt": "2026-11-15T17:33:06.104Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 25,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 26,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 27,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 28,
+      "act": "wait",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/malina/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/03-battle-start.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/04-build-menu.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/05-arrow-tower-built.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/06-two-towers-wave-incoming.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/07-wave-marching.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/08-towers-firing.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/09-wave-1-held.png",
+    "/Users/admin/git/webgames/games/malina/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T17:33:56.578Z",
+  "video": "/Users/admin/git/webgames/games/malina/tests/final/play.webm"
+}

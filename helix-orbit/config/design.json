@@ -1,0 +1,150 @@
+{
+  "slug": "helix-orbit",
+  "genre": "arcade",
+  "oneLiner": "旋转一座活火山螺旋塔，让陨石球穿过层间缺口坠向地心；连穿三层化身流星砸穿岩浆，攒冰晶冻结熔岩抢双倍分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "rotate",
+      "cost": "注意力/角度：把缺口转到球正下方会错过另一侧的冰晶或双倍裂缝",
+      "feedback": [
+        "sfx",
+        "tower-spin",
+        "gap-glow"
+      ],
+      "combinesWith": [
+        "dive"
+      ]
+    },
+    {
+      "name": "dive",
+      "cost": "选宽缝稳穿 vs 追窄缝/裂缝抢分；选错弹起、甚至同层连弹卡死",
+      "feedback": [
+        "sfx",
+        "bounce",
+        "depth-flash"
+      ],
+      "combinesWith": [
+        "rotate",
+        "smash"
+      ]
+    },
+    {
+      "name": "smash",
+      "cost": "只有连穿 3 层才解锁陨石态，砸穿岩浆会触发慢镜空窗并结束连穿",
+      "feedback": [
+        "sfx",
+        "slow-mo",
+        "lava-burst"
+      ],
+      "combinesWith": [
+        "dive"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一层缺口：主动把它转到正下方，还是等球自然对准",
+      "cost": "主动转 = 手忙 vs 等待 = 弹跳掉节奏"
+    },
+    {
+      "atSec": 12,
+      "choice": "看到冰晶：顺手收掉，还是攒着留给岩浆密段冻结",
+      "cost": "立刻收益 vs 5 秒全场安全的保险"
+    },
+    {
+      "atSec": 25,
+      "choice": "双缺口层：走宽缝稳穿，还是追窄缝那一侧的冰晶",
+      "cost": "安全 vs 资源"
+    },
+    {
+      "atSec": 40,
+      "choice": "岩浆密段前：现在触发冻结，还是硬靠旋转躲岩浆",
+      "cost": "消耗冻结机会 vs 容错骤降"
+    },
+    {
+      "atSec": 55,
+      "choice": "岩芯裂隙（每 5 层）：追窄裂缝拿双倍分，还是走旁边宽缝",
+      "cost": "角度要求翻倍 vs 分数减半"
+    },
+    {
+      "atSec": 70,
+      "choice": "反向层：加速反向补偿，还是等缺口自己转回来",
+      "cost": "快但难控 vs 慢但稳"
+    },
+    {
+      "atSec": 90,
+      "choice": "移动缝：主动追着转，还是停在原地等缝经过",
+      "cost": "连续微调 vs 精确时机"
+    },
+    {
+      "atSec": 110,
+      "choice": "陨石态：砸穿岩浆拿 8 分，还是绕开保住连穿状态",
+      "cost": "爆发分 vs 持续安全"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "单宽缺口 + 旋转穿落（教核心循环）" },
+    { "index": 2, "newElement": "冰晶出现（可收集攒冻结）" },
+    { "index": 3, "newElement": "双缺口层（选择哪条缝）" },
+    { "index": 4, "newElement": "岩浆占比提升（容错下降）" },
+    { "index": 5, "newElement": "反向层（自旋与输入相反）" },
+    { "index": 6, "newElement": "岩芯裂隙（每 5 层窄缝双倍分）" },
+    { "index": 7, "newElement": "移动缝（缺口自行漂移）" },
+    { "index": 8, "newElement": "移动缝 + 反向层叠加" },
+    { "index": 9, "newElement": "窄缝（半槽，角度要求翻倍）" },
+    { "index": 10, "newElement": "窄缝 + 高岩浆" },
+    { "index": 11, "newElement": "岩浆密段（占比 42%）" },
+    { "index": 12, "newElement": "岩浆密段 + 反向（终章考验）" }
+  ],
+  "upgrades": [
+    { "id": "meteor", "kind": "rule", "desc": "连穿 3 层进入陨石态，可砸穿岩浆（解锁新动作）" },
+    { "id": "freeze", "kind": "rule", "desc": "攒满 4 冰晶冻结岩浆 5s（改变危险判定）" },
+    { "id": "crevice", "kind": "rule", "desc": "每 5 层岩芯裂隙：窄缝下落双倍分（改变得分规则）" },
+    { "id": "doubleGap", "kind": "rule", "desc": "双缺口层：两处可穿落，改变路线选择" },
+    { "id": "reverseSpin", "kind": "rule", "desc": "反向层：自旋与输入相反，改变旋转手感" },
+    { "id": "movingGap", "kind": "rule", "desc": "移动缝：缺口自行漂移，改变对齐策略" },
+    { "id": "rotSpeed", "kind": "stat", "desc": "旋转速度 +12%（数值）" },
+    { "id": "bounce", "kind": "stat", "desc": "弹跳更高 +10%（数值）" },
+    { "id": "crystalLuck", "kind": "stat", "desc": "冰晶出现率 +20%（数值）" },
+    { "id": "deadlockGrace", "kind": "stat", "desc": "同层连弹容忍 +1（数值）" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "unlock",
+    "growth",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连穿三层后球化流星，砸穿岩浆层的瞬间熔岩四溅、画面进入慢镜",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "熔岩活火山风格：程序化 Canvas 伪 3D 渲染为主（椭圆堆叠/楔形段/余烬粒子），AI 生成封面海报；UI 线框 SVG/CSS"
+}

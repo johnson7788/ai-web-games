@@ -1,0 +1,110 @@
+20:24:49 | INFO: Data are loaded, start creating Blender stuff
+20:24:49 | INFO: Blender create Mesh node geometry_0
+20:24:49 | INFO: glTF import finished in 0.71s
+Info: Removed 181793 vertices
+INFO Draco mesh compression is available, use library at /Applications/Blender.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+20:24:58 | INFO: Starting glTF 2.0 export
+20:24:58 | INFO: Extracting primitive: geometry_0
+20:24:58 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:24:58 | INFO: Primitives created: 1
+20:24:58 | INFO: Finished glTF 2.0 export in 0.3418610095977783 s
+
+OK prop_lantern_01 tri 937789→937764→6124  bytes=7317600 (7.0MB)
+20:24:58 | INFO: Data are loaded, start creating Blender stuff
+20:24:58 | INFO: Blender create Mesh node geometry_0
+20:24:59 | INFO: glTF import finished in 0.66s
+Info: Removed 253257 vertices
+20:25:07 | INFO: Starting glTF 2.0 export
+20:25:07 | WARNING: Mesh geometry_0.001 is not valid, and may be exported wrongly
+20:25:07 | INFO: Extracting primitive: geometry_0.001
+20:25:08 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:25:08 | INFO: Primitives created: 1
+20:25:08 | INFO: Finished glTF 2.0 export in 0.21318411827087402 s
+
+OK prop_oil_barrel_01 tri 993500→993281→16763  bytes=4913336 (4.7MB)
+20:25:08 | INFO: Data are loaded, start creating Blender stuff
+20:25:08 | INFO: Blender create Mesh node geometry_0
+20:25:08 | INFO: glTF import finished in 0.63s
+Info: Removed 294267 vertices
+20:25:18 | INFO: Starting glTF 2.0 export
+20:25:18 | WARNING: Mesh geometry_0.002 is not valid, and may be exported wrongly
+20:25:18 | INFO: Extracting primitive: geometry_0.002
+20:25:18 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:25:18 | INFO: Primitives created: 1
+20:25:18 | INFO: Finished glTF 2.0 export in 0.2595851421356201 s
+
+OK prop_crate_01 tri 972572→971579→53425  bytes=6894804 (6.6MB)
+20:25:18 | INFO: Data are loaded, start creating Blender stuff
+20:25:18 | INFO: Blender create Mesh node geometry_0
+20:25:19 | INFO: glTF import finished in 0.70s
+Info: Removed 444931 vertices
+20:25:29 | INFO: Starting glTF 2.0 export
+20:25:29 | WARNING: Mesh geometry_0.003 is not valid, and may be exported wrongly
+20:25:29 | INFO: Extracting primitive: geometry_0.003
+20:25:29 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:25:29 | INFO: Primitives created: 1
+20:25:29 | INFO: Finished glTF 2.0 export in 0.3727388381958008 s
+
+OK prop_rock_cluster_01 tri 978859→977124→74323  bytes=11367680 (10.8MB)
+20:25:29 | INFO: Data are loaded, start creating Blender stuff
+20:25:29 | INFO: Blender create Mesh node geometry_0
+20:25:30 | INFO: glTF import finished in 0.64s
+Info: Removed 174607 vertices
+20:25:38 | INFO: Starting glTF 2.0 export
+20:25:38 | WARNING: Mesh geometry_0.004 is not valid, and may be exported wrongly
+20:25:38 | INFO: Extracting primitive: geometry_0.004
+20:25:38 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:25:38 | INFO: Primitives created: 1
+20:25:38 | INFO: Finished glTF 2.0 export in 0.21112799644470215 s
+
+OK prop_boat_row_01 tri 966856→966804→6678  bytes=4482160 (4.3MB)
+20:25:38 | INFO: Data are loaded, start creating Blender stuff
+20:25:38 | INFO: Blender create Mesh node geometry_0
+20:25:39 | INFO: glTF import finished in 0.60s
+Info: Removed 399579 vertices
+20:25:49 | INFO: Starting glTF 2.0 export
+20:25:49 | WARNING: Mesh geometry_0.005 is not valid, and may be exported wrongly
+20:25:49 | INFO: Extracting primitive: geometry_0.005
+20:25:49 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:25:49 | INFO: Primitives created: 1
+20:25:49 | INFO: Finished glTF 2.0 export in 0.3160090446472168 s
+
+OK prop_net_bundle_01 tri 960187→958864→79360  bytes=10174472 (9.7MB)
+20:25:49 | INFO: Data are loaded, start creating Blender stuff
+20:25:49 | INFO: Blender create Mesh node geometry_0
+20:25:50 | INFO: glTF import finished in 0.61s
+Info: Removed 164843 vertices
+20:25:59 | INFO: Starting glTF 2.0 export
+20:25:59 | WARNING: Mesh geometry_0.006 is not valid, and may be exported wrongly
+20:25:59 | INFO: Extracting primitive: geometry_0.006
+20:25:59 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:25:59 | INFO: Primitives created: 1
+20:25:59 | INFO: Finished glTF 2.0 export in 0.321260929107666 s
+
+OK prop_bell_01 tri 997445→997393→6000  bytes=3810444 (3.6MB)
+20:25:59 | INFO: Data are loaded, start creating Blender stuff
+20:25:59 | INFO: Blender create Mesh node geometry_0
+20:26:00 | INFO: glTF import finished in 0.70s
+Info: Removed 242480 vertices
+20:26:09 | INFO: Starting glTF 2.0 export
+20:26:09 | WARNING: Mesh geometry_0.007 is not valid, and may be exported wrongly
+20:26:09 | INFO: Extracting primitive: geometry_0.007
+20:26:09 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:26:09 | INFO: Primitives created: 1
+20:26:09 | INFO: Finished glTF 2.0 export in 0.2641940116882324 s
+
+OK prop_lamp_relay_01 tri 997978→997183→58486  bytes=7675740 (7.3MB)
+20:26:09 | INFO: Data are loaded, start creating Blender stuff
+20:26:09 | INFO: Blender create Mesh node geometry_0
+20:26:10 | INFO: glTF import finished in 0.72s
+Info: Removed 456268 vertices
+20:26:20 | INFO: Starting glTF 2.0 export
+20:26:20 | WARNING: Mesh geometry_0.008 is not valid, and may be exported wrongly
+20:26:20 | INFO: Extracting primitive: geometry_0.008
+20:26:20 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+20:26:21 | INFO: Primitives created: 1
+20:26:21 | INFO: Finished glTF 2.0 export in 0.5588061809539795 s
+Blender 4.5.0 (hash 8cb6b388974a built 2025-07-15 01:35:28)
+
+OK prop_storm_glass_01 tri 946925→943020→207371  bytes=20802696 (19.8MB)
+==== blender-decimate DONE ok=9 fail=0 ====

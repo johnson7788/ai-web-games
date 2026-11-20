@@ -1,0 +1,94 @@
+{
+  "slug": "sword-saga",
+  "genre": "narrative",
+  "oneLiner": "你是游历剑客云隐，与灵狐并肩踏上 12 章仙侠短篇；五行相克出招、防御蓄剑意、灵狐替你挡致命一击。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "strike",
+      "cost": "技能消耗真气，普攻无消耗但伤害低；选错五行会被减伤",
+      "feedback": ["sfx", "ink-wash", "damage-pop"],
+      "combinesWith": ["defend"]
+    },
+    {
+      "name": "defend",
+      "cost": "占用一整回合不输出，把出手机会让给敌人",
+      "feedback": ["shield-fx", "sword-intent-glow", "sfx"],
+      "combinesWith": ["strike"]
+    },
+    {
+      "name": "switch",
+      "cost": "占用一整回合，且放弃当前角色的蓄势/站位",
+      "feedback": ["swap-fx", "party-bar", "sfx"],
+      "combinesWith": ["strike"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先普攻削血，还是先防御蓄剑意等下一发 ×2 技能", "cost": "蓄势延迟伤害 vs 立即输出" },
+    { "atSec": 15, "choice": "用技能克敌但耗真气，还是留蓝防持久战", "cost": "真气资源" },
+    { "atSec": 30, "choice": "换灵狐上场用火/水克敌，还是剑客硬打", "cost": "放弃剑客当前蓄势" },
+    { "atSec": 45, "choice": "敌人残血用普攻补刀还是技能秒杀", "cost": "蓝耗 vs 多挨一轮" },
+    { "atSec": 60, "choice": "血量见底：吃药回血还是防御蓄势赌下一击", "cost": "道具库存" },
+    { "atSec": 80, "choice": "灵狐替身开还是关：保命资源 vs 灵狐可上场输出", "cost": "保命 vs 火力" },
+    { "atSec": 100, "choice": "三敌混属性：先集火克制的还是先清威胁最大的", "cost": "暴露给其余敌人" },
+    { "atSec": 130, "choice": "Boss 战：先清杂兵还是直取 Boss", "cost": "时间 / 血量" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 35
+  },
+  "levels": [
+    { "index": 1, "newElement": "五行相克基础：金克木，普攻触发克制墨晕" },
+    { "index": 2, "newElement": "技能破云剑（金）与真气管理" },
+    { "index": 3, "newElement": "换人：灵狐上场，水克火" },
+    { "index": 4, "newElement": "Boss 竹王 + 灵狐替身保命资源" },
+    { "index": 5, "newElement": "新场景雪山道 + 土克水（石根）" },
+    { "index": 6, "newElement": "木克土（青藤缚）+ 双敌编队" },
+    { "index": 7, "newElement": "火克金（狐火）+ 双敌不同属性" },
+    { "index": 8, "newElement": "Boss 雪母 + 剑意蓄势（防御即进攻）" },
+    { "index": 9, "newElement": "新场景锁妖塔 + 金妖" },
+    { "index": 10, "newElement": "三敌编队：分而击之" },
+    { "index": 11, "newElement": "三敌混属性五行环" },
+    { "index": 12, "newElement": "最终 Boss 塔魔（金），剑歌终章" }
+  ],
+  "upgrades": [
+    { "id": "elementCounter", "kind": "rule", "desc": "五行克制伤害 ×1.5（改判定规则）" },
+    { "id": "counterInk", "kind": "rule", "desc": "克制命中触发全屏墨晕（视觉规则）" },
+    { "id": "swordIntent", "kind": "rule", "desc": "防御蓄剑意，下回合技能 ×2（规则型）" },
+    { "id": "foxSubstitute", "kind": "rule", "desc": "灵狐替主角挡致命一击（规则型）" },
+    { "id": "foxReturn", "kind": "rule", "desc": "替身后 2 回合离场归来（规则型）" },
+    { "id": "switch", "kind": "rule", "desc": "战斗中换人（规则型）" },
+    { "id": "stoneRoot", "kind": "rule", "desc": "解锁土系技能石根（克水）" },
+    { "id": "verdantBind", "kind": "rule", "desc": "解锁木系技能青藤缚（克土）" },
+    { "id": "growth", "kind": "stat", "desc": "每战 +6 HP 上限（数值成长）" },
+    { "id": "elixir", "kind": "stat", "desc": "灵药回蓝 30（数值）" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "newBuild"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "五行克制命中的瞬间，对应色墨晕在整块屏幕晕染开来，剑意 ×2 的一击把 Boss 血条劈下一大截",
+  "antiScope": [
+    "不做开放世界/支线/装备系统",
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "水墨仙侠风：全程序化 Canvas（竹/雪/塔三套色板），克制墨晕用径向渐变；UI 线框 SVG/CSS；BGM 程序化 WebAudio"
+}

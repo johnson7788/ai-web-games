@@ -1,0 +1,16 @@
+TITLE
+ARCADE TREASURE
+
+CATEGORY
+Arcade
+
+TAGS
+arcade, retro, whack-a-mole, catch coins, space invaders, neon, token economy, mini games
+
+SHORT DESCRIPTION
+Play three neon arcade cabinets with one coin purse. Whack gremlins, catch coins, and shoot the bee swarm to light the GRAND PRIX sign.
+
+LONG DESCRIPTION
+ARCADE TREASURE is a retro neon arcade collection. You walk in with a small coin purse and three cabinets to master: Server Night Watch (whack the gremlins), Rain Scavenger (catch falling coins), and Pixel Swarm (shoot the descending bee swarm). Every cabinet costs 1 token to play; your score cashes back into tokens so a good run pays for itself. Keep playing the same cabinet to build heat and multiply your cash-out up to ×1.5. Clear all three machines to climb 12 arcade ranks and light the GRAND PRIX neon sign. Tap a cabinet to play, move the mouse to aim, and tap to hit. Touch-friendly.
+
+中文简介：复古霓虹街机合集。一袋代币玩三台机台：机房守夜（打地鼠）、雨中拾荒（接金币）、像素蜂群（小蜜蜂）。每台门票 1 币，成绩换币，同台连玩叠热度最多 ×1.5。三台全通关晋升 12 段位，点亮 GRAND PRIX 霓虹招牌。点选机台、移动瞄准、点按出招，触屏全兼容。

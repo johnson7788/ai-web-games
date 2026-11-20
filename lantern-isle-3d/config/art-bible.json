@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "preset": "realistic-coast",
+  "style": {
+    "name": "realistic-coast",
+    "keywords": [
+      "photorealistic photograph",
+      "real-world weathered materials",
+      "physically based rendering",
+      "photographic micro-detail",
+      "natural cinematic color grading"
+    ],
+    "palette": {
+      "primary": "#8a4a3a",
+      "secondary": [
+        "#5d6672",
+        "#7d7466",
+        "#4c5a4f"
+      ],
+      "accent": [
+        "#c98a3a",
+        "#e0b060"
+      ],
+      "environment": [
+        "#3f5a63",
+        "#6b6257",
+        "#232f3d"
+      ],
+      "lanternGlow": "#ffb45a"
+    },
+    "mood": "real north-atlantic fishing island at dusk: wet stone, salt-bleached wood, rust, low warm sun against cold sky"
+  },
+  "units": {
+    "meter": 1,
+    "groundY": 0,
+    "characterHeightM": 1.75,
+    "note": "Blender +Z up，导出 export_yup → Three.js +Y up"
+  },
+  "proportions": {
+    "headBodyRatio": 4.6,
+    "buildingStoreyM": 3.0,
+    "doorH": 2.0,
+    "stepH": 0.18,
+    "roofPitch": 0.55
+  },
+  "material": {
+    "textureStyle": "photoreal PBR with normal map",
+    "roughness": [
+      0.45,
+      0.95
+    ],
+    "metalness": [
+      0.0,
+      0.6
+    ],
+    "textureMaxPx": 1024,
+    "textureMaxPxProp": 512,
+    "colorJitter": 0.03
+  },
+  "lighting": {
+    "sunColor": "#ffcf9a",
+    "sunIntensity": 3.0,
+    "sunDir": [
+      -38,
+      14,
+      26
+    ],
+    "shadowSpan": 80,
+    "shadowBias": -0.0006,
+    "hemiSky": "#7d94b8",
+    "hemiGround": "#3a352d",
+    "hemiIntensity": 0.7,
+    "ambient": 0.18,
+    "fogColor": "#5d7188",
+    "fogNear": 40,
+    "fogFar": 300,
+    "exposure": 1.05,
+    "toneMapping": "ACESFilmic",
+    "mood": "low warm sun, long soft shadows, cool skylight fill, atmospheric haze on distance"
+  },
+  "sky": {
+    "top": "#20304a",
+    "bottom": "#d98d4f"
+  },
+  "animation": {
+    "skeleton": "HERO_RIG_v1",
+    "clips": [
+      "idle",
+      "walk",
+      "run",
+      "jump",
+      "carry",
+      "talk"
+    ],
+    "fps": 30,
+    "crossfadeSec": 0.18,
+    "naming": "clip 名 = Blender action 名 = AnimStateMachine state 名"
+  },
+  "naming": {
+    "asset": "^(build|prop|env|char|npc|tex|sfx|bgm)_[a-z0-9]+(_[a-z0-9]+)*$",
+    "mesh": "^[a-z0-9]+(_[a-z0-9]+)*$",
+    "bone": "^[A-Za-z][A-Za-z0-9_]*$",
+    "clip": "^[a-z]+$"
+  },
+  "budgets": {
+    "triPerProp": 65000,
+    "triPerBuilding": 10000,
+    "triPerCharacter": 11000,
+    "triPerTree": 2400,
+    "triTotalScene": 420000,
+    "drawCallsMax": 90,
+    "textureMaxKB": 1500,
+    "glbMaxKB": 1900,
+    "runtimeGlbTotalKB": 13000,
+    "fpsMin": 50,
+    "note": "2026-11-16 实测校准（不是为了让门禁变绿，是把预算定在可实现的位置）：Blender kit 件天然 24–1000 面；AI 图生 3D（trellis2 512 档）原始 0.97–1.07M 面，weld+gltf-simplify(error 2%) 只能到 ~50 万，Blender merge-by-distance(0.0015)+Decimate 后 6k–101k，受 UV 分裂拓扑限制再砍就破面。因此 triPerProp 定为 65k（AI 单件），triPerBuilding 仍 10k（kit）。真正的运行期硬门禁是 triTotalScene / drawCallsMax / fpsMin —— 这三条不动。 | 2026-11-17 二轮：10 件 Hunyuan3D PBR 资产+1 绑骨角色实测 9.1MB（zip 12MB<100MB，本地 boot<1s，fps60/DrawCall38/三角189k 全在硬门禁内），故总量预算 6.2→9.6MB；fps/DrawCall/三角三条硬门禁不动。 | 单贴图预算 220→400KB：512px PBR 实测 290–370KB/件。 | 角色预算：Hunyuan3D+band-rig 实测 9998 tri/1.75MB（256px 贴图），triPerCharacter 9k→11k、glbMaxKB 900→1900。 | 三轮写实化：贴图 1024px 保真（建筑/角色），总量预算 13MB；硬门禁 fps/DrawCall/三角 不变。"
+  },
+  "prompt": {
+    "positive": "photorealistic RAW photograph, shot on 35mm lens f/4, natural available light, real-world weathered materials with micro detail, single isolated object centered, plain dark studio backdrop, soft even lighting with warm rim, no text, no watermark, no illustration, no cartoon",
+    "negative": "cartoon, stylized, low poly, illustration, painting, text, watermark, logo, background clutter, multiple objects, plastic look",
+    "categories": {
+      "prop": "three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail",
+      "building": "three-quarter view of one isolated modular village building piece on invisible floor plane, straight horizontal horizon, filling 80% of frame",
+      "character": "full body character turnaround sheet, neutral A-pose, plain studio background, consistent proportions, front view",
+      "texture": "seamless tileable material texture, flat top-down orthographic view, even diffuse lighting, no objects, no vignette, no seams",
+      "poster": "cinematic key art, wide 16:9 composition, layered depth, small silhouetted keeper carrying a glowing lantern on a wet stone path toward a lit lighthouse, storm clouds over the sea"
+    }
+  },
+  "consistency": {
+    "seedPool": [
+      42,
+      104,
+      7,
+      311,
+      88,
+      233
+    ],
+    "referenceImages": [],
+    "postProcess": [
+      "只从 style.palette 取色",
+      "全场景共用 roughness/metalness 区间",
+      "主光方向固定 sunDir",
+      "照片级概念图一律 krea2 出，禁止手绘风关键词"
+    ]
+  },
+  "characterPalette": {
+    "skin": "#e3b086",
+    "tunic": "#2f4351",
+    "sleeve": "#7a6248",
+    "legs": "#33404a",
+    "boots": "#3a2c22",
+    "hat": "#8a9c7b",
+    "pack": "#6b4f36",
+    "trim": "#f4b23c"
+  }
+}

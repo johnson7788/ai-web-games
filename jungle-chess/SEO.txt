@@ -1,0 +1,45 @@
+TITLE
+Jungle Chess — Free Animal Chess Board Game
+
+CATEGORY
+Puzzle
+
+TAGS
+animal chess, jungle chess, dou shou qi, board game, strategy, logic, family friendly, browser game, casual, brain teaser
+
+SHORT DESCRIPTION
+Command your beasts across the emerald river, set traps, and claim the rival den in this free animal chess game.
+
+LONG DESCRIPTION
+JUNGLE CHESS is a free animal-chess board game about commanding a jungle beast troop across an emerald rainforest map.
+
+Eight ranks of beasts face off: elephant, lion, tiger, leopard, wolf, dog, cat and rat. The strong devour the weak — but the tiny rat can take down the elephant, the one great exception. Only the rat may swim the river, while tiger and lion leap straight across it in a single bound. Lure enemies into your traps and any of your beasts can finish them. Reach the rival den to win.
+
+Twelve handcrafted levels build the rules one lesson at a time: six quick checkmate-style puzzles, then six full battles against three AI rivals — the Attendant, the Senior and the Elder, ending with the Elder's Secret at perfect difficulty. Cute beast-head badges are shape-and-color coded so both sides are readable at a glance.
+
+Every capture erupts in a tangle of jungle vines, and a winning den triggers a homecoming parade of your surviving beasts. Three scenes — Dawn Mist, Monsoon Forest and Night Song — repaint the whole board as you advance.
+
+Easy to learn in seconds, tricky to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+翡翠林棋会 — 免费斗兽棋网页游戏
+
+CATEGORY
+益智
+
+TAGS
+斗兽棋, 动物棋, 丛林棋, 棋盘游戏, 策略, 逻辑, 全年龄, 网页游戏, 休闲, 益智
+
+SHORT DESCRIPTION
+指挥你的兽群跨过翡翠河、设下陷阱、攻占对方兽穴，一款免费斗兽棋网页游戏。
+
+LONG DESCRIPTION
+《翡翠林棋会》是一款免费的斗兽棋网页游戏：指挥一支丛林兽群，在翡翠色雨林地图上攻入对方兽穴。
+
+八大兽种按等级对决：象、狮、虎、豹、狼、狗、猫、鼠。强者吃弱者——但最弱小的鼠却能吃象，这是唯一的例外。只有鼠能下水，虎与狮则能直线跳河。把敌人诱进你的陷阱，任何一只兽都能收拾它。踏上对方兽穴，即告获胜。
+
+12 个手工关卡循序渐进：前 6 关是一步杀/两步杀谜题，后 6 关是完整对局，迎战三档 AI——随班、学长、长老，第 12 关「长老的秘密」更是完美难度。萌系兽首徽章采用形状加颜色双编码，敌我一眼可辨。
+
+每次吃子都爆开一丛丛林藤蔓，获胜时幸存的兽群归巢巡游。三大场景——晨雾林、雨季林、夜鸣林——随章节换装，画风一眼可分。
+
+秒懂规则，越玩越深。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

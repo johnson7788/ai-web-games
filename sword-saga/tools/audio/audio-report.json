@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2026-11-19T19:20:11.027Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "attack": {
+      "rms": 0.1544,
+      "peak": 0.5708,
+      "nan": 0,
+      "zcRate": 4967.6,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "skill": {
+      "rms": 0.1422,
+      "peak": 0.4637,
+      "nan": 0,
+      "zcRate": 547.4,
+      "samples": 16758,
+      "durSec": 0.38,
+      "pass": true
+    },
+    "defend": {
+      "rms": 0.1877,
+      "peak": 0.4651,
+      "nan": 0,
+      "zcRate": 597,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "switch": {
+      "rms": 0.1756,
+      "peak": 0.489,
+      "nan": 0,
+      "zcRate": 581,
+      "samples": 9261,
+      "durSec": 0.21,
+      "pass": true
+    },
+    "counter": {
+      "rms": 0.2054,
+      "peak": 0.7117,
+      "nan": 0,
+      "zcRate": 893.4,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "swordIntent": {
+      "rms": 0.1265,
+      "peak": 0.4537,
+      "nan": 0,
+      "zcRate": 879,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "foxSub": {
+      "rms": 0.1569,
+      "peak": 0.5162,
+      "nan": 0,
+      "zcRate": 408.5,
+      "samples": 20727,
+      "durSec": 0.47,
+      "pass": true
+    },
+    "foxLeave": {
+      "rms": 0.1238,
+      "peak": 0.22,
+      "nan": 0,
+      "zcRate": 340,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "foxReturn": {
+      "rms": 0.1436,
+      "peak": 0.4674,
+      "nan": 0,
+      "zcRate": 615.3,
+      "samples": 15876,
+      "durSec": 0.36,
+      "pass": true
+    },
+    "enemyDown": {
+      "rms": 0.1667,
+      "peak": 0.35,
+      "nan": 0,
+      "zcRate": 148.3,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "heroDown": {
+      "rms": 0.1889,
+      "peak": 0.3998,
+      "nan": 0,
+      "zcRate": 125,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "victory": {
+      "rms": 0.1768,
+      "peak": 0.6839,
+      "nan": 0,
+      "zcRate": 968.2,
+      "samples": 38808,
+      "durSec": 0.88,
+      "pass": true
+    },
+    "defeat": {
+      "rms": 0.2115,
+      "peak": 0.5197,
+      "nan": 0,
+      "zcRate": 351.6,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "battleStart": {
+      "rms": 0.1345,
+      "peak": 0.452,
+      "nan": 0,
+      "zcRate": 428,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "chapterStart": {
+      "rms": 0.1124,
+      "peak": 0.3518,
+      "nan": 0,
+      "zcRate": 402.5,
+      "samples": 36162,
+      "durSec": 0.82,
+      "pass": true
+    },
+    "item": {
+      "rms": 0.1639,
+      "peak": 0.4796,
+      "nan": 0,
+      "zcRate": 618.2,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1291,
+      "peak": 0.2784,
+      "nan": 0,
+      "zcRate": 810.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bamboo": {
+      "rms": 0.16,
+      "peak": 0.4645,
+      "nan": 0,
+      "zcRate": 428.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "snow": {
+      "rms": 0.16,
+      "peak": 0.2773,
+      "nan": 0,
+      "zcRate": 340.6,
+      "samples": 264600,
+      "durSec": 6,
+      "pass": true
+    },
+    "tower": {
+      "rms": 0.16,
+      "peak": 0.4454,
+      "nan": 0,
+      "zcRate": 272.4,
+      "samples": 211680,
+      "durSec": 4.8,
+      "pass": true
+    },
+    "boss": {
+      "rms": 0.16,
+      "peak": 0.3026,
+      "nan": 0,
+      "zcRate": 267.3,
+      "samples": 141120,
+      "durSec": 3.2,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "attack.sharp": {
+      "zcRate": 5346.8,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

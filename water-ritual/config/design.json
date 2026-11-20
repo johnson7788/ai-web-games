@@ -1,0 +1,107 @@
+{
+  "slug": "water-ritual",
+  "genre": "sim",
+  "oneLiner": "你是茶馆老板娘，按住壶柄给客人倒水：水位升向刻度线的同时水温下降，要在水位到线且温度落进客人口味区间时松手；水温恰好则「一口回甘」金圈涟漪。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "pour",
+      "cost": "按住期间水位持续上涨、水温持续下降，松手即结算——倒过头会溢出，松太早又没倒够",
+      "feedback": [
+        "water-rise",
+        "temp-gauge",
+        "ripple"
+      ],
+      "combinesWith": [
+        "feather"
+      ]
+    },
+    {
+      "name": "feather",
+      "cost": "松手宽限期内再按住续倒，把水位「点」到刻度线——多一次松按就多一次误判风险",
+      "feedback": [
+        "sfx",
+        "level-pulse"
+      ],
+      "combinesWith": [
+        "pour"
+      ]
+    },
+    {
+      "name": "accept",
+      "cost": "接贵客窗口窄但报酬翻倍，接常客稳妥但收入低——高峰期连做会赌「满堂彩」",
+      "feedback": [
+        "ticket-flash",
+        "coin"
+      ],
+      "combinesWith": [
+        "pour"
+      ]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一单先稳稳接常客，还是直接赌贵客翻倍", "cost": "稳赚 vs 高风险高回报" },
+    { "atSec": 18, "choice": "水温已进窗口但水位还差一点：再按住倒一点还是提前松手保水温", "cost": "水位误差 vs 水温误差" },
+    { "atSec": 34, "choice": "客人排队时先给谁倒：急客时间短要先做，还是按顺序来", "cost": "先做急客 vs 打乱节奏" },
+    { "atSec": 52, "choice": "挑剔客窗口窄：赌一次精准松手，还是 skip 换下一个常客", "cost": "高分高难 vs 低分稳妥" },
+    { "atSec": 74, "choice": "第 5 单高峰来了：连续 perfect 赌满堂彩，还是放慢保零失误", "cost": "连击翻倍 vs 失败清零" },
+    { "atSec": 96, "choice": "水温快跌破窗口：立即松手拿个 good，还是赌它还能撑到水位到线", "cost": "保底分 vs 冲 perfect" },
+    { "atSec": 118, "choice": "升级点花在哪：买规则型升级改手感，还是买数值升级保容错", "cost": "改规则 vs 堆数值" },
+    { "atSec": 150, "choice": "心只剩 1 颗：这一单求稳保命，还是继续接贵客翻盘", "cost": "生存 vs 追分" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "晨茶（暖白）· 常客 + 老茶客：教「按→看水位水温→松手」的基本节奏" },
+    { "index": 2, "newElement": "午市（青）· 急客 + 挑剔客：时间变短、窗口变窄，教权衡先给谁倒" },
+    { "index": 3, "newElement": "夜谈（靛蓝）· 贵客 + 连客日高峰：窄窗口翻倍报酬 + 连续 perfect 赌满堂彩" },
+    { "index": 4, "newElement": "升级系统解锁：用当日收入买规则型升级（慢倒/冰镇/温度计/二次机会）" }
+  ],
+  "upgrades": [
+    { "id": "thermometer", "kind": "rule", "desc": "温度计：把客人水温区间画在温度计上（揭示信息，改可读性）" },
+    { "id": "slowPour", "kind": "rule", "desc": "慢倒：水位上升速度 -20%，更好微调" },
+    { "id": "iceReserve", "kind": "rule", "desc": "冰镇：水温下降速度 -28%，窗口更好追" },
+    { "id": "secondChance", "kind": "rule", "desc": "二次机会：每天第一次失败单不扣心" },
+    { "id": "goldenRipple", "kind": "rule", "desc": "金圈涟漪：perfect 额外 ×2 金币" },
+    { "id": "rushMaster", "kind": "rule", "desc": "满堂彩：高峰单再 ×2" },
+    { "id": "regularFriend", "kind": "rule", "desc": "熟客：常客耐心 +35%" },
+    { "id": "cozyPot", "kind": "rule", "desc": "温壶：松手宽限 +90ms，时机更宽容" },
+    { "id": "heartUp", "kind": "stat", "desc": "心 +1" },
+    { "id": "coinUp", "kind": "stat", "desc": "金币 +30%" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth",
+    "daily"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "水温恰好落进区间、水位贴住刻度线的一瞬间，杯口荡开一圈金色涟漪，客人「一口回甘」",
+  "antiScope": [
+    "不做联网排行榜",
+    "不做皮肤商店",
+    "不做多人生存",
+    "不做剧情对话分支",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas 水彩茶馆：晨茶暖白 / 午市青 / 夜谈靛蓝三套色板，茶杯水位与温度计全部代码绘制；BGM 程序化 WebAudio 分层循环"
+}

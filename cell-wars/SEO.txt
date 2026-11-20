@@ -1,0 +1,29 @@
+TITLE
+CELL WARS — Free Petri-Dish Strategy Game
+
+CATEGORY
+Strategy
+
+TAGS
+petri dish, strategy, infection, board game, bacteria, puzzle, brain teaser, territory, casual, browser game
+
+SHORT DESCRIPTION
+CELL WARS — a free petri-dish strategy duel. Infect adjacent cells, drop nutrient for chain spreads, and wipe enemy colonies with your phage across 12 dishes.
+
+LONG DESCRIPTION
+CELL WARS is a free petri-dish strategy game about a blue colony battling a red strain. Tap enemy or neutral cells next to your own to infect them — your power equals how many of your cells surround the target, and leftover power cascades outward in a glowing filament spread. Drop nutrient once per turn to buff next turn's infections, and fire a charged phage to wipe a 2×2 enemy area. Cells carry defense levels; failed infections still soften them. Clear every red cell or hold more territory at the round limit across 12 dishes in three scene packs: Classic (cyan-white), Resistance (gold-purple), and Mutation (red-black). Works with mouse and touch, English and Chinese, free in your browser.
+
+TITLE
+CELL WARS — 免费培养皿策略对战游戏
+
+CATEGORY
+策略
+
+TAGS
+培养皿, 策略, 感染, 棋盘, 细菌, 益智, 烧脑, 领土, 休闲, 网页游戏
+
+SHORT DESCRIPTION
+CELL WARS 免费培养皿策略对战：点击相邻格感染扩散，用营养滴布局连锁、用噬菌体清场，闯过 12 皿。
+
+LONG DESCRIPTION
+《CELL WARS》是一款免费网页培养皿策略对战游戏：在显微镜视角下指挥蓝菌，与红菌争夺整只培养皿。点击蓝菌旁的敌格或中立格发起感染——感染力等于该格四周己方菌落数量，超过防御即占领，剩余感染力沿相邻菌落连锁蔓延、放出一道道光丝。每回合可滴一次营养（该格及四邻下回合感染力 +2），噬菌体每 3 回合充能、清空 2×2 敌格；格子有 1–4 级防御，失败感染也会削弱防御。12 皿推进，横跨经典皿（青白）、抗性皿（金紫）、变异皿（红黑）三大场景，含中立堡垒、空洞地图、病毒风暴与逐步变强的 AI。免费即开即玩，支持鼠标与触屏，中英双语。

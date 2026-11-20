@@ -1,0 +1,149 @@
+{
+  "game": "gem-cascade",
+  "generatedAt": "2026-11-19T06:31:19.699Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.875,
+    "silhouette": 7.125,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色高亮的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best level 1’文字颜色为黄色，与主紫白配色略突兀，可能影响视觉层级",
+        "标题‘GEM CASCADE’发光效果过强，部分字母边缘轻微晕染，可能在低分辨率屏上模糊",
+        "右上角语言切换按钮无图标仅文字，小屏设备可能误触或识别困难"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘开始’按钮进入游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘宝石矿脉’发光效果过强，导致部分笔画边缘模糊，影响远距离辨识",
+        "‘最高关卡 1’文字颜色偏黄，在深紫背景下对比度偏低，易被忽略",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意两个相邻同色宝石组成2+集群以触发爆破",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部提示框‘FIRST BLAST’与下方按钮轻微重叠（视觉上遮挡按钮上边缘）",
+        "左上角‘LEVEL 1’与‘Fluorspar Cave’标签间距过小，易误读为单个元素",
+        "右上角‘MOVES ∞’符号∞在部分缩放下可能被误认为数字8"
+      ]
+    },
+    {
+      "shot": "tests/final/04-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部‘Pickaxe’按钮开始挖掘宝石",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Fluorspar Cave’标签背景与文字对比度偏低，弱光下可能难辨",
+        "网格中部分宝石因反光过强导致颜色边界模糊，影响快速识别",
+        "‘STREAK 1’和‘MOVES ∞’按钮间距过近，小屏可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/05-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Resume”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 4,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊方块阵列无法辨识为游戏元素（如方块/敌人），影响 silhouette 判断",
+        "‘Paused’标题与按钮间距偏小，视觉层级略弱于按钮",
+        "右上角语言切换下拉框无展开指示图标，移动端可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/06-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一个由2个及以上同色六边形组成的集群（如左上角粉色2连）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部提示框‘FIRST BLAST’与下方‘Pickaxe’/‘Wash’按钮间距过小，可能误触",
+        "右上角‘MOVES ∞’符号∞在部分字体下可能显示异常（需验证）",
+        "‘Step 1/3’字号偏小，弱光环境下辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意相邻同色宝石集群（如左上角粉色或青色）进行爆破",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Fluorspar Cave’标签与‘Blast clusters of 2+ gems’提示间距过小，可能影响快速扫读",
+        "‘MOVES ∞’图标中∞符号略小且无文字说明，新手可能不解其意",
+        "底部‘Pickaxe’和‘Wash’按钮无悬停/选中反馈视觉提示"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏左的粉色六边形宝石集群（3个以上同色相邻）以触发爆破",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部提示框‘FIRST BLAST’与下方按钮有轻微视觉干扰，建议增加间距或降低透明度",
+        "右上角‘MOVES ∞’符号∞在深紫背景下对比度偏低，易误读为‘00’",
+        "‘Step 1/3’字体过小（约10px），在低分辨率屏可能难辨"
+      ]
+    }
+  ]
+}

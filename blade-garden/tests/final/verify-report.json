@@ -1,0 +1,113 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "关卡格 12 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 12"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "有敌人",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().enemies.length > 0"
+    },
+    {
+      "name": "升级三选一",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().phase === 'upgrade'"
+    },
+    {
+      "name": "step 15",
+      "ok": true,
+      "detail": "visible: #screen-upgrade"
+    },
+    {
+      "name": "Boss 现身",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().bossSpawned === true"
+    },
+    {
+      "name": "夏泽场景",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().sceneKey === 'summer'"
+    },
+    {
+      "name": "精英现身",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().eliteSpawned === true"
+    },
+    {
+      "name": "秋崖场景",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().sceneKey === 'autumn'"
+    },
+    {
+      "name": "窄道图",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().narrow === true && window.__ll.debug.state().walls.length > 0"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-playing.png",
+    "03-upgrade.png",
+    "04-boss.png",
+    "05-summer.png",
+    "06-elite.png",
+    "07-autumn.png",
+    "08-narrow.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-blade-garden"
+  ],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

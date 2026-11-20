@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 458534,
+      "sha256": "d98c65e90c7111a67da27baa72bcb6eaa51e7bf2523df20666a1463db933b980",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a glossy glass marble rolling along a narrow neon floating track high in a starry sky, glowing gems hovering above the path, a goal portal ring ahead, clouds far below, cyan and magenta track edges with reflections on the glass, vibrant saturated marble-roller aesthetic, high detail, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T18:06:23+00:00"
+}

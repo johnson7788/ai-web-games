@@ -1,0 +1,149 @@
+{
+  "game": "dice-cascade",
+  "generatedAt": "2026-11-19T18:10:02.537Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 6.875,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play-stone.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的 'Roll' 按钮开始掷骰",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Stone Temple 1/12' 文字与边框间距过小，略显拥挤",
+        "底部 'cost 0' 字号偏小，对比度不足，易被忽略",
+        "右侧 'RUNE 0 / 0/5' 进度条无填充，视觉反馈弱"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play-jade.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的'Roll'按钮开始掷骰",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'UNBANKED 25'与垂直线重叠，可能干扰视觉焦点",
+        "底部'1 cost 4'和'2 cost 4'按钮文字较小，远距离辨识度略低",
+        "'RUNE 0'进度条无明确起止标识，易误读为0/1而非0/5"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play-lava.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的 'Roll' 按钮开始掷骰子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Lava Temple 9/12' 文本与橙色边框轻微融合，对比度偏低",
+        "底部倍率按钮（×4, ×2 等）图标与文字间距过小，易误触",
+        "左侧斜线装饰元素无功能说明，可能干扰新手理解"
+      ]
+    },
+    {
+      "shot": "tests/final/04-triple.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中间的'Roll'按钮开始掷骰",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'Unbanked 132'与'Score 0'间距过小，易误读为一个字段",
+        "底部倍率按钮（x4/x2/x1）无明确选中态，当前高亮'Rune'按钮但未说明其状态含义",
+        "网格中两个发光点（左下和中上）视觉突出但无交互提示，可能误导为可点击目标"
+      ]
+    },
+    {
+      "shot": "tests/final/05-play-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的“掷骰”按钮",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘石殿 1/12’与左上角‘得分 0’间距过近，易误读为同一组信息",
+        "网格中圆点大小统一、无状态区分（如已选/未选），眯眼时难以分辨可交互元素",
+        "右上角‘符文 0 / 0/5’进度条文字与背景对比度偏低，小字号易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Roll' 按钮开始掷骰",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Stone Temple 1/12' 文字与主面板边框轻微重叠，视觉上略显拥挤",
+        "右上角 'RUNE 0 / 0/5' 中斜杠前后间距不一致，排版不够严谨",
+        "底部 '1 cost 0' 标签字体过小，远距离辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的 'Roll' 按钮开始掷骰子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Stone Temple 1/12' 文字略小，远距离可能辨识困难",
+        "底部 'cost 0' 与 'Roll' 按钮间距过近，易误触",
+        "右侧 'RUNE 0 / 5' 进度条无明确刻度，数值含义需推测"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一个圆点（die slot）下注",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Stone Temple 1/12' 文字略小，远距离可能难辨",
+        "右上角 'Skip' 按钮悬停提示遮挡部分 'RUNE 0' 和 'ROLL' 按钮",
+        "底部 'Roll' 按钮与左右按钮间距过窄，触控易误触"
+      ]
+    }
+  ]
+}

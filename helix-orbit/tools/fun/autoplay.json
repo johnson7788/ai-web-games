@@ -1,0 +1,62 @@
+{
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 10.3,
+      "actions": 597,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1.4,
+      "deaths": 1,
+      "idleSec": 0.3,
+      "maxEventGapSec": 1.13,
+      "uniqueEvents": 10,
+      "levelsReached": 11,
+      "completed": false,
+      "maxDepth": 11,
+      "maxScore": 13,
+      "actionsPerMin": 3483
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 10.4,
+      "actions": 620,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 0.1,
+      "maxEventGapSec": 1.13,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false,
+      "maxDepth": 0,
+      "maxScore": 0,
+      "actionsPerMin": 3571
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 2.5,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 2.5,
+      "maxEventGapSec": 1.13,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false,
+      "maxDepth": 0,
+      "maxScore": 0,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T11:44:05.865Z"
+}

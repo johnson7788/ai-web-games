@@ -1,0 +1,121 @@
+{
+  "slug": "phantom-run",
+  "genre": "platformer",
+  "oneLiner": "半透明的幽影在自动前进的魔塔屋顶上一路跳跃逃亡：踩符文砖会虚化坠落，捡月光斑短暂现身穿墙，逃过鬼火追兵直到破晓。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "空中只有一次跳跃，起跳时机决定整段抛物线——跳早了落点短，跳晚了撞刺或掉坑",
+      "feedback": ["sfx", "smokeTrail", "squashStretch"],
+      "combinesWith": ["toggle", "materialize"]
+    },
+    {
+      "name": "toggle",
+      "cost": "踩上符文砖会让它立刻虚化，你随之坠落——是抄近道穿下去，还是跳过去保住高处的回头路",
+      "feedback": ["sfx", "dissolveBurst", "hapticShake"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "materialize",
+      "cost": "月光斑带来的现身只有约 1.6 秒，错过窗口就撞符文墙判负；用它换穿墙捷径就得放弃更稳的地面路线",
+      "feedback": ["sfx", "glowFlash", "trail"],
+      "combinesWith": ["jump"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "第一个间隙：提前起跳求稳，还是贴边起跳求远",
+      "cost": "贴边跳更远但一旦慢半拍就掉坑"
+    },
+    {
+      "atSec": 10,
+      "choice": "踩符文砖虚化坠落抄近道，还是跳过它留在高处的实体路线",
+      "cost": "抄近道丢一颗星；留高处则要面对前方的尖刺"
+    },
+    {
+      "atSec": 20,
+      "choice": "月光斑现身窗口：立刻穿第一道符文墙，还是留到第二道墙再用",
+      "cost": "窗口约 1.6 秒，用错位置就撞墙判负"
+    },
+    {
+      "atSec": 35,
+      "choice": "高低瓦层：走高处安稳但长，还是走低处短但尖刺密",
+      "cost": "高处费时间，低处容错更低"
+    },
+    {
+      "atSec": 50,
+      "choice": "双符文互锁：先踩 A 让 B 实体，还是先踩 B 让 A 实体",
+      "cost": "踩错顺序会让落脚点瞬间虚化，掉回低处"
+    },
+    {
+      "atSec": 70,
+      "choice": "鬼火追兵逼近：穿符文墙抄近道，还是按原路保稳",
+      "cost": "抄近道要精准起跳；保稳会被鬼火追得更近"
+    },
+    {
+      "atSec": 100,
+      "choice": "移动吊篮：现在就跳上去搭便车，还是等下一个摆动周期",
+      "cost": "跳早会落空掉坑；等待则拉长被追的距离"
+    },
+    {
+      "atSec": 140,
+      "choice": "塌陷檐：踩上去 0.8 秒内起跳借力，还是绕开它",
+      "cost": "借力能省时间，但踩晚了会随檐一起坠落"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 55,
+    "twistSec": 55,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "常规跳（跨越瓦檐间隙）" },
+    { "index": 2, "newElement": "符文砖（踩踏虚化）+ 尖刺" },
+    { "index": 3, "newElement": "双符文互锁（联动切换）" },
+    { "index": 4, "newElement": "月光斑现身 + 符文墙" },
+    { "index": 5, "newElement": "高低瓦层路线选择" },
+    { "index": 6, "newElement": "幽灵火追兵段" },
+    { "index": 7, "newElement": "移动吊篮（竖直升降）" },
+    { "index": 8, "newElement": "塌陷檐（踩后 0.8s 落）" },
+    { "index": 9, "newElement": "密集尖刺 + 月光斑组合" },
+    { "index": 10, "newElement": "双符文 + 追兵叠加" },
+    { "index": 11, "newElement": "长距离多间隙逃亡" },
+    { "index": 12, "newElement": "终局全机制叠加（符文+墙+尖刺+追兵）" }
+  ],
+  "upgrades": [
+    { "id": "unlockRune", "kind": "rule", "desc": "第 2 关起出现符文砖：踩踏虚化" },
+    { "id": "unlockLinkedRune", "kind": "rule", "desc": "第 3 关起双符文互锁联动切换" },
+    { "id": "unlockMoon", "kind": "rule", "desc": "第 4 关起月光斑现身可穿符文墙" },
+    { "id": "unlockHighLow", "kind": "rule", "desc": "第 5 关起高低瓦层路线选择" },
+    { "id": "unlockChase", "kind": "rule", "desc": "第 6 关起幽灵火追兵逼近" },
+    { "id": "unlockMoving", "kind": "rule", "desc": "第 7 关起移动吊篮竖直升降" },
+    { "id": "unlockCollapse", "kind": "rule", "desc": "第 8 关起塌陷檐踩后落下" },
+    { "id": "speedUp", "kind": "stat", "desc": "第 9 关起跑速 +10%" },
+    { "id": "corporealExtend", "kind": "stat", "desc": "第 10 关起身现时间略微延长" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "unlock",
+    "rating",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

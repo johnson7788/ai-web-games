@@ -1,0 +1,92 @@
+{
+  "slug": "ocean-dash",
+  "genre": "action",
+  "oneLiner": "你是带领鱼群洄游的领头鱼，在 12 个赛段里自动前进，上下躲避礁石/水母/树根，吃气泡加速、借洋流成箭形光带，与 3 条 AI 竞速冲线。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "注意力：向上躲水母就错过下方的气泡/洋流",
+      "feedback": ["sfx", "trail", "fish-tilt"],
+      "combinesWith": ["gather", "glide"]
+    },
+    {
+      "name": "gather",
+      "cost": "按住收拢鱼群：窄缝可过但前进变慢",
+      "feedback": ["sfx", "school-shape", "speed-hint"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "glide",
+      "cost": "跃出水面滑翔：跨礁快，但落点错会撞水母/树根",
+      "feedback": ["sfx", "spray", "arrow-trail"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先吃眼前气泡回鱼，还是直线抢速", "cost": "掉速绕路 vs 少回鱼" },
+    { "atSec": 15, "choice": "窄缝收拢穿过，还是散开绕行", "cost": "慢速安全 vs 快速危险" },
+    { "atSec": 30, "choice": "借洋流带加速，还是避开保持路径", "cost": "被推偏 vs 失去加速" },
+    { "atSec": 45, "choice": "水母阵散开抢速，还是收拢避险", "cost": "易撞 vs 慢" },
+    { "atSec": 70, "choice": "逆流区硬冲，还是吃气泡续速", "cost": "时间 vs 偏移" },
+    { "atSec": 90, "choice": "跃面滑翔跨礁，还是贴底绕礁", "cost": "落点风险 vs 绕路减速" },
+    { "atSec": 120, "choice": "红树根下穿，还是上绕跃面", "cost": "窄缝判断 vs 起跳时机" },
+    { "atSec": 150, "choice": "双窄缝连续收拢，还是中途散开抢速", "cost": "节奏 vs 速度" }
+  ],
+  "loop": {
+    "teachSec": 24,
+    "practiceSec": 50,
+    "twistSec": 50,
+    "resolveSec": 24
+  },
+  "levels": [
+    { "index": 1, "newElement": "气泡：吃泡加速+回鱼" },
+    { "index": 2, "newElement": "窄缝区：收拢才可过" },
+    { "index": 3, "newElement": "洋流带：箭形光带加速" },
+    { "index": 4, "newElement": "水母阵：散速vs避险" },
+    { "index": 5, "newElement": "逆流区：逆流减速" },
+    { "index": 6, "newElement": "深沟暗区：视野缩小" },
+    { "index": 7, "newElement": "跃面滑翔捷径" },
+    { "index": 8, "newElement": "密集礁石阵" },
+    { "index": 9, "newElement": "红树根垂障" },
+    { "index": 10, "newElement": "双窄缝连打" },
+    { "index": 11, "newElement": "逆流+水母叠加" },
+    { "index": 12, "newElement": "终局礁阵+滑翔" }
+  ],
+  "upgrades": [
+    { "id": "tailStream", "kind": "rule", "desc": "滑翔结束落水时推开水母（规则：落点清障）" },
+    { "id": "narrowGrace", "kind": "rule", "desc": "收拢状态窄缝判定再放宽 8px（规则：容错）" },
+    { "id": "currentChain", "kind": "rule", "desc": "洋流加速中再吃气泡刷新并叠加（规则链）" },
+    { "id": "firstBreath", "kind": "rule", "desc": "每段开局前 3 秒障碍减半（开局规则）" },
+    { "id": "fishHP", "kind": "stat", "desc": "开局鱼群 +2" },
+    { "id": "streamSpeed", "kind": "stat", "desc": "基础前进速度 +6%" },
+    { "id": "glideTime", "kind": "stat", "desc": "滑翔下落再慢 20%" },
+    { "id": "bubblePull", "kind": "stat", "desc": "气泡吸附半径 +25%" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "吃到洋流带时整条鱼群瞬间列成箭形光带向前加速，把竞速对手甩在身后",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "三场景包全程序化 Canvas：珊瑚浅滩（亮青）/ 深沟（深蓝）/ 红树林（绿金）；UI 线框 SVG/CSS；BGM/SFX 全 WebAudio 程序化合成"
+}

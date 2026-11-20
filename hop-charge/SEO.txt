@@ -1,0 +1,45 @@
+TITLE
+Hop Charge — Free One-Tap Rooftop Jump Game
+
+CATEGORY
+Arcade
+
+TAGS
+jump game, one tap, timing, charge, rooftop, raccoon, lantern, arcade, casual, browser game, night, family friendly
+
+SHORT DESCRIPTION
+Hold to charge, release to leap — land your lantern raccoon dead-center on the next rooftop and double your combo.
+
+LONG DESCRIPTION
+HOP CHARGE is a free one-tap arcade jump game about a little lantern-holding raccoon hopping across moonlit rooftops.
+
+Press and hold to charge the lantern flame — the longer you hold, the farther you leap. Release to spring through the air in a clean arc and land on the next roof. Land dead-center and your combo doubles: 1, 2, 4, 8. Land off-center and the streak resets. Slip off the edge and the lantern drops.
+
+12 handcrafted levels across three worlds: Dusk Tile Town, Rainy Lantern Street and Misty Mountain Peak. Fixed gaps teach you the rhythm, then the rules twist — platforms slide sideways, springs bounce you two roofs with a risky drift, ice makes your landing skid, broken roofs shrink the safe zone, and headwinds eat your distance.
+
+Perfect landings burst the flame into a glowing halo; string a combo and the raccoon's tail catches fire. Three stars per level for clean, combo-heavy runs.
+
+Easy to learn in ten seconds, hard to master. Mouse, touch and spacebar on desktop and mobile. No download — play free in your browser.
+
+TITLE
+风灯跳塔 — 免费单键屋顶跳跃游戏
+
+CATEGORY
+街机
+
+TAGS
+跳跃游戏, 单键, 时机, 蓄力, 屋顶, 狸猫, 灯笼, 街机, 休闲, 网页游戏, 夜晚, 全年龄
+
+SHORT DESCRIPTION
+按住蓄力、松手起跳——让提灯小狸猫落进下一片屋顶的正中心，连击翻倍。
+
+LONG DESCRIPTION
+《风灯跳塔》是一款免费的单键街机跳跃游戏：一只提着灯笼的小狸猫，在月光下的屋顶间跳跃。
+
+按住屏幕蓄力，灯笼火焰越涨越大，蓄得越久跳得越远；松手起跳，沿抛物线落到下一片屋顶。落进中心，连击翻倍：1、2、4、8。落偏一点，连击清零。踩到边缘，灯笼坠落。
+
+12 个手工关卡横跨三大场景：暮色瓦镇、雨夜灯笼街、晨雾山顶。固定间距先教你节奏，随后规则不断反转——平台左右缓动、弹簧台一次弹两座屋顶却带着横偏、冰面让落点打滑、断头台缩窄安全区、逆风吃掉你的距离。
+
+完美落点会让灯焰炸出光环；连击叠高，狸猫的尾巴就会着火拖尾。每关三星，献给干净利落的高连击通关。
+
+十秒上手，越玩越上瘾。鼠标、触屏、空格键全支持，桌面与手机都能玩。无需下载，浏览器免费畅玩。

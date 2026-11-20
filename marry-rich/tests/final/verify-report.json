@@ -1,0 +1,140 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "i18n 默认 en",
+      "ok": true,
+      "detail": "eval: window.__ll.state.lang === 'en'"
+    },
+    {
+      "name": "切中文生效",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "开局进入 playing",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "首次进入引导出现",
+      "ok": true,
+      "detail": "eval: !!document.querySelector('[data-tutorial]') && !document.querySelector('[data-tutorial]').classList.contains('hidden')"
+    },
+    {
+      "name": "跳过引导后消失",
+      "ok": true,
+      "detail": "eval: document.querySelector('[data-tutorial]').classList.contains('hidden')"
+    },
+    {
+      "name": "抉择选项渲染",
+      "ok": true,
+      "detail": "eval: document.querySelectorAll('.choice-btn').length >= 2"
+    },
+    {
+      "name": "选择后进入结果卡",
+      "ok": true,
+      "detail": "eval: window.__ll.run.stage === 'result'"
+    },
+    {
+      "name": "能力属性 +1 生效",
+      "ok": true,
+      "detail": "eval: window.__ll.run.attrs.abi === 3"
+    },
+    {
+      "name": "推进到第 2 章",
+      "ok": true,
+      "detail": "eval: window.__ll.run.chapter === 2"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重启回标题",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "直达结局",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'ending'"
+    },
+    {
+      "name": "结局标题渲染",
+      "ok": true,
+      "detail": "eval: !!document.querySelector('#ending-logo') && document.querySelector('#ending-logo').textContent.length > 0"
+    },
+    {
+      "name": "移动端标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "移动端开局",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "移动端选项渲染",
+      "ok": true,
+      "detail": "eval: document.querySelectorAll('.choice-btn').length >= 2"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-title-zh.png",
+    "03-tutorial.png",
+    "04-play.png",
+    "05-result.png",
+    "06-paused.png",
+    "07-ending.png",
+    "08-mobile-play.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

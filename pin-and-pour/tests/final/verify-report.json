@@ -1,0 +1,117 @@
+{
+  "url": "http://127.0.0.1:8130/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "关卡格 12 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 12"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "L1 一滴蜂蜜",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().totalHoney === 1"
+    },
+    {
+      "name": "结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "L3 有气泡",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().totalBubble > 0"
+    },
+    {
+      "name": "L4 有蜂巢块",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().grid.flat().some(c=>c.kind==='comb')"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "移动端进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.68,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-playing.png",
+    "03-result.png",
+    "04-bubble-level.png",
+    "05-comb-level.png",
+    "06-noon-scene.png",
+    "07-dusk-scene.png",
+    "08-m-playing.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "[mobile] https://pipygames.com/sdk/config.json",
+    "[mobile] https://pipygames.com/api/sdk/config?appId=pipy-pin-and-pour",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-pin-and-pour",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-pin-and-pour"
+  ],
+  "fps": {
+    "avgFrameMs": 16.68,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

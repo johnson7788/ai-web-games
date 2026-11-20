@@ -1,0 +1,172 @@
+{
+  "generatedAt": "2026-11-19T17:35:52.045Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "deal": {
+      "rms": 0.1004,
+      "peak": 0.3352,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "bid": {
+      "rms": 0.1531,
+      "peak": 0.32,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "landlord": {
+      "rms": 0.1438,
+      "peak": 0.5039,
+      "nan": 0,
+      "samples": 25137,
+      "durSec": 0.57,
+      "pass": true
+    },
+    "double": {
+      "rms": 0.115,
+      "peak": 0.3856,
+      "nan": 0,
+      "samples": 17199,
+      "durSec": 0.39,
+      "pass": true
+    },
+    "doublePass": {
+      "rms": 0.0613,
+      "peak": 0.12,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "play": {
+      "rms": 0.0842,
+      "peak": 0.2843,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "pass": {
+      "rms": 0.0755,
+      "peak": 0.14,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "bomb": {
+      "rms": 0.2528,
+      "peak": 0.7136,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "rocket": {
+      "rms": 0.2403,
+      "peak": 0.7879,
+      "nan": 0,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1721,
+      "peak": 0.6612,
+      "nan": 0,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "lose": {
+      "rms": 0.1415,
+      "peak": 0.28,
+      "nan": 0,
+      "samples": 26460,
+      "durSec": 0.6,
+      "pass": true
+    },
+    "spring": {
+      "rms": 0.1692,
+      "peak": 0.5867,
+      "nan": 0,
+      "samples": 23814,
+      "durSec": 0.54,
+      "pass": true
+    },
+    "rankUp": {
+      "rms": 0.148,
+      "peak": 0.5284,
+      "nan": 0,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    },
+    "hint": {
+      "rms": 0.0675,
+      "peak": 0.12,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1185,
+      "peak": 0.2639,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "invalid": {
+      "rms": 0.1333,
+      "peak": 0.2143,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    }
+  },
+  "loops": {
+    "title": {
+      "rms": 0.0333,
+      "peak": 0.1673,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "table": {
+      "rms": 0.0403,
+      "peak": 0.2099,
+      "nan": 0,
+      "samples": 264600,
+      "durSec": 6,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

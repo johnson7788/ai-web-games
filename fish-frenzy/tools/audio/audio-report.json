@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-11-19T13:24:13.201Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shot": {
+      "rms": 0.0786,
+      "peak": 0.3453,
+      "nan": 0,
+      "zcRate": 6084.1,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "netBurst": {
+      "rms": 0.2314,
+      "peak": 0.5078,
+      "nan": 0,
+      "zcRate": 253.6,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "catch": {
+      "rms": 0.1882,
+      "peak": 0.4997,
+      "nan": 0,
+      "zcRate": 1212.6,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "netMiss": {
+      "rms": 0.102,
+      "peak": 0.22,
+      "nan": 0,
+      "zcRate": 141.7,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.0951,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 1330.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "tierChange": {
+      "rms": 0.0955,
+      "peak": 0.12,
+      "nan": 0,
+      "zcRate": 643.9,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "forecast": {
+      "rms": 0.0884,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 762.6,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "stageStart": {
+      "rms": 0.1045,
+      "peak": 0.4339,
+      "nan": 0,
+      "zcRate": 342.5,
+      "samples": 29547,
+      "durSec": 0.67,
+      "pass": true
+    },
+    "stageClear": {
+      "rms": 0.1556,
+      "peak": 0.5457,
+      "nan": 0,
+      "zcRate": 833.6,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    },
+    "bossSpawn": {
+      "rms": 0.1497,
+      "peak": 0.4354,
+      "nan": 0,
+      "zcRate": 307.2,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "electricReady": {
+      "rms": 0.1299,
+      "peak": 0.22,
+      "nan": 0,
+      "zcRate": 602.3,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "electricFire": {
+      "rms": 0.1816,
+      "peak": 0.6453,
+      "nan": 0,
+      "zcRate": 4946.5,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "coinMilestone": {
+      "rms": 0.0788,
+      "peak": 0.14,
+      "nan": 0,
+      "zcRate": 1019,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1921,
+      "peak": 0.4737,
+      "nan": 0,
+      "zcRate": 325,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.181,
+      "peak": 0.6591,
+      "nan": 0,
+      "zcRate": 965.5,
+      "samples": 37044,
+      "durSec": 0.84,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1183,
+      "peak": 0.2781,
+      "nan": 0,
+      "zcRate": 970.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.1368,
+      "peak": 0.31,
+      "nan": 0,
+      "zcRate": 878.9,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    }
+  },
+  "loops": {
+    "water": {
+      "rms": 0.013,
+      "peak": 0.0699,
+      "nan": 0,
+      "zcRate": 2485.5,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgm": {
+      "rms": 0.05,
+      "peak": 0.1777,
+      "nan": 0,
+      "zcRate": 202.3,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

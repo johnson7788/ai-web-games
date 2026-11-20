@@ -1,0 +1,149 @@
+{
+  "game": "light-grid",
+  "generatedAt": "2026-11-19T13:39:22.432Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.875,
+    "silhouette": 7.25,
+    "style_consistent": 9.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Power On' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'LIGHT GRID' 发光边缘轻微溢出容器边界（右下角）",
+        "‘Best 0★ · Level 1’ 字体偏小且颜色较暗，对比度略低",
+        "右上角语言选择框无下拉箭头图标，可能被误认为静态标签"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击第三行中间的暗节点（唯一未点亮的节点）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第三行第三列节点为暗色，但周围无明显高亮边框或指示器，易误判为不可交互",
+        "‘20/25 Motherboard’文字偏小且颜色较淡，弱对比度下可能难辨",
+        "右上角FUSE进度条与STARS按钮间距过近，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/03-diode.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间带倒三角的亮绿色节点，因为它可能是唯一非圆点的可操作元素且位于中心区域",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "倒三角符号（第2行第2列、第4行第3列）与圆点符号混用，语义不明确，易混淆操作意图",
+        "‘13/25 Motherboard’文字颜色偏淡（浅黄），在深绿背景上对比度不足，部分用户可能误读为‘13/25 Motherboar’",
+        "右上角FUSE进度条无数值标签，仅靠颜色判断剩余量不够精确"
+      ]
+    },
+    {
+      "shot": "tests/final/04-neon.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间未点亮的节点（如第3行第4列）以激活它并传播光效",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘26/49 Neon Tube’文字颜色偏淡（浅黄），在深背景上对比度略低，可能影响弱光环境辨识",
+        "右上角FUSE进度条无数值标签，仅靠颜色变化判断剩余量不够直观",
+        "部分亮起节点中心白点过小，眯眼时易与暗节点混淆（影响silhouette得分）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-overload.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Retry' 按钮或按 R 键重试",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景网格模糊，眯眼时难以区分可交互格子与背景（silhouette 低）",
+        "‘Best’ 行无数值显示，可能为空或未初始化，易引发困惑",
+        "星星图标为金色发光，与深绿 UI 对比过强，轻微破坏整体暗调风格"
+      ]
+    },
+    {
+      "shot": "tests/final/06-clear.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色高亮的“Next board”按钮进入下一关卡",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景电路板模糊导致可交互网格边界不清晰，影响‘silhouette’判断",
+        "‘NEW RECORD’标签与三颗星间距过小，视觉拥挤",
+        "‘Enter for next board’提示文字字号偏小，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击第3行第3列的暗节点（唯一未亮的中间节点）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘16/25 Motherboard’文字微小且半透明，易被忽略；建议加粗或提高对比度",
+        "右上角‘FUSE 7’进度条无标签说明，需结合上下文理解其含义",
+        "部分暗节点（如第2行第5列）与边框融合度高，边缘辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘通电’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最佳 0★ · 第 1 关’中‘0★’星号为黄色，与主绿色调不一致，轻微风格冲突",
+        "按钮文字‘通电’‘怎么玩’‘设置’字号偏小，远距离辨识度略低",
+        "右上角语言切换下拉框无展开箭头或悬停反馈，交互意图不够明确"
+      ]
+    }
+  ]
+}

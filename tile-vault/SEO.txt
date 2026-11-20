@@ -1,0 +1,45 @@
+TITLE
+Tile Vault — Free 3D Tile-Matching Puzzle Game
+
+CATEGORY
+Puzzle
+
+TAGS
+tile matching, match 3, mahjong, puzzle, brain teaser, casual, logic, treasure, vault, browser game
+
+SHORT DESCRIPTION
+Stack treasure tiles in a 3D vault, match three of a kind, and rain coins into the bag before the tray overflows.
+
+LONG DESCRIPTION
+TILE VAULT is a free 3D tile-matching puzzle game about a cat burglar raiding a treasure vault.
+
+Treasures are stacked in a pseudo-3D isometric pile — gem boxes, golden goblets, ancient coins, crowns and more. Only the pieces on top can be picked: tap an uncovered treasure, drop it into the bottom tray, and match three of the same kind to melt them into a shower of coins that fall into your money bag. Fill the tray past its limit or run out of time, and the heist is over.
+
+12 handcrafted levels across three worlds: the Underground Vault, the Tomb Corridor and the Dragon Hoard. Layer stacks grow deeper, treasure kinds climb from 6 to 12, and the tray shrinks from 7 slots to 6. Deep well columns, twin stacks, fake locks, timed alarms and limited undo/shuffle tools keep every raid fresh.
+
+Three stars per level: clear the vault, keep time to spare, and finish without burning a retry. Rotate the camera, plan your pick order, and master the tray.
+
+Easy to learn in ten seconds, tricky to master. Works with mouse, touch and keyboard on desktop and mobile. No download — play free in your browser.
+
+TITLE
+宝库夜盗 — 免费 3D 三消益智游戏
+
+CATEGORY
+益智
+
+TAGS
+三消, 连连看, 麻将, 益智, 休闲, 逻辑, 解谜, 宝藏, 宝库, 网页游戏
+
+SHORT DESCRIPTION
+在 3D 宝库堆里拾取宝物放进底部槽，三同凑齐化作金币雨落入钱袋，别让槽满出来。
+
+LONG DESCRIPTION
+《宝库夜盗》是一款免费的 3D 三消益智游戏：一只盗贼猫潜入地珠宝库偷宝藏。
+
+宝物以伪 3D 等距视角堆叠——宝石箱、金杯、古币、王冠等。只有顶层的块可以拾取：点击未被压住的宝物，放进底部槽，凑齐三件相同就会化作金币雨落进钱袋。槽满出来或时间耗尽，这一票就砸了。
+
+12 个手工关卡横跨三大场景：地下金库、古墓回廊、龙巢宝山。层叠越来越深，宝物品类从 6 种涨到 12 种，槽位从 7 格收窄到 6 格。深井柱、分区双堆、假锁、限时警报和有限的撤回/洗牌道具，让每一次盗宝都新鲜。
+
+每关三星：清空宝库、留足剩余时间、一次重试都不用。旋转视角、规划拾取顺序、驯服底部槽。
+
+十秒上手，越玩越烧脑。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

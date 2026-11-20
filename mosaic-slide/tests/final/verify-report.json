@@ -1,0 +1,123 @@
+{
+  "url": "http://127.0.0.1:8131/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "关卡格 12 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 12"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "L1 3×3 棋盘",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().rows === 3 && window.__ll.debug.state().cols === 3 && window.__ll.debug.state().board.length === 9"
+    },
+    {
+      "name": "自动拼回结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().stars >= 1"
+    },
+    {
+      "name": "L5 六边形切",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().hex === true"
+    },
+    {
+      "name": "L7 旋转块",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().rotate === true"
+    },
+    {
+      "name": "L8 盲拼关",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().blind === true"
+    },
+    {
+      "name": "L9 双图交替",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().dual === true"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.67,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "02-title-zh.png",
+    "03-playing.png",
+    "04-result.png",
+    "05-hex.png",
+    "06-rotate.png",
+    "07-blind.png",
+    "08-dual.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-mosaic-slide"
+  ],
+  "fps": {
+    "avgFrameMs": 16.67,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

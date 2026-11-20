@@ -1,0 +1,87 @@
+{
+  "slug": "color-flux",
+  "genre": "arcade",
+  "oneLiner": "你是极地夜空里的一只极光萤，点按起跳穿过旋转的多色极光环带，只有当前颜色与环段同色才能通过，吃色核变色、连穿十环引爆全屏极光。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "每次起跳都是一次无法撤回的轨迹承诺；跳早了/跳晚了都会撞上异色段判负",
+      "feedback": ["sfx", "trail", "squash-stretch"],
+      "combinesWith": ["hover"]
+    },
+    {
+      "name": "hover",
+      "cost": "消耗有限的悬浮表；按住拖慢下落来等正确颜色对齐，但表用完就没法再踩拍",
+      "feedback": ["sfx", "glow-ring", "particle-fall"],
+      "combinesWith": ["jump"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8,  "choice": "第一道环逼近：立刻起跳抢分还是等正确颜色段转到位", "cost": "抢节奏可能撞错色 vs 慢下来丢连击" },
+    { "atSec": 20, "choice": "色核出现：吃下变色（原色变陷阱）还是跳过保当前色", "cost": "新颜色不可预测 vs 放弃变色机会" },
+    { "atSec": 35, "choice": "韵律环：踩着节拍穿过去还是悬浮等到节拍对齐", "cost": "早/晚都会撞异色 vs 烧悬浮表" },
+    { "atSec": 55, "choice": "双色核心：吃下换 5 秒双色通行（得分减半）还是跳过", "cost": "分数减半 vs 单色更脆" },
+    { "atSec": 75, "choice": "障碍换成双弧：从宽缝穿过去还是悬浮微调对准", "cost": "借势快进 vs 耗表求稳" },
+    { "atSec": 95, "choice": "十字障碍四段轮转：现在就穿还是等正确段转过来", "cost": "求快 vs 求准" },
+    { "atSec": 115, "choice": "极光爆发已满：立刻引爆清 3 环还是留给后面的嵌套双环", "cost": "现在就爽 vs 存到更难处" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1,  "newElement": "单环：6 段旋转极光环 + 起跳/悬浮教学" },
+    { "index": 2,  "newElement": "双弧：2 段大扇区，引入宽缝取舍" },
+    { "index": 3,  "newElement": "十字：十字辐条布局，段更窄转速更快" },
+    { "index": 4,  "newElement": "风车：12 段窄匹配窗风车叶片 + 韵律环首次出现" },
+    { "index": 5,  "newElement": "嵌套双环：内环参与判定、外环反旋装饰，切日辉场景" },
+    { "index": 6,  "newElement": "日辉单环：金橙暖色 + 韵律环节奏加密" },
+    { "index": 7,  "newElement": "日辉双弧：提速下的宽缝预判" },
+    { "index": 8,  "newElement": "日辉十字：双色核心首次出现（5 秒双色/得分减半）" },
+    { "index": 9,  "newElement": "霓虹风车：切霓虹雨场景 + 韵律环" },
+    { "index": 10, "newElement": "霓虹嵌套双环：高转速内环反旋" },
+    { "index": 11, "newElement": "霓虹单环：双色核心 + 韵律环同场" },
+    { "index": 12, "newElement": "霓虹嵌套双环：极限转速无尽续跑" }
+  ],
+  "upgrades": [
+    { "id": "dualColor",  "kind": "rule", "desc": "双色核心：5 秒内可穿两种颜色，但得分减半（改判定规则）" },
+    { "id": "rhythmWiden","kind": "rule", "desc": "韵律环节拍判定窗口加宽（改时机规则）" },
+    { "id": "shieldOnce", "kind": "rule", "desc": "护盾：抵消一次异色撞击后被消耗（改失败规则）" },
+    { "id": "slowRing",   "kind": "rule", "desc": "接下来 3 个环转速 -30%（改速度规则）" },
+    { "id": "auroraBurst","kind": "rule", "desc": "连穿 10 环触发全屏极光爆发 +10 分（改奖励规则）" },
+    { "id": "scoreDouble","kind": "rule", "desc": "接下来 5 环得分 ×2（改得分规则）" },
+    { "id": "hoverTank",  "kind": "stat", "desc": "悬浮表上限 +20%（数值）" },
+    { "id": "jumpPower",  "kind": "stat", "desc": "起跳初速 +8%（数值）" },
+    { "id": "gravity",    "kind": "stat", "desc": "重力 -6%（更飘，数值）" },
+    { "id": "gaugeRegen", "kind": "stat", "desc": "悬浮表回复 +15%（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连续穿 10 环不碰错色，整块屏幕被全屏流动的极光吞没，极光萤化为一束贯穿天际的光柱",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "极地夜空发光风格：程序化 Canvas 发光渲染（径向渐变/加法混合/极光帘幕），无外部素材；UI 线框 CSS 手写；BGM/SFX 全部 WebAudio 程序化合成"
+}

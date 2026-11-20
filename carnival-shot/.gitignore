@@ -1,0 +1,4 @@
+assets/_src/
+tests/artifacts/
+node_modules/
+tools/audio/*.wav

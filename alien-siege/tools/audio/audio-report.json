@@ -1,0 +1,262 @@
+{
+  "generatedAt": "2026-11-19T18:08:09.640Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shoot": {
+      "rms": 0.2026,
+      "peak": 0.6329,
+      "nan": 0,
+      "zcRate": 2459.6,
+      "samples": 4851,
+      "durSec": 0.11,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.1546,
+      "peak": 0.4737,
+      "nan": 0,
+      "zcRate": 969,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.2145,
+      "peak": 0.7055,
+      "nan": 0,
+      "zcRate": 420.5,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "reload": {
+      "rms": 0.0528,
+      "peak": 0.151,
+      "nan": 0,
+      "zcRate": 12445.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "reloadDone": {
+      "rms": 0.1681,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 770.2,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "mark": {
+      "rms": 0.1293,
+      "peak": 0.22,
+      "nan": 0,
+      "zcRate": 1268,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "shieldOn": {
+      "rms": 0.1354,
+      "peak": 0.4118,
+      "nan": 0,
+      "zcRate": 1213.4,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "shieldOff": {
+      "rms": 0.1099,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 359.4,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "shieldBreak": {
+      "rms": 0.2042,
+      "peak": 0.6142,
+      "nan": 0,
+      "zcRate": 3290.2,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "playerHurt": {
+      "rms": 0.2394,
+      "peak": 0.699,
+      "nan": 0,
+      "zcRate": 364.3,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "waveStart": {
+      "rms": 0.1321,
+      "peak": 0.4888,
+      "nan": 0,
+      "zcRate": 434.6,
+      "samples": 22932,
+      "durSec": 0.52,
+      "pass": true
+    },
+    "waveClear": {
+      "rms": 0.1454,
+      "peak": 0.5553,
+      "nan": 0,
+      "zcRate": 689.7,
+      "samples": 25578,
+      "durSec": 0.58,
+      "pass": true
+    },
+    "weaponUnlock": {
+      "rms": 0.1644,
+      "peak": 0.6509,
+      "nan": 0,
+      "zcRate": 712.2,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "sceneEnter": {
+      "rms": 0.1162,
+      "peak": 0.4513,
+      "nan": 0,
+      "zcRate": 343.6,
+      "samples": 37926,
+      "durSec": 0.86,
+      "pass": true
+    },
+    "bossSpawn": {
+      "rms": 0.1678,
+      "peak": 0.4989,
+      "nan": 0,
+      "zcRate": 315.6,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "bossHit": {
+      "rms": 0.2394,
+      "peak": 0.6537,
+      "nan": 0,
+      "zcRate": 245,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.107,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 1330.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "splat": {
+      "rms": 0.2459,
+      "peak": 0.7774,
+      "nan": 0,
+      "zcRate": 725.1,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2138,
+      "peak": 0.5417,
+      "nan": 0,
+      "zcRate": 365.3,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1825,
+      "peak": 0.6562,
+      "nan": 0,
+      "zcRate": 657,
+      "samples": 37926,
+      "durSec": 0.86,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1347,
+      "peak": 0.3022,
+      "nan": 0,
+      "zcRate": 870.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0502,
+      "peak": 0.09,
+      "nan": 0,
+      "zcRate": 758.6,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgmBass": {
+      "rms": 0.0428,
+      "peak": 0.1065,
+      "nan": 0,
+      "zcRate": 54.8,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    },
+    "bgmArp": {
+      "rms": 0.0691,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 268.3,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    },
+    "bgmPulse": {
+      "rms": 0.0144,
+      "peak": 0.0693,
+      "nan": 0,
+      "zcRate": 6808.3,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 26,
+    "passed": 26,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "neon-pinball",
+  "genre": "arcade",
+  "oneLiner": "霓虹弹珠台：蓄力推杆把球打上台面，左右挡板救球，命中电容球 bumper 和目标灯刷分，集齐 3 个超导灯进入 20 秒超导态。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "flip",
+      "cost": "时机：翻早了打空，翻晚了球掉底",
+      "feedback": ["sfx", "flipper-kick", "spark"],
+      "combinesWith": ["launch"]
+    },
+    {
+      "name": "launch",
+      "cost": "蓄力时间：蓄太满打偏，蓄不够上不了台面",
+      "feedback": ["sfx", "plunger-charge", "launch-trail"],
+      "combinesWith": ["flip"]
+    },
+    {
+      "name": "nudge",
+      "cost": "轻推有冷却，且可能把球推进掉球孔",
+      "feedback": ["sfx", "table-tilt", "screen-nudge"],
+      "combinesWith": ["flip"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "蓄满力冲顶环抢超导，还是轻发稳落中台打 bumper", "cost": "高风险高收益 vs 稳妥刷分" },
+    { "atSec": 18, "choice": "黑洞开着时，敢不敢打那侧的高分目标", "cost": "被吸入等 5s 回球 vs 拿高分" },
+    { "atSec": 32, "choice": "球掉向左下，提前翻左挡板拦截，还是赌它进回球道", "cost": "空翻失位 vs 放任风险" },
+    { "atSec": 48, "choice": "已集 2 个超导灯，冒险追第 3 个还是先保命", "cost": "超导 ×3 分数 vs 掉球风险" },
+    { "atSec": 65, "choice": "多球同时掉向两侧，先救哪一侧", "cost": "二选一，另一球大概率掉底" },
+    { "atSec": 85, "choice": "目标灯全亮开倍率，是否立刻重打目标刷分", "cost": "倍率期冒险 vs 保守续航" },
+    { "atSec": 110, "choice": "磁力区把球吸偏，翻挡板抢回还是顺势让它进坡道", "cost": "强行救球 vs 顺势换路线" },
+    { "atSec": 140, "choice": "球速过快，用轻推减速还是等它自然衰减", "cost": "轻推可能推歪 vs 失去节奏" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 40,
+    "twistSec": 35,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础台：推杆发射 + 左右挡板 + 电容球 bumper + 目标灯 + 超导灯（教核心循环）" },
+    { "index": 2, "newElement": "回球坡道：新增左回球道，把球送回上方" },
+    { "index": 3, "newElement": "黑洞孔：周期开合，吸入 5s 后从随机喷射口射回（风险机位）" },
+    { "index": 4, "newElement": "顶环任务链：双坡道把球送上顶环抢超导" },
+    { "index": 5, "newElement": "磁力区：把球吸过去（改变落点路线）" },
+    { "index": 6, "newElement": "旋转挡板：中央新增一个持续摆动的旋转挡板" },
+    { "index": 7, "newElement": "双球：开局双球 + 坡道任务链连击 ×2" },
+    { "index": 8, "newElement": "移动目标灯：目标横向移动，命中时机要求提高" },
+    { "index": 9, "newElement": "双磁力区：两侧磁力拉扯，路线更难预测" },
+    { "index": 10, "newElement": "双黑洞：两个黑洞周期交错开合" },
+    { "index": 11, "newElement": "窄 outlane：两侧回球道收窄，掉球风险大增" },
+    { "index": 12, "newElement": "终局全要素：高目标分 + 全机关全开" }
+  ],
+  "upgrades": [
+    { "id": "magnetField", "kind": "rule", "desc": "磁力区半径翻倍（改拾取/路径规则）" },
+    { "id": "superEcho", "kind": "rule", "desc": "超导态下黑洞吸入改为 ×5 反弹而非回球" },
+    { "id": "flipperCharge", "kind": "rule", "desc": "充能挡板满力直接点亮一盏超导灯" },
+    { "id": "ballSave", "kind": "rule", "desc": "每台第一次掉球自动回弹救球" },
+    { "id": "comboBank", "kind": "rule", "desc": "连击 ≥10 存一颗奖励球" },
+    { "id": "multiball", "kind": "rule", "desc": "目标灯全亮额外奖励双球" },
+    { "id": "power", "kind": "stat", "desc": "推杆蓄力速度 +20%" },
+    { "id": "bounce", "kind": "stat", "desc": "挡板击球冲量 +15%" },
+    { "id": "drainGuard", "kind": "stat", "desc": "掉球判定线下移 40px（更宽容）" },
+    { "id": "pointUp", "kind": "stat", "desc": "bumper 分 +10%" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "集齐 3 个超导灯，整张台面变蓝白，球带电拖尾，所有 bumper 分 ×3 的 20 秒超导态",
+  "antiScope": [
+    "不做联网排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "霓虹赛博程序化 Canvas 发光渲染（径向渐变/加法混合），UI 线框 SVG/CSS，音频 WebAudio 程序化合成"
+}

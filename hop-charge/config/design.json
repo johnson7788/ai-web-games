@@ -1,0 +1,77 @@
+{
+  "slug": "hop-charge",
+  "genre": "arcade",
+  "oneLiner": "夜色屋顶间，提灯小狸猫按住蓄力、松开起跳，用抛物线落到下一片屋顶，压中中心连击加倍，偏了失足坠落。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "charge",
+      "cost": "蓄力越久跳得越远，但离中心越难压准——每一毫秒都在赌精度，松开即出发、不可撤回",
+      "feedback": ["sfx", "squash", "flameGrow", "forceBar"],
+      "combinesWith": ["leap"]
+    },
+    {
+      "name": "leap",
+      "cost": "起跳后落点不可控、不可空中修正；力度错了要么失足要么断连击",
+      "feedback": ["sfx", "arc", "landingBurst", "halo"],
+      "combinesWith": ["charge"]
+    },
+    {
+      "name": "read",
+      "cost": "特殊台面（弹簧/冰面/移动台/逆风）必须提前读台面、留余量——贪快就是坠落",
+      "feedback": ["sfx", "platformCue", "aimLine"],
+      "combinesWith": ["leap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一跳蓄多久：轻点保稳，还是蓄满赌中心", "cost": "蓄满一旦偏出中心就断连击" },
+    { "atSec": 12, "choice": "刚拿到完美连击：继续压中心追加倍，还是落普通台面保命", "cost": "追中心失败=坠落重来；保命=放弃连击加成" },
+    { "atSec": 25, "choice": "前方弹簧台：踩上去省一跳但带横偏，还是绕过它落邻台", "cost": "横偏可能断连击甚至滑出边缘" },
+    { "atSec": 45, "choice": "冰面台：瞄准近边缘让滑动把自己送进中心，还是按正常台面硬压", "cost": "算错滑动量直接滑出边缘" },
+    { "atSec": 70, "choice": "移动台左右缓动：等它摆回中心再跳，还是凭感觉追它", "cost": "追早了落空，等晚了被时间压" },
+    { "atSec": 95, "choice": "逆风段：为阻力多蓄，还是按无风力度硬跳", "cost": "少蓄会被风吹回坠楼；多蓄过头冲出台面" },
+    { "atSec": 120, "choice": "高连击在手：再压一次中心翻倍，还是落普通台面把分数落袋", "cost": "一次失手连击清零" },
+    { "atSec": 150, "choice": "断头台边缘更窄：死压中心，还是提前结束本关不贪", "cost": "死压中心容错几乎为零" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 40, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "固定间距（教学：蓄力→抛物线→落点判定）" },
+    { "index": 2, "newElement": "渐远间距（下一台越飞越远）" },
+    { "index": 3, "newElement": "渐近间距（屋顶突然收近，力度重校）" },
+    { "index": 4, "newElement": "移动台（左右缓动，看准时机再落）" },
+    { "index": 5, "newElement": "弹簧台（落上弹更远，省力但有横偏）" },
+    { "index": 6, "newElement": "冰面台（落点滑半格，逼你留余量）" },
+    { "index": 7, "newElement": "断头台（边缘更窄，判定更凶）" },
+    { "index": 8, "newElement": "逆风段（阻力吃距离，必须多蓄）" },
+    { "index": 9, "newElement": "综合：移动台 + 弹簧台" },
+    { "index": 10, "newElement": "综合：冰面台 + 断头台" },
+    { "index": 11, "newElement": "综合：弹簧台 + 逆风" },
+    { "index": 12, "newElement": "大师关：移动 + 弹簧 + 冰面 + 断头 + 逆风五轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockMoving", "kind": "rule", "desc": "第 4 关起出现移动台，落点成为时机的取舍" },
+    { "id": "unlockSpring", "kind": "rule", "desc": "第 5 关起出现弹簧台，省一跳但有横偏" },
+    { "id": "unlockIce", "kind": "rule", "desc": "第 6 关起出现冰面台，落点滑半格" },
+    { "id": "unlockNarrow", "kind": "rule", "desc": "第 7 关起出现断头台，边缘判定更窄" },
+    { "id": "unlockHeadwind", "kind": "rule", "desc": "第 8 关起逆风段，跳跃被阻力吃距离" },
+    { "id": "fartherSpacing", "kind": "rule", "desc": "第 2 关渐远间距，力度曲线被拉长" },
+    { "id": "nearerSpacing", "kind": "rule", "desc": "第 3 关渐近间距，肌肉记忆被推翻" },
+    { "id": "varyingSpacing", "kind": "rule", "desc": "第 9 关起随机间距，每跳都要重新读距离" },
+    { "id": "comboDoubling", "kind": "stat", "desc": "完美连击翻倍（1,2,4,8…）" },
+    { "id": "goalScaling", "kind": "stat", "desc": "目标跳数逐关递增（3→10）" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

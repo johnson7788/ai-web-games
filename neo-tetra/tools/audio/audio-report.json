@@ -1,0 +1,212 @@
+{
+  "generatedAt": "2026-11-19T06:10:01.233Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "move": {
+      "rms": 0.1178,
+      "peak": 0.22,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "rotate": {
+      "rms": 0.1139,
+      "peak": 0.3543,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "softDrop": {
+      "rms": 0.0826,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "hardDrop": {
+      "rms": 0.1976,
+      "peak": 0.4854,
+      "nan": 0,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "hold": {
+      "rms": 0.1285,
+      "peak": 0.24,
+      "nan": 0,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "lock": {
+      "rms": 0.1404,
+      "peak": 0.365,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "lineClear": {
+      "rms": 0.1258,
+      "peak": 0.4175,
+      "nan": 0,
+      "samples": 9261,
+      "durSec": 0.21,
+      "pass": true
+    },
+    "tetra": {
+      "rms": 0.1565,
+      "peak": 0.7005,
+      "nan": 0,
+      "samples": 29106,
+      "durSec": 0.66,
+      "pass": true
+    },
+    "heatUp": {
+      "rms": 0.1135,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "whiteHotStart": {
+      "rms": 0.105,
+      "peak": 0.3291,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "whiteHotEnd": {
+      "rms": 0.0943,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "levelUp": {
+      "rms": 0.1291,
+      "peak": 0.4418,
+      "nan": 0,
+      "samples": 18081,
+      "durSec": 0.41,
+      "pass": true
+    },
+    "layerEnter": {
+      "rms": 0.1071,
+      "peak": 0.412,
+      "nan": 0,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "gift": {
+      "rms": 0.1503,
+      "peak": 0.462,
+      "nan": 0,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2106,
+      "peak": 0.572,
+      "nan": 0,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1514,
+      "peak": 0.57,
+      "nan": 0,
+      "samples": 44100,
+      "durSec": 1,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.129,
+      "peak": 0.2897,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0523,
+      "peak": 0.1,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "copper": {
+      "rms": 0.0548,
+      "peak": 0.1763,
+      "nan": 0,
+      "samples": 220500,
+      "durSec": 5,
+      "pass": true
+    },
+    "ice": {
+      "rms": 0.06,
+      "peak": 0.1799,
+      "nan": 0,
+      "samples": 173508,
+      "durSec": 3.934,
+      "pass": true
+    },
+    "core": {
+      "rms": 0.0503,
+      "peak": 0.158,
+      "nan": 0,
+      "samples": 294000,
+      "durSec": 6.667,
+      "pass": true
+    },
+    "whiteHot": {
+      "rms": 0.0518,
+      "peak": 0.1646,
+      "nan": 0,
+      "samples": 132300,
+      "durSec": 3,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 23,
+    "passed": 23,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

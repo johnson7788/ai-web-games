@@ -1,0 +1,149 @@
+{
+  "game": "bubble-reef",
+  "generatedAt": "2026-11-19T11:21:10.037Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.625,
+    "silhouette": 7.125,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Dive In’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部海草剪影与主按钮区域无明确分隔，可能干扰视觉焦点",
+        "‘Best 0’字号过小且颜色偏淡，易被忽略",
+        "标题‘BUBBLE REEF’发光效果略过强，导致部分字母边缘轻微晕染"
+      ]
+    },
+    {
+      "shot": "tests/final/01-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "移动鼠标/手指对准底部绿色炮台进行瞄准",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Level 1 文字与气泡重叠，部分字母被遮挡（如 'L' 和 'e'）",
+        "‘Clear 70% of the reef’提示文字颜色过淡，对比度不足",
+        "底部操作提示框与炮台位置接近，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘潜入’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘BUBBLE REEF’发光效果略过强，可能在低对比度设备上影响辨识",
+        "底部水草剪影与按钮区域距离过近，视觉上略显拥挤",
+        "‘最佳 0’文字字号偏小，弱光环境下易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央下方的绿色气球发射器，将气球射向上方彩色气球阵列",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部‘P to preview · 1’提示框右下角轻微超出安全边（但为桌面截图，不影响评分）",
+        "气球阵列底部悬垂的单个绿色气球与主阵列连接线较细，可能被误认为非目标",
+        "Combo 0 和 Score 0 字体偏小，在低分辨率下可能辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/04-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Resume”按钮继续游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Paused’文字与背景气球阵列对比度偏低，弱光下可能不易辨识",
+        "底部玩家小球被虚线和暂停UI部分遮挡，影响操作预期感知",
+        "语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮重新开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景气球阵列与HUD文字存在轻微视觉干扰，眯眼时气球颜色相近导致层级辨识度低",
+        "‘Press R to play again’提示字号过小且灰度高，易被忽略",
+        "‘Reached level’数值‘1’为黄色，与‘Score’/‘Best score’的白色不一致，轻微风格断裂"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的发射器发射粉色泡泡",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部进度条左侧填充色与背景对比度偏低，可能影响低亮度下辨识",
+        "右下角'P to preview · 1'按钮文字与边框间距过小，移动端易误触",
+        "泡泡阵列中部分黄色/粉色泡泡在密集处边界模糊，轻微粘连感"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的发射器发射气泡",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Level 1 目标提示框轻微遮挡上方气泡阵列顶部一行（约1-2个气泡）",
+        "底部虚线引导线与发射器对齐但未明确标注‘发射线’，新手可能忽略",
+        "右下角‘P to preview · 1’按钮文字偏小（约10px），在低分辨率屏可能难读"
+      ]
+    }
+  ]
+}

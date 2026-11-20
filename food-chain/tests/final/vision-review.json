@@ -1,0 +1,149 @@
+{
+  "game": "food-chain",
+  "generatedAt": "2026-11-19T14:39:27.541Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 7.75,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Swim’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best stage 0’文字颜色偏黄，与主标题蓝白光效风格略有冲突，削弱统一感",
+        "背景深蓝渐变+微光条纹易造成视觉干扰，眯眼时‘FOOD CHAIN’标题虽亮但周围无明确玩家/交互物轮廓（silhouette偏低）",
+        "右上角语言切换按钮无图标仅文字，小屏可能误触或识别困难"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应操控蓝色发光鱼向右上方移动，避开紫色小鱼并收集光点以增长质量",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘STING’标签与‘Grow to 65 to evolve’提示文字间距过小，易误读为一行",
+        "左上角HUD三行数据垂直排列紧凑，小屏可能影响辨识（虽为桌面截图，但UI布局未预留响应式余量）",
+        "‘Photonic Zone’标题无背景衬底，在深色光束区域对比度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-twilight.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应操控中央发光蓝鱼向右上方移动，避开小鱼并靠近右侧水母区域以进化",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'STING' 和 'Grow to 50 to evolve' 文字过小且对比度偏低，易被忽略",
+        "中央玩家鱼周围光晕过强，轻微遮挡附近小鱼轮廓，影响精准判断碰撞",
+        "左上角 HUD 框线与背景深蓝接近，部分用户可能误读为无边框"
+      ]
+    },
+    {
+      "shot": "tests/final/04-vent.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应向右移动以避开左侧障碍并接近右侧发光区域（Vent Zone）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'Grow to 75 to evolve'提示文字较小且与'STING'按钮间距过近，易误触",
+        "左上角HUD三行数据垂直排列紧凑，小屏可能阅读困难",
+        "中央鱼形主角周围光晕较强，部分小鱼在光晕边缘略模糊，影响远距离识别"
+      ]
+    },
+    {
+      "shot": "tests/final/05-sting.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应向右移动并靠近发光的橙色鱼，以吸收小鱼增长质量",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'STING' 进度条文字与图标间距过小，可能影响辨识",
+        "左上角 HUD 数值（如 MASS 645）字体偏小，在低分辨率下易误读",
+        "底部暗色区域与背景融合过强，部分小鱼轮廓在深色柱状物前略难分辨"
+      ]
+    },
+    {
+      "shot": "tests/final/06-chain.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动躲避小鱼并靠近发光鱼群，同时避免触碰紫色小鱼",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'STING' 和 'Grow to 75 to evolve' 文字较小且对比度偏低，弱光下可能难辨",
+        "中央橙色鱼被光晕包围，部分细节（如尾鳍）在强光下略模糊",
+        "左上角 HUD 按钮无明确交互反馈提示（如悬停/选中态），影响新手引导"
+      ]
+    },
+    {
+      "shot": "tests/final/07-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Swim’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best stage 0’文字颜色偏黄，与主标题冷色调冲突，略显突兀",
+        "‘FIRST DIVE’提示框无明确视觉引导指向可交互对象（如 plankton cloud）",
+        "‘Skip’按钮为圆角矩形但无背景填充，对比度偏低，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角的STING按钮开始游戏",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'Grow to 20 to evolve'提示文字较小且与STING按钮间距过近，易误触",
+        "左上角HUD数值（STAGE/MASS/SCORE）无单位或说明，新手可能不解MASS含义",
+        "中央'Photic Zone'标题为黄色描边，与深蓝背景对比度偏低，弱光下可能难辨"
+      ]
+    }
+  ]
+}

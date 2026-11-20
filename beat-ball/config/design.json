@@ -1,0 +1,88 @@
+{
+  "slug": "beat-ball",
+  "genre": "arcade",
+  "oneLiner": "太鼓球在巨型太鼓面上向纵深滚动，躲开按节拍落下的鼓槌、抢踩发光节拍点连击刷分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "lane",
+      "cost": "横移后必须在新轨道上迎接下一拍的鼓槌，抢拍可能把你送进别的落点",
+      "feedback": ["sfx", "trail", "drumRimGlow"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "jump",
+      "cost": "滞空时无法踩中普通节拍点（连击断掉），跳错时机仍会被鼓槌砸中",
+      "feedback": ["sfx", "ballLift", "shadow"],
+      "combinesWith": ["lane"]
+    },
+    {
+      "name": "holdBeat",
+      "cost": "为踩节拍点而移动到鼓槌预警相邻轨道，一旦误判就判负",
+      "feedback": ["sfx", "ripple", "perfectPop"],
+      "combinesWith": ["lane"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一根鼓槌预警亮起：原地等它落下还是提前横移到空轨", "cost": "原地等 = 不冒险但可能被后续节拍点拉走" },
+    { "atSec": 20, "choice": "节拍点出现在鼓槌隔壁轨：抢踩加分还是让拍求稳", "cost": "抢踩 = 冲进预警相邻轨道；让拍 = 连击不涨" },
+    { "atSec": 35, "choice": "双槌同一拍落下只留一轨安全：立即横移还是起跳跨过", "cost": "横移要放弃当前节拍点；起跳会断连击" },
+    { "atSec": 50, "choice": "跳板段发光鼓边：跳踩双倍分还是贴地保命", "cost": "跳踩有滞空破绽；贴地错过双倍分" },
+    { "atSec": 70, "choice": "变速段 BPM 骤升：提前换轨还是听最后一声鼓点再动", "cost": "提前换轨可能踩空；听鼓再动可能来不及" },
+    { "atSec": 90, "choice": "迷雾里红圈半透明：靠拍点记忆抢分还是保守走空轨", "cost": "记忆出错即判负；保守则连击收益低" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "单轨：只有一条鼓道，学会踩拍与跳跃避槌" },
+    { "index": 2, "newElement": "双轨：左右变道，第一次横移取舍" },
+    { "index": 3, "newElement": "三轨：三线横移，抢拍要提前判断" },
+    { "index": 4, "newElement": "鼓槌预警：红圈提前三拍亮起，更早读节奏" },
+    { "index": 5, "newElement": "双槌交替：同一拍两根槌落下，只留一条安全轨" },
+    { "index": 6, "newElement": "跳板段：发光鼓边需跳跃踩中，落地即双倍分" },
+    { "index": 7, "newElement": "变速段：BPM 中段骤升，节拍时钟加速" },
+    { "index": 8, "newElement": "迷雾段：预警红圈半透明，靠听拍和记忆躲槌" },
+    { "index": 9, "newElement": "鼓点连击：节拍点密集，连踩风暴刷分" },
+    { "index": 10, "newElement": "左右开弓：鼓槌在相邻轨间快速交替落下" },
+    { "index": 11, "newElement": "雷雨加速：预警只剩一拍，反应时间被压缩" },
+    { "index": 12, "newElement": "双鼓对撞：终章双槌夹击 + 鼓点密布的收官风暴" }
+  ],
+  "upgrades": [
+    { "id": "unlockLanes", "kind": "rule", "desc": "第 2/3 关解锁双轨与三轨，横移成为核心动词" },
+    { "id": "warnBeats", "kind": "rule", "desc": "第 4 关预警红圈提前三拍，读节奏窗口拉长" },
+    { "id": "doubleStick", "kind": "rule", "desc": "第 5 关双槌同拍落下，安全轨从两条缩到一条" },
+    { "id": "jumpPad", "kind": "rule", "desc": "第 6 关出现跳板节拍点，跳跃从纯避障变成得分手段" },
+    { "id": "tempoShift", "kind": "rule", "desc": "第 7 关 BPM 中段变速，节拍时钟被打破" },
+    { "id": "fog", "kind": "rule", "desc": "第 8 关迷雾让预警半透明，逼玩家记拍" },
+    { "id": "crossSticks", "kind": "rule", "desc": "第 10 关鼓槌相邻轨快速交替，逼连续横移" },
+    { "id": "bossDouble", "kind": "rule", "desc": "第 12 关双鼓对撞，双槌 + 密拍收官" },
+    { "id": "bpmRamp", "kind": "stat", "desc": "BPM 90→140 递增，越往后节拍越快" },
+    { "id": "padDensity", "kind": "stat", "desc": "节拍点密度随关卡提升，连击上限拉高" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "constellation-line",
+  "genre": "puzzle",
+  "oneLiner": "你是天文台的描星员，从起点星出发把散星一笔连成星座：每条线只能画一次，绕开流星、规划岔路，点亮整座夜空。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "trace",
+      "cost": "每条边只能走一次，走错会重置当前段并扣失误分",
+      "feedback": ["sfx", "trail-glow", "star-pop"],
+      "combinesWith": ["route"]
+    },
+    {
+      "name": "route",
+      "cost": "在岔口选边会绕远或撞上流星，决定后续是否被挡",
+      "feedback": ["sfx", "path-preview", "meteor-flash"],
+      "combinesWith": ["trace"]
+    },
+    {
+      "name": "reset",
+      "cost": "放弃当前段，损失时间并计一次失误",
+      "feedback": ["sfx", "trail-fade", "flash"],
+      "combinesWith": ["trace"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "从哪颗星起笔：奇点起步稳，还是顺眼点起步快",
+      "cost": "选错起点会被困住重来"
+    },
+    {
+      "atSec": 15,
+      "choice": "岔口先走左边还是右边",
+      "cost": "绕远 vs 撞上流星"
+    },
+    {
+      "atSec": 30,
+      "choice": "流星窗口赌一把直穿，还是稳绕等它过去",
+      "cost": "被挡扣失误 vs 多耗时间"
+    },
+    {
+      "atSec": 45,
+      "choice": "双星图先画哪一半",
+      "cost": "切换画笔的次数与节奏"
+    },
+    {
+      "atSec": 60,
+      "choice": "北极星岔口先走弦还是先走环",
+      "cost": "弦近但可能被流星锁 vs 环稳但绕远"
+    },
+    {
+      "atSec": 80,
+      "choice": "结尾段冒险走捷径压时间，还是保守走完",
+      "cost": "失误风险 vs 时限压力"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "开路：2 个奇度点，起点即终点之外" },
+    { "index": 2, "newElement": "欧拉回路：任意起点绕回原处" },
+    { "index": 3, "newElement": "竖琴 V 形多岔口" },
+    { "index": 4, "newElement": "双星图：两段独立子图切换画笔" },
+    { "index": 5, "newElement": "仙后 W 长链" },
+    { "index": 6, "newElement": "必经北极星节点（环+弦）" },
+    { "index": 7, "newElement": "十字交叉链" },
+    { "index": 8, "newElement": "八点王冠 + 必经弦" },
+    { "index": 9, "newElement": "天鹅十字长臂" },
+    { "index": 10, "newElement": "流星干扰：某段被遮 2 秒" },
+    { "index": 11, "newElement": "小熊长勺" },
+    { "index": 12, "newElement": "双勺双星图 + 更多节点" }
+  ],
+  "upgrades": [
+    { "id": "meteorForecast", "kind": "rule", "desc": "流星来临前 1 秒预警闪烁" },
+    { "id": "dualBrush", "kind": "rule", "desc": "双星图画完一半自动回到另一半起点" },
+    { "id": "waypointCompass", "kind": "rule", "desc": "北极星带方向箭头提示" },
+    { "id": "gentleReset", "kind": "rule", "desc": "走错只撤销最后一条边而非整段" },
+    { "id": "timeBoost", "kind": "stat", "desc": "每关时限 +15 秒" },
+    { "id": "hintStar", "kind": "stat", "desc": "每关 1 次连线提示" },
+    { "id": "scoreMultiplier", "kind": "stat", "desc": "得分 ×1.2" },
+    { "id": "calmSky", "kind": "stat", "desc": "流星出现频率降低" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "最后一笔落下时，整座星座实体（天鹅剪影）从星空中亮起飞过的瞬间",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "程序化 Canvas 星空渲染：三个场景包（春夜蓝紫/夏银河亮白/极光冬青绿）各换色板+构图+装饰；UI 线框 SVG/CSS；BGM/音效 WebAudio 程序化合成"
+}

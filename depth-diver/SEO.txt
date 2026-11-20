@@ -1,0 +1,41 @@
+TITLE
+Depth Diver — Free Deep-Sea Submersible Arcade Game
+
+CATEGORY
+Arcade
+
+TAGS
+submarine, deep sea, dive, arcade, dodge, collect, ocean, abyss, bioluminescent, browser game
+
+SHORT DESCRIPTION
+Pilot a research submersible down a Mariana-style trench: hold to rise, release to sink, dodge rocks and mines, and collect glowing deep-sea creatures before your oxygen runs out.
+
+LONG DESCRIPTION
+DEPTH DIVER is a free deep-sea arcade game about piloting a research submersible into a Mariana-style trench where depth is your score and darkness is your enemy.
+
+Hold to rise, release to sink, and nudge left and right to thread through rocks, mines, hydrothermal vents and a chasing anglerfish. Collect glowing deep-sea creatures — fill three samples to earn a star on each of the 12 levels — and grab oxygen tanks to keep your air from running out. Your headlight carves a cone of light through the dark, and every new depth layer sweeps the black away while a swarm of bioluminescent life scatters in front of you.
+
+Descend through three worlds: the Sunlit Shallows, the Twilight Zone and the Midnight Abyss. Each level adds a new rule — mine fields, drifting currents, rising vents, a pursuing angler, narrow crevices, shrinking light, crushing pressure, and the final abyss where everything stacks against you.
+
+12 levels, three stars each, 10 unlockable modules that change how you dive. Easy to learn in ten seconds, tricky to master. Mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+深潜者 — 免费深海潜航器街机游戏
+
+CATEGORY
+街机
+
+TAGS
+潜水艇, 深海, 下潜, 街机, 躲避, 收集, 海洋, 深渊, 生物荧光, 网页游戏
+
+SHORT DESCRIPTION
+驾驶科考潜航器下潜马里亚纳风格海沟：按住上浮、松开下沉，躲开礁石水雷，采集发光深海生物，在氧气耗尽前抵达目标深度。
+
+LONG DESCRIPTION
+《深潜者》是一款免费深海街机游戏：驾驶科考潜航器下潜马里亚纳风格海沟，深度就是分数，黑暗就是敌人。
+
+按住上浮、松开下沉，左右微调，穿行于礁石、水雷、热泉气泡柱与紧追不舍的鮟鱇之间。采集发光深海生物——每关采满三颗样本即可升星——并抢到氧气罐，别让空气耗尽。头灯在黑暗中扫出一束光，每下潜到一个新的深度层，黑幕被瞬间扫开，成群的荧光生物在你面前惊散。
+
+下潜穿越三大世界：阳光浅海、微光中层、午夜深渊。每一关加入一条新规则——水雷阵、洋流漂移、热泉上喷、追逐者、窄缝洞窟、灯照缩小、压力限时，直到全要素叠加的终局深渊。
+
+12 个关卡、每关三星、10 个可解锁模块改变下潜方式。十秒上手，越玩越难。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

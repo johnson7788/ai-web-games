@@ -1,0 +1,149 @@
+{
+  "game": "reef-raider",
+  "generatedAt": "2026-11-19T13:24:16.663Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 7.625,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1按钮高亮色（青蓝）与标题‘REEF RAIDER’渐变色接近，可能造成视觉混淆",
+        "右上角语言选择下拉框无展开箭头图标，移动端交互暗示不足（但桌面截图故mobile_safe=true）",
+        "鱼形奖励标识（+13、+20）悬浮于关卡网格上方，轻微遮挡第1和6关按钮顶部边缘"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击炮管右侧的黄色小圆点（发射按钮）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "炮管与发射点视觉区分弱，眯眼时易误判为单一物体",
+        "左上角Level 1与Target 80标签间距过近，可能影响快速扫读",
+        "沙丘边缘与海面交界线模糊，缺乏明确地平线参考"
+      ]
+    },
+    {
+      "shot": "tests/final/03-hit.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部金色炮台调整发射角度和力度",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标值 'Target 80' 与 'Level 1' 按钮间距过小，易误触",
+        "鱼上方 '+20' 提示框无背景色，浅色背景下对比度偏低",
+        "底部炮台与沙地交界处阴影缺失，略显悬浮"
+      ]
+    },
+    {
+      "shot": "tests/final/04-capture.png",
+      "goal_visible": true,
+      "first_action_guess": "点击炮管右侧的发光点发射炮弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色目标环在水下区域，与背景蓝绿渐变对比度偏低，远距离辨识稍弱",
+        "炮管发射点光效过亮，可能掩盖弹道起点细节",
+        "左上角‘Target 80’高亮框颜色（黄底黑字）与整体柔和风格略冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/05-reef.png",
+      "goal_visible": true,
+      "first_action_guess": "点击金色炮台发射子弹击中悬浮的梯形障碍物",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标值 'Target 200' 与 'Level 5' 按钮间距过小，易误触",
+        "右上角功能图标（问号、重试等）密集且无文字说明，新手难辨识",
+        "悬浮梯形障碍物阴影偏移不一致，部分阴影未对齐底部"
+      ]
+    },
+    {
+      "shot": "tests/final/06-night.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央金色炮台调整发射角度",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角两个+30鱼形目标与HUD按钮间距过近，可能误触",
+        "右上角Power 1按钮组图标尺寸偏小，辨识度略低",
+        "底部炮台与海底地形边缘融合，轮廓稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/07-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部金色炮台调整发射角度",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘Power 1’按钮与减号/加号按钮间距过小，易误触",
+        "黄色大鱼头顶‘+300’标签背景为黑色圆角矩形，与整体扁平风格略有冲突",
+        "左下角V形海草与底部炮台部分重叠，可能干扰操作区域视觉"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏下位置发射炮弹",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（金色炮管）与地面融合，轮廓不清晰，眯眼难辨主体",
+        "左右两侧红色手形物体功能不明，疑似障碍物但无交互提示",
+        "目标值‘Target 80’高亮但未说明达成方式（如击中次数/分数），需上下文理解"
+      ]
+    }
+  ]
+}

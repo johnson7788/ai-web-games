@@ -1,0 +1,101 @@
+{
+  "url": "http://127.0.0.1:58113/",
+  "startedAt": "2026-11-15T17:44:00.755Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "eval",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/sky-collector/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/sky-collector/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/sky-collector/tests/final/02-play-start.png",
+    "/Users/admin/git/webgames/games/sky-collector/tests/final/03-running.png",
+    "/Users/admin/git/webgames/games/sky-collector/tests/final/04-orbs.png",
+    "/Users/admin/git/webgames/games/sky-collector/tests/final/05-progress.png",
+    "/Users/admin/git/webgames/games/sky-collector/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T17:44:16.218Z",
+  "video": "/Users/admin/git/webgames/games/sky-collector/tests/final/play.webm"
+}

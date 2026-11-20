@@ -1,0 +1,117 @@
+{
+  "game": "ace-gunner",
+  "generatedAt": "2026-11-19T13:32:07.533Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.666666666666667,
+    "silhouette": 7.833333333333333,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星位置发射弓箭",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角两个敌人头顶红色箭头指示方向，但未明确表示移动/攻击意图，易误解为状态图标",
+        "左上角‘Wave 1/12’与‘Gate 100’间距过小，小屏可能误读为‘Wave1/12Gate100’",
+        "准星为红白十字，与沙漠背景对比度偏低，远距离辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击三个升级选项中的一个，例如“Piercing Shot”以选择穿透箭效果。",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人剪影（底部两个黑色圆形）与地面颜色对比弱，眯眼时易混淆为障碍物",
+        "左上角‘Wave 4/12’等HUD文字偏小，部分玩家可能需放大才清晰",
+        "‘Choose an Upgrade’标题与背景色对比度略低（黄字在深棕底），强光下可能辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/04-sandstorm.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星位置进行瞄准射击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "准星为红白环形，与背景沙色对比度偏低，远距离辨识稍弱",
+        "右上角敌人无明显威胁标识（如血条/高亮），仅靠红色箭头提示不够直观",
+        "左上角‘Wave 5/12’等HUD文字字号偏小，弱光环境下可能难读"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星区域发射弓箭",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角敌人图标与月亮相邻，可能误判为装饰而非目标",
+        "准星为红白十字但无明显高亮，远距离时易被深蓝背景淹没",
+        "左上角‘Wave 9/12’与‘Gate 100’间距过小，小屏可能误读为‘Wave9/12Gate100’"
+      ]
+    },
+    {
+      "shot": "tests/final/06-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星位置发射弓箭",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧敌人头部与红色尖刺图标部分重叠，可能误判为独立元素",
+        "准星为红白细线圆环，低对比度下易丢失（尤其在浅棕背景上）",
+        "左上角‘Wave 8/12’与‘Gate 100’间距过小，视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧敌人进行攻击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "瞄准线为虚线且较细，远距离目标时可能不易辨识",
+        "右下角敌人无明显威胁标识（如红框/血条），仅靠箭头提示不够直观",
+        "HUD中'8/8'与'0'间距过近，易误读为'8/80'"
+      ]
+    }
+  ]
+}

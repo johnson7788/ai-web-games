@@ -1,0 +1,5 @@
+sandbox: title reached, origin = http://127.0.0.1:60380
+sandbox state: {"mode":"racing","gates":2,"cp":2,"fps":60,"speed":"46.0"}
+sandbox errors: [] consoleErrs: [] failed: []
+SANDBOX OK
+EXIT:0

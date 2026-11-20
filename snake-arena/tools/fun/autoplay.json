@@ -1,0 +1,61 @@
+{
+  "game": "snake-arena",
+  "genre": "action",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 191.9,
+      "actions": 10305,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.4,
+      "deaths": 1,
+      "idleSec": 18.2,
+      "maxEventGapSec": 1.87,
+      "uniqueEvents": 15,
+      "levelsReached": 3,
+      "completed": false,
+      "maxLength": 16,
+      "actionsPerMin": 3222
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 3.6,
+      "actions": 48,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 2.9,
+      "deaths": 1,
+      "idleSec": 2.7,
+      "maxEventGapSec": 0.38,
+      "uniqueEvents": 10,
+      "levelsReached": 1,
+      "completed": false,
+      "maxLength": 8,
+      "actionsPerMin": 796
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 4.1,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 2.9,
+      "deaths": 1,
+      "idleSec": 3.9,
+      "maxEventGapSec": 1.13,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false,
+      "maxLength": 8,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T12:10:39.251Z"
+}

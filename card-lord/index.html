@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="CARD LORD — cyberpunk 1v2 landlord card game. Bid, double, play legal combos, track remaining cards, and blast bombs with a full-screen red shockwave.">
+  <meta name="theme-color" content="#0b0614">
+  <title>CARD LORD · Cyber Landlord Card Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="setRotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="setLoading">Dealing…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

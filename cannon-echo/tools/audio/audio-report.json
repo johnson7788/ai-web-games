@@ -1,0 +1,208 @@
+{
+  "generatedAt": "2026-11-19T16:20:26.913Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shot": {
+      "rms": 0.186,
+      "peak": 0.3158,
+      "nan": 0,
+      "zcRate": 120.9,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.135,
+      "peak": 0.2998,
+      "nan": 0,
+      "zcRate": 227.8,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "break": {
+      "rms": 0.1893,
+      "peak": 0.5091,
+      "nan": 0,
+      "zcRate": 430,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "echoBounce": {
+      "rms": 0.1075,
+      "peak": 0.2594,
+      "nan": 0,
+      "zcRate": 1143.9,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "waveEnter": {
+      "rms": 0.1007,
+      "peak": 0.3652,
+      "nan": 0,
+      "zcRate": 283.6,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    },
+    "overheat": {
+      "rms": 0.1018,
+      "peak": 0.3299,
+      "nan": 0,
+      "zcRate": 7403.3,
+      "samples": 15435,
+      "durSec": 0.35,
+      "pass": true
+    },
+    "overheatLock": {
+      "rms": 0.1513,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 440.2,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "upgrade": {
+      "rms": 0.1354,
+      "peak": 0.5626,
+      "nan": 0,
+      "zcRate": 696.1,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    },
+    "bossSpawn": {
+      "rms": 0.1077,
+      "peak": 0.2898,
+      "nan": 0,
+      "zcRate": 321.3,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "bossHit": {
+      "rms": 0.2485,
+      "peak": 0.7081,
+      "nan": 0,
+      "zcRate": 280,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "bossBreak": {
+      "rms": 0.137,
+      "peak": 0.5038,
+      "nan": 0,
+      "zcRate": 656.7,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2101,
+      "peak": 0.5386,
+      "nan": 0,
+      "zcRate": 350,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.0951,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 1330.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1296,
+      "peak": 0.2935,
+      "nan": 0,
+      "zcRate": 890.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 758.6,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "echoRoar": {
+      "rms": 0.1001,
+      "peak": 0.3691,
+      "nan": 0,
+      "zcRate": 2509.1,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgmMorning": {
+      "rms": 0.0428,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 334,
+      "samples": 211680,
+      "durSec": 4.8,
+      "pass": true
+    },
+    "bgmSnow": {
+      "rms": 0.0527,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 241.7,
+      "samples": 211680,
+      "durSec": 4.8,
+      "pass": true
+    },
+    "bgmLava": {
+      "rms": 0.0663,
+      "peak": 0.2708,
+      "nan": 0,
+      "zcRate": 1642.8,
+      "samples": 141120,
+      "durSec": 3.2,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "break.valueUpPitchDown": {
+      "valueLow": 1,
+      "valueHigh": 60,
+      "zcRateLow": 482.6,
+      "zcRateHigh": 212.5,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

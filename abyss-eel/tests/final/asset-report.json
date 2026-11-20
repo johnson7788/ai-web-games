@@ -1,0 +1,31 @@
+{
+  "root": ".",
+  "ok": true,
+  "totalBytes": 0,
+  "entries": 0,
+  "errors": [],
+  "warnings": [
+    {
+      "id": "manifest",
+      "msg": "没有 assets/manifest.json —— 按目录扫（跑一次 assetprep.py 可生成清单，便于核对尺寸/pivot）"
+    }
+  ],
+  "results": [
+    {
+      "id": "size",
+      "ok": true,
+      "msg": "素材总量 0KB（仅统计，无体积硬线）"
+    },
+    {
+      "id": "count",
+      "ok": true,
+      "msg": "0 项素材"
+    },
+    {
+      "id": "refs",
+      "ok": true,
+      "msg": "代码里 2/2 处素材引用可解析"
+    }
+  ],
+  "at": "2026-11-18T15:11:19.668Z"
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="SNAKE ARENA — steer a neon data-stream snake, boost to burn length into shards, and cut rival snakes down in a 90-second ranked arena.">
+  <meta name="theme-color" content="#02050d">
+  <title>SNAKE ARENA · Neon Snake Arena</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <button id="btn-boost" class="touch-btn touch-btn--boost" aria-label="Boost" hidden>BOOST</button>
+    <button id="btn-pulse" class="touch-btn touch-btn--pulse" aria-label="Pulse" hidden>PULSE</button>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Linking…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

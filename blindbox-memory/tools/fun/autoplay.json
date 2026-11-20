@@ -1,0 +1,192 @@
+{
+  "_howto": "tools/selfplay.mjs 自动产出",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "durationSec": 17.26,
+      "firstInputSec": 0.41,
+      "inputLatencyMs": 18,
+      "firstSuccessSec": 0.59,
+      "deaths": 0,
+      "actions": 26,
+      "idleSec": 0,
+      "maxEventGapSec": 1.83,
+      "uniqueEvents": 9,
+      "eventsList": [
+        "combo",
+        "flip",
+        "level_clear",
+        "match",
+        "mismatch",
+        "peek",
+        "session_end",
+        "start",
+        "win"
+      ],
+      "levelsReached": 2,
+      "completed": true
+    },
+    {
+      "id": "greedy-2",
+      "policy": "greedy",
+      "durationSec": 21.2,
+      "firstInputSec": 3.96,
+      "inputLatencyMs": 14,
+      "firstSuccessSec": 9.21,
+      "deaths": 0,
+      "actions": 34,
+      "idleSec": 0,
+      "maxEventGapSec": 1.83,
+      "uniqueEvents": 9,
+      "eventsList": [
+        "combo",
+        "flip",
+        "level_clear",
+        "match",
+        "mismatch",
+        "peek",
+        "session_end",
+        "start",
+        "win"
+      ],
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "greedy-3",
+      "policy": "greedy",
+      "durationSec": 23.14,
+      "firstInputSec": 3.95,
+      "inputLatencyMs": 14,
+      "firstSuccessSec": 10.21,
+      "deaths": 0,
+      "actions": 38,
+      "idleSec": 0,
+      "maxEventGapSec": 1.82,
+      "uniqueEvents": 9,
+      "eventsList": [
+        "combo",
+        "flip",
+        "level_clear",
+        "match",
+        "mismatch",
+        "peek",
+        "session_end",
+        "start",
+        "win"
+      ],
+      "levelsReached": 4,
+      "completed": true
+    },
+    {
+      "id": "greedy-4",
+      "policy": "greedy",
+      "durationSec": 27.31,
+      "firstInputSec": 0.34,
+      "inputLatencyMs": 16,
+      "firstSuccessSec": 8.2,
+      "deaths": 1,
+      "actions": 46,
+      "idleSec": 0,
+      "maxEventGapSec": 1.82,
+      "uniqueEvents": 7,
+      "eventsList": [
+        "fail",
+        "flip",
+        "match",
+        "mismatch",
+        "peek",
+        "session_end",
+        "start"
+      ],
+      "levelsReached": 4,
+      "completed": false
+    },
+    {
+      "id": "random-2",
+      "policy": "random",
+      "durationSec": 21.5,
+      "firstInputSec": 0.33,
+      "inputLatencyMs": 7,
+      "firstSuccessSec": 11.13,
+      "deaths": 1,
+      "actions": 102,
+      "idleSec": 0,
+      "maxEventGapSec": 0.33,
+      "uniqueEvents": 5,
+      "eventsList": [
+        "fail",
+        "flip",
+        "match",
+        "session_end",
+        "start"
+      ],
+      "levelsReached": 2,
+      "completed": false
+    },
+    {
+      "id": "random-4",
+      "policy": "random",
+      "durationSec": 22.64,
+      "firstInputSec": 0.35,
+      "inputLatencyMs": 9,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 107,
+      "idleSec": 0,
+      "maxEventGapSec": 0.35,
+      "uniqueEvents": 4,
+      "eventsList": [
+        "fail",
+        "flip",
+        "session_end",
+        "start"
+      ],
+      "levelsReached": 4,
+      "completed": false
+    },
+    {
+      "id": "random-6",
+      "policy": "random",
+      "durationSec": 26.23,
+      "firstInputSec": 0.36,
+      "inputLatencyMs": 11,
+      "firstSuccessSec": 1.73,
+      "deaths": 1,
+      "actions": 122,
+      "idleSec": 0,
+      "maxEventGapSec": 0.36,
+      "uniqueEvents": 5,
+      "eventsList": [
+        "fail",
+        "flip",
+        "match",
+        "session_end",
+        "start"
+      ],
+      "levelsReached": 6,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "durationSec": 20.47,
+      "firstInputSec": null,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 20.47,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 2,
+      "eventsList": [
+        "session_end",
+        "start"
+      ],
+      "levelsReached": 1,
+      "completed": false
+    }
+  ],
+  "errors": []
+}

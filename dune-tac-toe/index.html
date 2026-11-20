@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUNE TAC TOE</title>
+  <link rel="stylesheet" href="styles.css?v=dt1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="board-overlay" class="hidden" aria-label="Game board">
+      <button class="cell-btn" data-cell="0" aria-label="Tile 1"></button>
+      <button class="cell-btn" data-cell="1" aria-label="Tile 2"></button>
+      <button class="cell-btn" data-cell="2" aria-label="Tile 3"></button>
+      <button class="cell-btn" data-cell="3" aria-label="Tile 4"></button>
+      <button class="cell-btn" data-cell="4" aria-label="Tile 5"></button>
+      <button class="cell-btn" data-cell="5" aria-label="Tile 6"></button>
+      <button class="cell-btn" data-cell="6" aria-label="Tile 7"></button>
+      <button class="cell-btn" data-cell="7" aria-label="Tile 8"></button>
+      <button class="cell-btn" data-cell="8" aria-label="Tile 9"></button>
+    </div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level"></span>
+          <span id="hud-goal" class="hud-pill"></span>
+          <span id="hud-moves" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <span id="hud-turn" class="hud-turn"></span>
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">DUNE TAC TOE</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="record" id="record-text"></div>
+      <button id="btn-start">Play</button>
+      <div class="menu-row">
+        <button id="btn-puzzle" class="btn-ghost">Puzzle Mode</button>
+        <button id="btn-endless" class="btn-ghost">Endless Duel</button>
+      </div>
+    </div>
+
+    <div id="screen-levels" class="screen hidden">
+      <h2 id="puzzle-title">Choose a Puzzle</h2>
+      <div class="stars-total" id="stars-total"></div>
+      <div id="level-grid" class="level-grid"></div>
+      <button id="btn-levels-back" class="btn-ghost">Back</button>
+    </div>
+
+    <div id="screen-endless" class="screen hidden">
+      <h2 id="endless-title">Endless Duel</h2>
+      <div class="diff-list">
+        <button id="btn-vs-random" class="diff-btn"><span class="diff-name">Random</span><span class="diff-desc" id="diff-random"></span></button>
+        <button id="btn-vs-greedy" class="diff-btn"><span class="diff-name">Greedy</span><span class="diff-desc" id="diff-greedy"></span></button>
+        <button id="btn-vs-perfect" class="diff-btn"><span class="diff-name">Perfect Scorpion</span><span class="diff-desc" id="diff-perfect"></span></button>
+        <button id="btn-two-player" class="diff-btn"><span class="diff-name">2 Players</span><span class="diff-desc" id="diff-2p"></span></button>
+      </div>
+      <button id="btn-endless-back" class="btn-ghost">Back</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="result-tag" id="result-tag"></div>
+      <div class="result-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-next">Next Puzzle</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger board</p>
+        <button id="btn-rotate-skip">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=dt1"></script>
+</body>
+</html>

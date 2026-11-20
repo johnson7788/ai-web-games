@@ -1,0 +1,11 @@
+TITLE: STACK SKY
+CATEGORY: Arcade
+TAGS: stack, tower, timing, cloud, one-tap, hyper-casual, floating-island
+SHORT DESCRIPTION: Stack floating islands into the sky. Tap to drop, align for perfect combos, and ride wind shear and shrine layers across dawn, storm, and starry realms.
+LONG DESCRIPTION: A floating island slides above your tower. Tap to drop it; perfect alignment builds a Perfect combo and widens your tower, while off-center drops are cut away and make the next island narrower. Climb through the Dawn Clouds, the Storm Layer, and the Starry Palace, riding wind shear every 10 layers and shrine layers every 15 layers. Chain Perfect x3 to trigger the golden Cloud Wrap signature.
+
+TITLE: STACK SKY 云端叠塔
+CATEGORY: 街机
+TAGS: 叠塔, 时机, 云端, 一键, 休闲, 浮空岛
+SHORT DESCRIPTION: 把浮空岛叠上云霄：点击截停、对齐拿完美连击，穿越晨曦云海、雷雨层与星夜天宫，迎接风切与神龛层挑战。
+LONG DESCRIPTION: 一块浮空岛在塔顶左右滑动，点击截停；完全对齐触发完美连击并回宽，没对齐的部分会被裁掉、下一块变窄。每 10 层一阵横风吹偏移动岛，每 15 层神龛层对齐可恢复初始宽度，连续完美三次触发彩云缠绕签名。穿越金白晨曦、蓝灰雷雨、深紫星夜三片天域，越高越难。

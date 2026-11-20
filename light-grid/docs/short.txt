@@ -1,0 +1,1 @@
+Tap a circuit node to flip it and its neighbors. Light every node, route diodes and relays, and beat the fuse in this circuit-board Lights Out puzzle.

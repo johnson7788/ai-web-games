@@ -1,0 +1,61 @@
+{
+  "game": "star-swap",
+  "genre": "puzzle",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 2.8,
+      "actions": 168,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 17,
+      "levelsReached": 12,
+      "completed": false,
+      "finalLevel": 12,
+      "finalScore": 4955
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 28.6,
+      "actions": 108,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 17,
+      "levelsReached": 8,
+      "completed": false,
+      "finalLevel": 8,
+      "finalScore": 2880
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 300,
+      "actions": 0,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 300,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 1,
+      "levelsReached": 1,
+      "completed": false,
+      "finalLevel": 1,
+      "finalScore": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T19:59:09.097Z"
+}

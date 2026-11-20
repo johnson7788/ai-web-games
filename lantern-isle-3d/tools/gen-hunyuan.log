@@ -1,0 +1,399 @@
+[11-17 08:29:27] ==== gen-hunyuan start ====
+[11-17 08:29:27] DRY build_cottage_a building
+[11-17 08:29:27] DRY build_cottage_b building
+[11-17 08:29:27] DRY build_lighthouse_01 building
+[11-17 08:29:27] DRY build_boathouse_01 building
+[11-17 08:29:27] DRY build_shed_01 building
+[11-17 08:29:27] DRY prop_lantern_post_01 prop
+[11-17 08:29:27] DRY env_tree_pine_01 prop
+[11-17 08:29:27] DRY env_rock_01 prop
+[11-17 08:29:27] DRY env_crate_stack_01 prop
+[11-17 08:29:27] DRY build_well_01 building
+[11-17 08:29:27] DRY char_keeper character
+[11-17 08:30:02] ==== gen-hunyuan start ====
+[11-17 08:30:33] build_cottage_a 概念图 ok
+[11-17 08:30:36] build_cottage_a hunyuan3d retry1: 502 {
+  "error": "upstream hunyuan3d unavailable",
+  "detail": "ConnectionRefusedError",
+  "disk_free_gb": 465.3
+}
+[11-17 08:32:49] build_cottage_a hunyuan3d retry2: 502 {
+  "error": "upstream hunyuan3d unavailable",
+  "detail": "ConnectionRefusedError",
+  "disk_free_gb": 465.3
+}
+[11-17 08:33:20] build_cottage_a hunyuan3d retry3: 502 {
+  "error": "upstream hunyuan3d unavailable",
+  "detail": "ConnectionRefusedError",
+  "disk_free_gb": 465.3
+}
+[11-17 08:34:05] FAIL build_cottage_a: hunyuan3d 失败
+[11-17 08:34:18] build_cottage_b 概念图 ok
+[11-17 08:35:47] build_cottage_b hunyuan3d retry1: fetch failed
+[11-17 08:41:08] build_cottage_b hunyuan3d ok 6.0MB
+[11-17 08:41:20] build_lighthouse_01 概念图 ok
+[11-17 08:44:43] build_lighthouse_01 hunyuan3d ok 5.7MB
+[11-17 08:44:57] build_boathouse_01 概念图 ok
+[11-17 08:48:29] build_boathouse_01 hunyuan3d ok 5.1MB
+[11-17 08:48:42] build_shed_01 概念图 ok
+[11-17 08:52:31] build_shed_01 hunyuan3d ok 6.8MB
+[11-17 08:52:45] prop_lantern_post_01 概念图 ok
+[11-17 08:56:08] prop_lantern_post_01 hunyuan3d ok 5.5MB
+[11-17 08:56:21] env_tree_pine_01 概念图 ok
+[11-17 08:59:49] env_tree_pine_01 hunyuan3d ok 4.4MB
+[11-17 09:00:02] env_rock_01 概念图 ok
+[11-17 09:03:47] env_rock_01 hunyuan3d ok 4.9MB
+[11-17 09:03:59] env_crate_stack_01 概念图 ok
+[11-17 09:07:23] env_crate_stack_01 hunyuan3d ok 4.9MB
+[11-17 09:07:36] build_well_01 概念图 ok
+[11-17 09:11:13] build_well_01 hunyuan3d ok 5.1MB
+[11-17 09:11:27] char_keeper 概念图 ok
+[11-17 09:15:03] char_keeper hunyuan3d ok 5.0MB
+[11-17 09:15:03] ==== gen-hunyuan DONE ok=10 fail=1 ====
+[11-17 09:15:36] ==== gen-hunyuan start ====
+[11-17 09:19:16] build_cottage_a hunyuan3d ok 5.2MB
+[11-17 09:19:16] ==== gen-hunyuan DONE ok=1 fail=0 ====
+[11-17 10:11:31] ==== gen-hunyuan start ====
+[11-17 11:12:13] FAIL hunyuan3d 冷启动失败（A 机显存被占？）
+[11-17 11:29:25] ==== gen-hunyuan start ====
+[11-17 11:31:17] build_cottage_a 概念图 retry1: 503 {
+  "error": "model qwen-image-xl died on startup (see /inference/logs/qwen-image-xl.log)"
+}
+[11-17 11:32:57] build_cottage_a 概念图 ok
+[11-17 11:36:07] build_cottage_a hunyuan3d ok 4.5MB
+[11-17 11:36:07] build_cottage_b 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60348MB need=61440MB budget=73728MB"
+}
+[11-17 11:36:14] build_cottage_b 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=59061MB need=61440MB budget=73728MB"
+}
+[11-17 11:36:28] build_cottage_b 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=61039MB need=61440MB budget=73728MB"
+}
+[11-17 11:36:49] FAIL build_cottage_b: 概念图失败
+[11-17 11:36:49] build_lighthouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59117MB need=61440MB budget=73728MB"
+}
+[11-17 11:36:56] build_lighthouse_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=61825MB need=61440MB budget=73728MB"
+}
+[11-17 11:37:10] build_lighthouse_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=58245MB need=61440MB budget=73728MB"
+}
+[11-17 11:37:31] FAIL build_lighthouse_01: 概念图失败
+[11-17 11:37:31] build_boathouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59946MB need=61440MB budget=73728MB"
+}
+[11-17 11:37:39] build_boathouse_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=60725MB need=61440MB budget=73728MB"
+}
+[11-17 11:37:53] build_boathouse_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=60856MB need=61440MB budget=73728MB"
+}
+[11-17 11:38:14] FAIL build_boathouse_01: 概念图失败
+[11-17 11:38:14] build_shed_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64872MB need=61440MB budget=73728MB"
+}
+[11-17 11:38:21] build_shed_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=57659MB need=61440MB budget=73728MB"
+}
+[11-17 11:38:35] build_shed_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=59691MB need=61440MB budget=73728MB"
+}
+[11-17 11:38:56] FAIL build_shed_01: 概念图失败
+[11-17 11:38:56] prop_lantern_post_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=62010MB need=61440MB budget=73728MB"
+}
+[11-17 11:39:03] prop_lantern_post_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=60455MB need=61440MB budget=73728MB"
+}
+[11-17 11:39:17] prop_lantern_post_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=61571MB need=61440MB budget=73728MB"
+}
+[11-17 11:39:38] FAIL prop_lantern_post_01: 概念图失败
+[11-17 11:39:39] env_tree_pine_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=61639MB need=61440MB budget=73728MB"
+}
+[11-17 11:39:46] env_tree_pine_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=60052MB need=61440MB budget=73728MB"
+}
+[11-17 11:40:00] env_tree_pine_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=59025MB need=61440MB budget=73728MB"
+}
+[11-17 11:40:21] FAIL env_tree_pine_01: 概念图失败
+[11-17 11:40:21] env_rock_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60329MB need=61440MB budget=73728MB"
+}
+[11-17 11:40:28] env_rock_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=60916MB need=61440MB budget=73728MB"
+}
+[11-17 11:40:42] env_rock_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=62716MB need=61440MB budget=73728MB"
+}
+[11-17 11:41:03] FAIL env_rock_01: 概念图失败
+[11-17 11:41:03] env_crate_stack_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=62121MB need=61440MB budget=73728MB"
+}
+[11-17 11:41:10] env_crate_stack_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=67077MB need=61440MB budget=73728MB"
+}
+[11-17 11:41:24] env_crate_stack_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=60967MB need=61440MB budget=73728MB"
+}
+[11-17 11:41:45] FAIL env_crate_stack_01: 概念图失败
+[11-17 11:41:46] build_well_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60535MB need=61440MB budget=73728MB"
+}
+[11-17 11:41:55] build_well_01 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=61458MB need=61440MB budget=73728MB"
+}
+[11-17 11:42:11] build_well_01 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=57765MB need=61440MB budget=73728MB"
+}
+[11-17 11:42:32] FAIL build_well_01: 概念图失败
+[11-17 11:42:32] char_keeper 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=57718MB need=61440MB budget=73728MB"
+}
+[11-17 11:42:39] char_keeper 概念图 retry2: 503 {
+  "error": "vram budget exceeded: used=58561MB need=61440MB budget=73728MB"
+}
+[11-17 11:42:54] char_keeper 概念图 retry3: 503 {
+  "error": "vram budget exceeded: used=65424MB need=61440MB budget=73728MB"
+}
+[11-17 11:43:15] FAIL char_keeper: 概念图失败
+[11-17 11:43:15] ==== gen-hunyuan DONE ok=1 fail=10 ====
+[11-17 11:46:08] ==== gen-hunyuan start ====
+[11-17 11:51:08] ==== gen-hunyuan start ====
+[11-17 11:53:00] ==== gen-hunyuan start ====
+[11-17 11:54:47] ==== gen-hunyuan start ====
+[11-17 12:05:07] WARN h3-image 起不来，概念图将兜底 qwen-image-xl
+[11-17 12:06:13] ==== gen-hunyuan start ====
+[11-17 12:21:18] ==== gen-hunyuan start ====
+[11-17 12:34:23] ==== gen-hunyuan start ====
+[11-17 12:42:29] ==== gen-hunyuan start ====
+[11-17 12:42:33] h3-image 可用: false
+[11-17 12:42:33] build_cottage_a 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60513MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:33] FAIL build_cottage_a: useH3 is not defined
+[11-17 12:42:33] build_cottage_b 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=61093MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:33] FAIL build_cottage_b: useH3 is not defined
+[11-17 12:42:33] build_lighthouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59552MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:33] FAIL build_lighthouse_01: useH3 is not defined
+[11-17 12:42:34] build_boathouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59578MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL build_boathouse_01: useH3 is not defined
+[11-17 12:42:34] build_shed_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59876MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL build_shed_01: useH3 is not defined
+[11-17 12:42:34] prop_lantern_post_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59892MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL prop_lantern_post_01: useH3 is not defined
+[11-17 12:42:34] env_tree_pine_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59920MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL env_tree_pine_01: useH3 is not defined
+[11-17 12:42:34] env_rock_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59926MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL env_rock_01: useH3 is not defined
+[11-17 12:42:34] env_crate_stack_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59926MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL env_crate_stack_01: useH3 is not defined
+[11-17 12:42:34] build_well_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59926MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL build_well_01: useH3 is not defined
+[11-17 12:42:34] char_keeper 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=59926MB need=61440MB budget=73728MB"
+}
+[11-17 12:42:34] FAIL char_keeper: useH3 is not defined
+[11-17 12:42:34] ==== gen-hunyuan DONE ok=0 fail=11 ====
+[11-17 12:44:56] ==== gen-hunyuan start ====
+[11-17 12:45:01] h3-image 可用: false
+[11-17 12:45:01] build_cottage_a 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL build_cottage_a: useH3 is not defined
+[11-17 12:45:01] build_cottage_b 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL build_cottage_b: useH3 is not defined
+[11-17 12:45:01] build_lighthouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL build_lighthouse_01: useH3 is not defined
+[11-17 12:45:01] build_boathouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL build_boathouse_01: useH3 is not defined
+[11-17 12:45:01] build_shed_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL build_shed_01: useH3 is not defined
+[11-17 12:45:01] prop_lantern_post_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL prop_lantern_post_01: useH3 is not defined
+[11-17 12:45:01] env_tree_pine_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL env_tree_pine_01: useH3 is not defined
+[11-17 12:45:01] env_rock_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL env_rock_01: useH3 is not defined
+[11-17 12:45:01] env_crate_stack_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL env_crate_stack_01: useH3 is not defined
+[11-17 12:45:01] build_well_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL build_well_01: useH3 is not defined
+[11-17 12:45:01] char_keeper 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=58603MB need=61440MB budget=73728MB"
+}
+[11-17 12:45:01] FAIL char_keeper: useH3 is not defined
+[11-17 12:45:01] ==== gen-hunyuan DONE ok=0 fail=11 ====
+[11-17 12:53:40] ==== gen-hunyuan start ====
+[11-17 12:53:45] h3-image 可用: false
+[11-17 12:53:45] build_cottage_b 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=62219MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:45] FAIL build_cottage_b: useH3 is not defined
+[11-17 12:53:45] build_lighthouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=62407MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:45] FAIL build_lighthouse_01: useH3 is not defined
+[11-17 12:53:45] build_boathouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=62407MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:45] FAIL build_boathouse_01: useH3 is not defined
+[11-17 12:53:45] build_shed_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=62407MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:45] FAIL build_shed_01: useH3 is not defined
+[11-17 12:53:45] prop_lantern_post_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=61508MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:45] FAIL prop_lantern_post_01: useH3 is not defined
+[11-17 12:53:45] env_tree_pine_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=61700MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:45] FAIL env_tree_pine_01: useH3 is not defined
+[11-17 12:53:46] env_rock_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60877MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:46] FAIL env_rock_01: useH3 is not defined
+[11-17 12:53:46] env_crate_stack_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60899MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:46] FAIL env_crate_stack_01: useH3 is not defined
+[11-17 12:53:46] build_well_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60913MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:46] FAIL build_well_01: useH3 is not defined
+[11-17 12:53:46] char_keeper 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=60945MB need=61440MB budget=73728MB"
+}
+[11-17 12:53:46] FAIL char_keeper: useH3 is not defined
+[11-17 12:53:46] ==== gen-hunyuan DONE ok=1 fail=10 ====
+[11-18 01:15:13] ==== gen-hunyuan start ====
+[11-18 01:15:18] h3-image 可用: false
+[11-18 01:15:18] build_cottage_a 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63986MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL build_cottage_a: useH3 is not defined
+[11-18 01:15:18] build_cottage_b 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63986MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL build_cottage_b: useH3 is not defined
+[11-18 01:15:18] build_lighthouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63986MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL build_lighthouse_01: useH3 is not defined
+[11-18 01:15:18] build_boathouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63986MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL build_boathouse_01: useH3 is not defined
+[11-18 01:15:18] build_shed_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63986MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL build_shed_01: useH3 is not defined
+[11-18 01:15:18] prop_lantern_post_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63986MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL prop_lantern_post_01: useH3 is not defined
+[11-18 01:15:18] env_tree_pine_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63986MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL env_tree_pine_01: useH3 is not defined
+[11-18 01:15:18] env_rock_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63990MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL env_rock_01: useH3 is not defined
+[11-18 01:15:18] env_crate_stack_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64407MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL env_crate_stack_01: useH3 is not defined
+[11-18 01:15:18] build_well_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64407MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:18] FAIL build_well_01: useH3 is not defined
+[11-18 01:15:19] char_keeper 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=63576MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:19] FAIL char_keeper: useH3 is not defined
+[11-18 01:15:19] ==== gen-hunyuan DONE ok=0 fail=11 ====
+[11-18 01:17:23] ==== gen-hunyuan start ====
+[11-18 01:17:27] h3-image 可用: false
+[11-18 01:17:27] build_cottage_b 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64044MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL build_cottage_b: useH3 is not defined
+[11-18 01:17:27] build_lighthouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64044MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL build_lighthouse_01: useH3 is not defined
+[11-18 01:17:27] build_boathouse_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64048MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL build_boathouse_01: useH3 is not defined
+[11-18 01:17:27] build_shed_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64066MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL build_shed_01: useH3 is not defined
+[11-18 01:17:27] prop_lantern_post_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64068MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL prop_lantern_post_01: useH3 is not defined
+[11-18 01:17:27] env_tree_pine_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64092MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL env_tree_pine_01: useH3 is not defined
+[11-18 01:17:27] env_rock_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64092MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL env_rock_01: useH3 is not defined
+[11-18 01:17:27] env_crate_stack_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64092MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL env_crate_stack_01: useH3 is not defined
+[11-18 01:17:27] build_well_01 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64092MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:27] FAIL build_well_01: useH3 is not defined
+[11-18 01:17:28] char_keeper 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64092MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:28] FAIL char_keeper: useH3 is not defined
+[11-18 01:17:28] ==== gen-hunyuan DONE ok=1 fail=10 ====

@@ -1,0 +1,87 @@
+{
+  "slug": "heroes-quest",
+  "genre": "roguelite",
+  "oneLiner": "率三英雄踏上分支远征地图：战前布阵、每走一节点耗粮草，回合制战斗中积攒「远征军势」三英合击，一路换三套场景打到远征 Boss。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "march",
+      "cost": "每走一节点耗 2 粮草，且锁定该节点类型（战斗/休整/事件）",
+      "feedback": ["node-glow", "sfx", "supplies-drain"],
+      "combinesWith": ["strike"]
+    },
+    {
+      "name": "strike",
+      "cost": "技能有 CD 且只能选一个目标；平 A 与技能之间取舍",
+      "feedback": ["damage-numbers", "sfx", "hp-bar-shake"],
+      "combinesWith": ["march"]
+    },
+    {
+      "name": "array",
+      "cost": "前排承伤更多、后排输出更低——谁站前面是一笔风险账",
+      "feedback": ["row-lines", "sfx", "formation-glow"],
+      "combinesWith": ["strike"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "战前布阵：坦克站前排稳血 vs 输出站前排抢伤害", "cost": "前排承伤翻倍 / 输出变脆" },
+    { "atSec": 20, "choice": "第一个节点走战斗抢粮 vs 休整回血", "cost": "掉血换粮草 / 保血少粮草" },
+    { "atSec": 40, "choice": "战斗中放技能 vs 平 A 攒军势", "cost": "技能进 CD / 军势积攒变慢" },
+    { "atSec": 65, "choice": "升级三选一：改规则（前排减伤）vs 加数值（+攻击）", "cost": "放弃另一条 build" },
+    { "atSec": 90, "choice": "军势现在放 vs 留给精英/Boss", "cost": "现在清场 / 后面更稳" },
+    { "atSec": 120, "choice": "路线：走精英高风险高回报 vs 走战斗稳推进", "cost": "可能团灭 / 少奖励" },
+    { "atSec": 150, "choice": "断粮在即：继续战斗抢粮 vs 休整止损", "cost": "带断粮惩罚进战 / 放弃本轮粮草收益" },
+    { "atSec": 170, "choice": "残血逼近 Boss：休整回血 vs 拼一把", "cost": "多耗一节点粮草 / 冒险团灭" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "绿野章：阵位（前/中/后承伤与输出）+ 速度条回合战斗 + 技能 CD" },
+    { "index": 2, "newElement": "雪原章：精英节点 + 断粮惩罚 + 新敌种（蛮兵/散兵）" },
+    { "index": 3, "newElement": "灰烬章：远征 Boss + 军势充能加速 + 更高难度的敌群" }
+  ],
+  "upgrades": [
+    { "id": "vanguardBulwark", "kind": "rule" },
+    { "id": "backlineAegis", "kind": "rule" },
+    { "id": "rangerRapid", "kind": "rule" },
+    { "id": "seerOverflow", "kind": "rule" },
+    { "id": "signatureFervor", "kind": "rule" },
+    { "id": "supplyRaider", "kind": "rule" },
+    { "id": "starvingVigor", "kind": "rule" },
+    { "id": "firstStrike", "kind": "rule" },
+    { "id": "vanguardAtk", "kind": "stat" },
+    { "id": "vanguardHp", "kind": "stat" },
+    { "id": "seerSpeed", "kind": "stat" },
+    { "id": "rangerAtk", "kind": "stat" }
+  ],
+  "replayHooks": ["growth", "newBuild", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "三英雄的「远征军势」合一：三道能量汇成一道光束贯穿敌阵，全场敌人同时倒下的瞬间",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做长篇剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "全程序化 Canvas：三场景包（绿野青/雪原白蓝/灰烬暗红）换色板+构图+装饰；英雄/敌人为程序化几何小人；UI 用 CSS 玻璃拟态；封面/海报用 HTML 叠字截图"
+}

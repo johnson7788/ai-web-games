@@ -1,0 +1,38 @@
+{
+  "game": "school-days",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 4,
+    "stepIds": [
+      "assign",
+      "assign",
+      "endWeek",
+      "weekStart"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": [
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-school-days",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-school-days",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-school-days"
+    ]
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

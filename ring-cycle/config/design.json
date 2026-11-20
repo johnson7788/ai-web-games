@@ -1,0 +1,121 @@
+{
+  "slug": "ring-cycle",
+  "genre": "arcade",
+  "oneLiner": "糖球在旋转彩环阵里持续下落，玩家左右操控它落在与自身颜色相同的环上得分染色，连吃 5 个同色环触发彩虹糖雨。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "注意力：向左对齐安全环就错过右边的同色链",
+      "feedback": ["sfx", "ball-tilt", "trail"],
+      "combinesWith": ["dye"]
+    },
+    {
+      "name": "dye",
+      "cost": "颜色即生命线：每换一次色，下一环只有同色+白安全",
+      "feedback": ["sfx", "color-flash", "ring-glow"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "bounce",
+      "cost": "木环救急不染色、不得分，还会打断同色链",
+      "feedback": ["sfx", "bounce-arc", "wood-crack"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 4,
+      "choice": "第一环：追左边同色格还是赌右边的白格捷径",
+      "cost": "保连击 vs 随机换色"
+    },
+    {
+      "atSec": 12,
+      "choice": "同色链进行到第 3 环：继续追同色冲彩虹，还是提前用木环保命",
+      "cost": "高分风险 vs 保底存活"
+    },
+    {
+      "atSec": 25,
+      "choice": "移动环袭来：预判环的横移落点，还是退回中轴等下一环",
+      "cost": "抢分 vs 慢半拍"
+    },
+    {
+      "atSec": 40,
+      "choice": "变色环：格色即将重洗，是现在抢吃还是等重洗后再找目标",
+      "cost": "快吃 vs 重新瞄准"
+    },
+    {
+      "atSec": 60,
+      "choice": "窄格环：只剩一格同色，冒险钻窄缝还是改吃白环保分",
+      "cost": "技巧分 vs 稳妥分"
+    },
+    {
+      "atSec": 85,
+      "choice": "无白带：没有万能白格兜底，全程只能硬吃同色",
+      "cost": "容错归零"
+    },
+    {
+      "atSec": 120,
+      "choice": "终章三重压力：移动+变色+无白同时上，保连击还是保命",
+      "cost": "高分 vs 存活"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "标准彩环：学会左右对齐同色格" },
+    { "index": 2, "newElement": "稀疏环：环间距拉大，练习节奏" },
+    { "index": 3, "newElement": "移动环：整环横向 marquee 滚动" },
+    { "index": 4, "newElement": "变色环：格色定时重洗，需重新瞄准" },
+    { "index": 5, "newElement": "换章到薄荷库：色板转青绿" },
+    { "index": 6, "newElement": "窄格环：8 格只有 1 格同色" },
+    { "index": 7, "newElement": "无白带：万能白格消失" },
+    { "index": 8, "newElement": "移动窄格：窄格 + 横移叠加" },
+    { "index": 9, "newElement": "换章到夜光仓：色板转蓝紫" },
+    { "index": 10, "newElement": "变色稀缺：变色 + 无白叠加" },
+    { "index": 11, "newElement": "高速移动：移动环速度翻倍" },
+    { "index": 12, "newElement": "终章：移动+变色+无白三重压力" }
+  ],
+  "upgrades": [
+    { "id": "whiteCharm", "kind": "rule", "desc": "白格改为不换色、只加 2 分（改规则而非数值）" },
+    { "id": "rainbowBank", "kind": "rule", "desc": "彩虹糖雨触发后，下一环木格自动转为同色（规则链）" },
+    { "id": "woodShield", "kind": "rule", "desc": "木环额外给 1 环护盾，护盾内撞异色只破盾不死亡" },
+    { "id": "comboGuard", "kind": "rule", "desc": "白格不再清空同色链（保留连击）" },
+    { "id": "lastDye", "kind": "rule", "desc": "每带开局前 3 环必含 2 个同色格（开局规则）" },
+    { "id": "steerUp", "kind": "stat", "desc": "横移速度 +10%（数值）" },
+    { "id": "slowDown", "kind": "stat", "desc": "下落速度 -8%（数值）" },
+    { "id": "comboPlus", "kind": "stat", "desc": "连击乘数 +0.1（数值）" },
+    { "id": "bonusStart", "kind": "stat", "desc": "开局自带 3 分（数值）" },
+    { "id": "wideCells", "kind": "stat", "desc": "每格加宽 6%（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连吃 5 个同色环，整屏下起彩虹糖雨，糖球绽放成彩色光球",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "糖果工厂风格：程序化 Canvas 发光渲染为主（径向渐变/糖果贴片/传送带），AI 生成封面海报；UI 线框 SVG/CSS"
+}

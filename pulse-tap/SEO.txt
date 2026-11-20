@@ -1,0 +1,45 @@
+TITLE
+Pulse Tap — Free Neon Rhythm Game
+
+CATEGORY
+Rhythm
+
+TAGS
+rhythm game, music, tap, beat, neon, nightclub, DJ, arcade, timing, reaction, browser game, casual
+
+SHORT DESCRIPTION
+Tap the falling neon pulses on the beat across four energy lanes and chain 8 PERFECTs to enter Groove Mode.
+
+LONG DESCRIPTION
+PULSE TAP is a free neon rhythm game set on a heartbeat nightclub DJ booth.
+
+Four glowing energy lanes drop colored pulses toward a judgment line. Press D, F, J, K (or tap the lanes on touch) exactly on the beat to score PERFECT, build combos, and keep your health bar alive. Missed pulses drain your health — clear the whole track before it empties to win the set.
+
+Chain 8 PERFECTs in a row to trigger GROOVE MODE: the whole booth breathes with the beat and the judgment window widens. Master tap notes, hold notes that glow while you press, slide chains that jump between lanes, and gray fake notes you must not touch.
+
+12 handcrafted tracks across three neon worlds — Neon Bar, Rooftop Electro and Midnight Subway. Each stage adds a new twist: tempo shifts, density climbs, decoy notes, two-hand chords, syncopation and a full-song finale.
+
+Three stars per stage: clear the track, stay accurate, and keep the combo unbroken. Easy to learn in ten seconds, hard to perfect. Works with keyboard, mouse and touch. No download — play free in your browser.
+
+TITLE
+脉冲节拍 — 免费霓虹节奏游戏
+
+CATEGORY
+节奏
+
+TAGS
+节奏游戏, 音乐, 打拍, 霓虹, 夜店, DJ, 街机, 反应力, 计时, 网页游戏, 休闲
+
+SHORT DESCRIPTION
+在四条霓虹能量轨上，看准节拍点中下落的脉冲，连击 8 次完美进入律动模式。
+
+LONG DESCRIPTION
+《脉冲节拍》是一款免费霓虹节奏游戏，舞台是一座心跳夜店的 DJ 台。
+
+四条发光的能量轨不断落下彩色脉冲，朝判定线前进。在节拍点上按下 D、F、J、K（或触屏点击对应轨道），就能打出「完美」、累积连击、守住生命条。漏掉的脉冲会扣血——在生命归零前清完整首曲目，就能赢下这一盘。
+
+连续 8 次「完美」会触发律动模式：整座 DJ 台随拍呼吸，判定窗口也会放宽。掌握单点、按住发光的长按、相邻轨滑接的滑键，以及绝对不能点的灰色假 note。
+
+12 个手工曲目横跨三大霓虹场景：霓虹吧、天台电音、深夜地铁。每一关都有新机制：变速段、密度爬升、假 note、双手和弦、切分节奏，以及全曲终章。
+
+每关三星：通关、保持准确率、连击不断。十秒上手，越玩越上头。键盘、鼠标、触屏全支持。无需下载，浏览器免费畅玩。

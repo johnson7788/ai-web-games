@@ -1,0 +1,149 @@
+{
+  "game": "heroes-quest",
+  "generatedAt": "2026-11-19T19:21:52.049Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 7.5,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-map.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧发光的绿色加号节点开始行军",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "节点图标语义模糊：红色×、黄色?、紫色∞等符号未在界面说明其含义，易混淆",
+        "‘NODE 0/11’与‘CHAPTER Verdant March’间距过小，视觉上易误读为单行文本",
+        "底部提示文字‘Click a glowing node to march’字号偏小且无高对比背景，弱光下难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/02-formation.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Confirm formation’按钮确认阵型",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        " Formation面板中‘FRONT/MID/BACK’标签与英雄名之间间距过小，易误触",
+        "底部‘Confirm formation’按钮边框与背景对比度偏低，弱光下可能辨识困难",
+        "‘MIGHT’进度条无数值或单位，无法判断当前状态"
+      ]
+    },
+    {
+      "shot": "tests/final/03-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角的 'Strike' 按钮发起攻击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'SUPPLIES 6' 的数字与背景对比度偏低，小字号易误读",
+        "底部行动按钮组无视觉反馈（如悬停/选中态），当前‘Your turn - Syl’未高亮对应按钮",
+        "红色敌人头顶感叹号过小，远距离可能被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-battle-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘攻击’按钮对红色敌人发起攻击",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘目标 2’数值与进度条紧贴，间距过小易误读",
+        "红色敌人头顶感叹号为红色，与角色颜色冲突，辨识度略低",
+        "‘军势’条无明确数值或单位，含义模糊（需结合上下文）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-upgrade.png",
+      "goal_visible": true,
+      "first_action_guess": "点击三个升级选项中的一个，例如“War Drums”以提升全队攻击力。",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘MIGHT’进度条文字‘MIGHT READY’颜色过浅（黄底黑字反差不足），在低对比度环境下可能难辨",
+        "背景山丘与前景小树剪影层次较弱，眯眼时‘可交互升级面板’与背景融合度偏高，影响视觉优先级",
+        "左上角‘NODE 1/11’标签无明确指示作用，易被误认为状态而非导航节点"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Strike’按钮攻击最近的敌人（右侧红帽角色）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘TARGETS 2’旁的两个小蓝点图标语义模糊，疑似目标计数但无明确图示说明",
+        "右上‘MIGHT’条下方黄色进度条极短，难以判断当前值；且未标注数值",
+        "底部行动按钮‘Expedition Might’文字略长，与其他按钮宽度不一致，视觉重心偏移"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Confirm formation’按钮确认阵型配置",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        " Formation panel底部按钮‘Confirm formation’无明确视觉反馈（如悬停/按下态），可能影响操作确认感",
+        "角色标签（Kael/tank.cls等）字体较小且与背景对比度偏低，远距离阅读略吃力",
+        "背景山丘与前景UI之间缺乏深度分隔，轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Confirm formation’按钮确认阵型",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "阵型区域中‘FRONT/MID/BACK’标签与英雄名间距过小，易误读为单个词",
+        "‘MIGHT’进度条无数值或单位，无法判断当前状态",
+        "背景山丘与前景UI对比度偏低，部分玩家可能忽略底部地形细节"
+      ]
+    }
+  ]
+}

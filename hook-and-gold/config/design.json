@@ -1,0 +1,89 @@
+{
+  "slug": "hook-and-gold",
+  "genre": "puzzle",
+  "oneLiner": "驾驶深海打捞船，摆动机械锚爪抓取沉船宝藏——重宝慢、轻物快，还要躲开水母与炸药桶，限时凑够目标金额过关。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "fire",
+      "cost": "时机即取舍：钟摆只在你松手那一刻锁死角度，早/晚 0.3 秒都会抓偏；发射后锚爪直线伸出无法改道",
+      "feedback": ["sfx", "ropeStretch", "clawFlash"],
+      "combinesWith": ["grab"]
+    },
+    {
+      "name": "grab",
+      "cost": "重量决定回收速度：抓重宝就慢、回收期间无法再发射，越慢越怕倒计时不够",
+      "feedback": ["sfx", "bubbleTrail", "boatTilt"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "dynamite",
+      "cost": "每局限量炸药，放弃当前钩住的物件重来；误判等于白丢一次机会与已花掉的时间",
+      "feedback": ["sfx", "explosion", "screenShake"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一钩抓近处银锭求稳，还是赌远处金锭的高价值", "cost": "赌金锭 = 回收更慢、钟摆角度更难卡准" },
+    { "atSec": 15, "choice": "废铁哑铃就在眼前但重且贱：抓它浪费时间，还是等钟摆摆到金锭一侧", "cost": "抓废铁 ≈ 3 秒回收只换 25 元" },
+    { "atSec": 30, "choice": "珍珠贝正在闭合：抢在闭合前钩，还是等下一轮开合", "cost": "闭合时钩空 = 白跑一趟还浪费时间" },
+    { "atSec": 45, "choice": "水母挡在值钱物件前方：绕开还是硬抓", "cost": "被蜇 = 倒计时直接少 5 秒" },
+    { "atSec": 60, "choice": "炸药桶旁边一堆金锭：故意引爆清场，还是绕开以免误伤金锭", "cost": "引爆 = 周围物件全毁、一分不得" },
+    { "atSec": 80, "choice": "还差最后一笔目标：抓慢重宝稳过，还是抓两个轻物抢时间星", "cost": "抓重宝慢可能超时；轻物要多一次发射" },
+    { "atSec": 100, "choice": "炸药只剩 1 次：现在弃掉慢吞吞的重宝，还是赌它刚好卡在倒计时前回收", "cost": "弃钩 = 丢掉已花时间；不弃 = 可能直接超时" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "机械锚爪发射与钟摆（常规打捞）" },
+    { "index": 2, "newElement": "洋流（物件随流缓缓横移）" },
+    { "index": 3, "newElement": "珍珠贝（会开合，闭合时钩空）" },
+    { "index": 4, "newElement": "水母群（触碰到扣时间）" },
+    { "index": 5, "newElement": "炸药桶（误钩会炸掉周边）" },
+    { "index": 6, "newElement": "时间紧缩（倒计时更短）" },
+    { "index": 7, "newElement": "深海拖拽（回收更慢，逼你挑值钱的）" },
+    { "index": 8, "newElement": "黑珍珠（稀有高值轻物）" },
+    { "index": 9, "newElement": "夜海月光（能见度降低，物件半影）" },
+    { "index": 10, "newElement": "时间紧缩 + 水母 + 炸药混合" },
+    { "index": 11, "newElement": "综合海域（深海 + 黑珍珠 + 珍珠贝）" },
+    { "index": 12, "newElement": "终章综合（全要素叠加）" }
+  ],
+  "upgrades": [
+    { "id": "current", "kind": "rule", "desc": "第 2 关起洋流让物件随流横移，瞄准要提前量" },
+    { "id": "clam", "kind": "rule", "desc": "第 3 关起珍珠贝开合，闭合时钩空" },
+    { "id": "jelly", "kind": "rule", "desc": "第 4 关起水母蜇伤扣时间" },
+    { "id": "dynamite", "kind": "rule", "desc": "第 5 关起炸药桶误钩会炸掉周边" },
+    { "id": "blackPearl", "kind": "rule", "desc": "第 8 关起黑珍珠稀有高值轻物" },
+    { "id": "nightSea", "kind": "rule", "desc": "第 9 关起夜海低能见度，物件半影" },
+    { "id": "targetUp", "kind": "stat", "desc": "每关目标金额递增" },
+    { "id": "tightTime", "kind": "stat", "desc": "第 6 关起时间紧缩" },
+    { "id": "heavy", "kind": "stat", "desc": "第 7 关起深海拖拽，回收更慢" },
+    { "id": "extraDynamite", "kind": "stat", "desc": "第 12 关弃钩炸药 +1" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

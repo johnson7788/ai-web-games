@@ -1,0 +1,64 @@
+{
+  "slug": "hole-munch",
+  "genre": "arcade",
+  "oneLiner": "玩家在午夜城市驾驶一个黑洞，吞掉比洞小的物体与对手黑洞来变大，2 分钟内挤进前 3 名。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "体型越大移动越慢，且离开当前吞物区会丢节奏",
+      "feedback": ["motion-trail", "whoosh-sfx"],
+      "combinesWith": ["devour"]
+    },
+    {
+      "name": "devour",
+      "cost": "只能吞比洞小的物体，吸入的短暂窗口暴露在更大的洞里",
+      "feedback": ["gulp-sfx", "particle-swirl", "score-pop"],
+      "combinesWith": ["hunt"]
+    },
+    {
+      "name": "hunt",
+      "cost": "追洞时可能反被更大的洞吞掉",
+      "feedback": ["alarm-sfx", "screen-shake", "kill-flash"],
+      "combinesWith": ["devour"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先扫街角的小物，还是直奔楼区抢大物", "cost": "楼区常有大 AI 出没，可能被吞" },
+    { "atSec": 15, "choice": "冲去追一颗陨石碎片，还是守住当前高密度街区", "cost": "放弃当前位置与节奏" },
+    { "atSec": 30, "choice": "留在原地把引力连锁攒满，还是先躲开逼近的大 AI", "cost": "原地停留 3 秒有被吞风险" },
+    { "atSec": 45, "choice": "追一只比自己小的 AI 洞，还是绕开更大的洞继续扫街", "cost": "追错方向会被更大的洞包抄" },
+    { "atSec": 70, "choice": "场间三选一：引力半径 / 移速 / 吞速", "cost": "放弃另外两条 build" },
+    { "atSec": 100, "choice": "最后一分钟冲摩天楼区搏第一，还是稳守当前名次", "cost": "冲楼可能最后关头被吞掉" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 40, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "street lamps" },
+    { "index": 2, "newElement": "sedans" },
+    { "index": 3, "newElement": "buses" },
+    { "index": 4, "newElement": "buildings" },
+    { "index": 5, "newElement": "gravity chain" },
+    { "index": 6, "newElement": "meteor rush" },
+    { "index": 7, "newElement": "skyscrapers" },
+    { "index": 8, "newElement": "hunter AI" },
+    { "index": 9, "newElement": "faster AI" },
+    { "index": 10, "newElement": "dense old town" },
+    { "index": 11, "newElement": "harbor scene" },
+    { "index": 12, "newElement": "future city scene" }
+  ],
+  "upgrades": [
+    { "id": "gravity-radius", "kind": "rule" },
+    { "id": "devour-speed", "kind": "rule" },
+    { "id": "chain-lower", "kind": "rule" },
+    { "id": "chain-bonus", "kind": "rule" },
+    { "id": "meteor-boost", "kind": "rule" },
+    { "id": "chain-duration", "kind": "rule" },
+    { "id": "move-speed", "kind": "stat" },
+    { "id": "start-mass", "kind": "stat" },
+    { "id": "max-radius", "kind": "stat" },
+    { "id": "hunt-double", "kind": "rule" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 2, "firstSuccessSec": 8, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

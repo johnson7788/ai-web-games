@@ -1,0 +1,84 @@
+{
+  "slug": "carnival-shot",
+  "genre": "arcade",
+  "oneLiner": "在夜市灯笼庙会里，玩家点击射击横飞的纸鸢与提灯鸭，打空弹匣换弹，连续命中触发孔明灯雨。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "注意力：追踪一只鸭子就会错过另一侧的金鸭",
+      "feedback": ["crosshair", "sfx"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "消耗 1 发弹药；脱靶会清空连击",
+      "feedback": ["sfx", "muzzle-flash", "hit-pop"],
+      "combinesWith": ["aim", "reload"]
+    },
+    {
+      "name": "reload",
+      "cost": "1.2 秒无法射击的空窗",
+      "feedback": ["sfx", "clip-flash", "hud"],
+      "combinesWith": ["shoot"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "先打最近的鸭子，还是等一只高分的提灯鸭", "cost": "弹药与连击窗口" },
+    { "atSec": 8, "choice": "提前换弹装速装匣，还是把余弹打完再换", "cost": "1.2 秒射击空窗" },
+    { "atSec": 15, "choice": "追红灯鸭赌轮盘奖励，还是打稳赚的普通鸭", "cost": "错过稳定得分" },
+    { "atSec": 25, "choice": "留子弹给限时金鸭，还是见鸭就打", "cost": "当下少得分" },
+    { "atSec": 40, "choice": "忍住不打小鬼灯，还是手快误伤", "cost": "打中扣 150 分" },
+    { "atSec": 55, "choice": "双倍窗口里专注打高分鸭，还是广撒网", "cost": "瞄准纪律换爆发" },
+    { "atSec": 70, "choice": "过关前提前换弹，还是直接进下一关", "cost": "时间 vs 满弹" },
+    { "atSec": 95, "choice": "优先移动靶（200 分）还是俯冲快鸭（130 分）", "cost": "命中难度换分值" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 35, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "纸鸢鸭横飞（教点击射击）" },
+    { "index": 2, "newElement": "移动靶纸弹出左右横移" },
+    { "index": 3, "newElement": "慢速高分的提灯鸭" },
+    { "index": 4, "newElement": "俯冲快鸭高速下坠" },
+    { "index": 5, "newElement": "小鬼灯假目标（打中扣分）" },
+    { "index": 6, "newElement": "成群鸭群蜂拥而出" },
+    { "index": 7, "newElement": "河灯青蓝场景切换" },
+    { "index": 8, "newElement": "限时金鸭闪现即逝" },
+    { "index": 9, "newElement": "烟花夜金紫场景切换" },
+    { "index": 10, "newElement": "生成节奏加速" },
+    { "index": 11, "newElement": "全目标混合关" },
+    { "index": 12, "newElement": "终章盛典（全部行为+高目标分）" }
+  ],
+  "upgrades": [
+    { "id": "quickClip", "kind": "rule", "desc": "主动换弹装速装匣，下次换弹减半" },
+    { "id": "doubleTime", "kind": "rule", "desc": "双倍窗口延长 4 秒" },
+    { "id": "rainAt", "kind": "rule", "desc": "孔明灯雨提前到连击 6 触发" },
+    { "id": "ghostShield", "kind": "rule", "desc": "每关第一次误打小鬼灯不扣分" },
+    { "id": "goldenBait", "kind": "rule", "desc": "金鸭多停留 0.6 秒" },
+    { "id": "fullMag", "kind": "stat", "desc": "弹匣容量 +2" },
+    { "id": "scoreBoost", "kind": "stat", "desc": "所有得分 +10%" },
+    { "id": "reloadSpeed", "kind": "stat", "desc": "基础换弹时间 -0.15s" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连击 ×8 时全场金光孔明灯雨，万千纸灯升空。",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "夜市灯笼庙会风格：程序化 Canvas 渲染为主（纸鸢/提灯鸭/灯笼/粒子光效），封面海报与 BGM 用 AI 生成，UI 线框 CSS"
+}

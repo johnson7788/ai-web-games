@@ -1,0 +1,208 @@
+{
+  "generatedAt": "2026-11-19T16:39:27.453Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "jump": {
+      "rms": 0.2055,
+      "peak": 0.24,
+      "nan": 0,
+      "zcRate": 387.6,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "stomp": {
+      "rms": 0.1891,
+      "peak": 0.4947,
+      "nan": 0,
+      "zcRate": 234.4,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "coin": {
+      "rms": 0.1101,
+      "peak": 0.242,
+      "nan": 0,
+      "zcRate": 1200.2,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "powerUp": {
+      "rms": 0.0843,
+      "peak": 0.2754,
+      "nan": 0,
+      "zcRate": 622.5,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "wrenchThrow": {
+      "rms": 0.059,
+      "peak": 0.2129,
+      "nan": 0,
+      "zcRate": 7595.3,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "wrenchHit": {
+      "rms": 0.243,
+      "peak": 0.402,
+      "nan": 0,
+      "zcRate": 354.2,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "bump": {
+      "rms": 0.1523,
+      "peak": 0.3196,
+      "nan": 0,
+      "zcRate": 111.1,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "brickBreak": {
+      "rms": 0.0622,
+      "peak": 0.2754,
+      "nan": 0,
+      "zcRate": 3300.3,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "steamGain": {
+      "rms": 0.0427,
+      "peak": 0.1228,
+      "nan": 0,
+      "zcRate": 11528.8,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "steamBurst": {
+      "rms": 0.0672,
+      "peak": 0.2908,
+      "nan": 0,
+      "zcRate": 5513.3,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.1373,
+      "peak": 0.3668,
+      "nan": 0,
+      "zcRate": 379.6,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1876,
+      "peak": 0.5154,
+      "nan": 0,
+      "zcRate": 368.3,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "levelClear": {
+      "rms": 0.1456,
+      "peak": 0.5433,
+      "nan": 0,
+      "zcRate": 830.8,
+      "samples": 28665,
+      "durSec": 0.65,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1749,
+      "peak": 0.648,
+      "nan": 0,
+      "zcRate": 759.3,
+      "samples": 40572,
+      "durSec": 0.92,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0529,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 800.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1285,
+      "peak": 0.2511,
+      "nan": 0,
+      "zcRate": 790.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1688,
+      "peak": 0.6074,
+      "nan": 0,
+      "zcRate": 820.9,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgmMorning": {
+      "rms": 0.0902,
+      "peak": 0.2672,
+      "nan": 0,
+      "zcRate": 178.3,
+      "samples": 74088,
+      "durSec": 1.68,
+      "pass": true
+    },
+    "bgmSewer": {
+      "rms": 0.0925,
+      "peak": 0.2673,
+      "nan": 0,
+      "zcRate": 132.8,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    },
+    "bgmFactory": {
+      "rms": 0.0878,
+      "peak": 0.2628,
+      "nan": 0,
+      "zcRate": 163.5,
+      "samples": 63504,
+      "durSec": 1.44,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

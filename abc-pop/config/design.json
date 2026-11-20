@@ -1,0 +1,161 @@
+{
+  "slug": "abc-pop",
+  "genre": "quiz",
+  "oneLiner": "幼儿在糖果天空点击漂浮的字母泡泡：点中目标字母得分并触发彩虹字母桥，点错只抖动不扣分，逐字母推进三轮认知关卡。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "点错泡泡会打断连击（失去彩虹桥进度）",
+      "feedback": ["sfx", "pop-particles", "score-flash"],
+      "combinesWith": ["track"]
+    },
+    {
+      "name": "track",
+      "cost": "风速渐增、后期泡泡交叉换位，需持续追踪否则点错",
+      "feedback": ["sfx", "bubble-halo", "shake-on-miss"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "match",
+      "cost": "大小写双气泡需两形态各点一次，点重复形态不得分",
+      "feedback": ["sfx", "bridge-fx", "praise"],
+      "combinesWith": ["tap"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 4,
+      "choice": "目标字母 A 已高亮，选哪个泡泡点",
+      "cost": "点错打断连击"
+    },
+    {
+      "atSec": 10,
+      "choice": "风速渐增，追踪漂移的 A 还是等它回稳",
+      "cost": "错过时机或点错"
+    },
+    {
+      "atSec": 18,
+      "choice": "大小写双气泡，先点大写还是小写",
+      "cost": "点重复形态不得分"
+    },
+    {
+      "atSec": 26,
+      "choice": "形近字母混入，分辨后点击目标",
+      "cost": "形近误点打断连击"
+    },
+    {
+      "atSec": 34,
+      "choice": "首字母词配对，先读词再点字母",
+      "cost": "点错打断连击"
+    },
+    {
+      "atSec": 45,
+      "choice": "连击 5 触发彩虹桥，追连击还是稳点",
+      "cost": "追连击风险 vs 稳定得分"
+    },
+    {
+      "atSec": 60,
+      "choice": "后期泡泡交叉换位，选择追踪路径",
+      "cost": "追错泡泡"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 35,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "晨云章(A–I)：粉白糖果云 + 基础字母泡泡追踪（教学点击）"
+    },
+    {
+      "index": 2,
+      "newElement": "雨后章(J–R)：彩虹场景 + 风速渐增、泡泡交叉换位（追踪注意）"
+    },
+    {
+      "index": 3,
+      "newElement": "夜空章(S–Z)：深蓝星空 + 大小写双气泡同时追踪（双形态）"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "windUp",
+      "kind": "rule",
+      "desc": "风速随关卡渐增（规则：泡泡漂移速度提升）"
+    },
+    {
+      "id": "crossSwap",
+      "kind": "rule",
+      "desc": "后期泡泡横向摆动加大导致交叉换位（规则：追踪难度）"
+    },
+    {
+      "id": "dualBubble",
+      "kind": "rule",
+      "desc": "大小写双气泡需两形态各点一次（规则）"
+    },
+    {
+      "id": "distractorMix",
+      "kind": "rule",
+      "desc": "后期干扰字母混入小写，制造大小写混淆（规则）"
+    },
+    {
+      "id": "bridge",
+      "kind": "rule",
+      "desc": "连续 5 对触发彩虹字母桥（规则）"
+    },
+    {
+      "id": "noPenalty",
+      "kind": "rule",
+      "desc": "点错只抖动不扣分（规则：失败成本为 0）"
+    },
+    {
+      "id": "speedStat",
+      "kind": "stat",
+      "desc": "泡泡漂移速度 +10%（数值）"
+    },
+    {
+      "id": "scoreStat",
+      "kind": "stat",
+      "desc": "单次正确得分 +5（数值）"
+    },
+    {
+      "id": "bubbleCount",
+      "kind": "stat",
+      "desc": "场景泡泡数 +1（数值）"
+    },
+    {
+      "id": "tapRadius",
+      "kind": "stat",
+      "desc": "点击判定半径 +4px（数值）"
+    }
+  ],
+  "replayHooks": ["rating", "growth", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 12,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连续 5 次点对目标字母，一道彩虹字母桥横跨天空，桥上的字母依次点亮",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做失败/扣分机制（点错只抖动）"
+  ],
+  "artSource": "糖果天空风格：程序化 Canvas 渲染（云层/气球泡泡/彩虹桥/星光），封面海报 AI 出图叠字；音效/BGM 程序化 WebAudio 合成"
+}

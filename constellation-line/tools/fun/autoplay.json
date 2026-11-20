@@ -1,0 +1,56 @@
+{
+  "game": "constellation-line",
+  "genre": "puzzle",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 11.5,
+      "actions": 235,
+      "firstInputSec": 0.1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.2,
+      "deaths": 0,
+      "idleSec": 0.1,
+      "maxEventGapSec": 0.08,
+      "uniqueEvents": 12,
+      "levelsReached": 24,
+      "completed": true
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 45,
+      "actions": 336,
+      "firstInputSec": 0.3,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 39.4,
+      "maxEventGapSec": 0.53,
+      "uniqueEvents": 6,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 45,
+      "actions": 0,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 45,
+      "maxEventGapSec": 45,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ],
+  "generatedAt": "2026-11-19T13:27:36.043Z"
+}

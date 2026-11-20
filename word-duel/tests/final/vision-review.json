@@ -1,0 +1,149 @@
+{
+  "game": "word-duel",
+  "generatedAt": "2026-11-19T15:27:23.240Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 8.625,
+    "style_consistent": 9.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部 'SPELLTACK' 字母块中 'T', 'A', 'C', 'K' 背景为深蓝，与前5个浅棕不一致，视觉割裂",
+        "关卡编号1-12按钮中，1号高亮但无明确选中状态说明（如边框/阴影），易误判",
+        "‘0/36’星星计数文字偏小，且与‘Start’按钮间距过近，略显拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部字母栏中的某个字母（如O或E）进行拼写，然后点Cast按钮施法",
+      "readable": 7,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "字母栏中'I'与'O'间距过小易误触，建议增加间隔",
+        "‘Swap 3’按钮文字为黄色但背景深绿，对比度偏低（约3.2:1），弱光下可能难辨",
+        "中央环形动画无明确功能提示，新手可能困惑其是否可交互"
+      ]
+    },
+    {
+      "shot": "tests/final/03-spelling.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色‘Cast’按钮施放当前拼出的‘IOE’法术",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘IOE’下方字母格中，前3格高亮为黄底黑字，后5格为黑底白字，视觉权重不均，易误判有效拼写范围",
+        "‘Swap 3’按钮文字为黄色，与‘Cast’按钮颜色冲突，可能误导优先级",
+        "顶部‘Turn 1’按钮无边框/背景，与深色背景对比度偏低，小屏下辨识度风险"
+      ]
+    },
+    {
+      "shot": "tests/final/04-wordcloud.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部字母栏中可组成单词的字母，然后点 Cast 按钮施法",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人头顶 'ENEMY' 文字与光环重叠略显拥挤，部分字母（如 E、K）被光晕半遮",
+        "左上角 'Level 1 · Novice Duelist' 和 'Turn 2' 按钮间距过小，易误触",
+        "底部字母格子无选中反馈，玩家难以判断当前已选字母"
+      ]
+    },
+    {
+      "shot": "tests/final/05-scene2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部字母栏中可组成有效法术的字母，然后点 Cast 按钮施法",
+      "readable": 7,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Turn 1' 与 'Level 5 - Time Warden' 间距过小，易误读为单行文本",
+        "底部字母格无视觉分隔线，G/D/G/N/G/E/A/E/I 中连续 G/E 易混淆",
+        "‘Swap 3’按钮文字颜色（黄）与背景对比度偏低，弱光下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/06-scene3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部字母中的某个字母（如O或N）来组成单词，然后点Cast施法",
+      "readable": 7,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'Level 9 · Letter Thief'与'Turn 1'按钮间距过小，可能误触",
+        "中间'...'加载指示器位置居中但无明确语义，易被忽略",
+        "玩家角色头顶'YOU'文字略小且无背景衬底，在深色背景下对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/07-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘PLATOON’文字位于按钮上方且半透明，与下方字母格轻微重叠，可能干扰拼字操作",
+        "左上角‘Level 1 · Novice Duelist’和‘Turn 2’字号过小，弱光环境下辨识度低",
+        "敌人头像后隐约可见‘ENEMY’及字母环，视觉层级混乱，易误读为可交互元素"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部字母排列中的某个字母组合（如'GLE'）后按'Cast'按钮施法",
+      "readable": 7,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "字母行'DETGLEIOD'中'E'重复且无空格分隔，易误读为'DETG L E I O D'或'DETGLE IOD'",
+        "左下'Swap 3'按钮文字为黄色但背景深紫，对比度偏低（尤其在暗屏下）",
+        "顶部'Turn 1'与'Level 1 · Novice Duelist'间距过小，视觉上易混淆为单个标签"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[11-17 08:30:02] ==== gen-hunyuan start ====
+[11-17 08:30:33] build_cottage_a 概念图 ok
+[11-17 08:30:36] build_cottage_a hunyuan3d retry1: 502 {
+  "error": "upstream hunyuan3d unavailable",
+  "detail": "ConnectionRefusedError",
+  "disk_free_gb": 465.3
+}
+[11-17 08:32:49] build_cottage_a hunyuan3d retry2: 502 {
+  "error": "upstream hunyuan3d unavailable",
+  "detail": "ConnectionRefusedError",
+  "disk_free_gb": 465.3
+}
+[11-17 08:33:20] build_cottage_a hunyuan3d retry3: 502 {
+  "error": "upstream hunyuan3d unavailable",
+  "detail": "ConnectionRefusedError",
+  "disk_free_gb": 465.3
+}
+[11-17 08:34:05] FAIL build_cottage_a: hunyuan3d 失败
+[11-17 08:34:18] build_cottage_b 概念图 ok
+[11-17 08:35:47] build_cottage_b hunyuan3d retry1: fetch failed
+[11-17 08:41:08] build_cottage_b hunyuan3d ok 6.0MB
+[11-17 08:41:20] build_lighthouse_01 概念图 ok
+[11-17 08:44:43] build_lighthouse_01 hunyuan3d ok 5.7MB
+[11-17 08:44:57] build_boathouse_01 概念图 ok
+[11-17 08:48:29] build_boathouse_01 hunyuan3d ok 5.1MB
+[11-17 08:48:42] build_shed_01 概念图 ok
+[11-17 08:52:31] build_shed_01 hunyuan3d ok 6.8MB
+[11-17 08:52:45] prop_lantern_post_01 概念图 ok
+[11-17 08:56:08] prop_lantern_post_01 hunyuan3d ok 5.5MB
+[11-17 08:56:21] env_tree_pine_01 概念图 ok
+[11-17 08:59:49] env_tree_pine_01 hunyuan3d ok 4.4MB
+[11-17 09:00:02] env_rock_01 概念图 ok
+[11-17 09:03:47] env_rock_01 hunyuan3d ok 4.9MB
+[11-17 09:03:59] env_crate_stack_01 概念图 ok
+[11-17 09:07:23] env_crate_stack_01 hunyuan3d ok 4.9MB
+[11-17 09:07:36] build_well_01 概念图 ok
+[11-17 09:11:13] build_well_01 hunyuan3d ok 5.1MB
+[11-17 09:11:27] char_keeper 概念图 ok
+[11-17 09:15:03] char_keeper hunyuan3d ok 5.0MB
+[11-17 09:15:03] ==== gen-hunyuan DONE ok=10 fail=1 ====

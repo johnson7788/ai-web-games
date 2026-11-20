@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2026-11-19T11:21:23.073Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shoot": {
+      "rms": 0.2171,
+      "peak": 0.3522,
+      "nan": 0,
+      "zcRate": 511.2,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "heavy": {
+      "rms": 0.2623,
+      "peak": 0.7907,
+      "nan": 0,
+      "zcRate": 444.1,
+      "samples": 14994,
+      "durSec": 0.34,
+      "pass": true
+    },
+    "enemyShot": {
+      "rms": 0.101,
+      "peak": 0.2199,
+      "nan": 0,
+      "zcRate": 233.4,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.1425,
+      "peak": 0.2999,
+      "nan": 0,
+      "zcRate": 1093.2,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.2531,
+      "peak": 0.7145,
+      "nan": 0,
+      "zcRate": 462.5,
+      "samples": 14112,
+      "durSec": 0.32,
+      "pass": true
+    },
+    "playerHit": {
+      "rms": 0.2213,
+      "peak": 0.6998,
+      "nan": 0,
+      "zcRate": 512.9,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "brickBreak": {
+      "rms": 0.1208,
+      "peak": 0.4144,
+      "nan": 0,
+      "zcRate": 3084.1,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "steelBreak": {
+      "rms": 0.1496,
+      "peak": 0.4025,
+      "nan": 0,
+      "zcRate": 1637.7,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "furnaceHit": {
+      "rms": 0.3239,
+      "peak": 0.4,
+      "nan": 0,
+      "zcRate": 95.8,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "alarm": {
+      "rms": 0.1209,
+      "peak": 0.24,
+      "nan": 0,
+      "zcRate": 613.1,
+      "samples": 18522,
+      "durSec": 0.42,
+      "pass": true
+    },
+    "propSpawn": {
+      "rms": 0.1161,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 883.6,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "propGain": {
+      "rms": 0.1969,
+      "peak": 0.4563,
+      "nan": 0,
+      "zcRate": 812.7,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "repair": {
+      "rms": 0.1148,
+      "peak": 0.3902,
+      "nan": 0,
+      "zcRate": 2286.4,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "waveClear": {
+      "rms": 0.1404,
+      "peak": 0.4835,
+      "nan": 0,
+      "zcRate": 558.4,
+      "samples": 23814,
+      "durSec": 0.54,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1768,
+      "peak": 0.65,
+      "nan": 0,
+      "zcRate": 492,
+      "samples": 41454,
+      "durSec": 0.94,
+      "pass": true
+    },
+    "gameOver": {
+      "rms": 0.2159,
+      "peak": 0.5573,
+      "nan": 0,
+      "zcRate": 366,
+      "samples": 44100,
+      "durSec": 1,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1187,
+      "peak": 0.2721,
+      "nan": 0,
+      "zcRate": 840.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.047,
+      "peak": 0.09,
+      "nan": 0,
+      "zcRate": 780.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "upgrade": {
+      "rms": 0.1269,
+      "peak": 0.4416,
+      "nan": 0,
+      "zcRate": 873,
+      "samples": 21168,
+      "durSec": 0.48,
+      "pass": true
+    }
+  },
+  "loops": {
+    "engine": {
+      "rms": 0.0933,
+      "peak": 0.2261,
+      "nan": 0,
+      "zcRate": 210,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "heavy.lowerThanShoot": {
+      "shootZc": 511.2,
+      "heavyZc": 385.3,
+      "ok": true
+    },
+    "steel.brighterThanBrick": {
+      "brickZc": 3039.7,
+      "steelZc": 1621,
+      "ok": false
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

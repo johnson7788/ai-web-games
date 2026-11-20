@@ -1,0 +1,149 @@
+{
+  "game": "corgi-dash",
+  "generatedAt": "2026-11-19T14:36:55.668Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 7.75,
+    "style_consistent": 9.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的'Run'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题'CORGI DASH'发光效果过强，部分字母边缘轻微晕染，可能影响弱视用户辨识",
+        "‘Best 0’文字颜色偏黄且字号小，与背景对比度不足，易被忽略",
+        "右上角语言切换按钮无图标仅文字，移动端可能误触或不易发现"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“开跑”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘柯基冲刺’发光效果过强，导致部分笔画边缘模糊，影响远距离辨识",
+        "‘最佳 0’文字颜色偏黄且字号小，与主标题对比度不足，易被忽略",
+        "背景为纯色渐变无景深层次，眯眼时无法区分前景按钮与背景，silhouette得分偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕或按空格键让狐狸跳跃越过障碍",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEXT 400m’进度条箭头指向左，但文字‘NEXT’暗示前进方向应为右，易歧义",
+        "右上角‘WHISTLE’按钮无图标仅文字，移动端可能误触",
+        "羊只露出头部，部分玩家可能误判为不可交互/非目标物"
+      ]
+    },
+    {
+      "shot": "tests/final/04-whistle.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该吹哨子（因右上角有倒计时的WHISTLE提示且角色在移动中需互动）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEXT 400m’进度条末端橙色指示器过小，易被忽略；",
+        "左上角HUD三行文字间距紧凑，小屏可能误读为单行；",
+        "羊群与草丘颜色对比度偏低（尤其右侧羊），远距离辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Run again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签发光效果略过强，可能干扰主标题阅读",
+        "背景模糊中隐约可见两个模糊物体（疑似羊），但无法确认是否为游戏内实体，存在视觉干扰风险",
+        "‘Deepest leg’字段值‘Misty Meadow’右对齐，与其他左对齐字段不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/06-restart.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕或按空格键开始移动狐狸角色",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'WHISTLE'下拉箭头与进度条间距过小，可能误触",
+        "左上角'SHEEP 0 /30'中斜杠与数字间距略紧，轻微可读性影响",
+        "‘NEXT 400m’进度条末端箭头指向模糊，易误解为剩余距离而非目标方向"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "双击屏幕或按S键吹哨子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡狐狸与羊，影响操作时视线判断",
+        "‘WHISTLE’按钮右侧下拉箭头与‘Skip’按钮间距过小，易误触",
+        "‘NEXT 400m’进度条文字与背景对比度偏低（黄字在深绿底）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角WHISTLE按钮或吹哨子（因进度条满且标有WHISTLE）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD‘SHEEP 0 /30’中斜杠与数字间距过小，易误读为‘0/30’整体；",
+        "‘NEXT 400m’进度条末端箭头紧贴文字，可能被误认为标点；",
+        "背景太阳光晕过强，轻微降低远处羊的对比度（但未影响识别）"
+      ]
+    }
+  ]
+}

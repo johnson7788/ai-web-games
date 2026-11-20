@@ -1,0 +1,87 @@
+{
+  "slug": "blade-garden",
+  "genre": "action",
+  "oneLiner": "守药园的竹剑客：摇杆或键盘走位、自动挥剑斩退采药的野猪乌鸦山魈药贼，捡修为升级三选一剑意，越战越强直到守住药园。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "走位决定站位：贪修为要贴近光点、保血要拉开与野物的距离，两者常常不可兼得",
+      "feedback": ["sfx", "leafTrail", "dashBlur"],
+      "combinesWith": ["fight"]
+    },
+    {
+      "name": "fight",
+      "cost": "自动攻击最近目标，无法手动选敌：想先秒精英/Boss 必须先清掉挡路的小怪",
+      "feedback": ["sfx", "hitFlash", "deathBurst"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "choose",
+      "cost": "每次升级三选一，选一项等于永久放弃另两项，build 就此定型",
+      "feedback": ["sfx", "glowPulse", "modalPop"],
+      "combinesWith": ["fight"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一波野猪逼近：冲向修为光点抢经验，还是先拉开距离保血", "cost": "贴近野猪会被撞掉血" },
+    { "atSec": 18, "choice": "第一次升级三选一：剑劲 / 剑速 / 竹叶镖", "cost": "选新剑意竹叶镖 = 这轮放弃伤害与攻速" },
+    { "atSec": 30, "choice": "留在原地清怪抢击杀目标，还是绕圈风筝保血量", "cost": "站桩输出会持续吃伤害" },
+    { "atSec": 50, "choice": "毒沼减速带：直穿省路，还是绕行保移动速度", "cost": "直穿会被减速、被追上" },
+    { "atSec": 70, "choice": "精英贴脸：硬拼速杀，还是风筝拖时间", "cost": "硬拼必然掉血，风筝拖慢推进" },
+    { "atSec": 90, "choice": "堆满单一剑意触发竹叶旋舞，还是广撒网解锁多种剑意", "cost": "单推满级签名 vs 战力平摊的取舍" },
+    { "atSec": 120, "choice": "Boss 现身：先清小怪断其援军，还是直接集火 Boss", "cost": "集火 Boss 时小怪会攒多围上来" },
+    { "atSec": 150, "choice": "残血时：回撤找血瓶，还是继续贪修为升级", "cost": "回撤丢节奏，贪修为可能暴毙" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "普通野猪潮（自动挥剑 + 拾取修为）" },
+    { "index": 2, "newElement": "乌鸦加入（高速低血）" },
+    { "index": 3, "newElement": "精英怪首发（体型/血量放大）" },
+    { "index": 4, "newElement": "Boss 药王鼎（远程喷吐）" },
+    { "index": 5, "newElement": "换章夏泽：山魈（中型高攻）" },
+    { "index": 6, "newElement": "双精英同场（被夹击的走位压力）" },
+    { "index": 7, "newElement": "潮汐加速（刷怪更快更密）" },
+    { "index": 8, "newElement": "Boss 药王鼎再临（血量更强）" },
+    { "index": 9, "newElement": "换章秋崖：药贼（极速低血）" },
+    { "index": 10, "newElement": "毒沼地形（减速带，绕行代价）" },
+    { "index": 11, "newElement": "窄道图（中央走廊，走位受限）" },
+    { "index": 12, "newElement": "终局 Boss 山魈王" }
+  ],
+  "upgrades": [
+    { "id": "bladePower", "kind": "stat" },
+    { "id": "bladeSpeed", "kind": "stat" },
+    { "id": "bladeRange", "kind": "stat" },
+    { "id": "windStep", "kind": "stat" },
+    { "id": "regrowth", "kind": "stat" },
+    { "id": "bambooShield", "kind": "stat" },
+    { "id": "magnet", "kind": "stat" },
+    { "id": "leafDart", "kind": "rule" },
+    { "id": "whirlSlash", "kind": "rule" },
+    { "id": "thunderBamboo", "kind": "rule" },
+    { "id": "rootTangle", "kind": "rule" },
+    { "id": "thousandBamboo", "kind": "rule" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth", "newBuild", "daily"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

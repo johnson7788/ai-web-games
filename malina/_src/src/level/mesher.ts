@@ -1,0 +1,650 @@
+import * as THREE from 'three';
+import type { Textures } from '../textures.ts';
+import { Atlas } from './atlas.ts';
+import { CH, chunkKey, type Level } from './level.ts';
+import { DIRS } from './obj.ts';
+import { paletteTextures, type BlockDef, type Layer } from './palette.ts';
+import { decorTextures } from './decor.ts';
+import { DecorRenderer } from './decor-render.ts';
+import { getShape } from './shapes.ts';
+import type { Shape } from './obj.ts';
+
+/**
+ * Level rendering: per chunk — one mesh per layer (opaque / cutout / water / fire).
+ * Faces between opaque neighbours are not drawn, corners are shaded (AO), brightness drifts a little from block to block.
+ * A chunk changed (level.dirty) — call sync() and it rebuilds.
+ *
+ * Cell (x, y, z) stands in the world centred on integer x and z: it occupies [x−0.5; x+0.5) × [y; y+1) × [z−0.5; z+0.5).
+ */
+
+/** Baked source: warm colour into block vertices within radius dist, strength k (no PointLight — free per frame) */
+interface Baked { x: number; y: number; z: number; r: number; g: number; b: number; k: number; dist: number }
+
+interface LightSpot { x: number; y: number; z: number; color: THREE.Color; intensity: number; dist: number; seed: number }
+
+const LAYERS: Layer[] = ['opaque', 'cutout', 'water', 'acid', 'fire', 'glow', 'detail', 'river', 'falls', 'portal', 'lava'];
+
+/**
+ * "X-ray": blocks between the camera and the hero (in a cylinder of radius uXrayR around the camera → hero ray,
+ * above the hero's feet) dissolve with a Bayer dither so walls do not hide the fighter. uXrayR = 0 — off.
+ * "Cut": everything above uXrayCut is not drawn (the hero is in a house — the floor is visible without the ceiling and upper floors).
+ * For opaque blocks (caps) the back faces are then drawn too — dark, this is the "cut" of the walls from above.
+ */
+const XRAY_UNIFORMS = { uXrayHero: { value: new THREE.Vector3() }, uXrayCam: { value: new THREE.Vector3() }, uXrayR: { value: 0 }, uXrayCut: { value: 1e9 } };
+const CUT_OFF = 1e8;
+function withXray(m: THREE.Material, caps = false): THREE.Material {
+  if (caps) m.side = THREE.DoubleSide;
+  m.onBeforeCompile = (sh) => {
+    Object.assign(sh.uniforms, XRAY_UNIFORMS);
+    // baked light (candles, portal): the bake attribute is added to the emission — glows at night too, without PointLight
+    if (sh.fragmentShader.includes('totalEmissiveRadiance')) {
+      sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nattribute vec3 bake;\nvarying vec3 vBake;')
+        .replace('#include <begin_vertex>', '#include <begin_vertex>\nvBake = bake;');
+      sh.fragmentShader = sh.fragmentShader.replace('#include <common>', '#include <common>\nvarying vec3 vBake;')
+        .replace('#include <emissivemap_fragment>', '#include <emissivemap_fragment>\ntotalEmissiveRadiance += vBake * diffuseColor.rgb;');
+    }
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vXrayPos;')
+      .replace('#include <worldpos_vertex>', `#include <worldpos_vertex>
+vec4 xrayP = vec4(transformed, 1.0);
+#ifdef USE_INSTANCING
+xrayP = instanceMatrix * xrayP;
+#endif
+vXrayPos = (modelMatrix * xrayP).xyz;`);
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', `#include <common>
+varying vec3 vXrayPos;
+uniform vec3 uXrayHero; uniform vec3 uXrayCam; uniform float uXrayR; uniform float uXrayCut;
+float xrayBayer() {
+  int x = int(mod(gl_FragCoord.x, 4.0)), y = int(mod(gl_FragCoord.y, 4.0));
+  int i = x + y * 4;
+  int m[16]; m[0]=0; m[1]=8; m[2]=2; m[3]=10; m[4]=12; m[5]=4; m[6]=14; m[7]=6; m[8]=3; m[9]=11; m[10]=1; m[11]=9; m[12]=15; m[13]=7; m[14]=13; m[15]=5;
+  for (int k = 0; k < 16; k++) if (k == i) return (float(m[k]) + 0.5) / 16.0;
+  return 0.5;
+}`)
+      .replace('#include <clipping_planes_fragment>', `#include <clipping_planes_fragment>
+if (vXrayPos.y > uXrayCut) discard;
+${caps ? `if (!gl_FrontFacing && uXrayCut > ${CUT_OFF.toFixed(1)}) discard;` : ''}
+if (uXrayR > 0.0 && vXrayPos.y > uXrayHero.y - 0.55) {
+  vec3 ab = uXrayHero - uXrayCam;
+  float t = clamp(dot(vXrayPos - uXrayCam, ab) / dot(ab, ab), 0.0, 1.0);
+  if (t < 0.97) {
+    float d = length(vXrayPos - (uXrayCam + ab * t));
+    float hole = smoothstep(uXrayR, uXrayR * 0.45, d);
+    if (xrayBayer() < hole) discard;
+  }
+}`)
+      .replace('#include <opaque_fragment>', `#include <opaque_fragment>
+${caps ? 'if (!gl_FrontFacing) gl_FragColor = vec4(0.11, 0.1, 0.09, 1.0);' : ''}`);
+  };
+  return m;
+}
+/**
+ * Live water (and acid): the top sways in waves, caustics and twinkling glints run over the surface,
+ * foam by the banks. The shore attribute = 1 in corners with no such liquid nearby.
+ * Glints brighter than 1 are picked up by bloom.
+ */
+const WATER_UNIFORMS = { uTime: { value: 0 } };
+/** Water animation time (for tests) */
+export const liquidTime = (): number => WATER_UNIFORMS.uTime.value;
+/** foamK — share of bank foam: in a narrow river bed every corner is a bank, full foam would cover the water */
+function liquid(m: THREE.Material, foam: string, spark: [number, number, number], caustic: [number, number, number], foamK = 0.7): THREE.Material {
+  const f = new THREE.Color(foam);
+  const v3 = (c: [number, number, number] | THREE.Color) => Array.isArray(c) ? `vec3(${c.map((x) => x.toFixed(3)).join(',')})` : `vec3(${c.r.toFixed(3)},${c.g.toFixed(3)},${c.b.toFixed(3)})`;
+  m.onBeforeCompile = (sh) => {
+    Object.assign(sh.uniforms, WATER_UNIFORMS);
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', `#include <common>
+attribute float shore;
+attribute vec2 flow;
+uniform float uTime;
+varying vec3 vWater; varying float vShore; varying float vTop; varying vec2 vFlow;
+float waterWave(vec2 p, float t) {
+  return sin(p.x * 1.1 + t * 1.4) * 0.035 + sin(p.y * 1.4 - t * 1.1 + p.x * 0.5) * 0.03 + sin((p.x + p.y) * 2.3 + t * 2.2) * 0.012;
+}`)
+      .replace('#include <begin_vertex>', `#include <begin_vertex>
+vec3 wp0 = (modelMatrix * vec4(transformed, 1.0)).xyz;
+vTop = step(0.8, fract(wp0.y + 0.001));
+transformed.y += vTop * (waterWave(wp0.xz, uTime) - 0.05);
+vWater = wp0; vShore = shore; vFlow = flow;`);
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', `#include <common>
+uniform float uTime;
+varying vec3 vWater; varying float vShore; varying float vTop; varying vec2 vFlow;
+float wHash(vec2 c) { return fract(sin(dot(c, vec2(12.9898, 78.233))) * 43758.5453); }`)
+      .replace('#include <opaque_fragment>', `#include <opaque_fragment>
+if (vTop > 0.5) {
+  float t = uTime;
+  // flow (river): everything drawn on the surface is carried in the flow direction
+  vec2 p = vWater.xz - vFlow * t;
+  // wave slope: slopes facing the sun are lighter
+  float sx = cos(p.x * 1.1 + t * 1.4) * 0.0385 + cos(p.y * 1.4 - t * 1.1 + p.x * 0.5) * 0.015;
+  float sz = cos(p.y * 1.4 - t * 1.1 + p.x * 0.5) * 0.042;
+  vec3 col = gl_FragColor.rgb * (1.0 + (sz - sx) * 6.0);
+  // caustics: light interweaving bands
+  float caus = pow(abs(sin(p.x * 2.1 + sin(p.y * 1.7 + t) * 1.3 + t * 0.8) * sin(p.y * 2.3 + sin(p.x * 1.5 - t * 0.9) * 1.2 - t * 0.6)), 6.0);
+  col += ${v3(caustic)} * caus;
+  // twinkling pixel glints (1/8 block), drifting slowly
+  vec2 cell = floor(p * 8.0 + vec2(t * 0.35, t * 0.2));
+  float h = wHash(cell);
+  float tw = 0.5 + 0.5 * sin(t * 3.0 + h * 40.0);
+  col += ${v3(spark)} * step(0.968, h) * smoothstep(0.55, 1.0, tw);
+  // foam by the bank: ragged pixel edge, breathing
+  float fn = wHash(floor(p * 8.0) + floor(t * 2.0) * 0.37);
+  float foam = smoothstep(0.68, 0.9, vShore + (fn - 0.5) * 0.22 + sin(t * 2.0 + p.x * 3.0 + p.y * 2.0) * 0.07);
+  col = mix(col, ${v3(f)}, foam * ${foamK.toFixed(2)});
+  // river: light streaks along the flow, tearing and running
+  float fl = length(vFlow);
+  if (fl > 0.0) {
+    vec2 fd = vFlow / fl, fn2 = vec2(-fd.y, fd.x);
+    float lane = floor(dot(vWater.xz, fn2) * 5.0);
+    float run = fract(dot(p, fd) * 0.6 + wHash(vec2(lane, 3.1)));
+    float streak = step(0.8, wHash(vec2(lane, 7.7))) * smoothstep(0.0, 0.1, run) * smoothstep(0.45, 0.25, run);
+    col = mix(col, ${v3(f)}, streak * 0.3);
+  }
+  gl_FragColor = vec4(col, max(gl_FragColor.a, foam * 0.95));
+}`);
+  };
+  return m;
+}
+
+/**
+ * Portal (screenshot 14): the gold glows by itself (brighter than 1 — bloom), light bands run from bottom to top, the edges shimmer.
+ * The time is shared with the water (uTime).
+ */
+function portalMaterial(map: THREE.Texture): THREE.Material {
+  const m = new THREE.MeshBasicMaterial({ map, toneMapped: false, color: new THREE.Color(1.35, 1.2, 0.95), side: THREE.DoubleSide });
+  m.onBeforeCompile = (sh) => {
+    Object.assign(sh.uniforms, WATER_UNIFORMS);
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vPW;')
+      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvPW = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', '#include <common>\nuniform float uTime;\nvarying vec3 vPW;')
+      .replace('#include <map_fragment>', `#include <map_fragment>
+float band = sin(vPW.y * 3.2 - uTime * 2.4 + sin(vPW.x * 1.7 + vPW.z * 1.7 + uTime * 0.8) * 0.9);
+diffuseColor.rgb *= 0.86 + 0.3 * smoothstep(0.2, 1.0, band) + 0.05 * sin(uTime * 7.0 + vPW.x * 3.0);`);
+  };
+  return m;
+}
+
+const AO_SHADE = [0.5, 0.68, 0.84, 1];
+/** Fringe: hangs down 8/16 and stands off the face by 1/16 (no z-fighting with the side texture) */
+const FRINGE_H = 0.5, FRINGE_OUT = 1 / 16;
+/** Ragged edge: how far the block top may spill onto a neighbour, m (the mask draws 0–8 px of 16) */
+const BLEED_D = 0.5, BLEED_LIFT = 0.004;
+/** Shared top edge with the neighbour on side d in cell fractions (no offset) */
+const BLEED_EDGE: [number, number, number, number][] = [[1, 0, 1, 1], [1, 1, 0, 1], [0, 1, 0, 0], [0, 0, 1, 0]];
+/** Ends of the block's top edge in cell fractions for each side (0 +X, 1 +Z, 2 −X, 3 −Z), already offset outwards */
+const FRINGE_EDGE: [number, number, number, number][] = [
+  [1 + FRINGE_OUT, 0, 1 + FRINGE_OUT, 1], [1, 1 + FRINGE_OUT, 0, 1 + FRINGE_OUT],
+  [-FRINGE_OUT, 1, -FRINGE_OUT, 0], [0, -FRINGE_OUT, 1, -FRINGE_OUT],
+];
+const MAX_LIGHTS = 8;
+
+/**
+ * Colour patches of natural ground across the world (like grass on Minecraft Dungeons screenshots): two layers of smooth noise — 9 m and 3 m;
+ * light patches are warmer and yellower, dark ones colder. RGB multipliers for a vertex, ±6 %.
+ */
+function macroTint(x: number, z: number): [number, number, number] {
+  const vn = (sx: number, sz: number, cell: number, seed: number) => {
+    const gx = Math.floor(sx / cell), gz = Math.floor(sz / cell), fx = sx / cell - gx, fz = sz / cell - gz;
+    const sm = (t: number) => t * t * (3 - 2 * t), u = sm(fx), v = sm(fz);
+    const a = hash(gx, 0, gz, seed), b = hash(gx + 1, 0, gz, seed), c = hash(gx, 0, gz + 1, seed), d = hash(gx + 1, 0, gz + 1, seed);
+    return (a * (1 - u) + b * u) * (1 - v) + (c * (1 - u) + d * u) * v;
+  };
+  const t = vn(x, z, 9, 91) * 0.65 + vn(x + 17, z - 5, 3, 92) * 0.35;
+  const k = (t - 0.5) * 2; // −1 … 1
+  return [1 + 0.06 * k, 1 + 0.045 * k, 1 - 0.01 * k];
+}
+
+/** Height of the block top in a cell: full cube — 1, half-block and stairs — by the collision height */
+const topOf = (d: BlockDef): number => (d.full ? 1 : d.collide > 0 && d.collide < 1 ? d.collide : 1);
+
+function hash(x: number, y: number, z: number, s = 0): number {
+  let h = Math.imul(x | 0, 374761393) + Math.imul(y | 0, 1103515245) + Math.imul(z | 0, 668265263) + Math.imul(s | 0, 1442695041);
+  h = Math.imul(h ^ (h >>> 13), 1274126177);
+  return ((h ^ (h >>> 16)) >>> 0) / 4294967296;
+}
+
+/**
+ * Vertices of a chunk layer (wiki/dev-performance.md): the geometry is indexed — a quad is 4 vertices and 6 indices,
+ * and vertices on shared edges of block shapes are not duplicated either. Attributes — only those the layer needs: shore and flow
+ * exist for liquids, bake — when baked light is nearby (the shader reads a missing attribute as zero).
+ */
+class Bucket {
+  pos: number[] = []; nrm: number[] = []; uv: number[] = []; col: number[] = []; shore: number[] = []; flow: number[] = []; bake: number[] = []; idx: number[] = [];
+  readonly liquid: boolean;
+  readonly lit: boolean;
+  constructor(liquid: boolean, lit: boolean) { this.liquid = liquid; this.lit = lit;}
+  get empty(): boolean { return this.idx.length === 0; }
+  /** Index of the next vertex */
+  get count(): number { return this.pos.length / 3; }
+  geometry(): THREE.BufferGeometry {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(this.pos, 3));
+    g.setAttribute('normal', new THREE.Float32BufferAttribute(this.nrm, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(this.uv, 2));
+    g.setAttribute('color', new THREE.Float32BufferAttribute(this.col, 3));
+    if (this.liquid) {
+      g.setAttribute('shore', new THREE.Float32BufferAttribute(this.shore, 1));
+      g.setAttribute('flow', new THREE.Float32BufferAttribute(this.flow, 2));
+    }
+    if (this.lit) g.setAttribute('bake', new THREE.Float32BufferAttribute(this.bake, 3));
+    g.setIndex(this.idx);
+    return g;
+  }
+}
+
+const LIQUID_LAYERS = new Set<Layer>(['water', 'acid', 'river', 'lava']);
+
+/** Shape with shared vertices: faces reference vertex indices; only vertices of the same group and the same cull coincide */
+interface IndexedShape { verts: { p: [number, number, number]; n: [number, number, number]; uv: [number, number]; group: string; cull: number }[]; tris: { v: [number, number, number]; cull: number; group: string }[] }
+const indexedShapes = new WeakMap<Shape, IndexedShape>();
+function indexedOf(shape: Shape): IndexedShape {
+  let ix = indexedShapes.get(shape);
+  if (ix) return ix;
+  const verts: IndexedShape['verts'] = [], tris: IndexedShape['tris'] = [], seen = new Map<string, number>();
+  for (const t of shape.tris) {
+    const v: number[] = [];
+    for (let k = 0; k < 3; k++) {
+      const p: [number, number, number] = [t.pos[k * 3], t.pos[k * 3 + 1], t.pos[k * 3 + 2]], uv: [number, number] = [t.uv[k * 2], t.uv[k * 2 + 1]];
+      const key = `${p[0]},${p[1]},${p[2]}|${t.nrm[0]},${t.nrm[1]},${t.nrm[2]}|${uv[0]},${uv[1]}|${t.group}|${t.cull}`;
+      let i = seen.get(key);
+      if (i === undefined) { i = verts.length; seen.set(key, i); verts.push({ p, n: t.nrm, uv, group: t.group, cull: t.cull }); }
+      v.push(i);
+    }
+    tris.push({ v: v as [number, number, number], cull: t.cull, group: t.group });
+  }
+  indexedShapes.set(shape, ix = { verts, tris });
+  return ix;
+}
+/** Mapping of shape vertices to layer vertices in the current block (−1 — not emitted yet) */
+let shapeMap = new Int32Array(64);
+
+export class LevelRenderer {
+  readonly group = new THREE.Group();
+  readonly atlas: Atlas;
+  /** Draw only blocks not above this y (the cut in the editor) */
+  maxY = Infinity;
+  private readonly mats: Record<Layer, THREE.Material>;
+  private readonly meshes = new Map<string, THREE.Mesh[]>();
+  private readonly lights = new Map<string, LightSpot[]>();
+  private readonly pool: THREE.PointLight[] = [];
+  private readonly waterTex: THREE.Texture;
+  private readonly acidTex: THREE.Texture;
+  private readonly lavaTex: THREE.Texture;
+  private readonly fireTex: THREE.Texture;
+  private readonly fallsTex: THREE.Texture;
+  /** Free decor on top of blocks (src/level/decor.ts) */
+  readonly decor: DecorRenderer;
+
+  private readonly scene: THREE.Scene;
+  private readonly level: Level;
+  constructor(scene: THREE.Scene, level: Level, T: Textures) { this.scene = scene; this.level = level;
+    this.atlas = new Atlas(T, [...new Set([...paletteTextures(), ...decorTextures()])]);
+    this.waterTex = T.water;
+    this.acidTex = T.acid;
+    this.lavaTex = T.lava;
+    this.fireTex = T.fire;
+    this.fallsTex = T.waterfall;
+    this.mats = {
+      opaque: withXray(new THREE.MeshLambertMaterial({ map: this.atlas.texture, vertexColors: true }), true),
+      cutout: withXray(new THREE.MeshLambertMaterial({ map: this.atlas.texture, vertexColors: true, alphaTest: 0.5, side: THREE.DoubleSide })),
+      water: liquid(new THREE.MeshLambertMaterial({ map: T.water, vertexColors: true, transparent: true, opacity: 0.82 }), '#e8fbff', [1.7, 1.9, 2.1], [0.12, 0.3, 0.36]),
+      // river: deeper and darker than the pond, teal; the flow is the flow attribute
+      river: liquid(new THREE.MeshLambertMaterial({ map: T.river, vertexColors: true, transparent: true, opacity: 0.96 }), '#e4f4f6', [1.2, 1.4, 1.5], [0.04, 0.1, 0.13], 0.22),
+      // waterfall: opaque streams, the texture runs down
+      falls: withXray(new THREE.MeshLambertMaterial({ map: T.waterfall, vertexColors: true, emissive: new THREE.Color('#0d3a4a'), emissiveIntensity: 0.6 })),
+      portal: portalMaterial(this.atlas.texture),
+      acid: liquid(new THREE.MeshLambertMaterial({ map: T.acid, vertexColors: true, transparent: true, opacity: 0.85, emissive: new THREE.Color('#2a7a10'), emissiveIntensity: 0.8 }), '#d8ffb0', [1.4, 2.4, 0.8], [0.2, 0.4, 0.1]),
+      // lava: opaque, glows by itself (emission under bloom), slow waves, yellow foam by the bank
+      lava: liquid(new THREE.MeshLambertMaterial({ map: T.lava, vertexColors: true, emissive: new THREE.Color('#d8500e'), emissiveIntensity: 0.45 }), '#ffd070', [2.0, 1.1, 0.3], [0.8, 0.35, 0.07], 0.3),
+      fire: new THREE.MeshBasicMaterial({ map: T.fire, alphaTest: 0.4, side: THREE.DoubleSide, toneMapped: false, color: new THREE.Color(1.8, 1.5, 1.1) }),
+      // small grass: front side only (tufts are emitted both ways) — otherwise the back side flips the
+      // "up" normal and darkens; casts no shadows
+      // polygonOffset — the ragged edge lies right on the neighbour's top and must not z-fight with it
+      detail: withXray(new THREE.MeshLambertMaterial({ map: this.atlas.texture, vertexColors: true, alphaTest: 0.5, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -2 })),
+      // glows by itself (mushrooms, lantern glass): unlit, brighter than 1 — picked up by bloom
+      glow: withXray(new THREE.MeshBasicMaterial({ map: this.atlas.texture, vertexColors: true, alphaTest: 0.5, toneMapped: false, color: new THREE.Color(1.5, 1.4, 1.2) })),
+    };
+    for (let i = 0; i < MAX_LIGHTS; i++) {
+      const l = new THREE.PointLight('#ffa040', 0, 8, 1.6);
+      this.group.add(l);
+      this.pool.push(l);
+    }
+    this.decor = new DecorRenderer(level, this.atlas, this.mats);
+    this.group.add(this.decor.group);
+    scene.add(this.group);
+    this.rebuildAll();
+  }
+
+  rebuildAll(): void {
+    for (const k of this.meshes.keys()) this.level.dirty.add(k);
+    for (const k of this.level.chunks.keys()) this.level.dirty.add(k);
+    this.decor.maxY = this.maxY;
+    this.decor.sync(true);
+    this.sync();
+  }
+
+  private baked: Baked[] = [];
+  private bakedKey = '';
+  /** Blocks with baked light — per chunk: recomputed only for changed ones, not by scanning the whole level */
+  private readonly blockBaked = new Map<string, Baked[]>();
+  /**
+   * Baked light: the sources are candle decor (light.baked) and blocks with bakedLight. If the set changed,
+   * mark the chunks around the old and new sources — their vertices will be recomputed.
+   */
+  private refreshBaked(): void {
+    const L = this.level;
+    for (const key of L.dirty) {
+      const c = L.chunks.get(key);
+      if (!c) { this.blockBaked.delete(key); continue; }
+      const [cx, cy, cz] = key.split(',').map(Number);
+      let list: Baked[] | null = null;
+      for (let i = 0; i < c.length; i++) {
+        const code = c[i];
+        if (!code) continue;
+        const b = L.defOf(code >> 2).bakedLight;
+        if (!b) continue;
+        const col = new THREE.Color(b.color);
+        (list ??= []).push({ x: cx * CH + (i & 15), y: cy * CH + (i >> 8) + 0.5, z: cz * CH + ((i >> 4) & 15), r: col.r, g: col.g, b: col.b, k: b.intensity, dist: b.dist });
+      }
+      if (list) this.blockBaked.set(key, list); else this.blockBaked.delete(key);
+    }
+    const list: Baked[] = [...this.decor.baked.map((l) => ({ x: l.x, y: l.y, z: l.z, r: l.color.r, g: l.color.g, b: l.color.b, k: l.intensity, dist: l.dist }))];
+    for (const l of this.blockBaked.values()) list.push(...l);
+    const key = list.map((l) => `${l.x.toFixed(2)},${l.y.toFixed(2)},${l.z.toFixed(2)},${l.k},${l.dist}`).join('|');
+    if (key === this.bakedKey) return;
+    for (const l of [...this.baked, ...list]) {
+      const c0 = (v: number) => Math.floor((v - l.dist + 0.5) / CH), c1 = (v: number) => Math.floor((v + l.dist + 0.5) / CH);
+      for (let cx = c0(l.x); cx <= c1(l.x); cx++) for (let cy = Math.floor((l.y - l.dist) / CH); cy <= Math.floor((l.y + l.dist) / CH); cy++) for (let cz = c0(l.z); cz <= c1(l.z); cz++) {
+        const k = chunkKey(cx, cy, cz);
+        if (L.chunks.has(k)) L.dirty.add(k);
+      }
+    }
+    this.baked = list;
+    this.bakedKey = key;
+  }
+
+  /**
+   * Rebuild the chunks marked in level.dirty. budgetMs — how many milliseconds may be spent per call
+   * (streaming: the rest wait for the next frame), focus — those closest to this point go first
+   */
+  sync(budgetMs = Infinity, focus?: { x: number; z: number }): void {
+    this.decor.maxY = this.maxY;
+    this.decor.sync();
+    this.refreshBaked();
+    const dirty = this.level.dirty;
+    if (!dirty.size) return;
+    let keys = [...dirty];
+    if (focus && budgetMs !== Infinity) {
+      const d2 = (k: string) => { const [cx, , cz] = k.split(',').map(Number); return (cx * CH + CH / 2 - focus.x) ** 2 + (cz * CH + CH / 2 - focus.z) ** 2; };
+      keys = keys.map((k) => [k, d2(k)] as const).sort((a, b) => a[1] - b[1]).map((e) => e[0]);
+    }
+    const t0 = performance.now();
+    for (const key of keys) {
+      this.rebuild(key);
+      dirty.delete(key);
+      if (performance.now() - t0 > budgetMs) break;
+    }
+  }
+
+  /** How many chunks still await rebuilding */
+  get pending(): number { return this.level.dirty.size; }
+
+  private drop(key: string): void {
+    const old = this.meshes.get(key);
+    if (old) for (const m of old) { this.group.remove(m); m.geometry.dispose(); }
+    this.meshes.delete(key);
+    this.lights.delete(key);
+  }
+
+  private rebuild(key: string): void {
+    this.drop(key);
+    const chunk = this.level.chunks.get(key);
+    if (!chunk) return;
+    const [cx, cy, cz] = key.split(',').map(Number);
+    const L = this.level;
+    // baked light: only the sources reaching this chunk
+    const near = this.baked.filter((l) => l.x + l.dist >= cx * CH - 0.5 && l.x - l.dist <= cx * CH + CH - 0.5 && l.z + l.dist >= cz * CH - 0.5 && l.z - l.dist <= cz * CH + CH - 0.5 && l.y + l.dist >= cy * CH && l.y - l.dist <= cy * CH + CH);
+    const lit = near.length > 0;
+    const buckets = Object.fromEntries(LAYERS.map((l) => [l, new Bucket(LIQUID_LAYERS.has(l), lit)])) as Record<Layer, Bucket>;
+    const spots: LightSpot[] = [];
+    const isFull = (x: number, y: number, z: number) => L.defAt(x, y, z).full;
+    const lit3: [number, number, number] = [0, 0, 0];
+    /** Baked light at a vertex: warm glow, fading out towards the radius edge (added to the emission) */
+    const bake = (x: number, y: number, z: number): [number, number, number] => {
+      lit3[0] = lit3[1] = lit3[2] = 0;
+      for (const l of near) {
+        const d = Math.hypot(x - l.x, y - l.y, z - l.z);
+        if (d >= l.dist) continue;
+        const f = (1 - d / l.dist) ** 2 * l.k;
+        lit3[0] += l.r * f; lit3[1] += l.g * f; lit3[2] += l.b * f;
+      }
+      return lit3;
+    };
+    /** Quad into a layer: 4 world points, uv in atlas tile fractions, normal, brightness */
+    const quad = (b: Bucket, p: number[][], uv: number[][], n: readonly number[], tex: string, c: number) => {
+      const r = this.atlas.uv(tex);
+      const base = b.count;
+      for (let k = 0; k < 4; k++) {
+        b.pos.push(p[k][0], p[k][1], p[k][2]);
+        b.nrm.push(n[0], n[1], n[2]);
+        b.uv.push(r.u0 + (r.u1 - r.u0) * uv[k][0], r.v0 + (r.v1 - r.v0) * uv[k][1]);
+        // grass on top of a block — the same shade as the ground under it
+        const [tr, tg, tb] = macroTint(p[k][0], p[k][2]);
+        b.col.push(c * tr, c * tg, c * tb);
+        if (lit) b.bake.push(...bake(p[k][0], p[k][1], p[k][2]));
+        if (b.liquid) { b.shore.push(0); b.flow.push(0, 0); }
+      }
+      b.idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
+    };
+    /** Tuft density: smooth noise with a 5 m step — grass grows in patches */
+    const density = (x: number, z: number) => {
+      const gx = Math.floor(x / 5), gz = Math.floor(z / 5), fx = x / 5 - gx, fz = z / 5 - gz;
+      const sm = (t: number) => t * t * (3 - 2 * t), u = sm(fx), v = sm(fz);
+      const a = hash(gx, 0, gz, 31), b = hash(gx + 1, 0, gz, 31), c = hash(gx, 0, gz + 1, 31), d = hash(gx + 1, 0, gz + 1, 31);
+      return (a * (1 - u) + b * u) * (1 - v) + (c * (1 - u) + d * u) * v;
+    };
+
+    for (let i = 0; i < chunk.length; i++) {
+      const code = chunk[i];
+      if (!code) continue;
+      const x = cx * CH + (i & 15), z = cz * CH + ((i >> 4) & 15), y = cy * CH + (i >> 8);
+      if (y > this.maxY) continue;
+      const id = code >> 2, rot = code & 3;
+      const def = L.defOf(id);
+      const bright = 1 - (def.jitter ?? 0) * hash(x, y, z, 9);
+      let ox = 0, oz = 0, yaw = rot, scale = 1;
+      if (def.scatter) { ox = (hash(x, y, z, 13) - 0.5) * 0.5; oz = (hash(x, y, z, 14) - 0.5) * 0.5; yaw = Math.floor(hash(x, y, z, 15) * 4); scale = 0.55 + hash(x, y, z, 16) * 0.45; }
+      if (def.light) spots.push({ x, y: y + 0.6, z, color: new THREE.Color(def.light.color), intensity: def.light.intensity, dist: def.light.dist, seed: hash(x, y, z, 21) * 10 });
+
+      for (const part of def.parts) {
+        const placements: number[] = [];
+        if (part.connect) {
+          for (let d = 0; d < 4; d++) {
+            const n = L.defAt(x + DIRS[d][0], y, z + DIRS[d][2]);
+            if (n.connects || n.name === def.name) placements.push(d);
+          }
+        } else placements.push(yaw);
+        const bucket = buckets[part.layer ?? 'opaque'];
+        const atlasUV = (part.layer ?? 'opaque') === 'opaque' || part.layer === 'cutout' || part.layer === 'glow' || part.layer === 'portal';
+        const flowX = def.flow ? DIRS[rot][0] * def.flow : 0, flowZ = def.flow ? DIRS[rot][2] * def.flow : 0;
+        for (const r of placements) {
+          const shape = indexedOf(getShape(part.obj, r));
+          if (shapeMap.length < shape.verts.length) shapeMap = new Int32Array(shape.verts.length * 2);
+          shapeMap.fill(-1, 0, shape.verts.length);
+          for (const t of shape.tris) {
+            if (t.cull >= 0) {
+              const nx = x + DIRS[t.cull][0], ny = y + DIRS[t.cull][1], nz = z + DIRS[t.cull][2];
+              const nDef = L.defAt(nx, ny, nz);
+              if (nDef.full || (def.cullSame && L.idAt(nx, ny, nz) === id)) continue;
+            }
+            const texName = part.tex[t.group] ?? part.tex.side ?? Object.values(part.tex)[0];
+            const tex = Array.isArray(texName) ? texName[Math.floor(hash(x, y, z, 7) * texName.length)] : texName;
+            const uvRect = atlasUV ? this.atlas.uv(tex) : null;
+            for (let k = 0; k < 3; k++) {
+              const vi = t.v[k];
+              if (shapeMap[vi] >= 0) { bucket.idx.push(shapeMap[vi]); continue; }
+              const vt = shape.verts[vi];
+              const px = vt.p[0], py = vt.p[1], pz = vt.p[2];
+              shapeMap[vi] = bucket.count;
+              bucket.idx.push(bucket.count);
+              bucket.pos.push(x + (px - 0.5) * scale + ox, y + py * scale, z + (pz - 0.5) * scale + oz);
+              bucket.nrm.push(vt.n[0], vt.n[1], vt.n[2]);
+              const u = vt.uv[0], v = vt.uv[1];
+              if (uvRect) bucket.uv.push(uvRect.u0 + (uvRect.u1 - uvRect.u0) * u, uvRect.v0 + (uvRect.v1 - uvRect.v0) * v);
+              else bucket.uv.push(u, v);
+              let ao = 1;
+              if (t.cull >= 0 && def.full) {
+                const d = DIRS[t.cull];
+                const axis = d[0] ? 0 : d[1] ? 1 : 2;
+                const b = axis === 0 ? 1 : 0, c = axis === 2 ? 1 : 2;
+                const p = [px, py, pz];
+                const sb = p[b] < 0.5 ? -1 : 1, sc = p[c] < 0.5 ? -1 : 1;
+                const eb = [0, 0, 0], ec = [0, 0, 0];
+                eb[b] = sb; ec[c] = sc;
+                const bx = x + d[0], by = y + d[1], bz = z + d[2];
+                const s1 = isFull(bx + eb[0], by + eb[1], bz + eb[2]) ? 1 : 0;
+                const s2 = isFull(bx + ec[0], by + ec[1], bz + ec[2]) ? 1 : 0;
+                const s3 = isFull(bx + eb[0] + ec[0], by + eb[1] + ec[1], bz + eb[2] + ec[2]) ? 1 : 0;
+                ao = AO_SHADE[s1 && s2 ? 0 : 3 - (s1 + s2 + s3)];
+              }
+              const cv = bright * ao;
+              const wx = x + (px - 0.5) * scale + ox, wz = z + (pz - 0.5) * scale + oz;
+              const [tr, tg, tb] = def.natural ? macroTint(wx, wz) : [1, 1, 1];
+              bucket.col.push(cv * tr, cv * tg, cv * tb);
+              if (lit) bucket.bake.push(...bake(wx, y + py * scale, wz));
+              if (bucket.liquid) {
+                // bank: in this corner there is no such liquid nearby
+                let shore = 0;
+                const sx = px < 0.5 ? -1 : 1, sz = pz < 0.5 ? -1 : 1;
+                if (L.idAt(x + sx, y, z) !== id || L.idAt(x, y, z + sz) !== id || L.idAt(x + sx, y, z + sz) !== id) shore = 1;
+                bucket.shore.push(shore);
+                bucket.flow.push(flowX, flowZ);
+              }
+            }
+          }
+        }
+      }
+
+      // grass on top of blocks (as in Minecraft Dungeons): the fringe hangs from the ledge edge, tufts in patches on top
+      const topH = topOf(def);
+      if ((def.fringe || def.tufts) && !L.defAt(x, y + 1, z).full) {
+        const c0 = bright * 0.97;
+        // on a half-block the fringe is shorter — no longer than three quarters of its height
+        const fh = Math.min(FRINGE_H, topH * 0.75);
+        if (def.fringe) for (let d = 0; d < 4; d++) {
+          const n = L.defAt(x + DIRS[d][0], y, z + DIRS[d][2]);
+          if (n.full || (n.collide > 0 && topOf(n) >= topH)) continue;
+          const [ax, az, bx, bz] = FRINGE_EDGE[d];
+          const top = y + topH, bot = top - fh;
+          quad(buckets.detail, [[x + ax - 0.5, top, z + az - 0.5], [x + bx - 0.5, top, z + bz - 0.5], [x + bx - 0.5, bot, z + bz - 0.5], [x + ax - 0.5, bot, z + az - 0.5]],
+            [[0, 1], [1, 1], [1, 1 - fh], [0, 1 - fh]], DIRS[d], def.fringe, c0);
+        }
+        if (def.tufts && L.isAir(x, y + 1, z)) {
+          const n = Math.max(0, Math.min(5, Math.floor(density(x, z) * 7 + hash(x, y, z, 32) * 1.5 - 1.2)));
+          for (let i = 0; i < n; i++) {
+            const tx = x - 0.38 + hash(x, y, z, 33 + i) * 0.76, tz = z - 0.38 + hash(x, y, z, 40 + i) * 0.76;
+            const sz = (4 + Math.floor(hash(x, y, z, 47 + i) * 4)) / 16;
+            const u0 = Math.floor(hash(x, y, z, 54 + i) * (17 - sz * 16)) / 16;
+            const tex = def.tufts[Math.floor(hash(x, y, z, 61 + i) * def.tufts.length)];
+            const ang = hash(x, y, z, 68 + i) * Math.PI;
+            const c = c0 * (0.88 + hash(x, y, z, 75 + i) * 0.2);
+            for (const a of [ang, ang + Math.PI / 2]) {
+              const dx = Math.cos(a) * sz / 2, dz = Math.sin(a) * sz / 2;
+              // normal up: the tuft is lit like the ground under it
+              const ty = y + topH;
+              const p0 = [tx - dx, ty, tz - dz], p1 = [tx + dx, ty, tz + dz], p2 = [tx + dx, ty + sz, tz + dz], p3 = [tx - dx, ty + sz, tz - dz];
+              quad(buckets.detail, [p0, p1, p2, p3], [[u0, 0], [u0 + sz, 0], [u0 + sz, sz], [u0, sz]], [0, 1, 0], tex, c);
+              quad(buckets.detail, [p1, p0, p3, p2], [[u0 + sz, 0], [u0, 0], [u0, sz], [u0 + sz, sz]], [0, 1, 0], tex, c);
+            }
+          }
+        }
+      }
+
+      // ragged edge (like roads in Minecraft Dungeons): the top of this block spills onto the top of a neighbour of other natural ground
+      if (def.bleed && !L.defAt(x, y + 1, z).full) for (let d = 0; d < 4; d++) {
+        const nx = x + DIRS[d][0], nz = z + DIRS[d][2];
+        const nDef = L.defAt(nx, y, nz);
+        // its own family (grass ↔ grassy cliff) is not overlapped — the same texture
+        if (!nDef.natural || L.idAt(nx, y, nz) === id || nDef.bleed?.[0] === def.bleed[0] || L.defAt(nx, y + 1, nz).full || topOf(nDef) !== topH || nDef.stairs) continue;
+        const tex = def.bleed[Math.floor(hash(x, y, z, 80 + d) * def.bleed.length)];
+        const flip = hash(x, y, z, 84 + d) < 0.5;
+        const [ax, az, bx, bz] = BLEED_EDGE[d], ox = DIRS[d][0] * BLEED_D, oz = DIRS[d][2] * BLEED_D;
+        const yy = y + topH + BLEED_LIFT;
+        const P = (u: number, w: number) => [x + u - 0.5, yy, z + w - 0.5];
+        const u0 = flip ? 1 : 0, u1 = flip ? 0 : 1;
+        const c = 1 - (nDef.jitter ?? 0) * hash(nx, y, nz, 9);
+        // a → b along the edge, into the neighbour; counter-clockwise from above — normal up (the material is single-sided)
+        quad(buckets.detail, [P(ax, az), P(bx, bz), P(bx + ox, bz + oz), P(ax + ox, az + oz)],
+          [[u0, 0], [u1, 0], [u1, BLEED_D], [u0, BLEED_D]], [0, 1, 0], tex, c);
+      }
+    }
+
+    const meshes: THREE.Mesh[] = [];
+    for (const layer of LAYERS) {
+      const b = buckets[layer];
+      if (b.empty) continue;
+      const m = new THREE.Mesh(b.geometry(), this.mats[layer]);
+      m.castShadow = layer === 'opaque' || layer === 'cutout';
+      m.receiveShadow = layer === 'opaque' || layer === 'cutout' || layer === 'detail';
+      m.frustumCulled = true;
+      this.group.add(m);
+      meshes.push(m);
+    }
+    this.meshes.set(key, meshes);
+    if (spots.length) this.lights.set(key, spots);
+  }
+
+  /** How many triangles in a layer over all chunks (for tests and measurements) */
+  triangles(layer: Layer): number {
+    let n = 0;
+    for (const list of this.meshes.values()) for (const m of list) if (m.material === this.mats[layer]) n += (m.geometry.index?.count ?? m.geometry.getAttribute('position').count) / 3;
+    return n;
+  }
+
+  /** Transparency of walls between the camera and the hero: hero — the hero's chest point, radius — window radius (0 — off) */
+  setXray(hero: THREE.Vector3, cam: THREE.Vector3, radius: number): void {
+    XRAY_UNIFORMS.uXrayHero.value.copy(hero);
+    XRAY_UNIFORMS.uXrayCam.value.copy(cam);
+    XRAY_UNIFORMS.uXrayR.value = radius;
+  }
+
+  /** Cut: do not draw blocks above y; Infinity — off */
+  setCut(y: number): void {
+    XRAY_UNIFORMS.uXrayCut.value = Math.min(y, 1e9);
+  }
+
+  /** Water and fire animation, the light sources closest to focus. night 0..1 */
+  update(t: number, night: number, focus: THREE.Vector3): void {
+    WATER_UNIFORMS.uTime.value = t;
+    this.waterTex.offset.set(Math.sin(t * 0.4) * 0.06, t * 0.02);
+    this.acidTex.offset.set(t * 0.015, Math.sin(t * 0.3) * 0.05);
+    this.lavaTex.offset.set(t * 0.008, Math.sin(t * 0.2) * 0.03);
+    this.fallsTex.offset.y = t * 1.6;
+    this.fireTex.offset.y = (2 - (Math.floor(t * 9) % 3)) / 3;
+    const all: LightSpot[] = [];
+    for (const l of this.lights.values()) all.push(...l);
+    all.push(...this.decor.lights);
+    all.sort((a, b) => (a.x - focus.x) ** 2 + (a.z - focus.z) ** 2 - (b.x - focus.x) ** 2 - (b.z - focus.z) ** 2);
+    const k = 0.35 + 0.65 * night;
+    this.pool.forEach((pl, i) => {
+      const s = all[i];
+      if (!s) { pl.intensity = 0; return; }
+      pl.position.set(s.x, s.y, s.z);
+      pl.color.copy(s.color);
+      pl.distance = s.dist;
+      pl.intensity = s.intensity * k * (0.9 + Math.sin(t * 9 + s.seed) * 0.06 + Math.sin(t * 15 + s.seed * 3) * 0.04);
+    });
+  }
+
+  dispose(): void {
+    for (const k of [...this.meshes.keys()]) this.drop(k);
+    this.decor.dispose();
+    this.scene.remove(this.group);
+    for (const m of Object.values(this.mats)) m.dispose();
+    this.atlas.texture.dispose();
+  }
+}

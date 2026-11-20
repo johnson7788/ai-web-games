@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="CAKE KART — frosting-drift dessert kart racing across the Fondant Grand Prix. 3 laps, sweet weapons, cherry missiles and cake-bomb blinds.">
+  <meta name="theme-color" content="#ff5f9e">
+  <title>CAKE KART · Fondant Grand Prix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+
+    <div id="touch-controls" class="touch-only">
+      <div class="touch-row">
+        <button id="btn-left" class="tbtn" aria-label="Steer left">◀</button>
+        <button id="btn-up" class="tbtn tbtn-up" aria-label="Throttle">▲</button>
+        <button id="btn-right" class="tbtn" aria-label="Steer right">▶</button>
+      </div>
+      <div class="touch-row">
+        <button id="btn-drift" class="tbtn tbtn-wide" aria-label="Drift">DRIFT</button>
+        <button id="btn-item" class="tbtn tbtn-wide" aria-label="Item">ITEM</button>
+      </div>
+    </div>
+
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Baking the track…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

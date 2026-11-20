@@ -1,0 +1,149 @@
+{
+  "game": "q-adventure",
+  "generatedAt": "2026-11-19T19:22:43.003Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.375,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色三角形跳跃按钮让角色跳上平台",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "角色与粉色平台边缘对比度低，跳跃时机判断易误判",
+        "星星图标（可收集物）与背景云朵颜色接近，远距离辨识度不足",
+        "目标箭头‘→ GOAL’字体偏小且无高亮，弱光环境下可能被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-jump.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色三角形跳跃按钮让角色跳上粉色平台",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "角色与星星收集物大小相近、颜色对比弱，眯眼时易混淆（silhouette扣分）",
+        "左下播放/倒带按钮过小且无明确功能提示，非标准控件",
+        "目标箭头‘→ GOAL’字体偏细，远距离辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-collect.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色三角形跳跃按钮让角色跳上粉色平台",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "角色与粉色平台高度接近，跳跃判定边界模糊，易误判是否落地",
+        "左下角星标图标与平台边缘重叠，可能被误触或遮挡",
+        "背景云朵与平台颜色相近（浅粉 vs 粉紫），层次感弱，影响深度判断"
+      ]
+    },
+    {
+      "shot": "tests/final/04-enemy.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色向上箭头按钮跳跃",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（青色）与下方红色小球重叠，可能误判为敌人或障碍",
+        "目标星标悬空无平台支撑，视觉上缺乏落点引导",
+        "左下方向键按钮过小（目测约32px），不符合移动设备最小触控尺寸"
+      ]
+    },
+    {
+      "shot": "tests/final/05-cloud.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色三角形跳跃按钮让角色跳过中间空隙",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下方向键按钮间距过小，可能误触（约32px宽）",
+        "HP显示‘3/3’与心形图标紧贴，无间距，小屏易误读",
+        "目标箭头‘→ GOAL’字体略小且无高对比色，远距离辨识度稍低"
+      ]
+    },
+    {
+      "shot": "tests/final/06-night.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色三角形按钮向右移动角色",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "角色上方悬浮的星形图标与紫色平台间距过小，易误触或视觉干扰",
+        "右上角月亮图标部分被右侧黑圆遮挡，剪影辨识度略降",
+        "红色敌人头顶感叹号过小，远距离可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/07-wall.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色三角形按钮跳跃到右侧平台",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HP显示为'♥♥♥ 3/3'，数字与心形符号间距过小易误读为'3/3'独立于生命值",
+        "目标箭头'→ GOAL'字体偏小且无高亮，在浅蓝背景上对比度略低",
+        "星星收集物悬空无支撑，视觉上略显突兀（非错误但可优化）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角绿色向上箭头按钮跳跃",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（绿色小球）与背景粉色云朵对比度偏低，眯眼时易混淆",
+        "左下角左右移动按钮间距过近，可能误触",
+        "目标方向箭头‘→ GOAL’字体偏小，远距离辨识稍弱"
+      ]
+    }
+  ]
+}

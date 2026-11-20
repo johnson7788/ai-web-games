@@ -1,0 +1,31 @@
+{
+  "slug": "digger",
+  "at": "2026-11-18T23:49:38.519Z",
+  "checks": {
+    "desktop": {
+      "errors": [
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+      ],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": true,
+      "shot": "games/digger/tests/final/desktop.png"
+    },
+    "mobile": {
+      "errors": [
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+        "console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+      ],
+      "badReqs": [],
+      "rendered": true,
+      "stateChange": null,
+      "shot": "games/digger/tests/final/mobile.png"
+    }
+  },
+  "pass": false,
+  "problems": [
+    "desktop: 2 个运行错误（console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED）",
+    "mobile: 2 个运行错误（console: Failed to load resource: net::ERR_INTERNET_DISCONNECTED）"
+  ]
+}

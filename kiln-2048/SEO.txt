@@ -1,0 +1,41 @@
+TITLE
+Kiln 2048 — Free Drop-Merge Pottery Puzzle Game
+
+CATEGORY
+Puzzle
+
+TAGS
+drop merge, 2048, pottery, kiln, glaze, casual, brain teaser, logic, merge balls, browser game
+
+SHORT DESCRIPTION
+Drop clay glaze balls, merge equal values, and fire your way up to the Sky Celadon 2048.
+
+LONG DESCRIPTION
+KILN 2048 is a free drop-merge puzzle game set inside a glowing pottery kiln.
+
+Aim your next clay ball and drop it. When two equal glaze balls touch, they merge and double — Bisque becomes Celadon, Celadon becomes Jun Red, and on up the kiln temperatures. Reach 2048 and the legendary Sky Celadon fires out of the kiln in a flash of warm light. But keep the pile below the top fail line, or the kiln overflows and the run is lost.
+
+12 handcrafted levels across three scenes: Morning Workshop, Dusk Kiln and Night Fire. Frozen glaze balls block your board until two firings thaw them, dual-color glaze only merges on alternating turns, big distractor balls throw off your aim, and a limited hammer lets you smash any ball to save a run. The kiln fire brightens as your highest value climbs.
+
+Easy to learn in ten seconds, hard to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+窑火2048 — 免费掉落合成陶艺益智游戏
+
+CATEGORY
+益智
+
+TAGS
+掉落合成, 2048, 陶艺, 窑炉, 釉色, 休闲, 益智, 逻辑, 合成球, 网页游戏
+
+SHORT DESCRIPTION
+投放釉球，同值相合，一路复烧炼出 2048 天青出窑。
+
+LONG DESCRIPTION
+《窑火2048》是一款发生在陶窑里的免费掉落合成益智游戏。
+
+瞄准下一枚陶土釉球并投放下去。数值相同的釉球相碰就会合成翻倍——素坯变青釉、青釉变钧红，一路升温复烧。炼到 2048，传说中的天青出窑闪光消除。但别让陶土堆过顶部失败线，否则窑满溢出、本局失败。
+
+12 个手工关卡横跨三大场景：晨光陶坊、暮色窑口、夜焰窑炉。冰冻球占位、两次复烧后解冻，双色釉隔次才能合，大值干扰球打乱落点，限量重锤可砸碎任意球救场。窑火会随场上最高数值越烧越亮。
+
+十秒上手，越玩越烧脑。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

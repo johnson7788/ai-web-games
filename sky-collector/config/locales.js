@@ -1,0 +1,26 @@
+// Sky Collector — bilingual dictionary (keys = English source text)
+window.LOCALES = {
+  en: {},
+  zh: {
+    'FREE 3D PLATFORMER': '免费 3D 平台跳跃',
+    'Leap the sky islands. Grab every orb. Reach the portal.': '跃过天空浮岛，收集每颗能量球，抵达传送门。',
+    'Move': '移动', 'Jump / Double': '跳跃 / 二段跳', 'Camera': '视角', 'Sprint': '冲刺',
+    'PLAY': '开始游戏', 'How to play': '玩法说明',
+    'Collect every glowing orb on the islands.': '收集浮岛上所有发光的能量球。',
+    'When all orbs are gathered, the portal lights up — step into it.': '集齐后传送门点亮——走进去即可过关。',
+    'Fall into the clouds and you lose a life. Three lives total.': '掉进云层会扣一条命，共三条命。',
+    'Finish fast for a gold star. Beat your best time.': '快速通关拿金星，刷新你的最佳成绩。',
+    'Got it': '明白了',
+    'LEVEL CLEAR': '过关', 'Time': '用时', 'New best!': '新纪录！', 'Best': '最佳',
+    'Next level': '下一关', 'Finish': '完成',
+    'OUT OF LIVES': '生命耗尽', 'The clouds caught you': '云层接住了你',
+    'Reached level': '到达关卡', 'Try again': '再试一次',
+    'SKY MASTER': '天空大师', 'You cleared every island!': '你通关了所有浮岛！',
+    'Total time': '总用时', 'Play again': '再玩一次',
+    'Paused': '已暂停', 'Resume': '继续', 'Restart level': '重玩本关', 'Quit to title': '返回标题',
+    'LEVEL': '关卡',
+    'Collect all the orbs, then reach the portal!': '收集所有能量球，然后抵达传送门！',
+    'Portal opened! Head to the blue ring.': '传送门已开启！前往蓝色光环。',
+    'Careful! ': '小心！', ' lives left.': ' 条命剩余。',
+  },
+};

@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-18T01:25:43.865Z",
+  "ok": false,
+  "problems": [
+    "TOTAL: 运行时 GLB 合计 14620KB > 预算 13000KB"
+  ],
+  "warn": [],
+  "assets": 34,
+  "runtimeKB": 14620
+}

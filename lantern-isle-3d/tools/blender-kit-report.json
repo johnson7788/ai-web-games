@@ -1,0 +1,156 @@
+{
+  "at": "2026-11-16T08:38:45.502992Z",
+  "ok": [
+    {
+      "id": "build_cottage_a",
+      "tri": 66,
+      "bytes": 9408,
+      "dimsXYZ": [
+        5.0,
+        5.0,
+        4.55
+      ]
+    },
+    {
+      "id": "build_cottage_b",
+      "tri": 150,
+      "bytes": 14708,
+      "dimsXYZ": [
+        5.8,
+        5.8,
+        4.75
+      ]
+    },
+    {
+      "id": "build_shed_01",
+      "tri": 42,
+      "bytes": 6720,
+      "dimsXYZ": [
+        3.3,
+        3.3,
+        2.45
+      ]
+    },
+    {
+      "id": "build_lighthouse_01",
+      "tri": 422,
+      "bytes": 29652,
+      "dimsXYZ": [
+        3.9,
+        3.9,
+        15.05
+      ]
+    },
+    {
+      "id": "build_pier_platform_01",
+      "tri": 148,
+      "bytes": 12308,
+      "dimsXYZ": [
+        6.0,
+        6.0,
+        2.03
+      ]
+    },
+    {
+      "id": "build_stairs_01",
+      "tri": 96,
+      "bytes": 8644,
+      "dimsXYZ": [
+        2.5,
+        3.9,
+        1.68
+      ]
+    },
+    {
+      "id": "build_fence_01",
+      "tri": 84,
+      "bytes": 7880,
+      "dimsXYZ": [
+        2.3,
+        0.12,
+        1.05
+      ]
+    },
+    {
+      "id": "build_well_01",
+      "tri": 146,
+      "bytes": 12752,
+      "dimsXYZ": [
+        1.9,
+        1.9,
+        2.955
+      ]
+    },
+    {
+      "id": "build_boathouse_01",
+      "tri": 54,
+      "bytes": 7064,
+      "dimsXYZ": [
+        5.4,
+        5.4,
+        3.6
+      ]
+    },
+    {
+      "id": "prop_lantern_post_01",
+      "tri": 102,
+      "bytes": 9644,
+      "dimsXYZ": [
+        0.571,
+        0.6,
+        3.37
+      ]
+    },
+    {
+      "id": "env_tree_pine_01",
+      "tri": 76,
+      "bytes": 7632,
+      "dimsXYZ": [
+        2.265,
+        2.231,
+        4.2
+      ]
+    },
+    {
+      "id": "env_bush_01",
+      "tri": 864,
+      "bytes": 64892,
+      "dimsXYZ": [
+        1.44,
+        1.1,
+        0.846
+      ]
+    },
+    {
+      "id": "env_rock_01",
+      "tri": 576,
+      "bytes": 43708,
+      "dimsXYZ": [
+        1.895,
+        1.4,
+        1.148
+      ]
+    },
+    {
+      "id": "env_grass_tuft_01",
+      "tri": 24,
+      "bytes": 4340,
+      "dimsXYZ": [
+        0.401,
+        0.353,
+        0.605
+      ]
+    },
+    {
+      "id": "env_crate_stack_01",
+      "tri": 60,
+      "bytes": 6996,
+      "dimsXYZ": [
+        1.557,
+        1.09,
+        1.62
+      ]
+    }
+  ],
+  "fail": []
+}

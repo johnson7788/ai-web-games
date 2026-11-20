@@ -1,0 +1,92 @@
+{
+  "slug": "knife-lore",
+  "genre": "arcade",
+  "oneLiner": "Throw shuriken into a spinning scroll post — never nick your own blades — and cleave the post when its ink rings fill.",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "throw",
+      "cost": "Commits one blade to a gap that keeps rotating — mistime it and it shatters",
+      "feedback": ["sfx", "blade-trail", "ink-splash"],
+      "combinesWith": ["wait", "zantie"]
+    },
+    {
+      "name": "wait",
+      "cost": "Gives up score tempo — the post keeps spinning and the safe window drifts",
+      "feedback": ["rotation-sweep", "sfx", "post-ink-glow"],
+      "combinesWith": ["throw"]
+    },
+    {
+      "name": "zantie",
+      "cost": "Spends a limited Iron Cut charge to reveal a safe angle for one throw",
+      "feedback": ["safe-arc", "sfx", "blade-glow"],
+      "combinesWith": ["throw"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "Throw at the first wide gap or wait for the rotation to settle", "cost": "First gap may be a trap / slower tempo" },
+    { "atSec": 18, "choice": "Chase the symmetric bonus on the twin posts or play it safe", "cost": "Bonus points vs a shatter" },
+    { "atSec": 34, "choice": "Spend Iron Cut now on a fast post or save it for the final blade", "cost": "Limited charge" },
+    { "atSec": 52, "choice": "Throw early during a reversal window or wait for it to finish", "cost": "Mis-project the flip and lose" },
+    { "atSec": 70, "choice": "Aim for the narrow leftover gap or bank the safe wide gap", "cost": "Risk a shatter vs tempo" },
+    { "atSec": 92, "choice": "On the moving post: lead the drift or wait for it to slow at the turn", "cost": "Move prediction vs patience" },
+    { "atSec": 120, "choice": "Go for the double symmetric pair under pulse boost or single safe stick", "cost": "Bonus vs collision" },
+    { "atSec": 150, "choice": "Burn the final Iron Cut for a guaranteed cleave or trust your timing", "cost": "Charge vs mastery" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 55,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "round post — teach the throw/stick core loop" },
+    { "index": 2, "newElement": "speed pulse — the post briefly accelerates" },
+    { "index": 3, "newElement": "square post + reversal — direction flips, Iron Cut unlocks" },
+    { "index": 4, "newElement": "pulse + reversal combined on a square post" },
+    { "index": 5, "newElement": "twin posts — throw alternates between two spinning scrolls" },
+    { "index": 6, "newElement": "twin posts + reversal — mirror timing under flips" },
+    { "index": 7, "newElement": "twin posts + pulse — symmetric bonus under boost" },
+    { "index": 8, "newElement": "twin posts + pulse + reversal — full chaos" },
+    { "index": 9, "newElement": "moving post — the scroll drifts side to side" },
+    { "index": 10, "newElement": "moving post + reversal — drift flips direction" },
+    { "index": 11, "newElement": "moving post + pulse — drift accelerates" },
+    { "index": 12, "newElement": "moving post + pulse + reversal — the final cleave" }
+  ],
+  "upgrades": [
+    { "id": "zantie", "kind": "rule", "desc": "Iron Cut: reveal a safe angle for one throw (every 3 levels)" },
+    { "id": "symmetry", "kind": "rule", "desc": "Twin-post symmetric landing within 15° grants bonus points" },
+    { "id": "squareBias", "kind": "rule", "desc": "Square posts tighten the collision window, changing spacing rules" },
+    { "id": "movingAim", "kind": "rule", "desc": "Moving posts make the impact point drift, changing aim timing" },
+    { "id": "pulseRead", "kind": "rule", "desc": "Speed pulses multiply rotation, forcing a new tempo read" },
+    { "id": "bladeCount", "kind": "stat", "desc": "More knives per level raise the difficulty ceiling" },
+    { "id": "spinSpeed", "kind": "stat", "desc": "Rotation speed increases across packs" },
+    { "id": "scoreBonus", "kind": "stat", "desc": "Level-clear bonus scales with level index" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "The final shuriken lands, time slows, a ring of blade-light blooms around the post and the scroll splits in two in a spray of ink",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "武士道卷轴道场：程序化 Canvas 水墨风格（径向渐变/墨痕/纸纹），UI 线框 CSS；音频 WebAudio 程序化合成（尺八风 BGM + 刀剑 SFX）"
+}

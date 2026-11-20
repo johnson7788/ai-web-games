@@ -1,0 +1,233 @@
+{
+  "generatedAt": "2026-11-19T15:16:12.414Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "pourStart": {
+      "rms": 0.0578,
+      "peak": 0.2641,
+      "nan": 0,
+      "zcRate": 5557.8,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "pourFeather": {
+      "rms": 0.0964,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 610.3,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "pourAbort": {
+      "rms": 0.075,
+      "peak": 0.14,
+      "nan": 0,
+      "zcRate": 415.1,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "orderScored": {
+      "rms": 0.1403,
+      "peak": 0.468,
+      "nan": 0,
+      "zcRate": 868.1,
+      "samples": 11025,
+      "durSec": 0.25,
+      "pass": true
+    },
+    "perfect": {
+      "rms": 0.1876,
+      "peak": 0.6618,
+      "nan": 0,
+      "zcRate": 847.9,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "spill": {
+      "rms": 0.1449,
+      "peak": 0.5725,
+      "nan": 0,
+      "zcRate": 3665.2,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "orderExpired": {
+      "rms": 0.0917,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 308.4,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "heartLost": {
+      "rms": 0.2319,
+      "peak": 0.6071,
+      "nan": 0,
+      "zcRate": 171.7,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "rushWave": {
+      "rms": 0.1679,
+      "peak": 0.3536,
+      "nan": 0,
+      "zcRate": 600,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "fullHouse": {
+      "rms": 0.1967,
+      "peak": 0.8136,
+      "nan": 0,
+      "zcRate": 744.7,
+      "samples": 29106,
+      "durSec": 0.66,
+      "pass": true
+    },
+    "dayStart": {
+      "rms": 0.1206,
+      "peak": 0.3599,
+      "nan": 0,
+      "zcRate": 388.5,
+      "samples": 22932,
+      "durSec": 0.52,
+      "pass": true
+    },
+    "dayEnd": {
+      "rms": 0.1206,
+      "peak": 0.359,
+      "nan": 0,
+      "zcRate": 364.4,
+      "samples": 22932,
+      "durSec": 0.52,
+      "pass": true
+    },
+    "upgradeUnlock": {
+      "rms": 0.1579,
+      "peak": 0.5475,
+      "nan": 0,
+      "zcRate": 548.6,
+      "samples": 15876,
+      "durSec": 0.36,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1906,
+      "peak": 0.7347,
+      "nan": 0,
+      "zcRate": 572.3,
+      "samples": 48510,
+      "durSec": 1.1,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1853,
+      "peak": 0.4673,
+      "nan": 0,
+      "zcRate": 296.1,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1037,
+      "peak": 0.2431,
+      "nan": 0,
+      "zcRate": 842,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1841,
+      "peak": 0.7088,
+      "nan": 0,
+      "zcRate": 844.3,
+      "samples": 34398,
+      "durSec": 0.78,
+      "pass": true
+    },
+    "orderSkipped": {
+      "rms": 0.0868,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 466.8,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    }
+  },
+  "loops": {
+    "pad": {
+      "rms": 0.06,
+      "peak": 0.2339,
+      "nan": 0,
+      "zcRate": 329.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "melody": {
+      "rms": 0.05,
+      "peak": 0.1347,
+      "nan": 0,
+      "zcRate": 348.8,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bass": {
+      "rms": 0.07,
+      "peak": 0.1306,
+      "nan": 0,
+      "zcRate": 127.8,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    },
+    "kettle": {
+      "rms": 0.0115,
+      "peak": 0.048,
+      "nan": 0,
+      "zcRate": 8438.6,
+      "samples": 132300,
+      "durSec": 3,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "orderScored.perfectUpPitchUp": {
+      "zcRatePerfect": 868.1,
+      "zcRatePoor": 422,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="FOG TOWN — oil-lamp detective: light the foggy grid, find keys and clues, flip levers, and reach the exit before the fog consumes you.">
+  <meta name="theme-color" content="#0d1320">
+  <title>FOG TOWN · Oil-Lamp Detective</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <button id="btn-echo" class="touch-only" aria-label="Echo" hidden></button>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-lamp"></div>
+      <span data-i18n="set.loading">Lighting the lamp…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

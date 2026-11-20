@@ -1,0 +1,41 @@
+TITLE
+School Days — Free Mountain School Management Game
+
+CATEGORY
+Simulation
+
+TAGS
+school management, simulation, panda, education, strategy, casual, time management, village, browser game, family friendly
+
+SHORT DESCRIPTION
+Run a mountain school and raise panda cubs across 12 weeks of classes, events and the big exam.
+
+LONG DESCRIPTION
+SCHOOL DAYS is a free school-management simulation set in a tiny mountain village. You run a one-room school where five panda cubs study arithmetic, martial arts and field trips — or just rest to recover.
+
+Every week you have five class slots and limited energy and coins. Assign each slot carefully: arithmetic raises grades but drains mood, martial arts builds fitness but costs more energy, field trips earn reputation but burn coins, and rest recovers energy and mood without any growth. Hit the weekly goal, survive random events like fevers and village festivals, and keep the cubs happy all the way to week 12, the big exam year.
+
+Each cub has a hidden talent: matching your lessons to their strengths makes that subject grow faster. Across 12 weeks the rules keep changing — talent bonuses double, field trips become high-reward double-slot windows, storms make outdoor lessons swing, and a mock exam locks in your scores. When the final board is posted, the whole village lights its lanterns and the passing cubs jump for joy.
+
+Three handcrafted scene packs — Spring Cottage, Summer Firefly Yard and Winter Snow Study — keep every chapter visually distinct. Easy to pick up, tricky to perfect. Works with mouse and touch on desktop and mobile. No download, play free in your browser.
+
+TITLE
+山间学堂 — 免费山村经营模拟游戏
+
+CATEGORY
+模拟经营
+
+TAGS
+学校经营, 模拟经营, 熊猫, 教育, 策略, 休闲, 时间管理, 山村, 网页游戏, 全年龄
+
+SHORT DESCRIPTION
+在山村经营一间小学堂，用 12 周把五只小熊猫村童养成大考放榜的学子。
+
+LONG DESCRIPTION
+《山间学堂》是一款免费的山村经营模拟游戏：你在一座小山村里开了一间只有一名先生的学堂，五只小熊猫村童跟着你学算学、习武、游学，或者干脆好好休息。
+
+每周你有 5 节课时、有限的体力和金币。每一节课都是取舍：算学提升成绩却会掉心情，习武提升体魄却更耗体力，游学赚声望却烧金币，休息能回体力与心情却没有成长。达成本周目标、挺过疫病与庆典等随机事件，把村童稳稳送到第 12 周——大考之年。
+
+每只村童都有隐藏天赋，把课程对上他们的天赋，对应科目就会成长得更快。12 周里规则不断变化：天赋加成翻倍、游学变成高收益的双课时窗口、暴雨让户外课收益波动、模拟考提前锁定四门成绩。放榜日全村灯笼亮起，上榜的小熊猫会跳起来。
+
+三套手绘场景包——春日山舍、夏夜萤院、冬雪书馆——每一章都一眼可分。十秒上手，越玩越有门道。鼠标与触屏都能玩，桌面手机均可畅玩。无需下载，浏览器免费开玩。

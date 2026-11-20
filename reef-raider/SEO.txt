@@ -1,0 +1,45 @@
+TITLE
+Reef Raider — Free Deep-Sea Fishing Arcade Game
+
+CATEGORY
+Arcade
+
+TAGS
+fishing, arcade, shooting, fish, ocean, deep sea, light bulbs, coin, casual, action, family friendly, browser game
+
+SHORT DESCRIPTION
+Aim the reef cannon, fire glowing light-bulbs, and net fish to hit the target score across 12 underwater levels.
+
+LONG DESCRIPTION
+REEF RAIDER is a free deep-sea fishing arcade game where every shot is a firework.
+
+You command a coral reef cannon. Move your mouse or finger to aim, click to fire a glowing light-bulb — each shot costs coins equal to your power level — and watch it burst into a colored light-net on impact. Catch lantern fish, butterfly fish, turtles, manta rays and the rare ghost lantern fish to earn coins and chase the level's target score before the clock runs out.
+
+12 handcrafted levels across three underwater worlds: Coral Dawn, Reef Dusk and Phosphor Night. Fish speed up, dense swarms swarm the reef, rocks block your shots, coin-tight stages halve your wallet, combo streaks multiply your catch, and the final stage pits you against the Lantern Fish King. Switch cannon power from 1 to 5 anytime: big shots gamble on big fish, cheap shots mop up small swarms.
+
+When a big fish is netted, it dissolves into a light-shadow that swims a lap around the screen — the signature deep-sea firework. Run out of coins and a relief refill keeps you fishing.
+
+Easy to learn in ten seconds, hard to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+暗礁奇袭 — 免费深海捕鱼街机游戏
+
+CATEGORY
+街机
+
+TAGS
+捕鱼, 街机, 射击, 鱼, 海洋, 深海, 彩灯泡, 金币, 休闲, 动作, 全年龄, 网页游戏
+
+SHORT DESCRIPTION
+瞄准暗礁炮台，发射彩灯泡捕鱼赚金币，在 12 个海底关卡里冲目标分。
+
+LONG DESCRIPTION
+《暗礁奇袭》是一款免费深海捕鱼街机游戏，每一发都是深海烟火。
+
+你指挥一座珊瑚礁炮台。移动鼠标或手指瞄准，点击发射彩灯泡——每发消耗与炮档相同数量的金币——命中瞬间灯泡绽出彩色光网捕鱼。捕获灯鱼、蝶鱼、海龟、魔鬼鱼和稀有的幽灵灯笼鱼，赚金币，在倒计时结束前冲上本关目标分。
+
+12 个手工关卡横跨三大海底世界：珊瑚晨光、岩礁黄昏、磷光夜海。鱼会加速、鱼潮会密集涌来、暗礁会挡住炮弹、金币紧缩关开局半资、连击关连续命中递增倍率，终局则是灯笼鱼王。
+
+捕获大鱼时，它会化作一道灯影绕屏游一圈——这是本作招牌的深海烟火瞬间。金币归零有救济，永不卡死。
+
+十秒上手，越玩越过瘾。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

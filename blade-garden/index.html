@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLADE GARDEN</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="styles.css?v=bg1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level" class="hud-pill solid"></span>
+          <span id="hud-wave" class="hud-pill solid"></span>
+          <span id="hud-time" class="hud-pill solid time-pill"></span>
+          <span id="hud-kills" class="hud-pill solid goal-pill"></span>
+        </div>
+        <div class="hud-right">
+          <div class="bar hp-bar">
+            <div id="hud-hpfill" class="bar-fill"></div>
+            <span id="hud-hp" class="bar-text"></span>
+          </div>
+          <div class="bar xp-bar">
+            <div id="hud-xpfill" class="bar-fill"></div>
+            <span id="hud-xp" class="bar-text"></span>
+          </div>
+          <button id="btn-howto" class="hud-btn" data-tutorial-replay aria-label="Replay guide">?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">BLADE GARDEN</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="total-stars"><span id="best-label"></span></div>
+      <button id="btn-start">Start</button>
+      <div id="level-grid" class="level-grid"></div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">Replay Guide</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div id="result-stats" class="result-stats"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-next">Next Level</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="screen-upgrade" class="screen hidden">
+      <h2 id="upgrade-title">Sword Intent</h2>
+      <p id="upgrade-hint" class="upgrade-hint"></p>
+      <div id="upgrade-choices" class="upgrade-choices"></div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger garden</p>
+        <button id="btn-rotate-skip">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=bg1"></script>
+</body>
+</html>

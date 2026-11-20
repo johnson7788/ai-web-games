@@ -1,0 +1,149 @@
+{
+  "game": "school-days",
+  "generatedAt": "2026-11-19T15:22:31.976Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 8.375,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘0 / 12’星星计数文字偏小，距标题过近，易被忽略",
+        "左上角粉色圆点装饰无明确功能，可能干扰视觉焦点",
+        "熊猫幼崽头顶彩色小球颜色不一致（蓝/红/绿），风格略显随意"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角橙色‘End Week’按钮结束本周",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧面板‘算123’与‘武’之间有轻微视觉断层，图标与文字对齐不一致",
+        "顶部状态栏‘Reputation 20’右侧图标间距过小，可能误触",
+        "熊猫角色头顶小圆点颜色（蓝/红/绿）无图例说明，语义模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/03-resolving.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间五个汉字选项中的一个（如#1“算”）来选择行动",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧‘武’选项卡内图标（小山+三角）语义模糊，与‘算’‘游’等无统一视觉语言",
+        "顶部状态栏‘W1 · G ≥ 40’中‘·’为中文点号，与英文空格混用，排版不一致",
+        "熊猫头顶彩色圆点颜色（蓝/红/绿）未在左侧行动面板标注含义，新手易困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/04-event.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角橙色‘End Week’按钮结束本周",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧活动卡片‘游’的‘40’图标与文字轻微重叠，图标部分遮挡数字",
+        "顶部状态栏‘Grades 40’等标签间距不均，‘Mood 67’与‘Reputation 25’之间空隙过大",
+        "熊猫头顶小圆点颜色（蓝/红/绿）无图例说明，可能造成目标理解歧义"
+      ]
+    },
+    {
+      "shot": "tests/final/05-summer.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角橙色‘End Week’按钮结束本周",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧面板‘算 123’‘武’等标题字号偏小，与下方数值对比度不足，弱光下可能难辨",
+        "顶部状态栏‘How to play’文字被右上角图标部分遮挡（问号与齿轮间）",
+        "熊猫角色头顶小圆点颜色（蓝/红/绿）未在左侧面板说明其含义，易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/06-winter.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角橙色‘End Week’按钮结束本周",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧技能卡‘算 123’中‘+G7’与‘20⚡ -1◎’字号过小，易误读",
+        "顶部状态栏‘Week9 · Winter Snow Study’文字与图标间距不均，略显拥挤",
+        "角色头顶小圆点颜色（蓝/红/绿）无图例说明，功能意图模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/07-lanterns.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角橙色‘End Week’按钮结束本周",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧面板‘武’字右侧小图标（▲）与文字间距过近，易误读为‘武▲’",
+        "顶部状态栏‘Grades 30’等标签文字偏小，远距离辨识度略低",
+        "熊猫头顶彩色圆点颜色（蓝/红/绿）未在图例或说明中定义含义，可能造成困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/08-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Retry”按钮重新开始游戏。",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星图标与‘Exam results’文字间距过小，视觉拥挤",
+        "‘A-Zhu √ A-Mo √ ...’人名列表颜色偏浅（浅绿），在深背景上对比度不足，易被忽略",
+        "‘The Village Lights Up!’标题字体有轻微描边但未统一处理，与下方纯色文字风格略有脱节"
+      ]
+    }
+  ]
+}

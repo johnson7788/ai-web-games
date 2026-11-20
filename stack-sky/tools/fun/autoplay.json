@@ -1,0 +1,60 @@
+{
+  "genre": "arcade",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 12.2,
+      "actions": 20,
+      "firstInputSec": 0.8,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.8,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 13,
+      "levelsReached": 6,
+      "completed": false,
+      "height": 19,
+      "actionsPerMin": 98
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 0.2,
+      "actions": 1,
+      "firstInputSec": 0.2,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false,
+      "height": 0,
+      "actionsPerMin": 360
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 150,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false,
+      "height": 0,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T11:50:03.417Z"
+}

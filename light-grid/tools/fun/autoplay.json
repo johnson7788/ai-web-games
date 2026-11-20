@@ -1,0 +1,61 @@
+{
+  "game": "light-grid",
+  "genre": "puzzle",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 2.7,
+      "actions": 15,
+      "firstInputSec": 0.2,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.7,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 6,
+      "levelsReached": 4,
+      "completed": true,
+      "solved": 3,
+      "actionsPerMin": 327
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 1.6,
+      "actions": 9,
+      "firstInputSec": 0.2,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 4,
+      "levelsReached": 1,
+      "completed": false,
+      "solved": 0,
+      "actionsPerMin": 327
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 120,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 120,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 1,
+      "levelsReached": 1,
+      "completed": true,
+      "solved": 0,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T13:38:16.099Z"
+}

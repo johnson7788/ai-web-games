@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 468595,
+      "sha256": "669bbb742bb36a94a63f78035e7cf6dcd5e4876f3f4b49e102a8356a93ce7058",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a cozy blocky voxel tower-defense glade where a glowing raspberry bush at the center is defended by cute stone archer and frost towers firing at marching blocky beaver enemies along a dirt road, warm torchlight and raspberry-red accents, charming Minecraft-dungeons voxel aesthetic, high detail, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T18:07:20+00:00"
+}

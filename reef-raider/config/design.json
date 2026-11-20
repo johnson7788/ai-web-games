@@ -1,0 +1,108 @@
+{
+  "slug": "reef-raider",
+  "genre": "arcade",
+  "oneLiner": "站在暗礁炮台后，移动瞄准、点击发射彩灯泡，命中鱼群绽出光网捕鱼赚金币，一路冲上 12 关目标分。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "鱼群不停游动，瞄准窗口稍纵即逝；把时间花在精瞄上，就少开几炮",
+      "feedback": ["sfx", "laserSight", "turretTurn"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "每发消耗等于当前炮档的金币，打空就是纯亏损",
+      "feedback": ["sfx", "muzzleFlash", "bulbTrail"],
+      "combinesWith": ["aim", "switchPower"]
+    },
+    {
+      "name": "switchPower",
+      "cost": "大炮每发更贵，赌大鱼；小炮便宜但打不动厚血鱼",
+      "feedback": ["sfx", "turretGrow", "powerHalo"],
+      "combinesWith": ["shoot"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "开局选 1 档省弹打小鱼，还是升到 3 档赌大鱼",
+      "cost": "高档每发吃掉更多金币，空枪直接拖慢冲分"
+    },
+    {
+      "atSec": 20,
+      "choice": "密集小鱼潮用便宜连发收割，还是留弹给可能出现的稀有大鱼",
+      "cost": "打群求稳但单发收益低；留弹可能等不到稀有"
+    },
+    {
+      "atSec": 40,
+      "choice": "稀有幽灵灯笼鱼限时出现：全力追它（30s 内 ×2），还是继续稳定收割",
+      "cost": "追稀有要连续开炮，金币弹药储备被掏空"
+    },
+    {
+      "atSec": 70,
+      "choice": "暗礁挡住弹道：绕开等鱼游出礁区，还是硬打赌从缝隙穿过",
+      "cost": "硬打可能连发撞礁白烧金币"
+    },
+    {
+      "atSec": 100,
+      "choice": "连击倍率已叠高：用便宜连发保连击，还是切大炮打厚血鱼拉单发收益",
+      "cost": "断连击倍率清零；切大炮一旦空枪同样断连"
+    },
+    {
+      "atSec": 150,
+      "choice": "离目标分只差一点但金币见底：赌一发大炮收尾，还是吃救济慢慢磨小鱼",
+      "cost": "大炮空了要等救济回血，磨小鱼耗时间"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础炮台与灯鱼/蝶鱼/海龟" },
+    { "index": 2, "newElement": "鱼速 +30%" },
+    { "index": 3, "newElement": "稀有幽灵灯笼鱼限时出没（30s 捕获 ×2）" },
+    { "index": 4, "newElement": "密集鱼潮（低炮打群）" },
+    { "index": 5, "newElement": "障碍暗礁挡炮弹" },
+    { "index": 6, "newElement": "金币紧缩（开局半资）" },
+    { "index": 7, "newElement": "连击奖励（连续命中递增倍率）" },
+    { "index": 8, "newElement": "快鱼 + 更多暗礁" },
+    { "index": 9, "newElement": "幽灵灯笼鱼专场" },
+    { "index": 10, "newElement": "金币紧缩 + 鱼潮" },
+    { "index": 11, "newElement": "双倍稀有出没" },
+    { "index": 12, "newElement": "终局灯笼鱼王" }
+  ],
+  "upgrades": [
+    { "id": "fishSpeed", "kind": "stat", "desc": "第 2 关起鱼速 +30%" },
+    { "id": "unlockRare", "kind": "rule", "desc": "第 3 关起稀有幽灵灯笼鱼限时出没，捕获 ×2" },
+    { "id": "denseSwarm", "kind": "rule", "desc": "第 4 关起密集鱼潮，低炮连发打群" },
+    { "id": "obstacleReefs", "kind": "rule", "desc": "第 5 关起暗礁挡炮弹，逼你绕弹道" },
+    { "id": "coinTight", "kind": "rule", "desc": "第 6 关起开局金币减半" },
+    { "id": "comboMultiplier", "kind": "rule", "desc": "第 7 关起连续捕获递增倍率" },
+    { "id": "reefMoreFaster", "kind": "stat", "desc": "第 8 关快鱼 + 更多暗礁" },
+    { "id": "ghostLane", "kind": "rule", "desc": "第 9 关起幽灵灯笼鱼高频出没" },
+    { "id": "spawnDensity", "kind": "stat", "desc": "第 10 关紧缩 + 鱼潮" },
+    { "id": "doubleRare", "kind": "rule", "desc": "第 11 关双倍稀有出没" },
+    { "id": "bossKing", "kind": "rule", "desc": "第 12 关终局灯笼鱼王" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

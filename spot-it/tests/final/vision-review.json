@@ -1,0 +1,149 @@
+{
+  "game": "spot-it",
+  "generatedAt": "2026-11-19T20:01:05.068Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 6,
+    "style_consistent": 8.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击光圈中心的白色兔子角色开始移动或交互",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "光圈内红色三角（Spinning Top）与绿色圆（Turtle）形状相似、颜色对比弱，易混淆",
+        "背景中多个暗色图标（熊头、鱼等）轮廓模糊，眯眼时难以区分类型",
+        "右上角‘TIME 45’与‘LIGHT’条间距过近，视觉层级不清晰"
+      ]
+    },
+    {
+      "shot": "tests/final/02-found.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角白色兔子角色开始移动或互动",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "放大镜区域内的红色三角形目标（Spinning Top）与绿色圆点（Turtle）视觉相似，易混淆",
+        "左上角'Book Stall'文字颜色过暗，与背景对比度低，影响可读性",
+        "远处敌人轮廓（如灰色猫头、深蓝鱼形）在暗背景下辨识度低，眯眼时难以区分类型"
+      ]
+    },
+    {
+      "shot": "tests/final/03-levelup.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央光圈内带绿勾的猫头鹰图标（当前唯一可交互目标）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "光圈内红圆与白钟表图标紧贴，易误触；",
+        "右侧‘Bird x1’目标图标被部分遮挡于暗区，辨识度低；",
+        "眯眼时猫头鹰与背景鱼形剪影轮廓相似， silhouette 分辨困难"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘Lights Out’与副标题间距过小，略显拥挤",
+        "‘Level reached’和‘Best level’数值均为1，易误认为未更新（实际可能正确，但视觉上缺乏区分）",
+        "背景极暗且无角色/场景剪影，眯眼时无法识别游戏主体元素（silhouette低）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击光圈中心区域（当前照亮的书架区）以探索或拾取物品",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "光圈边缘与书架线框轻微重叠，可能干扰目标识别",
+        "右下角时钟图标在暗背景中对比度偏低，易被忽略",
+        "‘Book Stall’标签字体偏小且无高亮，与HUD层级区分弱"
+      ]
+    },
+    {
+      "shot": "tests/final/06-play2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角红色三角形（玩家角色）开始移动或互动",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（红三角）与绿色龟形目标在视野中大小相近、亮度差异小，易混淆",
+        "‘Book Stall’文字颜色过暗（浅黄），在深背景上对比度不足",
+        "右上角时间条‘LIGHT’标签字体过小且无明确语义，可能被误读"
+      ]
+    },
+    {
+      "shot": "tests/final/07-play3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央光圈内的黄色小鸟图标以收集它",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央光圈内小鸟目标虽可见，但周围暗区中多个绿色勾选标记（疑似已收集物）与未收集物视觉混淆，易误判状态",
+        "‘Book Stall’文字颜色偏淡（浅黄），在深灰背景上对比度不足，部分玩家可能忽略当前关卡名",
+        "右上角时间条‘LIGHT’标签字体过小且无明确语义，新手难理解其与时间条关系"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击亮黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊的猫形剪影与标题‘SPOT IT’视觉竞争，可能干扰目标聚焦",
+        "‘Best level 1 · 0 pts’文字字号偏小且颜色较淡，易被忽略",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头不明显"
+      ]
+    }
+  ]
+}

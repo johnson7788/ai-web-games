@@ -1,0 +1,149 @@
+{
+  "game": "saucer-strike",
+  "generatedAt": "2026-11-19T13:23:53.138Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.25,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Defend”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘SAUCER STRIKE’发光效果过强，导致部分字母边缘模糊，影响远距离辨识",
+        "‘Best 0’文字字号偏小且颜色较淡，易被忽略",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头与背景对比度低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动底部中央的 railgun 准星瞄准右下角的 UFO 目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角 UFO 目标被取景框（L型角标）部分遮挡，影响目标识别",
+        "‘WAVE 1’下方三点加载指示器过小且无动画，易被忽略",
+        "提示框‘Drag to aim the railgun’未说明拖动方向/范围，新手可能误操作"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的圆形发射器发射子弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角两个目标标记（带方框的圆）位置偏高且靠近边缘，可能被状态栏遮挡（桌面截图中未遮但移动端风险高）",
+        "‘WAVE 1’下方三点加载指示器无明确语义，新手可能误以为是敌人或可交互物",
+        "底部发射器与地面交界处阴影较弱，玩家轮廓在深棕背景中对比度略不足"
+      ]
+    },
+    {
+      "shot": "tests/final/06-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Defend again’按钮或按R键重新开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘RADAR LOST’标题与下方字段间距过小，视觉层级略显拥挤",
+        "‘Rating: C’未说明评级标准，可能引起困惑",
+        "整体界面无角色/敌人 silhouette 可辨，因是结算界面而非游戏进行中画面"
+      ]
+    },
+    {
+      "shot": "tests/final/07-restart.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的圆形发射器启动攻击",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人目标（右上/左下）与瞄准框重叠，但目标本身无明显动作或状态指示，易误判是否已锁定",
+        "‘WAVE 1’下方三点加载动画过小且无说明，新手可能不知是等待中",
+        "底部发射器与地面阴影融合，轮廓不够突出，影响 silhouette 得分"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动底部红色圆形 railgun 控制器瞄准上方两个目标之一",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Skip' 按钮与左上角 HUD 元素间距过小，可能误触",
+        "‘FIRST CONTACT’提示框背景半透明但与深色背景对比度偏低，弱光下可读性下降",
+        "两个目标图标外框为黄色方框+圆点，视觉层级略弱于中央提示框，新手可能忽略目标"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的圆形控制器发射或移动",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家控制器（底部圆环）与地面边缘融合，轮廓不清晰，影响 silhouette",
+        "右下角雷达图标部分被屏幕边缘裁切（仅显示左半），疑似 text_clipped 或 layout 问题",
+        "‘WAVE 1’下方三点动画无明确语义，新手可能不解其作用"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动底部中央的 railgun 准星瞄准右上角的 UFO 目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 UFO 目标被黄色取景框部分遮挡，可能影响精确瞄准",
+        "底部提示框‘Drag to aim the railgun’与 railgun 操作区重叠，新手易误触提示框而非操作区",
+        "‘WAVE 1’下方三点加载指示器无明确语义，可能被误认为可交互元素"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "shadow-ninja",
+  "genre": "action",
+  "oneLiner": "屋顶夜行的忍者猫自动疾奔，点按跳跃、下压俯冲，收风铃躲飞镖，闯过十二座月下关卡。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "起跳后无法立刻改向，且会撞上头顶飞镖；二段跳还会消耗斗篷判定",
+      "feedback": ["sfx", "trail", "coyoteWindow"],
+      "combinesWith": ["dive"]
+    },
+    {
+      "name": "dive",
+      "cost": "俯冲下坠极快、落地前难以拉起，撞上尖刺或敌忍即死",
+      "feedback": ["sfx", "speedLines", "dustPuff"],
+      "combinesWith": ["jump", "boost"]
+    },
+    {
+      "name": "boost",
+      "cost": "消耗一件当关有限的道具（竹蜻蜓/吸金铃/双倍铃）",
+      "feedback": ["sfx", "glowHighlight"],
+      "combinesWith": ["dive"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一个断口/尖刺逼近：现在起跳，还是晚半拍多收一枚风铃", "cost": "晚跳会撞上尖刺" },
+    { "atSec": 20, "choice": "头顶飞镖逼近且刚起跳：俯冲贴地，还是二段跳硬吃过去", "cost": "俯冲难停 / 二段跳消耗判定" },
+    { "atSec": 45, "choice": "风铃链挂在险路：冒险走上层收满，还是走下层安全线", "cost": "上层容易撞飞镖" },
+    { "atSec": 70, "choice": "追击犬加速逼近：留竹蜻蜓保命，还是现在用来拉开距离", "cost": "道具当关有限" },
+    { "atSec": 100, "choice": "竹蜻蜓只剩一件：留给可能的失误，还是用在眼前的宽沟", "cost": "用完就没有保命手段" },
+    { "atSec": 140, "choice": "终点前风铃未达标：绕去高危区补风铃，还是直接冲线少一星", "cost": "冲线少星 / 绕路可能死" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 60, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基本跳跃：越过瓦檐断口" },
+    { "index": 2, "newElement": "尖刺檐：落地前必须跳过尖刺" },
+    { "index": 3, "newElement": "飞镖阵：跳起会撞飞镖，学会俯冲/贴地" },
+    { "index": 4, "newElement": "追击犬：区间内强制加速" },
+    { "index": 5, "newElement": "高低双层：上层有风铃，下层更安全" },
+    { "index": 6, "newElement": "风铃链：连续风铃挂在险路上" },
+    { "index": 7, "newElement": "夜雾段：能见度下降" },
+    { "index": 8, "newElement": "滑索段：自动滑行吃风铃" },
+    { "index": 9, "newElement": "复合地形：尖刺+飞镖+追击犬" },
+    { "index": 10, "newElement": "密集陷阱：宽沟与连刺" },
+    { "index": 11, "newElement": "超长距离：耐心与节奏" },
+    { "index": 12, "newElement": "终章三轴叠加：飞镖+追击犬+风铃链" }
+  ],
+  "upgrades": [
+    { "id": "cloak", "kind": "rule", "desc": "斗篷：解锁空中二段跳" },
+    { "id": "hook", "kind": "rule", "desc": "爪钩：跳跃更高，飞跃宽沟" },
+    { "id": "bell", "kind": "rule", "desc": "护身铃：每局开场带一层护盾" },
+    { "id": "fly", "kind": "rule", "desc": "竹蜻蜓：向前飞行数秒且无敌" },
+    { "id": "magnet", "kind": "rule", "desc": "吸金铃：自动吸附身边风铃" },
+    { "id": "revive", "kind": "rule", "desc": "还魂铃：原地复活一次" },
+    { "id": "double", "kind": "stat", "desc": "双倍铃：数秒内风铃翻倍" },
+    { "id": "moonshadow", "kind": "stat", "desc": "月影披风：更深的剪影与更长的金色尾迹" },
+    { "id": "speedLvl", "kind": "stat", "desc": "关卡速度随关数递增" },
+    { "id": "chimeGoal", "kind": "stat", "desc": "风铃目标随关数递增" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 40, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2026-11-19T19:21:14.650Z",
+  "sampleRate": 44100,
+  "sfx": {
+    "march": {
+      "rms": 0.1912,
+      "peak": 0.5515,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "formation": {
+      "rms": 0.0427,
+      "peak": 0.1216,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "battleStart": {
+      "rms": 0.2352,
+      "peak": 0.629,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "turn": {
+      "rms": 0.1291,
+      "peak": 0.22,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "strike": {
+      "rms": 0.2353,
+      "peak": 0.6285,
+      "nan": 0,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "skill": {
+      "rms": 0.1455,
+      "peak": 0.4564,
+      "nan": 0,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "heal": {
+      "rms": 0.1695,
+      "peak": 0.28,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "buff": {
+      "rms": 0.1006,
+      "peak": 0.3462,
+      "nan": 0,
+      "samples": 18963,
+      "durSec": 0.43,
+      "pass": true
+    },
+    "guard": {
+      "rms": 0.1656,
+      "peak": 0.4338,
+      "nan": 0,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "signature": {
+      "rms": 0.2001,
+      "peak": 0.8103,
+      "nan": 0,
+      "samples": 33075,
+      "durSec": 0.75,
+      "pass": true
+    },
+    "enemyHit": {
+      "rms": 0.1842,
+      "peak": 0.4847,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.1911,
+      "peak": 0.3999,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "heroDown": {
+      "rms": 0.2205,
+      "peak": 0.45,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1578,
+      "peak": 0.6065,
+      "nan": 0,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "lose": {
+      "rms": 0.1538,
+      "peak": 0.4744,
+      "nan": 0,
+      "samples": 37926,
+      "durSec": 0.86,
+      "pass": true
+    },
+    "rest": {
+      "rms": 0.1249,
+      "peak": 0.3199,
+      "nan": 0,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "event": {
+      "rms": 0.1146,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 15435,
+      "durSec": 0.35,
+      "pass": true
+    },
+    "upgrade": {
+      "rms": 0.1311,
+      "peak": 0.4833,
+      "nan": 0,
+      "samples": 25137,
+      "durSec": 0.57,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1184,
+      "peak": 0.2583,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "victory": {
+      "rms": 0.1722,
+      "peak": 0.6645,
+      "nan": 0,
+      "samples": 43218,
+      "durSec": 0.98,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "meadow": {
+      "rms": 0.14,
+      "peak": 0.3802,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "snow": {
+      "rms": 0.14,
+      "peak": 0.3582,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "ash": {
+      "rms": 0.14,
+      "peak": 0.3941,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

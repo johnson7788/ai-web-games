@@ -1,0 +1,37 @@
+{
+  "game": "lantern-isle-3d",
+  "pass": false,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 4,
+    "stepIds": [
+      "move",
+      "grab",
+      "light",
+      "talk"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [
+      "THREE.GLTFLoader: Couldn't load texture blob:http://127.0.0.1:8170/063fbe70-448b-4e2f-bb0d-373db71338d5",
+      "THREE.GLTFLoader: Couldn't load texture blob:http://127.0.0.1:8170/525842a9-07a5-4ad3-885f-4432fc72704c"
+    ],
+    "pageErrors": [],
+    "failedRequests": [
+      "blob:http://127.0.0.1:8170/063fbe70-448b-4e2f-bb0d-373db71338d5 net::ERR_ABORTED",
+      "blob:http://127.0.0.1:8170/525842a9-07a5-4ad3-885f-4432fc72704c net::ERR_ABORTED"
+    ],
+    "externalRequests": []
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "egg-boom",
+  "genre": "action",
+  "oneLiner": "一只弹簧蛋滚过厨房台面，射米粒弹打碎带数字的面粉团：跳到缺口省弹药，还是停下来清障换分数与蛋黄溅射。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "按住蓄力占住手指与节奏，跳错高度会撞上别的面团行",
+      "feedback": ["sfx", "spring-squash", "air-trail"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "每发耗 1 粒米弹药；手动加射有冷却，连击窗口内中断会断连",
+      "feedback": ["sfx", "muzzle-pop", "dough-crack"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "yolk",
+      "cost": "要攒满 5 连击才换一次范围弹，攒连击期间不能乱射断连",
+      "feedback": ["sfx", "splash-ring", "combo-flash"],
+      "combinesWith": ["shoot"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "打掉眼前低数字团，还是跳过去省弹药", "cost": "弹药 vs 蹭壳风险" },
+    { "atSec": 15, "choice": "去捡刚掉的道具，还是留在安全的缺口行", "cost": "资源 vs 安全高度" },
+    { "atSec": 30, "choice": "蓄满跳上悬空缺口，还是小跳稳在低位", "cost": "蓄力窗口 vs 落点精度" },
+    { "atSec": 50, "choice": "留着蛋壳保命，还是主动撞掉一个拦路团", "cost": "护甲 vs 前进路径" },
+    { "atSec": 75, "choice": "把 5 连击攒成蛋黄弹打护甲团，还是花在普通排上", "cost": "范围弹 vs 稳定清障" },
+    { "atSec": 110, "choice": "硬清双排夹缝，还是退到更高的空行等它过去", "cost": "弹药 vs 时间与高度" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础数字团：教射碎 + 跳过（地面行）" },
+    { "index": 2, "newElement": "高数字团：耐久翻倍，逼你决定清或跳" },
+    { "index": 3, "newElement": "悬空团：无地面行，全部浮空 + 空隙" },
+    { "index": 4, "newElement": "移动团：面团垂直往返，命中时机变难" },
+    { "index": 5, "newElement": "双排夹缝：两行填满，只留窄缝可过" },
+    { "index": 6, "newElement": "护甲团：只有蛋黄范围弹能打碎" },
+    { "index": 7, "newElement": "移动团 + 高数字：摆动与厚血叠加" },
+    { "index": 8, "newElement": "夹缝 + 护甲：窄缝里藏护甲团" },
+    { "index": 9, "newElement": "午夜食堂换景 + 高数字移动团" },
+    { "index": 10, "newElement": "晚班夹缝：护甲团封锁窄缝" },
+    { "index": 11, "newElement": "全家福：护甲/移动/高数字混排" },
+    { "index": 12, "newElement": "终极烘焙：满排 + 护甲 + 移动收官" }
+  ],
+  "upgrades": [
+    { "id": "yolkRipple", "kind": "rule", "desc": "蛋黄溅射半径 +40%（改范围规则）" },
+    { "id": "shellFast", "kind": "rule", "desc": "蛋壳再生长从 10s 缩短到 6s" },
+    { "id": "ammoRefund", "kind": "rule", "desc": "清整排返还 2 粒弹药" },
+    { "id": "comboBank", "kind": "rule", "desc": "每次开局连击从 2 起步" },
+    { "id": "fireTap", "kind": "rule", "desc": "火力道具期间手动加射不耗弹药" },
+    { "id": "ammoUp", "kind": "stat", "desc": "开局弹药 +6" },
+    { "id": "powerUp", "kind": "stat", "desc": "基础射击伤害 +1" },
+    { "id": "speedUp", "kind": "stat", "desc": "米粒弹速度 +15%" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "清完一整排面粉团时蛋壳彩带爆裂，连击到 5 的一发蛋黄弹把护甲团整片炸开",
+  "antiScope": [
+    "不做联网排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas：早餐配色（暖白/粉/靛蓝三套场景），蛋/面团/米粒弹全部矢量绘制，UI 线框 SVG/CSS；音效 WebAudio 程序化合成"
+}

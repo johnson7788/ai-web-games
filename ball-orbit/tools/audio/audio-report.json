@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-11-19T12:05:39.917Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shot": {
+      "rms": 0.1294,
+      "peak": 0.6113,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "aim": {
+      "rms": 0.0476,
+      "peak": 0.08,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "bounce": {
+      "rms": 0.1018,
+      "peak": 0.2195,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.1584,
+      "peak": 0.3496,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "break": {
+      "rms": 0.1891,
+      "peak": 0.5095,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "rowClear": {
+      "rms": 0.1523,
+      "peak": 0.683,
+      "nan": 0,
+      "samples": 30429,
+      "durSec": 0.69,
+      "pass": true
+    },
+    "addBall": {
+      "rms": 0.2069,
+      "peak": 0.4796,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "cometCharge": {
+      "rms": 0.1114,
+      "peak": 0.4088,
+      "nan": 0,
+      "samples": 19404,
+      "durSec": 0.44,
+      "pass": true
+    },
+    "cometFire": {
+      "rms": 0.1034,
+      "peak": 0.43,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "shieldBlock": {
+      "rms": 0.13,
+      "peak": 0.2176,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "waveEnter": {
+      "rms": 0.1216,
+      "peak": 0.4757,
+      "nan": 0,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "ballReturn": {
+      "rms": 0.0792,
+      "peak": 0.14,
+      "nan": 0,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2122,
+      "peak": 0.5386,
+      "nan": 0,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1347,
+      "peak": 0.3061,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.1173,
+      "peak": 0.3358,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

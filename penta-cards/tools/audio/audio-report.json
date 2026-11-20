@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-11-19T18:44:14.367Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "draw": {
+      "rms": 0.1242,
+      "peak": 0.262,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "discard": {
+      "rms": 0.1352,
+      "peak": 0.3396,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "peng": {
+      "rms": 0.1698,
+      "peak": 0.4505,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "gang": {
+      "rms": 0.2042,
+      "peak": 0.5902,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "hu": {
+      "rms": 0.1705,
+      "peak": 0.6961,
+      "nan": 0,
+      "samples": 32634,
+      "durSec": 0.74,
+      "pass": true
+    },
+    "zimo": {
+      "rms": 0.1893,
+      "peak": 0.7377,
+      "nan": 0,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "dianpao": {
+      "rms": 0.1414,
+      "peak": 0.3,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "stargaze": {
+      "rms": 0.128,
+      "peak": 0.445,
+      "nan": 0,
+      "samples": 29547,
+      "durSec": 0.67,
+      "pass": true
+    },
+    "swap": {
+      "rms": 0.0778,
+      "peak": 0.3226,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "ting": {
+      "rms": 0.1198,
+      "peak": 0.3198,
+      "nan": 0,
+      "samples": 16758,
+      "durSec": 0.38,
+      "pass": true
+    },
+    "roundWin": {
+      "rms": 0.1758,
+      "peak": 0.6414,
+      "nan": 0,
+      "samples": 41454,
+      "durSec": 0.94,
+      "pass": true
+    },
+    "roundLose": {
+      "rms": 0.1357,
+      "peak": 0.4861,
+      "nan": 0,
+      "samples": 34398,
+      "durSec": 0.78,
+      "pass": true
+    },
+    "roundDraw": {
+      "rms": 0.0876,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1183,
+      "peak": 0.2647,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1621,
+      "peak": 0.6269,
+      "nan": 0,
+      "samples": 38808,
+      "durSec": 0.88,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.121,
+      "peak": 0.28,
+      "nan": 0,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "deal": {
+      "rms": 0.0179,
+      "peak": 0.0767,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0675,
+      "peak": 0.12,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    }
+  },
+  "loops": {
+    "observatory": {
+      "rms": 0.0999,
+      "peak": 0.3942,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "teahouse": {
+      "rms": 0.0999,
+      "peak": 0.376,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "aurora": {
+      "rms": 0.0999,
+      "peak": 0.3364,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

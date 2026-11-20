@@ -1,0 +1,149 @@
+{
+  "game": "mosaic-slide",
+  "generatedAt": "2026-11-19T13:32:30.142Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 7.625,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'MOSAIC SLIDE' 字体描边过厚，部分字母（如 S、C）在高对比下略显模糊",
+        "关卡按钮 1-12 的星标图标大小不一致（按钮1为实心星，其余为轮廓星）",
+        "背景玫瑰窗图案与中央按钮区域有轻微视觉干扰，可能影响快速定位 Start 按钮"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1按钮高亮色（橙黄）与‘开始’按钮色相近，易混淆优先级",
+        "背景花窗图案细节丰富但略干扰前景按钮辨识度",
+        "星级计数‘★ 0 / 36’字体偏小，远距离阅读稍吃力"
+      ]
+    },
+    {
+      "shot": "tests/final/03-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角黑色空格（唯一空白格）以开始移动或填充",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标图示为圆形拼图，但主网格为方形3x3，形状不一致易引发混淆",
+        "左下角黑色格子无图标仅白点，与其他格子视觉权重不均，可能被误认为不可交互",
+        "‘Level 1’与计时器间距过小，桌面模式虽可接受，但移动端可能拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next Level’按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角Goal预览图与主网格布局风格略有差异，光影层次不一致",
+        "‘The Window Lights Up!’标题字体与下方提示文字字号/字重对比过强，略显割裂",
+        "三颗星图标未明确指示是否为满分（无4/5星选项），可能引发评分歧义"
+      ]
+    },
+    {
+      "shot": "tests/final/05-hex.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间带黄色四叶花图案的蓝色六边形",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标预览图中中心黄色四叶花与当前棋盘中该图案位置不完全对应（当前在第3行第2列，目标图中在中心偏上）",
+        "左上角‘Level 5’与‘0/40’间距过小，可能影响快速扫读",
+        "右上角功能图标（?、齿轮、重试、主页）无文字标签，依赖图标语义，对新用户不够友好"
+      ]
+    },
+    {
+      "shot": "tests/final/06-rotate.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角空格（深棕色带圆点的格子）进行旋转操作",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标图示中部分菱形与三叶图案边缘轻微重叠，可能影响模式识别准确性",
+        "左上角‘Level 7 / 29’与‘150s’间距过小，小屏可能误读为‘7/29150s’",
+        "右上角控制图标（问号、重试等）无文字标签，依赖图标语义，新手可能困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/07-blind.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间黄色四叶花图案的格子，因其是唯一非对称且高亮的特殊元素，可能为关键操作点",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Level 8’与‘0/40’间距过小，易误读为‘Level 80/40’",
+        "目标预览图中中心黄色四叶花与网格线重叠，细节模糊",
+        "深棕色空格（第3行第1列）无明确交互提示，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/08-dual.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角空格（深色带圆点的格子）以激活或移动",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标区域两个圆形图案细节密集，小屏可能难以分辨差异",
+        "底部中央深色格子无明确交互提示（仅小圆点），易被误认为不可操作",
+        "左上角‘Level 9’与计时器间距过近，视觉略拥挤"
+      ]
+    }
+  ]
+}

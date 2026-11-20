@@ -1,0 +1,60 @@
+{
+  "genre": "action",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 308.4,
+      "actions": 18503,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 13.9,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.5,
+      "uniqueEvents": 16,
+      "levelsReached": 5,
+      "completed": false,
+      "matchesWon": 4,
+      "kills": 22
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 27.4,
+      "actions": 140,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 21.9,
+      "maxEventGapSec": 0.5,
+      "uniqueEvents": 12,
+      "levelsReached": 1,
+      "completed": false,
+      "matchesWon": 0,
+      "kills": 0
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 90.4,
+      "actions": 1,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 78.8,
+      "maxEventGapSec": 0.5,
+      "uniqueEvents": 9,
+      "levelsReached": 1,
+      "completed": false,
+      "matchesWon": 0,
+      "kills": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T17:06:47.380Z"
+}

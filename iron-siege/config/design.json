@@ -1,0 +1,85 @@
+{
+  "slug": "iron-siege",
+  "genre": "action",
+  "oneLiner": "驾驶蒸汽朋克装甲机甲，在 13×13 战场守住底部核心熔炉，清砖开路、用限量重炮击穿钢墙、清波推进到第 12 波。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "meaning"
+  },
+  "verbs": [
+    {
+      "name": "drive",
+      "cost": "位置代价：远离熔炉去开路，就会把熔炉暴露给敌人",
+      "feedback": ["sfx", "tread-track", "mech-lean"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "fire",
+      "cost": "主炮无限，但持续开火会暴露位置并吸引敌弹",
+      "feedback": ["sfx", "muzzle-flash", "shell-tracer"],
+      "combinesWith": ["drive"]
+    },
+    {
+      "name": "heavy",
+      "cost": "限量弹药（每波 2 发），打错钢墙就浪费",
+      "feedback": ["sfx", "rivet-shake", "steel-burst"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先清砖开路，还是留着砖墙当熔炉掩体", "cost": "开路 vs 保炉" },
+    { "atSec": 18, "choice": "重炮弹破钢墙还是留给重甲", "cost": "破墙 vs 击杀" },
+    { "atSec": 30, "choice": "现在焊修熔炉砖墙吗（修墙但本波敌人提速）", "cost": "安全 vs 提速" },
+    { "atSec": 45, "choice": "追补给车拿道具，还是先清靠近熔炉的敌人", "cost": "道具 vs 防线" },
+    { "atSec": 65, "choice": "波间强化：火力还是护甲", "cost": "进攻 vs 防守" },
+    { "atSec": 85, "choice": "留一发重炮给可能的重甲潮吗", "cost": "即时收益 vs 保险" },
+    { "atSec": 110, "choice": "时钟道具立刻吃还是留到被围攻", "cost": "解围 vs 节奏" },
+    { "atSec": 150, "choice": "终波先清快速兵还是先破重甲", "cost": "威胁类型取舍" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 50, "twistSec": 45, "resolveSec": 25 },
+  "levels": [
+    { "index": 1, "newElement": "砖墙 + 核心熔炉 + 主炮（教移动/开火/守卫）" },
+    { "index": 2, "newElement": "快速兵入场（敌提速）" },
+    { "index": 3, "newElement": "重炮弹解锁（唯一破钢墙手段）" },
+    { "index": 4, "newElement": "重甲兵（3 血）首次出现" },
+    { "index": 5, "newElement": "换章雪原：构图与色板更换" },
+    { "index": 6, "newElement": "钢墙走廊（重炮决策压力）" },
+    { "index": 7, "newElement": "补给车首次掉落道具" },
+    { "index": 8, "newElement": "波间强化：护甲/弹药路线分化" },
+    { "index": 9, "newElement": "换章熔城：密集砖阵 + 熔岩河" },
+    { "index": 10, "newElement": "高密度重甲潮" },
+    { "index": 11, "newElement": "道具连锁（时钟 + 炸弹组合）" },
+    { "index": 12, "newElement": "终波：重甲潮 + 双补给车" }
+  ],
+  "upgrades": [
+    { "id": "starPower", "kind": "rule", "desc": "星核道具在火力 2 时解锁第二发并发炮弹" },
+    { "id": "heavySteel", "kind": "rule", "desc": "重炮弹是唯一能击穿钢墙的手段" },
+    { "id": "weldRepair", "kind": "rule", "desc": "焊修恢复熔炉砖墙，代价是本波敌人提速" },
+    { "id": "clockFreeze", "kind": "rule", "desc": "时钟道具冻结全场敌人 8 秒" },
+    { "id": "bombClear", "kind": "rule", "desc": "炸弹道具清空全场敌人" },
+    { "id": "armorCore", "kind": "rule", "desc": "护甲强化提高熔炉最大 HP" },
+    { "id": "speedTraction", "kind": "stat", "desc": "牵引强化：移动速度 +12%" },
+    { "id": "ammoPlus", "kind": "stat", "desc": "弹药强化：每波重炮弹 +1" },
+    { "id": "fireTier", "kind": "stat", "desc": "火力 +1：炮弹更快" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "重炮弹命中钢墙的瞬间，全屏铆钉震颤、钢屑迸溅，熔炉受击时红色报警脉冲横扫整片战场。",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做双人模式"
+  ],
+  "artSource": "蒸汽朋克要塞：程序化 Canvas 渲染（铆钉钢纹/齿轮/熔炉辉光），UI 走 CSS 金属面板；封面与海报用 AI 出图。"
+}

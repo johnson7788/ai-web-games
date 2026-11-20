@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 473129,
+      "sha256": "0b832df9ab8e0361f065176cd634bb6a4b19202db7daeae5f50b4db44b63dbb0",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a cute round capsule character with big eyes leaping between floating grass sky-islands, collecting glowing golden orbs, a blue portal ring glowing on a distant island, sea of clouds below and a starry twilight sky, joyful platformer momentum, vibrant saturated sky-island aesthetic, high detail, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T18:07:49+00:00"
+}

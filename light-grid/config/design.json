@@ -1,0 +1,222 @@
+{
+  "slug": "light-grid",
+  "genre": "puzzle",
+  "oneLiner": "你在电路板上点节点翻转自身与相邻格，把整板点亮即通电过关；步数低于标准拿三星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "flip",
+      "cost": "每点一步都计入步数上限，超步保险丝熔断重开",
+      "feedback": [
+        "sfx",
+        "glow-flash",
+        "ripple"
+      ],
+      "combinesWith": [
+        "hint"
+      ]
+    },
+    {
+      "name": "hint",
+      "cost": "消耗一次限量提示（用一次少一次），三星更难",
+      "feedback": [
+        "sfx",
+        "halo",
+        "reveal"
+      ],
+      "combinesWith": [
+        "flip"
+      ]
+    },
+    {
+      "name": "reset",
+      "cost": "放弃当前进度重来，已用步数不返还",
+      "feedback": [
+        "sfx",
+        "fade",
+        "reset-board"
+      ],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 4,
+      "choice": "先解角落还是先清中心",
+      "cost": "角落安全但中心联动多，清中心易打乱角落"
+    },
+    {
+      "atSec": 12,
+      "choice": "点二极管向下传导还是点普通节点",
+      "cost": "二极管只向下，路径受限但可隔排传导"
+    },
+    {
+      "atSec": 25,
+      "choice": "用提示还是攒着保三星",
+      "cost": "提示少一次，三星需要精确步数"
+    },
+    {
+      "atSec": 40,
+      "choice": "给电容蓄能还是绕开它",
+      "cost": "第一下只蓄能不翻转，占用一步"
+    },
+    {
+      "atSec": 55,
+      "choice": "用继电器联动对角还是只点普通节点",
+      "cost": "对角扩散可能打乱已点亮的格"
+    },
+    {
+      "atSec": 75,
+      "choice": "绕过绝缘格还是借邻格翻转它",
+      "cost": "绝缘格直接点无效，只能借力"
+    },
+    {
+      "atSec": 100,
+      "choice": "逼近熔断线多试一步还是保守重开",
+      "cost": "超步熔断整关重来"
+    },
+    {
+      "atSec": 130,
+      "choice": "追求三星（≤par）还是一星过关先推进",
+      "cost": "三星需要不浪费任何一步"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 30
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "5×5 标准节点：教「点一下翻转自身+上下左右」"
+    },
+    {
+      "index": 2,
+      "newElement": "步数计分与 par 三星判定"
+    },
+    {
+      "index": 3,
+      "newElement": "二极管格：单向翻转，只影响下方两格"
+    },
+    {
+      "index": 4,
+      "newElement": "二极管列：规划向下传导路径"
+    },
+    {
+      "index": 5,
+      "newElement": "电容格：点两次才翻转（第一下蓄能）"
+    },
+    {
+      "index": 6,
+      "newElement": "电容 + 二极管混合布局"
+    },
+    {
+      "index": 7,
+      "newElement": "继电器格：联动四个对角"
+    },
+    {
+      "index": 8,
+      "newElement": "绝缘格：不可直接点按"
+    },
+    {
+      "index": 9,
+      "newElement": "5×5 全格型混合收尾"
+    },
+    {
+      "index": 10,
+      "newElement": "6×6 显卡场景：更大盘面"
+    },
+    {
+      "index": 11,
+      "newElement": "6×6 全格型混合"
+    },
+    {
+      "index": 12,
+      "newElement": "7×7 霓虹管场景：最大盘面"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "diode",
+      "kind": "rule",
+      "desc": "解锁二极管格（单向下传）"
+    },
+    {
+      "id": "capacitor",
+      "kind": "rule",
+      "desc": "解锁电容格（两段式翻转）"
+    },
+    {
+      "id": "relay",
+      "kind": "rule",
+      "desc": "解锁继电器格（联动对角）"
+    },
+    {
+      "id": "insulator",
+      "kind": "rule",
+      "desc": "解锁绝缘格（不可点）"
+    },
+    {
+      "id": "hint",
+      "kind": "rule",
+      "desc": "提示：亮出可行解中的一步"
+    },
+    {
+      "id": "fuseSafer",
+      "kind": "rule",
+      "desc": "超步时先警告一次，不立即熔断"
+    },
+    {
+      "id": "cleanStart",
+      "kind": "rule",
+      "desc": "每章开局保险丝自动重置"
+    },
+    {
+      "id": "doubleHint",
+      "kind": "rule",
+      "desc": "提示可连续使用两次"
+    },
+    {
+      "id": "stepBonus",
+      "kind": "stat",
+      "desc": "每关 par 标准 -1（数值）"
+    },
+    {
+      "id": "starBoost",
+      "kind": "stat",
+      "desc": "三星判定区间 +1 步（数值）"
+    }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "最后一格点亮瞬间，电流从首格沿蛇形走线奔流到尾格，整板电路像被唤醒一样依次亮起",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "电路主板检修风格：程序化 Canvas 发光节点 + 走线，三套场景色板（主板绿黑/显卡蓝银/霓虹管粉紫）；封面海报 HTML 叠字；BGM 与音效 WebAudio 程序化合成"
+}

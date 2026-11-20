@@ -1,0 +1,128 @@
+{
+  "url": "http://127.0.0.1:8131/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "关卡格 12 个",
+      "ok": true,
+      "detail": "eval: document.getElementById('level-grid').children.length === 12"
+    },
+    {
+      "name": "切中文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "进入第 1 关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "L1 有砖",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().bricksRemaining > 0"
+    },
+    {
+      "name": "L1 编号",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 1"
+    },
+    {
+      "name": "清场到结算",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'result'"
+    },
+    {
+      "name": "通关至少 1 星",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().result.stars >= 1"
+    },
+    {
+      "name": "L3 空心阵",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 3"
+    },
+    {
+      "name": "L5 下压阵",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 5"
+    },
+    {
+      "name": "L9 有金釉砖",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().bricks.some(b=>b.kind==='gold')"
+    },
+    {
+      "name": "L12 终局大阵",
+      "ok": true,
+      "detail": "eval: window.__ll.debug.state().level === 12 && window.__ll.debug.state().bricksRemaining > 0"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "重开本关",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.66,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "01b-title-zh.png",
+    "02-playing.png",
+    "03-result.png",
+    "04-hollow.png",
+    "05-junred.png",
+    "06-skyblue.png",
+    "07-final.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-brick-blitz"
+  ],
+  "fps": {
+    "avgFrameMs": 16.66,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}

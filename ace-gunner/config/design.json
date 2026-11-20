@@ -1,0 +1,122 @@
+{
+  "slug": "ace-gunner",
+  "genre": "arcade",
+  "oneLiner": "你是边城城垛上的神射手，拉弓瞄准从荒漠冲来的马匪，放箭守住城门，靠连杀触发鹰眼慢动作，再用金币买强化撑过十二波围攻。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "瞄准占用你的注意力与时间：准星定住一秒，敌人就多冲出一段距离",
+      "feedback": ["crosshair", "windWhistle", "eagleZoom"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "fire",
+      "cost": "每支箭消耗箭袋一支，射空必须原地换弹；打偏就是白白浪费一支",
+      "feedback": ["arrowWhoosh", "hitImpact", "killStreak"],
+      "combinesWith": ["aim"]
+    },
+    {
+      "name": "upgrade",
+      "cost": "花掉有限的金币二选一：买了射速就买不起射程/伤害",
+      "feedback": ["statChange", "sfx", "newArrowType"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "先射最近的步匪，还是蓄力等更值钱的马匪进入射程",
+      "cost": "等马匪 = 步匪离城门更近几步"
+    },
+    {
+      "atSec": 16,
+      "choice": "箭袋见底：现在就换弹求稳，还是贪最后一箭再换",
+      "cost": "贪一箭打空会错过补箭窗口，被快匪冲脸"
+    },
+    {
+      "atSec": 28,
+      "choice": "盾匪逼近：集火先把盾打碎，还是先清旁边更快的马匪",
+      "cost": "破盾要多花几箭，马匪会趁这几秒冲近城门"
+    },
+    {
+      "atSec": 42,
+      "choice": "炸药桶滚到半路：现在点爆清群，还是等它靠近更密集的匪群再炸",
+      "cost": "等太久桶离墙太近，爆炸会反伤城门"
+    },
+    {
+      "atSec": 58,
+      "choice": "波间升级：买攻速持续输出，还是买射程先手压制",
+      "cost": "金币只够其一，另一种属性整波缺失"
+    },
+    {
+      "atSec": 82,
+      "choice": "连杀攒到 3：立刻触发鹰眼清场，还是留着应对下一波快匪",
+      "cost": "鹰眼是短窗口爆发，开早了后面没保命"
+    },
+    {
+      "atSec": 110,
+      "choice": "双门同时告急：先救上路还是先救下路",
+      "cost": "救一边，另一边城门被白打几秒"
+    },
+    {
+      "atSec": 150,
+      "choice": "酋长 Boss 进阶段：清小兵稳血线，还是集火 Boss 抢节奏",
+      "cost": "集火 Boss 会放任小兵摸城门"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 35,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "步匪（foot）沿道路逼近" },
+    { "index": 2, "newElement": "马匪（rider）快而脆" },
+    { "index": 3, "newElement": "盾匪（shield）先破盾才掉血" },
+    { "index": 4, "newElement": "炸药桶（barrel）射爆清群、靠墙炸城" },
+    { "index": 5, "newElement": "沙暴（命中与视野受扰）" },
+    { "index": 6, "newElement": "双门进攻（上下两路同时压上）" },
+    { "index": 7, "newElement": "盾匪 + 马匪混编" },
+    { "index": 8, "newElement": "酋长 Boss（血条 + 阶段）" },
+    { "index": 9, "newElement": "夜袭（视野受限，火把照区）" },
+    { "index": 10, "newElement": "精英盾匪 + 炸药桶混编" },
+    { "index": 11, "newElement": "快速马匪群（rush）" },
+    { "index": 12, "newElement": "终局大围攻（全兵种叠加）" }
+  ],
+  "upgrades": [
+    { "id": "rapidFire", "kind": "stat", "desc": "射速更快" },
+    { "id": "longRange", "kind": "stat", "desc": "箭矢射得更远" },
+    { "id": "bigQuiver", "kind": "stat", "desc": "携带更多箭矢" },
+    { "id": "goldRush", "kind": "stat", "desc": "每杀获得更多金币" },
+    { "id": "piercingShot", "kind": "rule", "desc": "箭矢穿透一名敌人" },
+    { "id": "tripleShot", "kind": "rule", "desc": "一次射出三支扇形箭" },
+    { "id": "explosiveTips", "kind": "rule", "desc": "箭矢命中时爆炸" },
+    { "id": "eagleEyePlus", "kind": "rule", "desc": "鹰眼慢动作更久更强" },
+    { "id": "legShot", "kind": "rule", "desc": "箭矢对盾伤害翻倍" },
+    { "id": "wallRepair", "kind": "rule", "desc": "波间恢复城门血量" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

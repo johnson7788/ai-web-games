@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>LANTERN ISLE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <!-- HUD：常驻可见，不塞进任何 tab -->
+    <div id="hud" class="hidden" aria-live="polite">
+      <div class="hud-left">
+        <div class="hud-cell"><span class="hud-k" data-i18n="hud_night">Night</span><b id="hud-night">1</b></div>
+        <div class="hud-cell"><span class="hud-k" data-i18n="hud_lamps">Lamps</span><b id="hud-lamps">0/3</b></div>
+        <div class="hud-cell"><span class="hud-k" data-i18n="hud_oil">Oil</span><b id="hud-oil">5</b></div>
+        <div class="hud-cell"><span class="hud-k" data-i18n="hud_score">Score</span><b id="hud-score">0</b></div>
+      </div>
+      <div class="hud-right">
+        <div class="hud-cell timer"><span class="hud-k" data-i18n="hud_storm">Storm in</span><b id="hud-time">0:00</b></div>
+        <div class="hud-bar" aria-hidden="true"><i id="bar-time"></i></div>
+        <div class="hud-cell weight"><span class="hud-k" data-i18n="hud_carry">Carrying</span><b id="hud-weight">0/3</b></div>
+        <div class="hud-bar" aria-hidden="true"><i id="bar-weight"></i></div>
+      </div>
+      <div id="goal" class="goal" aria-live="off"><span class="goal-arrow" id="goal-arrow">&#10148;</span><span id="goal-text">Next lamp 0m</span></div>
+      <div id="hud-wind" class="hud-wind" aria-hidden="true"><span class="wind-arrow">&#10148;</span><em id="wind-text">calm</em></div>
+      <div id="prompt" class="prompt hidden"><kbd id="prompt-key">E</kbd><span id="prompt-text">Pick up lantern</span></div>
+      <div id="toast" class="toast"></div>
+      <div id="lighting-ring" class="lighting-ring hidden"><i id="lighting-fill"></i><span data-i18n="lighting">Lighting…</span></div>
+      <button id="btn-mute" class="icon-btn" data-i18n-title="mute" title="Mute">&#9835;</button>
+      <button id="btn-help" class="icon-btn" data-i18n-title="help" title="How to play">?</button>
+      <button id="btn-howto" class="icon-btn" data-tutorial-replay data-i18n-title="replay" title="Replay tutorial">&#8635;</button>
+    </div>
+
+    <!-- 触屏控件（移动端常驻） -->
+    <div id="touch" class="touch hidden">
+      <div class="touch-pad" id="touch-pad"><i></i></div>
+      <div class="touch-btns">
+        <button id="tbtn-run" class="tbtn" data-i18n="run">Run</button>
+        <button id="tbtn-jump" class="tbtn" data-i18n="jump">Jump</button>
+        <button id="tbtn-use" class="tbtn tbtn-key" data-i18n="use">Use</button>
+      </div>
+    </div>
+
+    <!-- 标题屏 -->
+    <div id="screen-title" class="screen is-active">
+      <div class="title-card">
+        <h1 id="title-text">LANTERN ISLE</h1>
+        <p class="subtitle" id="subtitle-text">Light every lamp before the storm lands.</p>
+        <div class="title-meta">
+          <span class="badge" data-i18n="tag_3d">3D</span>
+          <span class="badge" data-i18n="tag_carry">Carry &amp; light</span>
+          <span class="badge" data-i18n="tag_npcs">Island folk talk back</span>
+        </div>
+        <div id="best-line" class="best-line"><span data-i18n="best">Best</span>: <b id="title-best">0</b></div>
+        <button id="btn-start" class="cta" data-i18n="start">Start night</button>
+        <div class="title-row">
+          <select id="lang-select" class="lang-select" aria-label="Language"></select>
+          <button id="btn-how" class="ghost" data-i18n="how">How to play</button>
+          <button id="btn-upgrades" class="ghost" data-i18n="upgrades">Upgrades</button>
+          <button id="btn-tut" class="ghost" data-tutorial-replay data-i18n="replay">Replay tutorial</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 暂停 -->
+    <div id="screen-pause" class="screen hidden">
+      <div class="panel">
+        <h2 id="pause-title" data-i18n="paused">Paused</h2>
+        <button id="btn-resume" class="cta" data-i18n="resume">Resume</button>
+        <div class="title-row">
+          <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+          <button id="btn-restart" class="ghost" data-i18n="restart">Restart night</button>
+          <button id="btn-tut-pause" class="ghost" data-tutorial-replay data-i18n="replay">Replay tutorial</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NPC 对话 -->
+    <div id="screen-dialog" class="screen hidden">
+      <div class="dialog-card" role="dialog" aria-modal="false">
+        <header><b id="dlg-name">Warden</b><span id="dlg-mood" class="mood"></span></header>
+        <p id="dlg-text">…</p>
+        <div id="dlg-choices" class="dlg-choices"></div>
+        <div class="dlg-chat">
+          <input id="dlg-input" type="text" autocomplete="off" data-i18n-ph="ask_hint" placeholder="Say something…">
+          <button id="dlg-send" data-i18n="send">Ask</button>
+        </div>
+        <footer><button id="dlg-close" class="ghost" data-i18n="leave">Leave</button></footer>
+      </div>
+    </div>
+
+    <!-- 结算 / 结局 -->
+    <div id="screen-result" class="screen hidden">
+      <div class="panel">
+        <h2 id="res-title" data-i18n="night_done">Night done</h2>
+        <ul id="res-lines" class="res-lines"></ul>
+        <div id="res-upgrades" class="res-upgrades"></div>
+        <button id="btn-next" class="cta" data-i18n="next_night">Next night</button>
+        <button id="btn-again" class="ghost hidden" data-i18n="again">Play again</button>
+      </div>
+    </div>
+
+    <!-- 帮助 -->
+    <div id="screen-help" class="screen hidden">
+      <div class="panel">
+        <h2 data-i18n="how">How to play</h2>
+        <ul id="help-list" class="help-list"></ul>
+        <button id="btn-help-close" class="cta" data-i18n="close">Close</button>
+      </div>
+    </div>
+
+    <!-- 升级 -->
+    <div id="screen-shop" class="screen hidden">
+      <div class="panel">
+        <h2 data-i18n="upgrades">Upgrades</h2>
+        <div id="shop-list" class="shop-list"></div>
+        <button id="btn-shop-close" class="cta" data-i18n="close">Close</button>
+      </div>
+    </div>
+
+    <!-- 首次交互引导：高亮真实 UI + 要求真实动作 -->
+    <div id="tutorial" class="tutorial hidden" data-tutorial>
+      <div class="tut-card">
+        <span class="tut-step" id="tut-step">1/4</span>
+        <p id="tut-text">Walk with <kbd>W</kbd></p>
+        <div class="tut-actions">
+          <button id="tut-skip" class="ghost" data-tutorial-skip data-i18n="skip">Skip</button>
+          <button id="tut-replay" class="ghost hidden" data-i18n="replay">Replay tutorial</button>
+        </div>
+      </div>
+      <div id="tut-halo" class="tut-halo"></div>
+    </div>
+
+    <div id="loading" class="loading"><span data-i18n="loading">Waking the island…</span><i id="load-bar"></i></div>
+  </div>
+  <script>
+    // 模块脚本是 defer 的：玩家在它加载完之前点 Start 会「点了没反应」。
+    // 这里先挂一个经典脚本把意图记下来，main.js boot 完成后自动兑现。
+    (function () {
+      var b = document.getElementById('btn-start');
+      if (b) b.addEventListener('click', function () { window.__pendingStart = true; });
+    })();
+  </script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

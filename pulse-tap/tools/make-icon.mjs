@@ -1,0 +1,38 @@
+// 生成 icon.png（256×256）与 favicon.png（32×32）：从游戏 DJ 台画面中心裁切。
+import { createServer } from 'node:http';
+import { readFile } from 'node:fs/promises';
+import { extname, join, normalize, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
+import pw from '/opt/homebrew/lib/node_modules/playwright/index.js';
+const { chromium } = pw;
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.json': 'application/json' };
+const server = createServer(async (req, res) => {
+  try {
+    const url = decodeURIComponent((req.url || '/').split('?')[0]);
+    const file = join(ROOT, normalize(url === '/' ? 'index.html' : url));
+    if (!file.startsWith(ROOT)) { res.writeHead(403); res.end(); return; }
+    const data = await readFile(file);
+    res.writeHead(200, { 'content-type': MIME[extname(file)] || 'application/octet-stream' });
+    res.end(data);
+  } catch { res.writeHead(404); res.end(); }
+});
+await new Promise((r) => server.listen(8165, r));
+
+const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=metal'] });
+const ctx = await browser.newContext({ viewport: { width: 1280, height: 720 } });
+const page = await ctx.newPage();
+await page.goto('http://127.0.0.1:8165/');
+await page.waitForTimeout(700);
+const canvasShot = join(ROOT, 'tests', 'artifacts', 'icon-canvas.png');
+await page.locator('#canvas').screenshot({ path: canvasShot });
+await browser.close();
+server.closeAllConnections?.();
+server.close();
+
+execFileSync('ffmpeg', ['-y', '-i', canvasShot, '-vf', 'crop=720:720:280:0,scale=256:256:flags=lanczos', join(ROOT, 'icon.png')], { stdio: 'inherit' });
+execFileSync('ffmpeg', ['-y', '-i', canvasShot, '-vf', 'crop=720:720:280:0,scale=32:32:flags=lanczos', join(ROOT, 'favicon.png')], { stdio: 'inherit' });
+console.log('saved icon.png + favicon.png');
+process.exit(0);

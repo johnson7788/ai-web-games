@@ -1,0 +1,119 @@
+{
+  "slug": "dice-cascade",
+  "genre": "puzzle",
+  "oneLiner": "在概率神殿里押符文骰、掷出弹珠落桶计分：骰面决定落区与倍率，三骰同面时神殿门金光洞开。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "bet",
+      "cost": "押注消耗未锁定分数，押空的骰位白扣成本",
+      "feedback": ["sfx", "dice-glow", "button-state"],
+      "combinesWith": ["roll"]
+    },
+    {
+      "name": "roll",
+      "cost": "消耗一次投掷次数；诅咒骰的面 1 会扣分",
+      "feedback": ["sfx", "bead-cascade", "settle-pop"],
+      "combinesWith": ["bet"]
+    },
+    {
+      "name": "bank",
+      "cost": "提前锁定当前分，放弃继续滚更高的可能",
+      "feedback": ["sfx", "temple-door", "score-pop"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "押 1 个骰位搏 ×2，还是押满搏 ×3",
+      "cost": "押注成本从当前分扣，押空白扣"
+    },
+    {
+      "atSec": 18,
+      "choice": "达到目标分后立即收手，还是继续掷高分",
+      "cost": "继续掷可能被诅咒清空未锁定分"
+    },
+    {
+      "atSec": 32,
+      "choice": "诅咒骰出现（面 1 负点），保分还是赌高面",
+      "cost": "未锁定分被负点扣除"
+    },
+    {
+      "atSec": 48,
+      "choice": "是否花分数押注提升本回合期望",
+      "cost": "分数换倍率期望"
+    },
+    {
+      "atSec": 70,
+      "choice": "幸运轮关卡：多骰分散风险还是少骰博高倍",
+      "cost": "投掷次数与落区风险"
+    },
+    {
+      "atSec": 95,
+      "choice": "分数接近目标但只剩 1 次投掷，收手还是赌最后一把",
+      "cost": "通关失败=整局结束"
+    },
+    {
+      "atSec": 120,
+      "choice": "符文槽快满，是否故意往中央符文桶押",
+      "cost": "放弃边缘 4× 高倍桶"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "1 颗骰 + 免费押注：教掷骰→弹珠落桶→计分" },
+    { "index": 2, "newElement": "2 颗骰：多骰机关，双珠同时落桶" },
+    { "index": 3, "newElement": "3 颗骰：满押三骰全中 ×3 的期望博弈" },
+    { "index": 4, "newElement": "诅咒骰：面 1 变为负点，掷前需权衡" },
+    { "index": 5, "newElement": "幸运轮：每回合概率触发随机奖励" },
+    { "index": 6, "newElement": "多骰 + 诅咒组合：三珠里混入负点面" },
+    { "index": 7, "newElement": "高倍边桶：边缘 4× 概率更低、收益更高" },
+    { "index": 8, "newElement": "三连符文 signature：三骰同面开门金光" },
+    { "index": 9, "newElement": "诅咒加重：负点 ×2，保分压力陡增" },
+    { "index": 10, "newElement": "幸运轮 + 诅咒并存：奖励与惩罚同场" },
+    { "index": 11, "newElement": "极限目标 + 更少投掷：容错收窄" },
+    { "index": 12, "newElement": "最终殿：多骰/诅咒/幸运全机关同场" }
+  ],
+  "upgrades": [
+    { "id": "extraRoll", "kind": "rule", "desc": "每关 +1 投掷次数（改可用资源规则）" },
+    { "id": "betRebate", "kind": "rule", "desc": "押注命中返还 20% 押注成本" },
+    { "id": "tripleBoost", "kind": "rule", "desc": "三连符文奖励 ×2" },
+    { "id": "cursedWard", "kind": "rule", "desc": "每关首次诅咒面被抵消" },
+    { "id": "luckyCharm", "kind": "rule", "desc": "幸运轮奖励 ×2" },
+    { "id": "strongStart", "kind": "stat", "desc": "每关开局 +30 底分" },
+    { "id": "scoreFocus", "kind": "stat", "desc": "收手结算 +5% 分" },
+    { "id": "runeAffinity", "kind": "rule", "desc": "中央符文桶额外 +1 碎片" }
+  ],
+  "replayHooks": ["rating", "growth", "newBuild"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "三颗符文骰同面停住，神殿大门轰然打开、金光从门缝泄出，得分栏暴涨的瞬间",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "程序化 Canvas 神殿风格：石殿沙金 / 翡翠殿青绿 / 熔岩殿红黑三套色板 + 拱门石柱装饰；UI 线框 CSS/SVG；BGM 与音效 WebAudio 程序化合成"
+}

@@ -1,0 +1,149 @@
+{
+  "game": "star-swap",
+  "generatedAt": "2026-11-19T20:00:05.895Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 9,
+    "silhouette": 7.875,
+    "style_consistent": 9.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意两个相邻的相同形状（如粉色星星）进行交换以匹配消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'SCORE 195' 中 '+1616' 悬浮提示轻微遮挡网格上边缘，可能干扰操作",
+        "右下角镜头图标与数字 '3' 为圆形小按钮，若为移动端需确认是否 ≥44px（当前截图无法精确判断）",
+        "网格内部分紫色圆与浅紫六边形在低对比度下易混淆，影响快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间区域任意三个相同形状或颜色的图案进行消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "得分+60提示悬浮在网格上方，未对齐格子中心，易误判消除位置",
+        "右下角透镜图标与数字3间距过小，可能被误触",
+        "‘关卡1’和‘目标600’按钮文字偏小（约14px），在低分辨率屏可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/03-orion.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏左的蓝色圆圈向右移动，与右侧同色圆圈配对消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "网格内+60提示文字无背景，暗色格子上对比度偏低（第3行第4列附近）",
+        "右下角镜头图标数字'3'与图标重叠，边缘模糊",
+        "部分浅灰六边形与深灰背景对比不足，眯眼时易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/04-south.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏上的+60得分提示区域，尝试触发连击或消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'LEVEL 9'与'TARGET 3400'间距过小，可能在小屏设备上误触",
+        "右下角镜头图标（3）无文字说明，功能不明确",
+        "网格内部分粉色小圆点与背景对比度偏低，弱视用户可能难辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dark.png",
+      "goal_visible": true,
+      "first_action_guess": "点击网格中任意两个相邻的相同形状（如粉色星星）进行匹配消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "网格内有3个黑色空格（含半圆符号），其功能未在HUD说明，易混淆为障碍或无效格",
+        "右下角镜头图标旁数字'3'无标签，需结合顶部'LENS 3'推断，轻微认知负担",
+        "+60得分提示悬浮于网格上方，位置偏左且无背景，弱对比下可能被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/06-special.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间偏右的白色菱形（被箭头指向）与下方蓝色圆圈交换位置以形成匹配",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "箭头指示器（#1605）叠加在格子上，可能干扰对目标位置的判断",
+        "‘#1605’标签字体较小且无背景，暗色背景下对比度略低",
+        "左上角‘LEVEL 5’与‘TARGET 1800’间距过近，视觉上易误读为单个元素"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角带数字3的圆形按钮（可能是使用镜头道具）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角圆形按钮（3）与底部安全边距离过近，可能被手机手势条遮挡（桌面截图无法验证，保守标注）",
+        "网格内部分图形（如粉色星形与紫色圆）亮度相近，眯眼时区分度略降",
+        "顶部'+60'浮动提示未加背景或描边，在亮色格子上对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/08-nova.png",
+      "goal_visible": true,
+      "first_action_guess": "点击被白色圆圈高亮的粉色星星（+60提示处）",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "眯眼时部分浅色六边形与背景灰度接近，易混淆（第2-3行左部）",
+        "右下角镜头按钮图标与数字'3'间距过小，视觉粘连",
+        "‘+60’浮动文本无背景衬底，在浅色格子上对比度偏低"
+      ]
+    }
+  ]
+}

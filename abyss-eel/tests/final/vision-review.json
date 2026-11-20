@@ -1,0 +1,117 @@
+{
+  "game": "abyss-eel",
+  "generatedAt": "2026-11-18T15:36:39.433Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 6.333333333333333,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Dive’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘ABYSS EEL’发光效果过强，导致部分字母边缘轻微晕染，影响远距离辨识",
+        "‘Best 0m’文字颜色为黄色，在深蓝背景上对比度偏低，易被忽略",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "长按屏幕进行冲刺（根据提示‘Hold to dash for 1 second’）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘Skip’按钮与‘DASH’进度条距离过近，可能误触",
+        "中央提示框‘FIRST DIVE Step 4/4’字体偏小，弱光下辨识度略低",
+        "深度486m、ORB 30等HUD信息未对齐，视觉重心分散"
+      ]
+    },
+    {
+      "shot": "tests/final/03-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Resume’按钮继续游戏",
+      "readable": 9,
+      "silhouette": 3,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊且含微弱红光干扰，眯眼时无法分辨任何游戏元素轮廓（silhouette 极低）",
+        "‘Paused’标题与按钮间距偏大，视觉重心略显松散，影响第一眼目标聚焦",
+        "右上角语言切换下拉框无明确选中态指示，可能引发操作困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/04-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Dive again”按钮重新开始潜水",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签使用亮黄描边，与整体深蓝科技风略有冲突，风格一致性稍弱",
+        "‘Press R to dive again’提示字号偏小，低对比度下可能不易察觉",
+        "背景模糊元素过强，轻微干扰主面板聚焦（但未影响核心信息识别）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角 DASH 按钮加速前进",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 DEPTH/ORB/COMBO 数值区与背景对比度偏低，弱光下可能难辨",
+        "‘Sunlight’标签位置偏上且无明确指向，新手可能忽略其为当前区域标识",
+        "玩家角色（2号）尾迹粒子过密，轻微遮挡后方敌人轮廓"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘潜入’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘ABYSS EEL’发光效果过强，部分字母边缘轻微晕染，影响远距离辨识",
+        "‘最深 703m’文字颜色偏黄，在深蓝背景上对比度略低，易被忽略",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头过小（约12px），移动端操作风险"
+      ]
+    }
+  ]
+}

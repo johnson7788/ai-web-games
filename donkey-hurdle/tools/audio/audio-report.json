@@ -1,0 +1,215 @@
+{
+  "generatedAt": "2026-11-19T14:59:50.949Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "jump": {
+      "rms": 0.1673,
+      "peak": 0.3,
+      "nan": 0,
+      "zcRate": 529.3,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "land": {
+      "rms": 0.1365,
+      "peak": 0.3403,
+      "nan": 0,
+      "zcRate": 275.1,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.2206,
+      "peak": 0.8168,
+      "nan": 0,
+      "zcRate": 6169.6,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "fell": {
+      "rms": 0.2008,
+      "peak": 0.5849,
+      "nan": 0,
+      "zcRate": 365.7,
+      "samples": 15435,
+      "durSec": 0.35,
+      "pass": true
+    },
+    "jarDrop": {
+      "rms": 0.1476,
+      "peak": 0.3993,
+      "nan": 0,
+      "zcRate": 347.3,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "superJump": {
+      "rms": 0.0807,
+      "peak": 0.3358,
+      "nan": 0,
+      "zcRate": 6668.1,
+      "samples": 14994,
+      "durSec": 0.34,
+      "pass": true
+    },
+    "obstacleClear": {
+      "rms": 0.1244,
+      "peak": 0.22,
+      "nan": 0,
+      "zcRate": 765.2,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.107,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 1390.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "jarGain": {
+      "rms": 0.1299,
+      "peak": 0.3918,
+      "nan": 0,
+      "zcRate": 822.3,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "segmentEnter": {
+      "rms": 0.1182,
+      "peak": 0.4716,
+      "nan": 0,
+      "zcRate": 345.2,
+      "samples": 36603,
+      "durSec": 0.83,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 800.3,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2115,
+      "peak": 0.5219,
+      "nan": 0,
+      "zcRate": 381.6,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "fullArc": {
+      "rms": 0.1412,
+      "peak": 0.5113,
+      "nan": 0,
+      "zcRate": 818.5,
+      "samples": 20286,
+      "durSec": 0.46,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.102,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 931.5,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.1136,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 353.2,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1352,
+      "peak": 0.3104,
+      "nan": 0,
+      "zcRate": 850.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "stride": {
+      "rms": 0.01,
+      "peak": 0.0415,
+      "nan": 0,
+      "zcRate": 2602,
+      "samples": 1323,
+      "durSec": 0.03,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.2,
+      "peak": 0.6058,
+      "nan": 0,
+      "zcRate": 252,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "wind": {
+      "rms": 0.0114,
+      "peak": 0.0675,
+      "nan": 0,
+      "zcRate": 4163.9,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "superJump.whoosh": {
+      "jumpZc": 529.3,
+      "superZc": 6635.7,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

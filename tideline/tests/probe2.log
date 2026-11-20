@@ -1,0 +1,15 @@
+[hw] load ms: 1078
+post-click state: {"mode":"racing","lap":1,"cp":0,"activeGate":1,"gatesPassedTotal":0,"raceTime":2.5666,"gateLeft":32.843950693194415,"speed":0,"x":496.7194798052346,"z":-25.7922117557168,"heading":1.8124672566580509,"fps":59,"gpu":"ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)","software":false,"quality":{"resolution":1,"msaa":4,"reflections":true,"reflectionScale":0.5,"autoResolution":false,"shadow":2048,"bloom":0.05}} errs: [] cerr: []
+[hw] race end: {"mode":"finished","lap":3,"gates":24,"time":"221.9","fps":59}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: TypeError: Cannot read properties of undefined (reading 'load')
+    at eval (eval at evaluate (:302:30), <anonymous>:1:22)
+    at UtilityScript.evaluate (<anonymous>:304:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at /Users/admin/git/webgames/games/tideline/tests/probe2.mjs:67:27
+
+Node.js v24.22.1
+EXIT:1

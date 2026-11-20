@@ -1,0 +1,149 @@
+{
+  "game": "arcade-treasure",
+  "generatedAt": "2026-11-19T19:20:02.849Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.25,
+    "silhouette": 6.25,
+    "style_consistent": 8.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-hall.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间蓝色边框的柜子（带旋转箭头图标）以消耗1个token开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'GRAND PRIX'文字模糊且部分被遮挡，影响品牌识别",
+        "三个柜子下方描述文字字号偏小，在低分辨率下可能难读",
+        "绿色柜子内三个笑脸图标间距过密，眯眼时易误判为单个元素"
+      ]
+    },
+    {
+      "shot": "tests/final/02-mole.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧第三列底部带眼睛图标的圆形角色",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD‘HEAT ×1.0’与‘RANK 1’间距过小，易误触",
+        "右上角‘TIME 22’与‘TARGET 250’垂直排列紧凑，小屏可能阅读困难",
+        "玩家角色（带眼睛图标）与其他空圆圈视觉差异仅靠内部图标，无尺寸/亮度强化，新手可能混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-rain.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该移动底部蓝色平台接住下落的金色光点（token）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字 'Meet the three cabinets and the token door' 语义模糊，与当前界面元素（光点、平台）无直接关联，易误导",
+        "金色光点（token）与背景雨线对比度低，眯眼时易混淆为背景粒子",
+        "左上角 HUD 按钮（TOKENS/RANK/HEAT）间距过密，小屏可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-swarm.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的紫色三角形玩家飞船开始移动或射击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部标题文字‘Gremlin vents split: safe targets vs sparking hazards’字号偏小，弱对比下易忽略",
+        "左上角HUD按钮（TOKENS/RANK/HEAT）间距过密，可能误触",
+        "紫色方块目标与背景星点对比度偏低，远距离辨识稍难"
+      ]
+    },
+    {
+      "shot": "tests/final/05-grandprix.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Tap a cabinet to play · 1 token’提示区域",
+      "readable": 7,
+      "silhouette": 4,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘GRAND PRIX’标题与下方提示文字重叠，视觉干扰；提示文字背景为深色圆角矩形，但与标题发光效果冲突",
+        "底部三个任务卡片文字过小（尤其副标题），在低分辨率下易误读，且紫色文字与深紫背景对比度不足",
+        "‘TOKENS 5’和‘RANK 1’按钮无明确交互反馈样式，玩家可能不确定是否可点"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏左的闪电状发光物（可能是可交互目标）",
+      "readable": 6,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字 'Meet the three cabinets and the token door' 与玩家/目标物无视觉关联，易误读为提示而非任务",
+        "三个发光圆点（含闪电）外形相似、亮度接近，难以快速区分功能（玩家/敌人/可收集物）",
+        "HUD 左上角 'HEAT ×1.0' 字体过小且无图标辅助，桌面环境下仍难快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间蓝色边框的柜子（带旋转箭头图标）以消耗1个token开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'GRAND PRIX'文字模糊且部分被遮挡，影响品牌识别",
+        "三个柜子下方描述文字字号偏小，在低分辨率下可能难读",
+        "绿色柜子内三个笑脸图标间距过密，眯眼时易误判为单个元素"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间蓝色边框的柜子（token door）投入1个token开始游戏",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间柜子下方提示文字‘Tap a cabinet to drop in your token’与上方‘Tap a cabinet to play · 1 token’语义重复且位置冲突，易混淆",
+        "左侧‘Server Night Watch’图标中三个笑脸符号无明确交互反馈指示，玩家可能误以为需点击笑脸而非底部方块",
+        "右侧紫色柜子内四个圆点符号样式模糊，与‘Gremlin vents split’描述关联性弱，难以快速理解机制"
+      ]
+    }
+  ]
+}

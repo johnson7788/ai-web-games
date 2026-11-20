@@ -1,0 +1,87 @@
+{
+  "slug": "idle-forge",
+  "genre": "idle",
+  "oneLiner": "A magic blacksmith's idle forge: the hammer swings on its own to coin gear, and you pick which forge line to upgrade.",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "每 0.3s 才能补一锤：手点只能加速，不能替代升级决策；点太快手酸收益还递减",
+      "feedback": ["sfx", "sparkBurst", "coinPop", "hammerSwing"],
+      "combinesWith": ["buy"]
+    },
+    {
+      "name": "buy",
+      "cost": "金币花掉即定型，四线价格指数递增：升错线会让大师之作进度被拖慢一整关",
+      "feedback": ["sfx", "buttonFlash", "statTick"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "tend",
+      "cost": "炉候窗口只有 10s 抢加温、罢工要付金币贿赂学徒：分神去点就少敲几锤",
+      "feedback": ["sfx", "heatGlow", "strikeCleared"],
+      "combinesWith": ["buy"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一桶金先升锤力（多产币）还是锤速（多锻造次数）", "cost": "升锤力短平快，升锤速是复利但起步慢" },
+    { "atSec": 20, "choice": "攒钱买贵一档的学徒，还是继续点铁砧手动加速", "cost": "学徒是被动收入，但要攒好几锤" },
+    { "atSec": 45, "choice": "炉候窗口开了：停下锻造去点加温+25%，还是继续敲", "cost": "窗口只有 10 秒，错过再等 30 秒" },
+    { "atSec": 70, "choice": "学徒罢工：付金币贿赂立刻复工，还是扛着半速熬过去", "cost": "贿赂金是本可升级的钱；扛着则产量减半 25 秒" },
+    { "atSec": 95, "choice": "订单限时还剩 20 秒：全力点铁砧冲大师之作，还是放弃订单奖励慢慢来", "cost": "冲订单可能打乱四线投入节奏" },
+    { "atSec": 120, "choice": "稀有矿脉爆发 60s：把钱全砸锤力吃满 ×3，还是补锤速让爆发更密", "cost": "爆发只有 60 秒，投入方向定生死" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 25
+  },
+  "levels": [
+    { "index": 1, "newElement": "铜剑：教学关，学会点铁砧 + 第一次升级" },
+    { "index": 2, "newElement": "铜盔：目标更高，逼出「先升哪条线」的取舍" },
+    { "index": 3, "newElement": "材料短缺：锤力线涨价 1.6 倍" },
+    { "index": 4, "newElement": "铁剑：新品类 + 场景换到城塞工坊" },
+    { "index": 5, "newElement": "炉候窗口：30s 一次手动加温 +25%" },
+    { "index": 6, "newElement": "稀有矿脉：爆发收益 ×3 持续 60s" },
+    { "index": 7, "newElement": "秘银剑：新品类 + 场景换到火山锻窑" },
+    { "index": 8, "newElement": "学徒罢工：锤速减半，点击安抚" },
+    { "index": 9, "newElement": "订单限时：限时内完成大师之作拿 ×3 奖励" },
+    { "index": 10, "newElement": "龙鳞剑：新品类，龙鳞质感立绘" },
+    { "index": 11, "newElement": "短缺+罢工双压：火温线涨价且学徒闹事" },
+    { "index": 12, "newElement": "屠龙圣剑：订单+矿脉+罢工三轴叠加终章" }
+  ],
+  "upgrades": [
+    { "id": "power", "kind": "stat", "desc": "锤力：每级 +15% 金币产量" },
+    { "id": "speed", "kind": "stat", "desc": "锤速：每级缩短锻造间隔" },
+    { "id": "temp", "kind": "stat", "desc": "火温：每级 +2% 金币 +10% 大师之作进度" },
+    { "id": "apprentice", "kind": "stat", "desc": "学徒：每级增加被动金币收入" },
+    { "id": "unlockShortage", "kind": "rule", "desc": "第 3 关起材料短缺：指定升级线涨价，逼你换路线" },
+    { "id": "unlockFurnace", "kind": "rule", "desc": "第 5 关起炉候窗口：限时手动加温的时机取舍" },
+    { "id": "unlockVein", "kind": "rule", "desc": "第 6 关起稀有矿脉：爆发收益改变投入节奏" },
+    { "id": "unlockStrike", "kind": "rule", "desc": "第 8 关起学徒罢工：付费安抚或硬扛半速" },
+    { "id": "unlockOrder", "kind": "rule", "desc": "第 9 关起订单限时：限时完成大师之作拿奖励" }
+  ],
+  "replayHooks": [
+    "growth",
+    "unlock",
+    "rating",
+    "newBuild"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

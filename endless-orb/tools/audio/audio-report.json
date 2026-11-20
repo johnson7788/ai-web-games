@@ -1,0 +1,181 @@
+{
+  "generatedAt": "2026-11-19T15:13:04.012Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shot": {
+      "rms": 0.1708,
+      "peak": 0.3525,
+      "nan": 0,
+      "zcRate": 994,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "pin": {
+      "rms": 0.1928,
+      "peak": 0.5146,
+      "nan": 0,
+      "zcRate": 675.1,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "heavyPin": {
+      "rms": 0.2485,
+      "peak": 0.6667,
+      "nan": 0,
+      "zcRate": 200,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.107,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 1310.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "ringClear": {
+      "rms": 0.1359,
+      "peak": 0.5952,
+      "nan": 0,
+      "zcRate": 974,
+      "samples": 33075,
+      "durSec": 0.75,
+      "pass": true
+    },
+    "sceneEnter": {
+      "rms": 0.1089,
+      "peak": 0.4344,
+      "nan": 0,
+      "zcRate": 308.1,
+      "samples": 37926,
+      "durSec": 0.86,
+      "pass": true
+    },
+    "polarityReversal": {
+      "rms": 0.1106,
+      "peak": 0.3392,
+      "nan": 0,
+      "zcRate": 1491.1,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "photonSuck": {
+      "rms": 0.1403,
+      "peak": 0.24,
+      "nan": 0,
+      "zcRate": 397.5,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "upgradeChosen": {
+      "rms": 0.1347,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.9,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "overloadReady": {
+      "rms": 0.108,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 491.7,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2126,
+      "peak": 0.5754,
+      "nan": 0,
+      "zcRate": 372.6,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1687,
+      "peak": 0.711,
+      "nan": 0,
+      "zcRate": 977.5,
+      "samples": 44982,
+      "durSec": 1.02,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1185,
+      "peak": 0.2653,
+      "nan": 0,
+      "zcRate": 890.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 758.6,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "pulse": {
+      "rms": 0.0268,
+      "peak": 0.06,
+      "nan": 0,
+      "zcRate": 315.1,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    }
+  },
+  "loops": {
+    "main": {
+      "rms": 0.2868,
+      "peak": 0.9,
+      "nan": 0,
+      "zcRate": 175.6,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "tense": {
+      "rms": 0.3902,
+      "peak": 0.9,
+      "nan": 0,
+      "zcRate": 256.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

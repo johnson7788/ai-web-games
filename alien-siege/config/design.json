@@ -1,0 +1,94 @@
+{
+  "slug": "alien-siege",
+  "genre": "action",
+  "oneLiner": "你在紫雾殖民巷端着霰弹枪迎击从雾里扑出的外星生物：镭射标记集火、护盾背包扛弹幕，用四把武器守住 12 波。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "shoot",
+      "cost": "消耗弹药并进入换弹空窗；后坐力让准星短暂上扬",
+      "feedback": ["muzzle-flash", "sfx", "hit-spark", "purple-splat"],
+      "combinesWith": ["mark"]
+    },
+    {
+      "name": "mark",
+      "cost": "占用一次瞄准瞬间且有冷却；被标记敌人受 1.5 倍伤害但会加速朝你扑来",
+      "feedback": ["laser-beam", "sfx", "target-glow"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shield",
+      "cost": "移动减速 40% 且持续耗能；能量耗尽护盾破裂",
+      "feedback": ["shield-glow", "sfx", "energy-drain"],
+      "combinesWith": ["shoot"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "第一只爬行者出现：开火打它（费弹）还是等它靠近提高命中", "cost": "弹药 vs 命中率" },
+    { "atSec": 14, "choice": "镭射标记快敌还是厚敌", "cost": "标记谁，另一只就会先咬到你" },
+    { "atSec": 30, "choice": "弹幕密集时开护盾（减速 40%）还是省能量走位", "cost": "安全 vs 机动" },
+    { "atSec": 48, "choice": "换弹时机：清空弹夹前换还是打空被迫换", "cost": "火力真空 vs 节奏" },
+    { "atSec": 70, "choice": "贴脸霰弹秒厚敌还是远处步枪点射", "cost": "近身风险 vs 弹药效率" },
+    { "atSec": 95, "choice": "守住背墙还是冲进开阔场追击浮游者", "cost": "安全 vs 快速清波" },
+    { "atSec": 120, "choice": "把标记留给母巢还是留给它召唤的小爬行者", "cost": "集火 boss vs 清场" },
+    { "atSec": 150, "choice": "护盾顶 boss 喷吐还是绕柱周旋省能量", "cost": "血线 vs 时间" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 60,
+    "resolveSec": 40
+  },
+  "levels": [
+    { "index": 1, "newElement": "爬行者：快速近战，教移动+射击" },
+    { "index": 2, "newElement": "双侧夹击：爬行者从两翼同时扑来" },
+    { "index": 3, "newElement": "步枪解锁：自动连射" },
+    { "index": 4, "newElement": "浮游者：飘移轨迹难追踪" },
+    { "index": 5, "newElement": "换章：反应场青绿巷道" },
+    { "index": 6, "newElement": "霰弹枪解锁 + 巨兽登场" },
+    { "index": 7, "newElement": "巨兽护送：厚敌配浮游者" },
+    { "index": 8, "newElement": "混合冲锋：三敌型同场" },
+    { "index": 9, "newElement": "镭射武器解锁 + 夜空港" },
+    { "index": 10, "newElement": "双巨兽：厚敌成对压进" },
+    { "index": 11, "newElement": "精英混编：全敌型饱和战" },
+    { "index": 12, "newElement": "Boss 母巢：持续召唤爬行者" }
+  ],
+  "upgrades": [
+    { "id": "rifle", "kind": "rule", "desc": "步枪解锁：自动连射改火力节奏" },
+    { "id": "shotgun", "kind": "rule", "desc": "霰弹枪解锁：近距离多弹丸 + 紫浆溅射" },
+    { "id": "laser", "kind": "rule", "desc": "镭射武器解锁：高伤害长射程单发" },
+    { "id": "mark", "kind": "rule", "desc": "镭射标记：被标记敌人受 1.5 倍伤害" },
+    { "id": "shield", "kind": "rule", "desc": "护盾背包：挡伤害但移动 -40%" },
+    { "id": "magPlus", "kind": "stat", "desc": "弹匣容量 +25%" },
+    { "id": "reloadFast", "kind": "stat", "desc": "换弹速度 +20%" },
+    { "id": "hpPlus", "kind": "stat", "desc": "生命上限 +25" },
+    { "id": "moveFast", "kind": "stat", "desc": "移动速度 +10%" },
+    { "id": "shieldCap", "kind": "stat", "desc": "护盾能量上限 +30" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "霰弹枪近距命中厚敌的瞬间，全屏紫浆飞溅",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化伪 3D 光线投射渲染：三套场景色板（紫灰/青绿/深蓝）+ 程序化敌人剪影 + UI 线框 CSS；BGM/SFX 用 WebAudio 程序化合成"
+}

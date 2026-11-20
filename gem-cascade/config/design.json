@@ -1,0 +1,92 @@
+{
+  "slug": "gem-cascade",
+  "genre": "puzzle",
+  "oneLiner": "你在矿洞里点爆同色矿簇：每消一块蓄力矿镐，满 5 次可劈碎任意单块，6 连消触发矿脉塌方连锁流光。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "pop",
+      "cost": "每次消除让剩余矿簇更碎，可能拆散未来更大的连消",
+      "feedback": ["sfx", "pop-particles", "score-flash"],
+      "combinesWith": ["pick"]
+    },
+    {
+      "name": "pick",
+      "cost": "消耗满蓄力的 5 次连消进度，且劈掉的单块可能断掉潜在大连消",
+      "feedback": ["sfx", "smash-flash", "charge-reset"],
+      "combinesWith": ["pop"]
+    },
+    {
+      "name": "wash",
+      "cost": "每关仅 1 次，且清零连消进度（streak）",
+      "feedback": ["sfx", "reshuffle-swirl", "hud-flash"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "现在消 2 连小簇，还是等相邻矿落下来拼成大簇", "cost": "小簇稳得分 vs 大簇更高分但可能等不到" },
+    { "atSec": 20, "choice": "用满蓄力的矿镐拆散孤立单块，还是留着保底过关", "cost": "拆散帮助成形 vs 失去保底单消" },
+    { "atSec": 38, "choice": "用淘洗重排摆脱死局，还是继续硬找大簇", "cost": "重排机会（每关仅 1 次）vs 保留连消进度" },
+    { "atSec": 55, "choice": "先消双倍矿脉颜色冲分，还是先清掉压住它的杂色", "cost": "高分优先 vs 结构优先" },
+    { "atSec": 75, "choice": "在限定步数关里贪大簇，还是见簇就消保步数", "cost": "大簇高分 vs 步数耗尽失败" },
+    { "atSec": 95, "choice": "留着冰封宝石解冻后的连消，还是提前清空周边腾路", "cost": "等解冻做大 vs 提前简化棋盘" },
+    { "atSec": 130, "choice": "沉底矿层逼近顶，优先压住还是接受新矿打乱布局", "cost": "控制高度 vs 接受随机新矿" },
+    { "atSec": 160, "choice": "矿镐蓄力快满，用掉后清零还是攒到 Boss 关用", "cost": "当前关轻松 vs 下一关底牌" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 50,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "萤石洞 5 色基础：点爆 2+ 同色连通矿簇" },
+    { "index": 2, "newElement": "6 色矿脉：颜色压力倍增" },
+    { "index": 3, "newElement": "边界岩块：不可消除的锁边岩" },
+    { "index": 4, "newElement": "双倍矿脉：随机一色得分 ×2" },
+    { "index": 5, "newElement": "沉底宝石：每次消除顶部补新矿" },
+    { "index": 6, "newElement": "限定步数关：步数耗尽即结算" },
+    { "index": 7, "newElement": "蓄力加速：矿镐每消 +2 蓄力" },
+    { "index": 8, "newElement": "冰封宝石：相邻消除后解冻才可选" },
+    { "index": 9, "newElement": "岩柱：占据格位的不可消障碍" },
+    { "index": 10, "newElement": "6 色 + 双倍矿脉组合" },
+    { "index": 11, "newElement": "沉底 + 限定步数组合" },
+    { "index": 12, "newElement": "极光终极关：全规则合成" }
+  ],
+  "upgrades": [
+    { "id": "doubleVein", "kind": "rule", "desc": "双倍矿脉：指定色得分 ×2（改判定而非+数值）" },
+    { "id": "pickaxe", "kind": "rule", "desc": "矿镐：满 5 蓄力劈碎任意单块（新增动词）" },
+    { "id": "wash", "kind": "rule", "desc": "淘洗：每关 1 次重排，代价是清零连消（规则取舍）" },
+    { "id": "sinking", "kind": "rule", "desc": "沉底矿脉：每次消除后顶部补新矿（改补给规则）" },
+    { "id": "frozen", "kind": "rule", "desc": "冰封宝石：需相邻消除解冻才可选（改可选规则）" },
+    { "id": "chargeFaster", "kind": "stat", "desc": "蓄力加速：每消 +2 蓄力（数值）" },
+    { "id": "extraColors", "kind": "stat", "desc": "6 色矿脉：颜色从 5 加到 6（数值）" },
+    { "id": "moveCap", "kind": "stat", "desc": "限定步数：步数上限（数值）" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "6 连消瞬间整条矿脉被连锁流光贯穿，屏幕随之轻微震动，只属于 GEM CASCADE 的画面",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "程序化 Canvas 晶簇渲染：径向渐变+多面体刻画；三套场景包（萤石洞紫/铜矿坑橙/极光冰洞青）换色板+构图+装饰；UI 线框 CSS"
+}

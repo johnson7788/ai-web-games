@@ -1,0 +1,149 @@
+{
+  "game": "brick-blitz",
+  "generatedAt": "2026-11-19T05:56:43.638Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.5,
+    "style_consistent": 8.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择区（1-12）中，第1关高亮色与‘Start’按钮色相近，易混淆主操作；",
+        "砖墙区域无实际砖块图形，仅用空矩形表示，目标‘smash the glaze-brick wall’缺乏视觉对应；",
+        "底部中央小火球图标位置模糊，疑似玩家指示器但未明确标识，可能误判为装饰"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘开始’按钮",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择区（1-12）中，第1关高亮色与‘开始’按钮色相近，易混淆主次操作",
+        "砖阵区域为占位空框，无实际内容，可能误导玩家以为已加载完成",
+        "底部中央有模糊光点（疑似未隐藏的粒子效果），位置接近关卡按钮，干扰视觉焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部橙色挡板控制方向，准备发射弹球击打砖块",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字 'TARGET — BREAK ALL BRICKS' 与右侧按钮间距过小，易误触",
+        "左上角 'Level 1 · First Firing' 字体偏小且与生命值图标紧邻，辨识度略低",
+        "弹球与黄色方块（可能为道具）视觉相似度高，眯眼时易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next Level’按钮继续游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD文字‘Level 1 · First Firing’与‘TARGET — BREAK ALL BRICKS’字号/风格不一致，左侧心形图标模糊",
+        "‘Score: 0’与上方‘Perfect Firing!’间距过小，视觉层级弱",
+        "背景过暗导致中部文字虽亮但缺乏对比层次，眯眼时‘Kiln Cleared!’与星星易混为一团光斑"
+      ]
+    },
+    {
+      "shot": "tests/final/04-hollow.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部橙色挡板控制球拍左右移动，准备击打发光小球",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字 'TARGET — BREAK ALL BRICKS' 字体偏小且与背景对比度不足，弱光下可能难辨",
+        "左上角生命值图标（三颗心）无文字说明，新手可能不理解其含义",
+        "右上角 'to play' 文字位置异常，疑似 UI 错位或未完成本地化"
+      ]
+    },
+    {
+      "shot": "tests/final/05-junred.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部挡板控制球的反弹方向",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "球体光晕过强，与背景对比度低，影响轨迹判断",
+        "右上角'play'文字颜色偏淡，与背景融合度高，易被忽略",
+        "砖块排列不规则（左组缺1块），可能引发目标理解歧义"
+      ]
+    },
+    {
+      "shot": "tests/final/06-skyblue.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部橙色挡板控制球的反弹方向",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字'TARGET — BREAK ALL BRICKS'与右上角按钮轻微重叠（视觉干扰）",
+        "左上角生命值图标（❤️❤️❤️）未标注数值，仅靠图标易误判剩余次数",
+        "球体光晕过强，与深蓝背景对比度不足，眯眼时不易定位"
+      ]
+    },
+    {
+      "shot": "tests/final/07-final.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部橙色挡板控制其左右移动以反弹两个火球击碎砖块",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'play'文字与图标间距过近，易误触",
+        "两个火球亮度相近且无轨迹，初看难辨主次/方向",
+        "左上角心形图标未标注含义（生命？），需依赖上下文猜测"
+      ]
+    }
+  ]
+}

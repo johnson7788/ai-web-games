@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 668570,
+      "sha256": "5e80e82cf5ad819a0157f2d141a554debbdb7687fad49c51d931d3706792993b",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: top-down neon arena where a lone geometric hero ship blasts apart a swarm of glowing angular enemies, tracer beams and shattering crystal shards, magenta and cyan grid floor with bloom, intense bullet-heaven action, vibrant saturated arcade shooter aesthetic, high detail, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T18:05:54+00:00"
+}

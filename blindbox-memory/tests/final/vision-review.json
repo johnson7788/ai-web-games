@@ -1,0 +1,149 @@
+{
+  "game": "blindbox-memory",
+  "generatedAt": "2026-11-18T14:25:53.632Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 7.375,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘How to play’文字颜色偏淡（浅紫），在深紫背景上对比度不足，易被忽略",
+        "语言下拉框与音量图标过小且间距紧凑，可能影响桌面端精确点击",
+        "标题‘BLIND BOX MEMORY’中‘MEMORY’为青绿色，与主标题黄橙色风格略冲突，轻微割裂感"
+      ]
+    },
+    {
+      "shot": "tests/final/02-level1.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一张卡片翻面以开始配对",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "卡片问号图标偏小且居中，眯眼时难以快速区分可交互状态",
+        "顶部‘Pairs 0/6’文字与背景对比度偏低（紫色文字在深紫背景）",
+        "右上角灯泡图标数字‘3’无单位说明，易误解为剩余次数或分数"
+      ]
+    },
+    {
+      "shot": "tests/final/03-level1-matched.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角亮起的黄色灯泡提示按钮（3次可用）以获取线索",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'LV 1'与'Moves 17'按钮间距过小，可能误触",
+        "‘Pairs 1/6’居中显示但字体偏小，弱光环境下辨识度略低",
+        "两个已翻开的卡片内容相同但未高亮配对状态，易造成玩家困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/04-level3-star.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角已翻出的相同角色卡牌以完成配对",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Star pair: 3x coins!’提示框部分遮挡上方卡牌（第1行第3列）",
+        "‘Pairs 1/8’与提示框位置偏高，易被误读为状态而非目标",
+        "眯眼时两个亮边卡牌轮廓相似，但其余卡牌均为问号，缺乏中间态视觉区分"
+      ]
+    },
+    {
+      "shot": "tests/final/05-level4-obstacle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一张卡片翻牌",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Trap card — it never matches’提示文字颜色偏暗，与深紫背景对比度不足，易被忽略",
+        "左下角两行空白横线疑似未完成UI占位符，位置异常",
+        "‘Pairs 0/10’标签圆角与按钮不一致（标签为椭圆，按钮为圆角矩形）"
+      ]
+    },
+    {
+      "shot": "tests/final/06-level12-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一张卡片开始翻牌配对",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘Phantom shuffle!’提示文字略小且无背景，暗色背景下对比度偏低",
+        "第2行第6列与第4行第6列的‘×’占位符卡片样式与其他卡片不一致（无边框/阴影）",
+        "左下角两个空槽（可能为已匹配移除位置）未明确标识状态，易误判为可点击"
+      ]
+    },
+    {
+      "shot": "tests/final/07-collection.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角已收集的宝可梦角色图标以查看或操作该角色",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Phantom shuffle!’标题与‘Collected 2 / 31’文字间距过小，易误读为一行",
+        "右下角已揭示角色（戴王冠）与左下角角色视觉权重接近，但未明确指示当前操作焦点",
+        "网格中多数格子仅用问号标识，缺乏状态区分（如已探索/锁定），可能引发混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/08-shop.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该点‘+3 moves every level’的100金币购买按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘+3 more moves’描述易歧义：是每局+3还是累计+3？未明确作用范围",
+        "价格标签‘Buy · 🪙 100’中‘·’与图标间距不一致，部分行用空格部分用点",
+        "‘Pay 20 coins to block one shuffle’文字偏长，小屏可能换行不均（当前截图未显问题但存在风险）"
+      ]
+    }
+  ]
+}

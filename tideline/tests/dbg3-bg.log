@@ -1,0 +1,10 @@
+A: title wait OK
+B: screenshot OK
+C: waitForFunction(true) OK
+D: predicate OK
+F: clicked start
+G: wf(true) after click OK
+H: mode = countdown
+I: racing wait OK
+J: mode = racing
+EXIT:0

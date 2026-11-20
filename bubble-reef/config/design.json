@@ -1,0 +1,92 @@
+{
+  "slug": "bubble-reef",
+  "genre": "puzzle",
+  "oneLiner": "你在珊瑚礁底部操控潮汐炮台，瞄准发射发光水母泡，同色三连放归大海、整簇悬空掉落化成水母群游走，赶在顶棚下沉触底前清空礁区。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "瞄准越久顶棚越近（每发都推进下沉计时），犹豫即压力",
+      "feedback": ["aim-line", "sfx", "cannon-rotate"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "消耗一发并推进顶棚下沉；射偏会堵住目标挂点",
+      "feedback": ["flight-trail", "hit-pop", "sfx"],
+      "combinesWith": ["aim", "wildcard"]
+    },
+    {
+      "name": "wildcard",
+      "cost": "花掉 3 连击换一颗百搭泡，连击清零失去分数增幅",
+      "feedback": ["rainbow-glow", "sfx", "combo-flash"],
+      "combinesWith": ["shoot"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "直消凑 3 还是射缝拆大簇", "cost": "稳定小分 vs 高风险连锁掉落" },
+    { "atSec": 15, "choice": "百搭泡现在用还是留给最后一排", "cost": "即时解围 vs 关键局翻盘" },
+    { "atSec": 25, "choice": "潮汐预览线用在这一发还是留到更难处", "cost": "现在稳一发 vs 之后保命" },
+    { "atSec": 40, "choice": "打同色大簇挂点还是先拆障碍泡下方支撑", "cost": "直接得分 vs 铺垫整簇掉落" },
+    { "atSec": 55, "choice": "冲清除率快速过关还是慢打攒连击换百搭", "cost": "推进速度 vs 资源储备" },
+    { "atSec": 70, "choice": "洋流关里把偏移量算进去硬射还是换角度绕开", "cost": "精准高风险 vs 容错低效率" },
+    { "atSec": 90, "choice": "金泡必消关里优先金泡还是先清普通泡腾空间", "cost": "任务优先 vs 空间优先" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "四色基础关：教瞄准/发射/同色三连" },
+    { "index": 2, "newElement": "岩礁障碍泡：不可消、只能靠掉落清除" },
+    { "index": 3, "newElement": "移动洋流：弹道横向偏移成曲线" },
+    { "index": 4, "newElement": "双层顶棚：每轮下沉两行" },
+    { "index": 5, "newElement": "夜礁场景 + 潮汐瞄准线（免费轨迹预览）" },
+    { "index": 6, "newElement": "金泡必消：通关须清光金泡" },
+    { "index": 7, "newElement": "五色关：加入第五种颜色" },
+    { "index": 8, "newElement": "强洋流：弹道偏移加倍" },
+    { "index": 9, "newElement": "沉船场景：锈绿调色与桅杆构图" },
+    { "index": 10, "newElement": "密集岩礁：障碍泡数量翻倍" },
+    { "index": 11, "newElement": "五色 + 双层顶棚叠加" },
+    { "index": 12, "newElement": "终局：近乎清空整场 + 金泡" }
+  ],
+  "upgrades": [
+    { "id": "tideLens", "kind": "rule", "desc": "潮汐预览每关 +1 次（改规则而非数值）" },
+    { "id": "jellyfishSwarm", "kind": "rule", "desc": "悬空整簇掉落时返还一发（规则链）" },
+    { "id": "wildcardRefund", "kind": "rule", "desc": "百搭泡一次消 ≥5 泡返还 1 连击" },
+    { "id": "currentAnchor", "kind": "rule", "desc": "洋流关弹道偏移减半（改规则）" },
+    { "id": "goldTide", "kind": "rule", "desc": "金泡被消除时下一发自动变百搭" },
+    { "id": "aimWidth", "kind": "stat", "desc": "炮台最大仰角 +10%（数值）" },
+    { "id": "slowSink", "kind": "stat", "desc": "顶棚下沉间隔 +2 发（数值）" },
+    { "id": "comboBoost", "kind": "stat", "desc": "连击分数增幅 +20%（数值）" },
+    { "id": "startPreview", "kind": "stat", "desc": "开局多送 1 次潮汐预览（数值）" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "整簇悬空水母泡失去支撑、集体坠落时化成一群发光小水母向画面边缘游走的瞬间",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "珊瑚礁生物发光风格：程序化 Canvas 发光渲染（径向渐变/加法混合），封面海报 AI 生成；UI 线框 SVG/CSS"
+}

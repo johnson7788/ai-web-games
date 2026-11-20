@@ -1,0 +1,52 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "screenshot": "01-title.png" },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "assert": "document.getElementById('level-grid').children.length === 12", "name": "关卡格 12 个" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh'", "name": "切中文" },
+    { "screenshot": "01b-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "eval": "window.__ll.start(0)" },
+    { "wait": 600 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "进入第 1 关" },
+    { "screenshot": "02-playing.png" },
+    { "assert": "window.__ll.debug.state().sampleTotal === 3", "name": "L1 三颗样本" },
+    { "assert": "window.__ll.debug.state().samples + window.__ll.debug.state().pickupCount >= 1", "name": "有可采集样本" },
+    { "assert": "window.__ll.debug.state().lightRadius > 0", "name": "头灯半径有效" },
+    { "eval": "window.__ll.debug.loadLevel(2)" },
+    { "wait": 400 },
+    { "assert": "window.__ll.debug.state().current !== 0", "name": "L3 洋流生效" },
+    { "screenshot": "04-current-level.png" },
+    { "eval": "window.__ll.debug.loadLevel(8)" },
+    { "wait": 400 },
+    { "assert": "window.__ll.debug.state().sampleTotal === 5", "name": "L9 五颗样本" },
+    { "assert": "window.__ll.debug.state().scene === 'abyss'", "name": "L9 深渊场景" },
+    { "screenshot": "05-abyss-scene.png" },
+    { "eval": "window.__ll.pause()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "eval": "window.__ll.resume()" },
+    { "wait": 250 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 500 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "重开本关" }
+  ],
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start(0)"
+  }
+}

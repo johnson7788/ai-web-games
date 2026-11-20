@@ -1,0 +1,172 @@
+{
+  "generatedAt": "2026-11-19T17:33:42.677Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "click": {
+      "rms": 0.193,
+      "peak": 0.4395,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "income": {
+      "rms": 0.045,
+      "peak": 0.08,
+      "nan": 0,
+      "samples": 1764,
+      "durSec": 0.04,
+      "pass": true
+    },
+    "upgrade": {
+      "rms": 0.149,
+      "peak": 0.5319,
+      "nan": 0,
+      "samples": 18963,
+      "durSec": 0.43,
+      "pass": true
+    },
+    "hire": {
+      "rms": 0.1155,
+      "peak": 0.3913,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "bet": {
+      "rms": 0.0958,
+      "peak": 0.2709,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "betWin": {
+      "rms": 0.1514,
+      "peak": 0.5443,
+      "nan": 0,
+      "samples": 25137,
+      "durSec": 0.57,
+      "pass": true
+    },
+    "betLose": {
+      "rms": 0.117,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "windfall": {
+      "rms": 0.0518,
+      "peak": 0.2073,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "burnStart": {
+      "rms": 0.051,
+      "peak": 0.2448,
+      "nan": 0,
+      "samples": 15435,
+      "durSec": 0.35,
+      "pass": true
+    },
+    "burnEnd": {
+      "rms": 0.0862,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "fund": {
+      "rms": 0.1414,
+      "peak": 0.5065,
+      "nan": 0,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    },
+    "valuationFlip": {
+      "rms": 0.0915,
+      "peak": 0.2798,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0581,
+      "peak": 0.1,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "won": {
+      "rms": 0.1656,
+      "peak": 0.5879,
+      "nan": 0,
+      "samples": 46305,
+      "durSec": 1.05,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1183,
+      "peak": 0.2523,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgmGarage": {
+      "rms": 0.16,
+      "peak": 0.4542,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgmIncubator": {
+      "rms": 0.16,
+      "peak": 0.4212,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgmSkyscraper": {
+      "rms": 0.16,
+      "peak": 0.4242,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAND SERPENT</title>
+  <link rel="stylesheet" href="styles.css?v=ss1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level"></span>
+          <span id="hud-length" class="hud-pill"></span>
+          <span id="hud-score" class="hud-pill"></span>
+          <span id="hud-best" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-howto" class="hud-btn" aria-label="How to play" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+      <div class="hud-progress"><div id="length-bar"></div></div>
+    </div>
+
+    <div id="side-panel" class="hidden">
+      <div class="side-goal">
+        <div class="side-goal-label" id="side-goal-label">Goal</div>
+        <div class="side-goal-value" id="side-goal-value"></div>
+      </div>
+      <div class="side-legend">
+        <div class="legend-item"><span class="legend-icon beetle"></span><span id="side-beetle"></span></div>
+        <div class="legend-item"><span class="legend-icon scorpion"></span><span id="side-scorpion"></span></div>
+        <div class="legend-item"><span class="legend-icon thorn"></span><span id="side-thorn"></span></div>
+      </div>
+      <div id="side-sandstorm" class="side-sandstorm hidden"></div>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">SAND SERPENT</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <div class="best-line"><span id="best-total"></span></div>
+      <button id="btn-start">Start</button>
+      <div id="level-grid" class="level-grid"></div>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to Play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Result</h2>
+      <div class="result-score" id="result-score"></div>
+      <div class="result-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-retry">Retry</button>
+        <button id="btn-next">Next Level</button>
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger board</p>
+        <button id="btn-rotate-skip">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=ss1"></script>
+</body>
+</html>

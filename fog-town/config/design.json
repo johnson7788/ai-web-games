@@ -1,0 +1,77 @@
+{
+  "slug": "fog-town",
+  "genre": "puzzle",
+  "oneLiner": "油灯侦探提灯走雾巷：每步烧油点亮半径揭雾，收集线索钥匙、拨机关开门抵达出口，步数越少评级越高。",
+  "fun": {
+    "primary": "curiosity",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "每步消耗灯油并计入步数，绕远路会让灯变暗、评级变差",
+      "feedback": ["sfx", "fog-reveal", "lamp-glow"],
+      "combinesWith": ["echo"]
+    },
+    {
+      "name": "echo",
+      "cost": "原地静止 1 步（计入步数），只探听相邻 2 格内的机关",
+      "feedback": ["sfx", "ripple", "marker"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "survey",
+      "cost": "走向线索/钥匙/机关格必须偏离最短路线，消耗额外步数",
+      "feedback": ["sfx", "spark", "hud-count"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "直穿迷雾奔出口，还是先绕亮区探明地形", "cost": "省油 vs 踩机关" },
+    { "atSec": 20, "choice": "原地回声探机关，还是硬闯省步数", "cost": "花 1 步 vs 踩陷阱掉油" },
+    { "atSec": 40, "choice": "先拿钥匙还是先探线索", "cost": "路线顺序 vs 真相时刻" },
+    { "atSec": 65, "choice": "灯油告急，直走暗巷还是绕亮区", "cost": "视野 vs 步数" },
+    { "atSec": 90, "choice": "守卫视线封路，贴边硬过还是绕远路", "cost": "被抓风险 vs 步数" },
+    { "atSec": 130, "choice": "移动雾区重新起雾，凭记忆走还是回身补探", "cost": "记忆 vs 步数" },
+    { "atSec": 160, "choice": "机关门：先拨机关还是先取钥匙", "cost": "顺序 vs 绕路" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "迷雾网格 + 钥匙开门（教移动揭雾与收集）" },
+    { "index": 2, "newElement": "机关杠杆开门 + 掉油陷阱" },
+    { "index": 3, "newElement": "机关杠杆 + 掉油陷阱（教回声）" },
+    { "index": 4, "newElement": "三条线索拼齐触发真相时刻" },
+    { "index": 5, "newElement": "集市废墟场景 + 钥匙与杠杆双条件门" },
+    { "index": 6, "newElement": "守卫视线（贴边或绕行）" },
+    { "index": 7, "newElement": "双守卫 + 密集陷阱" },
+    { "index": 8, "newElement": "移动雾区（旧格重新起雾）" },
+    { "index": 9, "newElement": "湖畔场景 + 双条件门" },
+    { "index": 10, "newElement": "守卫 + 移动雾复合压力" },
+    { "index": 11, "newElement": "湖畔真相线索（三条线索）" },
+    { "index": 12, "newElement": "终局三守卫 + 双条件门" }
+  ],
+  "upgrades": [
+    { "id": "lampLens", "kind": "rule", "desc": "每步油耗减半（改消耗规则而非+数值）" },
+    { "id": "echoFocus", "kind": "rule", "desc": "回声探听范围 +1 格" },
+    { "id": "keySense", "kind": "rule", "desc": "钥匙在迷雾中显示微光标记" },
+    { "id": "trapStep", "kind": "rule", "desc": "踩陷阱不再掉油，改为额外计 1 步" },
+    { "id": "guardBlind", "kind": "rule", "desc": "守卫视线长度减半" },
+    { "id": "clueMemory", "kind": "rule", "desc": "真相时刻后出口永久标记" },
+    { "id": "oilReserve", "kind": "stat", "desc": "开局灯油 +4" },
+    { "id": "stepBudget", "kind": "stat", "desc": "每街区步数上限 +8" },
+    { "id": "lanternRange", "kind": "stat", "desc": "灯半径 +1 格" },
+    { "id": "echoCooldown", "kind": "stat", "desc": "回声冷却 -30%" }
+  ],
+  "replayHooks": ["rating", "growth", "unlock", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 4, "firstSuccessSec": 30, "interactive": true, "steps": 4, "skippable": true, "replayable": true },
+  "signatureMoment": "拼齐三条线索的瞬间，整张迷雾地图如灯塔点亮——「真相时刻」",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做实时战斗",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas 雾巷场景（暮巷灰蓝/集市废墟土金/湖畔青白），灯焰径向光；UI SVG/CSS；音频 WebAudio 程序化合成"
+}

@@ -1,0 +1,226 @@
+{
+  "generatedAt": "2026-11-19T19:19:11.615Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "hit": {
+      "rms": 0.1836,
+      "peak": 0.2902,
+      "nan": 0,
+      "zcRate": 594.6,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "badHit": {
+      "rms": 0.1373,
+      "peak": 0.365,
+      "nan": 0,
+      "zcRate": 309.1,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "miss": {
+      "rms": 0.0908,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 300.1,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "machinePick": {
+      "rms": 0.1347,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.9,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "tokenSpent": {
+      "rms": 0.1828,
+      "peak": 0.3,
+      "nan": 0,
+      "zcRate": 1640.7,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "tokenEarned": {
+      "rms": 0.104,
+      "peak": 0.3333,
+      "nan": 0,
+      "zcRate": 1207.3,
+      "samples": 9261,
+      "durSec": 0.21,
+      "pass": true
+    },
+    "heatUp": {
+      "rms": 0.0775,
+      "peak": 0.1798,
+      "nan": 0,
+      "zcRate": 469.5,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "rankUp": {
+      "rms": 0.1368,
+      "peak": 0.4781,
+      "nan": 0,
+      "zcRate": 636.9,
+      "samples": 25137,
+      "durSec": 0.57,
+      "pass": true
+    },
+    "cleared": {
+      "rms": 0.1124,
+      "peak": 0.4053,
+      "nan": 0,
+      "zcRate": 860.6,
+      "samples": 16758,
+      "durSec": 0.38,
+      "pass": true
+    },
+    "grandPrix": {
+      "rms": 0.1564,
+      "peak": 0.6757,
+      "nan": 0,
+      "zcRate": 768,
+      "samples": 53802,
+      "durSec": 1.22,
+      "pass": true
+    },
+    "gameover": {
+      "rms": 0.1535,
+      "peak": 0.4119,
+      "nan": 0,
+      "zcRate": 321.7,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "pity": {
+      "rms": 0.1166,
+      "peak": 0.3378,
+      "nan": 0,
+      "zcRate": 1066.8,
+      "samples": 11907,
+      "durSec": 0.27,
+      "pass": true
+    },
+    "loseLife": {
+      "rms": 0.1144,
+      "peak": 0.24,
+      "nan": 0,
+      "zcRate": 171.7,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "waveClear": {
+      "rms": 0.1275,
+      "peak": 0.4799,
+      "nan": 0,
+      "zcRate": 835.6,
+      "samples": 19845,
+      "durSec": 0.45,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.1134,
+      "peak": 0.2799,
+      "nan": 0,
+      "zcRate": 887.8,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "fire": {
+      "rms": 0.0405,
+      "peak": 0.1443,
+      "nan": 0,
+      "zcRate": 6908.2,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "score": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 825.3,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.108,
+      "peak": 0.2463,
+      "nan": 0,
+      "zcRate": 890.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.14,
+      "peak": 0.5216,
+      "nan": 0,
+      "zcRate": 829.7,
+      "samples": 30429,
+      "durSec": 0.69,
+      "pass": true
+    },
+    "tutorialDone": {
+      "rms": 0.1347,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.9,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    }
+  },
+  "loops": {
+    "hall": {
+      "rms": 0.013,
+      "peak": 0.0674,
+      "nan": 0,
+      "zcRate": 2592.5,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "machine": {
+      "rms": 0.0159,
+      "peak": 0.0754,
+      "nan": 0,
+      "zcRate": 5545.1,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,10 @@
+TITLE
+RING CYCLE
+CATEGORY
+Arcade
+TAGS
+candy, arcade, faller, color match, one touch, endless, reaction
+SHORT DESCRIPTION
+RING CYCLE — steer a candy ball down the factory, land on your own color, and chain five same-color rings to trigger a rainbow candy rain. Fast one-touch arcade.
+LONG DESCRIPTION
+RING CYCLE is a fast, colorful arcade faller. Steer a candy ball down a spinning array of colored rings. Your color is your lifeline: land on the matching ring segment to score, chain five same-color rings to unleash a rainbow candy rain, use white rings as a universal safe shortcut and wooden rings as a one-time bounce. Twelve bands rotate sparse, moving, color-swapping, narrow, and white-scarce ring patterns across three candy worlds: the Fruity Workshop, the Mint Vault, and the Glow Vault. Controls: Left / Right arrow keys (or A / D), or drag / touch. Pause with Esc or P; restart with R. RING CYCLE 彩环蹦蹦：操控糖球穿过旋转彩环阵，落在同色环上得分，连吃 5 个同色环触发彩虹糖雨；白环万能安全，木环一次性跳板；12 个推进带与三大糖果场景。

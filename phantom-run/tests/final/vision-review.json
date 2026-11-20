@@ -1,0 +1,149 @@
+{
+  "game": "phantom-run",
+  "generatedAt": "2026-11-19T12:22:57.622Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 8.375,
+    "style_consistent": 9.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部小幽灵角色被部分遮挡在12个关卡按钮下方，视觉层级不清晰",
+        "‘0 / 36’星星计数与标题间距过近，略显拥挤",
+        "关卡按钮文字字号偏小（尤其在低分辨率下可能影响可读性）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧平台上的发光星星收集它",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'Phantom'按钮文字与背景对比度偏低，夜间模式下略难辨识",
+        "左上角'0m'和'★ 0/3'间距过小，可能误读为'0m★0/3'",
+        "星星目标有光晕但无明确交互提示（如闪烁/脉动），新手可能不确定是否可收集"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角EXIT门图标与背景融合度高，轮廓不够突出，可能影响可交互性识别",
+        "‘69m’文字字号偏小且颜色较淡，易被忽略",
+        "顶部HUD信息（如Phantom）与深色背景对比度不足，部分用户可能难以辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/04-rune.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色去拾取右侧发光的星星",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "星星目标有光晕但无明确路径指引，新手可能不确定是否需跳跃或平台移动",
+        "左下角小三角形障碍物与角色尺寸对比模糊，易误判碰撞范围",
+        "顶部HUD中'Phantom'按钮文字略小（约12px），在低分辨率屏可能辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/05-wall.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧发光的黄色星星收集它",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'Phantom'按钮与右上角图标间距过小，可能误触",
+        "左下角色与平台边缘对齐，轻微视觉粘连，影响分离感",
+        "背景山体三角旗细节在低对比下易被忽略，但非关键交互物"
+      ]
+    },
+    {
+      "shot": "tests/final/06-chase.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧发光的星星收集它",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角幽灵角色与平台边缘重叠，轮廓略模糊",
+        "HUD中'Phantom'按钮文字偏小（约12px），在低分辨率下可能难辨",
+        "右上角月亮光晕过强，轻微干扰附近星点辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/07-dawn.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色，跳过中间空隙并避开蓝色柱子，前往右侧星星",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角小三角形障碍物与角色距离过近，易误判为可踩踏平台",
+        "蓝色柱子无明显交互提示（如闪烁/阴影），可能被误认为装饰物",
+        "HUD中'Phantom'按钮文字略小，但未裁切；保守计为无问题"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧平台上的发光星星收集它",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'Phantom'按钮文字与背景对比度偏低，夜间模式下略难辨识",
+        "左下角角色微光晕可能被误认为可交互物，实际为角色自身效果",
+        "星星发光效果略强，轻微过曝导致边缘细节丢失"
+      ]
+    }
+  ]
+}

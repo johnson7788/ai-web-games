@@ -1,0 +1,145 @@
+{
+  "slug": "cake-kart",
+  "genre": "racing",
+  "oneLiner": "你开一辆甜品卡丁车，在翻糖大陆的 12 站大奖赛里三圈竞速；转向漂移蓄满糖霜、松手喷出奶油加速，用樱桃导弹和蛋糕炸弹糊住对手，冲线拿名次。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "注意力与走线：贴内线吃果冻带，还是留外线稳出弯",
+      "feedback": [
+        "sfx",
+        "kart-tilt",
+        "cream-trail"
+      ],
+      "combinesWith": [
+        "drift"
+      ]
+    },
+    {
+      "name": "drift",
+      "cost": "蓄力期间减速、且越满越向外滑更难控",
+      "feedback": [
+        "sfx",
+        "tier-glow",
+        "cream-tail"
+      ],
+      "combinesWith": [
+        "steer",
+        "item"
+      ]
+    },
+    {
+      "name": "item",
+      "cost": "持有即放弃另一个时机：留作防守还是立刻进攻",
+      "feedback": [
+        "sfx",
+        "projectile",
+        "screen-splat"
+      ],
+      "combinesWith": [
+        "drift"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "起步满油门抢位，还是留余量避开第一弯车堆",
+      "cost": "抢位可能被挤出赛道 vs 起步掉队"
+    },
+    {
+      "atSec": 12,
+      "choice": "第一弯前早漂蓄满，还是稳走外线",
+      "cost": "早漂蓄满出弯更快但更易滑出 vs 稳但慢"
+    },
+    {
+      "atSec": 30,
+      "choice": "果冻加速带上贴内线吃增益，还是绕外线躲车流",
+      "cost": "内线增益 vs 碰撞风险"
+    },
+    {
+      "atSec": 55,
+      "choice": "手里蛋糕留作防守，还是糊住前车抢名次",
+      "cost": "防守保险 vs 进攻机会"
+    },
+    {
+      "atSec": 80,
+      "choice": "发卡弯满蓄漂移赌出弯速度，还是点刹稳过",
+      "cost": "出弯快但可能撞栏 vs 稳但慢"
+    },
+    {
+      "atSec": 120,
+      "choice": "巧克力泥区硬漂过去，还是松油门减速通过",
+      "cost": "漂移吃减速但蓄力 vs 慢速通过"
+    },
+    {
+      "atSec": 150,
+      "choice": "窄桥上强超，还是跟车等下一个宽弯",
+      "cost": "窄桥碰撞风险 vs 损失时间"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "翻糖平原 · 缓弯椭圆（教油门与转向）" },
+    { "index": 2, "newElement": "S 形连续弯 + 果冻加速带（教走线）" },
+    { "index": 3, "newElement": "双急弯 + 双果冻带（教漂移蓄力）" },
+    { "index": 4, "newElement": "巧克力泥减速区（泥区漂移更难）" },
+    { "index": 5, "newElement": "发卡急弯 + 泥区（满蓄漂移风险化）" },
+    { "index": 6, "newElement": "窄桥路段（半宽收窄，碰撞风险）" },
+    { "index": 7, "newElement": "长直道 + 连续果冻带（极速 + 道具战）" },
+    { "index": 8, "newElement": "泥区夹窄桥（减速 + 变窄组合）" },
+    { "index": 9, "newElement": "高曲率连续急弯" },
+    { "index": 10, "newElement": "冰面窄桥（漂移外滑加剧）" },
+    { "index": 11, "newElement": "混合险境：泥区 + 窄桥 + 果冻带" },
+    { "index": 12, "newElement": "终站 · 全部险境齐上 + AI 全速" }
+  ],
+  "upgrades": [
+    { "id": "frostingTier2", "kind": "rule", "desc": "解锁二档糖霜漂移（蓄力可到 2/3）" },
+    { "id": "frostingTier3", "kind": "rule", "desc": "解锁三档糖霜漂移（满蓄满速）" },
+    { "id": "cakeBlind", "kind": "rule", "desc": "解锁蛋糕炸弹（糊住前车屏幕 2s）" },
+    { "id": "missileHome", "kind": "rule", "desc": "樱桃导弹带微追踪（改命中规则）" },
+    { "id": "shieldReflect", "kind": "rule", "desc": "护盾挡下导弹时反弹给后车" },
+    { "id": "jellyDrift", "kind": "rule", "desc": "果冻带上漂移蓄力翻倍" },
+    { "id": "speedUp", "kind": "stat", "desc": "极速 +5%" },
+    { "id": "accelUp", "kind": "stat", "desc": "加速 +8%" },
+    { "id": "chargeUp", "kind": "stat", "desc": "漂移蓄力速度 +10%" },
+    { "id": "boostTimeUp", "kind": "stat", "desc": "糖霜加速时长 +0.2s" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "满蓄糖霜漂移时车尾拉出整条奶油拖尾，松手瞬间整辆车喷着奶油冲进出弯",
+  "antiScope": [
+    "不做真 3D 引擎（伪 3D Mode7 渲染）",
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话"
+  ],
+  "artSource": "全程序化 Canvas：Mode7 伪 3D 赛道贴图 + 三场景色板（翻糖粉白/巧克力棕金/冰淇淋青白）+ 程序化 BGM/SFX"
+}

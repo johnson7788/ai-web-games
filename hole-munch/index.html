@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="HOLE MUNCH — swallow the midnight city as a growing black hole, out-eat 5 rival holes and finish top 3 in a 2-minute ranked match.">
+  <meta name="theme-color" content="#0c0416">
+  <title>HOLE MUNCH · Midnight City Devourer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Sinking in…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

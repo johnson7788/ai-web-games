@@ -1,0 +1,48 @@
+{
+  "slug": "brick-six",
+  "genre": "puzzle",
+  "oneLiner": "Stack honeycomb pieces on a hex board to fill rings; clear three rings at once for a Royal Jelly gold cascade.",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    { "name": "place", "cost": "commits a piece to the board; a bad spot blocks a ring and shrinks space", "feedback": ["ghost", "sfx", "cells"], "combinesWith": ["rotate", "switch"] },
+    { "name": "rotate", "cost": "spends a beat reorienting the piece, delaying the ring you were building", "feedback": ["preview", "sfx"], "combinesWith": ["place"] },
+    { "name": "switch", "cost": "picks one of three shapes, committing to one line path over another", "feedback": ["preview", "sfx"], "combinesWith": ["place"] }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "which of the 3 shapes to place first", "cost": "the better shape is spent before the board opens up" },
+    { "atSec": 20, "choice": "fill a full ring for a safe clear, or stack high to gamble a 3-ring cascade", "cost": "wasted space if the cascade never comes" },
+    { "atSec": 40, "choice": "place on a wax-sealed cell now (needs 2 clears) or route around it", "cost": "delayed ring vs a growing dead zone" },
+    { "atSec": 65, "choice": "put a pollen block beside near-complete rings or tuck it in a corner", "cost": "missed chain if it clears too late" },
+    { "atSec": 95, "choice": "complete one ring now, or build toward two rings simultaneously", "cost": "combo points vs tempo and safety" },
+    { "atSec": 130, "choice": "use the narrow-board tier to wall off a pocket", "cost": "the wall also shrinks your own options" },
+    { "atSec": 165, "choice": "save the 4-cell block for a long ring or spend it now to avoid deadlock", "cost": "tempo vs a dead-end board" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 50, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "2-3 cell honeycomb pieces, basic ring clear" },
+    { "index": 2, "newElement": "wax-sealed cells that need two clears" },
+    { "index": 3, "newElement": "narrow board: outer ring sealed off" },
+    { "index": 4, "newElement": "pollen blocks that infect neighbors when cleared in time" },
+    { "index": 5, "newElement": "dual spawn: four candidate shapes instead of three" },
+    { "index": 6, "newElement": "higher wax density (every 8 pieces)" },
+    { "index": 7, "newElement": "more 4-cell pieces in the pool" },
+    { "index": 8, "newElement": "pollen-rich pool" },
+    { "index": 9, "newElement": "chapter change: amber honey-vault palette" },
+    { "index": 10, "newElement": "pollen chains through other pollen" },
+    { "index": 11, "newElement": "chapter change: blue-white winter-nest palette" },
+    { "index": 12, "newElement": "wax seals plus narrow board stacked" }
+  ],
+  "upgrades": [
+    { "id": "goldenFlow", "kind": "rule" },
+    { "id": "pollenChain", "kind": "rule" },
+    { "id": "waxMelt", "kind": "rule" },
+    { "id": "secondChance", "kind": "rule" },
+    { "id": "bigClear", "kind": "rule" },
+    { "id": "scoreBoost", "kind": "stat" },
+    { "id": "tempo", "kind": "stat" },
+    { "id": "honeySlow", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

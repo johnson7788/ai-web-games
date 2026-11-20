@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-11-19T14:34:36.233Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "swap": {
+      "rms": 0.1049,
+      "peak": 0.2652,
+      "nan": 0,
+      "samples": 2646,
+      "pass": true
+    },
+    "match": {
+      "rms": 0.1901,
+      "peak": 0.5206,
+      "nan": 0,
+      "samples": 7056,
+      "pass": true
+    },
+    "matchBig": {
+      "rms": 0.1296,
+      "peak": 0.5377,
+      "nan": 0,
+      "samples": 20286,
+      "pass": true
+    },
+    "rock": {
+      "rms": 0.178,
+      "peak": 0.503,
+      "nan": 0,
+      "samples": 7056,
+      "pass": true
+    },
+    "frozen": {
+      "rms": 0.042,
+      "peak": 0.1381,
+      "nan": 0,
+      "samples": 4410,
+      "pass": true
+    },
+    "dig": {
+      "rms": 0.2458,
+      "peak": 0.6762,
+      "nan": 0,
+      "samples": 19845,
+      "pass": true
+    },
+    "collapse": {
+      "rms": 0.2736,
+      "peak": 0.792,
+      "nan": 0,
+      "samples": 30870,
+      "pass": true
+    },
+    "reinforce": {
+      "rms": 0.0843,
+      "peak": 0.12,
+      "nan": 0,
+      "samples": 6174,
+      "pass": true
+    },
+    "ore": {
+      "rms": 0.1696,
+      "peak": 0.3,
+      "nan": 0,
+      "samples": 5292,
+      "pass": true
+    },
+    "coin": {
+      "rms": 0.1227,
+      "peak": 0.3017,
+      "nan": 0,
+      "samples": 7056,
+      "pass": true
+    },
+    "bossHit": {
+      "rms": 0.2401,
+      "peak": 0.5775,
+      "nan": 0,
+      "samples": 8820,
+      "pass": true
+    },
+    "bossBreak": {
+      "rms": 0.1545,
+      "peak": 0.5495,
+      "nan": 0,
+      "samples": 39690,
+      "pass": true
+    },
+    "skill": {
+      "rms": 0.0813,
+      "peak": 0.3117,
+      "nan": 0,
+      "samples": 13230,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2208,
+      "peak": 0.5722,
+      "nan": 0,
+      "samples": 39690,
+      "pass": true
+    },
+    "shaftClear": {
+      "rms": 0.1447,
+      "peak": 0.5389,
+      "nan": 0,
+      "samples": 32193,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "samples": 34839,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "samples": 2646,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1182,
+      "peak": 0.2722,
+      "nan": 0,
+      "samples": 2205,
+      "pass": true
+    },
+    "goblin": {
+      "rms": 0.1297,
+      "peak": 0.387,
+      "nan": 0,
+      "samples": 7938,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "samples": 12348,
+      "pass": true
+    }
+  },
+  "loops": {
+    "cave": {
+      "rms": 0.0129,
+      "peak": 0.0654,
+      "nan": 0,
+      "samples": 176400,
+      "pass": true
+    },
+    "lantern": {
+      "rms": 0.0483,
+      "peak": 0.1546,
+      "nan": 0,
+      "samples": 176400,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

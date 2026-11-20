@@ -1,0 +1,66 @@
+{
+  "slug": "balloon-burst",
+  "genre": "puzzle",
+  "oneLiner": "在倒计时的纸灯笼节夜空里，点击同色灯笼群让它们升空，越大片越赚分，留出连锁灯串冲过目标分。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "点掉一组后上方灯笼落下重排，可能拆散你正在攒的大组",
+      "feedback": ["sfx", "popBurst", "scoreFloat"],
+      "combinesWith": ["drag", "hold"]
+    },
+    {
+      "name": "drag",
+      "cost": "拖选多选要额外花 1-2 秒计时，且拖选期间无法点别处",
+      "feedback": ["sfx", "selectionLine", "glow"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "hold",
+      "cost": "留着小组不动，它们占着格子还可能堵死连锁，且倒计时继续流失",
+      "feedback": ["sfx", "anticipationGlow", "riskPulse"],
+      "combinesWith": ["tap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "先点掉眼前的 2 连小组，还是留着攒成更大的 4 连", "cost": "点掉 = 放弃大组；留着 = 占格 + 计时流失" },
+    { "atSec": 18, "choice": "用拖选把一条 3 连延伸成 5 连，还是快速连点两次", "cost": "拖选花 1-2 秒；快速点可能错过更大分" },
+    { "atSec": 30, "choice": "现在引爆火星灯笼烧掉一整行，还是等那行更满再引爆", "cost": "早爆 = 那行还有空位低分；晚爆 = 可能来不及" },
+    { "atSec": 45, "choice": "解开锁链灯笼拿加分，还是留着一对占位", "cost": "解链要同时处理两处；不解则两格被锁死" },
+    { "atSec": 62, "choice": "连续两击破掉金属灯笼，还是把这两击用在普通大组上", "cost": "金属占两击才破；普通组一击就赚分" },
+    { "atSec": 80, "choice": "在变色灯笼换色前抢点它，还是赌它换成更有用的颜色", "cost": "抢点 = 锁定当前组合；赌 = 可能换坏" },
+    { "atSec": 105, "choice": "引爆爆点灯笼清 3x3，还是留着它当连锁锚点", "cost": "清场 = 稳赚；留着 = 赌更大连锁" },
+    { "atSec": 130, "choice": "点时间灯笼补 5 秒，还是继续冲分赌目标达成", "cost": "补时 = 少一次得分点击；不补 = 可能超时" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 50, "twistSec": 50, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基础同色点击消除，5 色小网格" },
+    { "index": 2, "newElement": "限时紧缩：倒计时砍半" },
+    { "index": 3, "newElement": "金属灯笼：需相邻两击才破" },
+    { "index": 4, "newElement": "火星灯笼：消掉点燃同行整行" },
+    { "index": 5, "newElement": "锁链灯笼：成对绑定同消才解" },
+    { "index": 6, "newElement": "变色灯笼：每 5 秒换色" },
+    { "index": 7, "newElement": "石头配重：不可消，占位下沉" },
+    { "index": 8, "newElement": "爆点灯笼：消掉炸开 3x3" },
+    { "index": 9, "newElement": "时间灯笼：消掉补 5 秒" },
+    { "index": 10, "newElement": "双倍灯笼：消掉整组分数翻倍" },
+    { "index": 11, "newElement": "大网格：7x8 大场面" },
+    { "index": 12, "newElement": "终章综合：金属+火星+石头+变色混搭" }
+  ],
+  "upgrades": [
+    { "id": "unlockMetal", "kind": "rule", "desc": "L3 金属灯笼需两击" },
+    { "id": "unlockFire", "kind": "rule", "desc": "L4 火星灯笼引燃整行" },
+    { "id": "unlockChain", "kind": "rule", "desc": "L5 锁链灯笼成对解" },
+    { "id": "unlockShift", "kind": "rule", "desc": "L6 变色灯笼周期换色" },
+    { "id": "unlockStone", "kind": "rule", "desc": "L7 石头配重占位下沉" },
+    { "id": "unlockBomb", "kind": "rule", "desc": "L8 爆点灯笼 3x3" },
+    { "id": "unlockTime", "kind": "rule", "desc": "L9 时间灯笼补时" },
+    { "id": "unlockDouble", "kind": "rule", "desc": "L10 双倍灯笼翻倍" },
+    { "id": "bigGrid", "kind": "stat", "desc": "L11 网格扩大" },
+    { "id": "targetUp", "kind": "stat", "desc": "每关目标分递增" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

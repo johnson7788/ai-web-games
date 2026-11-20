@@ -1,0 +1,188 @@
+{
+  "generatedAt": "2026-11-19T15:23:45.839Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "lane": {
+      "rms": 0.0542,
+      "peak": 0.2159,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "gem": {
+      "rms": 0.201,
+      "peak": 0.44,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "balloon": {
+      "rms": 0.1573,
+      "peak": 0.3399,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "balloonSave": {
+      "rms": 0.1916,
+      "peak": 0.5376,
+      "nan": 0,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "balloonPop": {
+      "rms": 0.0699,
+      "peak": 0.2262,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.107,
+      "peak": 0.18,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "gateOpen": {
+      "rms": 0.1291,
+      "peak": 0.4781,
+      "nan": 0,
+      "samples": 21168,
+      "durSec": 0.48,
+      "pass": true
+    },
+    "gatePass": {
+      "rms": 0.0492,
+      "peak": 0.1916,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "station": {
+      "rms": 0.1425,
+      "peak": 0.5425,
+      "nan": 0,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "scene": {
+      "rms": 0.1044,
+      "peak": 0.3737,
+      "nan": 0,
+      "samples": 42336,
+      "durSec": 0.96,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "dove": {
+      "rms": 0.1461,
+      "peak": 0.5596,
+      "nan": 0,
+      "samples": 27783,
+      "durSec": 0.63,
+      "pass": true
+    },
+    "stop": {
+      "rms": 0.1312,
+      "peak": 0.4698,
+      "nan": 0,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.1926,
+      "peak": 0.6552,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1858,
+      "peak": 0.4991,
+      "nan": 0,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "revive": {
+      "rms": 0.1688,
+      "peak": 0.6592,
+      "nan": 0,
+      "samples": 29547,
+      "durSec": 0.67,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1292,
+      "peak": 0.2944,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.0901,
+      "peak": 0.2637,
+      "nan": 0,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "road": {
+      "rms": 0.0153,
+      "peak": 0.0694,
+      "nan": 0,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

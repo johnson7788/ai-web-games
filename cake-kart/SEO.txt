@@ -1,0 +1,19 @@
+TITLE
+CAKE KART — Fondant Grand Prix
+蛋糕飞车 — 翻糖大奖赛
+
+CATEGORY
+Racing / Arcade
+竞速 / 街机
+
+TAGS
+kart racing, drift, dessert, candy, pseudo 3D, mode7, browser game
+卡丁车, 竞速, 漂移, 甜品, 糖果, 伪3D, 网页游戏
+
+SHORT DESCRIPTION
+CAKE KART — frosting-drift dessert kart racing. 12-station Grand Prix, 3 laps, sweet weapons, AI rivals, cream drift tail.
+蛋糕飞车 — 糖霜漂移甜品卡丁车竞速：12 站大奖赛、3 圈、甜点武器、AI 对手、奶油漂移拖尾。
+
+LONG DESCRIPTION
+Race a 3-lap loop across a 12-station Grand Prix through three dessert worlds. Hold Shift while turning to charge a three-tier frosting drift and release a cream-tail boost. Fire cherry missiles, wafer shields, jelly boosts and cake bombs that blind rivals. Jelly strips boost you, chocolate-mud zones slow you, narrow bridges punish bad lines.
+三圈竞速穿越 12 站翻糖大奖赛与三个甜品世界。转向时按住 Shift 蓄力三档糖霜漂移，松手喷出奶油拖尾加速。樱桃导弹、威化护盾、果冻加速、糊屏蛋糕炸弹，果冻带加速、巧克力泥减速、窄桥惩罚走线失误。

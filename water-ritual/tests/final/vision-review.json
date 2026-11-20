@@ -1,0 +1,149 @@
+{
+  "game": "water-ritual",
+  "generatedAt": "2026-11-19T15:17:03.401Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 7.25,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Open the Teahouse’按钮开始游戏",
+      "readable": 8,
+      "silhouette": 4,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊元素（左上光斑、中左环形阴影）与标题重叠，干扰视觉焦点",
+        "‘Best: 0 days · 0 coins’文字颜色过浅（淡黄），在米白背景下对比度不足",
+        "‘WATER RITUAL’字体粗细不均（W/A/T/E/R vs R/I/T/U/A/L），疑似两组字体混用"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击温度计或茶杯调整水温至81–91°C区间",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角订单面板中'Reward +12'的进度条颜色与背景对比度偏低，可能影响弱视用户辨识",
+        "左上角'HEARTS ♥♥♥'图标间距过紧，三颗心几乎粘连，易误读为两颗",
+        "茶杯液面虚线指示箭头指向模糊（从右侧指向左侧），方向逻辑需确认是否应为调节输入方向"
+      ]
+    },
+    {
+      "shot": "tests/final/03-perfect.png",
+      "goal_visible": true,
+      "first_action_guess": "点击茶包放入杯中泡茶",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "茶包悬停在杯口上方但无明确交互提示（如高亮/光标变化）",
+        "温度计红色液柱未标注刻度或单位，功能意图稍模糊",
+        "左上角太阳图标与‘DAY 1’间距过近，视觉略拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/04-shop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next day”按钮结束当前升级阶段进入下一天",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Coins: 56’颜色偏淡，与背景对比度不足，易被忽略",
+        "‘Buy · X’按钮文字右对齐但间距不一致（如30/40/50/60列宽不同），视觉节奏不稳",
+        "‘Rush Master’描述中‘Rush–hour’使用短破折号而非连字符，排版不规范"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next day’按钮开始新一天",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Coins: 56’颜色偏淡，与背景对比度略低，可能影响快速识别",
+        "‘Buy · X’按钮文字间距不一致（如·前后空格），部分按钮内文字垂直居中略偏上",
+        "‘Rush Master’描述中‘Rush–hour’使用了短破折号而非连字符，排版不规范"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击温度计或玻璃杯调整茶温至85–94°C区间",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "温度计刻度无数字标注，仅靠颜色渐变判断85–94°C需经验",
+        "左上角‘LEFT 4’与‘HEARTS’间距过小，易误读为‘LEFT 4 HEARTS’",
+        "‘Skip >>’按钮文字右对齐但箭头紧贴文字，视觉不稳"
+      ]
+    },
+    {
+      "shot": "tests/final/07-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘开张茶馆’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊元素（左上光斑、中左环形、右侧红条）轮廓不清，影响silhouette评分",
+        "‘最佳：0天·0金币’文字颜色偏淡，对比度略低，可能影响弱光环境可读性",
+        "右上语言切换按钮无下拉箭头视觉提示，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击茶杯左侧虚线箭头处加水",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "温度计红色液柱顶部与刻度线对齐不明确，可能影响精确判断",
+        "左上角‘LEFT 4’按钮文字偏小，远距离辨识略吃力",
+        "订单面板中‘+14’奖励值颜色与背景对比度偏低"
+      ]
+    }
+  ]
+}

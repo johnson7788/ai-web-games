@@ -1,0 +1,59 @@
+{
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 120,
+      "actions": 518,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.5,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.32,
+      "uniqueEvents": 12,
+      "levelsReached": 12,
+      "completed": true,
+      "maxDepth": 349,
+      "actionsPerMin": 259
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 48.1,
+      "actions": 2526,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0,
+      "deaths": 1,
+      "idleSec": 8,
+      "maxEventGapSec": 0.23,
+      "uniqueEvents": 12,
+      "levelsReached": 2,
+      "completed": false,
+      "maxDepth": 11,
+      "actionsPerMin": 3152
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 22.9,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 22.8,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 1,
+      "levelsReached": 1,
+      "completed": false,
+      "maxDepth": 0,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T14:31:00.105Z"
+}

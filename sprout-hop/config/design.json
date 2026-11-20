@@ -1,0 +1,85 @@
+{
+  "slug": "sprout-hop",
+  "genre": "arcade",
+  "oneLiner": "在巨型豆藤架间，玩家按住豌豆向后拖拽把藤蔓拉弯蓄力，松手沿抛物线把豌豆弹射出去，落到豆荚/南瓜/竹筐上得分，落水或出界就失败。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "拖得越满，力度越大，但落点精度越难控制，且更容易过冲直接落水；蓄力期间藤蔓被拉弯，等于提前锁定意图",
+      "feedback": ["sfx", "vineBend", "powerBar", "trajectoryArc"],
+      "combinesWith": ["launch"]
+    },
+    {
+      "name": "launch",
+      "cost": "松手即出，轨迹一次锁定无法中途修正；一发的成败决定本关存亡",
+      "feedback": ["sfx", "vineSnap", "whoosh", "shake"],
+      "combinesWith": ["aim", "ride"]
+    },
+    {
+      "name": "ride",
+      "cost": "选择落在南瓜（回弹 1.3× 跳更远但更难控）还是竹筐（吸力减距但更稳），以及上下层路线（上稳远、下险近）",
+      "feedback": ["sfx", "podBurst", "bouncePuff", "scorePop"],
+      "combinesWith": ["launch"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一跳就拉满力，还是留余量保证落点", "cost": "满力可能直接飞过头落水；留余量则可能够不到下一个平台" },
+    { "atSec": 20, "choice": "借南瓜回弹 1.3× 冲更远的平台，还是稳落普通豆荚", "cost": "南瓜借力后更难重新校准；稳落豆荚跳距有限" },
+    { "atSec": 35, "choice": "高低双层路线：走上方宽平台（稳但绕远）还是下方窄平台（险但更近）", "cost": "上层要跳更多次，下层一失误就落水" },
+    { "atSec": 50, "choice": "顺风段是否按老力度拖拽", "cost": "顺风会把同样力度跳得更远，不重新校准会过冲" },
+    { "atSec": 70, "choice": "断藤上快速借力再跳，还是绕开断藤", "cost": "断藤 0.6 秒后塌，犹豫就落水；绕开可能没有安全的落点" },
+    { "atSec": 90, "choice": "逆风段是否加大力度", "cost": "逆风减距，力度不足会掉进平台之间的池塘" },
+    { "atSec": 110, "choice": "竹筐吸力关：提前蓄满力补偿吸力，还是选择走南瓜路线", "cost": "竹筐下一跳更近；南瓜更难控制但更远" },
+    { "atSec": 130, "choice": "终章大藤架冲刺：追求中心完美连击还是保稳不落水", "cost": "完美连击有分但容错低；保稳能通关但拿不到三星" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "固定藤架（标准豆荚平台，教学关）" },
+    { "index": 2, "newElement": "渐距（平台间距拉大）" },
+    { "index": 3, "newElement": "弹性南瓜（回弹 1.3×）" },
+    { "index": 4, "newElement": "移动藤筐（左右摆动）" },
+    { "index": 5, "newElement": "顺风段（同样力度跳更远）" },
+    { "index": 6, "newElement": "断藤（落上 0.6s 后塌）" },
+    { "index": 7, "newElement": "高低双层路线（上稳下险近）" },
+    { "index": 8, "newElement": "风向反转（逆风减距）" },
+    { "index": 9, "newElement": "竹筐吸力（跳距大减）" },
+    { "index": 10, "newElement": "双层 + 顺风叠加" },
+    { "index": 11, "newElement": "断藤 + 弹性南瓜混合" },
+    { "index": 12, "newElement": "终章大藤架（三要素叠加）" }
+  ],
+  "upgrades": [
+    { "id": "pumpkinBounce", "kind": "rule", "desc": "第 3 关起南瓜平台落地回弹 1.3×，成为远距离借力手段" },
+    { "id": "movingBasket", "kind": "rule", "desc": "第 4 关起竹筐左右摆动，落点要预判" },
+    { "id": "tailwind", "kind": "rule", "desc": "第 5 关起顺风让同样力度跳得更远，需重新校准" },
+    { "id": "brokenVine", "kind": "rule", "desc": "第 6 关起断藤落地 0.6 秒后塌，逼你快速连跳" },
+    { "id": "twoTier", "kind": "rule", "desc": "第 7 关起高低双层路线，上稳下险近" },
+    { "id": "headwind", "kind": "rule", "desc": "第 8 关起逆风减距，力度要加大" },
+    { "id": "basketSuction", "kind": "rule", "desc": "第 9 关起竹筐吸力让下一跳距离大减" },
+    { "id": "centerPerfect", "kind": "rule", "desc": "全关通用：中心完美落点额外加分并连击" },
+    { "id": "powerCap", "kind": "stat", "desc": "蓄力力度上限与拖拽手感" },
+    { "id": "gapScale", "kind": "stat", "desc": "平台间距随关卡放大" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

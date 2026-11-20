@@ -1,0 +1,62 @@
+// STACK SKY · 三场景包色板（换章必换：色板 + 构图 + 装饰）
+// 0 晨曦云海（金白） / 1 雷雨层（蓝灰电光） / 2 星夜天宫（深紫）
+export const SCENE_PALETTES = {
+  0: {
+    key: 'dawn',
+    skyTop: '#fdf3dc',
+    skyMid: '#ffe7bd',
+    skyBottom: '#ffd391',
+    horizon: '#fff4dc',
+    cloudA: 'rgba(255,255,255,0.9)',
+    cloudB: 'rgba(255,224,178,0.75)',
+    islandTop: '#8fb56a',
+    islandTopLight: '#c0e08a',
+    islandSide: '#59744a',
+    islandRim: 'rgba(255,250,230,0.85)',
+    accent: '#ffb35c',
+    accent2: '#ffe08a',
+    accent3: '#fff0c0',
+    moving: '#fff2c8',
+    movingRim: '#ffd37a',
+  },
+  1: {
+    key: 'storm',
+    skyTop: '#131c2e',
+    skyMid: '#1e2c46',
+    skyBottom: '#2c3f5e',
+    horizon: '#33486a',
+    cloudA: 'rgba(46,62,92,0.9)',
+    cloudB: 'rgba(30,42,66,0.8)',
+    islandTop: '#41597a',
+    islandTopLight: '#5f7da6',
+    islandSide: '#26374f',
+    islandRim: 'rgba(150,190,240,0.7)',
+    accent: '#6fb7ff',
+    accent2: '#b3e0ff',
+    accent3: '#e6f4ff',
+    moving: '#d7ecff',
+    movingRim: '#8ec9ff',
+  },
+  2: {
+    key: 'night',
+    skyTop: '#0e0719',
+    skyMid: '#1d1235',
+    skyBottom: '#2b1753',
+    horizon: '#3a2166',
+    cloudA: 'rgba(72,48,110,0.75)',
+    cloudB: 'rgba(44,28,72,0.65)',
+    islandTop: '#5a3a8a',
+    islandTopLight: '#8160b8',
+    islandSide: '#33204f',
+    islandRim: 'rgba(210,180,255,0.7)',
+    accent: '#c79bff',
+    accent2: '#ffe08a',
+    accent3: '#f2e6ff',
+    moving: '#efe4ff',
+    movingRim: '#d0a6ff',
+  },
+};
+
+export function paletteFor(scene) {
+  return SCENE_PALETTES[scene] || SCENE_PALETTES[0];
+}

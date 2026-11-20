@@ -1,0 +1,149 @@
+{
+  "game": "billion-hustle",
+  "generatedAt": "2026-11-19T17:34:32.885Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.625,
+    "silhouette": 7.625,
+    "style_consistent": 8.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Start Hustle’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘BILLION HUSTLE’发光效果略过曝，部分字母边缘发散影响辨识度",
+        "‘Best valuation 0’文字颜色偏淡（浅金），在深背景上对比度不足，易被忽略",
+        "右上角语言切换按钮无悬停反馈或边框，视觉层级弱"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘开始狂飙’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最高估值 0’文字偏小且颜色较淡，易被忽略",
+        "标题‘亿万狂飙’发光效果略过强，可能在低对比度设备上产生光晕干扰",
+        "右上角语言切换下拉框无展开指示图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央发光的黄色圆形‘TAP’按钮以赚取第一笔现金",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘BURN ×2’按钮文字与背景对比度偏低，小字号易误读",
+        "右侧‘BET’列表中各条目滑块颜色与标签色不完全对应（如Green条目滑块含黄段）",
+        "底部技能栏部分文字（如‘Lv 0 → ¥1/tap’）字号过小，远距离辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央标有'TAP'的金色大按钮开始游戏",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'BET'面板中'Live'选项右侧勾选标记与滑块间距过小，易误触",
+        "底部技能栏部分文字（如'Lv 0 → ¥1/s'）字号偏小，弱光下辨识度略低",
+        "右侧空白列表区域无占位提示，新手可能误以为内容加载失败"
+      ]
+    },
+    {
+      "shot": "tests/final/05-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击高亮的'Resume'按钮继续游戏",
+      "readable": 9,
+      "silhouette": 4,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊导致玩家/场景轮廓难以辨识（silhouette低）",
+        "‘Paused’下方提示语字体过小，弱光环境下可能难读",
+        "右上角语言切换下拉框无展开指示图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/06-play2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央标有'TAP'的金色大按钮",
+      "readable": 9,
+      "silhouette": 10,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'BET'面板中'Live'选项右侧勾选标记与滑块间距过小，可能误触",
+        "底部技能栏部分文字（如'¥86/tap'）字号偏小，在低分辨率下易混淆",
+        "右侧面板背景为浅米色条纹，与主背景色接近，层次感略弱"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央金色‘TAP’按钮进行点击操作",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧 BET 面板中‘Burn ×2’按钮文字与背景对比度偏低，红色边框略显突兀，风格微冲突",
+        "‘Trend in 59s’按钮文字过小（约12px），在远距离或低分辨率下易误读",
+        "右下角 BET 面板部分选项（如 Gaming）的进度条绿色段过短，视觉反馈弱"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央黄色大球上的'TAP'文字进行点击操作",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'BURN ×2'按钮文字与背景对比度偏低，小字号易误读",
+        "右侧'BET'面板中各选项的'Bet'标签颜色过浅（灰绿色），在低亮度下辨识度不足",
+        "底部技能栏部分文字（如'Lv 0 → ¥1/tap'）字号偏小，3秒内需聚焦才能完整识别"
+      ]
+    }
+  ]
+}

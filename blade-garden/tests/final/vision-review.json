@@ -1,0 +1,149 @@
+{
+  "game": "blade-garden",
+  "generatedAt": "2026-11-19T13:43:12.839Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 7.5,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部角色与HUD按钮无重叠，但角色被部分遮挡于屏幕底边，可能影响移动感知",
+        "‘Best: 0s · ⚪ 0’中图标与文字间距过小，略显拥挤",
+        "关卡按钮（1-12）在低对比度背景下部分文字辨识度稍弱（如‘Crows Overhead’）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角虚拟摇杆移动角色，或点击右下敌人进行攻击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上目标图标（红圈内棕色物体）与HP条距离过近，可能误触",
+        "SLAY 0/6 按钮文字颜色与背景对比度偏低，弱光下易混淆",
+        "敌人头顶红三角指示器未对齐中心，视觉引导稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-upgrade.png",
+      "goal_visible": true,
+      "first_action_guess": "点击三个‘Sword Intent’选项中的任意一个以选择技能",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景棕榈树剪影与前景选项卡轻微融合，降低可交互元素对比度",
+        "顶部状态栏（HP/Xp）字体偏小且颜色较暗，远距离辨识度略低",
+        "右上角红色圆形图标（疑似目标指示器）无明确说明，易引发困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/04-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央绿色放大镜角色开始移动或攻击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 XP 0/4 与 HP 条间距过近，易误触",
+        "左下虚拟摇杆部分遮挡地面敌人（坐标约 x=70,y=850）",
+        "多个敌人图标（红圈黑三角）样式重复且无差异化标识，难以区分类型"
+      ]
+    },
+    {
+      "shot": "tests/final/05-summer.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角虚拟摇杆控制角色移动，避开红色敌人并靠近右侧目标点。",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘SLAY 0/16’按钮文字与背景对比度偏低，小字号易误读",
+        "敌人红圈标记中心黄色光点过小，远距离辨识度不足",
+        "水面草丛细节过多且颜色接近背景，可能干扰目标识别"
+      ]
+    },
+    {
+      "shot": "tests/final/06-elite.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角虚拟摇杆移动角色，或点击带红三角的敌人进行攻击",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "敌人头顶红三角与圆形目标圈部分重叠，易混淆敌我标识",
+        "右上角XP显示'0 / 4'但无说明，新手可能不理解目标",
+        "中央角色手持放大镜图标语义模糊，疑似技能/交互提示但未明确"
+      ]
+    },
+    {
+      "shot": "tests/final/07-autumn.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角虚拟摇杆移动角色，或点击敌人进行攻击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角敌人目标指示器（红色三角+圆圈）部分重叠于屏幕边缘，可能被误触或忽略",
+        "左下虚拟摇杆与地面碎石视觉距离过近，易误判为可交互物",
+        "HP/XR条文字小且无对比色，弱光环境下辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/08-narrow.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角虚拟摇杆移动角色，或点击敌人进行攻击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'SLAY 0/28' 按钮文字与背景对比度偏低，小字号易误读",
+        "右上角 XP 进度条 '0 / 4' 中斜杠与数字间距过小，略显拥挤",
+        "敌人头顶红色三角指示器部分被沙丘遮挡（如右下角敌人），影响目标识别"
+      ]
+    }
+  ]
+}

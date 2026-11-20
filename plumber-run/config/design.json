@@ -1,0 +1,49 @@
+{
+  "slug": "plumber-run",
+  "genre": "platformer",
+  "oneLiner": "蒸汽都市修理工阿扳，在屋顶与下水道之间跑跳，扔回旋扳手打怪兽，接满蒸汽罐高跳悬停，修好 12 根管道。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    { "name": "jump", "cost": "起跳后短手，落地前无法改变方向惯性", "feedback": ["sfx", "squash", "dust"], "combinesWith": ["wrench"] },
+    { "name": "wrench", "cost": "扳手飞出期间不能再次投掷（短手），且占用火力态悬停的窗口", "feedback": ["sfx", "spin", "return-path"], "combinesWith": ["jump"] },
+    { "name": "steamBurst", "cost": "消耗满罐蒸汽，且悬停 1.5s 内暴露在敌人弹道里", "feedback": ["sfx", "steam-jet", "hover"], "combinesWith": ["wrench"] }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先顶 ? 砖拿道具，还是直接冲向旗杆省时间", "cost": "多花 2 秒换三态能力 / 放弃能力拿时间星" },
+    { "atSec": 18, "choice": "风险跳去吃高处金币，还是走稳的地面", "cost": "失误掉坑掉命 / 少拿金币掉星" },
+    { "atSec": 32, "choice": "踩怪兽还是绕过去", "cost": "踩得 200 分但要算落点 / 绕开安全但慢" },
+    { "atSec": 50, "choice": "扳手现在扔不扔（扔了短手）", "cost": "提前清怪换窗口 / 留着扳手应急" },
+    { "atSec": 72, "choice": "满罐蒸汽用在跳高台还是留给战斗", "cost": "二选一，满罐只能爆一次" },
+    { "atSec": 96, "choice": "大形态顶碎砖块走捷径，还是绕开", "cost": "顶砖慢但开新路 / 绕路更稳" },
+    { "atSec": 120, "choice": "火力态空中按跳悬停穿火海，还是地面硬闯", "cost": "悬停慢且暴露 / 地面要躲更多敌人" },
+    { "atSec": 150, "choice": "先清刺猬群再前进，还是靠无敌帧冲过去", "cost": "清怪稳但耗时 / 冲过去可能掉命" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "跑跳 + ? 砖出道具（三态）" },
+    { "index": 2, "newElement": "蒸汽罐充能（S）" },
+    { "index": 3, "newElement": "坑（掉坑掉命）" },
+    { "index": 4, "newElement": "移动平台" },
+    { "index": 5, "newElement": "管道门（伸缩管道）" },
+    { "index": 6, "newElement": "水流减速" },
+    { "index": 7, "newElement": "暗关（扳手是唯一光源）" },
+    { "index": 8, "newElement": "连战（敌群 + 双坑）" },
+    { "index": 9, "newElement": "尖刺（不可踩）" },
+    { "index": 10, "newElement": "组合机关（坑+尖刺+敌）" },
+    { "index": 11, "newElement": "蒸汽门（满罐才能过的高台）" },
+    { "index": 12, "newElement": "终章锅炉（长关 + 密集敌人）" }
+  ],
+  "upgrades": [
+    { "id": "grow-big", "kind": "rule" },
+    { "id": "steam-gear", "kind": "rule" },
+    { "id": "fire-hover", "kind": "rule" },
+    { "id": "wrench-return", "kind": "rule" },
+    { "id": "extra-life", "kind": "stat" },
+    { "id": "coin-magnet", "kind": "rule" },
+    { "id": "speed-boots", "kind": "stat" },
+    { "id": "double-wrench", "kind": "rule" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 3, "firstSuccessSec": 30, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

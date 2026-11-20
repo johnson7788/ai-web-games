@@ -1,0 +1,149 @@
+{
+  "game": "gun-legend",
+  "generatedAt": "2026-11-19T18:42:59.521Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 7.25,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Enter the alley’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 0,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "silhouette评分为0：当前为标题界面，无角色/敌人/子弹等可辨识元素，无法评估轮廓区分度",
+        "‘Best round 1’文字颜色偏黄，在深蓝背景下对比度略低，可能影响弱光环境阅读",
+        "右上角语言切换按钮无下拉箭头视觉提示，仅靠文字‘English’+小三角易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应瞄准并射击上方两个红色三角形目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "TARGETS 2 的红色背景条与上方绿色血条间距过小，易误读为同一组元素",
+        "右上角 ROLL 按钮无明确交互反馈区域，仅靠文字+进度条难以判断可点击性",
+        "雨效粒子与敌人轮廓轻微融合，远距离时可能影响目标识别"
+      ]
+    },
+    {
+      "shot": "tests/final/03-combat.png",
+      "goal_visible": true,
+      "first_action_guess": "瞄准并射击前方两个红色三角形目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部中央‘TARGETS 2’红底文字与绿色血条间距过小，视觉拥挤",
+        "左上角‘WEAPON Twin Revolvers’背景框无圆角，与其他 HUD 元素风格微异",
+        "雨线特效略干扰中下部目标辨识，尤其在低对比场景"
+      ]
+    },
+    {
+      "shot": "tests/final/04-dove.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星下方的白色玩家角色发射子弹",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "TARGETS 2 的红色背景条与上方绿色血条间距过小，易误读为同一组元素",
+        "右上角 ROLL 按钮无明确交互反馈提示（如悬停/按下态）",
+        "雨效粒子轻微遮挡中下部敌人轮廓，可能影响快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Restart' 按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'Legend Falls' 字体发光效果过强，部分字母边缘轻微模糊（如 'g' 和 'F'）",
+        "‘Press R to rise again’ 提示文字字号偏小，对比度不足，易被忽略",
+        "‘Best round’ 值为 1，但当前仅第 1 轮且分数为 0，逻辑上可能误导（非 UI 错误，属数值逻辑疑点）"
+      ]
+    },
+    {
+      "shot": "tests/final/06-rooftop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星或滑动瞄准右侧三角敌人",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角ROLL按钮无明确交互反馈区域，仅文字+进度条，触控目标不明确（桌面截图忽略但需注意）",
+        "‘TARGETS 4’红色背景与深色UI对比度偏高，可能干扰视觉焦点",
+        "雨效粒子轻微遮挡中下部敌人轮廓，影响远距离目标辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/07-restaurant.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星或按空格开火，因为玩家角色在底部中央、敌人在上方且有准星提示",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "TARGETS 4 的红色背景条与上方绿色血条间距过小，易误读为同一组元素",
+        "右上角 ROLL 按钮无明确交互反馈区域，仅文字+进度条，触控目标不明确（虽为桌面截图，但影响通用性）",
+        "雨线特效轻微干扰中下部敌人轮廓，尤其对橙色三角敌人边缘略有模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角圆形按钮发射子弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（白色三角）与敌人（橙色三角）轮廓相似，仅靠颜色区分，眯眼时易混淆",
+        "‘TARGETS 2’红色标签位置偏上，与中心准星重叠轻微，可能干扰瞄准",
+        "左上角‘ROUND 1’等HUD文字字号较小，在低分辨率屏可能辨识困难"
+      ]
+    }
+  ]
+}

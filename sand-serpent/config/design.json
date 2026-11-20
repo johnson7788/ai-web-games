@@ -1,0 +1,69 @@
+{
+  "slug": "sand-serpent",
+  "genre": "arcade",
+  "oneLiner": "玩家操控沙漠沙蟒在网格上定时步进，追逐甲虫、蝎子与骆驼刺来变长，同时躲开墙壁、仙人掌与自己的尾巴，长到目标长度过关。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "不能 180° 掉头，且每次转弯后必须走满一格才能再转；贴墙/贴身贪快就会撞死",
+      "feedback": ["turnSfx", "rippleTrail", "headSwing"],
+      "combinesWith": ["chase", "risk"]
+    },
+    {
+      "name": "chase",
+      "cost": "高价值食物总在危险位置（仙人掌旁/硬地旁）；蝎子会横逃，追它就是赌走位",
+      "feedback": ["eatSfx", "sandBurst", "scorePop"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "risk",
+      "cost": "踩加速带临时提速，反应窗口变短；硬地格碰到即死",
+      "feedback": ["whooshSfx", "speedLines", "screenShake"],
+      "combinesWith": ["steer", "chase"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "第一个甲虫就在眼前：直取最短线还是绕开即将经过的仙人掌", "cost": "直取最快但贴近障碍；绕路多花几步" },
+    { "atSec": 12, "choice": "蝎子出现了（+3）：追这只会横逃的蝎子还是去吃安全的甲虫", "cost": "追蝎子可能追空；吃甲虫少拿 2 分" },
+    { "atSec": 30, "choice": "身体变长后：往开阔沙丘走还是贴着墙边抄近路", "cost": "贴墙 = 下一转弯空间不足；绕远 = 浪费步数" },
+    { "atSec": 55, "choice": "骆驼刺（+5）在仙人掌夹缝里：赌一把钻进去吃，还是放过", "cost": "吃了掉一节尾巴；钻缝可能撞仙人掌" },
+    { "atSec": 80, "choice": "加速带就在前方：踩上去提速抢食物，还是绕开保持节奏", "cost": "提速 = 更难控制；绕开 = 可能赶不上逃跑的蝎子" },
+    { "atSec": 110, "choice": "沙暴来了视野被遮：凭记忆直线冲，还是原地等待风暴过去", "cost": "盲冲可能撞墙；等待浪费步数" },
+    { "atSec": 150, "choice": "离目标只差 2 节：吃近处甲虫稳稳过关，还是追远处蝎子刷高分", "cost": "求稳 = 低分；追高分 = 可能前功尽弃" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 50, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "wrap-around edges（穿边环绕，无墙）" },
+    { "index": 2, "newElement": "border walls（有墙，撞墙即死）" },
+    { "index": 3, "newElement": "cactus obstacles（仙人掌障碍）" },
+    { "index": 4, "newElement": "escaping scorpion（会横逃的蝎子，+3 分）" },
+    { "index": 5, "newElement": "two foods at once（双食同屏）" },
+    { "index": 6, "newElement": "speed boost tiles（加速带，踩到临时提速）" },
+    { "index": 7, "newElement": "hard ground（硬地格，不能穿过）" },
+    { "index": 8, "newElement": "periodic sandstorm（定时沙暴遮挡视野）" },
+    { "index": 9, "newElement": "camel thorn（骆驼刺，+5 分但掉一节尾巴）" },
+    { "index": 10, "newElement": "scorpion + cactus combo（蝎子+仙人掌组合）" },
+    { "index": 11, "newElement": "boost + hard ground combo（加速带+硬地组合）" },
+    { "index": 12, "newElement": "full storm finale（全要素综合）" }
+  ],
+  "upgrades": [
+    { "id": "unlockWrap", "kind": "rule", "desc": "L1 穿边环绕，无墙约束" },
+    { "id": "unlockWalls", "kind": "rule", "desc": "L2 起有墙，撞墙即死" },
+    { "id": "unlockCactus", "kind": "rule", "desc": "L3 起仙人掌障碍" },
+    { "id": "unlockScorpion", "kind": "rule", "desc": "L4 起蝎子横逃（+3）" },
+    { "id": "unlockDoubleFood", "kind": "rule", "desc": "L5 起双食同屏" },
+    { "id": "unlockBoost", "kind": "rule", "desc": "L6 起加速带" },
+    { "id": "unlockHard", "kind": "rule", "desc": "L7 起硬地格" },
+    { "id": "unlockSandstorm", "kind": "rule", "desc": "L8 起定时沙暴" },
+    { "id": "unlockThorn", "kind": "rule", "desc": "L9 起骆驼刺（+5 掉尾）" },
+    { "id": "speedUp", "kind": "stat", "desc": "后期每步间隔更短" },
+    { "id": "goalRamp", "kind": "stat", "desc": "目标长度逐关提升" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "unlock", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 40, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

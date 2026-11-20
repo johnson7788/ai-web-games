@@ -1,0 +1,5 @@
+TITLE: TYCOON EMPIRE
+CATEGORY: Idle / Tycoon / Simulation
+TAGS: idle, tycoon, clicker, business, stock market, loan, banker, 1920s, management, casual
+SHORT DESCRIPTION: Tap to earn, buy 12 industries, hire managers, ride 30-second stock markets, and borrow your way from a newsstand to an international bank.
+LONG DESCRIPTION: TYCOON EMPIRE is a 1920s banker idle tycoon. Tap the golden tower to earn cash, buy 12 industries from a street newsstand to an international bank, upgrade their income curves, and hire managers to auto-collect. Every 30 seconds a Market Day hits one industry with a ×2 boom or ×0.5 crash — go All In to bet all your cash. Borrow 10× your cash to expand, but 5% per-minute interest can bankrupt you and reset your empire. Every time an industry level doubles, a golden chain completes and your tower rises a floor. 点击大楼赚钱，买下 12 个产业，雇佣经理自动收钱，押注 30 秒一次的股市行情，借杠杆扩张到摩天银行。

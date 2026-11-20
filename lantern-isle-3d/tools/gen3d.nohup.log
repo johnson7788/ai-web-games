@@ -1,0 +1,173 @@
+[11-16 08:40:22] start qwen-image-xl @C（当前 0MB 已用）
+[11-16 08:41:04] prop_lantern_01 概念图 ok (1024²)
+[11-16 08:41:04] start trellis2 @B（当前 20489MB 已用）
+[11-16 08:45:25] prop_lantern_01 3D ok 37.18MB 143495ms
+[11-16 08:45:35] prop_oil_barrel_01 概念图 ok (1024²)
+[11-16 08:48:59] prop_oil_barrel_01 3D ok 37.82MB 184840ms
+[11-16 08:49:10] prop_crate_01 概念图 ok (1024²)
+[11-16 08:54:30] prop_crate_01 3D ok 38.10MB 299138ms
+[11-16 08:54:42] prop_rock_cluster_01 概念图 ok (1024²)
+[11-16 09:12:55] prop_rock_cluster_01 3D retry1: The operation was aborted due to timeout
+[11-16 09:30:47] prop_rock_cluster_01 3D retry2: The operation was aborted due to timeout
+[11-16 09:44:11] start trellis2 @B（当前 0MB 已用）
+[11-16 09:49:29] prop_rock_cluster_01 3D ok 45.27MB 188248ms
+[11-16 09:49:29] start qwen-image-xl @C（当前 0MB 已用）
+[11-16 09:49:58] prop_boat_row_01 概念图 ok (1024²)
+[11-16 09:51:29] prop_boat_row_01 3D ok 35.01MB 84430ms
+[11-16 09:51:40] prop_net_bundle_01 概念图 ok (1024²)
+[11-16 09:51:55] start trellis2 @B（当前 ?MB 已用 / The operation was aborted due to timeout）
+[11-16 09:54:25] prop_net_bundle_01 3D ok 42.07MB 126099ms
+[11-16 09:54:36] prop_bell_01 概念图 ok (1024²)
+[11-16 09:55:59] prop_bell_01 3D retry1: 500 {"error":"FileNotFoundError: [Errno 2] No such file or directory: '/inference/tmp/artifacts/trellis-4a9qgs8f/out.glb'"}
+[11-16 09:57:51] prop_bell_01 3D ok 34.97MB 87174ms
+[11-16 09:58:02] prop_lamp_relay_01 概念图 ok (1024²)
+[11-16 09:58:17] start trellis2 @B（当前 ?MB 已用 / The operation was aborted due to timeout）
+[11-16 10:00:16] prop_lamp_relay_01 3D ok 37.97MB 105975ms
+[11-16 10:00:27] prop_storm_glass_01 概念图 ok (1024²)
+[11-16 10:02:36] prop_storm_glass_01 3D ok 46.52MB 85573ms
+[11-16 10:02:52] tex_stone_wall 概念图 ok (1024²)
+[11-16 10:03:05] tex_roof_tile 概念图 ok (1024²)
+[11-16 10:03:17] tex_wood_plank 概念图 ok (1024²)
+[11-16 10:03:27] tex_dirt_path 概念图 ok (1024²)
+[11-16 10:03:37] tex_grass_dune 概念图 ok (1024²)
+[11-16 10:03:48] tex_pebbles 概念图 ok (1024²)
+[11-16 10:03:48] 进入优化链 optimize-glb.mjs
+FAIL char_keeper: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/char_keeper.glb.
+
+
+FAIL npc_warden: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/npc_warden.glb.
+
+
+FAIL npc_netmender: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/npc_netmender.glb.
+
+
+FAIL npc_lampchild: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/npc_lampchild.glb.
+
+
+FAIL prop_lantern_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_lantern_01.glb.
+
+
+FAIL prop_oil_barrel_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_oil_barrel_01.glb.
+
+
+FAIL prop_crate_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_crate_01.glb.
+
+
+FAIL prop_rock_cluster_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_rock_cluster_01.glb.
+
+
+FAIL prop_boat_row_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_boat_row_01.glb.
+
+
+FAIL prop_net_bundle_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_net_bundle_01.glb.
+
+
+FAIL prop_bell_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_bell_01.glb.
+
+
+FAIL prop_lamp_relay_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_lamp_relay_01.glb.
+
+
+FAIL prop_storm_glass_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d/assets/_raw3d/prop_storm_glass_01.glb.
+
+
+FAIL build_cottage_a: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_cottage_b: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_shed_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_lighthouse_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_pier_platform_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_stairs_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_fence_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_well_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL build_boathouse_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL prop_lantern_post_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL env_tree_pine_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL env_bush_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL env_rock_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL env_grass_tuft_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL env_crate_stack_01: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL tex_stone_wall: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL tex_roof_tile: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL tex_wood_plank: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL tex_dirt_path: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL tex_grass_dune: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+FAIL tex_pebbles: weld 失败: 
+error: Unknown command /Users/admin/git/webgames/games/lantern-isle-3d.
+
+
+==== optimize-glb DONE 0 ok / 34 skip-fail ====
+[11-16 10:03:53] optimize-glb 有失败项，看上面输出
+[11-16 10:03:53] ==== gen3d DONE ok=15 fail=0 ====

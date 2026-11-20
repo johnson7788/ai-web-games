@@ -1,0 +1,90 @@
+{
+  "slug": "card-royale",
+  "genre": "puzzle",
+  "oneLiner": "在中世纪宫廷夜宴的牌桌上，翻出底牌、点击与底牌相邻序数的露头牌清空三峰牌阵，连续五张不断连触发皇家连胜金线。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "draw",
+      "cost": "从库存翻一张牌到弃牌堆，改变当前底牌的花色与点数，可能打断同花连击；库存翻完只能靠有限的剩余翻牌次数",
+      "feedback": ["sfx", "cardFlip", "stockCount"],
+      "combinesWith": ["play"]
+    },
+    {
+      "name": "play",
+      "cost": "只能出与底牌相邻序数（K/A 相接）的未覆盖牌；出一张就改变底牌并封死/释放下层两张牌的路径，选错会让翻牌次数耗尽",
+      "feedback": ["sfx", "cardSnap", "streakGlow"],
+      "combinesWith": ["draw", "redeal"]
+    },
+    {
+      "name": "redeal",
+      "cost": "消耗一次剩余翻牌次数，把弃牌堆（保留底牌）洗回库存；次数有限，用完且无路可走即失败",
+      "feedback": ["sfx", "shuffleFlash"],
+      "combinesWith": ["play"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先翻库存看新底牌，还是先出当前已知可出的露头牌", "cost": "先翻牌可能打断同花连击；先出牌可能错过更好的底牌序列" },
+    { "atSec": 15, "choice": "两张相邻可出牌并存时，出左侧那张多暴露下层，还是出右侧那张延续同花", "cost": "延续同花得分更高，但可能把关键路径封死" },
+    { "atSec": 30, "choice": "顺着当前同色连击继续出牌，还是先挖掉王座高位顶牌", "cost": "挖高位更稳，但会中断连击，损失皇家连胜进度" },
+    { "atSec": 50, "choice": "库存即将见底，现在就重翻，还是等真的无牌可出再翻", "cost": "早翻可能浪费一次翻牌次数；晚翻可能无路可走直接失败" },
+    { "atSec": 70, "choice": "鬼牌现在用掉解一个卡点，还是留给终盘必死局", "cost": "鬼牌只有一张，用早了后面可能卡死" },
+    { "atSec": 90, "choice": "冻结牌先解冻哪一张（多花一次动作），还是绕开先出别的牌", "cost": "解冻消耗动作且不推进出牌；绕开可能让下层牌一直被封" },
+    { "atSec": 110, "choice": "限时关里追求三星高分，还是保底先把牌阵清空", "cost": "追分要冒超时风险；保底放弃高分星级" },
+    { "atSec": 130, "choice": "藏宝牌翻倍分，先清藏宝牌还是先清遮挡它下层的普通牌", "cost": "先清藏宝拿高分，但可能暴露的下一张无路可走" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础接龙：出与底牌相邻序数的露头牌，清空单峰 3 层" },
+    { "index": 2, "newElement": "三峰牌桌：左中右三座牌峰同时出现" },
+    { "index": 3, "newElement": "翻牌次数收紧：剩余重翻次数减到 1 次" },
+    { "index": 4, "newElement": "双峰镜像：两座牌峰左右对称，规划方向被打破" },
+    { "index": 5, "newElement": "冻结牌：需先花一次动作解冻才能出牌" },
+    { "index": 6, "newElement": "同花奖励：同色连出累积额外分数" },
+    { "index": 7, "newElement": "鬼牌：库存藏 1 张万能牌，何时用是决定" },
+    { "index": 8, "newElement": "限时：倒计时内清场，剩余时间换星" },
+    { "index": 9, "newElement": "藏宝牌：翻倍分的冠冕牌混入牌阵" },
+    { "index": 10, "newElement": "鬼牌+冻结叠加：万能牌与冻结牌同场" },
+    { "index": 11, "newElement": "五峰大盘：五座牌峰 5 层，规划半径翻倍" },
+    { "index": 12, "newElement": "五峰王座终局：冻结+鬼牌+限时+藏宝全部叠加" }
+  ],
+  "upgrades": [
+    { "id": "threePeaks", "kind": "rule", "desc": "第 2 关起出现三峰牌桌，路径从一条变三条" },
+    { "id": "tightRedeals", "kind": "rule", "desc": "第 3 关起剩余翻牌次数收紧，重翻成为稀缺资源" },
+    { "id": "mirrorPeaks", "kind": "rule", "desc": "第 4 关起双峰镜像布局，左右对称打乱方向感" },
+    { "id": "frozenCards", "kind": "rule", "desc": "第 5 关起冻结牌需先解冻才能出" },
+    { "id": "suitBonus", "kind": "rule", "desc": "第 6 关起同色连出累积额外分" },
+    { "id": "wildcard", "kind": "rule", "desc": "第 7 关起库存藏 1 张万能鬼牌" },
+    { "id": "timeLimit", "kind": "rule", "desc": "第 8 关起倒计时限时，剩余时间换星" },
+    { "id": "treasureCards", "kind": "rule", "desc": "第 9 关起藏宝冠冕牌翻倍分" },
+    { "id": "fivePeaks", "kind": "stat", "desc": "第 11 关五峰 5 层，牌数翻倍" },
+    { "id": "throneFinale", "kind": "stat", "desc": "第 12 关五峰王座，全部机制叠加" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

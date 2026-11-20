@@ -1,0 +1,85 @@
+{
+  "slug": "ink-finch",
+  "genre": "arcade",
+  "oneLiner": "一只墨色雀在黑白水墨竹海里单键上扑穿缝，每次振翅溅出墨点，穿过竹节记一分，撞竹落地即散作一团墨。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "flap",
+      "cost": "每次上扑都会牺牲高度余量并带惯性；窄缝/移动缝里乱扑会直接撞上竹节",
+      "feedback": ["sfx", "inkSplatter", "wingFlash"],
+      "combinesWith": ["glide"]
+    },
+    {
+      "name": "glide",
+      "cost": "长按滑翔让下坠变慢但失去高度控制精度，错过时机就无法精准穿缝",
+      "feedback": ["sfx", "featherTrail"],
+      "combinesWith": ["flap"]
+    },
+    {
+      "name": "steer",
+      "cost": "双缝/竹刺关选高分的远缝要爬升更多高度、承担更大碰撞风险",
+      "feedback": ["sfx", "vermillionSeal", "bonusPopup"],
+      "combinesWith": ["flap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一根竹节逼近：贴缝心平稳穿过，还是贴边刷一个惊险分", "cost": "贴边高回报但撞竹即死" },
+    { "atSec": 12, "choice": "窄缝在前：提前爬升压缝，还是等最后一刻再扑", "cost": "早扑惯性过头撞上沿，晚扑可能来不及" },
+    { "atSec": 20, "choice": "移动缝上下摆：赌它下一拍位置，还是等它摆回中位", "cost": "赌错方向直接撞节" },
+    { "atSec": 30, "choice": "上升气流区：长按滑翔省力飘，还是逐拍轻扑保持精确", "cost": "滑翔省力但失精控，轻扑耗节奏" },
+    { "atSec": 45, "choice": "双缝前：走近缝稳稳+1，还是爬远缝搏+3", "cost": "远缝要爬升更多、风险更高" },
+    { "atSec": 60, "choice": "竹刺转轮挡住缝口：等轮刃转过再穿，还是抢在间隙冲", "cost": "抢拍可能被刃扫中" },
+    { "atSec": 75, "choice": "逆风把鸟往后吹：多扑几次顶风稳住，还是借风放低贴地过", "cost": "顶风费操作，贴地容错极低" },
+    { "atSec": 100, "choice": "只剩最后几分就通关：求稳走常规缝，还是继续刷远缝加速", "cost": "刷远缝加速但可能前功尽弃" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "常规缝：单键上扑穿过竹节的基本循环" },
+    { "index": 2, "newElement": "窄缝：缝高收窄，压缝精度成为门槛" },
+    { "index": 3, "newElement": "移动缝：缝心上下摆动，需要预判" },
+    { "index": 4, "newElement": "上升气流：长按滑翔，下坠变慢" },
+    { "index": 5, "newElement": "逆风：水平漂移，上扑同时顶风" },
+    { "index": 6, "newElement": "双缝选择：近缝+1/远缝+3 的路线取舍" },
+    { "index": 7, "newElement": "竹刺转轮：旋转障碍逼出时机判断" },
+    { "index": 8, "newElement": "窄缝+移动：双重约束叠加" },
+    { "index": 9, "newElement": "逆风滑翔：风与气流的组合压力" },
+    { "index": 10, "newElement": "双缝+转轮：路线与时机双抉择" },
+    { "index": 11, "newElement": "疾风窄缝：卷轴提速 + 窄缝 + 移动" },
+    { "index": 12, "newElement": "终章·墨雪：全机制综合大师关" }
+  ],
+  "upgrades": [
+    { "id": "unlockNarrow", "kind": "rule", "desc": "第 2 关起缝高收窄，压缝成为新技能" },
+    { "id": "unlockMoving", "kind": "rule", "desc": "第 3 关起缝心摆动，逼玩家预判" },
+    { "id": "unlockGlide", "kind": "rule", "desc": "第 4 关起长按滑翔，气流关解锁" },
+    { "id": "unlockWind", "kind": "rule", "desc": "第 5 关起逆风水平漂移，上扑同时顶风" },
+    { "id": "unlockDoubleGap", "kind": "rule", "desc": "第 6 关起双缝路线：近+1 远+3" },
+    { "id": "unlockWheel", "kind": "rule", "desc": "第 7 关起竹刺转轮障碍" },
+    { "id": "unlockMastery", "kind": "rule", "desc": "第 12 关起全机制综合" },
+    { "id": "scrollSpeed", "kind": "stat", "desc": "第 11 关卷轴提速，节奏上限拉高" },
+    { "id": "flapPower", "kind": "stat", "desc": "上扑冲量随手感微调" },
+    { "id": "gapBreathe", "kind": "stat", "desc": "缝宽随关卡微调，难而不死" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

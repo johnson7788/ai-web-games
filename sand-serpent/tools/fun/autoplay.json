@@ -1,0 +1,59 @@
+{
+  "game": "sand-serpent",
+  "genre": "arcade",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 3,
+      "durationSec": 23.53,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 3.96,
+      "deaths": 0,
+      "actions": 135,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 10,
+      "levelsReached": 3,
+      "completed": true
+    },
+    {
+      "id": "random",
+      "policy": "random",
+      "seed": 2,
+      "level": 2,
+      "durationSec": 2.7,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 15,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 6,
+      "levelsReached": 2,
+      "completed": false
+    },
+    {
+      "id": "noinput",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 2,
+      "durationSec": 1.8,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.18,
+      "uniqueEvents": 5,
+      "levelsReached": 2,
+      "completed": false
+    }
+  ]
+}

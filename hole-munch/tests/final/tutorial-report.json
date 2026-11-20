@@ -1,0 +1,37 @@
+{
+  "game": "hole-munch",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 3,
+    "stepIds": [
+      "steer",
+      "swallow",
+      "chain"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": [
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-hole-munch",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-hole-munch",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-hole-munch"
+    ]
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

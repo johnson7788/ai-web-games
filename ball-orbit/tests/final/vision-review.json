@@ -1,0 +1,149 @@
+{
+  "game": "ball-orbit",
+  "generatedAt": "2026-11-19T12:06:35.052Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 6.5,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Launch' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'BALL ORBIT' 发光效果过强，导致部分字母边缘模糊（如 'O' 与背景光晕融合）",
+        "‘Best 0’ 文字颜色偏黄，在深色背景下对比度偏低，易被忽略",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘发射’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘BALL ORBIT’有轻微光晕溢出，可能影响小屏阅读",
+        "‘最佳 0’文字颜色偏黄，在深色背景下对比度略低",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动屏幕底部的弹弓图标来瞄准并释放击碎陨石",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中部提示框‘FIRST LAUNCH’与底部操作提示重叠，可能干扰新手引导",
+        "顶部‘WAVE 1’等状态栏文字偏小（约12px），在低分辨率下易误读",
+        "陨石数字标签（1/2/3）与背景对比度偏低，部分深色块上数字略显模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的玩家飞船开始射击",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘WAVE 1’等按钮文字与背景对比度偏低，弱光下可能难辨",
+        "右上角‘COMET’进度条无明确数值或单位，目标进度不直观",
+        "陨石阵列中部分数字（如中间‘1’）字号偏小，密集区易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/05-play2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央带光环的行星（目标）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘WAVE 2’等HUD按钮文字与背景对比度偏低，弱光下可能难辨",
+        "部分数字格子（如+1标记）字体略小且无高亮，易被忽略",
+        "底部玩家角色与虚线边界间距过小，可能误触或视觉混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/06-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Resume”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 3,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊文字（疑似游戏主界面）轮廓不清，无法辨识玩家/敌人/可交互物（silhouette低）",
+        "‘Paused’下方提示‘Press Esc to resume’与按钮功能重复，略冗余",
+        "右上角语言切换下拉框无展开指示（小三角），移动端可能误触或难识别"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动底部弹弓瞄准上方带数字的陨石群",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中部‘FIRST LAUNCH’提示框轻微遮挡下方弹弓顶部（视觉干扰）",
+        "右上角‘Skip’按钮与‘COMET’进度条间距过近，可能误触",
+        "陨石数字‘1/2/3’在部分浅色背景上对比度偏低（如右下角‘1’）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动底部炮台瞄准上方陨石阵列，松开发射",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "陨石数字1/2/3在深棕背景上对比度偏低，眯眼时部分数字易混淆",
+        "底部操作提示文字与手形图标轻微重叠（y轴偏移不足）",
+        "右上角'COMET'进度条无标签说明，功能意图不明确"
+      ]
+    }
+  ]
+}

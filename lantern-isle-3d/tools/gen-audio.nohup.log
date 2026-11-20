@@ -1,0 +1,13 @@
+[11-16 12:28:28] ==== gen-audio start ====
+[11-16 12:28:28] VOICE descoped：无授权参考音色可用（原因已记入台账与 lessons）
+[11-16 12:28:28] start minimax-music
+[11-16 12:29:24] bgm_main 第1次失败：ffmpeg 转码失败：[out#0/mp3 @ 0x7e4c04600] Error opening output /Users/admin/git/webgames/games/lantern-isle-3d/assets/audio/bgm_main.mp3: No such file or directory
+Error openin
+[11-16 12:30:14] wrote assets/audio/bgm_main.mp3 536KB (192k / loudnorm -16)
+[11-16 12:32:44] wrote assets/audio/bgm_storm.mp3 1409KB (192k / loudnorm -16)
+[11-16 12:32:44] ==== gen-audio DONE bgm 2/2 ====
+loudnorm -16)
+[11-16 12:32:44] bgm_storm 第1次失败：502 {"error":"upstream minimax-music unavailable","detail":"RemoteDisconnected","disk_free_gb":73.6}
+[11-16 12:32:52] start minimax-music
+[11-16 12:33:40] wrote assets/audio/bgm_storm.mp3 353KB (192k / loudnorm -16)
+[11-16 12:33:40] ==== gen-audio DONE bgm 2/2 ====

@@ -1,0 +1,149 @@
+{
+  "game": "constellation-line",
+  "generatedAt": "2026-11-19T13:28:43.260Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 9,
+    "silhouette": 7.75,
+    "style_consistent": 9.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/g1-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角未连接的点，完成三角形第三边",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘CONNECT EVERY LINE ONCE’文字与计时器轻微重叠（时间条上方有橙色小点）",
+        "右上月亮图标与‘STEPS 2’按钮间距过近，可能误触",
+        "当前高亮点（黄色环）与连线端点视觉权重接近，易混淆操作焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/g2-play-late.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角未连接的点，完成三角形底边右侧线段",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部计时器下方进度条过细且颜色对比弱（橙色条在深紫背景上易忽略）",
+        "‘Triangulum’标签文字偏小，与‘LEVEL 1’视觉层级不一致",
+        "右上角月牙图标与‘LINES LEFT 1’间距过近，可能误读为一个元素"
+      ]
+    },
+    {
+      "shot": "tests/final/g3-meteor.png",
+      "goal_visible": true,
+      "first_action_guess": "点击未连线的两个星点之一，继续连接剩余线条",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Cygnus Wing’标签文字颜色（黄底黑字）与深蓝背景对比度偏低，弱光下可能难辨",
+        "当前高亮星点（带黄环）与已连线星点（白圈）视觉区分依赖细环，眯眼时易混淆",
+        "右上角‘STEPS 2’等HUD元素无阴影/背景，在浅灰条带区域可能轻微融合"
+      ]
+    },
+    {
+      "shot": "tests/final/g4-dual.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧三角形未连接的顶点，完成第二条线",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘LINES LEFT 2’与‘STEPS 4’按钮间距过小，易误触",
+        "月亮图标部分遮挡‘LINES LEFT’标签（轻微）",
+        "左侧‘Lyra Twin’标签背景色与主界面融合度高，对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/g5-waypoint.png",
+      "goal_visible": true,
+      "first_action_guess": "点击未连线的星点，按顺序连接成 Cassiopeia Crown 星座轮廓",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘Reach the North Star’提示文字被月牙图标轻微遮挡（视觉干扰）",
+        "当前高亮星点（黄色圆环）与连线起点/终点视觉权重相近，可能混淆操作焦点",
+        "‘LINES LEFT 5’与‘MISSES 0’按钮间距过小，桌面端无问题，但若适配移动端易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/g6-win.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签发光效果过强，可能干扰星标与数值阅读",
+        "‘Steps’和‘Misses’均为0，但未说明是否为理想值（如‘Perfect!’提示缺失）",
+        "背景模糊光斑与UI边缘轻微融合，降低UI轮廓清晰度"
+      ]
+    },
+    {
+      "shot": "tests/final/g7-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击顶部高亮的黄圈节点，开始连接三角形的边",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角月亮图标与‘LINES LEFT 2’按钮轻微重叠（视觉干扰）",
+        "时间条下方进度条过窄，44s数值与进度条间距小，易误读",
+        "‘Triangulum’标签背景色与主界面对比度偏低，弱光下可能辨识困难"
+      ]
+    },
+    {
+      "shot": "tests/final/g8-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Trace”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Stars 0 • Constellations 0/24’文字颜色偏淡（浅黄），在深紫背景下对比度略低，可能影响弱光环境可读性",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确",
+        "标题‘CONSTELLATION LINE’发光效果过强，右侧有轻微光晕溢出至背景，可能干扰后续界面元素辨识"
+      ]
+    }
+  ]
+}

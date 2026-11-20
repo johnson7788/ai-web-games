@@ -1,0 +1,86 @@
+{
+  "slug": "neo-tetra",
+  "genre": "puzzle",
+  "oneLiner": "在霓虹熔炉里落下元素晶块：左右落位、旋转塑形、硬降锁死，消行熔炼出炉，连消蓄热进入分数翻倍的白热态。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "位移占用时间：堆高时左右腾挪可能错过最佳落点",
+      "feedback": ["sfx", "ghost-shift", "dash-trail"],
+      "combinesWith": ["rotate"]
+    },
+    {
+      "name": "rotate",
+      "cost": "旋转改变形状，贴墙/贴底可能踢墙失败卡进死角",
+      "feedback": ["sfx", "ghost-shift", "spin-flash"],
+      "combinesWith": ["move", "drop"]
+    },
+    {
+      "name": "drop",
+      "cost": "硬降立刻锁定：选错列不可撤销，软降则持续耗时间",
+      "feedback": ["sfx", "lock-flash", "screen-shake"],
+      "combinesWith": ["rotate", "move"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一块旋转成立柱还是平放", "cost": "为后续留口 vs 立刻填平" },
+    { "atSec": 15, "choice": "堆高留井赌 I 块冲 TETRA vs 稳消两行", "cost": "高风险高分 vs 稳健低分" },
+    { "atSec": 25, "choice": "热力将满：再消一行引爆白热 vs 留行蓄势", "cost": "分数×2但下落加速 vs 保留节奏" },
+    { "atSec": 40, "choice": "硬降立刻锁死 vs 软降到底再横移", "cost": "速度 vs 可撤销" },
+    { "atSec": 55, "choice": "hold 换块：保留 I 块还是用它解围", "cost": "未来机会 vs 当下安全" },
+    { "atSec": 75, "choice": "窄井层：贴墙旋转可能踢不进 vs 提前留位", "cost": "冒险省步 vs 提前布局" },
+    { "atSec": 100, "choice": "暗井层：凭记忆堆平 vs 只靠 ghost 保守堆", "cost": "记忆风险 vs 保守速度" },
+    { "atSec": 130, "choice": "重块层：绕开石头行 vs 冒险补满石头行", "cost": "绕行耗列 vs 赌石头可绕过" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 35, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "铜矿层：标准井 + 消行得分（教基本落块）" },
+    { "index": 2, "newElement": "加速矿脉：下落提速 +1 级" },
+    { "index": 3, "newElement": "双 next：一次看两块预览" },
+    { "index": 4, "newElement": "窄井：左右封墙有效宽 8" },
+    { "index": 5, "newElement": "gift 块：随机道具（热/分/清行/减速）" },
+    { "index": 6, "newElement": "暗井：堆叠隐没只有 ghost 亮" },
+    { "index": 7, "newElement": "重块：石头块不可消只可绕" },
+    { "index": 8, "newElement": "窄井 + 双 next 组合" },
+    { "index": 9, "newElement": "暗井 + gift 组合" },
+    { "index": 10, "newElement": "熔核层：强加速矿脉 +2 级" },
+    { "index": 11, "newElement": "重块 + 窄井组合" },
+    { "index": 12, "newElement": "炉心：暗井 + 加速 + gift 三合一" }
+  ],
+  "upgrades": [
+    { "id": "heatBank", "kind": "rule", "desc": "热力满时改为玩家手动引爆白热（改规则）" },
+    { "id": "ghostLock", "kind": "rule", "desc": "ghost 与实体块重叠时仍可硬降（改判定）" },
+    { "id": "stoneBypass", "kind": "rule", "desc": "石头行被相邻两行同时消时一起熔掉（改规则）" },
+    { "id": "giftChain", "kind": "rule", "desc": "gift 触发后 8s 内下一个 gift 必为同类（规则链）" },
+    { "id": "slowFurnace", "kind": "rule", "desc": "白热态不再加速下落（去掉负面代价）" },
+    { "id": "startLevel", "kind": "stat", "desc": "起始等级 +1" },
+    { "id": "heatCap", "kind": "stat", "desc": "热力上限 +2" },
+    { "id": "softScore", "kind": "stat", "desc": "软降每行 +2 分" },
+    { "id": "gravitySlow", "kind": "stat", "desc": "基础重力 -10%" },
+    { "id": "hardScore", "kind": "stat", "desc": "硬降每行 +3 分" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 2,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "一次消 4 行触发熔炉喷发：全屏流光 + 金锭飞溅，热力条瞬间拉满进入白热态",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做多人对战"
+  ],
+  "artSource": "霓虹炼金炉风格：程序化 Canvas 发光渲染为主（径向渐变/加法混合/粒子），矿石色随矿层换；UI 线框 CSS；BGM 全程序化 WebAudio 分层合成"
+}

@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-11-19T16:19:24.581Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "throttle": {
+      "rms": 0.0569,
+      "peak": 0.2561,
+      "nan": 0,
+      "zcRate": 2767,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "steer": {
+      "rms": 0.0627,
+      "peak": 0.12,
+      "nan": 0,
+      "zcRate": 290.1,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "tune": {
+      "rms": 0.1268,
+      "peak": 0.3252,
+      "nan": 0,
+      "zcRate": 1170.3,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "ridgeBoost": {
+      "rms": 0.1211,
+      "peak": 0.2991,
+      "nan": 0,
+      "zcRate": 841.8,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "checkpoint": {
+      "rms": 0.0984,
+      "peak": 0.2199,
+      "nan": 0,
+      "zcRate": 878,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "jump": {
+      "rms": 0.0651,
+      "peak": 0.2702,
+      "nan": 0,
+      "zcRate": 5592.8,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "land": {
+      "rms": 0.1948,
+      "peak": 0.5215,
+      "nan": 0,
+      "zcRate": 290.9,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "offTrack": {
+      "rms": 0.0548,
+      "peak": 0.2557,
+      "nan": 0,
+      "zcRate": 1823.5,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.0951,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 1330.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0504,
+      "peak": 0.09,
+      "nan": 0,
+      "zcRate": 680.3,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "stageStart": {
+      "rms": 0.1079,
+      "peak": 0.3782,
+      "nan": 0,
+      "zcRate": 294.2,
+      "samples": 26460,
+      "durSec": 0.6,
+      "pass": true
+    },
+    "stageClear": {
+      "rms": 0.1467,
+      "peak": 0.591,
+      "nan": 0,
+      "zcRate": 625.8,
+      "samples": 27342,
+      "durSec": 0.62,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1907,
+      "peak": 0.5103,
+      "nan": 0,
+      "zcRate": 371.7,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "champion": {
+      "rms": 0.1754,
+      "peak": 0.6944,
+      "nan": 0,
+      "zcRate": 491.3,
+      "samples": 43218,
+      "durSec": 0.98,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1188,
+      "peak": 0.2626,
+      "nan": 0,
+      "zcRate": 910.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.1206,
+      "peak": 0.3194,
+      "nan": 0,
+      "zcRate": 1229.5,
+      "samples": 14994,
+      "durSec": 0.34,
+      "pass": true
+    }
+  },
+  "loops": {
+    "engine": {
+      "rms": 0.0046,
+      "peak": 0.0109,
+      "nan": 0,
+      "zcRate": 91.9,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "wind": {
+      "rms": 0.0124,
+      "peak": 0.0675,
+      "nan": 0,
+      "zcRate": 2612.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

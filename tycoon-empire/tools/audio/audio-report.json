@@ -1,0 +1,204 @@
+{
+  "generatedAt": "2026-11-19T17:32:38.243Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": ">0",
+    "peak": "<0.95",
+    "nan": "===0"
+  },
+  "sfx": {
+    "tap": {
+      "rms": 0.1675,
+      "peak": 0.3405,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "tapCombo": {
+      "rms": 0.1691,
+      "peak": 0.5269,
+      "nan": 0,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "buy": {
+      "rms": 0.1818,
+      "peak": 0.649,
+      "nan": 0,
+      "samples": 20286,
+      "durSec": 0.46,
+      "pass": true
+    },
+    "upgrade": {
+      "rms": 0.1458,
+      "peak": 0.4944,
+      "nan": 0,
+      "samples": 18081,
+      "durSec": 0.41,
+      "pass": true
+    },
+    "hire": {
+      "rms": 0.1549,
+      "peak": 0.4542,
+      "nan": 0,
+      "samples": 14112,
+      "durSec": 0.32,
+      "pass": true
+    },
+    "collect": {
+      "rms": 0.1657,
+      "peak": 0.5646,
+      "nan": 0,
+      "samples": 14553,
+      "durSec": 0.33,
+      "pass": true
+    },
+    "income": {
+      "rms": 0.0394,
+      "peak": 0.07,
+      "nan": 0,
+      "samples": 1764,
+      "durSec": 0.04,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.1417,
+      "peak": 0.4953,
+      "nan": 0,
+      "samples": 27342,
+      "durSec": 0.62,
+      "pass": true
+    },
+    "buildingUp": {
+      "rms": 0.1801,
+      "peak": 0.5642,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "stockDay": {
+      "rms": 0.1432,
+      "peak": 0.417,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "stockResolve": {
+      "rms": 0.1618,
+      "peak": 0.5996,
+      "nan": 0,
+      "samples": 19845,
+      "durSec": 0.45,
+      "pass": true
+    },
+    "allIn": {
+      "rms": 0.0614,
+      "peak": 0.1781,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "loan": {
+      "rms": 0.1908,
+      "peak": 0.5121,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "loanInterest": {
+      "rms": 0.1124,
+      "peak": 0.14,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "repay": {
+      "rms": 0.1819,
+      "peak": 0.6102,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "bankrupt": {
+      "rms": 0.2081,
+      "peak": 0.5577,
+      "nan": 0,
+      "samples": 44100,
+      "durSec": 1,
+      "pass": true
+    },
+    "offlineIncome": {
+      "rms": 0.1832,
+      "peak": 0.5751,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1762,
+      "peak": 0.6334,
+      "nan": 0,
+      "samples": 29106,
+      "durSec": 0.66,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1185,
+      "peak": 0.2711,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.1499,
+      "peak": 0.3999,
+      "nan": 0,
+      "samples": 16758,
+      "durSec": 0.38,
+      "pass": true
+    }
+  },
+  "loops": {
+    "main": {
+      "rms": 0.0587,
+      "peak": 0.2267,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "market": {
+      "rms": 0.0151,
+      "peak": 0.0751,
+      "nan": 0,
+      "samples": 132300,
+      "durSec": 3,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

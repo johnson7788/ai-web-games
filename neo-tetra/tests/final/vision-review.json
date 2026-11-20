@@ -1,0 +1,149 @@
+{
+  "game": "neo-tetra",
+  "generatedAt": "2026-11-19T06:30:05.058Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 6.625,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'NEO TETRA' 发光效果过强导致部分字母边缘模糊，影响远距离辨识",
+        "‘Best 0’ 字体偏小且与背景对比度不足，易被忽略",
+        "右上角语言选择下拉框无展开指示图标，移动端交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘开始’按钮或按回车键启动游戏。",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘NEO TETRA’发光效果过强，导致部分字母边缘轻微晕染，影响远距离辨识",
+        "‘最佳 0’文字字号偏小且颜色较暗，与背景对比度不足，易被忽略",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头与‘中文’间距过近，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应操作当前下落的青色方块（T形）向左或旋转以适配底部空隙",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘HOLD’标签颜色过小且与‘Copper Vein’文字紧贴，易误读为‘HOLD Copper Vein’",
+        "‘NEXT’预览块与右侧HEAT条间距过近，视觉拥挤",
+        "网格线较细，在低对比度下可能影响方块边界辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/04-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Resume’按钮继续游戏",
+      "readable": 8,
+      "silhouette": 4,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊导致玩家轮廓（底部青色光柱）难以辨识，silhouette得分低",
+        "‘Paused’标题与按钮间距偏大，视觉重心分散，影响3秒内目标理解",
+        "右上角语言切换下拉框无展开指示符，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Smelt again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签与标题间距过小，视觉层级略显拥挤",
+        "‘Press R to smelt again’提示字号偏小，低对比度下易忽略",
+        "背景模糊光晕可能干扰部分用户对中心面板的聚焦"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 DROP 按钮开始操作",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框‘FIRST SMELT’字体偏小，弱光下可能辨识困难",
+        "NEXT 区域的4个青色方块无标签，功能不明确",
+        "左上角‘HOLD’文字颜色过淡，与背景对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/07-restart.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或按方向键移动底部灰色方块组向左/右，准备接住上方下落的紫色方块",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘HOLD’标签字体过小且无背景，易被忽略（左上角）",
+        "‘NEXT’预览区与主游戏区间距过近，视觉干扰（右侧）",
+        "热力条文字‘5 to next layer’颜色过浅，对比度不足（右上角）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或按方向键移动底部灰色方块组，使其与上方紫色方块对齐形成完整行",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 'HOLD' 标签字体过小且颜色偏淡（#FFD700），在深棕背景下对比度不足",
+        "右上角 'HEAT' 进度条无数值标注，'5 to next layer' 字体偏小，易被忽略",
+        "底部灰色方块组与网格线颜色接近（灰+浅棕），低对比下可能误判为背景"
+      ]
+    }
+  ]
+}

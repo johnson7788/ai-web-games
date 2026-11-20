@@ -1,0 +1,59 @@
+{
+  "game": "quiz-sprint",
+  "genre": "puzzle",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 175.1,
+      "actions": 8830,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.8,
+      "deaths": 0,
+      "idleSec": 27.3,
+      "maxEventGapSec": 1.58,
+      "uniqueEvents": 10,
+      "levelsReached": 12,
+      "completed": true,
+      "wins": 12
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 263.9,
+      "actions": 13117,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1.2,
+      "deaths": 10,
+      "idleSec": 44.6,
+      "maxEventGapSec": 2.67,
+      "uniqueEvents": 13,
+      "levelsReached": 12,
+      "completed": true,
+      "wins": 2
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 300,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 9,
+      "idleSec": 293.7,
+      "maxEventGapSec": 2.73,
+      "uniqueEvents": 7,
+      "levelsReached": 10,
+      "completed": false,
+      "wins": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T17:36:51.474Z"
+}

@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-11-19T12:06:55.833Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "swallow": {
+      "rms": 0.1863,
+      "peak": 0.464,
+      "nan": 0,
+      "zcRate": 345.9,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "building": {
+      "rms": 0.2549,
+      "peak": 0.7269,
+      "nan": 0,
+      "zcRate": 440,
+      "samples": 26460,
+      "durSec": 0.6,
+      "pass": true
+    },
+    "meteorRain": {
+      "rms": 0.0841,
+      "peak": 0.3815,
+      "nan": 0,
+      "zcRate": 5673.5,
+      "samples": 26460,
+      "durSec": 0.6,
+      "pass": true
+    },
+    "meteorGain": {
+      "rms": 0.1989,
+      "peak": 0.35,
+      "nan": 0,
+      "zcRate": 850.1,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "chain": {
+      "rms": 0.1556,
+      "peak": 0.6008,
+      "nan": 0,
+      "zcRate": 513.2,
+      "samples": 25137,
+      "durSec": 0.57,
+      "pass": true
+    },
+    "chainEnd": {
+      "rms": 0.1023,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 359.4,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.2446,
+      "peak": 0.6475,
+      "nan": 0,
+      "zcRate": 459.1,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.213,
+      "peak": 0.5646,
+      "nan": 0,
+      "zcRate": 370,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.0951,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 1310.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "matchEnd": {
+      "rms": 0.16,
+      "peak": 0.606,
+      "nan": 0,
+      "zcRate": 624.7,
+      "samples": 39249,
+      "durSec": 0.89,
+      "pass": true
+    },
+    "upgrade": {
+      "rms": 0.1354,
+      "peak": 0.551,
+      "nan": 0,
+      "zcRate": 699.2,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    },
+    "respawn": {
+      "rms": 0.1407,
+      "peak": 0.25,
+      "nan": 0,
+      "zcRate": 557.6,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1186,
+      "peak": 0.2723,
+      "nan": 0,
+      "zcRate": 850.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.6,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgmPad": {
+      "rms": 0.08,
+      "peak": 0.2467,
+      "nan": 0,
+      "zcRate": 11135.3,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "bgmBass": {
+      "rms": 0.08,
+      "peak": 0.1875,
+      "nan": 0,
+      "zcRate": 11025.1,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgmArp": {
+      "rms": 0.08,
+      "peak": 0.1386,
+      "nan": 0,
+      "zcRate": 17970.7,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "swirl": {
+      "rms": 0.016,
+      "peak": 0.0969,
+      "nan": 0,
+      "zcRate": 1996.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

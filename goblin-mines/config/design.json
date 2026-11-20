@@ -1,0 +1,77 @@
+{
+  "slug": "goblin-mines",
+  "genre": "puzzle",
+  "oneLiner": "你是深夜矿镇的地精工头：交换矿脉凑三连挖矿、雇佣提灯地精照亮矿道、在塌方与矿兽之间挖穿十二层矿洞。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "swap",
+      "cost": "每次交换消耗 1 步，且只能二选一：换左边错过右边那条矿脉",
+      "feedback": ["sfx", "pop-particles", "combo-flash"],
+      "combinesWith": ["dig"]
+    },
+    {
+      "name": "dig",
+      "cost": "5 燃料 + 放弃当前矿层还没采完的富矿",
+      "feedback": ["sfx", "screen-shake", "scene-change"],
+      "combinesWith": ["swap"]
+    },
+    {
+      "name": "light",
+      "cost": "金币雇佣 + 持续消耗燃料（灯越多燃料掉得越快）",
+      "feedback": ["sfx", "lantern-glow", "yield-burst"],
+      "combinesWith": ["swap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一手换哪对矿脉：先采富矿列还是先清长矿列", "cost": "少采一种资源" },
+    { "atSec": 25, "choice": "灯给富矿还是长矿：照亮密集列赌爆发，还是照亮稳定列保底", "cost": "燃料预算 + 另一列没加成" },
+    { "atSec": 45, "choice": "现在向下挖还是再刷一层：下挖解锁新矿，刷层多攒资源", "cost": "燃料 vs 步数" },
+    { "atSec": 70, "choice": "TNT 现在引爆还是留着：炸开岩壁 vs 存资源给精准采集", "cost": "6 红 + 6 蓝 + 1 燃料" },
+    { "atSec": 100, "choice": "塌方预警：花 8 金币加固还是赌一把省下金币", "cost": "金币 vs 25 安全度 + 岩壁" },
+    { "atSec": 130, "choice": "多地精 vs 精锐：再雇一个照两列，还是升级一个地精加成翻倍", "cost": "金币 vs 燃料消耗" },
+    { "atSec": 160, "choice": "矿兽挡住去路：先攒资源总攻还是贴着它慢慢磨", "cost": "步数节奏 vs 安全度" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "红宝石+蓝宝石矿脉，学会相邻交换" },
+    { "index": 2, "newElement": "紫晶矿解锁（更稀有更值钱）" },
+    { "index": 3, "newElement": "绿宝石 + 需要多次爆破的多层岩壁" },
+    { "index": 4, "newElement": "第一只头目矿兽（3×3 岩块）" },
+    { "index": 5, "newElement": "金块矿 + 冻结矿脉（不能下落）" },
+    { "index": 6, "newElement": "温泉格：附近矿脉产出翻倍" },
+    { "index": 7, "newElement": "富矿段：随机竖列三倍产出" },
+    { "index": 8, "newElement": "贫矿段 + 第二只矿兽" },
+    { "index": 9, "newElement": "深渊：塌方更频繁" },
+    { "index": 10, "newElement": "地下水：岩壁更厚" },
+    { "index": 11, "newElement": "深部富矿：高风险高回报" },
+    { "index": 12, "newElement": "深渊之王：最终矿兽" }
+  ],
+  "upgrades": [
+    { "id": "fuelSurge", "kind": "rule", "desc": "燃油充能：3 燃料换 1 步（改行动力规则）" },
+    { "id": "tnt", "kind": "rule", "desc": "TNT：引爆任意一格及周围 8 格（改消除规则）" },
+    { "id": "fuelCollect", "kind": "rule", "desc": "燃油收集：盘面所有燃料一次性引爆（改采集规则）" },
+    { "id": "precisePick", "kind": "rule", "desc": "精准采集：指定一格 2 倍产出（改产出规则）" },
+    { "id": "lantern1", "kind": "rule", "desc": "提灯地精：照亮列内匹配产出 +50%（改产出规则）" },
+    { "id": "lantern2", "kind": "rule", "desc": "地精升级：加成翻倍到 +100%（改产出规则）" },
+    { "id": "reinforce", "kind": "rule", "desc": "加固预算：花金币把塌方伤害降到 5（改失败成本规则）" },
+    { "id": "oilCap", "kind": "stat", "desc": "燃料上限 +20（数值）" },
+    { "id": "moveCap", "kind": "stat", "desc": "开局步数 +3（数值）" },
+    { "id": "oreCap", "kind": "stat", "desc": "四色矿石上限 +10（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 4, "firstSuccessSec": 30, "interactive": true, "steps": 3, "skippable": true, "replayable": true },
+  "signatureMoment": "矿车满载驶出矿洞的瞬间，车头灯笼拖出一道金色光轨划破夜色",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "深夜矿镇发光风格：程序化 Canvas（径向渐变 + 加法混合发光 + 三套场景色板），UI 线框 SVG/CSS，BGM/SFX 用 WebAudio 程序化合成"
+}

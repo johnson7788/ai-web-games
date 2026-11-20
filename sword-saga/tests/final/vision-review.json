@@ -1,0 +1,149 @@
+{
+  "game": "sword-saga",
+  "generatedAt": "2026-11-19T19:20:58.135Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.5,
+    "silhouette": 6.75,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-map-bamboo.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色靠近中间的感叹号标记点",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与左侧小橙色物体（可能是宠物/道具）轮廓相似、亮度接近，易混淆",
+        "中间感叹号目标图标无明确交互提示（如高亮边框或脉动），仅靠光晕不够醒目",
+        "右上角‘SEALED’标签文字与背景对比度偏低，部分像素模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/02-dialog.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Next’按钮继续对话",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（白色小人）与橙色小物体重叠，易误判为单一实体",
+        "‘BATTLE’区域无明确敌人轮廓，仅靠文字提示，战斗触发点辨识度低",
+        "对话框底部‘Next’按钮与背景深色块对比不足，弱光下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/03-battle.png",
+      "goal_visible": true,
+      "first_action_guess": "用方向键移动 Hero.name 向右靠近 Bamboo Wraith 并点击互动",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 'CHAPTER 1/12' 和 'REALM Green Bamboo Forest' 文字间距过小，略显拥挤",
+        "Bamboo Wraith 血条下方 'WOOD' 标签字体偏小，与上方 '90/90' 对齐不一致",
+        "Fox.name 的 FIRE 属性标签颜色（红）与 Hero.name 的 METAL（蓝绿）对比度高，但未明确指示其是否可操作或状态"
+      ]
+    },
+    {
+      "shot": "tests/final/04-target-select.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部‘Bamboo Wraith (Wood)’按钮攻击敌人",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧敌人血条上方红色感叹号与血条间距过小，易误读为血条一部分",
+        "‘YOUR TURN’黑底黄字与下方角色图标间距紧凑，部分玩家可能忽略状态提示",
+        "左上角‘Arrows to walk · Click to interact’文字偏小且灰度高，3秒内不易捕捉"
+      ]
+    },
+    {
+      "shot": "tests/final/05-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Attack’按钮攻击Bamboo King",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘YOUR TURN’标签与Hero.name重叠轻微，可能影响阅读节奏",
+        "Bamboo King头顶感叹号图标偏小且无说明，新手可能忽略其警示含义",
+        "Fox.name下方FIRE标签颜色（红）与血条绿色对比弱，易误读为状态而非属性"
+      ]
+    },
+    {
+      "shot": "tests/final/06-snow.png",
+      "goal_visible": true,
+      "first_action_guess": "向右走，靠近中间发光的感叹号标记点",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与左侧小橙色物体（疑似宠物/道具）轮廓相似、亮度接近，易混淆",
+        "‘SEALED’门框文字偏小且无背景衬底，在深蓝格子背景下辨识度低",
+        "中间感叹号目标图标未明确指示交互方式（如点击/靠近），仅靠光晕暗示"
+      ]
+    },
+    {
+      "shot": "tests/final/07-tower.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动到感叹号标记处与目标互动",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下）与橙色小物体重叠，轮廓辨识度低；",
+        "‘SEALED’门框文字偏小且无背景衬底，暗背景下易误读；",
+        "感叹号目标图标发光过弱，与深紫网格对比不足，远距离难识别"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧的老人角色（带感叹号标记）进行互动",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与左侧小物件（烟斗？）视觉区分度低，易误判为可交互物",
+        "‘SEALEd’门框标签字体过小且无背景衬底，远距离难辨识",
+        "中央提示框遮挡部分路径网格，轻微影响空间判断"
+      ]
+    }
+  ]
+}

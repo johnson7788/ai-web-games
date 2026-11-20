@@ -1,0 +1,59 @@
+{
+  "game": "idle-forge",
+  "genre": "sim",
+  "source": "bot",
+  "version": "m1",
+  "runs": [
+    {
+      "id": "greedy-1",
+      "policy": "greedy",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 28.67,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.63,
+      "deaths": 0,
+      "actions": 158,
+      "idleSec": 0,
+      "maxEventGapSec": 0.32,
+      "uniqueEvents": 8,
+      "levelsReached": 6,
+      "completed": false
+    },
+    {
+      "id": "random-1",
+      "policy": "random",
+      "seed": 2,
+      "level": 1,
+      "durationSec": 45.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 0.78,
+      "deaths": 0,
+      "actions": 242,
+      "idleSec": 0,
+      "maxEventGapSec": 0.4,
+      "uniqueEvents": 10,
+      "levelsReached": 9,
+      "completed": false
+    },
+    {
+      "id": "noinput-1",
+      "policy": "noinput",
+      "seed": 3,
+      "level": 1,
+      "durationSec": 45.02,
+      "firstInputSec": 0,
+      "inputLatencyMs": 0,
+      "firstSuccessSec": 31,
+      "deaths": 0,
+      "actions": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 3,
+      "levelsReached": 2,
+      "completed": false
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "game": "ink-path",
+  "generatedAt": "2026-11-19T12:52:29.245Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "bgm-loop-seconds≈40",
+      "ok": true,
+      "loopSeconds": 40,
+      "bpm": 96,
+      "bars": 16
+    },
+    {
+      "name": "bgm-render-duration",
+      "ok": true,
+      "duration": 40.5
+    },
+    {
+      "name": "bgm-rms>0.01",
+      "ok": true,
+      "rms": 0.02134343446840718
+    },
+    {
+      "name": "bgm-head-no-fadein",
+      "ok": true,
+      "headRms": 0.021358589542343202
+    },
+    {
+      "name": "bgm-loop-splice-no-silence",
+      "ok": true,
+      "spliceRms": 0.018262599431055473
+    },
+    {
+      "name": "bgm-peak<=0.98",
+      "ok": true,
+      "peak": 0.11303741484880447
+    },
+    {
+      "name": "sfx-weave-rms>0.01",
+      "ok": true,
+      "rms": 0.03216936506284557
+    },
+    {
+      "name": "sfx-weave-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.06108843537414966
+    },
+    {
+      "name": "sfx-weave-peak<=0.98",
+      "ok": true,
+      "peak": 0.12762224674224854
+    },
+    {
+      "name": "sfx-undo-rms>0.01",
+      "ok": true,
+      "rms": 0.031080221626023755
+    },
+    {
+      "name": "sfx-undo-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.10959183673469387
+    },
+    {
+      "name": "sfx-undo-peak<=0.98",
+      "ok": true,
+      "peak": 0.12509901821613312
+    },
+    {
+      "name": "sfx-nodeLit-rms>0.01",
+      "ok": true,
+      "rms": 0.024244952631866264
+    },
+    {
+      "name": "sfx-nodeLit-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.038231292517006805
+    },
+    {
+      "name": "sfx-nodeLit-peak<=0.98",
+      "ok": true,
+      "peak": 0.09387658536434174
+    },
+    {
+      "name": "sfx-gate-rms>0.01",
+      "ok": true,
+      "rms": 0.020877261573722633
+    },
+    {
+      "name": "sfx-gate-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.15537414965986396
+    },
+    {
+      "name": "sfx-gate-peak<=0.98",
+      "ok": true,
+      "peak": 0.09635429084300995
+    },
+    {
+      "name": "sfx-nearMiss-rms>0.01",
+      "ok": true,
+      "rms": 0.02197048031716395
+    },
+    {
+      "name": "sfx-nearMiss-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.03126984126984127
+    },
+    {
+      "name": "sfx-nearMiss-peak<=0.98",
+      "ok": true,
+      "peak": 0.056746263056993484
+    },
+    {
+      "name": "sfx-win-rms>0.01",
+      "ok": true,
+      "rms": 0.021022818512936303
+    },
+    {
+      "name": "sfx-win-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.46564625850340136
+    },
+    {
+      "name": "sfx-win-peak<=0.98",
+      "ok": true,
+      "peak": 0.09389185905456543
+    },
+    {
+      "name": "sfx-lose-rms>0.01",
+      "ok": true,
+      "rms": 0.03776538294749615
+    },
+    {
+      "name": "sfx-lose-dur<=0.6s",
+      "ok": true,
+      "activeDuration": 0.20727891156462586
+    },
+    {
+      "name": "sfx-lose-peak<=0.98",
+      "ok": true,
+      "peak": 0.1557268500328064
+    }
+  ],
+  "audio": [
+    {
+      "kind": "bgm",
+      "loopSeconds": 40,
+      "bpm": 96,
+      "bars": 16,
+      "duration": 40.5,
+      "rms": 0.02134343446840718,
+      "peak": 0.11303741484880447,
+      "headRms": 0.021358589542343202,
+      "spliceRms": 0.018262599431055473
+    },
+    {
+      "kind": "sfx",
+      "name": "weave",
+      "event": "move",
+      "rms": 0.03216936506284557,
+      "peak": 0.12762224674224854,
+      "activeDuration": 0.06108843537414966
+    },
+    {
+      "kind": "sfx",
+      "name": "undo",
+      "event": "undo",
+      "rms": 0.031080221626023755,
+      "peak": 0.12509901821613312,
+      "activeDuration": 0.10959183673469387
+    },
+    {
+      "kind": "sfx",
+      "name": "nodeLit",
+      "event": "nodeLit",
+      "rms": 0.024244952631866264,
+      "peak": 0.09387658536434174,
+      "activeDuration": 0.038231292517006805
+    },
+    {
+      "kind": "sfx",
+      "name": "gate",
+      "event": "gateUnlock",
+      "rms": 0.020877261573722633,
+      "peak": 0.09635429084300995,
+      "activeDuration": 0.15537414965986396
+    },
+    {
+      "kind": "sfx",
+      "name": "nearMiss",
+      "event": "nearMiss",
+      "rms": 0.02197048031716395,
+      "peak": 0.056746263056993484,
+      "activeDuration": 0.03126984126984127
+    },
+    {
+      "kind": "sfx",
+      "name": "win",
+      "event": "win",
+      "rms": 0.021022818512936303,
+      "peak": 0.09389185905456543,
+      "activeDuration": 0.46564625850340136
+    },
+    {
+      "kind": "sfx",
+      "name": "lose",
+      "event": "lose",
+      "rms": 0.03776538294749615,
+      "peak": 0.1557268500328064,
+      "activeDuration": 0.20727891156462586
+    }
+  ]
+}

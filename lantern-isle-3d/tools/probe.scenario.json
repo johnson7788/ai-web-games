@@ -1,0 +1,233 @@
+{
+  "note": "probe.mjs test 的输入：真实按键驱动 + 状态必须变（不接受直接改 state）",
+  "cases": [
+    {
+      "name": "行走：先站到村里开阔地，按住 W 必须真的位移（sim 计数）",
+      "steps": [
+        {
+          "do": "call",
+          "fn": "teleport",
+          "args": {
+            "x": -24,
+            "z": -2
+          }
+        },
+        {
+          "do": "sleep",
+          "ms": 300
+        },
+        {
+          "do": "key",
+          "code": "KeyW",
+          "ms": 900
+        },
+        {
+          "do": "sleep",
+          "ms": 200
+        }
+      ],
+      "assert": [
+        {
+          "js": "return window.__game3d.state().stats.moves",
+          "op": ">",
+          "value": 0
+        },
+        {
+          "js": "return window.__game3d.state().stats.inputs",
+          "op": ">",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "搬灯：走到灯堆按 E，负重必须 +1",
+      "steps": [
+        {
+          "do": "call",
+          "fn": "teleport",
+          "args": {
+            "to": "lantern_small_0"
+          }
+        },
+        {
+          "do": "sleep",
+          "ms": 300
+        },
+        {
+          "do": "key",
+          "code": "KeyE",
+          "ms": 120
+        },
+        {
+          "do": "sleep",
+          "ms": 400
+        }
+      ],
+      "assert": [
+        {
+          "js": "return window.__game3d.state().weight",
+          "op": ">=",
+          "value": 1
+        },
+        {
+          "js": "return window.__game3d.state().carried.length",
+          "op": ">",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "点灯：站灯位按 R 出引导环，站够就点亮",
+      "steps": [
+        {
+          "do": "call",
+          "fn": "grant",
+          "args": {
+            "oil": 5
+          }
+        },
+        {
+          "do": "call",
+          "fn": "teleport",
+          "args": {
+            "to": "lamp_harbor"
+          }
+        },
+        {
+          "do": "sleep",
+          "ms": 300
+        },
+        {
+          "do": "key",
+          "code": "KeyR",
+          "ms": 150
+        },
+        {
+          "do": "sleep",
+          "ms": 500
+        }
+      ],
+      "assert": [
+        {
+          "js": "return window.__game3d.state().lighting ? 1 : 0",
+          "op": "==",
+          "value": 1
+        }
+      ],
+      "then": [
+        {
+          "do": "sleep",
+          "ms": 3000
+        }
+      ]
+    },
+    {
+      "name": "点灯完成：lit 计数增加",
+      "steps": [
+        {
+          "do": "sleep",
+          "ms": 3200
+        }
+      ],
+      "assert": [
+        {
+          "js": "return window.__game3d.state().lit",
+          "op": ">",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "对话：走到看守人旁按 T，进入对话屏",
+      "steps": [
+        {
+          "do": "call",
+          "fn": "teleport",
+          "args": {
+            "to": "warden"
+          }
+        },
+        {
+          "do": "sleep",
+          "ms": 300
+        },
+        {
+          "do": "key",
+          "code": "KeyT",
+          "ms": 120
+        },
+        {
+          "do": "sleep",
+          "ms": 600
+        }
+      ],
+      "assert": [
+        {
+          "js": "return window.__ll.state.phase",
+          "op": "==",
+          "value": "dialog"
+        }
+      ]
+    },
+    {
+      "name": "动画状态机：切到 walk 后 current 必须是 walk",
+      "steps": [
+        {
+          "do": "call",
+          "fn": "playAnim",
+          "args": {
+            "name": "walk"
+          }
+        },
+        {
+          "do": "sleep",
+          "ms": 500
+        }
+      ],
+      "assert": [
+        {
+          "js": "return window.__game3d.state().anim",
+          "op": "==",
+          "value": "walk"
+        }
+      ]
+    },
+    {
+      "name": "BGM 真的在响：ctx running 且主音量 >0",
+      "steps": [
+        {
+          "do": "sleep",
+          "ms": 600
+        }
+      ],
+      "assert": [
+        {
+          "js": "return window.__game3d.audio().ctxState",
+          "op": "==",
+          "value": "running"
+        },
+        {
+          "js": "return window.__game3d.audio().masterGain",
+          "op": ">",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "场景成本：DrawCall 与三角面在预算内",
+      "steps": [],
+      "assert": [
+        {
+          "js": "return window.__game3d.stats().drawCalls",
+          "op": "<",
+          "value": 90
+        },
+        {
+          "js": "return window.__game3d.stats().triangles",
+          "op": "<",
+          "value": 420000
+        }
+      ]
+    }
+  ]
+}

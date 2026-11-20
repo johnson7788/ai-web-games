@@ -1,0 +1,86 @@
+{
+  "slug": "word-duel",
+  "genre": "puzzle",
+  "oneLiner": "拼出英文单词施放符文，与十二位法师回合对决——词越长伤害越高，出手越快越强，拼错就吃反伤。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "spell",
+      "cost": "用掉手牌字母并结束回合；拼错单词（不在词库/不满足长度门槛）会吃反伤",
+      "feedback": ["sfx", "runeFlash", "damageNumber", "wordCloud"],
+      "combinesWith": ["swap", "heal"]
+    },
+    {
+      "name": "swap",
+      "cost": "弃掉 3 张字母并直接结束回合，等于让对手多打你一轮",
+      "feedback": ["sfx", "shuffle", "bubbleTip"],
+      "combinesWith": ["spell"]
+    },
+    {
+      "name": "heal",
+      "cost": "把本可用于攻击的字母用来回血，且必须是 heal 类词（时机错过就没了）",
+      "feedback": ["sfx", "healGlow", "bubbleTip"],
+      "combinesWith": ["spell"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一回合：先打一个短词稳定蹭血，还是攒元音憋长词追求高伤", "cost": "短词伤害低；攒长词要更多字母、拼错就吃反伤" },
+    { "atSec": 20, "choice": "手里元音不够：立刻换 3 张字母钓鱼，还是保留现有组合硬拼", "cost": "换牌直接结束回合让对手白打一轮" },
+    { "atSec": 40, "choice": "血量过半：拼 heal 类词回血，还是继续压制对手", "cost": "回血词伤害为 0，回合被消耗" },
+    { "atSec": 60, "choice": "对手有护盾：连续短词破盾，还是憋一个长词连盾带血一起打", "cost": "破盾的短词本体伤害被护盾吃掉" },
+    { "atSec": 90, "choice": "手里有稀有字母（Q/X/Z）：赌一个长词打大伤害，还是拆成安全常用词", "cost": "长词拼错吃反伤；拆短词浪费高伤字母" },
+    { "atSec": 120, "choice": "对手残血：赌长词一击秒杀，还是稳短词补刀", "cost": "长词失误让对手多活一轮并反打你" },
+    { "atSec": 150, "choice": "血量告急又缺好牌：换牌赌一手，还是用 heal 词苟住", "cost": "换牌结束回合（多挨一轮）；heal 放弃输出" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 50,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础对决：拼出任意英文单词施法攻击" },
+    { "index": 2, "newElement": "火系对手：短词快攻，每回合连续出手两次" },
+    { "index": 3, "newElement": "冰系对手：几率把你冻住，跳过一个回合" },
+    { "index": 4, "newElement": "雷系对手：答错单词时遭受双倍反伤" },
+    { "index": 5, "newElement": "限时短：回合倒计时压缩到 12 秒" },
+    { "index": 6, "newElement": "词长门槛：少于 4 个字母的单词无效" },
+    { "index": 7, "newElement": "护盾：先连续命中破盾，才能伤到本体" },
+    { "index": 8, "newElement": "补血机制：拼出 heal 类词回血，对手也会每回合自愈" },
+    { "index": 9, "newElement": "偷字：每回合从你手中偷走 1 个字母" },
+    { "index": 10, "newElement": "双生火：两段连击，节奏更快更凶" },
+    { "index": 11, "newElement": "长词门槛：少于 5 个字母无效，且对手会自愈+冰冻" },
+    { "index": 12, "newElement": "终局：护盾 + 双倍反伤 + 冰冻 三轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockSwap", "kind": "rule", "desc": "换 3 张字母的机会，代价是结束回合" },
+    { "id": "fireFoe", "kind": "rule", "desc": "火系对手两段连击" },
+    { "id": "frostFoe", "kind": "rule", "desc": "冰系对手冰冻你一跳" },
+    { "id": "thunderFoe", "kind": "rule", "desc": "雷系对手双倍反伤" },
+    { "id": "shortTimer", "kind": "stat", "desc": "回合倒计时 30s → 12s" },
+    { "id": "lengthGate4", "kind": "rule", "desc": "词长门槛 ≥4 字母" },
+    { "id": "shield", "kind": "rule", "desc": "对手护盾，需连击破盾" },
+    { "id": "healWords", "kind": "rule", "desc": "heal 类词回血 + 对手自愈" },
+    { "id": "letterTheft", "kind": "rule", "desc": "对手每回合偷 1 个字母" },
+    { "id": "twinPhase", "kind": "rule", "desc": "双生火两段连击" },
+    { "id": "lengthGate5", "kind": "rule", "desc": "词长门槛 ≥5 字母" },
+    { "id": "archmage", "kind": "rule", "desc": "终局三轴叠加" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

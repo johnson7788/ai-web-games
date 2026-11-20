@@ -1,0 +1,60 @@
+{
+  "slug": "ink-path",
+  "genre": "puzzle",
+  "oneLiner": "在墨蓝星空网上，从起点星子开始沿丝线织出一条不重复、不断线的蛛丝路径，织完整张星网让萤火虫群飞散。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "weave",
+      "cost": "丝线一旦织下即定型，走错岔路只能整体回退重织，浪费步数",
+      "feedback": ["sfx", "silkGlow", "nodeRipple"],
+      "combinesWith": ["undo"]
+    },
+    {
+      "name": "undo",
+      "cost": "回退到更早的星子会抹掉这段丝线，并增加总步数（影响星级）",
+      "feedback": ["sfx", "silkFade", "dim"],
+      "combinesWith": ["weave"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "从起点出发，先走哪一根丝：走错半路要回退多步重织", "cost": "错半步 = 损失已织好的整段丝线" },
+    { "atSec": 20, "choice": "岔路口：选通往桥的方向，还是先绕亮一颗小星", "cost": "选错方向，后段会被堵死只能回退" },
+    { "atSec": 40, "choice": "唯一桥边：现在过桥，还是先把这一侧织干净再过", "cost": "过桥后另一侧封闭，回不了头" },
+    { "atSec": 60, "choice": "双环交汇：先进左环还是右环", "cost": "进错一环会把自己堵在环里" },
+    { "atSec": 80, "choice": "单向丝：按箭头顺序规划，先顺走还是先绕路", "cost": "逆着箭头走会直接断路" },
+    { "atSec": 110, "choice": "断线：是否先绕去点亮触发星子，解锁才能走的新丝", "cost": "绕路多花步数，但不开门无路可走" },
+    { "atSec": 150, "choice": "大师网：多岔路口选主线，牺牲一步换取整体连通", "cost": "贪近路会走进断头丝" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "三节点丝链：点相邻星子延伸" },
+    { "index": 2, "newElement": "星形轮盘：多岔路，走错要回退" },
+    { "index": 3, "newElement": "桥图：唯一桥边决定过桥时机" },
+    { "index": 4, "newElement": "双环交汇：共中心星的双环，进错会被堵在环里" },
+    { "index": 5, "newElement": "密集星座：几乎全连接，岔路最密" },
+    { "index": 6, "newElement": "重走节点：星子可二次进入，丝线只走一次" },
+    { "index": 7, "newElement": "单向丝：箭头只能顺向走，逆走直接断路" },
+    { "index": 8, "newElement": "断线解锁：先点亮触发星子，才能解锁新丝" },
+    { "index": 9, "newElement": "单向 + 解锁叠加：箭头限定顺序，触发解锁开新丝" },
+    { "index": 10, "newElement": "九星大网：长线规划，一子走错全盘重织" },
+    { "index": 11, "newElement": "单向欧拉网：每条箭头丝线恰好走一次" },
+    { "index": 12, "newElement": "大师网：全机制叠加（箭头 + 断线 + 多岔路）" }
+  ],
+  "upgrades": [
+    { "id": "backtrack", "kind": "rule", "desc": "点到已织的星子可回退，铺错不再等于重来" },
+    { "id": "forkTension", "kind": "rule", "desc": "多岔路口引入：错半步要回退多步" },
+    { "id": "bridgeOrder", "kind": "rule", "desc": "桥边过桥顺序决定整局生死" },
+    { "id": "revisitNode", "kind": "rule", "desc": "边一次/节点可回的欧拉变体" },
+    { "id": "directedThread", "kind": "rule", "desc": "单向丝强制顺序规划" },
+    { "id": "gateUnlock", "kind": "rule", "desc": "触发星子解锁断线" },
+    { "id": "parRating", "kind": "rule", "desc": "星级按步数/完美度结算" },
+    { "id": "sceneShift", "kind": "stat", "desc": "三场景换章（薄暮林间/极光冰原/深空星云）" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 3, "firstSuccessSec": 25, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

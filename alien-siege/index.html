@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="ALIEN SIEGE — a raycasting FPS in a purple-fog colonial alley: laser-mark targets, raise your shield, and hold 12 waves with four unlockable weapons.">
+  <meta name="theme-color" content="#150e1c">
+  <title>ALIEN SIEGE · Raycasting FPS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+
+    <div id="touch-layer" class="touch-only" aria-hidden="true">
+      <div id="touch-move" class="touch-zone"></div>
+      <div id="touch-look" class="touch-zone"></div>
+      <div class="touch-buttons">
+        <button id="btn-fire" class="touch-btn fire" type="button" aria-label="Fire">FIRE</button>
+        <button id="btn-reload" class="touch-btn" type="button" aria-label="Reload">R</button>
+        <button id="btn-mark" class="touch-btn" type="button" aria-label="Mark">E</button>
+        <button id="btn-shield" class="touch-btn" type="button" aria-label="Shield">Q</button>
+      </div>
+    </div>
+
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Loading…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

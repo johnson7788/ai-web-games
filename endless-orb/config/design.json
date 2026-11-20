@@ -1,0 +1,94 @@
+{
+  "slug": "endless-orb",
+  "genre": "arcade",
+  "oneLiner": "你是永动光球的操控者，点击把光子钉进中心旋转的能量星核；空档里稳钉追分，撞上已钉光子即坍缩，清空 12 环并触发脉冲清屏涟漪。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "pin",
+      "cost": "出手即锁死飞行轨迹，撞到已钉光子立刻坍缩",
+      "feedback": ["sfx", "photon-trail", "core-glow"],
+      "combinesWith": ["wait"]
+    },
+    {
+      "name": "wait",
+      "cost": "等待空档会失去节奏与连击窗口，但换到更安全的落点",
+      "feedback": ["sweep-guide", "overload-warn"],
+      "combinesWith": ["pin"]
+    },
+    {
+      "name": "choose",
+      "cost": "环间升级三选一，放弃另外两条本局 build",
+      "feedback": ["sfx", "card-glow", "hud-icon"],
+      "combinesWith": ["pin"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "开局第一颗：等空档稳钉 vs 立刻抢节奏发射", "cost": "提前出手可能撞上已钉光子" },
+    { "atSec": 12, "choice": "追中心小空档 vs 等更大空档", "cost": "小空档更危险但节奏与连击不断" },
+    { "atSec": 25, "choice": "重光子快来了：留到大空档 vs 现在先用普通光子垫数", "cost": "重光子占两格位，塞错即坍缩" },
+    { "atSec": 45, "choice": "极性反转前抢钉 vs 等反转吸入光子后再出手", "cost": "反转会吸入一颗已钉光子并换向，打乱布局" },
+    { "atSec": 70, "choice": "双核互绕：钉离得近的核 vs 等另一个核转到位", "cost": "近核出手快但空档更小" },
+    { "atSec": 100, "choice": "摇摆核：预判落点提前出手 vs 等核摆正再钉", "cost": "预判省时但容易误判撞光子" },
+    { "atSec": 140, "choice": "环间升级三选一：护盾 / 极性护甲 / 减速器", "cost": "放弃另外两条本局 build" },
+    { "atSec": 165, "choice": "黑洞核高速阶段：保命慢钉 vs 追分快钉", "cost": "分数 vs 生存概率" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "蓝星核：向旋转能量核钉光子，学基础出手时机" },
+    { "index": 2, "newElement": "反向：星核反转旋转方向，重新校准落点" },
+    { "index": 3, "newElement": "过载钉：每 20 钉出现一颗占两格位的重光子" },
+    { "index": 4, "newElement": "摇摆核：星核横向摇摆，落点持续漂移" },
+    { "index": 5, "newElement": "红巨核+极性反转：核磁极反转吸入一颗光子并换向" },
+    { "index": 6, "newElement": "双核互绕：两颗小核交错公转，选对核再出手" },
+    { "index": 7, "newElement": "摇摆+极性：横向漂移叠加极性反转" },
+    { "index": 8, "newElement": "红巨核极速：变速核叠加更频繁的极性反转" },
+    { "index": 9, "newElement": "黑洞核：高速单核，节奏再提" },
+    { "index": 10, "newElement": "黑洞双核+变速：互绕双核叠加变速自转" },
+    { "index": 11, "newElement": "黑洞摇摆+极性：大振幅摇摆叠加极性反转" },
+    { "index": 12, "newElement": "终局全开：高速双核+极性+过载钉的最终收束" }
+  ],
+  "upgrades": [
+    { "id": "shield", "kind": "rule" },
+    { "id": "polarityResist", "kind": "rule" },
+    { "id": "heavyBonus", "kind": "rule" },
+    { "id": "ghostSlot", "kind": "rule" },
+    { "id": "comboBank", "kind": "rule" },
+    { "id": "grace", "kind": "rule" },
+    { "id": "biggerCore", "kind": "rule" },
+    { "id": "slowCore", "kind": "stat" },
+    { "id": "pinSpeed", "kind": "stat" },
+    { "id": "resonance", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "newBuild", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "一环钉满的瞬间，能量核脉冲扩散出一圈清屏涟漪，把整圈光子震成星尘",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "程序化 Canvas 发光渲染：三套场景色板（蓝星核/红巨核/黑洞核）+ 径向渐变能量核 + 粒子涟漪；UI 线框 SVG/CSS"
+}

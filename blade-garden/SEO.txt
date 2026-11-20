@@ -1,0 +1,41 @@
+TITLE
+Blade Garden — Free Herb Garden Survival Action Game
+
+CATEGORY
+Action
+
+TAGS
+survivor, action, bamboo swordsman, herb garden, auto-attack, roguelite, upgrade, horde, browser game, casual, fantasy, top-down
+
+SHORT DESCRIPTION
+Guard the herb garden as a bamboo swordsman — move, auto-slash foraging beasts, and forge your Sword Intent.
+
+LONG DESCRIPTION
+BLADE GARDEN is a free top-down survivor action game about a bamboo swordsman guarding a medicine garden from foraging beasts.
+
+Move with WASD or a virtual joystick and your blade strikes the nearest beast on its own. Slay boars, crows, mandrills and herb thieves, absorb their Qi motes, and pick one of three Sword Intents each time you level up — sharpen your blade, unleash bamboo leaf darts, spinning whirl slashes, thunder bamboo, or root tangle. When every Sword Intent is maxed, a storm of bamboo leaves swirls around you.
+
+12 timed levels across three seasons: the Spring Plot, the Summer Marsh and the Autumn Cliff. Each level adds a new threat — elite beasts, the Medicine Cauldron boss, poison mires, narrow passes, and the final Mandrill King. Survive the clock and hit the slay quota to clear each stage.
+
+Easy to learn in ten seconds, deep enough to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+药园剑客 — 免费药园生存割草动作游戏
+
+CATEGORY
+动作
+
+TAGS
+割草, 生存, 动作, 竹剑客, 药园, 自动攻击, 肉鸽, 升级, 敌潮, 网页游戏, 休闲, 俯视角
+
+SHORT DESCRIPTION
+化身守药园的竹剑客——走位、自动挥剑斩退采药野物，修炼三选一剑意，守住药园。
+
+LONG DESCRIPTION
+《药园剑客》是一款免费的俯视角生存割草动作游戏：你是一名守护药园的竹剑客，斩退来偷采药材的野物。
+
+用 WASD 或虚拟摇杆走位，竹剑会自动挥向最近的野物。斩下野猪、乌鸦、山魈与药贼，吸收它们掉落的修为光点，每次升级从三种剑意里选一种——磨利剑锋、射出竹叶镖、回旋斩、雷竹或根须缠绕。当所有剑意修炼至满级，周身会卷起漫天竹叶。
+
+12 个计时关卡横跨三大季节：春圃、夏泽与秋崖。每关都有新威胁——精英怪、Boss 药王鼎、毒沼减速带、窄道地形，直到终局的山魈王。撑过倒计时并达成击杀目标即可过关。
+
+十秒上手，越玩越有深度。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

@@ -1,0 +1,149 @@
+{
+  "game": "fish-frenzy",
+  "generatedAt": "2026-11-19T13:25:10.004Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 6.75,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Dive’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景发光点与文字轻微融合，眯眼时‘FISH FRENZY’标题与背景光斑边界模糊，影响 silhouette 辨识",
+        "‘Best run 1 stages’为黄色小字，对比度偏低，在深蓝背景下部分用户可能忽略",
+        "右上角语言选择下拉框无展开指示（如三角图标），移动端交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的炮台控制按钮（+/- 或滑块）调整炮台数量或角度",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角COINS/STAGE/TARGET文字与背景对比度偏低，小字号在深蓝背景下略难辨识",
+        "右上角'Shock net'进度条无标签说明，功能意图不明确",
+        "炮台数量显示'1'被黑色背景框包围，与整体浅色UI风格略有冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/03-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的炮弹发射按钮（或拖动调整角度）来射击红色大嘴鱼",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘COINS 400’与‘STAGE 1’标签间距过小，易误读为一行",
+        "‘Megamouth’标题无背景衬底，在深蓝条纹背景下对比度偏低",
+        "左下黄色小鱼发光效果略强，可能干扰对主目标（红鱼）的聚焦"
+      ]
+    },
+    {
+      "shot": "tests/final/04-scene2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击加号按钮增加炮台数量或调整炮台参数",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "炮台数量显示‘1’与‘Cannon’标签重叠，视觉层级混乱",
+        "左下角绿色光点（疑似玩家）轮廓过小且无高亮，眯眼时易与背景碎石混淆",
+        "‘Shock net’进度条文字偏小，右上角区域信息密度高，新手可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/05-scene3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的炮台控制按钮（+/- 或数字1）调整炮台角度或数量",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "炮台与背景条纹对比度低，眯眼时难以区分敌我单位轮廓",
+        "‘Shock net’进度条文字偏小且无背景衬底，暗色背景下辨识度略低",
+        "目标值‘1600’与‘STAGE 9’垂直排列紧凑，小屏可能误读为同一行"
+      ]
+    },
+    {
+      "shot": "tests/final/06-electric.png",
+      "goal_visible": true,
+      "first_action_guess": "点击加号按钮增加炮台数量或调整炮台参数",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "炮台与地形轮廓相似度高，眯眼时难以区分可交互物与背景障碍物",
+        "‘Shock net’进度条文字过小且无对比色，弱光下易忽略",
+        "底部炮台控制区（- / Cannon 1 / +）与下方滑块间距过近，操作易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击加号按钮增加炮台数量",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角COINS/STAGE/TARGET三行文字间距过小，略显拥挤",
+        "‘Cannon 1’按钮与下方滑块重叠视觉区域，可能误触",
+        "玩家鱼体发光效果较弱，在深蓝背景中对比度不足（影响silhouette）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘下海’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景鱼群剪影与文字层级关系模糊，部分鱼形轮廓在‘FISH FRENZY’下方若隐若现，可能干扰主标题识别",
+        "‘最佳战绩 1 场’为黄色小字，对比度偏低，在深蓝背景下易被忽略",
+        "右上角语言切换按钮无悬停反馈提示，且下拉箭头过小（约12px），桌面端尚可，但不符合无障碍设计规范"
+      ]
+    }
+  ]
+}

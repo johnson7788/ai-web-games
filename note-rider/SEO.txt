@@ -1,0 +1,41 @@
+TITLE
+Note Rider — Free Rhythm Slash Game
+
+CATEGORY
+Action
+
+TAGS
+rhythm, music, slash, knight, horse, string demons, beat, timing, arcade, browser game
+
+SHORT DESCRIPTION
+Ride a note-horse across the staff, switch strings and slash string demons right on the beat.
+
+LONG DESCRIPTION
+NOTE RIDER is a free rhythm action game about a string knight galloping across a five-line music staff on a magical note-horse.
+
+Notes race toward the golden line in time with the music. Switch between the two strings with the arrow keys or a swipe, and slash exactly when a note lands on the line — hit the beat to strike the oncoming string demons, and chain eight PERFECTs to unleash the Chord Slash that shakes the whole staff.
+
+12 handcrafted levels across three worlds: the Dawn String Bridge, the Rainy Night Piano City and the Star Sea Scale. Learn single notes, held charge slashes, two-string switching, red counter notes you must dodge, and tempo shifts — then face the Silent Demon King in the finale. Choose from shield, burst and lifesteal upgrades at the skill points to build your own run.
+
+Easy to learn in ten seconds, hard to master on the beat. Play with keyboard or touch on desktop and mobile. No download, free in your browser.
+
+TITLE
+琴弦骑士 — 免费节奏斩击游戏
+
+CATEGORY
+动作
+
+TAGS
+节奏, 音乐, 斩击, 骑士, 音符马, 弦魔, 节拍, 判定, 街机, 网页游戏
+
+SHORT DESCRIPTION
+骑上音符马在五线谱上驰骋，跟上节拍换轨挥剑，斩尽迎面扑来的弦魔。
+
+LONG DESCRIPTION
+《琴弦骑士》是一款免费节奏动作游戏：弦之骑士骑着一匹音符马，在五线谱桥上疾驰。
+
+音符踏着节拍冲向金色判定线。用方向键或滑动切换上下两条弦，在音符落线的瞬间挥剑——命中节拍就是斩击迎面扑来的弦魔；连续 8 个完美判定，就能触发让整行五线谱震动的「和弦斩」。
+
+12 个手工关卡横跨三大场景：晨曦弦桥、雨夜琴城、星海音阶。从单音、长按蓄斩、上下换轨，到必须躲开的红色反击音与变速乐章，一路打向终章的「寂静魔王」。在技能三选一升级点，用护盾、爆发或吸血构筑属于你的打法。
+
+十秒上手，越打越有节奏。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

@@ -1,0 +1,90 @@
+{
+  "slug": "ball-orbit",
+  "genre": "arcade",
+  "oneLiner": "你从底部弹弓发射一串流星，借行星引力绕背打碎下坠的陨石带；每 50 硬度蓄一颗彗星，撞出引力涟漪。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "把角度暴露给行星引力：瞄偏一次浪费整串流星",
+      "feedback": ["trajectory", "sfx"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "fire",
+      "cost": "消耗整串待发流星，射空 = 白丢一轮下坠",
+      "feedback": ["meteor-trail", "sfx", "screen-shake"],
+      "combinesWith": ["aim", "comet"]
+    },
+    {
+      "name": "comet",
+      "cost": "50 硬度才蓄一颗，挥霍在低值陨石上浪费 ×3",
+      "feedback": ["comet-trail", "flash", "sfx"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "瞄稀疏区安全清空 vs 借行星背射打高值陨石", "cost": "高值 vs 安全" },
+    { "atSec": 20, "choice": "彗星攒着打护盾砖 vs 现在砸高值簇", "cost": "盾 vs 分" },
+    { "atSec": 35, "choice": "清整行触发引力涟漪 vs 平均削血", "cost": "涟漪控场 vs 集中爆发" },
+    { "atSec": 50, "choice": "追 +1 球道具 vs 继续削数字砖", "cost": "资源 vs 推进" },
+    { "atSec": 70, "choice": "弹射加倍带里集火 vs 常规弹道稳打", "cost": "高风险高回报" },
+    { "atSec": 95, "choice": "移动陨石先清 vs 多行星引力弹道绕过", "cost": "顺序 / 风险" },
+    { "atSec": 120, "choice": "攒双彗星连破盾阵 vs 单彗星保底", "cost": "资源管理" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "无行星·学瞄准发射" },
+    { "index": 2, "newElement": "单行星引力偏折" },
+    { "index": 3, "newElement": "双行星引力叠加" },
+    { "index": 4, "newElement": "护盾陨石（需彗星）" },
+    { "index": 5, "newElement": "移动陨石" },
+    { "index": 6, "newElement": "弹射加倍带" },
+    { "index": 7, "newElement": "三行星 + 高值带" },
+    { "index": 8, "newElement": "移动护盾混合阵" },
+    { "index": 9, "newElement": "深空·四行星 + 下坠加速" },
+    { "index": 10, "newElement": "密集高值阵" },
+    { "index": 11, "newElement": "五行星 + 全特性" },
+    { "index": 12, "newElement": "终局·超高值混合阵" }
+  ],
+  "upgrades": [
+    { "id": "gravityLens", "kind": "rule", "desc": "行星引力下瞄准虚线显示更长弹道" },
+    { "id": "cometRefund", "kind": "rule", "desc": "彗星破盾返还 10 硬度" },
+    { "id": "rippleChain", "kind": "rule", "desc": "引力涟漪传导相邻两行" },
+    { "id": "shieldPierce", "kind": "rule", "desc": "彗星余威可破相邻护盾" },
+    { "id": "firstVolley", "kind": "rule", "desc": "每波首发额外 +1 流星" },
+    { "id": "bounceBounty", "kind": "rule", "desc": "加倍带内每次反弹返还 2 硬度" },
+    { "id": "extraBall", "kind": "stat", "desc": "开局流星 +1" },
+    { "id": "cometSpeed", "kind": "stat", "desc": "彗星飞行速度 +20%" },
+    { "id": "slowDescend", "kind": "stat", "desc": "下坠间隔 +1 波次" },
+    { "id": "gravityDamp", "kind": "stat", "desc": "行星引力 -20%" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "rating", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "清空整行陨石的瞬间，一道引力涟漪把上下两行陨石吸得歪斜，流星群趁势贯穿整条带。",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas 星空渲染（径向渐变 + 加法混合）为主；UI 线框 CSS；海报/封面 AI 原画 + HTML 叠字"
+}

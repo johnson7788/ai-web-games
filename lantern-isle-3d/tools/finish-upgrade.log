@@ -1,0 +1,36 @@
+[wait] 等 gen-hunyuan 结束…
+[11-17 09:15:03] char_keeper hunyuan3d ok 5.0MB
+[11-17 09:15:03] ==== gen-hunyuan DONE ok=10 fail=1 ====
+[decimate] buildings
+OK build_shed_01 tri 40000→39991→8999  bytes=5109224 (4.9MB)
+OK build_lighthouse_01 tri 40000→39999→8999  bytes=4364788 (4.2MB)
+OK build_well_01 tri 40000→39999→8999  bytes=3861600 (3.7MB)
+OK build_boathouse_01 tri 40000→40000→9000  bytes=4006740 (3.8MB)
+==== blender-decimate DONE ok=5 fail=0 ====
+[decimate] props
+OK prop_lantern_post_01 tri 40000→40000→4000  bytes=3705316 (3.5MB)
+OK env_tree_pine_01 tri 40000→39990→4000  bytes=2942108 (2.8MB)
+OK env_rock_01 tri 40000→40000→4000  bytes=3153940 (3.0MB)
+OK env_crate_stack_01 tri 40000→40000→4000  bytes=3223224 (3.1MB)
+==== blender-decimate DONE ok=4 fail=0 ====
+[optimize] 全部 hunyuan 件
+OK build_cottage_a: 66 tri · 8.5KB(纹 0KB/0px) → build_cottage_a.glb.js 11KB [compression+quantization]
+OK build_cottage_b: 8999 tri · 636.8KB(纹 370.5KB/512px) → build_cottage_b.glb.js 849KB [compression+quantization]
+OK build_shed_01: 8898 tri · 658KB(纹 392.6KB/512px) → build_shed_01.glb.js 878KB [compression+quantization]
+OK build_lighthouse_01: 8999 tri · 600.1KB(纹 339.5KB/512px) → build_lighthouse_01.glb.js 800KB [compression+quantization]
+OK build_well_01: 8995 tri · 561.3KB(纹 295.7KB/512px) → build_well_01.glb.js 749KB [compression+quantization]
+OK build_boathouse_01: 9000 tri · 586.4KB(纹 325.3KB/512px) → build_boathouse_01.glb.js 782KB [compression+quantization]
+OK prop_lantern_post_01: 4000 tri · 228.2KB(纹 105.1KB/256px) → prop_lantern_post_01.glb.js 304KB [compression+quantization]
+OK env_tree_pine_01: 4000 tri · 180KB(纹 63.5KB/256px) → env_tree_pine_01.glb.js 240KB [compression+quantization]
+OK env_rock_01: 3999 tri · 195.1KB(纹 67.7KB/256px) → env_rock_01.glb.js 260KB [compression+quantization]
+OK env_crate_stack_01: 3996 tri · 196.1KB(纹 71.8KB/256px) → env_crate_stack_01.glb.js 262KB [compression+quantization]
+OK 聚合模块 lib/models/all.js（24 件，8.1MB）
+[rig] 角色分段绑骨
+manifest: char_keeper -> 绑骨产物
+OK char_keeper: 直通（不量化）762 tri · 176.4KB · 材质 7 → 模块 235KB
+OK 聚合模块 lib/models/all.js（24 件，8.1MB）
+[retry] 失败的件重试一轮
+[11-17 09:15:36] ==== gen-hunyuan start ====
+[11-17 09:19:16] build_cottage_a hunyuan3d ok 5.2MB
+[11-17 09:19:16] ==== gen-hunyuan DONE ok=1 fail=0 ====
+==== finish-upgrade DONE ====

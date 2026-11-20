@@ -1,0 +1,149 @@
+{
+  "game": "lantern-isle-3d",
+  "generatedAt": "2026-11-17T09:37:20.528Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 6.5,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/00-boot.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start the night”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中隐约可见岛屿轮廓与灯笼模型，但因过暗且无高亮，玩家 silhouette 不突出（影响 silhouette）",
+        "‘Best: 0’文字偏小且颜色较淡，易被忽略（轻微影响 readable）",
+        "三个小标签（3D ISLAND 等）间距紧凑，移动端可能误触（虽为桌面截图，仍属潜在问题）"
+      ]
+    },
+    {
+      "shot": "tests/final/desktop.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start the night”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景岛屿轮廓在暗光下与HUD边缘融合，可能影响远距离目标辨识",
+        "‘Best: 0’文字偏小且灰度高，易被忽略",
+        "语言选择下拉箭头与按钮间距过窄，桌面端无问题，但若适配移动端需注意触控热区"
+      ]
+    },
+    {
+      "shot": "tests/final/icon.png",
+      "goal_visible": true,
+      "first_action_guess": "点击石板路中央走向灯塔的路径",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘LANtern ISLE’文字部分遮挡人物剪影，影响角色轮廓识别",
+        "灯塔光晕过曝导致顶部结构细节丢失，可能误判为不可交互",
+        "远处海面与天空明暗过渡生硬，疑似合成拼接痕迹"
+      ]
+    },
+    {
+      "shot": "tests/final/live-debug.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央紫色播放按钮开始游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'LANTERN ISLE' 与下方中文描述轻微重叠，小屏可能影响可读性",
+        "右上角三个标签（CARRY/LIGHT/SURVIVE THE STORM）字体过小且无背景，暗背景下辨识度略低",
+        "‘Click to play — free, no download’ 文字在深色区域对比度不足，部分用户可能忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start the night”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊人物剪影与HUD无明确分层，眯眼时主菜单与背景元素对比度低，影响silhouette评分",
+        "‘Best: 0’文字颜色偏浅（灰蓝），在深色背景下辨识度略低，易被忽略",
+        "语言下拉框箭头图标未对齐文本基线，细微排版不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/play-char.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角‘calm’按钮或前往最近的路灯（5米内）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色为浅棕无高亮，与背景沙地对比度低，眯眼时易混淆（silhouette偏低）",
+        "右上角‘Next lamp 5m’箭头指向模糊，未明确指示具体目标灯位置",
+        "左上‘1/5 0/4 5 0’标签无单位说明，新手难理解‘5’是油量还是其他"
+      ]
+    },
+    {
+      "shot": "tests/final/play-char2.png",
+      "goal_visible": true,
+      "first_action_guess": "按 E 键拾取地上的灯笼",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（深色圆柱体）与地面阴影融合度高，低对比下易误判为障碍物",
+        "右上角‘Next lamp 5m’箭头指向模糊，未明确指示方向（如无目标点或路径线）",
+        "左上角‘calm’按钮图标与文字间距过小，可能影响快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/play-final.png",
+      "goal_visible": true,
+      "first_action_guess": "按 E 键拾取地上的灯笼",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'CARRYING 0/3' 与 'Next lamp 5m' 指示箭头重叠，易误读",
+        "左下角 'calm' 按钮图标与文字间距过小，辨识度略低",
+        "玩家角色在沙地阴影中对比度偏低，远距离辨识稍弱"
+      ]
+    }
+  ]
+}

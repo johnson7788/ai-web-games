@@ -1,0 +1,188 @@
+{
+  "generatedAt": "2026-11-19T15:18:08.060Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "ringClear": {
+      "rms": 0.1965,
+      "peak": 0.5166,
+      "nan": 0,
+      "zcRate": 825.1,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "ringBounce": {
+      "rms": 0.18,
+      "peak": 0.4636,
+      "nan": 0,
+      "zcRate": 266.7,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "rainbow": {
+      "rms": 0.1663,
+      "peak": 0.6482,
+      "nan": 0,
+      "zcRate": 970,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "bandEnter": {
+      "rms": 0.1141,
+      "peak": 0.4229,
+      "nan": 0,
+      "zcRate": 529.5,
+      "samples": 36603,
+      "durSec": 0.83,
+      "pass": true
+    },
+    "dyeShift": {
+      "rms": 0.1102,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 861.3,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.0951,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 1330.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2095,
+      "peak": 0.5091,
+      "nan": 0,
+      "zcRate": 303.9,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 758.6,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1185,
+      "peak": 0.2645,
+      "nan": 0,
+      "zcRate": 870.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.1137,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 965.2,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.1023,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 353.2,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.121,
+      "peak": 0.28,
+      "nan": 0,
+      "zcRate": 878.6,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "pad": {
+      "rms": 0.12,
+      "peak": 0.2922,
+      "nan": 0,
+      "zcRate": 851.8,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    },
+    "arp": {
+      "rms": 0.1,
+      "peak": 0.2212,
+      "nan": 0,
+      "zcRate": 231.5,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    },
+    "hat": {
+      "rms": 0.0047,
+      "peak": 0.0586,
+      "nan": 0,
+      "zcRate": 954,
+      "samples": 88200,
+      "durSec": 2,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "ringClear.comboUpPitchUp": {
+      "comboLow": 0,
+      "comboHigh": 12,
+      "zcRateLow": 896.6,
+      "zcRateHigh": 1225.2,
+      "ok": true
+    },
+    "comboUp.pitchUp": {
+      "comboLow": 0,
+      "comboHigh": 12,
+      "zcRateLow": 810.2,
+      "zcRateHigh": 1625.4,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

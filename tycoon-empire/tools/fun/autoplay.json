@@ -1,0 +1,60 @@
+{
+  "genre": "sim",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 90,
+      "actions": 5329,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.4,
+      "deaths": 0,
+      "idleSec": 0.6,
+      "maxEventGapSec": 0.03,
+      "uniqueEvents": 12,
+      "levelsReached": 6,
+      "completed": false,
+      "bankrupts": 0,
+      "actionsPerMin": 3553
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 90,
+      "actions": 983,
+      "firstInputSec": 0.1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 5.3,
+      "deaths": 0,
+      "idleSec": 65.2,
+      "maxEventGapSec": 0.8,
+      "uniqueEvents": 16,
+      "levelsReached": 6,
+      "completed": false,
+      "bankrupts": 0,
+      "actionsPerMin": 655
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 90,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 89.9,
+      "maxEventGapSec": 30.03,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false,
+      "bankrupts": 0,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T17:32:29.984Z"
+}

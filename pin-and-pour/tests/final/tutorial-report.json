@@ -1,0 +1,37 @@
+{
+  "game": "pin-and-pour",
+  "pass": true,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 3,
+    "stepIds": [
+      "gatePull",
+      "collect",
+      "win"
+    ],
+    "skipVisible": true,
+    "skipped": true,
+    "persisted": true,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": [
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-pin-and-pour",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-pin-and-pour",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-pin-and-pour"
+    ]
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

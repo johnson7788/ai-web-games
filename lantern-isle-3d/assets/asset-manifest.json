@@ -1,0 +1,2450 @@
+{
+  "version": 1,
+  "artBible": "config/art-bible.json",
+  "note": "状态机 planned→generated→optimized→integrated；descoped 必须写 note。measured 由 manifest3d.mjs ingest 实测回写。",
+  "assets": [
+    {
+      "id": "char_keeper",
+      "category": "character",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "clips": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "carry",
+          "talk"
+        ],
+        "optimize": false,
+        "note": "角色不做 meshopt 量化：量化 int16 bounds 会让 three 侧归一化算错身高（实测 5.65m）；762 面/179KB 直通即可",
+        "prompt": "stylized game character, lighthouse keeper, full body A-pose front view, straw conical hat, dark teal wool tunic with brass buttons, brown leather belt and backpack, rolled sleeves, sturdy boots, friendly weathered face, clean silhouette, game-ready, full body character turnaround sheet, neutral A-pose, plain studio background, consistent proportions, front view, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "stylized game character, lighthouse keeper, full body A-pose front view, straw conical hat, dark teal wool tunic with brass buttons, brown leather belt and backpack, rolled sleeves, sturdy boots, friendly weathered face, clean silhouette, game-ready",
+        "rig": "band-rig(HERO_RIG_v1)",
+        "texMaxPx": 1024
+      },
+      "runtime": "assets/models/char_keeper.glb",
+      "module": "lib/models/char_keeper.glb.js",
+      "spec": {
+        "targetLen": 1.75,
+        "forward": "-z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/characters.js",
+        "lib/models/char_keeper.glb.js",
+        "src/render/actors.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/artbible-lint.json"
+      ],
+      "animations": [
+        "carry",
+        "idle",
+        "jump",
+        "run",
+        "talk",
+        "walk"
+      ],
+      "raw": "assets/_raw3d/char_keeper_final.glb",
+      "optimizedAt": "2026-11-16T14:21:02.411Z",
+      "measured": {
+        "bytes": 1791136,
+        "kb": 1749.2,
+        "triangles": 9998,
+        "vertices": 29984,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 14.3,
+            "px": "256x256",
+            "maxPx": 256
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 79.1,
+            "px": "256x256",
+            "maxPx": 256
+          }
+        ],
+        "textureKB": 93.4,
+        "textureMaxPx": 256,
+        "extensions": [],
+        "animations": [
+          "carry",
+          "idle",
+          "jump",
+          "run",
+          "talk",
+          "walk"
+        ],
+        "materials": [
+          "PBR_Material"
+        ],
+        "nodes": [
+          "head",
+          "neck",
+          "arm_L_hand",
+          "arm_L_fore",
+          "arm_L_upper",
+          "arm_R_hand",
+          "arm_R_fore",
+          "arm_R_upper",
+          "chest",
+          "spine",
+          "leg_L_foot",
+          "leg_L_lower",
+          "leg_L_upper",
+          "leg_R_foot",
+          "leg_R_lower",
+          "leg_R_upper",
+          "hips",
+          "root",
+          "char_keeper_body",
+          "HERO_RIG_v1"
+        ],
+        "bounds": {
+          "min": [
+            -0.927,
+            0,
+            -0.625
+          ],
+          "max": [
+            0.927,
+            1.75,
+            0.625
+          ],
+          "size": [
+            1.855,
+            1.75,
+            1.251
+          ],
+          "bottomY": 0,
+          "maxDim": 1.855
+        },
+        "boundsMeasured": true,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.646Z"
+    },
+    {
+      "id": "npc_warden",
+      "category": "character",
+      "source": {
+        "pipeline": "blender-character",
+        "clips": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "carry",
+          "talk"
+        ],
+        "variant": "warden",
+        "optimize": false,
+        "note": "角色不做 meshopt 量化：量化 int16 bounds 会让 three 侧归一化算错身高（实测 5.65m）；762 面/179KB 直通即可"
+      },
+      "runtime": "assets/models/npc_warden.glb",
+      "module": "lib/models/npc_warden.glb.js",
+      "spec": {
+        "targetLen": 1.78,
+        "forward": "-z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/characters.js",
+        "config/game.config.js",
+        "config/npc.js",
+        "lib/models/npc_warden.glb.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js"
+      ],
+      "animations": [
+        "carry",
+        "idle",
+        "jump",
+        "run",
+        "talk",
+        "walk"
+      ],
+      "raw": "assets/_raw3d/npc_warden.glb",
+      "optimizedAt": "2026-11-16T14:21:04.629Z",
+      "measured": {
+        "bytes": 162200,
+        "kb": 158.4,
+        "triangles": 762,
+        "vertices": 1468,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [],
+        "animations": [
+          "carry",
+          "idle",
+          "jump",
+          "run",
+          "talk",
+          "walk"
+        ],
+        "materials": [
+          "chr_skin"
+        ],
+        "nodes": [
+          "head",
+          "neck",
+          "arm_L_hand",
+          "arm_L_fore",
+          "arm_L_upper",
+          "arm_R_hand",
+          "arm_R_fore",
+          "arm_R_upper",
+          "chest",
+          "spine",
+          "leg_L_foot",
+          "leg_L_lower",
+          "leg_L_upper",
+          "leg_R_foot",
+          "leg_R_lower",
+          "leg_R_upper",
+          "hips",
+          "root",
+          "npc_warden_body",
+          "HERO_RIG_v1"
+        ],
+        "bounds": {
+          "min": [
+            -0.322,
+            0,
+            -0.322
+          ],
+          "max": [
+            0.322,
+            1.95,
+            0.322
+          ],
+          "size": [
+            0.645,
+            1.95,
+            0.645
+          ],
+          "bottomY": 0,
+          "maxDim": 1.95
+        },
+        "boundsMeasured": true,
+        "generator": "Khronos glTF Blender I/O v4.5.47"
+      },
+      "measuredAt": "2026-11-18T01:17:40.648Z"
+    },
+    {
+      "id": "npc_netmender",
+      "category": "character",
+      "source": {
+        "pipeline": "blender-character",
+        "clips": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "carry",
+          "talk"
+        ],
+        "variant": "netmender",
+        "optimize": false,
+        "note": "角色不做 meshopt 量化：量化 int16 bounds 会让 three 侧归一化算错身高（实测 5.65m）；762 面/179KB 直通即可"
+      },
+      "runtime": "assets/models/npc_netmender.glb",
+      "module": "lib/models/npc_netmender.glb.js",
+      "spec": {
+        "targetLen": 1.62,
+        "forward": "-z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/characters.js",
+        "config/game.config.js",
+        "config/npc.js",
+        "lib/models/npc_netmender.glb.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js"
+      ],
+      "animations": [
+        "carry",
+        "idle",
+        "jump",
+        "run",
+        "talk",
+        "walk"
+      ],
+      "raw": "assets/_raw3d/npc_netmender.glb",
+      "optimizedAt": "2026-11-16T14:21:07.094Z",
+      "measured": {
+        "bytes": 162568,
+        "kb": 158.8,
+        "triangles": 762,
+        "vertices": 1468,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [],
+        "animations": [
+          "carry",
+          "idle",
+          "jump",
+          "run",
+          "talk",
+          "walk"
+        ],
+        "materials": [
+          "chr_skin"
+        ],
+        "nodes": [
+          "head",
+          "neck",
+          "arm_L_hand",
+          "arm_L_fore",
+          "arm_L_upper",
+          "arm_R_hand",
+          "arm_R_fore",
+          "arm_R_upper",
+          "chest",
+          "spine",
+          "leg_L_foot",
+          "leg_L_lower",
+          "leg_L_upper",
+          "leg_R_foot",
+          "leg_R_lower",
+          "leg_R_upper",
+          "hips",
+          "root",
+          "npc_netmender_body",
+          "HERO_RIG_v1"
+        ],
+        "bounds": {
+          "min": [
+            -0.31,
+            0,
+            -0.294
+          ],
+          "max": [
+            0.31,
+            1.951,
+            0.294
+          ],
+          "size": [
+            0.62,
+            1.951,
+            0.588
+          ],
+          "bottomY": 0,
+          "maxDim": 1.951
+        },
+        "boundsMeasured": true,
+        "generator": "Khronos glTF Blender I/O v4.5.47"
+      },
+      "measuredAt": "2026-11-18T01:17:40.650Z"
+    },
+    {
+      "id": "npc_lampchild",
+      "category": "character",
+      "source": {
+        "pipeline": "blender-character",
+        "clips": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "carry",
+          "talk"
+        ],
+        "variant": "child",
+        "optimize": false,
+        "note": "角色不做 meshopt 量化：量化 int16 bounds 会让 three 侧归一化算错身高（实测 5.65m）；762 面/179KB 直通即可"
+      },
+      "runtime": "assets/models/npc_lampchild.glb",
+      "module": "lib/models/npc_lampchild.glb.js",
+      "spec": {
+        "targetLen": 1.28,
+        "forward": "-z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/characters.js",
+        "config/game.config.js",
+        "config/npc.js",
+        "lib/models/npc_lampchild.glb.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js"
+      ],
+      "animations": [
+        "carry",
+        "idle",
+        "jump",
+        "run",
+        "talk",
+        "walk"
+      ],
+      "raw": "assets/_raw3d/npc_lampchild.glb",
+      "optimizedAt": "2026-11-16T14:21:09.718Z",
+      "measured": {
+        "bytes": 162884,
+        "kb": 159.1,
+        "triangles": 762,
+        "vertices": 1468,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [],
+        "animations": [
+          "carry",
+          "idle",
+          "jump",
+          "run",
+          "talk",
+          "walk"
+        ],
+        "materials": [
+          "chr_skin"
+        ],
+        "nodes": [
+          "head",
+          "neck",
+          "arm_L_hand",
+          "arm_L_fore",
+          "arm_L_upper",
+          "arm_R_hand",
+          "arm_R_fore",
+          "arm_R_upper",
+          "chest",
+          "spine",
+          "leg_L_foot",
+          "leg_L_lower",
+          "leg_L_upper",
+          "leg_R_foot",
+          "leg_R_lower",
+          "leg_R_upper",
+          "hips",
+          "root",
+          "npc_lampchild_body",
+          "HERO_RIG_v1"
+        ],
+        "bounds": {
+          "min": [
+            -0.31,
+            0,
+            -0.232
+          ],
+          "max": [
+            0.31,
+            1.953,
+            0.232
+          ],
+          "size": [
+            0.62,
+            1.953,
+            0.464
+          ],
+          "bottomY": 0,
+          "maxDim": 1.953
+        },
+        "boundsMeasured": true,
+        "generator": "Khronos glTF Blender I/O v4.5.47"
+      },
+      "measuredAt": "2026-11-18T01:17:40.652Z"
+    },
+    {
+      "id": "prop_lantern_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "iron storm lantern with glass panels, brass frame and a ring handle",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 0.45,
+        "forward": "+z",
+        "prompt": "iron storm lantern with glass panels, brass frame and a ring handle, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 7
+      },
+      "runtime": "assets/models/prop_lantern_01.glb",
+      "module": "lib/models/prop_lantern_01.glb.js",
+      "spec": {
+        "targetLen": 0.45,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "lib/models/prop_lantern_01.glb.js",
+        "src/render/actors.js",
+        "src/render/island.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/artbible-lint.json"
+      ],
+      "raw": "assets/_raw3d/prop_lantern_01.decim.glb",
+      "optimizedAt": "2026-11-16T12:27:10.569Z",
+      "measured": {
+        "bytes": 195368,
+        "kb": 190.8,
+        "triangles": 5996,
+        "vertices": 10304,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 56.5,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 25.3,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 81.7,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.653Z"
+    },
+    {
+      "id": "prop_oil_barrel_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "small wooden oil barrel with rope binding and a brass pouring cap",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 0.72,
+        "forward": "+z",
+        "prompt": "small wooden oil barrel with rope binding and a brass pouring cap, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 233
+      },
+      "runtime": "assets/models/prop_oil_barrel_01.glb",
+      "module": "lib/models/prop_oil_barrel_01.glb.js",
+      "spec": {
+        "targetLen": 0.72,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "lib/models/prop_oil_barrel_01.glb.js",
+        "src/render/island.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "raw": "assets/_raw3d/prop_oil_barrel_01.decim.glb",
+      "optimizedAt": "2026-11-16T12:27:11.664Z",
+      "measured": {
+        "bytes": 356784,
+        "kb": 348.4,
+        "triangles": 16239,
+        "vertices": 30436,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 20.9,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 6.7,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 27.6,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.001"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.654Z"
+    },
+    {
+      "id": "prop_crate_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "weathered wooden supply crate, half open lid, salt worn",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 0.85,
+        "forward": "+z",
+        "prompt": "weathered wooden supply crate, half open lid, salt worn, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 233
+      },
+      "runtime": "assets/models/prop_crate_01.glb",
+      "module": "lib/models/prop_crate_01.glb.js",
+      "spec": {
+        "targetLen": 0.85,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "lib/models/prop_crate_01.glb.js",
+        "src/render/island.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "raw": "assets/_raw3d/prop_crate_01.decim.glb",
+      "optimizedAt": "2026-11-16T12:27:12.843Z",
+      "measured": {
+        "bytes": 854292,
+        "kb": 834.3,
+        "triangles": 51140,
+        "vertices": 81016,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 10.9,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 5.5,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 16.4,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.002"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.654Z"
+    },
+    {
+      "id": "prop_rock_cluster_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "moss covered coastal granite boulder cluster",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 1.9,
+        "forward": "+z",
+        "prompt": "moss covered coastal granite boulder cluster, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 88
+      },
+      "runtime": "assets/models/prop_rock_cluster_01.glb",
+      "module": "lib/models/prop_rock_cluster_01.glb.js",
+      "spec": {
+        "targetLen": 1.9,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "descoped",
+      "usedBy": [],
+      "raw": "assets/_raw3d/prop_rock_cluster_01.decim_h.glb",
+      "optimizedAt": "2026-11-16T12:29:03.985Z",
+      "measured": {
+        "bytes": 1108428,
+        "kb": 1082.4,
+        "triangles": 51736,
+        "vertices": 104446,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 20.2,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 19.5,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 39.7,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.003"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.655Z",
+      "note": "实测 52k 面 / 1.08MB；scatter 里 6 个实例 = 30 万面，直接判负，改用 env_rock_01 放大版。"
+    },
+    {
+      "id": "prop_boat_row_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "small wooden rowing boat pulled up on pebbles, oars aboard, faded blue paint",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 3.6,
+        "forward": "+z",
+        "prompt": "small wooden rowing boat pulled up on pebbles, oars aboard, faded blue paint, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 88
+      },
+      "runtime": "assets/models/prop_boat_row_01.glb",
+      "module": "lib/models/prop_boat_row_01.glb.js",
+      "spec": {
+        "targetLen": 3.6,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "lib/models/prop_boat_row_01.glb.js",
+        "src/render/island.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/artbible-lint.json"
+      ],
+      "raw": "assets/_raw3d/prop_boat_row_01.decim.glb",
+      "optimizedAt": "2026-11-16T12:27:15.261Z",
+      "measured": {
+        "bytes": 146464,
+        "kb": 143,
+        "triangles": 6485,
+        "vertices": 11016,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 22.4,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 4.6,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 27,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.004"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.655Z"
+    },
+    {
+      "id": "prop_net_bundle_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "coiled fishing net bundle with wooden floats and a lead weight",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 1.05,
+        "forward": "+z",
+        "prompt": "coiled fishing net bundle with wooden floats and a lead weight, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 7
+      },
+      "runtime": "assets/models/prop_net_bundle_01.glb",
+      "module": "lib/models/prop_net_bundle_01.glb.js",
+      "spec": {
+        "targetLen": 1.05,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "descoped",
+      "usedBy": [],
+      "raw": "assets/_raw3d/prop_net_bundle_01.decim_h.glb",
+      "optimizedAt": "2026-11-16T12:29:05.260Z",
+      "measured": {
+        "bytes": 1229684,
+        "kb": 1200.9,
+        "triangles": 61532,
+        "vertices": 112699,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 25.7,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 3.2,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 28.9,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.005"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.656Z",
+      "note": "实测 62k 面 / 1.2MB，同上限制；视觉上用 kit 件替代，不进运行时。"
+    },
+    {
+      "id": "prop_bell_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "brass harbor signal bell hung in a small iron frame",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 0.62,
+        "forward": "+z",
+        "prompt": "brass harbor signal bell hung in a small iron frame, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 88
+      },
+      "runtime": "assets/models/prop_bell_01.glb",
+      "module": "lib/models/prop_bell_01.glb.js",
+      "spec": {
+        "targetLen": 0.62,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "lib/models/prop_bell_01.glb.js",
+        "src/render/island.js",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "raw": "assets/_raw3d/prop_bell_01.decim.glb",
+      "optimizedAt": "2026-11-16T12:27:17.674Z",
+      "measured": {
+        "bytes": 133044,
+        "kb": 129.9,
+        "triangles": 4808,
+        "vertices": 8206,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 24.9,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 11.1,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 36,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.006"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.656Z"
+    },
+    {
+      "id": "prop_lamp_relay_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "large fresnel lighthouse lamp assembly in a brass cradle",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 1.15,
+        "forward": "+z",
+        "prompt": "large fresnel lighthouse lamp assembly in a brass cradle, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 88
+      },
+      "runtime": "assets/models/prop_lamp_relay_01.glb",
+      "module": "lib/models/prop_lamp_relay_01.glb.js",
+      "spec": {
+        "targetLen": 1.15,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "descoped",
+      "usedBy": [],
+      "raw": "assets/_raw3d/prop_lamp_relay_01.decim.glb",
+      "optimizedAt": "2026-11-16T12:27:18.864Z",
+      "measured": {
+        "bytes": 790028,
+        "kb": 771.5,
+        "triangles": 51991,
+        "vertices": 75380,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 29.1,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 19.2,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 48.3,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.007"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.657Z",
+      "note": "实测 52k 面 / 0.77MB；单件可接受但收益低，保留在素材库不接入。"
+    },
+    {
+      "id": "prop_storm_glass_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "trellis2",
+        "subject": "storm glass weather barometer in a wooden and brass frame",
+        "trellis": {
+          "resolution": 512
+        },
+        "targetLen": 0.3,
+        "forward": "+z",
+        "prompt": "storm glass weather barometer in a wooden and brass frame, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 311
+      },
+      "runtime": "assets/models/prop_storm_glass_01.glb",
+      "module": "lib/models/prop_storm_glass_01.glb.js",
+      "spec": {
+        "targetLen": 0.3,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "descoped",
+      "usedBy": [],
+      "raw": "assets/_raw3d/prop_storm_glass_01.decim_h.glb",
+      "optimizedAt": "2026-11-16T12:29:06.721Z",
+      "measured": {
+        "bytes": 2007144,
+        "kb": 1960.1,
+        "triangles": 101480,
+        "vertices": 198259,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/webp",
+            "kb": 66.2,
+            "px": null,
+            "maxPx": null
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/webp",
+            "kb": 22.5,
+            "px": null,
+            "maxPx": null
+          }
+        ],
+        "textureKB": 88.7,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "Material_0.008"
+        ],
+        "nodes": [
+          "geometry_0"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.658Z",
+      "note": "实测 101k 面 / 1.96MB（Decimate 与 simplify 都受 UV 分裂拓扑限制，砍不下去）。运行期没有对应可见网格（风暴杯是 sim 里的任务物），不接入，避免为凑门禁改测量口径。"
+    },
+    {
+      "id": "build_cottage_a",
+      "category": "building",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "subject": "small coastal fisherman cottage, whitewashed stone walls, terracotta tiled hip roof, one wooden door and one warm lit window, brick chimney",
+        "texMaxPx": 1024
+      },
+      "runtime": "assets/models/build_cottage_a.glb",
+      "module": "lib/models/build_cottage_a.glb.js",
+      "spec": {
+        "targetLen": 4.6,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_cottage_a.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 66,
+        "bytes": 9408,
+        "dimsXYZ": [
+          5,
+          5,
+          4.55
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:31.730Z",
+      "measured": {
+        "bytes": 1129768,
+        "kb": 1103.3,
+        "triangles": 8984,
+        "vertices": 26950,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 133.3,
+            "px": "1024x1024",
+            "maxPx": 1024
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 697.7,
+            "px": "1024x1024",
+            "maxPx": 1024
+          }
+        ],
+        "textureKB": 831,
+        "textureMaxPx": 1024,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material"
+        ],
+        "nodes": [
+          "7e099af9-0df7-4029-8c02-948f8762fabe_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.659Z",
+      "raw": "assets/_raw3d/build_cottage_a.decim_r3.glb"
+    },
+    {
+      "id": "build_cottage_b",
+      "category": "building",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "two-storey harbour house, slate blue plaster walls, red tiled roof, wooden porch with two posts, two warm lit windows, three-quarter view of one isolated modular village building piece on invisible floor plane, straight horizontal horizon, filling 80% of frame, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "two-storey harbour house, slate blue plaster walls, red tiled roof, wooden porch with two posts, two warm lit windows",
+        "texMaxPx": 1024
+      },
+      "runtime": "assets/models/build_cottage_b.glb",
+      "module": "lib/models/build_cottage_b.glb.js",
+      "spec": {
+        "targetLen": 5.4,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_cottage_b.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 150,
+        "bytes": 14708,
+        "dimsXYZ": [
+          5.8,
+          5.8,
+          4.75
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:32.704Z",
+      "measured": {
+        "bytes": 1598344,
+        "kb": 1560.9,
+        "triangles": 8935,
+        "vertices": 26759,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 124.4,
+            "px": "1024x1024",
+            "maxPx": 1024
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 1172.5,
+            "px": "1024x1024",
+            "maxPx": 1024
+          }
+        ],
+        "textureKB": 1296.9,
+        "textureMaxPx": 1024,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.001"
+        ],
+        "nodes": [
+          "23bde579-bd7b-451a-8a8c-882c3190ef84_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.659Z",
+      "raw": "assets/_raw3d/build_cottage_b.decim_r3.glb"
+    },
+    {
+      "id": "build_shed_01",
+      "category": "building",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "tiny tool shed, leaning wooden planks, moss on the roof, half open door, three-quarter view of one isolated modular village building piece on invisible floor plane, straight horizontal horizon, filling 80% of frame, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "tiny tool shed, leaning wooden planks, moss on the roof, half open door",
+        "texMaxPx": 1024
+      },
+      "runtime": "assets/models/build_shed_01.glb",
+      "module": "lib/models/build_shed_01.glb.js",
+      "spec": {
+        "targetLen": 3.4,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_shed_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 42,
+        "bytes": 6720,
+        "dimsXYZ": [
+          3.3,
+          3.3,
+          2.45
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:33.919Z",
+      "measured": {
+        "bytes": 1719404,
+        "kb": 1679.1,
+        "triangles": 8819,
+        "vertices": 26429,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 147.1,
+            "px": "1024x1024",
+            "maxPx": 1024
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 1269.1,
+            "px": "1024x1024",
+            "maxPx": 1024
+          }
+        ],
+        "textureKB": 1416.2,
+        "textureMaxPx": 1024,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.002"
+        ],
+        "nodes": [
+          "6c4115a4-9089-44b8-84d4-e195f3de0dbc_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.659Z",
+      "raw": "assets/_raw3d/build_shed_01.decim_r3.glb"
+    },
+    {
+      "id": "build_lighthouse_01",
+      "category": "building",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "tall striped lighthouse tower, weathered red and cream bands, iron gallery railing, glowing brass lamp room, conical roof, three-quarter view of one isolated modular village building piece on invisible floor plane, straight horizontal horizon, filling 80% of frame, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "tall striped lighthouse tower, weathered red and cream bands, iron gallery railing, glowing brass lamp room, conical roof",
+        "texMaxPx": 1024
+      },
+      "runtime": "assets/models/build_lighthouse_01.glb",
+      "module": "lib/models/build_lighthouse_01.glb.js",
+      "spec": {
+        "targetLen": 16,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_lighthouse_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 422,
+        "bytes": 29652,
+        "dimsXYZ": [
+          3.9,
+          3.9,
+          15.05
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:34.884Z",
+      "measured": {
+        "bytes": 1493076,
+        "kb": 1458.1,
+        "triangles": 8961,
+        "vertices": 26843,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 116.2,
+            "px": "1024x1024",
+            "maxPx": 1024
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 1082.8,
+            "px": "1024x1024",
+            "maxPx": 1024
+          }
+        ],
+        "textureKB": 1199,
+        "textureMaxPx": 1024,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.003"
+        ],
+        "nodes": [
+          "5f7fe30d-2ef1-4a87-91ee-13f9b961d464_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.660Z",
+      "raw": "assets/_raw3d/build_lighthouse_01.decim_r3.glb"
+    },
+    {
+      "id": "build_pier_platform_01",
+      "category": "building",
+      "source": {
+        "pipeline": "blender-kit"
+      },
+      "runtime": "assets/models/build_pier_platform_01.glb",
+      "module": "lib/models/build_pier_platform_01.glb.js",
+      "spec": {
+        "targetLen": 6,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_pier_platform_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json"
+      ],
+      "blender": {
+        "tri": 148,
+        "bytes": 12308,
+        "dimsXYZ": [
+          6,
+          6,
+          2.03
+        ]
+      },
+      "optimizedAt": "2026-11-16T12:23:54.513Z",
+      "measured": {
+        "bytes": 7824,
+        "kb": 7.6,
+        "triangles": 148,
+        "vertices": 258,
+        "primitives": 3,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "mat_secondary_1",
+          "mat_secondary_2"
+        ],
+        "nodes": [
+          "build_pier_platform_01"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.660Z"
+    },
+    {
+      "id": "build_stairs_01",
+      "category": "building",
+      "source": {
+        "pipeline": "blender-kit"
+      },
+      "runtime": "assets/models/build_stairs_01.glb",
+      "module": "lib/models/build_stairs_01.glb.js",
+      "spec": {
+        "targetLen": 2.6,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_stairs_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json"
+      ],
+      "blender": {
+        "tri": 96,
+        "bytes": 8644,
+        "dimsXYZ": [
+          2.5,
+          3.9,
+          1.68
+        ]
+      },
+      "optimizedAt": "2026-11-16T12:23:55.680Z",
+      "measured": {
+        "bytes": 5704,
+        "kb": 5.6,
+        "triangles": 96,
+        "vertices": 190,
+        "primitives": 2,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "mat_secondary_1"
+        ],
+        "nodes": [
+          "build_stairs_01"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.660Z"
+    },
+    {
+      "id": "build_fence_01",
+      "category": "building",
+      "source": {
+        "pipeline": "blender-kit"
+      },
+      "runtime": "assets/models/build_fence_01.glb",
+      "module": "lib/models/build_fence_01.glb.js",
+      "spec": {
+        "targetLen": 2.2,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_fence_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json"
+      ],
+      "blender": {
+        "tri": 84,
+        "bytes": 7880,
+        "dimsXYZ": [
+          2.3,
+          0.12,
+          1.05
+        ]
+      },
+      "optimizedAt": "2026-11-16T12:23:56.774Z",
+      "measured": {
+        "bytes": 5216,
+        "kb": 5.1,
+        "triangles": 84,
+        "vertices": 168,
+        "primitives": 2,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "mat_secondary_1"
+        ],
+        "nodes": [
+          "build_fence_01"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.660Z"
+    },
+    {
+      "id": "build_well_01",
+      "category": "building",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "old stone village well with wooden bucket winch and small tiled roof, three-quarter view of one isolated modular village building piece on invisible floor plane, straight horizontal horizon, filling 80% of frame, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "old stone village well with wooden bucket winch and small tiled roof",
+        "texMaxPx": 1024
+      },
+      "runtime": "assets/models/build_well_01.glb",
+      "module": "lib/models/build_well_01.glb.js",
+      "spec": {
+        "targetLen": 1.8,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_well_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 146,
+        "bytes": 12752,
+        "dimsXYZ": [
+          1.9,
+          1.9,
+          2.955
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:35.826Z",
+      "measured": {
+        "bytes": 1277884,
+        "kb": 1247.9,
+        "triangles": 8933,
+        "vertices": 26749,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 122.5,
+            "px": "1024x1024",
+            "maxPx": 1024
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 862.1,
+            "px": "1024x1024",
+            "maxPx": 1024
+          }
+        ],
+        "textureKB": 984.6,
+        "textureMaxPx": 1024,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.004"
+        ],
+        "nodes": [
+          "52c97e9a-b1bd-4883-a0f8-d31a70e41c65_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.661Z",
+      "raw": "assets/_raw3d/build_well_01.decim_r3.glb"
+    },
+    {
+      "id": "build_boathouse_01",
+      "category": "building",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "open-front wooden boat shed, salt grey planks, pitched terracotta roof, dark interior, three-quarter view of one isolated modular village building piece on invisible floor plane, straight horizontal horizon, filling 80% of frame, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "open-front wooden boat shed, salt grey planks, pitched terracotta roof, dark interior",
+        "texMaxPx": 1024
+      },
+      "runtime": "assets/models/build_boathouse_01.glb",
+      "module": "lib/models/build_boathouse_01.glb.js",
+      "spec": {
+        "targetLen": 5,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/build_boathouse_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 54,
+        "bytes": 7064,
+        "dimsXYZ": [
+          5.4,
+          5.4,
+          3.6
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:36.783Z",
+      "measured": {
+        "bytes": 1411192,
+        "kb": 1378.1,
+        "triangles": 8950,
+        "vertices": 26788,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 105.6,
+            "px": "1024x1024",
+            "maxPx": 1024
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 1013.4,
+            "px": "1024x1024",
+            "maxPx": 1024
+          }
+        ],
+        "textureKB": 1119,
+        "textureMaxPx": 1024,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.005"
+        ],
+        "nodes": [
+          "341a2300-4272-421b-bfce-487c6c575b52_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.661Z",
+      "raw": "assets/_raw3d/build_boathouse_01.decim_r3.glb"
+    },
+    {
+      "id": "prop_lantern_post_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "old iron street lantern post, stone base, brass glass lamp head with warm flame inside, slight rust, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "old iron street lantern post, stone base, brass glass lamp head with warm flame inside, slight rust",
+        "texMaxPx": 512
+      },
+      "runtime": "assets/models/prop_lantern_post_01.glb",
+      "module": "lib/models/prop_lantern_post_01.glb.js",
+      "spec": {
+        "targetLen": 3.1,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/prop_lantern_post_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 102,
+        "bytes": 9644,
+        "dimsXYZ": [
+          0.571,
+          0.6,
+          3.37
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:37.736Z",
+      "measured": {
+        "bytes": 626040,
+        "kb": 611.4,
+        "triangles": 8993,
+        "vertices": 26925,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 52.6,
+            "px": "512x512",
+            "maxPx": 512
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 297.9,
+            "px": "512x512",
+            "maxPx": 512
+          }
+        ],
+        "textureKB": 350.5,
+        "textureMaxPx": 512,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.006"
+        ],
+        "nodes": [
+          "506ec3be-0336-4024-9c33-d80741d64d7d_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.661Z",
+      "raw": "assets/_raw3d/prop_lantern_post_01.decim_r3.glb"
+    },
+    {
+      "id": "env_tree_pine_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "wind bent coastal pine tree, dark green needle clusters, twisted brown trunk, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "wind bent coastal pine tree, dark green needle clusters, twisted brown trunk",
+        "texMaxPx": 512
+      },
+      "runtime": "assets/models/env_tree_pine_01.glb",
+      "module": "lib/models/env_tree_pine_01.glb.js",
+      "spec": {
+        "targetLen": 5.2,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/env_tree_pine_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 76,
+        "bytes": 7632,
+        "dimsXYZ": [
+          2.265,
+          2.231,
+          4.2
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:38.676Z",
+      "measured": {
+        "bytes": 467284,
+        "kb": 456.3,
+        "triangles": 8972,
+        "vertices": 26615,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 32.2,
+            "px": "512x512",
+            "maxPx": 512
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 176.2,
+            "px": "512x512",
+            "maxPx": 512
+          }
+        ],
+        "textureKB": 208.4,
+        "textureMaxPx": 512,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.007"
+        ],
+        "nodes": [
+          "d62fe5fe-a557-42f6-9040-6defde6eb039_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.661Z",
+      "raw": "assets/_raw3d/env_tree_pine_01.decim_r3.glb"
+    },
+    {
+      "id": "env_bush_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "blender-kit"
+      },
+      "runtime": "assets/models/env_bush_01.glb",
+      "module": "lib/models/env_bush_01.glb.js",
+      "spec": {
+        "targetLen": 1.2,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/env_bush_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json"
+      ],
+      "blender": {
+        "tri": 864,
+        "bytes": 64892,
+        "dimsXYZ": [
+          1.44,
+          1.1,
+          0.846
+        ]
+      },
+      "optimizedAt": "2026-11-16T12:24:01.802Z",
+      "measured": {
+        "bytes": 28008,
+        "kb": 27.4,
+        "triangles": 864,
+        "vertices": 1824,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "mat_environment_0"
+        ],
+        "nodes": [
+          "env_bush_01"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.661Z"
+    },
+    {
+      "id": "env_rock_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "mossy granite boulder, lichen patches, weathered facets, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "mossy granite boulder, lichen patches, weathered facets",
+        "texMaxPx": 512
+      },
+      "runtime": "assets/models/env_rock_01.glb",
+      "module": "lib/models/env_rock_01.glb.js",
+      "spec": {
+        "targetLen": 1.4,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/env_rock_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 576,
+        "bytes": 43708,
+        "dimsXYZ": [
+          1.895,
+          1.4,
+          1.148
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:39.620Z",
+      "measured": {
+        "bytes": 500160,
+        "kb": 488.4,
+        "triangles": 8999,
+        "vertices": 26961,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 57.6,
+            "px": "512x512",
+            "maxPx": 512
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 161.9,
+            "px": "512x512",
+            "maxPx": 512
+          }
+        ],
+        "textureKB": 219.6,
+        "textureMaxPx": 512,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.008"
+        ],
+        "nodes": [
+          "aa7bda6d-f05d-4368-9dc4-b211713f753e_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.661Z",
+      "raw": "assets/_raw3d/env_rock_01.decim_r3.glb"
+    },
+    {
+      "id": "env_grass_tuft_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "blender-kit"
+      },
+      "runtime": "assets/models/env_grass_tuft_01.glb",
+      "module": "lib/models/env_grass_tuft_01.glb.js",
+      "spec": {
+        "targetLen": 0.45,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/env_grass_tuft_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "tools/probe/objects.json"
+      ],
+      "blender": {
+        "tri": 24,
+        "bytes": 4340,
+        "dimsXYZ": [
+          0.401,
+          0.353,
+          0.605
+        ]
+      },
+      "optimizedAt": "2026-11-16T12:24:03.842Z",
+      "measured": {
+        "bytes": 4652,
+        "kb": 4.5,
+        "triangles": 24,
+        "vertices": 60,
+        "primitives": 2,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [],
+        "textureKB": 0,
+        "textureMaxPx": 0,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "mat_environment_0",
+          "mat_secondary_2"
+        ],
+        "nodes": [
+          "env_grass_tuft_01"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.662Z"
+    },
+    {
+      "id": "env_crate_stack_01",
+      "category": "prop",
+      "source": {
+        "pipeline": "hunyuan3d",
+        "prompt": "stack of two weathered wooden crates and a coil of rope beside them, three-quarter hero view of one isolated handheld prop object, filling 72% of frame, crisp silhouette, sharp focus on material detail, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "subject": "stack of two weathered wooden crates and a coil of rope beside them",
+        "texMaxPx": 512
+      },
+      "runtime": "assets/models/env_crate_stack_01.glb",
+      "module": "lib/models/env_crate_stack_01.glb.js",
+      "spec": {
+        "targetLen": 1.6,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [
+        "src/render/world.js",
+        "config/game.config.js",
+        "config/kit3d.json",
+        "lib/models/env_crate_stack_01.glb.js",
+        "src/render/island.js",
+        "tools/blender-kit-report.json",
+        "tools/manifest-check.json",
+        "lib/models/all.js",
+        "config/upgrade3d.json",
+        "tools/probe/objects.json",
+        "tools/artbible-lint.json"
+      ],
+      "blender": {
+        "tri": 60,
+        "bytes": 6996,
+        "dimsXYZ": [
+          1.557,
+          1.09,
+          1.62
+        ]
+      },
+      "optimizedAt": "2026-11-18T01:17:40.570Z",
+      "measured": {
+        "bytes": 512576,
+        "kb": 500.6,
+        "triangles": 8926,
+        "vertices": 26726,
+        "primitives": 1,
+        "meshCount": 1,
+        "meshInstances": 1,
+        "textures": [
+          {
+            "name": "Image_0",
+            "mime": "image/jpeg",
+            "kb": 42.5,
+            "px": "512x512",
+            "maxPx": 512
+          },
+          {
+            "name": "Image_1",
+            "mime": "image/png",
+            "kb": 195.8,
+            "px": "512x512",
+            "maxPx": 512
+          }
+        ],
+        "textureKB": 238.4,
+        "textureMaxPx": 512,
+        "extensions": [
+          "EXT_meshopt_compression",
+          "KHR_mesh_quantization"
+        ],
+        "animations": [],
+        "materials": [
+          "PBR_Material.009"
+        ],
+        "nodes": [
+          "e9665502-d061-4ba9-b9e5-e07bf917cfe0_texturing.obj"
+        ],
+        "bounds": null,
+        "boundsMeasured": false,
+        "generator": "glTF-Transform v4.5.1"
+      },
+      "measuredAt": "2026-11-18T01:17:40.662Z",
+      "raw": "assets/_raw3d/env_crate_stack_01.decim_r3.glb"
+    },
+    {
+      "id": "tex_stone_wall",
+      "category": "texture",
+      "source": {
+        "pipeline": "concept2d",
+        "subject": "seamless hand painted slate stone wall texture, dusk cool grey with warm rim",
+        "prompt": "seamless hand painted slate stone wall texture, dusk cool grey with warm rim, seamless tileable material texture, flat top-down orthographic view, even diffuse lighting, no objects, no vignette, no seams, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 88
+      },
+      "runtime": "assets/tex/tex_stone_wall.webp",
+      "module": "lib/models/tex_stone_wall.glb.js",
+      "spec": {
+        "targetLen": 1,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [],
+      "measured": {
+        "kb": 32.3
+      },
+      "error": "不是 GLB（magic 不符）: /Users/admin/git/webgames/games/lantern-isle-3d/assets/tex/tex_stone_wall.webp"
+    },
+    {
+      "id": "tex_roof_tile",
+      "category": "texture",
+      "source": {
+        "pipeline": "concept2d",
+        "subject": "seamless hand painted terracotta roof tile texture, weathered red orange",
+        "prompt": "seamless hand painted terracotta roof tile texture, weathered red orange, seamless tileable material texture, flat top-down orthographic view, even diffuse lighting, no objects, no vignette, no seams, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 104
+      },
+      "runtime": "assets/tex/tex_roof_tile.webp",
+      "module": "lib/models/tex_roof_tile.glb.js",
+      "spec": {
+        "targetLen": 1,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [],
+      "measured": {
+        "kb": 21.4
+      },
+      "error": "不是 GLB（magic 不符）: /Users/admin/git/webgames/games/lantern-isle-3d/assets/tex/tex_roof_tile.webp"
+    },
+    {
+      "id": "tex_wood_plank",
+      "category": "texture",
+      "source": {
+        "pipeline": "concept2d",
+        "subject": "seamless hand painted salt worn wood plank texture, warm brown",
+        "prompt": "seamless hand painted salt worn wood plank texture, warm brown, seamless tileable material texture, flat top-down orthographic view, even diffuse lighting, no objects, no vignette, no seams, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 7
+      },
+      "runtime": "assets/tex/tex_wood_plank.webp",
+      "module": "lib/models/tex_wood_plank.glb.js",
+      "spec": {
+        "targetLen": 1,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [],
+      "measured": {
+        "kb": 38
+      },
+      "error": "不是 GLB（magic 不符）: /Users/admin/git/webgames/games/lantern-isle-3d/assets/tex/tex_wood_plank.webp"
+    },
+    {
+      "id": "tex_dirt_path",
+      "category": "texture",
+      "source": {
+        "pipeline": "concept2d",
+        "subject": "seamless hand painted coastal dirt and pebble path texture",
+        "prompt": "seamless hand painted coastal dirt and pebble path texture, seamless tileable material texture, flat top-down orthographic view, even diffuse lighting, no objects, no vignette, no seams, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 7
+      },
+      "runtime": "assets/tex/tex_dirt_path.webp",
+      "module": "lib/models/tex_dirt_path.glb.js",
+      "spec": {
+        "targetLen": 1,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [],
+      "measured": {
+        "kb": 48.6
+      },
+      "error": "不是 GLB（magic 不符）: /Users/admin/git/webgames/games/lantern-isle-3d/assets/tex/tex_dirt_path.webp"
+    },
+    {
+      "id": "tex_grass_dune",
+      "category": "texture",
+      "source": {
+        "pipeline": "concept2d",
+        "subject": "seamless hand painted dune grass and moss texture, muted green",
+        "prompt": "seamless hand painted dune grass and moss texture, muted green, seamless tileable material texture, flat top-down orthographic view, even diffuse lighting, no objects, no vignette, no seams, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 311
+      },
+      "runtime": "assets/tex/tex_grass_dune.webp",
+      "module": "lib/models/tex_grass_dune.glb.js",
+      "spec": {
+        "targetLen": 1,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [],
+      "measured": {
+        "kb": 44.7
+      },
+      "error": "不是 GLB（magic 不符）: /Users/admin/git/webgames/games/lantern-isle-3d/assets/tex/tex_grass_dune.webp"
+    },
+    {
+      "id": "tex_pebbles",
+      "category": "texture",
+      "source": {
+        "pipeline": "concept2d",
+        "subject": "seamless hand painted smooth sea pebble beach texture",
+        "prompt": "seamless hand painted smooth sea pebble beach texture, seamless tileable material texture, flat top-down orthographic view, even diffuse lighting, no objects, no vignette, no seams, stylized-dusk style, stylized 3D game asset, hand-painted PBR texture, warm lantern rim light, clean bold silhouette, cohesive dusk color grading, cohesive color palette #d8543a, #2f4351, #7a6248, #8a9c7b, #4a6b6f, #5b5148, #2b3a4a, hand-painted PBR, roughness 0.62-0.9, metalness 0.05-0.35, lighting #ffc98d key light from [-42,26,30], dusk with incoming storm, warm point lights dominate atmosphere, game-ready 3D asset, single isolated object centered in frame, plain dark navy studio background, soft even studio lighting with warm rim, no text, no watermark, no extra objects || negative: text, watermark, logo, background clutter, multiple objects, transparent checkerboard, photoreal noise, distorted proportions",
+        "engine": "qwen-image-xl",
+        "seed": 42
+      },
+      "runtime": "assets/tex/tex_pebbles.webp",
+      "module": "lib/models/tex_pebbles.glb.js",
+      "spec": {
+        "targetLen": 1,
+        "forward": "+z",
+        "pivot": "bottom-center"
+      },
+      "status": "optimized",
+      "usedBy": [],
+      "measured": {
+        "kb": 29
+      },
+      "error": "不是 GLB（magic 不符）: /Users/admin/git/webgames/games/lantern-isle-3d/assets/tex/tex_pebbles.webp"
+    }
+  ]
+}

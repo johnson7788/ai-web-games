@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<script src="./config/sdk.config.js"></script>
+<script src="./src/core/sdk-boot.js"></script>
+<script src="./src/core/cors-img.js"></script>
+<script src="./config/locales.js"></script>
+<script src="./src/core/i18n.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Void Survivor — a free 3D neon wave-survival shooter. Dodge and shatter geometric enemies, pick upgrades between waves, and survive as long as you can. Based on threejs-gamedev-template (Apache-2.0)." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2305060f'/%3E%3Cpath d='M16 5 27 16 16 27 5 16Z' fill='none' stroke='%2300f0ff' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23ff2d95'/%3E%3C/svg%3E" />
+    <title>Void Survivor — Free 3D Wave Survival</title>
+    <script type="module" crossorigin src="./assets/index-BrtDuBPp.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B3vfPTmq.css">
+  </head>
+  <body>
+    <canvas id="three"></canvas>
+
+    <!-- damage / heal screen flash -->
+    <div id="vs-flash"></div>
+
+    <!-- HUD -->
+    <div id="vs-hud" class="hidden">
+      <div id="vs-hud-left">
+        <div class="vs-hp-wrap">
+          <div class="vs-label" data-i18n="HP">HP</div>
+          <div id="vs-hp-bar"><div id="vs-hp-fill"></div></div>
+          <div id="vs-hp-num">100</div>
+        </div>
+        <div id="vs-dash-wrap">
+          <div class="vs-label" data-i18n="DASH">DASH</div>
+          <div id="vs-dash-bar"><div id="vs-dash-fill"></div></div>
+        </div>
+      </div>
+      <div id="vs-hud-mid">
+        <div id="vs-wave"><span class="vs-label" data-i18n="WAVE">WAVE</span> <span id="vs-wave-num">1</span></div>
+        <div id="vs-enemies-left"></div>
+      </div>
+      <div id="vs-hud-right">
+        <div class="vs-stat"><span class="vs-label" data-i18n="SCORE">SCORE</span> <span id="vs-score">0</span></div>
+        <div class="vs-stat"><span class="vs-label" data-i18n="KILLS">KILLS</span> <span id="vs-kills">0</span></div>
+        <div class="vs-stat"><span class="vs-label" data-i18n="BEST">BEST</span> <span id="vs-best">0</span></div>
+      </div>
+    </div>
+
+    <!-- center wave banner -->
+    <div id="vs-banner" class="hidden"></div>
+    <!-- floating score popups -->
+    <div id="vs-popups"></div>
+
+    <!-- TITLE -->
+    <div id="vs-title" class="vs-overlay">
+      <div class="vs-panel">
+        <h1 class="vs-logo">VOID<span>SURVIVOR</span></h1>
+        <p class="vs-tagline" data-i18n="Survive the neon arena. Shatter everything.">Survive the neon arena. Shatter everything.</p>
+        <div class="vs-controls">
+          <div><kbd>W A S D</kbd> <span data-i18n="move">move</span></div>
+          <div><kbd>MOUSE</kbd> <span data-i18n="aim">aim</span> · <kbd>LMB</kbd> <span data-i18n="fire (hold)">fire (hold)</span></div>
+          <div><kbd>SPACE</kbd> <span data-i18n="dash">dash</span> · <kbd>R</kbd> <span data-i18n="restart">restart</span></div>
+          <div><kbd>1 2 3</kbd> <span data-i18n="pick upgrade">pick upgrade</span></div>
+        </div>
+        <button id="vs-start" class="vs-btn primary" data-i18n="ENTER THE VOID">ENTER THE VOID</button>
+        <p class="vs-best-line"><span data-i18n="BEST SCORE">BEST SCORE</span>: <span id="vs-title-best">0</span></p>
+        <p class="vs-credits">
+          Based on <a href="https://github.com/SahilK-027/threejs-gamedev-template" target="_blank" rel="noopener">threejs-gamedev-template</a>
+          by SahilK-027 (Apache-2.0)
+        </p>
+      </div>
+    </div>
+
+    <!-- UPGRADE -->
+    <div id="vs-upgrade" class="vs-overlay hidden">
+      <div class="vs-panel">
+        <h2 class="vs-h2" id="vs-upgrade-title">WAVE CLEARED</h2>
+        <p class="vs-sub" data-i18n="Choose one upgrade">Choose one upgrade</p>
+        <div id="vs-upgrade-cards"></div>
+      </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="vs-gameover" class="vs-overlay hidden">
+      <div class="vs-panel">
+        <h2 class="vs-h2 vs-danger" data-i18n="GAME OVER">GAME OVER</h2>
+        <p class="vs-sub" id="vs-go-sub" data-i18n="The void consumed you.">The void consumed you.</p>
+        <div class="vs-go-stats">
+          <div><span class="vs-label" data-i18n="WAVES SURVIVED">WAVES SURVIVED</span><b id="vs-go-waves">0</b></div>
+          <div><span class="vs-label" data-i18n="KILLS">KILLS</span><b id="vs-go-kills">0</b></div>
+          <div><span class="vs-label" data-i18n="SCORE">SCORE</span><b id="vs-go-score">0</b></div>
+          <div><span class="vs-label" data-i18n="BEST">BEST</span><b id="vs-go-best">0</b></div>
+        </div>
+        <p id="vs-newbest" class="vs-newbest hidden" data-i18n="NEW BEST!">NEW BEST!</p>
+        <button id="vs-restart" class="vs-btn primary" data-i18n="RESTART (R)">RESTART (R)</button>
+      </div>
+    </div>
+
+    <!-- touch controls -->
+    <div id="vs-touch" class="hidden">
+      <div id="vs-stick"><div id="vs-stick-nub"></div></div>
+      <button id="vs-touch-dash" data-i18n="DASH">DASH</button>
+    </div>
+
+  </body>
+</html>

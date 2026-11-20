@@ -1,0 +1,175 @@
+{
+  "base": "http://127.0.0.1:53050",
+  "startedAt": "2026-11-15T15:36:45.492Z",
+  "checks": {
+    "opaque-origin": {
+      "ok": true,
+      "detail": "null"
+    },
+    "ammo-wasm-inlined-boot": {
+      "ok": true,
+      "detail": {
+        "b64Len": 1378752
+      }
+    },
+    "localStorage-fallback": {
+      "ok": true,
+      "detail": {
+        "storage": "blocked:SecurityError",
+        "best": 0
+      }
+    },
+    "webgl-context": {
+      "ok": true,
+      "detail": {
+        "canvas": [
+          1280,
+          720
+        ]
+      }
+    },
+    "mouse-aim": {
+      "ok": true,
+      "detail": {
+        "aimX": 0.265
+      }
+    },
+    "keyboard-spin": {
+      "ok": true,
+      "detail": {
+        "spin": -0.368
+      }
+    },
+    "hold-charge": {
+      "ok": true,
+      "detail": {
+        "state": "charge",
+        "power": 0.5
+      }
+    },
+    "release-roll": {
+      "ok": true,
+      "detail": "roll"
+    },
+    "first-roll-scored": {
+      "ok": true,
+      "detail": {
+        "roll1": 4,
+        "standing": 6,
+        "hudTotal": "4",
+        "hudFrame": "1/10",
+        "hudPins": "6",
+        "scoreboardCells": 10
+      }
+    },
+    "ten-frames-gameover": {
+      "ok": true,
+      "detail": {
+        "state": "gameover",
+        "frames": [
+          "4/5",
+          "9/1",
+          "6/0",
+          "1/6",
+          "7/3",
+          "9/0",
+          "1/6",
+          "6/4",
+          "10",
+          "10/10/9"
+        ],
+        "stats": {
+          "strikes": 3,
+          "spares": 3,
+          "gutters": 0
+        }
+      }
+    },
+    "pins-knocked": {
+      "ok": true,
+      "detail": {
+        "knocked": 107
+      }
+    },
+    "bowling-scoring-matches-reference": {
+      "ok": true,
+      "detail": {
+        "reported": "152",
+        "reference": 152
+      }
+    },
+    "results-screen": {
+      "ok": true,
+      "detail": {
+        "total": "152",
+        "rating": "GREAT GAME",
+        "stars": "★★★★☆"
+      }
+    },
+    "restart-resets": {
+      "ok": true,
+      "detail": {
+        "frame": 0,
+        "total": "0",
+        "pins": 10
+      }
+    },
+    "strike-celebration": {
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "tries": 3,
+        "toast": "STRIKE!"
+      }
+    },
+    "pause-overlay": {
+      "ok": true,
+      "detail": {
+        "paused": true,
+        "overlay": true
+      }
+    },
+    "resume": {
+      "ok": true,
+      "detail": false
+    },
+    "mute-toggle": {
+      "ok": true,
+      "detail": {
+        "muted": true,
+        "unmuted": false
+      }
+    },
+    "zh-i18n": {
+      "ok": true,
+      "detail": {
+        "lang": "zh-CN",
+        "frameLbl": "帧",
+        "hint": "瞄准：鼠标 / ← →   ·   旋转：A D   ·   按住空格 / 左键蓄力，松开投球",
+        "i18nLang": "zh"
+      }
+    },
+    "zero-pageerrors": {
+      "ok": true,
+      "detail": []
+    },
+    "zero-console-errors": {
+      "ok": true,
+      "detail": []
+    },
+    "zero-failed-requests": {
+      "ok": true,
+      "detail": []
+    },
+    "zero-external-runtime-requests": {
+      "ok": true,
+      "detail": []
+    }
+  },
+  "fps": 60,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "finishedAt": "2026-11-15T15:38:45.822Z"
+}

@@ -1,0 +1,41 @@
+TITLE
+Dune Tac Toe — Free Desert Tic-Tac-Toe Puzzle Game
+
+CATEGORY
+Puzzle
+
+TAGS
+tic tac toe, noughts and crosses, puzzle, brain teaser, logic, strategy, desert, cactus, scorpion, casual, browser game, family friendly
+
+SHORT DESCRIPTION
+Plant your cactus and outwit the perfect scorpion across 12 desert tic-tac-toe puzzles.
+
+LONG DESCRIPTION
+DUNE TAC TOE is a free desert-themed tic-tac-toe puzzle game about a cactus outsmarting a scorpion on a 3x3 board.
+
+Place your cactus to make three in a row before the scorpion does. Then climb through 12 handcrafted endgame puzzles: win in one move, master the fork and the double threat, chain forcing sequences, and finally hold the perfect scorpion to a draw in the ultimate defense test.
+
+Three difficulty levels in endless mode — random, greedy, and the unbeatable Perfect Scorpion — plus a local two-player mode for head-to-head duels. Every piece is shape and color coded for colorblind-friendly play.
+
+Ten seconds to learn, endlessly tricky to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+沙丘井字棋 — 免费沙漠井字棋益智游戏
+
+CATEGORY
+益智
+
+TAGS
+井字棋, 三子棋, 益智, 解谜, 逻辑, 策略, 沙漠, 仙人掌, 蝎子, 休闲, 网页游戏, 全年龄
+
+SHORT DESCRIPTION
+在沙漠棋盘上种下仙人掌，抢先连成三线，智胜那只每一步都完美防守的蝎子。
+
+LONG DESCRIPTION
+《沙丘井字棋》是一款免费的沙漠主题井字棋益智游戏：在 3×3 棋盘上，仙人掌与蝎子斗智斗勇。
+
+落子仙人掌，抢在蝎子之前连成三线。然后挑战 12 个手工设计的必胜残局：一步制胜、学会双威胁与「叉」、连环逼迫、长线规划，最后在第 12 关逼平那只完美蝎子。
+
+无尽模式提供随机、贪心、完美蝎子三档难度，另有本地双人对战。棋子用「形状 + 颜色」双编码，色盲玩家也能一眼分辨。
+
+十秒上手，越玩越烧脑。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

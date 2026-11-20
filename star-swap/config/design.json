@@ -1,0 +1,80 @@
+{
+  "slug": "star-swap",
+  "genre": "puzzle",
+  "oneLiner": "在深空观测站里交换望远镜中的星屑，相邻交换成三连即消除；四连/五连锻造特殊星，透镜隔空换位，清到目标分过关。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "swap",
+      "cost": "每次交换消耗 1 步（每关步数有限），且只能与四邻交换",
+      "feedback": ["sfx", "swap-flash", "match-glow"],
+      "combinesWith": ["lens"]
+    },
+    {
+      "name": "lens",
+      "cost": "消耗每关 3 次引力透镜，把 2×2 区域放大后隔空换位（放弃常规四邻限制）",
+      "feedback": ["sfx", "zoom-halo", "white-flash"],
+      "combinesWith": ["swap"]
+    },
+    {
+      "name": "charge",
+      "cost": "为锻造四连/五连特殊星，放弃本回合即时消除、多步布局",
+      "feedback": ["sfx", "special-glow", "combo-flash"],
+      "combinesWith": ["swap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "稳三连先拿分，还是蓄四连锻造行爆/列爆星", "cost": "即时分数 vs 后续清场能力" },
+    { "atSec": 20, "choice": "透镜用在关键步隔空换位，还是省到更难的后期", "cost": "消耗有限的透镜次数" },
+    { "atSec": 35, "choice": "优先清目标色/高分区，还是冲总分", "cost": "目标进度 vs 总分" },
+    { "atSec": 50, "choice": "暗物质格挡路时绕行交换，还是等相邻特殊星爆开它", "cost": "额外步数 vs 保留特殊星" },
+    { "atSec": 70, "choice": "六色关更难成连，是否动用透镜保底", "cost": "透镜资源换一步必然消除" },
+    { "atSec": 95, "choice": "重力反转回合：逆重力落子，提前布局还是见招拆招", "cost": "预判成本" },
+    { "atSec": 120, "choice": "特殊星现在引爆，还是攒到与另一颗特殊星叠爆", "cost": "即时收益 vs 更大组合" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "8×8 星阵 + 五色三消（教交换）" },
+    { "index": 2, "newElement": "四连锻造行爆/列爆特殊星" },
+    { "index": 3, "newElement": "暗物质格：占位不消除，靠相邻特殊星爆开" },
+    { "index": 4, "newElement": "六色关：成连更难、目标分更高" },
+    { "index": 5, "newElement": "初始特殊星：开局自带行爆/列爆星" },
+    { "index": 6, "newElement": "引力透镜解锁：2×2 区域隔空换位" },
+    { "index": 7, "newElement": "重力反转一回合：星屑从底部回落" },
+    { "index": 8, "newElement": "暗物质阵 + 六色叠加" },
+    { "index": 9, "newElement": "六色 + 透镜：资源取舍更紧" },
+    { "index": 10, "newElement": "重力反转 + 暗物质阵" },
+    { "index": 11, "newElement": "六色 + 初始超新星（五连同色湮灭）" },
+    { "index": 12, "newElement": "全特性收官：暗物质 + 六色 + 透镜 + 初始超新星" }
+  ],
+  "upgrades": [
+    { "id": "rowBlast", "kind": "rule", "desc": "四连（横向）生成行爆星，清整行" },
+    { "id": "colBlast", "kind": "rule", "desc": "四连（纵向）生成列爆星，清整列" },
+    { "id": "nova", "kind": "rule", "desc": "五连生成超新星，同色全屏湮灭 + 白闪" },
+    { "id": "darkMatter", "kind": "rule", "desc": "暗物质格占位不消除，靠相邻特殊星爆开" },
+    { "id": "gravityReverse", "kind": "rule", "desc": "重力反转一回合：星屑从底部回落" },
+    { "id": "lens", "kind": "rule", "desc": "引力透镜 2×2 区域隔空换位（每关 3 次）" },
+    { "id": "cascade", "kind": "rule", "desc": "连锁消除每层额外加成（链式反应）" },
+    { "id": "scoreBonus", "kind": "stat", "desc": "基础分 +15%（数值）" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 4, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true },
+  "signatureMoment": "五连「超新星」——全屏白闪，同色星屑全部湮灭，深空短暂变白",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas 深空星云 + 星屑（每色一形状保证色盲可辨）+ 观测站 UI 线框；BGM 程序化 WebAudio 合成；封面/海报用程序化玩法图叠加标题文字"
+}

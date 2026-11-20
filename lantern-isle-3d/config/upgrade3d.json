@@ -1,0 +1,71 @@
+{
+  "note": "第二轮 3D 精修：把参数化 kit 的平涂件换成 Hunyuan3D-2.1 的 PBR 模型（概念图走 C 机 qwen-image-xl，形状+纹理走 A 机 hunyuan3d）。prompt 一律由 artbible.mjs 拼，风格锁不变。",
+  "assets": [
+    {
+      "id": "build_cottage_a",
+      "category": "building",
+      "subject": "small coastal fisherman cottage, whitewashed stone walls, terracotta tiled hip roof, one wooden door and one warm lit window, brick chimney",
+      "targetLen": 5.0
+    },
+    {
+      "id": "build_cottage_b",
+      "category": "building",
+      "subject": "two-storey harbour house, slate blue plaster walls, red tiled roof, wooden porch with two posts, two warm lit windows",
+      "targetLen": 5.8
+    },
+    {
+      "id": "build_lighthouse_01",
+      "category": "building",
+      "subject": "tall striped lighthouse tower, weathered red and cream bands, iron gallery railing, glowing brass lamp room, conical roof",
+      "targetLen": 15.0
+    },
+    {
+      "id": "build_boathouse_01",
+      "category": "building",
+      "subject": "open-front wooden boat shed, salt grey planks, pitched terracotta roof, dark interior",
+      "targetLen": 5.0
+    },
+    {
+      "id": "build_shed_01",
+      "category": "building",
+      "subject": "tiny tool shed, leaning wooden planks, moss on the roof, half open door",
+      "targetLen": 3.3
+    },
+    {
+      "id": "prop_lantern_post_01",
+      "category": "prop",
+      "subject": "old iron street lantern post, stone base, brass glass lamp head with warm flame inside, slight rust",
+      "targetLen": 3.2
+    },
+    {
+      "id": "env_tree_pine_01",
+      "category": "prop",
+      "subject": "wind bent coastal pine tree, dark green needle clusters, twisted brown trunk",
+      "targetLen": 4.2
+    },
+    {
+      "id": "env_rock_01",
+      "category": "prop",
+      "subject": "mossy granite boulder, lichen patches, weathered facets",
+      "targetLen": 1.5
+    },
+    {
+      "id": "env_crate_stack_01",
+      "category": "prop",
+      "subject": "stack of two weathered wooden crates and a coil of rope beside them",
+      "targetLen": 1.6
+    },
+    {
+      "id": "build_well_01",
+      "category": "building",
+      "subject": "old stone village well with wooden bucket winch and small tiled roof",
+      "targetLen": 2.0
+    },
+    {
+      "id": "char_keeper",
+      "category": "character",
+      "subject": "stylized game character, lighthouse keeper, full body A-pose front view, straw conical hat, dark teal wool tunic with brass buttons, brown leather belt and backpack, rolled sleeves, sturdy boots, friendly weathered face, clean silhouette, game-ready",
+      "targetLen": 1.75
+    }
+  ]
+}

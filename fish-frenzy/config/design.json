@@ -1,0 +1,117 @@
+{
+  "slug": "fish-frenzy",
+  "genre": "arcade",
+  "oneLiner": "夜光渔市里，你操纵底部炮台瞄准、撒网，按鱼汛预报提前站位；低档稳收小鱼、高档豪赌巨口鲨，电击网群捕编队，金币即血量。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "注意力：盯着鱼汛预报就得放下眼前的散鱼",
+      "feedback": [
+        "sfx",
+        "cannon-rotate",
+        "glow-aim"
+      ],
+      "combinesWith": [
+        "shoot"
+      ]
+    },
+    {
+      "name": "shoot",
+      "cost": "每发扣金币（=炮档），miss 就白烧",
+      "feedback": [
+        "sfx",
+        "net-ring",
+        "coin-rain"
+      ],
+      "combinesWith": [
+        "switchTier"
+      ]
+    },
+    {
+      "name": "switchTier",
+      "cost": "高档耗币多、方差大，低档稳但慢",
+      "feedback": [
+        "sfx",
+        "barrel-recolor",
+        "tier-num"
+      ],
+      "combinesWith": [
+        "shoot"
+      ]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先撒低档网稳收小鱼，还是直接高档赌眼前的大鱼", "cost": "稳收益 vs 高方差" },
+    { "atSec": 18, "choice": "鱼汛预报 5 秒后走这条路线：把炮口提前挪过去等编队，还是继续追散鱼", "cost": "等待机会成本 vs 立刻收益" },
+    { "atSec": 30, "choice": "电击网快充好了：留给即将到来的大编队，还是现在救急清屏", "cost": "群捕时机" },
+    { "atSec": 45, "choice": "金币见底：换回 1 档猥琐发育，还是继续高档搏一把翻本", "cost": "保守 vs 激进" },
+    { "atSec": 65, "choice": "Boss 巨口鲨出现：高档炮连射，还是先清小鱼保证金币流", "cost": "大额赌注 vs 现金流" },
+    { "atSec": 90, "choice": "场次时间不够：目标营收差一点，赌大鱼还是补小鱼凑数", "cost": "时间/风险权衡" },
+    { "atSec": 120, "choice": "换场景后路径变了：重新记预报路线，还是凭手感乱打", "cost": "学习成本 vs 盲目效率" },
+    { "atSec": 150, "choice": "电量满 + 大编队 + Boss 同时出现：电击网给谁", "cost": "一次性资源分配" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 35,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "灯笼鱼/沙丁鱼单游：教瞄准与撒网" },
+    { "index": 2, "newElement": "三鱼种轮换 + 双路径编队" },
+    { "index": 3, "newElement": "鱼汛预报解锁：顶部预告 5 秒后路线" },
+    { "index": 4, "newElement": "首场 Boss 巨口鲨：高档炮豪赌" },
+    { "index": 5, "newElement": "深沟场景包切换（深蓝）+ 拐弯路径" },
+    { "index": 6, "newElement": "魔鬼鱼（高倍率）登场" },
+    { "index": 7, "newElement": "电击网群捕大编队的绝佳目标" },
+    { "index": 8, "newElement": "锤头鲨 + 第二场 Boss" },
+    { "index": 9, "newElement": "热泉场景包切换（暗红）+ 高速鱼" },
+    { "index": 10, "newElement": "皇带鱼稀有高回报" },
+    { "index": 11, "newElement": "纯皇带鱼高压局：每次撒网都是赌注" },
+    { "index": 12, "newElement": "终场 Boss 巨口鲨：高档炮定胜负" }
+  ],
+  "upgrades": [
+    { "id": "forecast", "kind": "rule", "desc": "解锁鱼汛预报（预告 5 秒后路线）" },
+    { "id": "electric", "kind": "rule", "desc": "解锁电击网（60s 充能群捕）" },
+    { "id": "wideNet", "kind": "rule", "desc": "网半径 +30%（改覆盖规则）" },
+    { "id": "highRoller", "kind": "rule", "desc": "高档炮捕获率上限 +5%" },
+    { "id": "bossBane", "kind": "rule", "desc": "对 Boss 捕获率 +8%" },
+    { "id": "coinMagnet", "kind": "rule", "desc": "捕获金币 +10%" },
+    { "id": "rapidFire", "kind": "rule", "desc": "发射冷却 -20%" },
+    { "id": "deepPockets", "kind": "stat", "desc": "开局金币 +50" },
+    { "id": "cheapShot", "kind": "stat", "desc": "炮档费用 -1（最低 1）" },
+    { "id": "lucky", "kind": "stat", "desc": "全局捕获率 +3%" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "growth",
+    "unlock"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "巨口鲨被高档炮命中的瞬间，渔网化光爆裂，金币如雨点般落进底部钱袋。",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "深海夜光渔市：程序化 Canvas 发光渲染（径向渐变/加法混合），三场景包换色板+构图+装饰；UI 线框 SVG/CSS；BGM/SFX 全 WebAudio 程序化合成。"
+}

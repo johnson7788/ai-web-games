@@ -1,0 +1,149 @@
+{
+  "game": "helix-orbit",
+  "generatedAt": "2026-11-19T11:48:49.373Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.125,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按左箭头键或拖动塔体旋转",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡塔体中心交互点（白色小球）",
+        "右上角'ICE 0'与'Skip'按钮间距过小，可能误触",
+        "塔体分层边缘线宽不一致，部分切片边界模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "按左箭头键或拖拽旋转塔楼以对齐橙色缺口",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡塔身关键缺口区域，影响操作判断",
+        "左上角HUD按钮间距过小（DEPTH/SCORE/BEST），可能误触",
+        "‘Skip’按钮无悬停反馈，且与ICE计数器视觉层级冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Launch' 按钮开始游戏",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'HELIX ORBIT' 发光效果过强导致部分字母边缘模糊，影响远距离辨识",
+        "‘Best depth 1’ 文字字号偏小且颜色较浅，与背景对比度不足",
+        "底部提示框（FIRST DESCENT）无圆角/阴影，与上方按钮风格略有差异"
+      ]
+    },
+    {
+      "shot": "tests/final/v02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘出发’按钮开始游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊螺旋结构与文字‘HELIX ORBIT’在视觉上易混淆，眯眼时难以区分UI与场景元素",
+        "‘最深 0 层’文字较小且颜色偏淡，对比度不足，影响快速阅读",
+        "右上角语言切换按钮无悬停反馈提示，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/v03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "按左箭头键或拖动塔体旋转以对准目标方向",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡塔顶小黄点（目标指示器），影响目标定位",
+        "‘FIRST DESCENT’标题与步骤说明字体大小差异略大，层级稍乱",
+        "背景星点过密且亮度接近塔体暗部，弱化塔体轮廓（silhouette扣分原因）"
+      ]
+    },
+    {
+      "shot": "tests/final/v04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧小三角形玩家角色开始移动",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标光点（中心白圈）亮度不足，与深色背景对比度偏低，易被忽略",
+        "左上角HUD按钮文字‘BEST 0’无单位说明，语义模糊",
+        "紫色螺旋结构层次复杂，部分片段遮挡中心目标，影响路径判断"
+      ]
+    },
+    {
+      "shot": "tests/final/v05-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Resume’按钮继续游戏",
+      "readable": 9,
+      "silhouette": 4,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊角色轮廓难以辨识，眯眼时无法区分玩家/敌人/可交互物",
+        "‘Paused’标题与下方提示文字间距偏小，略影响层级清晰度",
+        "右上角语言切换下拉框无展开指示（如小三角），可能被误认为静态标签"
+      ]
+    },
+    {
+      "shot": "tests/final/v06-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Launch again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊紫色光带与HUD边缘轻微融合，可能影响视觉聚焦",
+        "‘NEW RECORD’徽章无明确交互反馈提示（如悬停/点击态）",
+        "‘Press R to launch again’文字字号偏小，低对比度下易被忽略"
+      ]
+    }
+  ]
+}

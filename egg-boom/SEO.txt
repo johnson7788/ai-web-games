@@ -1,0 +1,14 @@
+TITLE
+EGG BOOM — Kitchen Dough Cracker
+
+CATEGORY
+Arcade
+
+TAGS
+arcade, runner, shooter, egg, kitchen, casual, one-button, combo
+
+SHORT DESCRIPTION
+Roll a springy egg, shoot rice bullets to crack numbered dough balls, and chain combos into a yolk splash.
+
+LONG DESCRIPTION
+EGG BOOM is a one-button arcade runner. Hold to charge your jump, release to leap, tap to fire extra rice shots, and crack every numbered dough ball before it reaches you. Chain 5 breaks to charge a yolk splash that cracks armored dough. 12 levels across Morning Kitchen, Dessert Station and Midnight Canteen.

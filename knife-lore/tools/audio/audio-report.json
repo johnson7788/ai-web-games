@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-11-19T06:31:38.443Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "throw": {
+      "rms": 0.0763,
+      "peak": 0.2711,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "knifeStick": {
+      "rms": 0.2258,
+      "peak": 0.5525,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "knifeBreak": {
+      "rms": 0.2219,
+      "peak": 0.6493,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "levelCleared": {
+      "rms": 0.1592,
+      "peak": 0.6226,
+      "nan": 0,
+      "samples": 34398,
+      "durSec": 0.78,
+      "pass": true
+    },
+    "gameWon": {
+      "rms": 0.159,
+      "peak": 0.6564,
+      "nan": 0,
+      "samples": 51156,
+      "durSec": 1.16,
+      "pass": true
+    },
+    "symBonus": {
+      "rms": 0.1273,
+      "peak": 0.3788,
+      "nan": 0,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "zantie": {
+      "rms": 0.1081,
+      "peak": 0.3414,
+      "nan": 0,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1942,
+      "peak": 0.3799,
+      "nan": 0,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "sweep": {
+      "rms": 0.0274,
+      "peak": 0.05,
+      "nan": 0,
+      "samples": 882,
+      "durSec": 0.02,
+      "pass": true
+    },
+    "pulse": {
+      "rms": 0.0375,
+      "peak": 0.1448,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1346,
+      "peak": 0.3053,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bamboo": {
+      "rms": 0.0976,
+      "peak": 0.2971,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "dusk": {
+      "rms": 0.0817,
+      "peak": 0.2821,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "snow": {
+      "rms": 0.0646,
+      "peak": 0.2105,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

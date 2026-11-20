@@ -1,0 +1,187 @@
+{
+  "slug": "abyss-eel",
+  "genre": "action",
+  "oneLiner": "你是一条深海发光鳗，拖着光珠长链坠向深渊；横移避开障碍、按住冲刺燃烧光珠撞碎数字珊瑚墙，光珠越多看得越远，破墙的浮游火花会飞回来喂你。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "注意力：向左避墙就错过右边的光珠链",
+      "feedback": [
+        "sfx",
+        "trail",
+        "eel-bend"
+      ],
+      "combinesWith": [
+        "dash"
+      ]
+    },
+    {
+      "name": "dash",
+      "cost": "燃烧光珠（长度/视野），但撞墙伤害翻倍、连击加速",
+      "feedback": [
+        "sfx",
+        "screen-shake",
+        "burst-particles"
+      ],
+      "combinesWith": [
+        "steer"
+      ]
+    },
+    {
+      "name": "break",
+      "cost": "每点墙值吃掉一珠；破墙返火花回珠与连击分",
+      "feedback": [
+        "sfx",
+        "pop-particles",
+        "combo-flash"
+      ],
+      "combinesWith": [
+        "dash"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "第一道墙左低值右高值：撞左边少掉珠还是去右边多吃珠",
+      "cost": "少掉珠 vs 多吃珠"
+    },
+    {
+      "atSec": 20,
+      "choice": "看到光珠串夹在两墙之间，绕路还是硬穿",
+      "cost": "安全绕路 vs 血量换资源"
+    },
+    {
+      "atSec": 35,
+      "choice": "按住冲刺撞墙：燃烧珠但连击×2，还是慢慢磨",
+      "cost": "长度换分数节奏"
+    },
+    {
+      "atSec": 50,
+      "choice": "海胆雷区：贴缝过（险）还是破墙过（费珠）",
+      "cost": "风险 vs 资源"
+    },
+    {
+      "atSec": 70,
+      "choice": "午夜带变暗：留在亮区安全还是追暗处的金珠",
+      "cost": "视野 vs 资源"
+    },
+    {
+      "atSec": 95,
+      "choice": "Boss 墙再生：先攒珠再总攻，还是边打边补",
+      "cost": "攒珠掉连击 vs 连击掉血量"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "阳光带：数字珊瑚墙 + 光珠食物（教基本横移/破墙）"
+    },
+    {
+      "index": 2,
+      "newElement": "暮光带：移动墙 + 冲刺技能解锁（教燃烧换连击）"
+    },
+    {
+      "index": 3,
+      "newElement": "午夜带：光半径机制——珠越少视野越小 + 金珠"
+    },
+    {
+      "index": 4,
+      "newElement": "深渊带：海胆雷（碰撞即断尾掉5珠）+ 窄门墙阵"
+    },
+    {
+      "index": 5,
+      "newElement": "热泉 Boss：再生巨型墙，必须在珠耗尽前分段击穿"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "magnet",
+      "kind": "rule",
+      "desc": "火花吸附半径翻倍（改拾取规则而非+数值）"
+    },
+    {
+      "id": "dashRefund",
+      "kind": "rule",
+      "desc": "冲刺破墙若连击≥5，返双倍火花"
+    },
+    {
+      "id": "tailGuard",
+      "kind": "rule",
+      "desc": "海胆只断尾1节而非5节（条件规则）"
+    },
+    {
+      "id": "goldBait",
+      "kind": "rule",
+      "desc": "金珠会给下3次破墙+1额外回珠（规则链）"
+    },
+    {
+      "id": "comboBank",
+      "kind": "rule",
+      "desc": "连击≥10时存1珠进保险箱，死亡返一半（规则改变失败成本）"
+    },
+    {
+      "id": "lightLens",
+      "kind": "rule",
+      "desc": "午夜带每吃1金珠视野半径永久+6%（跨关规则）"
+    },
+    {
+      "id": "firstBreath",
+      "kind": "rule",
+      "desc": "每带开局前3秒墙值减半（开局规则）"
+    },
+    {
+      "id": "eelFin",
+      "kind": "stat",
+      "desc": "横移速度+10%（数值）"
+    },
+    {
+      "id": "orbHP",
+      "kind": "stat",
+      "desc": "开局光珠+3（数值）"
+    },
+    {
+      "id": "dashTank",
+      "kind": "stat",
+      "desc": "冲刺燃烧速率-15%（数值）"
+    }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "unlock",
+    "growth",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "按住冲刺整条光鳗化为一道蓝白光束贯穿珊瑚墙，火花被真空吸回长链的瞬间",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "深海生物发光风格：程序化 Canvas 发光渲染为主（径向渐变/加法混合），AI 生成封面海报与 BGM；UI 线框 SVG/CSS"
+}

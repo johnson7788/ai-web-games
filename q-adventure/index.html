@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Q ADVENTURE — bounce, wall-jump and ride the beat as a jelly-bean knight. Collect stars, stomp patrol bots and save the princess across 12 candy, cloud and night-forest levels.">
+  <meta name="theme-color" content="#ff9dcc">
+  <title>Q ADVENTURE · Jelly Bean Knight</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <button id="btn-left" class="touch-btn touch-left" aria-label="Left" hidden>◀</button>
+    <button id="btn-right" class="touch-btn touch-right" aria-label="Right" hidden>▶</button>
+    <button id="btn-jump" class="touch-btn touch-jump" aria-label="Jump" hidden>▲</button>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Bouncing…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

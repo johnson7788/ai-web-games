@@ -1,0 +1,14 @@
+TITLE
+DICE CASCADE
+
+CATEGORY
+Puzzle
+
+TAGS
+dice, pachinko, rune, temple, betting, push your luck, probability, casual
+
+SHORT DESCRIPTION
+Bet rune dice, cast them down a temple pachinko board, and bank your score before cursed faces wipe it. Triple runes open the golden door.
+
+LONG DESCRIPTION
+Cast rune dice into a temple pachinko board. Each die face picks a lane and a base value; beads bounce through pegs into multiplier buckets. Bet 1-3 die slots for x2/x3, manage expectation, bank your score before cursed faces wipe it, and collect runes for permanent cross-run upgrades across the Stone, Jade and Lava temples.

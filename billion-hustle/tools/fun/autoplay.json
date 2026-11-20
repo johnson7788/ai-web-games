@@ -1,0 +1,62 @@
+{
+  "game": "billion-hustle",
+  "genre": "sim",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 180,
+      "actions": 1121,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 11.8,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 13,
+      "levelsReached": 5,
+      "completed": false,
+      "valuation": 740572,
+      "actionsPerMin": 374
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 180,
+      "actions": 4894,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 3.4,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 13,
+      "levelsReached": 11,
+      "completed": false,
+      "valuation": 79937590,
+      "actionsPerMin": 1631
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 180,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 4,
+      "levelsReached": 1,
+      "completed": false,
+      "valuation": 180,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T17:33:34.374Z"
+}

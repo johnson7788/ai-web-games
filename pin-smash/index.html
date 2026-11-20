@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<script src="./config/sdk.config.js"></script>
+<script src="./src/core/sdk-boot.js"></script>
+<script src="./src/core/cors-img.js"></script>
+<script src="./config/locales.js"></script>
+<script src="./src/core/i18n.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pin Smash — Free 3D Physics Bowling</title>
+  <meta name="description" content="Pin Smash is a free 3D physics bowling game. Aim, charge and hook your ball to smash all 10 pins across 10 frames with real strike & spare scoring. Built on enable3d (LGPL) + Ammo.js physics.">
+  <meta name="theme-color" content="#06060e">
+  <meta property="og:title" content="Pin Smash — Free 3D Physics Bowling">
+  <meta property="og:description" content="Aim, charge, hook and smash the pins. Real 10-frame bowling scoring with rigid-body physics.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2306060e'/%3E%3Ccircle cx='32' cy='34' r='20' fill='%237b2ff7'/%3E%3Ccircle cx='26' cy='26' r='3' fill='%2306060e'/%3E%3Ccircle cx='36' cy='24' r='3' fill='%2306060e'/%3E%3Ccircle cx='33' cy='33' r='3' fill='%2306060e'/%3E%3Ccircle cx='32' cy='34' r='20' fill='none' stroke='%2322d3ee' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  { "imports": { "three": "./lib/three.module.min.js" } }
+  </script>
+  <script src="./lib/ammo.wasm.js"></script>
+  <script src="./lib/ammo-wasm-b64.js"></script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="canvas"></canvas>
+    <div id="flash"></div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-stats">
+          <div class="stat"><span class="lbl" data-i18n="Frame">Frame</span><b id="hud-frame">1/10</b></div>
+          <div class="stat"><span class="lbl" data-i18n="Roll">Roll</span><b id="hud-roll">1</b></div>
+          <div class="stat"><span class="lbl" data-i18n="Standing">Standing</span><b id="hud-pins">10</b></div>
+          <div class="stat total"><span class="lbl" data-i18n="Score">Score</span><b id="hud-total">0</b></div>
+          <div class="stat best"><span class="lbl" data-i18n="Best">Best</span><b id="best-hud">0</b></div>
+        </div>
+        <button id="btn-pause" class="icon-btn" data-i18n-title="Pause" aria-label="Pause" title="Pause">❚❚</button>
+      </div>
+      <div id="scoreboard"></div>
+      <div id="toast" class="toast"></div>
+      <div class="hud-bottom">
+        <div id="spin-wrap" class="spin-wrap">
+          <span class="lbl" data-i18n="Spin">Spin</span>
+          <div class="spin-track"><div class="spin-center"></div><div id="spin-needle" class="spin-needle"></div></div>
+          <span id="spin-val" class="spin-val">0</span>
+        </div>
+        <div id="power-wrap" class="power-wrap hidden">
+          <span class="lbl" data-i18n="Power">Power</span>
+          <div class="power-track"><div id="power-fill" class="power-fill"></div></div>
+        </div>
+      </div>
+      <div id="controls-hint" class="controls-hint" data-i18n="hint">Aim: Mouse / ← →   ·   Spin: A D   ·   Hold Space / Click to charge, release to bowl</div>
+    </div>
+
+    <!-- Title -->
+    <div id="screen-title" class="screen is-active">
+      <div class="title-card">
+        <div class="logo">PIN<span>SMASH</span></div>
+        <p class="subtitle" data-i18n="subtitle">Free 3D Physics Bowling</p>
+        <p class="best" id="best-title">Best: 0</p>
+        <button id="btn-start" class="btn primary" data-i18n="PLAY">PLAY</button>
+        <button id="btn-howto" class="btn" data-i18n="HOW TO PLAY">HOW TO PLAY</button>
+        <button id="btn-mute" class="btn small">SOUND: ON</button>
+        <p class="credits">Physics by <b>enable3d</b> (LGPL-3.0, github.com/enable3d/enable3d) · Ammo.js (Bullet) · three.js</p>
+      </div>
+    </div>
+
+    <!-- Pause -->
+    <div id="screen-pause" class="screen">
+      <div class="card">
+        <h2 data-i18n="PAUSED">PAUSED</h2>
+        <button id="btn-resume" class="btn primary" data-i18n="RESUME">RESUME</button>
+        <button id="btn-restart-pause" class="btn" data-i18n="RESTART">RESTART</button>
+        <button id="btn-menu-pause" class="btn" data-i18n="MENU">MENU</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="screen-results" class="screen">
+      <div class="card results">
+        <h2 data-i18n="GAME COMPLETE">GAME COMPLETE</h2>
+        <div class="res-score"><span data-i18n="Total">Total</span><b id="res-total">0</b></div>
+        <div id="res-stars" class="res-stars"></div>
+        <div id="res-rating" class="res-rating"></div>
+        <div id="res-stats" class="res-stats"></div>
+        <div id="res-record" class="res-record hidden" data-i18n="NEW BEST!">NEW BEST!</div>
+        <button id="btn-restart" class="btn primary" data-i18n="PLAY AGAIN">PLAY AGAIN</button>
+        <button id="btn-share" class="btn" data-i18n="SHARE">SHARE</button>
+        <button id="btn-menu" class="btn" data-i18n="MENU">MENU</button>
+      </div>
+    </div>
+
+    <!-- How to play -->
+    <div id="howto" class="screen">
+      <div class="card howto">
+        <h2 data-i18n="HOW TO PLAY">HOW TO PLAY</h2>
+        <p class="goal" data-i18n="goal">Bowl 10 frames. Knock down all 10 pins for a STRIKE, or clear them in two rolls for a SPARE. Strikes and spares earn bonus points. Score as high as you can — a perfect game is 300!</p>
+        <ul class="howto-list">
+          <li data-i18n="howto_aim">Move the mouse or press ← → to position the ball across the lane.</li>
+          <li data-i18n="howto_spin">Hold A or D to add hook (curve). The ball bends more as it nears the pins.</li>
+          <li data-i18n="howto_power">Hold Space or the left mouse button to charge power, then release to bowl. The meter oscillates — time it!</li>
+          <li data-i18n="howto_score">Strike (X) = 10 + next 2 rolls. Spare (/) = 10 + next roll. The 10th frame gives up to 3 rolls.</li>
+          <li data-i18n="howto_pause">Press P or Esc to pause. M mutes sound.</li>
+        </ul>
+        <button id="btn-howto-close" class="btn primary" data-i18n="GOT IT">GOT IT</button>
+      </div>
+    </div>
+
+    <div id="loading"><div class="spinner"></div><div data-i18n="Loading physics…">Loading physics…</div></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

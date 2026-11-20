@@ -1,0 +1,149 @@
+{
+  "game": "goblin-mines",
+  "generatedAt": "2026-11-19T14:35:34.740Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7.125,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Enter Mine’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘GOBLIN MINES’发光效果过强，导致部分字母边缘轻微晕染，影响远距离辨识",
+        "‘Deepest shaft 1 · 0 gold’文字颜色偏淡（浅黄），在深紫背景下对比度不足，易被忽略",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Dig deeper’按钮开始挖掘",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角资源计数（Ruby/Sapphire/Amethyst/Emerald）与‘0/20’对齐不一致，易误读为进度条",
+        "右侧技能列表中‘Fuel Surge’高亮边框过细，与下方选项区分度不足",
+        "中央网格中两个空格（灰色方块）视觉上像障碍物但无说明，可能引发困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/03-lit.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧‘Dig deeper’按钮继续挖掘",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘SHAFT 2’与‘DEPTH 12 m’标签间距过小，易误读为单行",
+        "右侧面板‘Fuel Surge’选项高亮边框颜色（浅黄）与背景对比度偏低，弱光下可能难辨",
+        "底部矿车图标过小且无明确交互提示，新手可能忽略其为操作焦点"
+      ]
+    },
+    {
+      "shot": "tests/final/04-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧‘Dig deeper’按钮继续挖掘",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧‘Lantern goblins’区域输入框与‘Hire goblin’按钮间距过小，易误触",
+        "中央矿脉网格中部分方块（如深红双点图标）与背景对比度偏低，辨识稍难",
+        "右上角‘FUEL 14’与‘GOLD 39’标签字体大小不一致，视觉层级混乱"
+      ]
+    },
+    {
+      "shot": "tests/final/05-collapse.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Dig deeper’按钮继续挖掘",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘SHAFT 2’与‘DEPTH 18 m’标签间距过小，易误读为单行",
+        "底部‘Cave-in incoming!’提示条部分遮挡网格最底行可交互格子（y≈85%）",
+        "右侧燃料列表中‘Fuel Surge’高亮边框与背景对比度偏低，弱视用户可能难辨选中状态"
+      ]
+    },
+    {
+      "shot": "tests/final/06-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“New mine”按钮重新开始挖矿",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊矿格与弹窗无明确层级关系，眯眼时难以区分可交互元素与背景",
+        "‘Press R to dig again’提示字体过小且无高亮，易被忽略",
+        "‘Share’按钮无图标或悬停反馈，功能意图不够直观"
+      ]
+    },
+    {
+      "shot": "tests/final/07-zh-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘向下挖’按钮开始挖掘",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上矿道/深度/步数/安全度数值区与右侧操作面板间距过小，易误触",
+        "中间网格中灰色空格（未填充位）与背景对比度偏低，辨识稍弱",
+        "右侧面板‘燃油充能’等条目文字行高紧凑，小字号下可能影响可读性"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Dig deeper’按钮开始挖掘",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘MOVES 15’与‘STABILITY 100’标签文字颜色过暗（浅灰），在深紫背景下对比度偏低，易误读为‘15/20’等",
+        "底部矿车图标过于小且无高亮，与下方空格交互区边界模糊，新手可能忽略其为操作焦点",
+        "右侧技能按钮组（Fuel Surge/TNT等）无选中态视觉反馈，当前未激活但无区分，易混淆功能状态"
+      ]
+    }
+  ]
+}

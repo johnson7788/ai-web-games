@@ -1,0 +1,10 @@
+zh title text: 开始比赛
+zh HUD label: 下一浮标门关闭倒计时
+fail screen OK
+retry OK
+paused: paused
+resumed: racing
+best load: 123.4
+state: {"mode":"racing","gates":1,"fps":60}
+errors: [] consoleErrs: []
+EXIT:0

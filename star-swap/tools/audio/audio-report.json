@@ -1,0 +1,208 @@
+{
+  "generatedAt": "2026-11-19T19:59:17.451Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "swap": {
+      "rms": 0.1439,
+      "peak": 0.3307,
+      "nan": 0,
+      "zcRate": 978.9,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "invalid": {
+      "rms": 0.1592,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 156.3,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "match": {
+      "rms": 0.1873,
+      "peak": 0.4901,
+      "nan": 0,
+      "zcRate": 789.4,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "clearStar": {
+      "rms": 0.0465,
+      "peak": 0.1636,
+      "nan": 0,
+      "zcRate": 5472.5,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "special": {
+      "rms": 0.1531,
+      "peak": 0.5377,
+      "nan": 0,
+      "zcRate": 936.2,
+      "samples": 15876,
+      "durSec": 0.36,
+      "pass": true
+    },
+    "blast": {
+      "rms": 0.1437,
+      "peak": 0.448,
+      "nan": 0,
+      "zcRate": 925.1,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "nova": {
+      "rms": 0.1298,
+      "peak": 0.6106,
+      "nan": 0,
+      "zcRate": 2368.5,
+      "samples": 37044,
+      "durSec": 0.84,
+      "pass": true
+    },
+    "dark": {
+      "rms": 0.2092,
+      "peak": 0.5708,
+      "nan": 0,
+      "zcRate": 163.5,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "fall": {
+      "rms": 0.0908,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 320.9,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "refill": {
+      "rms": 0.0788,
+      "peak": 0.14,
+      "nan": 0,
+      "zcRate": 620.1,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "cascade": {
+      "rms": 0.1365,
+      "peak": 0.5156,
+      "nan": 0,
+      "zcRate": 790.1,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0675,
+      "peak": 0.12,
+      "nan": 0,
+      "zcRate": 1083.7,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "reshuffle": {
+      "rms": 0.114,
+      "peak": 0.3497,
+      "nan": 0,
+      "zcRate": 528,
+      "samples": 14994,
+      "durSec": 0.34,
+      "pass": true
+    },
+    "levelStart": {
+      "rms": 0.0943,
+      "peak": 0.3122,
+      "nan": 0,
+      "zcRate": 338.6,
+      "samples": 21168,
+      "durSec": 0.48,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1714,
+      "peak": 0.6699,
+      "nan": 0,
+      "zcRate": 845.1,
+      "samples": 35721,
+      "durSec": 0.81,
+      "pass": true
+    },
+    "fail": {
+      "rms": 0.1476,
+      "peak": 0.3904,
+      "nan": 0,
+      "zcRate": 393,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "lens": {
+      "rms": 0.0693,
+      "peak": 0.2606,
+      "nan": 0,
+      "zcRate": 6945.5,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "combo": {
+      "rms": 0.1383,
+      "peak": 0.3398,
+      "nan": 0,
+      "zcRate": 906.5,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.129,
+      "peak": 0.2789,
+      "nan": 0,
+      "zcRate": 890.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.09,
+      "peak": 0.3082,
+      "nan": 0,
+      "zcRate": 314.9,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

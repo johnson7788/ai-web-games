@@ -1,0 +1,5 @@
+TITLE: PENTA CARDS
+CATEGORY: Card / Table
+TAGS: card, mahjong, constellation, strategy, single-player, AI
+SHORT DESCRIPTION: A cosmic 3-player card game. Draw, discard, pong and kong to build constellations and win on the Five Star.
+LONG DESCRIPTION: PENTA CARDS is a cosmic 3-player card game inspired by the classic Five Star table game. Face two AI rivals across a 12-round rank climb through the Observatory, Tea House, and Aurora tables. Form 4 melds plus a pair or 7 pairs to win; pong, kong, or hu on discards; stargaze the top 3 wall tiles twice per round, or blind-swap one tile. Score is 2^fan times the rising bet. 点击手牌弃牌，碰杠胡、观星看牌堆顶、换星盲换一牌，卡五星夹中胡牌成牌时星阵连线亮起。

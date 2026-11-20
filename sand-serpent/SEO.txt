@@ -1,0 +1,41 @@
+TITLE
+Sand Serpent — Free Desert Snake Arcade Game
+
+CATEGORY
+Arcade
+
+TAGS
+snake, desert, arcade, sand, serpent, classic snake, casual, browser game, family friendly, no download
+
+SHORT DESCRIPTION
+Burrow the dunes as a sand serpent — eat beetles, scorpions and camel thorns to grow, and dodge walls, cacti and your own tail.
+
+LONG DESCRIPTION
+SAND SERPENT is a free desert snake arcade game where you burrow through shifting dunes and eat the desert alive.
+
+Steer a golden sand serpent across a 12-level desert journey. Every food has a trade-off: beetles are a safe +1 snack, scorpions are worth +3 but they scurry sideways when you chase them, and camel thorns give +5 while dropping one of your tail segments. Grow to the goal length to clear each stage — but watch out for border walls, cacti, hard ground, speed-boost tiles and the sandstorms that blind the starlit desert.
+
+Three handcrafted worlds: Day Dunes, Oasis Edge and Starlit Desert. Twelve levels layer in new twists, from wrap-around edges to escape-proof mazes, so no two runs feel the same.
+
+Signature touch: your serpent leaves quicksand ripples in its wake, and every bite bursts into a shower of sand. Easy to learn in ten seconds, tricky to master — play free in your browser with keyboard, WASD or touch swipe.
+
+TITLE
+沙漠沙蟒 — 免费沙漠贪吃蛇街机游戏
+
+CATEGORY
+街机
+
+TAGS
+贪吃蛇, 沙漠, 街机, 沙蟒, 经典贪吃蛇, 休闲, 网页游戏, 全年龄, 无需下载
+
+SHORT DESCRIPTION
+化身沙漠沙蟒钻过沙丘，吃甲虫、蝎子和骆驼刺来变长，同时躲开墙壁、仙人掌和你的尾巴。
+
+LONG DESCRIPTION
+《沙漠沙蟒》是一款免费的沙漠贪吃蛇街机游戏：钻进流沙，把沙漠吃干抹净。
+
+操控一条金色沙蟒，踏上 12 关的沙漠之旅。每种食物都是一次取舍：甲虫是安稳的 +1 分小吃，蝎子值 +3 分却会横向逃跑，骆驼刺给 +5 分但会掉你一节尾巴。长到目标长度即可过关——但小心边框墙、仙人掌、硬地格、加速带，以及遮蔽星夜荒漠的沙暴。
+
+三大手工场景：白日沙丘、绿洲边缘、星夜荒漠。12 个关卡层层叠加新机制，从穿边环绕到危机四伏的迷宫，每一局都不一样。
+
+招牌体验：蛇身过处留下流沙波纹，每一次吞食都炸开一蓬沙粒。十秒上手，越玩越上头——键盘、WASD 或触屏滑动都能玩，浏览器免费畅玩。

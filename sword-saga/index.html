@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="SWORD SAGA — a turn-based wuxia tale. Strike with the five elements, defend to charge your sword, and let your spirit fox shield you across 12 chapters.">
+  <meta name="theme-color" content="#0a1a12">
+  <title>SWORD SAGA · Turn-Based Wuxia Tale</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <div id="touch-pad" class="touch-pad" aria-hidden="true">
+      <button class="tp-btn" data-dir="up" type="button" aria-label="Up">▲</button>
+      <button class="tp-btn" data-dir="left" type="button" aria-label="Left">◀</button>
+      <button class="tp-btn" data-dir="down" type="button" aria-label="Down">▼</button>
+      <button class="tp-btn" data-dir="right" type="button" aria-label="Right">▶</button>
+    </div>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Entering the mists…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

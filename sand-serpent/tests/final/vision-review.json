@@ -1,0 +1,149 @@
+{
+  "game": "sand-serpent",
+  "generatedAt": "2026-11-19T05:57:06.771Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 8,
+    "style_consistent": 9.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择按钮1高亮但无明确选中状态指示（如边框/阴影），易与未解锁关卡混淆",
+        "沙蛇头部部分被右侧绿叶遮挡，影响角色轮廓完整性",
+        "‘Best: 0’文字字号偏小且颜色较浅，对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡按钮1-12中，数字与锁图标间距过小，部分锁图标几乎贴边，影响辨识",
+        "沙蟒头部右侧绿叶与‘12’按钮轻微重叠（视觉上），可能误触",
+        "‘最佳：0’文字字号偏小，对比度略低，在强光下可能不易读"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动蛇头靠近上方的甲虫",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧目标面板中‘Scorpion +3’描述‘runs sideways’字体略小且与图标间距不均，易误读",
+        "左上角‘LENGTH 3/6’与‘SCORE 0’按钮间距过窄，可能误触",
+        "蛇身与网格线颜色对比度偏低（#E8C47D vs #F5DEB3），在低亮度下辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/03-win.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Next Level”按钮继续游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角目标面板中‘Beetle +1 - safe snack’等描述文字字号偏小，弱光下易误读",
+        "‘Dune Devoured!’标题与蛇形角色部分重叠，视觉焦点稍分散",
+        "‘3 / 6’目标进度数字与下方列表项间距过近，可能被误认为同一层级"
+      ]
+    },
+    {
+      "shot": "tests/final/04-scorpion.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动避开红色蝎子，靠近上方绿色仙人掌",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧目标面板中‘Scorpion +3’描述‘runs sideways’字体略小且与图标间距不均，易误读为‘runs sideways’是独立条目",
+        "右下角植物装饰部分遮挡地图边界，可能干扰路径判断",
+        "玩家角色（黄色虫子）与背景沙地对比度偏低，眯眼时稍难快速定位"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动避开红色蝎子，朝绿色甲虫方向前进",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家蛇身与右侧两个灰色圆环（可能为陷阱/目标）间距过近，易误判交互",
+        "右下角棕色圆形物体（疑似目标）图标与背景色对比度偏低，辨识度弱",
+        "‘Goal 3/18’中数字‘3’与‘/’间距略紧，小屏可能误读为‘31’"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动避开上方的甲虫，或尝试收集甲虫（因目标3/6且甲虫为+1安全零食）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧目标面板中‘Beetle +1 · safe snack’的圆点图标与文字间距过小，易误读为单个元素",
+        "顶部进度条（LENGTH 3/6）下方无明确分隔线，与游戏区域边界模糊",
+        "甲虫敌人与玩家蛇头在垂直方向几乎对齐，可能引发操作犹豫（非UI问题但影响体验）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动蛇头靠近右上角的甲虫",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角植物叶片部分遮挡网格边界，可能干扰路径判断",
+        "蛇身与背景色对比度偏低（米黄 vs 浅棕），眯眼时轮廓略模糊",
+        "目标列表中‘Scorpion +3’描述‘runs sideways’未说明方向，易歧义"
+      ]
+    }
+  ]
+}

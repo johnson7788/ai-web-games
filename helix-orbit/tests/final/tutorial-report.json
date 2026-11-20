@@ -1,0 +1,38 @@
+{
+  "game": "helix-orbit",
+  "pass": false,
+  "checks": {
+    "visible": true,
+    "active": true,
+    "steps": 4,
+    "stepIds": [
+      "rotate",
+      "pass",
+      "meteor",
+      "smash"
+    ],
+    "skipVisible": false,
+    "skipped": false,
+    "persisted": false,
+    "replayEntry": true,
+    "replayable": true
+  },
+  "errors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "externalRequests": [
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-helix-orbit",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-helix-orbit",
+      "https://pipygames.com/sdk/config.json",
+      "https://pipygames.com/api/sdk/config?appId=pipy-helix-orbit"
+    ]
+  },
+  "screenshots": [
+    "tutorial-first.png",
+    "tutorial-after-skip.png",
+    "tutorial-replay.png"
+  ]
+}

@@ -1,0 +1,45 @@
+TITLE
+Word Duel — Free Word Spelling Battle Game
+
+CATEGORY
+Word
+
+TAGS
+word game, spelling, anagram, puzzle, vocabulary, mage, battle, brain teaser, casual, browser game
+
+SHORT DESCRIPTION
+Spell English words to cast rune spells and out-duel twelve rival mages in a turn-based word battle.
+
+LONG DESCRIPTION
+WORD DUEL is a free turn-based word battle game where every word you spell is a spell you cast.
+
+Face twelve rival mages in a rune duel arena. Each turn you draw a hand of nine letters, tap them in order to spell an English word, then cast it. Longer words hit harder, and casting fast earns a speed bonus. Spell a wrong word and you eat the counterattack — thunder mages hit back twice as hard, ice mages freeze you for a turn, and fire mages strike in fast two-hit flurries.
+
+Master the trade-offs: cast short words to chip away safely, hoard vowels to build a devastating long word, swap three letters when your hand goes cold, or spell heal-words like HEAL and MEND to recover when the duel turns against you. Break enemy shields with combo hits, dodge the letter thief, and topple the Grand Archmage in the final showdown.
+
+Three handcrafted worlds: the Morning Mist Circle, the Midnight Arena and the Meteor Tower. Twelve progressive opponents teach one new rule at a time — time pressure, word-length gates, shields, healing, freezing and more.
+
+Easy to learn, hard to master. Works with mouse, touch and keyboard. No download, play free in your browser.
+
+TITLE
+符文决斗 — 免费英文拼词对战游戏
+
+CATEGORY
+文字
+
+TAGS
+拼单词, 拼字, 英文单词, 文字游戏, 益智, 词汇, 法师, 对战, 休闲, 网页游戏
+
+SHORT DESCRIPTION
+拼出英文单词施放符文法术，与十二位法师展开回合制文字对决。
+
+LONG DESCRIPTION
+《符文决斗》是一款免费的回合制文字对战游戏：你拼出的每一个英文单词，都是一道打向对手的符文法术。
+
+在符文决斗场里迎战十二位法师。每回合你会抽到九张字母牌，按顺序点击拼出英文单词，然后施法。单词越长伤害越高，出手越快还有速度加成。拼错单词就要吃下反伤——雷系法师反伤翻倍，冰系法师会把你冻住一回合，火系法师则是短词快攻的两段连击。
+
+掌握取舍：打短词稳妥蹭血，攒元音憋长词追求爆发，手牌不顺就换三张，血量告急就拼 HEAL、MEND 之类的治愈词回血。用连击破开对手护盾，躲开盗字者的偷牌，最终击败大魔导师。
+
+三大手绘场景：晨雾法环、午夜竞技场、星陨高塔。十二关循序渐进，每一关教你一条新规则——时间压力、词长门槛、护盾、治愈、冰冻层层叠加。
+
+十秒上手，越玩越上头。鼠标、触屏、键盘全支持，无需下载，浏览器免费畅玩。

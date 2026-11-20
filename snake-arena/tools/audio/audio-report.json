@@ -1,0 +1,245 @@
+{
+  "generatedAt": "2026-11-19T12:10:54.546Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "eat": {
+      "rms": 0.1674,
+      "peak": 0.3762,
+      "nan": 0,
+      "zcRate": 722.4,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "grow": {
+      "rms": 0.0866,
+      "peak": 0.33,
+      "nan": 0,
+      "zcRate": 480.5,
+      "samples": 10143,
+      "durSec": 0.23,
+      "pass": true
+    },
+    "boostStart": {
+      "rms": 0.0577,
+      "peak": 0.2435,
+      "nan": 0,
+      "zcRate": 7102.1,
+      "samples": 14112,
+      "durSec": 0.32,
+      "pass": true
+    },
+    "boostEnd": {
+      "rms": 0.0834,
+      "peak": 0.1799,
+      "nan": 0,
+      "zcRate": 358.4,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "shardDrop": {
+      "rms": 0.0796,
+      "peak": 0.14,
+      "nan": 0,
+      "zcRate": 620.1,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "pulse": {
+      "rms": 0.1911,
+      "peak": 0.5352,
+      "nan": 0,
+      "zcRate": 491.3,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "stun": {
+      "rms": 0.0617,
+      "peak": 0.1399,
+      "nan": 0,
+      "zcRate": 508.9,
+      "samples": 7497,
+      "durSec": 0.17,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.0946,
+      "peak": 0.3418,
+      "nan": 0,
+      "zcRate": 7949.2,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1813,
+      "peak": 0.4942,
+      "nan": 0,
+      "zcRate": 333.3,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.0951,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 1330.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 758.6,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "rankChange": {
+      "rms": 0.0679,
+      "peak": 0.12,
+      "nan": 0,
+      "zcRate": 540.1,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "roundWin": {
+      "rms": 0.1268,
+      "peak": 0.4744,
+      "nan": 0,
+      "zcRate": 699.2,
+      "samples": 25578,
+      "durSec": 0.58,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1721,
+      "peak": 0.6612,
+      "nan": 0,
+      "zcRate": 838.8,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "unlock": {
+      "rms": 0.1347,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.9,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "roundStart": {
+      "rms": 0.1119,
+      "peak": 0.4172,
+      "nan": 0,
+      "zcRate": 591,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1184,
+      "peak": 0.2598,
+      "nan": 0,
+      "zcRate": 870.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1547,
+      "peak": 0.5568,
+      "nan": 0,
+      "zcRate": 820.9,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.6,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "core": {
+      "rms": 0.1,
+      "peak": 0.2953,
+      "nan": 0,
+      "zcRate": 217.7,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "meltdown": {
+      "rms": 0.1,
+      "peak": 0.2946,
+      "nan": 0,
+      "zcRate": 195.4,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "deepnet": {
+      "rms": 0.1,
+      "peak": 0.3273,
+      "nan": 0,
+      "zcRate": 134.4,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "loopSeamless": {
+      "core": {
+        "first": 0,
+        "last": -0.0074,
+        "seamless": true
+      },
+      "meltdown": {
+        "first": 0,
+        "last": -0.00659,
+        "seamless": true
+      },
+      "deepnet": {
+        "first": 0,
+        "last": -0.00517,
+        "seamless": true
+      }
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

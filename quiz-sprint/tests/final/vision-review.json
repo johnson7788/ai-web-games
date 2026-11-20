@@ -1,0 +1,149 @@
+{
+  "game": "quiz-sprint",
+  "generatedAt": "2026-11-19T17:37:49.694Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 6.875,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘QUIZ SPRINT’发光效果过强，导致部分字母边缘轻微晕染，影响远距离辨识",
+        "‘Best 0 wins’文字颜色偏黄，在深绿背景上对比度偏低，易被忽略",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头与文字间距过小，可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/02-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Red’选项按钮回答问题",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘FIRST SPRINT’提示框遮挡部分赛道上部，可能影响对起跑线位置的判断",
+        "右侧黑白格终点线与赛道边缘紧贴，视觉上易误判为赛道边界",
+        "角色剪影颜色过淡（尤其后三名），在绿色背景上对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕开始奔跑或按空格键加速",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "终点线黑白格纹过窄（约2px宽），远距离可能误判为单色条",
+        "‘Combo 1’提示悬浮在赛道上方，无背景遮罩，易与背景建筑混淆",
+        " Stamina 条右侧无单位标注，玩家可能不确定满值代表多少"
+      ]
+    },
+    {
+      "shot": "tests/final/04-wager.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让角色冲刺（因有‘SCHOLAR SPRINT’提示且角色静止）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色冲刺角色与背景山体颜色接近，远距离辨识度略低",
+        "左上角‘RACE 8’与‘RANK 1st’按钮间距过小，可能误触",
+        "终点线黑白格纹无边框，与绿色赛道对比弱，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/05-scholar.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该按空格或点击屏幕开始冲刺，因为角色静止且 stamina 条满、有 'SCHOLAR SPRINT' 提示",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧终点线黑白格过窄（约10px宽），可能在小屏上难以辨识为终点",
+        "三个灰色角色剪影亮度相近，与背景对比度不足，远距离易混淆",
+        "左上角 'RACE 8' 和 'RANK 1st' 按钮无明确交互反馈提示，是否可点不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Race again’按钮重新开始比赛",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签与主标题间距过小，视觉层级略混乱",
+        "‘Press R to race again’提示文字较小且颜色偏淡，易被忽略",
+        "背景模糊元素（右上角黄色光斑）可能干扰焦点，但未遮挡核心UI"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击选项‘366’回答问题",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘General’标签与问题文本间距过小，易误触",
+        "右上角‘WINS 0-0’与‘DISTANCE 3/60’垂直对齐不一致，视觉松散",
+        "角色图标为浅蓝/灰白，对比度偏低，在绿色背景上辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Honey”选项回答问题",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（青色小人）与下方答题框无明显视觉层级区分，易误判为背景元素",
+        "‘Combo 0’文字颜色过浅（淡黄），在浅蓝背景上对比度不足，可能看不清",
+        "右侧黑白格终点线与赛道边缘紧贴，缺乏安全间距，可能被误认为赛道边界"
+      ]
+    }
+  ]
+}

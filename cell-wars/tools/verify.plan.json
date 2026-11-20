@@ -1,0 +1,53 @@
+{
+  "viewport": [1280, 720],
+  "steps": [
+    { "wait": 800 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "标题屏" },
+    { "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'", "name": "默认英文/LTR" },
+    { "assert": "window.__ll.state.lang === 'en'", "name": "i18n 默认 en" },
+    { "screenshot": "01-title.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'zh' && document.documentElement.dir === 'ltr'", "name": "切中文生效" },
+    { "screenshot": "02-title-zh.png" },
+    { "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()" },
+    { "wait": 250 },
+    { "assert": "document.documentElement.lang === 'en'", "name": "切回英文" },
+    { "click": "#btn-start" },
+    { "wait": 700 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "开局进入 playing" },
+    { "assert": "!!document.querySelector('[data-tutorial]') && !document.querySelector('[data-tutorial]').classList.contains('hidden')", "name": "首次进入引导出现" },
+    { "screenshot": "03-tutorial.png" },
+    { "click": "[data-tutorial-skip]" },
+    { "wait": 400 },
+    { "assert": "document.querySelector('[data-tutorial]').classList.contains('hidden')", "name": "跳过引导后消失" },
+    { "eval": "(()=>{const r=window.__ll.run;const P=1,V=-1;function front(){for(let rr=0;rr<r.size;rr++)for(let cc=0;cc<r.size;cc++){const cell=r.board[rr][cc];if(cell.o===P||cell.o===V)continue;const d=[[-1,0],[1,0],[0,-1],[0,1]];for(const[dr,dc]of d){const nr=rr+dr,nc=cc+dc;if(nr>=0&&nr<r.size&&nc>=0&&nc<r.size&&r.board[nr][nc].o===P)return[rr,cc];}}return null;}for(let i=0;i<5;i++){const f=front();if(!f)break;r.step({action:{kind:'infect',r:f[0],c:f[1]}});for(let k=0;k<40;k++)r.step({});r.drainEvents();}return true;})()" },
+    { "screenshot": "04-play.png" },
+    { "press": "Escape" },
+    { "wait": 350 },
+    { "assert": "window.__ll.state.phase === 'paused'", "name": "暂停" },
+    { "screenshot": "05-paused.png" },
+    { "press": "Escape" },
+    { "wait": 300 },
+    { "assert": "window.__ll.state.phase === 'playing'", "name": "恢复" },
+    { "eval": "window.__ll.restart()" },
+    { "wait": 400 },
+    { "assert": "window.__ll.state.phase === 'title'", "name": "重启回标题" }
+  ],
+  "mobile": {
+    "viewport": [844, 390],
+    "steps": [
+      { "wait": 800 },
+      { "assert": "window.__ll.state.phase === 'title'", "name": "移动端标题屏" },
+      { "click": "#btn-start" },
+      { "wait": 700 },
+      { "assert": "window.__ll.state.phase === 'playing'", "name": "移动端开局" },
+      { "click": "[data-tutorial-skip]" },
+      { "wait": 350 },
+      { "eval": "(()=>{const r=window.__ll.run;const P=1,V=-1;function front(){for(let rr=0;rr<r.size;rr++)for(let cc=0;cc<r.size;cc++){const cell=r.board[rr][cc];if(cell.o===P||cell.o===V)continue;const d=[[-1,0],[1,0],[0,-1],[0,1]];for(const[dr,dc]of d){const nr=rr+dr,nc=cc+dc;if(nr>=0&&nr<r.size&&nc>=0&&nc<r.size&&r.board[nr][nc].o===P)return[rr,cc];}}return null;}for(let i=0;i<4;i++){const f=front();if(!f)break;r.step({action:{kind:'infect',r:f[0],c:f[1]}});for(let k=0;k<40;k++)r.step({});r.drainEvents();}return true;})()" },
+      { "screenshot": "06-mobile.png" }
+    ]
+  },
+  "checks": { "console": true, "failedRequests": true, "external": false },
+  "fps": { "enabled": true, "min": 50, "prepare": "window.__ll.start()" }
+}

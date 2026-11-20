@@ -1,0 +1,149 @@
+{
+  "game": "plumber-run",
+  "generatedAt": "2026-11-19T16:40:13.585Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 6.75,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'Play'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 3,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊人影轮廓与标题文字亮度接近，眯眼时难以区分玩家/环境元素（silhouette低）",
+        "‘Best level 1’文字颜色偏淡、字号小，易被忽略",
+        "右上角语言切换按钮无明确交互反馈样式（如悬停态），可能影响可用性"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色去收集金币并抵达红旗终点",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 HUD 按钮（LEVEL/COINS/LIVES）间距过小，可能误触",
+        "右上角 SCORE 和 STEAM 标签文字偏小，远距离辨识度略低",
+        "红旗旗杆与背景屋顶轮廓接近，部分玩家可能误判为障碍物"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play2.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色靠近红色旗帜目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与背景山形色差小，眯眼时辨识度略低",
+        "左上角HUD按钮文字（如'LEVEL 2'）字号偏小，远距离阅读稍费力",
+        "右上角'STEAM'和'Small'标签无明确功能说明，易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/04-sewer.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色靠近红色旗帜目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "绿色圆形目标（右上）与背景条纹对比度偏低，眯眼时易混淆为背景",
+        "‘Sewer Inlet’标签位置偏上且无明确指向，可能被误认为装饰文字",
+        "玩家角色头顶无高亮/轮廓强化，在深绿背景下辨识度中等"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dark.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应向右移动靠近红色旗帜目标",
+      "readable": 6,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下小蓝块）太小且亮度低，与背景对比度不足，易被忽略",
+        "‘Black Tunnel’标题居中但无明确指引性，未说明当前关卡机制或目标",
+        "右上角‘STEAM’和‘Small’按钮语义不明，可能为调试残留"
+      ]
+    },
+    {
+      "shot": "tests/final/06-factory.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色靠近红旗终点",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下尖刺陷阱无明显警示标识，易误触",
+        "右上红色圆形光源（疑似太阳/月亮）与‘Factory Gate’标题间距过近，视觉干扰",
+        "‘STEAM’标签语义不明，未说明用途"
+      ]
+    },
+    {
+      "shot": "tests/final/07-finale.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动角色靠近橙色旗帜",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与地面平台对比度偏低，眯眼时易与背景柱子混淆",
+        "右上角‘Small’按钮文字过小（约10px），在低分辨率下可能难辨",
+        "红色圆形光源无明确功能指示，易误判为敌人或障碍"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间向上箭头按钮跳跃",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与地面砖块对比度偏低，眯眼时易混淆轮廓",
+        "左上角HUD文字（LEVEL/COINS/LIVES）字号偏小，远距离辨识稍弱",
+        "右上角'STEAM'和'Small'按钮无明确功能提示，语义模糊"
+      ]
+    }
+  ]
+}

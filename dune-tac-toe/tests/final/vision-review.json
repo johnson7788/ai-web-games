@@ -1,0 +1,149 @@
+{
+  "game": "dune-tac-toe",
+  "generatedAt": "2026-11-19T06:00:32.174Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 7.5,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的'Play'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题'DUNE TAC TOE'阴影过重，部分字母边缘模糊（如'T'与'O'）",
+        "底部仙人掌与蝎子图标尺寸偏小，眯眼时易混淆为装饰而非可交互元素",
+        "语言切换下拉框无展开箭头，可能被误认为静态标签"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Play”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部仙人掌与蝎子图标尺寸偏小，眯眼时轮廓易混淆（silhouette扣分）",
+        "‘谜题模式’与‘无尽对战’按钮文字颜色浅、对比度不足，弱光下可能难辨",
+        "标题‘沙丘井字棋’描边较粗，部分笔画在高缩放下可能轻微粘连（风格一致性风险）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角的弹弓图标，将其移动到中间空位以完成三连",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间弹弓图标与背景沙地对比度偏低，眯眼时易与空格混淆",
+        "左上角'Win in 1'提示未说明胜利条件（需匹配3个相同物）",
+        "右上角'Your turn · Cactus'中'Cactus'字体略小且无强调，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-l3-board.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左上角的仙人掌，因为它是唯一已放置的仙人掌且目标是‘Win in 2’，可能需匹配或移动它",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角‘Your turn · Cactus’文字与右侧图标间距过小，可能在窄屏被误触",
+        "棋盘格子无边框或阴影区分，空格与有物格子视觉对比弱，易误判可操作性",
+        "背景沙漠山丘与左侧仙人掌剪影颜色接近（均为橄榄绿），远距离辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/04-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Next Puzzle”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Cactus Wins!’文字有轻微发光边缘，在深灰背景上略显模糊，影响远距离辨识",
+        "背景中左右两侧仙人掌剪影与主界面元素风格不一致（更扁平、无阴影），存在轻微拼接感",
+        "‘Puzzle 3 cleared · Solved in 2 moves’提示文字字号偏小，弱光环境下可能不易读"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night-scene.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间空格（第2行第2列）放置仙人掌",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Your turn · Cactus’文字在右上角与月亮光晕轻微融合，对比度略低",
+        "‘Force a draw’按钮无悬停/选中反馈，可能影响操作确认",
+        "网格单元格间距过小，移动端易误触（虽为桌面截图，但需考虑响应式适配）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间高亮的格子（当前选中位置）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标文字'Outwit the perfect scorpion in the desert'语义模糊，未说明如何‘outwit’或scorpion在哪",
+        "网格无边界/阴影区分，9宫格整体像静态背景，缺乏可交互暗示",
+        "‘Your turn · Cactus’中‘Cactus’可能误导玩家以为是角色名而非当前行动方"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角橙色'Got it'按钮以关闭教程弹窗",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡中央3x3网格区域，影响初始操作视野",
+        "背景沙漠剪影与网格边界对比弱，眯眼时网格与背景易混淆",
+        "顶部‘Moves 0/9’提示文字偏小且灰度高，3秒内不易捕捉"
+      ]
+    }
+  ]
+}

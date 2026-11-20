@@ -1,0 +1,54 @@
+{
+  "genre": "puzzle",
+  "runs": [
+    {
+      "id": "greedy-17",
+      "policy": "greedy",
+      "seed": 17,
+      "durationSec": 28,
+      "actions": 70,
+      "firstInputSec": 0.4,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 8.4,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.4,
+      "uniqueEvents": 11,
+      "levelsReached": 4,
+      "completed": false
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 5.6,
+      "actions": 14,
+      "firstInputSec": 0.4,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.4,
+      "uniqueEvents": 9,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 6.8,
+      "actions": 0,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.4,
+      "uniqueEvents": 9,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ],
+  "generatedAt": "2026-11-19T17:35:43.616Z"
+}

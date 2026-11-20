@@ -1,0 +1,61 @@
+{
+  "game": "penta-cards",
+  "genre": "puzzle",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 333.6,
+      "actions": 266,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 13.2,
+      "deaths": 3,
+      "idleSec": 2.4,
+      "maxEventGapSec": 1.2,
+      "uniqueEvents": 13,
+      "levelsReached": 12,
+      "completed": true,
+      "roundsWon": 8,
+      "roundsLost": 3
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 334.2,
+      "actions": 263,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 9,
+      "idleSec": 1.8,
+      "maxEventGapSec": 1.2,
+      "uniqueEvents": 15,
+      "levelsReached": 12,
+      "completed": true,
+      "roundsWon": 0,
+      "roundsLost": 9
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 430.2,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 7,
+      "idleSec": 10.2,
+      "maxEventGapSec": 1.2,
+      "uniqueEvents": 13,
+      "levelsReached": 12,
+      "completed": true,
+      "roundsWon": 0,
+      "roundsLost": 7
+    }
+  ],
+  "generatedAt": "2026-11-19T18:44:06.150Z"
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "arcade-treasure",
+  "genre": "arcade",
+  "oneLiner": "你在复古街机厅用代币串玩三台霓虹街机：敲小怪、接金币、打蜂群；好成绩自续杯，三台全通关点亮 GRAND PRIX。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "pick",
+      "cost": "每台门票 1 币；投错机台就错过更划算的那台",
+      "feedback": ["sfx", "cabinet-light", "token-drop"],
+      "combinesWith": ["hit"]
+    },
+    {
+      "name": "hit",
+      "cost": "打空会断连击、浪费一次出手机会",
+      "feedback": ["sfx", "particles", "score-pop"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "steer",
+      "cost": "注意力：追一个目标就放过另一个",
+      "feedback": ["sfx", "trail", "move"],
+      "combinesWith": ["hit"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先投哪台机：分数最高的蜂群，还是最快回本的守夜", "cost": "1 币 + 一段 24 秒的时间" },
+    { "atSec": 20, "choice": "专精一台叠热度 ×1.5，还是三台补短板升段", "cost": "热度会因换台清零" },
+    { "atSec": 40, "choice": "守夜里敲不敲那个蓝火花：可能是危险物", "cost": "打错倒扣分" },
+    { "atSec": 60, "choice": "雨中为连击去追金币，还是躲开落下的雷击", "cost": "追币可能挨劈，躲雷断连击" },
+    { "atSec": 85, "choice": "蜂群压底时硬拼清屏，还是保命拖时间", "cost": "硬拼掉生命，保命拿不到清屏奖励" },
+    { "atSec": 110, "choice": "币快没了：冲高难段位目标，还是稳打低段攒币", "cost": "冲高可能空手，稳打段位不动" },
+    { "atSec": 140, "choice": "最后一币投给最熟的机台，还是最弱的机台", "cost": "熟台回本稳，弱台才能补段位" },
+    { "atSec": 170, "choice": "三台都差一点时，先补哪台的最短板", "cost": "每台一次只能打一个目标分" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "三台街机 + 代币门：投币选台" },
+    { "index": 2, "newElement": "守夜通风口分家：安全目标 vs 火花危险物" },
+    { "index": 3, "newElement": "雨中雷击混在金币里落下" },
+    { "index": 4, "newElement": "蜂群开始朝飞船开火" },
+    { "index": 5, "newElement": "连机热度解锁：同台连玩 ×1.2" },
+    { "index": 6, "newElement": "热度封顶：3 连专精 ×1.5" },
+    { "index": 7, "newElement": "小怪缩头更快、火花更多" },
+    { "index": 8, "newElement": "金币加速、连击窗口收紧" },
+    { "index": 9, "newElement": "蜂群压得更低、开火更频" },
+    { "index": 10, "newElement": "段位目标陡增：中段墙" },
+    { "index": 11, "newElement": "雨中罕见双倍金币登场" },
+    { "index": 12, "newElement": "最终段：三台全通点亮 GRAND PRIX" }
+  ],
+  "upgrades": [
+    { "id": "heatFast", "kind": "rule", "desc": "同台第二次玩直接给热度 1（跳过热身）" },
+    { "id": "streakKeep", "kind": "rule", "desc": "换台保留 1 级热度而非清零" },
+    { "id": "pityBonus", "kind": "rule", "desc": "打烊赠币从 1 枚变 2 枚" },
+    { "id": "doubleRain", "kind": "rule", "desc": "雨中刷出罕见双倍金币" },
+    { "id": "safeVent", "kind": "rule", "desc": "正确无视火花给近失分 +5" },
+    { "id": "waveRefund", "kind": "rule", "desc": "整波清屏返还 1 枚门票币" },
+    { "id": "comboBank", "kind": "rule", "desc": "雨中连击跨局保留（同台）" },
+    { "id": "underdog", "kind": "rule", "desc": "未达标的机台也推进 1 格最弱目标" },
+    { "id": "goldRush", "kind": "rule", "desc": "里程碑分额外加热度" },
+    { "id": "moleScore", "kind": "stat", "desc": "守夜命中分 +10%" },
+    { "id": "extraTime", "kind": "stat", "desc": "每台单局时长 +2s" },
+    { "id": "extraLife", "kind": "stat", "desc": "雨中/蜂群生命 +1" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 3, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true },
+  "signatureMoment": "三台街机全部通关的瞬间，墙上的 GRAND PRIX 霓虹灯逐段亮起，整间大厅被金色淹没",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容）"
+  ],
+  "artSource": "复古霓虹街机厅：三台机台各一套程序化 Canvas 皮肤（暗绿机房 / 蓝灰雨夜 / 紫黑像素），UI 用 SVG/CSS 线框；封面海报与 BGM 程序化/后期合成"
+}

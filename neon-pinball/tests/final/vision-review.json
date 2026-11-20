@@ -1,0 +1,149 @@
+{
+  "game": "neon-pinball",
+  "generatedAt": "2026-11-19T13:26:25.376Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 6.75,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色的'Play'按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best 0’文字颜色偏淡（浅黄），在深紫背景下对比度不足，易被忽略",
+        "‘NEON PINBALL’标题发光外晕过宽，轻微模糊边缘，影响锐利度",
+        "右上角语言选择下拉框无明确展开指示（如小箭头），可能被误认为静态标签"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "按住空格键蓄力，松开发射弹球",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Machine 1 / 12' 和 'Target: 1500' 文字较小且无高对比，弱光下可能难辨",
+        "左侧面板 'BALLS 3' 等按钮文字与背景对比度偏低（深紫底+浅灰字）",
+        "右上角 'Hold SPACE to launch' 与 'Skip' 按钮间距过近，易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/03-superconduct.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部两个粉色发射器之间的区域发射小球",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标分数 'Target: 1500' 字体偏小，与上方 'Machine 1 / 12' 间距过近，易误读为机器编号",
+        "左上角 'BALLS 3' 和 'MULT x1' 标签背景色与主界面网格线对比度偏低，弱光下可能辨识困难",
+        "绿色小球（当前发射物）亮度低于周围白色圆点，视觉层级不突出，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色高亮的“Resume”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 4,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊元素（疑似敌人/子弹）轮廓极弱，眯眼几乎无法分辨形态与层级",
+        "‘Paused’标题与下方提示文字间距偏小，轻微影响扫读节奏",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头过小（约10px），易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "按住空格键蓄力，松开发射小球",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡部分粉色目标圆环（如中下部小粉圈）",
+        "‘Target 1500’文字与上方蓝菱形重叠，轻微视觉干扰",
+        "左上角HUD按钮间距过密，小屏可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击紫色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最高 0’文字颜色偏黄，与主视觉紫光风格略冲突，易被忽略",
+        "‘怎么玩’和‘设置’按钮无悬停/选中反馈，交互状态不明确",
+        "标题‘霓虹弹珠’发光效果过强，导致部分笔画边缘轻微晕染，影响远距离辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/07-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮或按R键重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签发光过强，可能干扰主标题阅读",
+        "背景模糊元素与弹窗边框颜色接近，降低弹窗轮廓辨识度",
+        "‘Machine reached 1’语义模糊（‘Machine’指代不明），影响可读性"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按空格键发射小球",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标分数1500与Machine 1/12重叠，轻微遮挡",
+        "左上角HUD按钮间距过密，可能误触（但非移动端）",
+        "底部发射器与小球亮度接近，眯眼时区分度略低"
+      ]
+    }
+  ]
+}

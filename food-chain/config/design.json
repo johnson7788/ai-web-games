@@ -1,0 +1,89 @@
+{
+  "slug": "food-chain",
+  "genre": "arcade",
+  "oneLiner": "你是一条从浮游生物起步的发光深海生命：游向浮游与更小的鱼吞噬长大，避开更大的捕食者，一路进化成食物链顶端的 Apex Light。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "swim",
+      "cost": "位置与注意力：冲向猎物 = 把侧翼暴露给更大的鱼",
+      "feedback": ["sfx", "trail", "ripple"],
+      "combinesWith": ["eat", "symbiose"]
+    },
+    {
+      "name": "eat",
+      "cost": "吞错毒刺鱼会掉体型；同级吞噬才触发进化光链",
+      "feedback": ["sfx", "burst", "glow-flash"],
+      "combinesWith": ["swim"]
+    },
+    {
+      "name": "symbiose",
+      "cost": "贴水母 3 秒不能逃跑，暴露给捕食者",
+      "feedback": ["sfx", "jelly-pulse", "sting-aura"],
+      "combinesWith": ["swim", "eat"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "安心吃浮游群，还是冒险追一条小虾", "cost": "安全涨体型 vs 快速涨但走位更险" },
+    { "atSec": 18, "choice": "追一条同级小鱼触发进化光链，还是继续攒浮游", "cost": "赌进化奖励 vs 稳定但慢" },
+    { "atSec": 35, "choice": "毒刺鱼看起来比你小：吃它赚分，还是识别并避开", "cost": "吃错掉体型 vs 放弃一次吞噬" },
+    { "atSec": 55, "choice": "贴水母 3 秒换护体毒刺，还是立刻逃开逼近的大鱼", "cost": "站桩暴露 vs 失去可吃大一级的机会" },
+    { "atSec": 80, "choice": "用共生毒刺冲一条大一级的鱼，还是留着保命", "cost": "用掉 buff 换进化 vs 保守" },
+    { "atSec": 105, "choice": "热泉带暗流区食物密，穿过去还是绕安全路线", "cost": "高速风险 vs 慢但稳" },
+    { "atSec": 130, "choice": "被两条大鱼夹击：贴边钻缝擦肩，还是减速观察", "cost": "near-miss 奖励 vs 被吞风险" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "浮游食物云 + 基础游动（教：吃浮游长大）" },
+    { "index": 2, "newElement": "可吞的小型猎物 + 被大鱼追杀的威胁" },
+    { "index": 3, "newElement": "毒刺鱼：能吃≠该吃，掉体型惩罚" },
+    { "index": 4, "newElement": "同级吞噬触发光链进化闪光（signature）" },
+    { "index": 5, "newElement": "进入中层带：深蓝色板 + 生物荧光点" },
+    { "index": 6, "newElement": "水母共生：贴 3 秒换护体毒刺" },
+    { "index": 7, "newElement": "毒刺护体可吃大一级 + near-miss 奖励" },
+    { "index": 8, "newElement": "更多同级对手与掠食者密度上升" },
+    { "index": 9, "newElement": "进入热泉带：暗红色板 + 热泉羽流" },
+    { "index": 10, "newElement": "暗流区：横推水流改变走位节奏" },
+    { "index": 11, "newElement": "毒刺鱼占比达到峰值，辨识压力最大" },
+    { "index": 12, "newElement": "Apex 阶段：无更大天敌，登顶结算" }
+  ],
+  "upgrades": [
+    { "id": "planktonMagnet", "kind": "rule", "desc": "浮游吸附半径随阶段扩大（规则：吞噬判定半径增加）" },
+    { "id": "toxicSense", "kind": "rule", "desc": "吃错毒刺鱼后 3 秒内毒刺鱼高亮，避免连吃" },
+    { "id": "lightChain", "kind": "rule", "desc": "吞同级对手触发光链进化闪光 + 短暂无敌" },
+    { "id": "nearMissFeed", "kind": "rule", "desc": "与大鱼擦肩未死回一小格体型（规则：风险换奖励）" },
+    { "id": "symbiote", "kind": "rule", "desc": "贴水母 3 秒获得护体毒刺（改规则：可吃大一级）" },
+    { "id": "stingEat", "kind": "rule", "desc": "毒刺护体期间可吞大一级，护体耗尽" },
+    { "id": "currentRide", "kind": "rule", "desc": "顺暗流方向移动加速（热泉带规则）" },
+    { "id": "speedStat", "kind": "stat", "desc": "移动速度随阶段衰减放缓（数值）" },
+    { "id": "massStat", "kind": "stat", "desc": "每颗浮游质量 +0.5（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "unlock", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "吞掉同级对手的瞬间，整条生物化为一串光链爆闪，体型跃升、短无敌——「吃同级」就是你的进化信号。",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "深海生物发光风格：程序化 Canvas 发光渲染（径向渐变/加法混合）为主，HTML 叠字做封面海报，WebAudio 程序化合成 BGM/SFX"
+}

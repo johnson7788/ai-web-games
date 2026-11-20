@@ -1,0 +1,56 @@
+{
+  "game": "hole-munch",
+  "genre": "arcade",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 400,
+      "actions": 6321,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.6,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.58,
+      "uniqueEvents": 10,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 399.9,
+      "actions": 17702,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.6,
+      "deaths": 3,
+      "idleSec": 0,
+      "maxEventGapSec": 0.37,
+      "uniqueEvents": 10,
+      "levelsReached": 1,
+      "completed": false
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 399.9,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.6,
+      "deaths": 9,
+      "idleSec": 334.6,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 7,
+      "levelsReached": 1,
+      "completed": false
+    }
+  ],
+  "generatedAt": "2026-11-19T12:06:46.825Z"
+}

@@ -1,0 +1,41 @@
+TITLE
+Sky Koi — Free Koi Jumping Arcade Game
+
+CATEGORY
+Arcade
+
+TAGS
+koi, flappy, jump, torii gate, pearl, cloud sea, arcade, casual, one button, browser game, family friendly
+
+SHORT DESCRIPTION
+Flap a koi through torii gates across a cloud sea, collect pearls, and skim the water for a free splash jump.
+
+LONG DESCRIPTION
+SKY KOI is a free one-button arcade game about a koi leaping through the gates of a cloud sea.
+
+Tap or press Space to make the koi flap upward, and thread its body through the gap between vermilion torii pillars to score. Every gate is a decision: fly high and play it safe, or skim close to the water to charge a free splash jump — one wrong dip and the koi sinks.
+
+Collect three pearls to earn an extra star, dodge narrow gates, moving gates, crosswind gusts and rising tidal waves. Twelve handcrafted levels span three painted worlds: Dawn Cloud Sea, Sakura Lake and Night Star River, each with its own palette and rules.
+
+Three stars per level: clear the gates, collect every pearl, and brave the water for splash jumps. Easy to learn in ten seconds, tricky to master. Works with mouse, touch and keyboard. No download, play free in your browser.
+
+TITLE
+天空锦鲤 — 免费锦鲤跳跃街机游戏
+
+CATEGORY
+街机
+
+TAGS
+锦鲤, flappy, 跳跃, 鸟居, 珍珠, 云海, 街机, 休闲, 单键, 网页游戏, 全年龄
+
+SHORT DESCRIPTION
+让锦鲤在云海之上单键上扑，穿过鸟居门柱得分，吃珍珠、贴水面攒免费水花跳。
+
+LONG DESCRIPTION
+《天空锦鲤》是一款免费的单键街机游戏：一条锦鲤在云海之上跃过一扇扇鸟居门柱。
+
+点击或按空格让锦鲤向上扑，穿过朱红鸟居门柱之间的门缝得分。每一扇门都是一次取舍：高空飞最安全，还是贴水低飞攒一次免费水花跳——稍有不慎就会落水。
+
+吃满三颗珍珠升一星，躲开窄门、移动门、侧风阵雨和起伏的巨浪。十二个手工关卡横跨三大画卷：晨曦云海、落樱湖面、夜空星河，每一章都有独立的配色与规则。
+
+每关三星：穿门通关、吃满珍珠、贴水攒够水花跳。十秒上手，越玩越有挑战。鼠标、触屏、键盘全支持。无需下载，浏览器免费畅玩。

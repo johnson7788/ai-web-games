@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="OCEAN DASH — lead a migrating school of fish, gather to slip narrow gaps, ride the current as an arrow of light, and race three rivals to the finish.">
+  <meta name="theme-color" content="#04222e">
+  <title>OCEAN DASH · Fish Migration Racer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <button id="btn-gather" class="touch-btn touch-gather" aria-label="Gather" hidden>≋</button>
+    <button id="btn-jump" class="touch-btn touch-jump" aria-label="Jump" hidden>↟</button>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-fish"></div>
+      <span data-i18n="set.loading">Diving in…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

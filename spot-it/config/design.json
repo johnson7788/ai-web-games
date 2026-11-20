@@ -1,0 +1,85 @@
+{
+  "slug": "spot-it",
+  "genre": "arcade",
+  "oneLiner": "深夜跳蚤市场里，玩家靠一盏会越照越窄的手电筒，在杂乱货堆中按清单找目标物；点对点亮市场，点错扣时间，点中孪生诱饵双倍扣时。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "sweep",
+      "cost": "每扫一秒电池流失、光圈半径缩小，扫得越久看得越窄",
+      "feedback": ["light-reveal", "battery-drain-sfx"],
+      "combinesWith": ["pick"]
+    },
+    {
+      "name": "pick",
+      "cost": "点错扣时，点中孪生诱饵双倍扣时",
+      "feedback": ["check-mark", "sfx", "spark-particles"],
+      "combinesWith": ["sweep"]
+    },
+    {
+      "name": "confirm",
+      "cost": "花时间核对孪生细节，但能避开诱饵的双倍扣时",
+      "feedback": ["name-tooltip", "zoom-halo"],
+      "combinesWith": ["pick"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先扫大件省电，还是先扫小件防止遗漏", "cost": "电池 vs 时间" },
+    { "atSec": 20, "choice": "清单第一件很暗：先找它，还是先点别的高亮物给手电回充", "cost": "时间 vs 视野" },
+    { "atSec": 40, "choice": "出现孪生诱饵：直接点，还是停下来核对细节", "cost": "双倍扣时 vs 耗时" },
+    { "atSec": 65, "choice": "电池见底：快速扫完当前清单，还是先找任一目标回充", "cost": "视野极限 vs 时间" },
+    { "atSec": 90, "choice": "换场景后：先记清单再扫，还是边扫边看清单", "cost": "记忆 vs 效率" },
+    { "atSec": 120, "choice": "只剩 15 秒且差 2 件：赌一把连点，还是精准核对", "cost": "扣时风险 vs 时间" },
+    { "atSec": 150, "choice": "诱饵高发关：慢速确认每件，还是靠直觉快进", "cost": "时间 vs 双倍扣时" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "旧书摊·3 件清单：手电光圈扫货（教 sweep+pick）" },
+    { "index": 2, "newElement": "旧书摊·3 件：清单出现同类多件（教计数）" },
+    { "index": 3, "newElement": "旧书摊·4 件：电池流失加快（教资源管理）" },
+    { "index": 4, "newElement": "旧书摊·4 件：首现真假孪生诱饵（点错双倍扣时）" },
+    { "index": 5, "newElement": "玩具堆·5 件：彩色新场景包" },
+    { "index": 6, "newElement": "玩具堆·5 件：物品更小更密" },
+    { "index": 7, "newElement": "玩具堆·5 件：诱饵率翻倍（慢点确认）" },
+    { "index": 8, "newElement": "玩具堆·6 件：同一目标多个孪生（二选一）" },
+    { "index": 9, "newElement": "鬼市·6 件：青灰新场景包" },
+    { "index": 10, "newElement": "鬼市·6 件：小件高密度 + 高诱饵" },
+    { "index": 11, "newElement": "鬼市·6 件：倒计时更紧（时限缩短）" },
+    { "index": 12, "newElement": "鬼市·6 件：终局大杂烩（全部机制叠加）" }
+  ],
+  "upgrades": [
+    { "id": "batteryCap", "kind": "rule", "desc": "每关开始自动把电池补到 70%（改开局规则）" },
+    { "id": "twinLens", "kind": "rule", "desc": "光标悬停孪生 0.6s 后诱饵会微微发红光（改识别规则）" },
+    { "id": "timeBank", "kind": "rule", "desc": "连击 ≥3 时每次找对返还 1.5s 时间（改失败成本）" },
+    { "id": "nightVision", "kind": "rule", "desc": "光圈半径下限 +18px，永不全黑（改视野规则）" },
+    { "id": "comboRecharge", "kind": "rule", "desc": "连击内找对回充 ×1.5（改资源规则）" },
+    { "id": "sceneHint", "kind": "rule", "desc": "每关开局第一个目标自动微光 2 秒（改引导规则）" },
+    { "id": "batteryMax", "kind": "stat", "desc": "电池上限 +15%" },
+    { "id": "timeStart", "kind": "stat", "desc": "每关限时 +5 秒" },
+    { "id": "recharge", "kind": "stat", "desc": "找对回充 +20%" },
+    { "id": "radius", "kind": "stat", "desc": "光圈最大半径 +8%" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "找齐清单的瞬间，黑暗的市场里一盏盏灯笼次第亮起，整条货摊被点亮",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "全程序化 Canvas 绘制：深夜跳蚤市场手电光圈风格，3 套场景色板；UI 线框 SVG/CSS；封面海报用 HTML 叠字截图"
+}

@@ -1,0 +1,116 @@
+{
+  "slug": "brick-blitz",
+  "genre": "arcade",
+  "oneLiner": "玩家在陶窑里左右滑动挡板，反弹烧红的陶珠砸碎釉砖阵，靠接道具与三连击「窑火全开」一路清到终局大阵。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "挡板离开当前防守位去追球或接道具，就放弃了球正下方的最稳反弹点",
+      "feedback": ["sfx", "paddleGlow"],
+      "combinesWith": ["aim"]
+    },
+    {
+      "name": "aim",
+      "cost": "挡板越偏离球的正下方，反弹角越大，越容易把球弹向难救的死角",
+      "feedback": ["sfx", "angleTrail"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "catch",
+      "cost": "接掉落的釉彩道具必须离开球的正下方，可能让这一球落底失命",
+      "feedback": ["sfx", "glazeFlash", "toast"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "球落回时贴住正下方稳接，还是偏一点把球打向还没清的砖列",
+      "cost": "偏一点反弹角变大，可能失位漏球"
+    },
+    {
+      "atSec": 15,
+      "choice": "第一块砖爆出釉彩道具：接不接",
+      "cost": "接要离开最优防守位，可能让球落底"
+    },
+    {
+      "atSec": 30,
+      "choice": "炸窑砖先引爆连锁清一片，还是留着避开弹道",
+      "cost": "引爆会把球弹向不可控方向"
+    },
+    {
+      "atSec": 50,
+      "choice": "多球同时弹跳时，盯哪一颗球",
+      "cost": "只盯一颗，其它球会漏掉"
+    },
+    {
+      "atSec": 80,
+      "choice": "下压砖墙逼近，先打最下层解压，还是继续清高分金釉砖",
+      "cost": "用时间换分数，压线就判负"
+    },
+    {
+      "atSec": 110,
+      "choice": "窑火全开期间球加速，激进追三连击还是稳住保命",
+      "cost": "贪连击可能失位，白丢一条命"
+    },
+    {
+      "atSec": 140,
+      "choice": "最后几块砖，用最后一条命赌三星，还是求稳先通关",
+      "cost": "一星保底 vs 三星评级"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "横排基础砖阵：普通砖 1 击即碎" },
+    { "index": 2, "newElement": "金字塔阵 + 硬砖（2 击，色阶变深）" },
+    { "index": 3, "newElement": "空心阵：球会绕进空腔背后弹跳" },
+    { "index": 4, "newElement": "移动砖列：整列左右漂移改变弹道" },
+    { "index": 5, "newElement": "下压砖墙：整墙缓降，压线判负" },
+    { "index": 6, "newElement": "炸窑砖：击碎后炸开邻近砖块" },
+    { "index": 7, "newElement": "窄缝防守：挡板变短，容错更小" },
+    { "index": 8, "newElement": "多球雨：开局双球同时弹跳" },
+    { "index": 9, "newElement": "金釉砖：击碎给高分" },
+    { "index": 10, "newElement": "硬砖阵：三级硬砖需 3 击" },
+    { "index": 11, "newElement": "移动列 + 下压复合：双压力叠加" },
+    { "index": 12, "newElement": "终局大阵：全砖型 + 多球 + 移动列叠加" }
+  ],
+  "upgrades": [
+    { "id": "widePaddle", "kind": "rule", "desc": "加宽挡板，接球容错变大" },
+    { "id": "multiBall", "kind": "rule", "desc": "多球：分裂出第二颗陶珠" },
+    { "id": "pierceBall", "kind": "rule", "desc": "穿透球：穿过砖不反弹" },
+    { "id": "kilnFire", "kind": "rule", "desc": "三连击不落底触发窑火全开（球加速 + 全屏暖光）" },
+    { "id": "goldScore", "kind": "rule", "desc": "金釉砖给高分" },
+    { "id": "blastChain", "kind": "rule", "desc": "炸窑砖连锁炸开邻近砖" },
+    { "id": "extraLife", "kind": "rule", "desc": "道具补一条命" },
+    { "id": "ballSpeed", "kind": "stat", "desc": "窑火期间球速 ×1.28" },
+    { "id": "paddleSpeed", "kind": "stat", "desc": "挡板追踪速度随关卡提升" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

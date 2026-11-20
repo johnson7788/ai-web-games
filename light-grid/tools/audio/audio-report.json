@@ -1,0 +1,136 @@
+{
+  "generatedAt": "2026-11-19T13:38:25.474Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "press": {
+      "rms": 0.1632,
+      "peak": 0.4086,
+      "nan": 0,
+      "zcRate": 875.3,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "charge": {
+      "rms": 0.1534,
+      "peak": 0.28,
+      "nan": 0,
+      "zcRate": 572.4,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "blocked": {
+      "rms": 0.1154,
+      "peak": 0.25,
+      "nan": 0,
+      "zcRate": 125,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "solved": {
+      "rms": 0.1594,
+      "peak": 0.7461,
+      "nan": 0,
+      "zcRate": 642.2,
+      "samples": 33957,
+      "durSec": 0.77,
+      "pass": true
+    },
+    "overload": {
+      "rms": 0.1063,
+      "peak": 0.3294,
+      "nan": 0,
+      "zcRate": 705,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "hint": {
+      "rms": 0.1259,
+      "peak": 0.3599,
+      "nan": 0,
+      "zcRate": 1035.1,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "signature": {
+      "rms": 0.0912,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 893.8,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1071,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 790.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "star": {
+      "rms": 0.0871,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 1044.6,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1435,
+      "peak": 0.551,
+      "nan": 0,
+      "zcRate": 838.8,
+      "samples": 33516,
+      "durSec": 0.76,
+      "pass": true
+    },
+    "levelStart": {
+      "rms": 0.0748,
+      "peak": 0.2879,
+      "nan": 0,
+      "zcRate": 287.5,
+      "samples": 26460,
+      "durSec": 0.6,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.12,
+      "peak": 0.4346,
+      "nan": 0,
+      "zcRate": 196.3,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="DONKEY HURDLE — run the Silk Road as a jar-laden donkey. Jump hurdles, hold to leap walls, drop a jar for a super jump, and keep the caravan alive.">
+  <meta name="theme-color" content="#b3773d">
+  <title>DONKEY HURDLE · Silk Road Runner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <button id="btn-drop" class="touch-only" aria-label="Drop-jump" hidden></button>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-jar"></div>
+      <span data-i18n="set.loading">Loading the caravan…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

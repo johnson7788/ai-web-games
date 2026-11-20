@@ -1,0 +1,149 @@
+{
+  "game": "brick-six",
+  "generatedAt": "2026-11-19T19:24:54.639Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 6.5,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 3,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘BRICK SIX’发光效果过强，导致部分字母边缘模糊，影响远距离辨识",
+        "‘Best 0’字号过小且颜色偏淡（浅黄），在深绿背景下对比度不足，易被忽略",
+        "‘English’语言切换按钮无悬停反馈或下拉指示，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角‘NEXT’区域预览的三个黄色六边形，准备放置到主蜂窝区",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘NEXT’预览区下方绿色六边形堆叠部分轻微重叠，可能误判为单个可选块",
+        "底部深色蜂窝区与彩色区交界处有2个棕色六边形（疑似障碍/已占位），但无明确状态标识，易混淆",
+        "左上角‘TIER 1’标签背景与文字对比度偏低（深灰底+浅灰字），弱光下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/03-cascade.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部彩色六边形区域中某个六边形进行操作",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央蜂窝区小黄点粒子效果模糊，难以辨识是目标还是干扰元素",
+        "右上角'NEXT'预览区六边形堆叠方式与主游戏区不一致，易引发操作误解",
+        "‘Spring Nest’标题字体与HUD按钮风格略有差异（圆角/描边不统一）"
+      ]
+    },
+    {
+      "shot": "tests/final/04-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角‘NEXT’区域中高亮的两个黄色六边形以进行匹配操作",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'NEXT'预览区中，黄色六边形被黄色边框部分遮挡，影响识别",
+        "底部深色六边形区域与背景对比度低，可能误判为不可交互空位",
+        "左上角空六边形轮廓线过细且无填充，易与背景混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/05-honey.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧预览区中高亮的橙色六边形组合以放置到蜂巢中心区域",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧‘NEXT’预览区中部分六边形颜色过暗（如灰褐色），与背景对比度低，易误判可选性",
+        "蜂巢中心区域部分六边形无明显高亮或边界强化，玩家难以快速定位当前操作焦点",
+        "右上角COMBO/ BEST数值为0，但未说明是否可达成，目标感略弱于SCORE/TARGET"
+      ]
+    },
+    {
+      "shot": "tests/final/06-winter.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧预览区的六边形组合以放置到主网格中",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧‘NEXT’预览区六边形组合与背景六边形轮廓重叠，易混淆可交互区域",
+        "‘Winter Nest’标题无明确功能指示，可能被误认为装饰文本",
+        "底部右下角重试按钮图标为环形箭头但无文字说明，新手可能不解其意"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧‘NEXT’区域中高亮的黄色六边形组合以放置或匹配",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧‘NEXT’预览区六边形颜色层级模糊（黄/浅绿对比弱），易误判当前操作对象",
+        "中央蜂窝网格无明显玩家标识或光标，无法快速定位‘我’的位置",
+        "左上角‘TIER 1’与‘TARGET 150’间距过小，视觉上易被误读为单个标签"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央六边形网格中的任意一个空单元格放置发光块",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'NEXT'预览区黄色高亮框与下方绿色六边形部分重叠，可能干扰目标识别",
+        "中央提示框文字‘Tap a cell to place the glowing piece’在深绿背景上对比度偏低，弱光下易误读",
+        "左上角‘SCORE 0’‘TIER 1’‘TARGET 150’按钮间距过小，桌面端无问题，但若适配移动端易误触"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Tideline — Free 3D Boat Race</title>
+  <meta name="description" content="Tideline: race a speedboat over a real FFT ocean. Hit every buoy gate, round the island for 3 laps and beat the clock. Free 3D boat racing game based on Ultra-Water (MIT) by Humpalumps." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b3550'/%3E%3Cpath d='M6 42c8-6 14 6 22 0s14 6 22 0 8-4 8-4v26H6z' fill='%231d7fa8'/%3E%3Cpath d='M14 36l22-6 12 4-6 8H20z' fill='%23f2f2ee'/%3E%3Cpath d='M30 30l6-10 4 10z' fill='%23e8452f'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --panel: rgba(7, 22, 34, 0.72);
+      --line: rgba(140, 220, 255, 0.28);
+      --cyan: #35d0ff;
+      --gold: #ffc84a;
+      --red: #ff5a48;
+      --text: #eaf6ff;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; height: 100%; background: #04121e; overflow: hidden; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; color: var(--text); }
+    canvas#sea { display: block; width: 100%; height: 100%; }
+    .hidden { display: none !important; }
+    b, strong { font-weight: 700; }
+
+    /* ---------- screens ---------- */
+    .screen {
+      position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px; text-align: center;
+      background: radial-gradient(ellipse at 50% 120%, rgba(4, 18, 30, 0.25), rgba(3, 12, 20, 0.78));
+      padding: 20px;
+    }
+    .logo { font-size: clamp(44px, 9vw, 84px); font-weight: 900; letter-spacing: 0.12em; line-height: 1;
+      color: #fff; text-shadow: 0 4px 24px rgba(53, 208, 255, 0.45); }
+    .logo em { font-style: normal; color: var(--cyan); }
+    .tagline { font-size: clamp(14px, 2.4vw, 20px); letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+    .blurb { max-width: 560px; font-size: 14px; line-height: 1.55; color: #cfe6f5; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; }
+    .controls { display: grid; grid-template-columns: auto auto; gap: 6px 18px; font-size: 13px; text-align: left; }
+    .controls .k { color: var(--cyan); font-weight: 700; white-space: nowrap; }
+    .btn {
+      appearance: none; border: 0; cursor: pointer; border-radius: 12px; padding: 14px 42px;
+      font: 800 18px/1 system-ui, sans-serif; letter-spacing: 0.08em; color: #04222f;
+      background: linear-gradient(180deg, #5fdcff, #22b4e8); box-shadow: 0 6px 0 #0d7ba6;
+      transition: transform 0.06s ease, box-shadow 0.06s ease;
+    }
+    .btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #0d7ba6; }
+    .btn.alt { background: linear-gradient(180deg, #ffd77a, #f0a92e); box-shadow: 0 6px 0 #a06a10; color: #3a2404; }
+    .btn.ghost { background: rgba(255,255,255,0.1); color: var(--text); box-shadow: inset 0 0 0 1px var(--line); }
+    .btnrow { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .bestline { font-size: 14px; color: #bfe0f2; }
+    .bestline b { color: var(--gold); font-variant-numeric: tabular-nums; }
+    .credits { position: fixed; bottom: 10px; left: 0; right: 0; text-align: center; font-size: 11px; color: #7fa8bf; z-index: 41; }
+    .credits a { color: #9fd3ee; text-decoration: none; }
+    .bigtime { font-size: clamp(40px, 7vw, 64px); font-weight: 900; font-variant-numeric: tabular-nums; color: #fff; }
+    .medal { font-size: 22px; font-weight: 800; letter-spacing: 0.1em; }
+    .medal.gold { color: var(--gold); } .medal.silver { color: #d7e3ea; } .medal.bronze { color: #d99a6c; } .medal.none { color: #8fb2c6; }
+    .splits { display: flex; gap: 18px; font-size: 14px; color: #cfe6f5; font-variant-numeric: tabular-nums; }
+    .newrecord { color: var(--gold); font-weight: 800; letter-spacing: 0.12em; animation: pulse 0.9s ease infinite alternate; }
+    @keyframes pulse { from { opacity: 0.65; } to { opacity: 1; } }
+    h2.screentitle { margin: 0; font-size: clamp(28px, 5vw, 44px); letter-spacing: 0.1em; }
+
+    /* ---------- loading ---------- */
+    #loading { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; gap: 16px;
+      align-items: center; justify-content: center; background: #04121e; }
+    .spinner { width: 46px; height: 46px; border-radius: 50%; border: 4px solid rgba(53,208,255,0.2);
+      border-top-color: var(--cyan); animation: spin 0.9s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loading p { color: #9fd3ee; font-size: 14px; letter-spacing: 0.08em; }
+
+    /* ---------- countdown ---------- */
+    #countdown { position: fixed; inset: 0; z-index: 35; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    #countdown span { font-size: clamp(90px, 20vw, 180px); font-weight: 900; color: #fff;
+      text-shadow: 0 0 40px rgba(53,208,255,0.8); animation: cdpop 0.9s ease; }
+    @keyframes cdpop { 0% { transform: scale(1.7); opacity: 0; } 25% { transform: scale(1); opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0.2; } }
+
+    /* ---------- HUD ---------- */
+    #hud { position: fixed; inset: 0; z-index: 20; pointer-events: none; }
+    #topbar { position: absolute; top: 10px; left: 10px; display: flex; gap: 8px; }
+    .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px; min-width: 74px; }
+    .stat .lbl { font-size: 9px; letter-spacing: 0.18em; color: #8fc7e2; }
+    .stat .val { font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .stat .val small { font-size: 12px; color: #9fd3ee; font-weight: 600; }
+    #hudTime .val { color: var(--gold); }
+    #gateTimerWrap { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: min(340px, 44vw); text-align: center; }
+    #gateTimerWrap .lbl { font-size: 10px; letter-spacing: 0.2em; color: #8fc7e2; margin-bottom: 3px; }
+    #gateTimerBar { height: 8px; border-radius: 5px; background: rgba(255,255,255,0.14); overflow: hidden; border: 1px solid var(--line); }
+    #gateTimerFill { height: 100%; width: 100%; background: var(--cyan); border-radius: 5px; transition: background 0.3s; }
+    #gateTimerFill.warn { background: var(--red); }
+    #gateDist { font-size: 12px; margin-top: 3px; color: #cfe6f5; font-variant-numeric: tabular-nums; }
+    #gateArrow { display: inline-block; color: var(--gold); font-size: 14px; transition: transform 0.1s linear; }
+    #sysbtns { position: absolute; top: 46px; right: 10px; display: flex; flex-direction: column; gap: 8px; pointer-events: auto; }
+    .iconbtn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel);
+      color: var(--text); font-size: 16px; cursor: pointer; }
+    #minimapWrap { position: absolute; left: 10px; bottom: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 6px; }
+    #minimap { display: block; width: 168px; height: 168px; }
+    #dash { position: absolute; right: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+    #speedo { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 8px 16px; text-align: right; }
+    #speedo .val { font-size: 40px; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; }
+    #speedo .unit { font-size: 11px; letter-spacing: 0.2em; color: #8fc7e2; }
+    #boostWrap { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px; width: 170px; }
+    #boostWrap .lbl { font-size: 9px; letter-spacing: 0.18em; color: #8fc7e2; display: flex; justify-content: space-between; }
+    #boostBar { height: 7px; margin-top: 4px; border-radius: 4px; background: rgba(255,255,255,0.14); overflow: hidden; }
+    #boostFill { height: 100%; width: 100%; background: var(--gold); border-radius: 4px; }
+    #boostFill.cooling { background: #5b7f95; }
+    #toasts { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; gap: 8px; align-items: center; }
+    .toast { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 26px;
+      font-size: 20px; font-weight: 800; letter-spacing: 0.06em; animation: toastlife 2.2s ease forwards; white-space: nowrap; }
+    .toast.gold { color: var(--gold); border-color: rgba(255, 200, 74, 0.5); }
+    .toast.red { color: var(--red); border-color: rgba(255, 90, 72, 0.5); }
+    .toast.cyan { color: var(--cyan); }
+    @keyframes toastlife { 0% { transform: translateY(14px) scale(0.85); opacity: 0; } 12% { transform: none; opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }
+    #flash { position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0;
+      background: radial-gradient(ellipse at center, rgba(255, 210, 90, 0) 40%, rgba(255, 210, 90, 0.55) 100%); }
+    #flash.go { animation: flashanim 0.55s ease; }
+    @keyframes flashanim { 0% { opacity: 1; } 100% { opacity: 0; } }
+    #wrongway { position: absolute; top: 34%; left: 50%; transform: translateX(-50%); color: var(--red);
+      font-weight: 900; font-size: 24px; letter-spacing: 0.1em; text-shadow: 0 2px 10px rgba(0,0,0,0.6); animation: pulse 0.5s ease infinite alternate; }
+
+    /* ---------- touch ---------- */
+    #touch { position: fixed; inset: 0; z-index: 25; pointer-events: none; display: none; }
+    body.touch #touch { display: block; }
+    .tbtn { position: absolute; pointer-events: auto; border-radius: 50%; border: 2px solid var(--line);
+      background: rgba(7, 22, 34, 0.5); color: var(--text); font: 800 15px/1 system-ui, sans-serif;
+      width: 74px; height: 74px; display: flex; align-items: center; justify-content: center; user-select: none; }
+    .tbtn:active, .tbtn.on { background: rgba(53, 208, 255, 0.35); }
+    #tLeft { left: 16px; bottom: 200px; } #tRight { left: 104px; bottom: 200px; }
+    #tGas { right: 16px; bottom: 200px; width: 92px; height: 92px; background: rgba(34, 180, 232, 0.3); }
+    #tBrake { right: 116px; bottom: 200px; }
+    #tBoost { right: 16px; bottom: 310px; background: rgba(240, 169, 46, 0.3); }
+    body.touch #minimapWrap { bottom: 120px; }
+    body.touch #dash { bottom: 120px; }
+
+    @media (max-width: 760px) {
+      #minimap { width: 120px; height: 120px; }
+      .stat { min-width: 58px; padding: 4px 8px; } .stat .val { font-size: 15px; }
+      #speedo .val { font-size: 28px; }
+      #gateTimerWrap { width: 40vw; }
+      .controls { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="spinner"></div>
+    <p id="loadingText">Loading the ocean…</p>
+  </div>
+
+  <!-- title -->
+  <div id="title" class="screen hidden">
+    <div class="logo">TIDE<em>LINE</em></div>
+    <div class="tagline">Free 3D Boat Race</div>
+    <p class="blurb">Race a speedboat over a living FFT ocean. Thread every buoy gate in order, round the island for 3 laps and beat the clock — the sea gets rougher every lap.</p>
+    <div class="panel controls">
+      <span class="k">W / ↑</span><span>Throttle</span>
+      <span class="k">S / ↓</span><span>Brake / Reverse</span>
+      <span class="k">A D / ← →</span><span>Steer</span>
+      <span class="k">Shift</span><span>Boost (cooldown)</span>
+      <span class="k">Esc</span><span>Pause</span>
+      <span class="k">R</span><span>Restart</span>
+      <span class="k">C</span><span>Camera</span>
+      <span class="k">M</span><span>Sound</span>
+    </div>
+    <button id="btnStart" class="btn">START RACE</button>
+    <div class="bestline">Best time: <b id="titleBest">—</b></div>
+    <div class="credits">Based on <a href="https://github.com/Humpalumps/Ultra-Water" target="_blank" rel="noopener">Ultra-Water</a> (MIT) — Humpalumps · FFT ocean, shore breakers &amp; caustics</div>
+  </div>
+
+  <!-- countdown -->
+  <div id="countdown" class="hidden"><span id="cdNum">3</span></div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div id="topbar">
+      <div class="stat"><div class="lbl">LAP</div><div class="val"><span id="hudLap">1</span><small>/3</small></div></div>
+      <div class="stat"><div class="lbl">CHECKPOINT</div><div class="val"><span id="hudCp">0</span><small>/8</small></div></div>
+      <div class="stat" id="hudTime"><div class="lbl">TIME</div><div class="val" id="hudTimeVal">0:00.0</div></div>
+      <div class="stat"><div class="lbl">BEST</div><div class="val" id="hudBest">—</div></div>
+    </div>
+    <div id="gateTimerWrap">
+      <div class="lbl">NEXT GATE CLOSES IN</div>
+      <div id="gateTimerBar"><div id="gateTimerFill"></div></div>
+      <div id="gateDist"><span id="gateArrow">▲</span> <span id="gateDistVal">0 m</span></div>
+    </div>
+    <div id="sysbtns">
+      <button id="btnPause" class="iconbtn" title="Pause">⏸</button>
+      <button id="btnSound" class="iconbtn" title="Sound">🔊</button>
+    </div>
+    <div id="minimapWrap"><canvas id="minimap" width="336" height="336"></canvas></div>
+    <div id="dash">
+      <div id="boostWrap">
+        <div class="lbl"><span>BOOST</span><span id="boostState">READY</span></div>
+        <div id="boostBar"><div id="boostFill"></div></div>
+      </div>
+      <div id="speedo"><div class="val" id="speedVal">0</div><div class="unit">KNOTS</div></div>
+    </div>
+    <div id="toasts"></div>
+    <div id="wrongway" class="hidden">WRONG WAY — TURN BACK!</div>
+  </div>
+  <div id="flash"></div>
+
+  <!-- pause -->
+  <div id="pause" class="screen hidden">
+    <h2 class="screentitle">PAUSED</h2>
+    <div class="btnrow">
+      <button id="btnResume" class="btn">RESUME</button>
+      <button id="btnRestartP" class="btn alt">RESTART</button>
+      <button id="btnQuitP" class="btn ghost">QUIT TO TITLE</button>
+    </div>
+    <div class="panel controls">
+      <span class="k">W / ↑</span><span>Throttle</span>
+      <span class="k">S / ↓</span><span>Brake / Reverse</span>
+      <span class="k">A D / ← →</span><span>Steer</span>
+      <span class="k">Shift</span><span>Boost (cooldown)</span>
+    </div>
+  </div>
+
+  <!-- finish -->
+  <div id="finish" class="screen hidden">
+    <h2 class="screentitle">RACE COMPLETE</h2>
+    <div class="medal" id="medalText">GOLD</div>
+    <div class="bigtime" id="finishTime">0:00.0</div>
+    <div class="newrecord hidden" id="newRecord">NEW RECORD!</div>
+    <div class="splits" id="lapSplits"></div>
+    <div class="bestline">Best time: <b id="finishBest">—</b></div>
+    <div class="btnrow">
+      <button id="btnAgain" class="btn">RACE AGAIN</button>
+      <button id="btnMenuF" class="btn ghost">MENU</button>
+    </div>
+  </div>
+
+  <!-- fail -->
+  <div id="fail" class="screen hidden">
+    <h2 class="screentitle" style="color: var(--red)">TIME'S UP</h2>
+    <p class="blurb">You didn't reach the next buoy gate before it closed. Keep the throttle down and use boost on the straights!</p>
+    <div class="btnrow">
+      <button id="btnRetry" class="btn alt">TRY AGAIN</button>
+      <button id="btnMenuX" class="btn ghost">MENU</button>
+    </div>
+  </div>
+
+  <!-- touch controls -->
+  <div id="touch">
+    <div class="tbtn" id="tLeft">◀</div>
+    <div class="tbtn" id="tRight">▶</div>
+    <div class="tbtn" id="tGas">GAS</div>
+    <div class="tbtn" id="tBrake">BRAKE</div>
+    <div class="tbtn" id="tBoost">BOOST</div>
+  </div>
+
+  <script type="module" src="/src/game/main.js"></script>
+</body>
+</html>

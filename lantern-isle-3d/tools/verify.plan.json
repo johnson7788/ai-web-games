@@ -1,0 +1,193 @@
+{
+  "name": "lantern-isle-3d 验收（真实事件驱动）",
+  "viewports": [
+    [
+      1280,
+      720
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "fps": {
+    "min": 50,
+    "frames": 90
+  },
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": true
+  },
+  "steps": [
+    {
+      "name": "boot 到标题",
+      "waitFor": "window.__ll && window.__ll.state.phase==='title'",
+      "timeout": 30000
+    },
+    {
+      "name": "标题截图",
+      "screenshot": "01-title.png"
+    },
+    {
+      "name": "默认英文",
+      "assert": "window.__ll.state.lang==='en'"
+    },
+    {
+      "name": "切中文",
+      "eval": "window.__ll.setLang('zh')"
+    },
+    {
+      "name": "中文生效",
+      "waitFor": "window.__ll.state.lang==='zh'",
+      "timeout": 8000
+    },
+    {
+      "name": "中文标题截图",
+      "screenshot": "02-title-zh.png"
+    },
+    {
+      "name": "切回英文",
+      "eval": "window.__ll.setLang('en')"
+    },
+    {
+      "name": "点开始",
+      "click": "#btn-start"
+    },
+    {
+      "name": "进入玩法",
+      "waitFor": "['playing','tutorial'].includes(window.__ll.state.phase)",
+      "timeout": 20000
+    },
+    {
+      "name": "跳过引导",
+      "eval": "window.__ll.skipTutorial()"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "name": "按 W 走",
+      "press": "KeyW"
+    },
+    {
+      "wait": 900
+    },
+    {
+      "name": "走路截图",
+      "screenshot": "03-walk.png"
+    },
+    {
+      "name": "按空格跳",
+      "press": "Space"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "name": "键盘事件真的进了 sim",
+      "assert": "window.__game3d.state().stats.inputs>0"
+    },
+    {
+      "name": "发灯与油",
+      "eval": "window.__game3d.call({fn:'grant',args:{oil:5}})"
+    },
+    {
+      "name": "传到灯堆",
+      "eval": "window.__game3d.call({fn:'teleport',args:{to:'lantern_small_0'}})"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "name": "按 E 搬灯",
+      "press": "KeyE"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "name": "负重 +1",
+      "waitFor": "window.__game3d.state().weight>=1",
+      "timeout": 8000
+    },
+    {
+      "name": "传到灯位",
+      "eval": "window.__game3d.call({fn:'teleport',args:{to:'lamp_harbor'}})"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "name": "按 R 点灯",
+      "press": "KeyR"
+    },
+    {
+      "name": "出现引导环",
+      "waitFor": "window.__game3d.state().lighting!==null",
+      "timeout": 8000
+    },
+    {
+      "name": "点灯中截图",
+      "screenshot": "04-lighting.png"
+    },
+    {
+      "name": "灯真的亮了",
+      "waitFor": "window.__game3d.state().lit>0",
+      "timeout": 15000
+    },
+    {
+      "name": "亮灯截图",
+      "screenshot": "05-lit.png"
+    },
+    {
+      "name": "传到看守人",
+      "eval": "window.__game3d.call({fn:'teleport',args:{to:'warden'}})"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "name": "按 T 对话",
+      "press": "KeyT"
+    },
+    {
+      "name": "进入对话屏",
+      "waitFor": "window.__ll.state.phase==='dialog'",
+      "timeout": 8000
+    },
+    {
+      "name": "对话截图",
+      "screenshot": "06-dialog.png"
+    },
+    {
+      "name": "关闭对话",
+      "click": "#dlg-close"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "name": "演示胜利",
+      "eval": "window.__ll.demoWin()"
+    },
+    {
+      "name": "进结算",
+      "waitFor": "window.__ll.state.phase==='nightEnd'",
+      "timeout": 15000
+    },
+    {
+      "name": "结算截图",
+      "screenshot": "07-result.png"
+    },
+    {
+      "name": "重开",
+      "eval": "window.__ll.restart()"
+    },
+    {
+      "name": "回到玩法",
+      "waitFor": "['playing','tutorial'].includes(window.__ll.state.phase)",
+      "timeout": 15000
+    }
+  ]
+}

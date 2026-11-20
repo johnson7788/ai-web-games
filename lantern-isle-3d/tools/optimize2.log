@@ -1,0 +1,35 @@
+OK char_keeper: 762 tri · 77.6KB(纹 0KB/0px) → char_keeper.glb.js 104KB [compression+quantization]
+OK npc_warden: 762 tri · 76.8KB(纹 0KB/0px) → npc_warden.glb.js 103KB [compression+quantization]
+OK npc_netmender: 762 tri · 77.1KB(纹 0KB/0px) → npc_netmender.glb.js 103KB [compression+quantization]
+OK npc_lampchild: 762 tri · 77.3KB(纹 0KB/0px) → npc_lampchild.glb.js 103KB [compression+quantization]
+OK prop_lantern_01: 56857 tri · 700.4KB(纹 81.7KB/0px) → prop_lantern_01.glb.js 934KB [compression+webp+quantization]
+OK prop_oil_barrel_01: 94716 tri · 1269.7KB(纹 27.6KB/0px) → prop_oil_barrel_01.glb.js 1693KB [compression+webp+quantization]
+OK prop_crate_01: 152122 tri · 2022KB(纹 16.4KB/0px) → prop_crate_01.glb.js 2696KB [compression+webp+quantization]
+OK prop_rock_cluster_01: 250022 tri · 3532.9KB(纹 39.7KB/0px) → prop_rock_cluster_01.glb.js 4711KB [compression+webp+quantization]
+OK prop_boat_row_01: 48726 tri · 602.6KB(纹 27KB/0px) → prop_boat_row_01.glb.js 804KB [compression+webp+quantization]
+OK prop_net_bundle_01: 212308 tri · 2941.9KB(纹 28.9KB/0px) → prop_net_bundle_01.glb.js 3923KB [compression+webp+quantization]
+OK prop_bell_01: 41644 tri · 456.2KB(纹 36KB/0px) → prop_bell_01.glb.js 608KB [compression+webp+quantization]
+OK prop_lamp_relay_01: 102148 tri · 1283.8KB(纹 48.3KB/0px) → prop_lamp_relay_01.glb.js 1712KB [compression+webp+quantization]
+OK prop_storm_glass_01: 321496 tri · 4292.4KB(纹 88.7KB/0px) → prop_storm_glass_01.glb.js 5723KB [compression+webp+quantization]
+OK build_cottage_a: 66 tri · 8.5KB(纹 0KB/0px) → build_cottage_a.glb.js 11KB [compression+quantization]
+OK build_cottage_b: 150 tri · 10.1KB(纹 0KB/0px) → build_cottage_b.glb.js 14KB [compression+quantization]
+OK build_shed_01: 42 tri · 6.6KB(纹 0KB/0px) → build_shed_01.glb.js 9KB [compression+quantization]
+OK build_lighthouse_01: 422 tri · 15.6KB(纹 0KB/0px) → build_lighthouse_01.glb.js 21KB [compression+quantization]
+OK build_pier_platform_01: 148 tri · 7.6KB(纹 0KB/0px) → build_pier_platform_01.glb.js 10KB [compression+quantization]
+OK build_stairs_01: 96 tri · 5.6KB(纹 0KB/0px) → build_stairs_01.glb.js 8KB [compression+quantization]
+OK build_fence_01: 84 tri · 5.1KB(纹 0KB/0px) → build_fence_01.glb.js 7KB [compression+quantization]
+OK build_well_01: 146 tri · 8.7KB(纹 0KB/0px) → build_well_01.glb.js 12KB [compression+quantization]
+OK build_boathouse_01: 54 tri · 6.6KB(纹 0KB/0px) → build_boathouse_01.glb.js 9KB [compression+quantization]
+OK prop_lantern_post_01: 102 tri · 7.4KB(纹 0KB/0px) → prop_lantern_post_01.glb.js 10KB [compression+quantization]
+OK env_tree_pine_01: 76 tri · 5.8KB(纹 0KB/0px) → env_tree_pine_01.glb.js 8KB [compression+quantization]
+OK env_bush_01: 864 tri · 27.4KB(纹 0KB/0px) → env_bush_01.glb.js 37KB [compression+quantization]
+OK env_rock_01: 576 tri · 19KB(纹 0KB/0px) → env_rock_01.glb.js 26KB [compression+quantization]
+OK env_grass_tuft_01: 24 tri · 4.5KB(纹 0KB/0px) → env_grass_tuft_01.glb.js 6KB [compression+quantization]
+OK env_crate_stack_01: 60 tri · 6.5KB(纹 0KB/0px) → env_crate_stack_01.glb.js 9KB [compression+quantization]
+OK tex_stone_wall: 32.3KB webp @512px
+OK tex_roof_tile: 21.4KB webp @512px
+OK tex_wood_plank: 38KB webp @512px
+OK tex_dirt_path: 48.6KB webp @512px
+OK tex_grass_dune: 44.7KB webp @512px
+OK tex_pebbles: 29KB webp @512px
+==== optimize-glb DONE 34 ok / 0 skip-fail ====

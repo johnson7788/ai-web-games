@@ -1,0 +1,80 @@
+/* Playground: HUD in the spirit of Minecraft Dungeons (style-guide.md) and service panels */
+body.dev-playground #menu,
+body.dev-playground #hud,
+body.dev-playground #pause,
+body.dev-playground #shop,
+body.dev-playground #over,
+body.dev-playground #reticle,
+body.dev-playground #hurt { display: none !important; }
+
+.pg-hud { position: fixed; inset: 0; pointer-events: none; font: 500 12px/1.45 Rubik, system-ui, sans-serif; color: #f4f1ea; z-index: 5; }
+.pg-hud b { font-weight: 700; }
+.pg-hud .bad { color: #ff6a5a; }
+
+.pg-tele, .pg-fps {
+  position: absolute; top: 12px; padding: 8px 10px; border-radius: 6px;
+  background: rgba(20, 22, 27, 0.78); font-variant-numeric: tabular-nums;
+}
+.pg-tele { left: 12px; top: auto; bottom: 12px; min-width: 220px; }
+.pg-fps { right: 12px; }
+
+.pg-toast {
+  position: absolute; top: 14px; left: 50%; transform: translate(-50%, -6px); opacity: 0;
+  padding: 6px 14px; border-radius: 6px; background: rgba(20, 22, 27, 0.85); font-weight: 700;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.pg-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+.pg-help {
+  position: absolute; left: 50%; top: 52px; transform: translateX(-50%); width: min(980px, 70vw); text-align: center; font-size: 11px; opacity: 0.85;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); transition: opacity 0.4s;
+}
+
+.pg-reticle { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+.pg-reticle i { position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border: 2px solid #fff; transform: rotate(45deg); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4); transition: transform 0.08s; }
+/* a target under the cursor — red reticle; Shift — strike in place, yellow */
+.pg-reticle.hover i { border-color: #ff5a6a; transform: rotate(45deg) scale(1.35); }
+.pg-reticle.here i { border-color: #ffd25a; }
+/* over a defence pad — a golden square */
+.pg-reticle.pad i { border-color: #ffd25a; transform: rotate(0deg) scale(1.25); }
+
+.pg-dummy {
+  position: absolute; left: 0; top: 0; white-space: nowrap; text-align: center; pointer-events: none;
+  font: 600 11px/1.3 Rubik, system-ui, sans-serif; color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+.pg-dummy i { font-style: normal; opacity: 0.75; font-weight: 500; }
+.pg-dummy b { color: #ffd25a; font-size: 13px; }
+
+.pg-panel {
+  position: fixed; top: 10px; right: 10px; bottom: 10px; width: 320px; overflow-y: auto; z-index: 10;
+  background: rgba(20, 22, 27, 0.92); color: #eceae4; border-radius: 8px; padding: 10px 12px;
+  font: 500 12px/1.4 Rubik, system-ui, sans-serif; user-select: none;
+}
+.pg-panel.hidden { display: none; }
+.pg-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; font-size: 14px; }
+.pg-head span { opacity: 0.5; font-size: 11px; }
+.pg-panel button {
+  font: inherit; color: inherit; background: #343842; border: 1px solid #4a505c; border-radius: 5px; padding: 4px 8px; cursor: pointer;
+}
+.pg-panel button:hover { background: #404552; }
+.pg-btns, .pg-btnrow { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.pg-extra { border-bottom: 1px solid #3a3f4a; padding-bottom: 6px; margin-bottom: 6px; }
+.pg-check, .pg-select { display: flex; align-items: center; gap: 6px; margin: 4px 0; cursor: pointer; }
+.pg-select span { flex: 1; }
+.pg-select select { font: inherit; background: #2a2e36; color: inherit; border: 1px solid #4a505c; border-radius: 4px; padding: 2px 4px; }
+.pg-panel details { margin: 4px 0; }
+.pg-panel summary { cursor: pointer; font-weight: 700; padding: 4px 0; }
+.pg-row { display: grid; grid-template-columns: 1fr 96px 44px; gap: 6px; align-items: center; margin: 2px 0; }
+.pg-row span { font-size: 11px; opacity: 0.85; }
+.pg-row input { width: 100%; }
+.pg-row output { text-align: right; font-variant-numeric: tabular-nums; cursor: text; }
+
+body.dev-playground #c { cursor: none; }
+
+.pg-prompt {
+  position: absolute; left: 50%; bottom: calc(clamp(10px, min(0.84vw, 1.5vh), 22px) * 9.5); transform: translateX(-50%); padding: 7px 14px;
+  background: rgba(14, 12, 18, 0.9); border: 2px solid #5a5763; font-weight: 700; font-size: 13px; white-space: nowrap;
+}
+.pg-prompt kbd {
+  display: inline-block; margin-right: 8px; padding: 1px 7px; border-radius: 4px; background: #ffd25a; color: #1a1b1e; font: 700 12px/1.4 Rubik, system-ui, sans-serif;
+}

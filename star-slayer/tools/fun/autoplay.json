@@ -1,0 +1,62 @@
+{
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 97.7,
+      "actions": 5864,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1.7,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.17,
+      "uniqueEvents": 23,
+      "levelsReached": 7,
+      "completed": false,
+      "wave": 7,
+      "kills": 43,
+      "actionsPerMin": 3600
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 37,
+      "actions": 1760,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1.6,
+      "deaths": 1,
+      "idleSec": 6,
+      "maxEventGapSec": 0.2,
+      "uniqueEvents": 17,
+      "levelsReached": 3,
+      "completed": false,
+      "wave": 3,
+      "kills": 15,
+      "actionsPerMin": 2853
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 21.4,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 21,
+      "maxEventGapSec": 5.93,
+      "uniqueEvents": 11,
+      "levelsReached": 3,
+      "completed": false,
+      "wave": 3,
+      "kills": 0,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T18:42:59.821Z"
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "cell-wars",
+  "genre": "puzzle",
+  "oneLiner": "在培养皿显微镜下，你指挥蓝菌点击相邻敌格感染扩散，用营养滴布局下一次爆发、用噬菌体清场，在回合内压过红菌株。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "infect",
+      "cost": "消耗本回合唯一行动点；点错了格子就浪费一次扩张、把弱点暴露给 AI",
+      "feedback": ["sfx", "capture-glow", "spread-rays"],
+      "combinesWith": ["nutrient"]
+    },
+    {
+      "name": "nutrient",
+      "cost": "放弃本回合扩张，把 +2 感染力押在下一回合的一小片区域",
+      "feedback": ["sfx", "droplet-marker", "aura-glow"],
+      "combinesWith": ["infect"]
+    },
+    {
+      "name": "phage",
+      "cost": "3 回合充能一次，清空 2×2 敌格但不直接占领，还需再花行动去占",
+      "feedback": ["sfx", "screen-flash", "cell-wipe"],
+      "combinesWith": ["infect"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "第一手感染哪一格：贴中立格稳步扩张，还是直接啃敌方高防格", "cost": "稳 vs 快，选错浪费首回合" },
+    { "atSec": 12, "choice": "用营养滴布局下一次连锁，还是现在就把眼前的格子吃掉", "cost": "本回合行动点换下回合爆发力" },
+    { "atSec": 25, "choice": "噬菌体现在清防线，还是留到腹地被围时救命", "cost": "大招窗口 vs 救急" },
+    { "atSec": 40, "choice": "营养滴巩固边境，还是投资前线突破", "cost": "防守资源 vs 进攻资源" },
+    { "atSec": 60, "choice": "花行动点围困高防御堡垒，还是绕过去先占空地", "cost": "慢但稳 vs 快但留后患" },
+    { "atSec": 85, "choice": "病毒风暴前把领土连成一片，还是留散点分散风险", "cost": "连通效率 vs 抗突变" },
+    { "atSec": 110, "choice": "回合数见底：全力清空敌方，还是守住领土等结算", "cost": "歼灭风险 vs 稳赢结算" },
+    { "atSec": 140, "choice": "把营养滴留着防守用，还是继续滚雪球进攻", "cost": "防御价值 vs 进攻价值" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础感染：邻接己方数量决定感染力，点击相邻格占领" },
+    { "index": 2, "newElement": "中立堡垒：带防御的灰菌落需要更高感染力" },
+    { "index": 3, "newElement": "更大皿盘 + 更多堡垒，AI 开始一步前瞻" },
+    { "index": 4, "newElement": "病毒风暴：每 4 回合一个随机格突变" },
+    { "index": 5, "newElement": "抗性皿（金紫色板）：敌方菌落自带 2 级防御" },
+    { "index": 6, "newElement": "环形地图：中心空洞不可占领" },
+    { "index": 7, "newElement": "更大战场 + 病毒风暴叠加" },
+    { "index": 8, "newElement": "高防御堡垒（4 级）" },
+    { "index": 9, "newElement": "变异皿（红黑色板）：开局随机散菌多占格" },
+    { "index": 10, "newElement": "十字空洞地图" },
+    { "index": 11, "newElement": "病毒风暴频繁（每 3 回合）" },
+    { "index": 12, "newElement": "终局：密集堡垒 + 最强 AI" }
+  ],
+  "upgrades": [
+    { "id": "nutrientChain", "kind": "rule", "desc": "营养滴光环额外覆盖斜角（+2 范围规则）" },
+    { "id": "phageSweep", "kind": "rule", "desc": "噬菌体清空 2×3 而非 2×2（清场规则）" },
+    { "id": "firstStrike", "kind": "rule", "desc": "每皿首回合感染额外 +1 感染力（开局规则）" },
+    { "id": "fortressRebate", "kind": "rule", "desc": "占领堡垒格返还 2 点蔓延预算（连锁规则）" },
+    { "id": "virusImmune", "kind": "rule", "desc": "己方格子免疫一次病毒风暴（条件规则）" },
+    { "id": "powerBoost", "kind": "stat", "desc": "基础感染力 +1（数值）" },
+    { "id": "defenseBoost", "kind": "stat", "desc": "被占领格子初始防御 +1（数值）" },
+    { "id": "roundsPlus", "kind": "stat", "desc": "每皿回合上限 +2（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "感染成功的一刻，从被占领格放出数条光丝，沿相邻菌落连锁蔓延整片区域，蓝菌像神经元一样点亮",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "显微镜培养皿：程序化 Canvas 荧光菌落 + 光丝特效；UI 玻璃拟态线框；海报/BGM 走程序化或 AI 生成"
+}

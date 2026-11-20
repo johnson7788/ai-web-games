@@ -1,0 +1,41 @@
+TITLE
+Beat Ball — Free Rhythm Dodge Game
+
+CATEGORY
+Arcade
+
+TAGS
+rhythm, taiko, drum, dodge, arcade, runner, timing, music, reflex, browser game, casual, one button
+
+SHORT DESCRIPTION
+Roll a taiko drum ball down a giant drum, dodge beat-synced drumsticks and hit glowing beat pads to chain perfects.
+
+LONG DESCRIPTION
+BEAT BALL is a free rhythm-dodge arcade game about rolling a taiko drum ball across a giant festival drum.
+
+The beat drives everything: drumsticks fall exactly on the pulse, glowing beat pads land on the lanes, and every hit you land ripples the drum skin with a taiko crack. Switch lanes with the arrow keys, jump with space, and chain Perfect combos by standing on the beat pads while dodging the sticks that crash down around you.
+
+12 handcrafted stages across three worlds — Dawn Shrine, Lantern Night and Thunder Stage. Each level introduces a new twist: single rail to triple rails, double drumsticks, jump pads, mid-level tempo shifts, fog, cross sticks, and a final Twin Drums finale. Distance is your score; one wrong lane and it is game over.
+
+Easy to pick up, hard to master. Works with keyboard, mouse, and touch on desktop and mobile. No download, play free in your browser.
+
+TITLE
+鼓面疾行 — 免费节奏躲避游戏
+
+CATEGORY
+街机
+
+TAGS
+节奏, 太鼓, 打鼓, 躲避, 街机, 跑酷, 节拍, 音乐, 反应, 网页游戏, 休闲, 单键
+
+SHORT DESCRIPTION
+太鼓球在巨型太鼓面上向纵深滚动，躲开按节拍落下的鼓槌、踩中发光节拍点连击刷分。
+
+LONG DESCRIPTION
+《鼓面疾行》是一款免费的节奏躲避街机游戏：一颗太鼓球在巨大的祭典太鼓面上向纵深滚动。
+
+节拍驱动一切：鼓槌精确落在拍点上，发光节拍点落在轨道上，每次踩拍都会让鼓面泛起涟漪、敲响太鼓。用方向键左右变道、空格跳跃，站在节拍点上连踩 Perfect，同时躲开从天而降的鼓槌。
+
+12 个手工关卡横跨三大场景：晨光祭道、灯笼夜祭、雷雨祭台。每关都有新机制——单轨到三轨、双槌交替、跳板段、中段变速、迷雾、左右开弓，以及终章「双鼓对撞」。距离即分数，走错一条轨道即判负。
+
+十秒上手，越玩越上瘾。键盘、鼠标、触屏全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

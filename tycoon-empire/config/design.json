@@ -1,0 +1,126 @@
+{
+  "slug": "tycoon-empire",
+  "genre": "idle",
+  "oneLiner": "你是一名1920年代银行家，从街角报刊亭点击赚钱起步，买下12个产业、雇佣经理、押注30秒一开的股市行情、借杠杆扩张到摩天银行——每一次产业翻倍，金链落成、大楼升层。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "占用手指与注意力，单次点击边际收益远低于投资，且不点就没有这口现金流",
+      "feedback": ["sfx", "coin-burst", "tower-pulse"],
+      "combinesWith": ["invest"]
+    },
+    {
+      "name": "invest",
+      "cost": "花掉现金换产业/升级，短期现金流归零，错过眼前可点的收益",
+      "feedback": ["sfx", "building-rise", "chain-glow"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "speculate",
+      "cost": "押上全部现金或背上债务，方向错了现金×0.5甚至破产清零",
+      "feedback": ["sfx", "market-flash", "chain-glow"],
+      "combinesWith": ["invest"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 3,
+      "choice": "赚到的第一笔钱：攒着买洗衣店，还是先点满报刊亭升级",
+      "cost": "买店有持续产出 vs 升级点得更快"
+    },
+    {
+      "atSec": 20,
+      "choice": "买洗衣店 vs 雇经理自动化",
+      "cost": "新产业 vs 自动收钱"
+    },
+    {
+      "atSec": 45,
+      "choice": "股市日来临：all-in 押涨 vs 分散不押",
+      "cost": "全押翻倍 vs 全押砍半"
+    },
+    {
+      "atSec": 60,
+      "choice": "贷款扩张 vs 稳现金流",
+      "cost": "杠杆加速 vs 免利息"
+    },
+    {
+      "atSec": 90,
+      "choice": "升级当前产业 vs 攒钱解锁下一产业",
+      "cost": "当前产出 vs 新曲线"
+    },
+    {
+      "atSec": 120,
+      "choice": "押当前强势产业 vs 押冷门对冲",
+      "cost": "顺风加注 vs 逆风抄底"
+    },
+    {
+      "atSec": 150,
+      "choice": "还贷 vs 再借加杠杆",
+      "cost": "去风险 vs 高增长"
+    },
+    {
+      "atSec": 175,
+      "choice": "冲下一章节场景 vs 巩固现有产业",
+      "cost": "解锁新世界 vs 稳定现金流"
+    }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "报刊亭：点击主资产产出 + 现金（教核心动词 tap）" },
+    { "index": 2, "newElement": "洗衣店：第二个产业——买生意的成本/产出曲线" },
+    { "index": 3, "newElement": "餐馆：升级效率——几何成长曲线" },
+    { "index": 4, "newElement": "电台：经理自动化——自动收取产出" },
+    { "index": 5, "newElement": "剧院：市中心场景切换 + 股市日解锁（×2/×0.5 行情）" },
+    { "index": 6, "newElement": "报社：贷款杠杆解锁（借 10 倍现金）" },
+    { "index": 7, "newElement": "百货公司：破产风险显性化（利息 5%/分钟）" },
+    { "index": 8, "newElement": "汽车厂：里程碑加速——产业翻倍金链落成动画" },
+    { "index": 9, "newElement": "航运公司：金融塔顶场景切换" },
+    { "index": 10, "newElement": "铁路：大额贷款与利息压力" },
+    { "index": 11, "newElement": "石油公司：高频股市日（更快行情节奏）" },
+    { "index": 12, "newElement": "国际银行：终极产业——摩天银行收官" }
+  ],
+  "upgrades": [
+    { "id": "managerAuto", "kind": "rule", "desc": "经理自动收取产业产出（改变收取规则）" },
+    { "id": "stockLens", "kind": "rule", "desc": "股市日提前 5s 看到方向（改信息规则）" },
+    { "id": "loanShield", "kind": "rule", "desc": "破产时保留一半已升级产业（改失败成本规则）" },
+    { "id": "goldChain", "kind": "rule", "desc": "产业翻倍触发金链落成（signature 触发器）" },
+    { "id": "tapCombo", "kind": "rule", "desc": "连点 10 次触发 ×2 点击爆发（规则链）" },
+    { "id": "efficiency", "kind": "stat", "desc": "所有产业产出 +25%（数值）" },
+    { "id": "tapPower", "kind": "stat", "desc": "点击产出 +50%（数值）" },
+    { "id": "costCut", "kind": "stat", "desc": "升级成本 -10%（数值）" },
+    { "id": "idleBoost", "kind": "stat", "desc": "离线收益比例 +25%（数值）" },
+    { "id": "loanCap", "kind": "stat", "desc": "可借倍数 +5×（数值）" }
+  ],
+  "replayHooks": ["newBuild", "growth", "unlock", "nearMiss"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 25,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "某个产业等级翻倍的瞬间，一条金色链条从楼底窜到楼顶「咔」地落成，大楼凭空升起一层，全屏金色粒子炸开",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "1920 装饰艺术风格：程序化 Canvas 几何楼群 + 金色粒子 + 三种色板（暖街角/金市中心/蓝紫塔顶），UI 线框 CSS"
+}

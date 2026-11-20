@@ -1,0 +1,55 @@
+{
+  "game": "brick-six",
+  "genre": "puzzle",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 300,
+      "actions": 18000,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.3,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.1,
+      "uniqueEvents": 10,
+      "levelsReached": 12,
+      "completed": true
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 8.7,
+      "actions": 524,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.6,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.12,
+      "uniqueEvents": 10,
+      "levelsReached": 12,
+      "completed": false
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 300,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 300,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 0,
+      "levelsReached": 1,
+      "completed": true
+    }
+  ],
+  "generatedAt": "2026-11-19T19:24:03.056Z"
+}

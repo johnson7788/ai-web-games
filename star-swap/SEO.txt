@@ -1,0 +1,16 @@
+TITLE
+STAR SWAP / 星屑交换
+
+CATEGORY
+Puzzle / Match-3 / 休闲益智
+
+TAGS
+match3, puzzle, space, stars, swap, casual, 三消, 太空, 星星, 益智
+
+SHORT DESCRIPTION
+Swap stardust in a deep-space observatory. Match 3 to clear, forge special stars, trigger supernovas, and clear 12 sectors.
+在深空观测站里交换星屑，三连消除、锻造特殊星、引爆超新星，通关 12 个星区。
+
+LONG DESCRIPTION
+In the quiet dark of a deep-space observatory, the telescope is full of stardust. Swap two neighbouring stars to line up three or more of one colour and they dissolve into light. Clear four in a row to forge a row-blast or column-blast special star; clear five to trigger a supernova — a full-screen white flash that annihilates every star of one colour. Reach the target score before your moves run out across 12 sectors and three observatories (Milky River, Orion, South Gate), with dark-matter cells, six-colour boards, one-turn gravity reversal, and the gravity lens that swaps two stars across the board.
+在深空观测站的望远镜里交换星屑：同色三连消除、四连锻造行爆/列爆特殊星、五连引爆全屏白闪的「超新星」。步数耗尽前达标，跨越河内、猎户、南门三大星区的 12 关，挑战暗物质格、六色关、重力反转与隔空换位的引力透镜。

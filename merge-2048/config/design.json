@@ -1,0 +1,88 @@
+{
+  "slug": "merge-2048",
+  "genre": "puzzle",
+  "oneLiner": "你是星际殖民地舰队司令，滑动 4×4 舰队让同吨位舰合并翻倍，绕过引力井、攒出 2048 吨曲率引擎，逐关点亮殖民建筑。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "slide",
+      "cost": "每步都会生成一艘新舰占空格，缩短可走空间",
+      "feedback": ["sfx", "slide-anim", "merge-flash"],
+      "combinesWith": ["warp", "route"]
+    },
+    {
+      "name": "warp",
+      "cost": "每关仅 1 次，用早了后期没有保底合并",
+      "feedback": ["sfx", "warp-trail", "emblem"],
+      "combinesWith": ["slide"]
+    },
+    {
+      "name": "route",
+      "cost": "绕开引力井要多走步，可能让别的大数卡死",
+      "feedback": ["preview", "lock-badge"],
+      "combinesWith": ["slide"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一步滑哪边：蹲角还是居中发展", "cost": "蹲角安全但放弃另一侧" },
+    { "atSec": 18, "choice": "引力井出现：绕行还是冒险把大数滑进去", "cost": "绕行多走步 vs 被锁定不可合并" },
+    { "atSec": 35, "choice": "两个 64 相邻：现在合并还是先做大数", "cost": "合并占位 vs 保留机动" },
+    { "atSec": 55, "choice": "跃迁引擎现在用（救急）还是留到高值", "cost": "每关仅 1 次，用早则后期无保底" },
+    { "atSec": 80, "choice": "只生成 4 的关卡：先清空格还是堆大数", "cost": "清空格 vs 大数被卡" },
+    { "atSec": 110, "choice": "镜像盘：适应反向操作还是按老习惯硬滑", "cost": "慢一步适应 vs 误操作" },
+    { "atSec": 150, "choice": "障碍格挡路：绕行规划还是贴着障碍堆", "cost": "绕行费步 vs 贴边被锁" },
+    { "atSec": 175, "choice": "逼近目标吨位：保守防锁死还是激进合并", "cost": "保守多走步 vs 一步锁死" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "标准 4×4 滑动合并 + 吨位舰队主题" },
+    { "index": 2, "newElement": "引力井：每 8 步锁定一格 3 步" },
+    { "index": 3, "newElement": "3×4 窄盘，横向空间收窄" },
+    { "index": 4, "newElement": "初始障碍格：不可穿越的残骸" },
+    { "index": 5, "newElement": "只生成 4 吨舰，无 2 吨舰" },
+    { "index": 6, "newElement": "狂野关：生成 2/4/8 三种吨位" },
+    { "index": 7, "newElement": "镜像盘：左右方向键反转" },
+    { "index": 8, "newElement": "6 障碍格 + 狂野 8 + 更密引力井" },
+    { "index": 9, "newElement": "3×4 窄盘 + 障碍格组合" },
+    { "index": 10, "newElement": "深矿脉：狂野 8 + 每 5 步引力井" },
+    { "index": 11, "newElement": "最终窄道：只生成 4 + 镜像盘" },
+    { "index": 12, "newElement": "曲率终点：全机制收官 + 每 4 步引力井" }
+  ],
+  "upgrades": [
+    { "id": "gravityWell", "kind": "rule", "desc": "引力井锁定滑入的数字，改变合并规划" },
+    { "id": "warpEngine", "kind": "rule", "desc": "跃迁引擎每关 1 次强制合并任意两个同值格" },
+    { "id": "narrowBoard", "kind": "rule", "desc": "3×4 窄盘改变空间拓扑" },
+    { "id": "obstacles", "kind": "rule", "desc": "初始障碍格成为不可穿越的墙" },
+    { "id": "spawnOnly4", "kind": "rule", "desc": "只生成 4，改变节奏与合并链" },
+    { "id": "spawnWild8", "kind": "rule", "desc": "生成 2/4/8，加速大数成型" },
+    { "id": "mirrorControls", "kind": "rule", "desc": "镜像盘反转左右输入" },
+    { "id": "warpDrive", "kind": "rule", "desc": "2048 曲率引擎胜利条件" },
+    { "id": "greenhouse", "kind": "stat", "desc": "128 吨解锁温室（里程碑）" },
+    { "id": "mine", "kind": "stat", "desc": "256 吨解锁矿场（里程碑）" },
+    { "id": "station", "kind": "stat", "desc": "512 吨解锁轨道站（里程碑）" },
+    { "id": "stargate", "kind": "stat", "desc": "1024 吨解锁星门（里程碑）" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "两艘同吨位殖民舰合并瞬间炸开一道跃迁光轨，吨位徽记在闪光中展开",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "星际殖民地风格：程序化 Canvas 渲染（星野/舰队/引力井/跃迁粒子），UI 线框 CSS/SVG"
+}

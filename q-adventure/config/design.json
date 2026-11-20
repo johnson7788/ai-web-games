@@ -1,0 +1,84 @@
+{
+  "slug": "q-adventure",
+  "genre": "platformer",
+  "oneLiner": "果冻豆骑士在糖果丘/云端/夜林横版平台冒险：跑、二段跳、蹬墙跳、踩敌回弹，踩着鼓点救公主。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "run",
+      "cost": "向前就错过上方星星路线；贴墙可吸附但会缓慢下滑",
+      "feedback": ["squash-stretch", "dust", "sfx"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "jump",
+      "cost": "二段跳次数有限；错过鼓点损失 +15% 高度加成",
+      "feedback": ["sfx", "squash", "beat-flash"],
+      "combinesWith": ["run", "stomp"]
+    },
+    {
+      "name": "stomp",
+      "cost": "必须从上往下踩；侧面碰到敌人会扣血",
+      "feedback": ["squash-rebound", "particles", "sfx"],
+      "combinesWith": ["jump"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一个平台：直走拿金币，还是跳上平台吃星", "cost": "时间/路线" },
+    { "atSec": 14, "choice": "遇隙：普通跳省事，还是二段跳上高处", "cost": "二段跳次数" },
+    { "atSec": 24, "choice": "巡逻敌人：绕开（安全）还是踩头（快+分）", "cost": "风险 vs 分数" },
+    { "atSec": 36, "choice": "上路安全星少 vs 下路险星多", "cost": "血量 vs 星星" },
+    { "atSec": 48, "choice": "贴墙下滑省路线，还是绕道平台", "cost": "下滑速度 vs 安全" },
+    { "atSec": 60, "choice": "等鼓点起跳 +15% 高度，还是立刻跳", "cost": "节奏 vs 时机" },
+    { "atSec": 80, "choice": "移动平台：等它回来，还是跳过去", "cost": "等待时间 vs 失足风险" },
+    { "atSec": 105, "choice": "暗段：慢走保血，还是全速冲过去", "cost": "视野 vs 速度" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 50, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "跑/跳/二段跳 + 行为树巡逻敌人" },
+    { "index": 2, "newElement": "上层平台路线（安全星少 vs 下路险星多）" },
+    { "index": 3, "newElement": "双敌人 + 多隙连续跳跃" },
+    { "index": 4, "newElement": "移动平台" },
+    { "index": 5, "newElement": "云端场景包 + 移动平台阵" },
+    { "index": 6, "newElement": "弹簧高跳" },
+    { "index": 7, "newElement": "风向（顺风/逆风）" },
+    { "index": 8, "newElement": "弹簧 + 移动平台组合" },
+    { "index": 9, "newElement": "夜林场景包 + 尖刺阵" },
+    { "index": 10, "newElement": "暗段视野收窄" },
+    { "index": 11, "newElement": "暗段 + 风向叠加" },
+    { "index": 12, "newElement": "终章：暗段 + 尖刺 + 移动平台" }
+  ],
+  "upgrades": [
+    { "id": "wallJump", "kind": "rule", "desc": "解锁蹬墙跳（贴墙可反跳）" },
+    { "id": "beatJump", "kind": "rule", "desc": "鼓点跳 +15% 高度（节拍起跳触发）" },
+    { "id": "coinMagnet", "kind": "rule", "desc": "金币吸附半径翻倍" },
+    { "id": "stompRefund", "kind": "rule", "desc": "踩敌回复一次二段跳" },
+    { "id": "speedUp", "kind": "stat", "desc": "奔跑速度 +10%" },
+    { "id": "jumpUp", "kind": "stat", "desc": "跳跃高度 +8%" },
+    { "id": "hpUp", "kind": "stat", "desc": "最大血量 +1" },
+    { "id": "lifeUp", "kind": "stat", "desc": "命数 +1" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "踩中敌人时果冻豆被压扁再弹起，同时鼓点跳 +15% 高度把骑士送过尖刺阵",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做 Boss 战",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "全程序化 Canvas：果冻豆骑士（挤压形变）+ 三套场景包色板与装饰；BGM/SFX 全部 WebAudio 程序化合成"
+}

@@ -1,0 +1,149 @@
+{
+  "game": "note-rider",
+  "generatedAt": "2026-11-19T13:32:56.729Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 7.75,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "数字按钮1高亮但无明确选中状态说明（如‘当前关卡’提示）",
+        "背景五线谱与按钮布局易混淆为可交互元素，可能误导新手",
+        "‘0 / 12’星星计数位置偏上且字号小，远距离辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击第一个蓝色音符（位于五线谱第二线）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HP条与闪电图标间距过小，可能误触",
+        "左下角谱号（G谱号）线条过细，易被忽略",
+        "角色下方黄色轨迹线起始点未对齐谱线，视觉引导稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/03-rain.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色音符（当前唯一可交互目标）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HP条与闪电图标间距过小，可能误触；",
+        "右上角按钮组密集，部分图标（如问号、齿轮）尺寸偏小；",
+        "红色音符无明确判定线/范围提示，新手难判断击中时机"
+      ]
+    },
+    {
+      "shot": "tests/final/04-star.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或按空格键击打迎面而来的音符（橙色和蓝色音符沿轨道向左移动）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角星座轮廓线过细，眯眼时易与背景星点混淆",
+        "HP条与闪电图标间距过小，可能误触",
+        "左侧轨道起始处有模糊竖线（疑似未渲染完成的音符轨迹），位置异常"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Next Level’按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左侧蓝色角色轮廓较模糊，眯眼时与背景五线谱线条区分度不足",
+        "顶部状态栏图标（如闪电、心形）风格略异于主界面扁平插画风",
+        "‘Symphony Cleared!’文字阴影偏厚，部分字母在深灰背景下对比度稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "数字1按钮高亮但无明确指示其为当前关卡，易误认为可选关卡；",
+        "角色被12个灰色按钮部分遮挡（第5-6列中间），虽非关键交互区但影响视觉焦点；",
+        "五线谱背景与按钮层级关系模糊，按钮似浮于谱线上，缺乏阴影或深度区分"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NOTE RIDER’标题字体有轻微锯齿感，与整体扁平插画风略有冲突",
+        "数字按钮1高亮但未明确指示其为当前选中/默认项（仅靠颜色区分，无边框或阴影强化）",
+        "背景五线谱线条与地面交界处略显模糊，可能影响视觉层次"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击第一个蓝色音符（位于角色正前方五线谱上）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HP 100 的绿色进度条与右侧按钮间距过小，可能误触",
+        "‘Level 1 · First Pluck’文字偏左且字号略小，弱化关卡标识",
+        "五线谱最左侧起始符（G谱号）被截断，仅显示部分弧线"
+      ]
+    }
+  ]
+}

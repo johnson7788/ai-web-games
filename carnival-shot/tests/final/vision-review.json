@@ -1,0 +1,149 @@
+{
+  "game": "carnival-shot",
+  "generatedAt": "2026-11-19T13:42:40.399Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.25,
+    "silhouette": 6.625,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景光斑模糊，导致‘CARNIVAL SHOT’标题下方的说明文字对比度偏低，弱光环境下可能难读",
+        "‘Best 0’字号过小且无强调，易被忽略；与主标题视觉层级不匹配",
+        "右上角语言切换下拉框无展开指示（如三角形），交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星发射子弹击中悬挂的灯笼",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 'Target 0/400' 进度条过窄，数值与条形易混淆",
+        "右上角弹药格子无明确选中态或数量标识，仅靠空格推断剩余量",
+        "悬挂灯笼编号 '28' 为白色无描边，在深红背景上对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-hit.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星发射子弹击中悬挂的灯笼",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部灯笼部分被 UI 边框轻微遮挡（左上角 Score 区域下方）",
+        "右上角弹药图标第6格为灰色空框，但未标注‘0’或禁用状态，易误判剩余量",
+        "目标进度条数值‘110/400’与当前分数‘110’相同，可能引发混淆是否已达标"
+      ]
+    },
+    {
+      "shot": "tests/final/04-combo.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星发射子弹击中悬挂的灯笼",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标进度条（790/400）数值逻辑矛盾，当前分数790已超目标400，易引发困惑",
+        "Combo×8与数字27位置重叠且字号小，眯眼时不易区分",
+        "底部山丘轮廓与地面虚线间距过小，部分虚线被山丘遮挡"
+      ]
+    },
+    {
+      "shot": "tests/final/05-reload.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星发射子弹击中灯笼或风筝",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部灯笼与‘27’‘Combo×8’文字轻微重叠，可能影响计分识别",
+        "左下角目标进度条数值‘790/400’逻辑矛盾（当前得分超目标），易引发困惑",
+        "风筝轮廓较细，在深紫背景下对比度偏低，远距离辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘You needed 1200 more points’文字颜色偏淡（粉红），在深色背景上对比度不足，易被忽略",
+        "‘NEW RECORD’标签无明确交互反馈提示（如悬停/点击态），可能误判为纯装饰",
+        "眯眼时‘Score’‘Best combo’等字段与数值区域边界模糊，影响快速扫读"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "移动准星对准下方出现的鸭子目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡准星区域，可能干扰瞄准操作",
+        "右下角'R'按钮无明确功能说明，易误触",
+        "顶部灯笼数量'28'与灯笼排列不一致（视觉上约12个），信息矛盾"
+      ]
+    },
+    {
+      "shot": "tests/final/08-scene2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央准星位置发射子弹击中发光目标",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Target 0/1200’进度条文字与背景对比度偏低，弱光下可能难辨",
+        "右上角‘Speed clip ready’按钮文字过小且无明确交互反馈区域",
+        "顶部金色粒子特效密集处轻微遮挡‘27 Combo×8’数字，影响关键信息清晰度"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "corgi-dash",
+  "genre": "action",
+  "oneLiner": "柯基在威尔士草原自动横跑，点击跳栅栏钻桥洞、收集羊群拉成长链；撞障碍先死羊，连续完美跳触发牧羊冲鸭。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "跳早撞栏、跳晚落地撞栏；长按跳得高但空中更难再调高度",
+      "feedback": ["sfx", "stretch", "dust"],
+      "combinesWith": ["herd"]
+    },
+    {
+      "name": "herd",
+      "cost": "羊越多分数倍率越高，但撞障碍一次损失一半羊（链越长风险越大）",
+      "feedback": ["sfx", "flock-chain", "score-flash"],
+      "combinesWith": ["jump", "whistle"]
+    },
+    {
+      "name": "whistle",
+      "cost": "8s 冷却，且吹哨后羊群散开 1.5s，期间失去冲鸭连击节奏",
+      "feedback": ["sfx", "scatter", "cooldown-bar"],
+      "combinesWith": ["herd"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5,   "choice": "第一道栅栏：立即跳还是卡边缘完美跳", "cost": "撞栏死 / 慢半拍少分" },
+    { "atSec": 15,  "choice": "贪羊变长链还是轻装快跑", "cost": "羊越多撞一次损失越多" },
+    { "atSec": 30,  "choice": "桥洞下压住不跳还是惯性起跳", "cost": "撞梁 / 降速" },
+    { "atSec": 45,  "choice": "双连栅用二段跳还是单次大高度跳", "cost": "空中用掉二段跳" },
+    { "atSec": 70,  "choice": "口哨留给横排羊群危机还是自己快死时保命", "cost": "8s 冷却" },
+    { "atSec": 100, "choice": "追连续完美跳冲鸭还是保守跳过", "cost": "贪分增加失误风险" },
+    { "atSec": 130, "choice": "移动羊圈提前跳还是等它移开", "cost": "等待被追尾 / 撞栏" },
+    { "atSec": 165, "choice": "暴雨段视野差：贴地躲桥还是跳高吃空中羊", "cost": "分数 vs 安全" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1,  "newElement": "栅栏 fence——教基础跳跃" },
+    { "index": 2,  "newElement": "滚草 hay——更高更圆的障碍" },
+    { "index": 3,  "newElement": "水坑 puddle——宽而低，需大跨度跳" },
+    { "index": 4,  "newElement": "桥洞 bridge——头顶梁，压住不跳通过" },
+    { "index": 5,  "newElement": "双连栅 doubleFence——二段跳或精准单跳" },
+    { "index": 6,  "newElement": "移动羊圈 pen——左右横移的障碍" },
+    { "index": 7,  "newElement": "横排障碍 row——连串障碍，口哨散羊群" },
+    { "index": 8,  "newElement": "混合密度——麦浪章障碍变密" },
+    { "index": 9,  "newElement": "暴雨场景切换——蓝灰山丘+视野雨幕" },
+    { "index": 10, "newElement": "混合长跑 gauntlet——多类型连续来袭" },
+    { "index": 11, "newElement": "全类型——七种障碍全登场" },
+    { "index": 12, "newElement": "终局冲刺——最高密度收尾" }
+  ],
+  "upgrades": [
+    { "id": "flockMagnet", "kind": "rule", "desc": "羊拾取半径 +80%（改拾取规则而非数值）" },
+    { "id": "grazeRefund", "kind": "rule", "desc": "完美跳给下 3 次碰撞免损 1 只羊（条件规则）" },
+    { "id": "tailGuard",   "kind": "rule", "desc": "撞障碍只损失 1/4 而非一半" },
+    { "id": "surgeBank",   "kind": "rule", "desc": "牧羊冲鸭后下一只羊双倍" },
+    { "id": "bridgeRunner", "kind": "rule", "desc": "桥洞下穿越不打断冲鸭连击" },
+    { "id": "speedLite",   "kind": "stat", "desc": "滚动速度 +8%" },
+    { "id": "startFlock",  "kind": "stat", "desc": "开局带 2 只羊" },
+    { "id": "whistleCool", "kind": "stat", "desc": "口哨冷却 -2s" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "rating", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 4, "firstSuccessSec": 40, "interactive": true, "steps": 4, "skippable": true, "replayable": true },
+  "signatureMoment": "连续两次擦顶完美跳后，整条羊链在身后掀起浪涌，柯基化作一道「牧羊冲鸭」的草浪向前扑出",
+  "antiScope": [
+    "不做微信登录/排行/分享/广告（原作网络能力不还原）",
+    "不做金币商店与皮肤",
+    "不做复活视频广告",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）",
+    "不做关卡数据文件 STAGE 模式"
+  ],
+  "artSource": "威尔士草原三场景包：程序化 Canvas 绘制（色板+构图+装饰随章节切换）；角色柯基与羊群用程序化矢量纸偶，UI 线框 SVG/CSS"
+}

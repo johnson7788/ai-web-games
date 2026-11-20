@@ -1,0 +1,80 @@
+OK char_keeper: 762 tri · 77.6KB(纹 0KB/0px) → char_keeper.glb.js 104KB [compression+quantization]
+OK npc_warden: 762 tri · 76.8KB(纹 0KB/0px) → npc_warden.glb.js 103KB [compression+quantization]
+OK npc_netmender: 762 tri · 77.1KB(纹 0KB/0px) → npc_netmender.glb.js 103KB [compression+quantization]
+OK npc_lampchild: 762 tri · 77.3KB(纹 0KB/0px) → npc_lampchild.glb.js 103KB [compression+quantization]
+OK prop_lantern_01: 56841 tri · 892.7KB(纹 274.2KB/0px) → prop_lantern_01.glb.js 1190KB [compression+webp+quantization]
+OK prop_oil_barrel_01: 94712 tri · 1335.2KB(纹 93KB/0px) → prop_oil_barrel_01.glb.js 1780KB [compression+webp+quantization]
+OK prop_crate_01: 152124 tri · 2069.8KB(纹 64.1KB/0px) → prop_crate_01.glb.js 2760KB [compression+webp+quantization]
+OK prop_rock_cluster_01: 250022 tri · 3651.2KB(纹 158KB/0px) → prop_rock_cluster_01.glb.js 4868KB [compression+webp+quantization]
+OK prop_boat_row_01: 48666 tri · 673.3KB(纹 98.1KB/0px) → prop_boat_row_01.glb.js 898KB [compression+webp+quantization]
+OK prop_net_bundle_01: 212302 tri · 3032.8KB(纹 120.1KB/0px) → prop_net_bundle_01.glb.js 4044KB [compression+webp+quantization]
+OK prop_bell_01: 41626 tri · 543.6KB(纹 123.4KB/0px) → prop_bell_01.glb.js 725KB [compression+webp+quantization]
+OK prop_lamp_relay_01: 102092 tri · 1402.6KB(纹 167.7KB/0px) → prop_lamp_relay_01.glb.js 1870KB [compression+webp+quantization]
+OK prop_storm_glass_01: 321496 tri · 4519.5KB(纹 315.7KB/0px) → prop_storm_glass_01.glb.js 6026KB [compression+webp+quantization]
+FAIL build_cottage_a: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_cottage_b: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_shed_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_lighthouse_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_pier_platform_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_stairs_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_fence_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_well_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL build_boathouse_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL prop_lantern_post_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL env_tree_pine_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL env_bush_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL env_rock_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL env_grass_tuft_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+FAIL env_crate_stack_01: weld 失败: 
+error: EISDIR: illegal operation on a directory, read
+
+
+OK tex_stone_wall: 32.3KB webp @512px
+OK tex_roof_tile: 21.4KB webp @512px
+OK tex_wood_plank: 38KB webp @512px
+OK tex_dirt_path: 48.6KB webp @512px
+OK tex_grass_dune: 44.7KB webp @512px
+OK tex_pebbles: 29KB webp @512px
+==== optimize-glb DONE 19 ok / 15 skip-fail ====

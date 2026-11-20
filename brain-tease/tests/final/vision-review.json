@@ -1,0 +1,149 @@
+{
+  "game": "brain-tease",
+  "generatedAt": "2026-11-19T20:03:56.139Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.75,
+    "silhouette": 7.375,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Ice water’杯子图标将温度计放入其中",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        " Thermometer 和 Ice water 图标外框颜色不同（黄绿双色 vs 单色），轻微风格不一致",
+        "左下角角色头像与 HUD 无间距，可能在小屏设备上被误触",
+        "‘GOAL’标签与目标文本间竖线过细，低对比度易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的灯泡图标",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部角色头像与HUD无间距，可能在小屏设备上被误触或遮挡",
+        "阴影锥形物颜色区分度低（深绿/棕灰），眯眼时难以分辨个体边界",
+        "目标文字中‘—’为中文破折号但前后无空格，排版略紧"
+      ]
+    },
+    {
+      "shot": "tests/final/03-invert.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Rotate’按钮旋转整个场景",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "沙漏图标与文字‘Sand timer’在深色背景上对比度偏低，眯眼时不易辨识",
+        "左下角角色头像与HUD无明显分隔，视觉层级略混乱",
+        "底部平台上的绿色/棕色锥形物轮廓相似、缺乏区分，易误判为同一类物体"
+      ]
+    },
+    {
+      "shot": "tests/final/04-boss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 Alarm 按钮唤醒助理",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Alarm 和 Blanket 按钮边框双色（黄+青）略显杂乱，风格轻微不一致",
+        "底部角色头像与 HUD 间距过小，可能在窄屏设备上被遮挡",
+        "眯眼时 Alarm 与 Blanket 图标对比度不足，不易快速区分"
+      ]
+    },
+    {
+      "shot": "tests/final/05-kitchen.png",
+      "goal_visible": true,
+      "first_action_guess": "点击蛋使其竖立在末端",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "蛋右侧有模糊圆点，疑似未渲染完成的交互提示或残影",
+        "左上格子区域无明确功能说明，易误判为可拖拽区",
+        "角色头像与底部 HUD 边距过小，可能在窄屏设备中被裁切"
+      ]
+    },
+    {
+      "shot": "tests/final/06-garden.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右侧高亮的‘Flower’卡片，然后选择‘Watering can’进行交互",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Watering can’卡片右上角有微小省略号图标（…），可能暗示可展开菜单但无说明，易引发困惑",
+        "底部角色头像与地面小圆点间距过近，视觉上可能误认为是可交互物",
+        "目标文字‘Water the wilting flower’中‘wilting’未在画面中体现（花当前为绿色非枯萎状态），存在目标与视觉不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/07-space.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 Cover 中间的小矩形按钮（即‘launch button under the cover’）",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Cover 按钮内小矩形无明确交互提示（如高亮/阴影），仅靠文字指引易误判",
+        "Rocket 按钮箭头为红色，与深色背景对比度略低，可能影响快速识别",
+        "左下角角色头像与 HUD 边界过近，若在移动端可能被系统手势条遮挡"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Ice water’容器将温度计放入其中",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Ice water’卡片边框双色（黄+青）略显杂乱，与整体简约风格轻微冲突",
+        "左下角角色头像未参与交互，但视觉权重偏高，可能分散注意力",
+        "目标栏文字‘Cool the thermometer down in the ice water’中‘down’与‘in’间距略紧，小屏可能误读为‘downin’"
+      ]
+    }
+  ]
+}

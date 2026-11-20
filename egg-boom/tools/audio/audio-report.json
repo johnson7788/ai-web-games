@@ -1,0 +1,227 @@
+{
+  "generatedAt": "2026-11-19T19:23:01.229Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shoot": {
+      "rms": 0.1401,
+      "peak": 0.3489,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "doughHit": {
+      "rms": 0.153,
+      "peak": 0.3198,
+      "nan": 0,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "doughBreak": {
+      "rms": 0.2126,
+      "peak": 0.536,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "jump": {
+      "rms": 0.067,
+      "peak": 0.2806,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "land": {
+      "rms": 0.12,
+      "peak": 0.2599,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.1,
+      "peak": 0.2244,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.1136,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "yolkReady": {
+      "rms": 0.1277,
+      "peak": 0.4542,
+      "nan": 0,
+      "samples": 15876,
+      "durSec": 0.36,
+      "pass": true
+    },
+    "yolkFired": {
+      "rms": 0.1962,
+      "peak": 0.6028,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "propGain": {
+      "rms": 0.1763,
+      "peak": 0.3,
+      "nan": 0,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "shellBreak": {
+      "rms": 0.1557,
+      "peak": 0.5154,
+      "nan": 0,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "shellRegrow": {
+      "rms": 0.1054,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "armorDeflect": {
+      "rms": 0.1345,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "rackClear": {
+      "rms": 0.1408,
+      "peak": 0.5292,
+      "nan": 0,
+      "samples": 22932,
+      "durSec": 0.52,
+      "pass": true
+    },
+    "levelEnter": {
+      "rms": 0.1126,
+      "peak": 0.4034,
+      "nan": 0,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "sceneEnter": {
+      "rms": 0.1159,
+      "peak": 0.5008,
+      "nan": 0,
+      "samples": 35721,
+      "durSec": 0.81,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0418,
+      "peak": 0.08,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "chargeFull": {
+      "rms": 0.0958,
+      "peak": 0.18,
+      "nan": 0,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "noAmmo": {
+      "rms": 0.1177,
+      "peak": 0.14,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2119,
+      "peak": 0.555,
+      "nan": 0,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1675,
+      "peak": 0.6883,
+      "nan": 0,
+      "samples": 41013,
+      "durSec": 0.93,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1185,
+      "peak": 0.2736,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "combo.upPitchUp": {
+      "comboLow": 0,
+      "comboHigh": 9,
+      "zcRateLow": 0.541,
+      "zcRateHigh": 0.534,
+      "ok": false
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 24,
+    "passed": 24,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

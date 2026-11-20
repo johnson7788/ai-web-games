@@ -1,0 +1,76 @@
+{
+  "slug": "marry-rich",
+  "genre": "narrative",
+  "oneLiner": "你是一个小镇姑娘，在 12 个人生节点的二选一/三选一里取舍能力、人脉与存款，关键抉择限时 5 秒，最终走向 8 种命运之一。",
+  "fun": {
+    "primary": "meaning",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "choose",
+      "cost": "每个选项都是属性取舍：能力+人脉-存款，选 A 就永远失去 B 的那条分支",
+      "feedback": ["sfx", "attr-bars", "result-card"],
+      "combinesWith": ["weigh"]
+    },
+    {
+      "name": "weigh",
+      "cost": "关键抉择限时 5 秒，倒计时归零自动选保守项",
+      "feedback": ["timer", "sfx", "scale-tilt"],
+      "combinesWith": ["choose"]
+    },
+    {
+      "name": "continue",
+      "cost": "推进不可逆，结果卡翻篇即锁定本节点选择",
+      "feedback": ["sfx", "chapter-up", "scene-swap"],
+      "combinesWith": ["choose"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "毕业选择：去大城市 / 留家乡 / 借钱读研", "cost": "能力 vs 存款 vs 人脉" },
+    { "atSec": 30, "choice": "第一份工作：熬夜打磨 / 出去社交 / 接私活", "cost": "能力 vs 人脉 vs 存款" },
+    { "atSec": 55, "choice": "跳槽抉择（限时）：拿钱走 / 留下成长 / 两边抬价", "cost": "存款 vs 能力 vs 人脉+口碑" },
+    { "atSec": 80, "choice": "导师出现：加倍努力 / 轻松安排 / 独立生长", "cost": "能力+导师 vs 平衡 vs 独立" },
+    { "atSec": 105, "choice": "存款危机（限时）：全寄回家 / 寄一半 / 借钱周转", "cost": "存款 vs 人脉 vs 口碑" },
+    { "atSec": 135, "choice": "人生十字路口（限时）：大厂 / 创业 / 合伙", "cost": "稳定 vs 自我 vs 信任" },
+    { "atSec": 165, "choice": "弧线第二节点：业绩 / 结盟 / 背书（或对应弧线）", "cost": "能力 vs 人脉 vs 导师" },
+    { "atSec": 180, "choice": "终局抉择：冲顶 / 求稳 / 退一步", "cost": "巅峰结局 vs 稳健结局 vs 归隐" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 45, "twistSec": 45, "resolveSec": 25 },
+  "levels": [
+    { "index": 1, "newElement": "毕业选择：三属性初试 + 第一次取舍" },
+    { "index": 2, "newElement": "第一份工作：三种回报路线（能力/人脉/存款）" },
+    { "index": 3, "newElement": "租房与省钱：城市生活成本取舍" },
+    { "index": 4, "newElement": "职场第一课：背锅 vs 自证 vs 靠领导" },
+    { "index": 5, "newElement": "跳槽抉择：限时 5 秒 + 人生天平倾斜" },
+    { "index": 6, "newElement": "导师出现：隐藏好感度 mentor 首次进入结局判定" },
+    { "index": 7, "newElement": "圈子经营：人脉 vs 搭档 vs 深耕" },
+    { "index": 8, "newElement": "存款危机：限时 + 口碑/搭档好感" },
+    { "index": 9, "newElement": "人生十字路口：三弧线分叉（大厂/创业/合伙）" },
+    { "index": 10, "newElement": "弧线专属剧情：三套不同场景包与冲突" },
+    { "index": 11, "newElement": "弧线高潮：限时权力/现金流/晋升抉择" },
+    { "index": 12, "newElement": "终局抉择：属性+好感度结算出 8 结局" }
+  ],
+  "upgrades": [
+    { "id": "balanceSense", "kind": "rule", "desc": "限时节点人生天平会提前显示倾向（规则型）" },
+    { "id": "mentorBond", "kind": "rule", "desc": "导师好感在巅峰结局判定中权重提高" },
+    { "id": "partnerBond", "kind": "rule", "desc": "搭档好感在创业/合伙结局判定中权重提高" },
+    { "id": "brandPower", "kind": "rule", "desc": "口碑参与逆袭女王结局判定" },
+    { "id": "timeGrace", "kind": "rule", "desc": "限时节点倒计时 +2s（改变压力规则）" },
+    { "id": "savingsBoost", "kind": "stat", "desc": "开局存款 +1" },
+    { "id": "abilityBoost", "kind": "stat", "desc": "开局能力 +1" },
+    { "id": "networkBoost", "kind": "stat", "desc": "开局人脉 +1" }
+  ],
+  "replayHooks": ["unlock", "growth", "rating", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 3, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true },
+  "signatureMoment": "关键抉择时「人生天平」在屏幕中央倾斜——左盘能力人脉，右盘存款，倒计时归零的瞬间天平重重落向保守项",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做每日任务",
+    "不做皮肤/商店",
+    "不做语音配音",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "三场景程序化 Canvas（小镇暖橙 / 都市青蓝 / 巅峰金紫）+ 金紫玻璃拟态 UI；人生天平为 Canvas 签名动画；无外部素材"
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABYSS EEL · render bench</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #04070c;
+      color: #cfe9ff;
+      font-family: "SF Mono", Menlo, Consolas, "Courier New", monospace;
+      display: flex; flex-direction: column; align-items: center;
+      min-height: 100vh; padding: 12px; gap: 8px;
+    }
+    #wrap { position: relative; width: 1280px; max-width: 100%; aspect-ratio: 16/9; }
+    #c { width: 100%; height: 100%; display: block; background: #010409; border: 1px solid #123; }
+    #hud {
+      position: absolute; top: 8px; left: 8px; right: 8px;
+      display: flex; justify-content: space-between; gap: 8px;
+      font-size: 13px; line-height: 1.5; pointer-events: none;
+      text-shadow: 0 1px 2px #000;
+    }
+    #hud b { color: #7df9ff; font-weight: 700; }
+    #bar { position: absolute; left: 8px; right: 8px; bottom: 8px; height: 8px;
+      background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; pointer-events: none; }
+    #bar i { display: block; height: 100%; background: #7df9ff; width: 0%; }
+    p.note { font-size: 12px; opacity: 0.6; max-width: 1280px; }
+    .bad { color: #ff7f7f; }
+    .good { color: #7dff8a; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="c" width="1280" height="720"></canvas>
+    <div id="hud"></div>
+    <div id="bar"><i id="barfill"></i></div>
+  </div>
+  <p class="note" id="note">
+    独立基准页：内嵌 fixture 假数据循环播放 5 带场景 / 发光鳗 / 珊瑚墙 / 海胆 / Boss / 火花 / 光半径暗角。
+    avgFrameMs ≤ 20 = ≥ 50 fps。若 file:// 下模块被浏览器 CORS 拦截，请用
+    <code>python3 -m http.server 8124</code> 后访问 <code>http://127.0.0.1:8124/tools/renderbench.html</code>。
+  </p>
+
+  <script type="module">
+    const canvas = document.getElementById('c');
+    const hudEl = document.getElementById('hud');
+    const barEl = document.getElementById('barfill');
+    const noteEl = document.getElementById('note');
+
+    // 动态 import：file:// 下浏览器会因 CORS 拦截 ES 模块，这里给出清晰提示。
+    let render;
+    try {
+      const mod = await import('../src/render/index.js');
+      render = mod.createRender(canvas);
+      noteEl.innerHTML = '✓ 渲染模块已加载（http 模式）。';
+    } catch (e) {
+      noteEl.innerHTML =
+        '❌ 渲染模块加载失败：file:// 下浏览器会拦截 ES 模块 import。' +
+        '请改用 <code>python3 -m http.server 8124</code> 后访问 ' +
+        '<code>http://127.0.0.1:8124/tools/renderbench.html</code>';
+      noteEl.style.color = '#ff7f7f';
+      throw e;
+    }
+
+    // ---------- fixture（自造假数据，不依赖 main.js / sim） ----------
+    const ZONE_NAMES = ['Sunlit', 'Twilight', 'Midnight', 'Abyss', 'Hydrothermal'];
+    const clamp = (v, lo, hi) => (v < lo ? lo : (v > hi ? hi : v));
+
+    function mulberry32(seed) {
+      let a = seed >>> 0;
+      return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function makeFixture() {
+      const rnd = mulberry32(20261118);
+      const f = {
+        head: { x: 640, vx: 0 },
+        orbs: [],
+        walls: [],
+        foods: [],
+        sparks: [],
+        phase: 'playing',
+        dashing: false,
+        dashHeat: 0,
+        zone: 1,
+        depth: 0,
+        bossHp: 60, bossMax: 60,
+        stats: { depth: 0, maxCombo: 0, zoneReached: 1, wallsBroken: 0, goldEaten: 0 },
+        getHud() {
+          return {
+            depth: f.depth,
+            orbs: f.orbs.length,
+            combo: 0, maxCombo: 0,
+            zone: f.zone, zoneName: ZONE_NAMES[f.zone - 1],
+            dashHeat: f.dashHeat,
+            lightRadius: clamp(160 + f.orbs.length * 14, 160, 900),
+            bossHp: f.bossHp, bossMax: f.bossMax, phase: f.phase,
+          };
+        },
+      };
+      return { f, rnd, trail: [], sparkAcc: 0, demoAcc: 0, sparkId: 1 };
+    }
+
+    function assignWall(w, zidx, rnd, f) {
+      w.x = 90 + rnd() * (1280 - 180);
+      if (zidx === 5 && rnd() < 0.4) {
+        w.kind = 'boss'; w.w = 720 + rnd() * 160; w.h = 92; w.value = 60;
+      } else if (zidx >= 4 && rnd() < 0.38) {
+        w.kind = 'urchin'; w.w = 42; w.h = 42; w.value = 999;
+      } else {
+        w.kind = 'coral';
+        w.w = 110 + rnd() * 150;
+        w.h = 36 + rnd() * 30;
+        w.value = clamp(1 + Math.floor(f.depth / 12) + Math.floor(rnd() * f.depth / 18), 1, 60);
+      }
+    }
+
+    const st = makeFixture();
+    (function build() {
+      const hWY = 540 + st.f.depth * 10;
+      const N = 9;
+      for (let i = 0; i < N; i += 1) {
+        const w = { id: i + 1, x: 0, worldY: 0, w: 120, h: 40, value: 1, kind: 'coral' };
+        const screenY = -80 + (i / (N - 1 || 1)) * 860;
+        w.worldY = hWY + 540 - screenY;
+        assignWall(w, 1, st.rnd, st.f);
+        st.f.walls.push(w);
+      }
+      for (let i = 0; i < 6; i += 1) {
+        const fd = { id: i + 1, x: 140 + i * 190, worldY: hWY + 540 - (-40 + i * 150), kind: i % 4 === 0 ? 'gold' : 'spark' };
+        st.f.foods.push(fd);
+      }
+    })();
+
+    function updateFixture(dt, t) {
+      const f = st.f;
+      f.zone = 1 + (Math.floor(t / 7) % 5);
+      const zidx = f.zone;
+      f.dashing = ((t % 8) < 1.6) && f.orbs.length >= 5;
+      f.dashHeat = f.dashing ? ((t % 8) / 1.6) : 0;
+
+      const speed = (140 + (zidx - 1) * 25) * (f.dashing ? 1.8 : 1);
+      f.depth += (speed * dt) / 10;
+      const hWY = 540 + f.depth * 10;
+
+      // 转向 + 轨迹
+      const targetX = 640 + Math.sin(t * 0.9) * 360 + Math.sin(t * 2.3) * 80;
+      const prevX = f.head.x;
+      f.head.x += (targetX - f.head.x) * Math.min(1, dt * 6);
+      f.head.vx = dt > 1e-4 ? (f.head.x - prevX) / dt : 0;
+
+      st.trail.unshift(f.head.x);
+      if (st.trail.length > 120) st.trail.pop();
+      const orbN = clamp(Math.round(11 + Math.sin(t * 0.3) * 6), 5, 17);
+      f.orbs.length = 0;
+      for (let i = 0; i < orbN; i += 1) {
+        const hx = st.trail[Math.min(i * 2, st.trail.length - 1)] ?? f.head.x;
+        f.orbs.push({ x: hx + Math.sin(i * 0.6 + t * 2) * 2, y: 540 + (i + 1) * 11 });
+      }
+
+      // 墙传送带
+      const band = 1400;
+      for (const w of f.walls) {
+        const sy = hWY + 540 - w.worldY;
+        if (sy > 800) { w.worldY += band; assignWall(w, zidx, st.rnd, f); }
+      }
+      // 食物传送带
+      for (const fd of f.foods) {
+        const sy = hWY + 540 - fd.worldY;
+        if (sy > 780) {
+          fd.worldY += band;
+          fd.kind = st.rnd() < 0.3 ? 'gold' : 'spark';
+          fd.x = 120 + st.rnd() * (1280 - 240);
+        }
+      }
+
+      // sim sparks：破墙飞出后被真空吸回首
+      st.sparkAcc += dt;
+      if (st.sparkAcc > 0.85) {
+        st.sparkAcc = 0;
+        const w = f.walls[(st.rnd() * f.walls.length) | 0];
+        const sy = hWY + 540 - w.worldY;
+        if (sy > -40 && sy < 760) {
+          for (let i = 0; i < 9; i += 1) {
+            const a = Math.random() * Math.PI * 2;
+            f.sparks.push({ id: st.sparkId++, x: w.x + (Math.random() - 0.5) * w.w, y: sy, vx: Math.cos(a) * 190, vy: Math.sin(a) * 190, life: 1 });
+          }
+        }
+      }
+      for (let i = f.sparks.length - 1; i >= 0; i -= 1) {
+        const s = f.sparks[i];
+        s.life -= dt;
+        if (s.life <= 0) { f.sparks.splice(i, 1); continue; }
+        const dx = f.head.x - s.x;
+        const dy = 540 - s.y;
+        const dist = Math.hypot(dx, dy) || 1;
+        const pull = 900 * (1 - s.life);
+        s.vx += (dx / dist) * pull * dt;
+        s.vy += (dy / dist) * pull * dt;
+        s.vx *= Math.max(0, 1 - 0.5 * dt);
+        s.vy *= Math.max(0, 1 - 0.5 * dt);
+        s.x += s.vx * dt;
+        s.y += s.vy * dt;
+      }
+
+      // 演示 burst（pop/cut/boss）
+      st.demoAcc += dt;
+      if (st.demoAcc > 1.2) {
+        st.demoAcc = 0;
+        const w = f.walls[(st.rnd() * f.walls.length) | 0];
+        const sy = hWY + 540 - w.worldY;
+        if (sy > -40 && sy < 760) {
+          const kind = w.kind === 'urchin' ? 'cut' : (w.kind === 'boss' ? 'boss' : 'pop');
+          render.burst(w.x, sy, kind);
+        }
+      }
+    }
+
+    // ---------- 帧循环（固定步长 + 插值，与 main 一致） ----------
+    const STEP = 1 / 60;
+    let last = performance.now();
+    let acc = 0;
+    let prevZone = 0;
+    const ring = [];
+    let ringSum = 0;
+    let allSum = 0;
+    let allN = 0;
+    let lastHud = 0;
+
+    function updateHud(now) {
+      if (now - lastHud < 250) return;
+      lastHud = now;
+      const f = st.f;
+      const avg = ring.length ? ringSum / ring.length : 0;
+      const fps = avg > 0 ? 1000 / avg : 0;
+      const cls = avg <= 20 ? 'good' : 'bad';
+      hudEl.innerHTML =
+        `<span>zone <b>${f.zone}·${ZONE_NAMES[f.zone - 1]}</b></span>` +
+        `<span>depth <b>${Math.floor(f.depth)}m</b></span>` +
+        `<span>orbs <b>${f.orbs.length}</b></span>` +
+        `<span>light <b>${Math.round(clamp(160 + f.orbs.length * 14, 160, 900))}</b></span>` +
+        `<span>dash <b>${f.dashing ? 'ON' : 'off'}</b></span>` +
+        `<span class="${cls}">avgFrameMs <b>${avg.toFixed(2)}</b></span>` +
+        `<span class="${cls}">fps <b>${fps.toFixed(0)}</b></span>`;
+      barEl.style.width = `${clamp(avg / 20, 0, 1) * 100}%`;
+    }
+
+    function loop(now) {
+      requestAnimationFrame(loop);
+      const dtReal = Math.min(0.1, (now - last) / 1000);
+      last = now;
+
+      const ms = dtReal * 1000;
+      ring.push(ms); ringSum += ms;
+      if (ring.length > 120) ringSum -= ring.shift();
+      allSum += ms; allN += 1;
+
+      acc += dtReal;
+      while (acc >= STEP) {
+        updateFixture(STEP, now / 1000);
+        acc -= STEP;
+      }
+      const interp = acc / STEP;
+
+      if (st.f.zone !== prevZone) { render.setZoneFx(st.f.zone); prevZone = st.f.zone; }
+      render.setDash(st.f.dashing);
+      render.draw(st.f, interp);
+      updateHud(now);
+    }
+
+    // 暴露给测量脚本
+    window.__bench = {
+      get avgFrameMs() { return ring.length ? ringSum / ring.length : 0; },
+      get avgAllMs() { return allN ? allSum / allN : 0; },
+      get frames() { return allN; },
+      get zone() { return st.f.zone; },
+      get orbs() { return st.f.orbs.length; },
+    };
+
+    render.resize();
+    requestAnimationFrame(loop);
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDLE FORGE</title>
+  <link rel="stylesheet" href="styles.css?v=idle1">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-row">
+        <div class="hud-left">
+          <span id="hud-level"></span>
+          <span id="hud-coins" class="hud-pill"></span>
+          <span id="hud-rate" class="hud-pill"></span>
+        </div>
+        <div class="hud-right">
+          <button id="btn-howto" class="hud-btn" aria-label="Replay guide" data-tutorial-replay>?</button>
+          <button id="btn-mute" class="hud-btn" aria-label="Mute"></button>
+          <button id="btn-restart" class="hud-btn" aria-label="Restart"></button>
+          <button id="btn-home" class="hud-btn" aria-label="Menu"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="upgrade-bar" class="hidden">
+      <button id="up-power" class="up-card" aria-label="Hammer Power"></button>
+      <button id="up-speed" class="up-card" aria-label="Hammer Speed"></button>
+      <button id="up-temp" class="up-card" aria-label="Forge Heat"></button>
+      <button id="up-apprentice" class="up-card" aria-label="Apprentices"></button>
+    </div>
+
+    <button id="btn-stoke" class="float-btn hidden">🔥</button>
+    <button id="btn-appease" class="float-btn hidden">✋</button>
+
+    <div id="masterpiece-toast" class="hidden">
+      <h2 id="toast-title"></h2>
+      <p id="toast-sub"></p>
+    </div>
+
+    <div id="offline-card" class="hidden">
+      <h2 id="offline-title"></h2>
+      <p id="offline-body"></p>
+      <p id="offline-earned"></p>
+      <p id="offline-cap" class="offline-cap"></p>
+      <button id="btn-offline-collect">Collect</button>
+    </div>
+
+    <div id="screen-title" class="screen is-active">
+      <select id="lang-select" class="lang-select" aria-label="Language"></select>
+      <h1 id="title-text">IDLE FORGE</h1>
+      <p class="subtitle" id="subtitle-text"></p>
+      <button id="btn-start">Start</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden">
+      <h2 id="pause-title">Paused</h2>
+      <button id="btn-resume">Resume</button>
+      <button id="btn-restart2" class="btn-ghost">Restart</button>
+      <button id="btn-tut-replay" class="btn-ghost">How to Play</button>
+      <button id="btn-home3" class="btn-ghost">Menu</button>
+      <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2 id="result-title">Masterwork forged!</h2>
+      <div class="result-meta" id="result-meta"></div>
+      <div class="win-btns">
+        <button id="btn-home2" class="btn-ghost">Menu</button>
+      </div>
+    </div>
+
+    <div id="rotate-screen" data-rotate hidden>
+      <div class="rotate-card">
+        <div class="rotate-icon">📱↻</div>
+        <p id="rotate-text">Rotate for a bigger forge</p>
+        <button id="btn-rotate-skip">Play anyway</button>
+      </div>
+    </div>
+
+    <div id="tutorial" class="hidden" data-tutorial>
+      <div id="tut-spotlight"></div>
+      <div id="tut-card">
+        <h3 id="tut-title"></h3>
+        <p id="tut-text"></p>
+        <div class="tut-btns">
+          <button id="tut-skip" class="btn-ghost" data-tutorial-skip>Skip</button>
+          <button id="tut-next">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js?v=idle1"></script>
+</body>
+</html>

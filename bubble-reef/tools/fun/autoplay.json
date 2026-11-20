@@ -1,0 +1,59 @@
+{
+  "game": "bubble-reef",
+  "genre": "puzzle",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 137,
+      "actions": 2423,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.5,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 1.25,
+      "uniqueEvents": 12,
+      "levelsReached": 5,
+      "completed": false,
+      "score": 8770
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 26.4,
+      "actions": 1109,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 7.5,
+      "deaths": 1,
+      "idleSec": 15.3,
+      "maxEventGapSec": 0.88,
+      "uniqueEvents": 9,
+      "levelsReached": 1,
+      "completed": false,
+      "score": 430
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 300,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 300,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 0,
+      "levelsReached": 1,
+      "completed": true,
+      "score": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T11:17:31.738Z"
+}

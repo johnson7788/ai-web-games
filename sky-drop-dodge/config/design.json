@@ -1,0 +1,81 @@
+{
+  "slug": "sky-drop-dodge",
+  "genre": "arcade",
+  "oneLiner": "举伞跑过高楼天台，躲开花盆家具冰箱；能量伞挡小物、挡大物碎伞，借地面风带顺风走位，连续擦身触发慢动作涟漪。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "注意力：向左躲物就错过右侧风带的顺风加速",
+      "feedback": ["sfx", "lean-tilt", "wind-streak"],
+      "combinesWith": ["block", "ride"]
+    },
+    {
+      "name": "block",
+      "cost": "消耗 1 格能量伞；挡大物会碎伞、盾清零",
+      "feedback": ["sfx", "umbrella-flash", "shield-pips"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "ride",
+      "cost": "贴边走风带抢速度，可能被风推向墙边或坠物",
+      "feedback": ["sfx", "wind-lines", "speed-tint"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "花盆砸向左，是右移躲开还是原地省力气", "cost": "移动注意力 vs 省操作" },
+    { "atSec": 18, "choice": "水瓶雨变密，举伞挡小物省血还是留盾给大物", "cost": "盾资源 vs 血量" },
+    { "atSec": 32, "choice": "风带出现，走边缘顺风抢速还是稳中央无风", "cost": "速度 vs 稳定" },
+    { "atSec": 48, "choice": "冰箱砸下，用伞硬挡碎伞还是拼命横移躲开", "cost": "伞碎裂 vs 走位风险" },
+    { "atSec": 66, "choice": "追踪无人机逼近，用 1 格盾挡掉还是绕圈甩开", "cost": "盾 vs 时间/位置" },
+    { "atSec": 92, "choice": "偷袭波预警极短，预判落点提前走还是靠反应硬躲", "cost": "预判 vs 反应" },
+    { "atSec": 120, "choice": "雷雨逆风，逆风减速躲物还是躲进顺风列冒险", "cost": "逆风慢 vs 顺风被推向险位" },
+    { "atSec": 150, "choice": "双重大物夹击，先处理哪个落点", "cost": "优先级 vs 血/盾" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 50, "twistSec": 50, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "花盆稀落（教左右移动躲落点）" },
+    { "index": 2, "newElement": "水瓶雨（密雨 + 掉落轮换）" },
+    { "index": 3, "newElement": "地面风带（顺风加速/逆风减速）" },
+    { "index": 4, "newElement": "重物坠落（冰箱/沙发/电视，挡大物碎伞）" },
+    { "index": 5, "newElement": "追踪无人机（横向追踪）" },
+    { "index": 6, "newElement": "偷袭波（预警 0.25s 极短）" },
+    { "index": 7, "newElement": "混合急雨（双倍爆率）" },
+    { "index": 8, "newElement": "雷雨逆风（加强风带 + 无人机混入）" },
+    { "index": 9, "newElement": "双重大物（重物 + 小物夹击）" },
+    { "index": 10, "newElement": "倾盆暴雨（最高密度）" },
+    { "index": 11, "newElement": "无人机+重物（追踪 + 重物组合）" },
+    { "index": 12, "newElement": "收官波（全要素混合冲刺）" }
+  ],
+  "upgrades": [
+    { "id": "wideUmbrella", "kind": "rule", "desc": "伞面加宽，格挡判定区扩大（改规则）" },
+    { "id": "bigShield", "kind": "rule", "desc": "挡大物只碎 2 格而不清零（改规则）" },
+    { "id": "regenBoost", "kind": "rule", "desc": "擦身触发涟漪时额外回 1 格盾（规则链）" },
+    { "id": "windMaster", "kind": "rule", "desc": "逆风不再减速，只保留顺风加速（改规则）" },
+    { "id": "speedUp", "kind": "stat", "desc": "移动速度 +12%（数值）" },
+    { "id": "hpUp", "kind": "stat", "desc": "生命 +1 心（数值）" },
+    { "id": "styleUp", "kind": "stat", "desc": "擦身得分 +50%（数值）" },
+    { "id": "droneJam", "kind": "stat", "desc": "无人机追踪强度 -30%（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连续擦身触发「风骚走位」慢动作涟漪，世界变慢、金色涟漪扩散，玩家在坠物间穿针引线",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "城市天台程序化 Canvas 三场景（亮蓝晴午 / 灰紫雷雨 / 金橙晚霞），角色/坠物/风带全部程序化绘制；UI 线框 CSS/SVG"
+}

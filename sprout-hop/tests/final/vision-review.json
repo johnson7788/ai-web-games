@@ -1,0 +1,149 @@
+{
+  "game": "sprout-hop",
+  "generatedAt": "2026-11-19T12:30:37.811Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 8.75,
+    "style_consistent": 9.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-aim.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色角色（豌豆射手）发射子弹击中带旗子的平台",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标平台上的小旗子与黄色圆环重叠，可能干扰瞄准判断",
+        "左上角进度条（0/4）与角色发射轨迹起点较近，轻微视觉干扰",
+        "水面波纹线过细，在低分辨率下可能模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/02-flight.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色豌豆角色使其跳跃到右侧平台",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Level 1’与进度条间距过小，可能在小屏设备上误触",
+        "目标旗子被黄色圆环部分遮挡，视觉焦点略弱于角色",
+        "背景山丘与平台色差小，中远距离平台辨识度稍低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中‘GOAL’标识与角色重叠，部分被遮挡（左下角）",
+        "三颗星图标下方‘Perfect landing!’文字字号偏小，弱对比度，远距离易忽略",
+        "‘Score 20 · 4/4’中点号为中文中间点，与英文混排不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/04-pumpkin.png",
+      "goal_visible": true,
+      "first_action_guess": "点击带红黄旗子的绿色平台，使其成为可站立点或触发机制",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标平台（带旗子）被黄色圆环高亮，但未明确指示是‘点击’还是‘移动到’，操作意图稍模糊",
+        "左上角‘Level 3’与进度‘0/5’间距过小，可能在小屏设备上误触",
+        "玩家角色（左侧带芽绿虫）与背景山丘色差不足，远距离辨识度略降"
+      ]
+    },
+    {
+      "shot": "tests/final/05-noon.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间带红旗的绿色平台，因为它是唯一标有目标标记的可交互物。",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'Level 5'与进度条间距过小，可能在小屏设备上误触",
+        "右上角图标（问号、设置等）无文字标签，依赖图标语义，对新手不友好",
+        "背景网格线略显干扰，轻微降低目标平台辨识度"
+      ]
+    },
+    {
+      "shot": "tests/final/06-night.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色角色使其跳跃到第一个木船",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标旗子被黄色圆环部分遮挡，可能影响精确点击",
+        "左上角‘Level 9’与进度条间距过小，桌面端无问题但移动端可能误触",
+        "右上角图标组（?、重玩等）未标注功能，新手可能困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/07-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击带红旗的绿色平台，让角色跳过去",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘关卡 1’与进度条间距过小，可能在小屏设备上误触",
+        "角色头顶小芽细节较弱，眯眼时易与背景山丘混淆",
+        "右上角图标（问号、设置等）无文字标签，依赖图标语义，对新手不友好"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧带笑脸的绿色角色使其向右移动",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标旗子被黄色圆圈高亮，但无明确提示该圆圈是系统指引（可能误认为玩家操作残留）",
+        "左上角‘Level 1’与进度条间距过小，桌面缩放时易误读为‘Level10/4’",
+        "背景山丘与平台颜色相近，部分平台边缘在远距离下略难分辨"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "viewport": [
+    1280,
+    720
+  ],
+  "steps": [
+    {
+      "wait": 900
+    },
+    {
+      "assert": "window.__ll.state.phase === 'title'",
+      "name": "标题屏"
+    },
+    {
+      "assert": "document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'",
+      "name": "默认英文/LTR"
+    },
+    {
+      "assert": "window.__ll.state.lang === 'en'",
+      "name": "i18n 默认 en"
+    },
+    {
+      "screenshot": "01-title.png"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='zh'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "document.documentElement.lang === 'zh' && document.documentElement.dir === 'ltr'",
+      "name": "切中文生效"
+    },
+    {
+      "eval": "(()=>{const s=document.getElementById('lang-select'); s.value='en'; s.dispatchEvent(new Event('change',{bubbles:true})); return true;})()"
+    },
+    {
+      "wait": 250
+    },
+    {
+      "assert": "document.documentElement.lang === 'en'",
+      "name": "切回英文"
+    },
+    {
+      "click": "#btn-start"
+    },
+    {
+      "wait": 700
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "开局进入 playing"
+    },
+    {
+      "assert": "!!document.querySelector('[data-tutorial]') && !document.querySelector('[data-tutorial]').classList.contains('hidden')",
+      "name": "首次进入引导出现"
+    },
+    {
+      "screenshot": "03-tutorial.png"
+    },
+    {
+      "click": "[data-tutorial-skip]"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "assert": "document.querySelector('[data-tutorial]').classList.contains('hidden')",
+      "name": "跳过引导后消失"
+    },
+    {
+      "eval": "(()=>{const c=document.getElementById('canvas'); const mk=(t,x,y)=>new PointerEvent(t,{bubbles:true,cancelable:true,clientX:x,clientY:y,pointerId:1,pointerType:'mouse',isPrimary:true}); c.dispatchEvent(mk('pointerdown',640,480)); c.dispatchEvent(mk('pointermove',640,360)); c.dispatchEvent(mk('pointerup',640,360)); return true;})()"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "assert": "window.__ll.run.stats.shots > 0",
+      "name": "拖拽发射生效"
+    },
+    {
+      "waitFor": "window.__ll.run.saucers.some(s => s.active && s.x > 120 && s.x < 1160 && s.y > 40 && s.y < 600)",
+      "timeout": 8000
+    },
+    {
+      "screenshot": "04-play.png"
+    },
+    {
+      "assert": "window.__ll.run.time > 1",
+      "name": "游戏时间推进"
+    },
+    {
+      "press": "Escape"
+    },
+    {
+      "wait": 400
+    },
+    {
+      "assert": "window.__ll.state.phase === 'paused'",
+      "name": "暂停"
+    },
+    {
+      "press": "Escape"
+    },
+    {
+      "wait": 300
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "恢复"
+    },
+    {
+      "eval": "(()=>{const r=window.__ll.run; for(let k=0;k<60*180 && r.phase==='playing';k++){ r.step({charging:false, fire:false, tracer:false}); r.drainEvents(); } return r.phase;})()"
+    },
+    {
+      "wait": 600
+    },
+    {
+      "assert": "window.__ll.state.phase === 'dead'",
+      "name": "生命耗尽死亡"
+    },
+    {
+      "assert": "!document.querySelector('#screen-result').classList.contains('hidden')",
+      "name": "结算卡出现"
+    },
+    {
+      "screenshot": "06-dead.png"
+    },
+    {
+      "press": "KeyR"
+    },
+    {
+      "wait": 600
+    },
+    {
+      "assert": "window.__ll.state.phase === 'playing'",
+      "name": "R 键重开"
+    },
+    {
+      "waitFor": "window.__ll.run.saucers.some(s => s.active && s.x > 120 && s.x < 1160 && s.y > 40 && s.y < 600)",
+      "timeout": 8000
+    },
+    {
+      "screenshot": "07-restart.png"
+    }
+  ],
+  "mobile": {
+    "viewport": [
+      844,
+      390
+    ],
+    "steps": [
+      {
+        "wait": 900
+      },
+      {
+        "assert": "window.__ll.state.phase === 'title'",
+        "name": "移动端标题屏"
+      },
+      {
+        "click": "#btn-start"
+      },
+      {
+        "wait": 800
+      },
+      {
+        "assert": "window.__ll.state.phase === 'playing'",
+        "name": "移动端开局"
+      },
+      {
+        "eval": "(()=>{const r=window.__ll.run; r.step({aimX:640, aimY:300, charging:true, fire:true, tracer:false}); return true;})()"
+      },
+      {
+        "wait": 300
+      },
+      {
+        "assert": "window.__ll.run.stats.shots > 0",
+        "name": "移动端发射"
+      },
+      {
+        "waitFor": "window.__ll.run.saucers.some(s => s.active && s.x > 120 && s.x < 1160 && s.y > 40 && s.y < 600)",
+        "timeout": 8000
+      },
+      {
+        "click": "[data-tutorial-skip]"
+      },
+      {
+        "wait": 300
+      },
+      {
+        "screenshot": "08-mobile.png"
+      }
+    ]
+  },
+  "checks": {
+    "console": true,
+    "failedRequests": true,
+    "external": false
+  },
+  "fps": {
+    "enabled": true,
+    "min": 50,
+    "prepare": "window.__ll.start()",
+    "prepareWait": 600
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "generatedAt": "2026-11-19T17:34:50.587Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "select": {
+      "rms": 0.1756,
+      "peak": 0.345,
+      "nan": 0,
+      "zcRate": 878,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "chapter": {
+      "rms": 0.099,
+      "peak": 0.4083,
+      "nan": 0,
+      "zcRate": 525.8,
+      "samples": 29988,
+      "durSec": 0.68,
+      "pass": true
+    },
+    "attr": {
+      "rms": 0.1018,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 645.1,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "result": {
+      "rms": 0.1038,
+      "peak": 0.2587,
+      "nan": 0,
+      "zcRate": 522.8,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "timer": {
+      "rms": 0.1009,
+      "peak": 0.12,
+      "nan": 0,
+      "zcRate": 880.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "tick": {
+      "rms": 0.0642,
+      "peak": 0.08,
+      "nan": 0,
+      "zcRate": 1084.2,
+      "samples": 1323,
+      "durSec": 0.03,
+      "pass": true
+    },
+    "tilt": {
+      "rms": 0.0466,
+      "peak": 0.1764,
+      "nan": 0,
+      "zcRate": 5637.1,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "success": {
+      "rms": 0.1278,
+      "peak": 0.521,
+      "nan": 0,
+      "zcRate": 701.2,
+      "samples": 19404,
+      "durSec": 0.44,
+      "pass": true
+    },
+    "ending": {
+      "rms": 0.1346,
+      "peak": 0.4995,
+      "nan": 0,
+      "zcRate": 543.9,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "advance": {
+      "rms": 0.0792,
+      "peak": 0.14,
+      "nan": 0,
+      "zcRate": 620.3,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1184,
+      "peak": 0.2681,
+      "nan": 0,
+      "zcRate": 850.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "town": {
+      "rms": 0.12,
+      "peak": 0.333,
+      "nan": 0,
+      "zcRate": 151.1,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "city": {
+      "rms": 0.12,
+      "peak": 0.3349,
+      "nan": 0,
+      "zcRate": 219.9,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "peak": {
+      "rms": 0.12,
+      "peak": 0.3249,
+      "nan": 0,
+      "zcRate": 243.9,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

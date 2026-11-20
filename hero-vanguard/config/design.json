@@ -1,0 +1,82 @@
+{
+  "slug": "hero-vanguard",
+  "genre": "action",
+  "oneLiner": "你指挥双子英雄（近战刃+远程弓）守住轨道站：移动走位、换位共鸣打路径伤害、共鸣斩清场、护盾充能补基地，敌人波次从右侧压来，破防即败。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "离开基地正前方会让侧翼空虚，敌人趁机摸到基地",
+      "feedback": ["sfx", "trail", "hero-aura"],
+      "combinesWith": ["swap"]
+    },
+    {
+      "name": "swap",
+      "cost": "换位瞬间旧英雄位移，原位置不再拦截敌人",
+      "feedback": ["sfx", "dash-trail", "path-damage"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "channel",
+      "cost": "共鸣斩有冷却；护盾充能需站桩 2 秒且期间不输出",
+      "feedback": ["sfx", "aoe-flash", "base-shield"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "主控选刃堵门还是弓风筝", "cost": "近战承受伤害 vs 远程漏怪" },
+    { "atSec": 25, "choice": "共鸣斩现在就放还是留给下一波", "cost": "冷却空窗被包围" },
+    { "atSec": 45, "choice": "护盾充能站桩 2 秒还是继续清怪", "cost": "输出空窗 vs 基地耐久" },
+    { "atSec": 70, "choice": "换位共鸣用来打伤害还是用来赶路", "cost": "伤害 vs 走位" },
+    { "atSec": 100, "choice": "三选一升级选规则型（换位翻倍）还是数值型（攻击）", "cost": "放弃另一条 build" },
+    { "atSec": 140, "choice": "Boss 冲锋时硬扛还是拉远风筝", "cost": "基地耐久 vs 输出时间" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "蜂群：教自动攻击与走位拦截" },
+    { "index": 2, "newElement": "护盾兵：正面护盾逼你近战绕侧" },
+    { "index": 3, "newElement": "重甲：高血量逼迫集火取舍" },
+    { "index": 4, "newElement": "Boss：轨道突袭者（近轨）" },
+    { "index": 5, "newElement": "自爆：高速冲基地必须提前点杀" },
+    { "index": 6, "newElement": "重甲+护盾混编铁壁" },
+    { "index": 7, "newElement": "自爆+重甲前后夹击" },
+    { "index": 8, "newElement": "Boss：小行星巨像（小行星）" },
+    { "index": 9, "newElement": "蜂群+自爆合流压线" },
+    { "index": 10, "newElement": "重甲+护盾全坦克波" },
+    { "index": 11, "newElement": "自爆+重甲突袭混编" },
+    { "index": 12, "newElement": "Boss：深空旗舰（深空）" }
+  ],
+  "upgrades": [
+    { "id": "bladeAtk", "kind": "stat", "desc": "刃攻击 +55%" },
+    { "id": "bowAtk", "kind": "stat", "desc": "弓攻击 +55%" },
+    { "id": "atkSpeed", "kind": "stat", "desc": "攻速 +22%" },
+    { "id": "baseMax", "kind": "stat", "desc": "基地耐久 +30" },
+    { "id": "heroSpeed", "kind": "stat", "desc": "移速 +18%" },
+    { "id": "resonanceRange", "kind": "rule", "desc": "共鸣斩范围 +50%（改范围规则）" },
+    { "id": "swapDamage", "kind": "rule", "desc": "换位伤害翻倍（改伤害规则）" },
+    { "id": "shieldLink", "kind": "rule", "desc": "充能时每秒回 1 基地耐久（规则链）" },
+    { "id": "vampiric", "kind": "rule", "desc": "击杀回复 1 基地耐久（跨系统规则）" },
+    { "id": "chainBow", "kind": "rule", "desc": "弓再穿透 1 个敌人（改命中规则）" },
+    { "id": "twinLink", "kind": "rule", "desc": "双英靠近时攻速 +30%（条件规则）" }
+  ],
+  "replayHooks": ["nearMiss", "newBuild", "rating", "growth", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "一键换位：旧英雄化作光刃冲向新英雄位置，沿途敌人被斩成两段；双英重叠时共鸣斩的范围炸开一圈。",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas 轨道站美学：三场景包换色板+构图+装饰（近轨蓝白 / 小行星灰橙 / 深空紫黑）；UI 线框 SVG/CSS"
+}

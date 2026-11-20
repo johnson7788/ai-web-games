@@ -1,0 +1,60 @@
+{
+  "genre": "arcade",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 356.2,
+      "actions": 21372,
+      "firstInputSec": 0.5,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.6,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.92,
+      "uniqueEvents": 19,
+      "levelsReached": 12,
+      "completed": true,
+      "score": 94708,
+      "maxCombo": 9
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 35,
+      "actions": 1458,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 32.7,
+      "deaths": 1,
+      "idleSec": 10.9,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 13,
+      "levelsReached": 1,
+      "completed": false,
+      "score": 110,
+      "maxCombo": 1
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 30,
+      "actions": 1,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 29.4,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 3,
+      "levelsReached": 1,
+      "completed": false,
+      "score": 0,
+      "maxCombo": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T13:41:40.441Z"
+}

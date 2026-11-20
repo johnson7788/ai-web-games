@@ -1,0 +1,343 @@
+import * as THREE from 'three';
+import { rnd } from '../rng.ts';
+import { resolveCircle } from '../collision.ts';
+import { HERO } from '../tuning.ts';
+import type { Target } from '../target.ts';
+import { boom, hiss, voice } from '../spell-audio.ts';
+import type { Rect } from './arena.ts';
+import { Field } from './field.ts';
+import { Boss, C, glowMat, rand, RASP, UNIT, wrap, type BossHooks } from './kit.ts';
+import { t } from '../i18n/i18n.ts';
+
+/**
+ * Mini-boss in the spirit of Minecraft Dungeons (wiki/design-bosses.md, section 1): a body of several big cubes, no more than
+ * eight moving parts, moves as a whole (jump, lean, shuffle). The power of the fight is on the floor: attack marks (circle, line),
+ * lobbed projectiles, hazard zones, minions. Here is the shared brain (sleep → waking → chase and attacks → daze → death),
+ * rage at 50 %, marks, projectiles, zones and minions; the warden provides the model, attack choice, attack course and pose.
+ */
+
+export type MiniState = 'sleep' | 'wake' | 'idle' | 'walk' | 'attack' | 'daze' | 'dead';
+
+// ---------- minions ----------
+
+/** Warden's minion: two or three cubes, walks to the hero and hits; a target for sword and spells */
+export class Minion implements Target {
+  readonly pos = new THREE.Vector3();
+  readonly group = new THREE.Group();
+  readonly radius: number;
+  readonly topY: number;
+  hp: number;
+  dead = false;
+  private cd = 1;
+  private flashT = 0;
+  private hop = 0;
+  /** Lifetime, s — bobbing in place (not the clock: determinism on the server) */
+  private bob = 0;
+  private readonly mats: THREE.MeshLambertMaterial[] = [];
+  /** Fading (ghost): opacity 0..1 */
+  ghost = false;
+
+  private readonly h: BossHooks;
+  readonly look: { body: string; head: string; eye: THREE.Color; size?: number; hp?: number; dmg?: number; speed?: number; ghost?: boolean };
+  constructor(h: BossHooks, at: THREE.Vector3, look: { body: string; head: string; eye: THREE.Color; size?: number; hp?: number; dmg?: number; speed?: number; ghost?: boolean }) { this.h = h; this.look = look;
+    const s = look.size ?? 1;
+    this.radius = 0.4 * s;
+    this.topY = 1.5 * s;
+    this.hp = look.hp ?? 30;
+    this.ghost = !!look.ghost;
+    this.pos.copy(at).setY(0);
+    const lam = (c: string) => { const m = new THREE.MeshLambertMaterial({ color: c, transparent: this.ghost, opacity: this.ghost ? 0.55 : 1 }); this.mats.push(m); return m; };
+    const body = new THREE.Mesh(UNIT, lam(look.body)); body.scale.set(0.7 * s, 0.8 * s, 0.5 * s); body.position.y = 0.55 * s; body.castShadow = true;
+    const head = new THREE.Mesh(UNIT, lam(look.head)); head.scale.set(0.55 * s, 0.5 * s, 0.5 * s); head.position.y = 1.2 * s; head.castShadow = true;
+    const eyes = new THREE.Mesh(UNIT, glowMat(look.eye)); eyes.scale.set(0.4 * s, 0.08 * s, 0.05 * s); eyes.position.set(0, 1.25 * s, 0.26 * s);
+    for (const x of [-1, 1]) { const leg = new THREE.Mesh(UNIT, lam(look.head)); leg.scale.set(0.22 * s, 0.3 * s, 0.22 * s); leg.position.set(x * 0.17 * s, 0.15 * s, 0); this.group.add(leg); }
+    this.group.add(body, head, eyes);
+    this.group.position.copy(this.pos);
+    h.scene.add(this.group);
+    // appearance: pops up out of the ground
+    this.hop = 0.5;
+  }
+
+  get alive(): boolean { return !this.dead; }
+
+  hit(dmg: number, dir: THREE.Vector3): void {
+    if (this.dead) return;
+    this.hp -= dmg;
+    this.flashT = 0.1;
+    this.pos.addScaledVector(dir, 0.3);
+    if (this.hp <= 0) this.kill();
+  }
+
+  kill(): void {
+    if (this.dead) return;
+    this.dead = true;
+    this.h.fx.burst(this.pos.clone().setY(0.8), [this.look.body, this.look.head, RASP], 14, { speed: 3, up: 3, size: 0.12, life: 0.6, gravity: 8 });
+    this.h.scene.remove(this.group);
+    for (const m of this.mats) m.dispose();
+  }
+
+  update(dt: number): void {
+    this.bob += dt;
+    if (this.dead) return;
+    const hero = this.h.hero.pos, dx = hero.x - this.pos.x, dz = hero.z - this.pos.z, d = Math.hypot(dx, dz);
+    const sp = (this.look.speed ?? 2.6) * dt;
+    if (d > 0.9) { this.pos.x += (dx / d) * sp; this.pos.z += (dz / d) * sp; }
+    const p = this.pos.clone();
+    resolveCircle(p, this.radius, this.h.obstacles());
+    this.pos.x = p.x; this.pos.z = p.z;
+    this.cd -= dt;
+    if (d < 1.3 && this.cd <= 0) { this.cd = 1.1; this.h.hurtHero(this.look.dmg ?? 6, this.pos, 2); this.hop = 0.25; }
+    this.hop = Math.max(0, this.hop - dt);
+    this.flashT = Math.max(0, this.flashT - dt);
+    for (const m of this.mats) m.emissive.setScalar(this.flashT > 0 ? 0.6 : 0);
+    this.group.position.set(this.pos.x, Math.sin(this.hop * 12) * 0.15 + (d > 0.9 ? Math.abs(Math.sin(this.bob * 12)) * 0.06 : 0), this.pos.z);
+    this.group.rotation.y = Math.atan2(dx, dz);
+  }
+}
+
+// ---------- mini-boss ----------
+
+export abstract class MiniBoss extends Boss {
+  state: MiniState = 'sleep';
+  /** Current attack (state === 'attack') */
+  attack = '';
+  /** Time in the state */
+  st = 0;
+  /** Cooldown between attacks */
+  cd = 1.2;
+  enraged = false;
+  /** Run speed, m/s; turn rate, rad/s */
+  speed = 3.2;
+  turn = 3;
+  /** Keeps its distance: melee ~2.5 m, ranged — 7–9 m */
+  keep = 2.5;
+  /** Which grimoire it drops (item id) */
+  abstract readonly drop: string;
+  /** Tier: mini-boss, floor boss (choice of two grimoires), final */
+  readonly tier: 'mini' | 'boss' | 'final' = 'mini';
+  /** Auras — the second grimoire at floor bosses (choice: spell or aura): [aura id, chance %], summing to 100 */
+  readonly auras: readonly (readonly [string, number])[] = [];
+  /** The aura dropped by this victory: rolled once, resetting the warden rolls again */
+  private auraPick: string | null = null;
+  /** Aura of this victory by chance */
+  get aura(): string | null {
+    if (!this.auras.length) return null;
+    if (!this.auraPick) {
+      let r = rnd() * this.auras.reduce((a, [, w]) => a + w, 0);
+      this.auraPick = this.auras[this.auras.length - 1][0];
+      for (const [id, w] of this.auras) if ((r -= w) < 0) { this.auraPick = id; break; }
+    }
+    return this.auraPick;
+  }
+  /** Grimoires after the victory: one, at bosses — a pair to choose from */
+  get drops(): string[] { const a = this.aura; return a ? [this.drop, a] : [this.drop]; }
+  /** Raspberries from the burst heart: the stronger the warden, the more — from health, tier, level and number of players */
+  get berries(): number { return Math.round(this.baseHp / ({ mini: 20, boss: 10, final: 6 } as const)[this.tier] * this.lootMult); }
+  readonly minions: Minion[] = [];
+  protected flyY = 0;
+  protected hitDone = false;
+  protected deathT = 0;
+  protected dazeFor = 0;
+  /** Body (everything that sways and leans); group — position only */
+  protected readonly body = new THREE.Group();
+  /** Marks, projectiles and zones on the floor */
+  protected readonly field: Field;
+  /** The body is solid: pushes the hero away (underground, in the mist — no) */
+  protected get solid(): boolean { return true; }
+
+  readonly arena: Rect;
+  constructor(h: BossHooks, hp: number, home: THREE.Vector3, homeYaw: number, arena: Rect) {
+    super(h, hp, home, homeYaw); this.arena = arena;
+    this.field = new Field(this.h);
+    this.setPlayers(1);
+    this.group.add(this.body);
+  }
+
+  /** Model in this.body; called from the warden's constructor */
+  protected abstract build(): void;
+  /** Attack choice when the cooldown is over (null — keep walking) */
+  protected abstract choose(dist: number, rel: number): string | null;
+  /** Attack course: t — time since the start; true — the attack is over */
+  protected abstract act(name: string, t: number, dt: number, dist: number): boolean;
+  /** Pose of the body parts by state (once per frame) */
+  protected abstract animate(dt: number, walk: boolean): void;
+  /** Roar or war-cry sound (woke up, rage) */
+  protected cry(): void { if (!this.quiet) { boom(70, 30, 0.9, 0.5, 0, 0.5); hiss({ dur: 0.9, vol: 0.25, f: 400, f1: 1600, q: 0.6, type: 'lowpass', attack: 0.15, verb: 0.5 }); } }
+  /** Rage (50 %) — the warden may add its own */
+  protected onEnrage(): void { /* the warden's own */ }
+
+  get quiet(): boolean { return this.h.quiet(); }
+  get speedK(): number { return this.enraged ? 1.25 : 1; }
+  /** All targets of the warden: itself and the minions */
+  targets(): Target[] { return [...(this.alive && this.awake ? [this as Target] : []), ...this.minions.filter((m) => m.alive)]; }
+
+  wake(): void {
+    if (this.awake || this.dead) return;
+    this.awake = true;
+    this.go('wake');
+  }
+
+  reset(): void {
+    this.hp = this.maxHp;
+    this.dead = false; this.awake = false; this.heartOpen = false; this.enraged = false; this.auraPick = null;
+    this.pos.copy(this.home); this.yaw = this.homeYaw; this.flyY = 0; this.deathT = 0; this.taken = 0; this.cd = 1.2;
+    this.group.visible = true;
+    this.body.scale.setScalar(1);
+    this.body.rotation.set(0, 0, 0);
+    this.clearField();
+    this.go('sleep');
+    this.place();
+  }
+
+  protected go(s: MiniState, attack = ''): void { this.state = s; this.attack = attack; this.st = 0; this.hitDone = false; }
+  /** Daze: heart open, damage ×2 */
+  protected daze(sec: number): void { this.dazeFor = sec; this.go('daze'); }
+
+  override hit(dmg: number, dir: THREE.Vector3, point: THREE.Vector3, knock: number): void {
+    if (this.flyY > 2.2) return;
+    super.hit(dmg, dir, point, knock);
+  }
+
+  protected override onHurt(): void {
+    if (!this.enraged && this.hp > 0 && this.hp < this.maxHp * 0.5) {
+      this.enraged = true;
+      this.cry();
+      this.h.fx.text(this.pos.clone().setY(this.topY + 1), t('rage!'), 'crit');
+      this.h.fx.shock(this.pos.clone().setY(0.1), 5, RASP.clone().multiplyScalar(0.5), 0.5, 0.15);
+      this.onEnrage();
+    }
+  }
+
+  protected die(): void {
+    this.heartOpen = false;
+    this.flyY = 0;
+    this.go('dead');
+    for (const m of this.minions) m.kill();
+    this.clearField();
+    if (!this.quiet) { voice({ type: 'sawtooth', f: 110, f1: 40, dur: 1.4, vol: 0.08, detune: 15, lp: 1200, lp1: 200, verb: 0.6 }); boom(80, 25, 1.6, 0.7, 0.4, 0.6); }
+    this.h.fx.slowmo = Math.max(this.h.fx.slowmo, 0.5);
+  }
+
+  // ---------- brain ----------
+  update(dt: number): void {
+    this.st += dt;
+    const hero = this.h.hero.pos;
+    const dx = hero.x - this.pos.x, dz = hero.z - this.pos.z, dist = Math.hypot(dx, dz);
+    const rel = wrap(Math.atan2(dx, dz) - this.yaw);
+    let walk = false;
+    this.heartOpen = false;
+    switch (this.state) {
+      case 'sleep': break;
+      case 'wake':
+        if (this.st > 0.5 && !this.hitDone) { this.hitDone = true; this.cry(); this.h.fx.shake = Math.max(this.h.fx.shake, 0.6); this.h.fx.shock(this.pos.clone().setY(0.1), 5, RASP.clone().multiplyScalar(0.4), 0.5, 0.12); }
+        this.face(dt, 1.5);
+        if (this.st > 1.6) this.go('idle');
+        break;
+      case 'idle':
+      case 'walk': {
+        this.cd -= dt;
+        if (this.cd <= 0) {
+          const a = this.choose(dist, rel);
+          if (a) { this.go('attack', a); break; }
+        }
+        this.face(dt);
+        // keeps its distance: far — towards the hero, too close (for ranged) — back
+        const sp = this.speed * this.speedK * dt;
+        if (Math.abs(rel) < 1.3 && dist > this.keep + 0.4) { this.pos.x += (dx / dist) * sp; this.pos.z += (dz / dist) * sp; walk = true; }
+        else if (this.keep > 4 && dist < this.keep - 2) { this.pos.x -= (dx / dist) * sp * 0.7; this.pos.z -= (dz / dist) * sp * 0.7; walk = true; }
+        this.state = walk ? 'walk' : 'idle';
+        break;
+      }
+      case 'attack':
+        if (this.act(this.attack, this.st, dt, dist)) { if (this.state === 'attack') { this.cd = rand(0.6, 1.2) / this.speedK; this.go('idle'); } }
+        break;
+      case 'daze':
+        this.heartOpen = this.st > 0.1;
+        if (rnd() < 0.25) this.h.fx.particle({ pos: this.pos.clone().add(new THREE.Vector3(Math.cos(this.time * 6) * 0.8, this.topY + 0.4, Math.sin(this.time * 6) * 0.8)), vel: new THREE.Vector3(0, 0.3, 0), life: 0.4, size: 0.1, color: RASP, gravity: 0 });
+        if (this.st > this.dazeFor) { this.cd = 0.6; this.go('idle'); }
+        break;
+      case 'dead': this.dying(dt); break;
+    }
+    this.field.update(dt);
+    for (let i = this.minions.length - 1; i >= 0; i--) { const m = this.minions[i]; m.update(dt); if (m.dead) this.minions.splice(i, 1); }
+    // the body does not pass through walls, pushes the hero away
+    if (this.state !== 'dead' && this.flyY < 1) {
+      const p = new THREE.Vector3(this.pos.x, 0, this.pos.z);
+      resolveCircle(p, this.radius * 0.8, this.h.obstacles());
+      const a = this.arena;
+      this.pos.x = THREE.MathUtils.clamp(p.x, a.x0 + this.radius, a.x1 - this.radius);
+      this.pos.z = THREE.MathUtils.clamp(p.z, a.z0 + this.radius, a.z1 - this.radius);
+      if (this.state !== 'sleep' && this.solid) {
+        const d = Math.hypot(hero.x - this.pos.x, hero.z - this.pos.z), R = this.radius + HERO.radius;
+        if (d < R && d > 1e-3) { const k = (R - d) / d; hero.x += (hero.x - this.pos.x) * k; hero.z += (hero.z - this.pos.z) * k; }
+      }
+    }
+    this.tickLook(dt, this.state === 'dead' ? Math.max(0.1, 1 - this.st) : this.state === 'sleep' ? 0.5 : this.enraged ? 1.35 : 1);
+    this.animate(dt, walk);
+    this.place();
+  }
+
+  protected place(): void {
+    this.pos.y = this.flyY;
+    this.group.position.set(this.pos.x, this.flyY, this.pos.z);
+    this.group.rotation.y = this.yaw;
+  }
+
+  protected face(dt: number, k = 1): void {
+    const hero = this.h.hero.pos;
+    const d = wrap(Math.atan2(hero.x - this.pos.x, hero.z - this.pos.z) - this.yaw), m = this.turn * k * this.speedK * dt;
+    this.yaw += Math.max(-m, Math.min(m, d));
+  }
+
+  /** Point inside the arena (with a margin) */
+  protected clampIn(p: THREE.Vector3, pad = 1.5): THREE.Vector3 {
+    const a = this.arena;
+    p.x = THREE.MathUtils.clamp(p.x, a.x0 + pad, a.x1 - pad);
+    p.z = THREE.MathUtils.clamp(p.z, a.z0 + pad, a.z1 - pad);
+    p.y = 0;
+    return p;
+  }
+
+  private dying(dt: number): void {
+    // topples, the light fades, over 1.2 s crumbles into raspberry cubes — the heart bursts
+    this.body.rotation.z = Math.min(1, this.st / 0.9) * 0.6;
+    if (this.st > 1.2 && this.deathT === 0) {
+      this.deathT = 1;
+      const c = this.pos.clone().setY(this.topY * 0.5), fx = this.h.fx;
+      fx.screenFlash('#ffb0d0', 0.35, 0.3);
+      fx.burst(c, [RASP, C(4, 1.7, 2.4), C(4, 3.4, 2)], 40, { speed: 6, up: 5, size: 0.12, life: 1.1, glow: true, gravity: 3 });
+      fx.shock(this.pos.clone().setY(0.1), 5, RASP, 0.5, 0.2);
+      this.onDeath?.(new THREE.Vector3(this.pos.x, 0, this.pos.z));
+    }
+    if (this.deathT > 0) {
+      this.deathT += dt;
+      const k = Math.max(0, 1 - (this.deathT - 1) / 0.5);
+      this.body.scale.setScalar(k);
+      if (k <= 0) this.group.visible = false;
+    }
+  }
+
+  // ---------- field: marks, projectiles, zones (src/bosses/field.ts) ----------
+  /** Circle mark: fills for dur seconds, then done (that is where they hit) */
+  markCircle(at: THREE.Vector3, r: number, dur: number, done: () => void, color?: THREE.Color): void { this.field.markCircle(at, r, dur, done, color); }
+  /** Strip mark from `from` along dir */
+  markLine(from: THREE.Vector3, dir: THREE.Vector3, len: number, w: number, dur: number, done: () => void, color?: THREE.Color): void { this.field.markLine(from, dir, len, w, dur, done, color); }
+  /** Lobbed projectile from `from` to `to` over dur with height h; land — at the landing point */
+  lob(mesh: THREE.Object3D, from: THREE.Vector3, to: THREE.Vector3, dur: number, h: number, trail: THREE.Color, land: (at: THREE.Vector3) => void): void { this.field.lob(mesh, from, to, dur, h, trail, land); }
+  /** Hazard zone: dps damage per second, slow — hero slowdown inside */
+  hazard(pos: THREE.Vector3, r: number, t: number, dps: number, color: THREE.Color, slow = 0): void { this.field.hazard(pos, r, t, dps, color, slow); }
+  /** Hero slowdown from zones (0..1) — the playground multiplies the speed */
+  get heroSlow(): number { return this.field.heroSlow; }
+  /** Minion next to a point */
+  summon(at: THREE.Vector3, look: ConstructorParameters<typeof Minion>[2]): Minion {
+    const m = new Minion(this.h, this.clampIn(at.clone(), 1), look);
+    this.minions.push(m);
+    this.h.fx.burst(m.pos.clone().setY(0.3), [look.body, RASP], 12, { speed: 2.5, up: 3, size: 0.1, life: 0.5, gravity: 6 });
+    return m;
+  }
+
+  private clearField(): void {
+    this.field.clear();
+    for (const m of this.minions.splice(0)) m.kill();
+  }
+}

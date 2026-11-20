@@ -1,0 +1,124 @@
+{
+  "slug": "stack-sky",
+  "genre": "arcade",
+  "oneLiner": "玩家点击/空格截停左右往复的浮空岛，把塔往云端叠高；没对齐的部分会被裁掉让下一层变窄，完美对齐能连击回宽、perfect×3 触发彩云缠绕。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "drop",
+      "cost": "停早了裁边变窄，停晚了可能整块错失；每次截停都在拿宽度换高度",
+      "feedback": ["sfx", "cut-particles", "tower-shake"],
+      "combinesWith": ["perfect"]
+    },
+    {
+      "name": "perfect",
+      "cost": "追求完全对齐要等更久、承受风切把块吹偏的风险",
+      "feedback": ["sfx", "combo-flash", "width-recover"],
+      "combinesWith": ["drop"]
+    },
+    {
+      "name": "brace",
+      "cost": "预判横风偏移意味着在块还没到塔心就提前截停，猜错直接裁边",
+      "feedback": ["sfx", "wind-streaks", "gust-warning"],
+      "combinesWith": ["drop"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "慢速段稳叠保宽度，还是抢 perfect 连击提速",
+      "cost": "稳叠进度慢 vs 抢连击更容易裁边"
+    },
+    {
+      "atSec": 18,
+      "choice": "等块回到塔心正上方再停，还是提前截停抢节奏",
+      "cost": "多等一拍 vs 提前停偏裁边"
+    },
+    {
+      "atSec": 32,
+      "choice": "第一次风切：预判偏移提前截停，还是等风过后再停",
+      "cost": "预判错直接裁边 vs 等风时块更难对齐"
+    },
+    {
+      "atSec": 50,
+      "choice": "神龛层：用当前宽块求稳，还是用窄块赌神龛恢复",
+      "cost": "窄块更容易判负 vs 宽块错过恢复窗口"
+    },
+    {
+      "atSec": 70,
+      "choice": "加速段：追求 perfect×3 彩云缠绕，还是保守保宽度",
+      "cost": "连击断了白搭 vs 保守少回宽"
+    },
+    {
+      "atSec": 95,
+      "choice": "窄块逼近判负线：冒险抢神龛恢复，还是稳叠保命",
+      "cost": "赌神龛可能直接错失 vs 稳叠依旧越叠越窄"
+    },
+    {
+      "atSec": 120,
+      "choice": "换章前抢层数，还是等换章后重新适应节奏",
+      "cost": "抢层数可能断连击 vs 等节奏浪费时间"
+    },
+    {
+      "atSec": 150,
+      "choice": "高风速连续吹偏：硬压塔心，还是借风势顺势截停",
+      "cost": "硬压容易裁边 vs 借风势难算准"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "慢速段：教截停与裁边（晨曦云海）" },
+    { "index": 2, "newElement": "块速提升，逼更早预判" },
+    { "index": 3, "newElement": "风切登场：每 10 层横风把移动岛吹偏" },
+    { "index": 4, "newElement": "神龛层解锁：对齐纹样恢复初始宽度" },
+    { "index": 5, "newElement": "换章：雷雨层（蓝灰电光）" },
+    { "index": 6, "newElement": "风速提升 + perfect×3 彩云缠绕" },
+    { "index": 7, "newElement": "岛宽随段位收窄，容错更小" },
+    { "index": 8, "newElement": "风频加密：每 10 层连吹两阵" },
+    { "index": 9, "newElement": "换章：星夜天宫（深紫星空）" },
+    { "index": 10, "newElement": "神龛层容错收紧，需更精确对齐" },
+    { "index": 11, "newElement": "极速段：块速逼近极限" },
+    { "index": 12, "newElement": "无尽塔顶：维持窄块连击冲最高分" }
+  ],
+  "upgrades": [
+    { "id": "cloudWrap", "kind": "rule", "desc": "perfect×3 触发彩云缠绕，塔身泛金光并回宽（改规则）" },
+    { "id": "shrineRestore", "kind": "rule", "desc": "神龛层对齐直接恢复初始宽度（改规则）" },
+    { "id": "windTelegraph", "kind": "rule", "desc": "风切来临前 1 层出现预警云线（改规则）" },
+    { "id": "perfectStreak", "kind": "rule", "desc": "普通叠块不再打断 perfect 连击计数（改规则）" },
+    { "id": "widthPlus", "kind": "stat", "desc": "初始岛宽 +10" },
+    { "id": "speedDown", "kind": "stat", "desc": "移动岛速度 -8%" },
+    { "id": "recoverPlus", "kind": "stat", "desc": "perfect 回宽 +4" },
+    { "id": "minWidthDown", "kind": "stat", "desc": "判负宽度阈值 -4" }
+  ],
+  "replayHooks": ["nearMiss", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "perfect×3 触发「彩云缠绕」：塔身泛金光、背景云海翻涌、移动岛被金色祥云托起",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "云端浮空岛风格：程序化 Canvas 分层绘制（天光渐变/云海/浮岛），三场景包换章必换色板与构图；封面海报另用 AI 出图，BGM 用 WebAudio 程序化分层合成"
+}

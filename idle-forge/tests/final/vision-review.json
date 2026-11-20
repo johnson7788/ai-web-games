@@ -1,0 +1,149 @@
+{
+  "game": "idle-forge",
+  "generatedAt": "2026-11-19T15:17:46.381Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 7.125,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘IDLE FORGE’阴影略过重，部分字母边缘在浅绿背景上对比度偏低（如‘E’右下）",
+        "右上角语言选择下拉框无展开箭头图标，可能被误认为静态标签",
+        "剑形物体发光效果与背景融合过强，远距离辨识度稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角‘Hammer Power’技能卡升级（因显示+15%且成本最低25）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Masterwork进度条左侧‘MASTERWORK’文字与橙色指示器轻微重叠，可能影响辨识",
+        "右上角图标（?、头像、刷新、主页）间距过小，桌面端尚可，但若适配移动端易误触",
+        "锻造锤与砧台为深灰，剑为亮铜色，但背景树与地面色差小，中远距离轮廓略糊"
+      ]
+    },
+    {
+      "shot": "tests/final/03-shortage.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角‘Apprentices’升级以提升生产效率",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Masterwork进度条左侧图标（橙色圆点）与文字‘MASTERWORK’间距过小，易误读为图标是文字一部分",
+        "Forge Heat面板中‘+2% ● +10% ◆’符号未标注含义，新手可能困惑",
+        "锤子与砧板动画区域无明确交互提示，玩家可能不确定是否可点击"
+      ]
+    },
+    {
+      "shot": "tests/final/04-castle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Hammer Power’升级项（当前高亮且成本最低）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Masterwork进度条三面旗帜颜色（红/蓝/黄）无明确状态说明，易混淆阶段含义",
+        "锤子与砧座阴影较弱，与背景砖墙对比度不足，影响操作焦点识别",
+        "右上角图标（?、耳机、重试、主页）间距过小，桌面端虽可点，但移动端易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/05-furnace.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角‘Hammer Power’升级按钮（25资源）以提升锻造效率",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Masterwork进度条上的旗帜图标颜色过暗（红/蓝/黄），在灰蓝背景下辨识度低，易混淆阶段",
+        "右上角四个功能图标（?、人物、重试、主页）尺寸偏小且无文字标签，新手难识别",
+        "Forge Heat面板中‘+2% ● +10% ◆’符号未说明含义，可能造成理解歧义"
+      ]
+    },
+    {
+      "shot": "tests/final/06-vein.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Hammer Power’升级按钮（左下角第一个）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Masterwork进度条左侧旗帜图标部分被左上角UI遮挡（轻微）",
+        "锤子与砧座的高亮圆环与‘Hammer Speed’卡片边缘轻微重叠，可能误触",
+        "右上角图标（?、设置、重试、主页）间距过小，桌面端无问题，但若适配移动端易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/07-volcano.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角‘Hammer Power’技能卡升级",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Masterwork进度条左侧图标与文字间距过小，易误触",
+        "右上角四个功能图标无文字说明，新手难辨识",
+        "剑形物品发光效果过强，略干扰背景元素辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/08-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方的“Menu”按钮返回主菜单",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中剑形剪影与‘Masterwork forged!’弹窗部分重叠，可能干扰焦点",
+        "左上角‘Level 12 · Dragon Slayer’与进度条文字颜色相近，对比度偏低",
+        "底部四个技能面板图标与数值排布紧凑，小屏可能误触"
+      ]
+    }
+  ]
+}

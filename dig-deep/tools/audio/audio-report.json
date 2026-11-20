@@ -1,0 +1,265 @@
+{
+  "generatedAt": "2026-11-19T14:31:10.337Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "dig": {
+      "rms": 0.1442,
+      "peak": 0.391,
+      "nan": 0,
+      "zcRate": 325.1,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "cellHit": {
+      "rms": 0.1681,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 170.1,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "cellBreak": {
+      "rms": 0.193,
+      "peak": 0.521,
+      "nan": 0,
+      "zcRate": 354.2,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "diamond": {
+      "rms": 0.2186,
+      "peak": 0.6526,
+      "nan": 0,
+      "zcRate": 1450.1,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "fossil": {
+      "rms": 0.1591,
+      "peak": 0.5077,
+      "nan": 0,
+      "zcRate": 685.8,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "faultBreak": {
+      "rms": 0.1994,
+      "peak": 0.5113,
+      "nan": 0,
+      "zcRate": 214.6,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "collapse": {
+      "rms": 0.1783,
+      "peak": 0.528,
+      "nan": 0,
+      "zcRate": 415,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "rockCut": {
+      "rms": 0.0637,
+      "peak": 0.2418,
+      "nan": 0,
+      "zcRate": 8600.9,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "rockBlocked": {
+      "rms": 0.1766,
+      "peak": 0.22,
+      "nan": 0,
+      "zcRate": 133.4,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "lava": {
+      "rms": 0.0694,
+      "peak": 0.1821,
+      "nan": 0,
+      "zcRate": 11406.9,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "layerEnter": {
+      "rms": 0.1266,
+      "peak": 0.4868,
+      "nan": 0,
+      "zcRate": 342.2,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "toolChange": {
+      "rms": 0.1681,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 560.3,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "toolUnlock": {
+      "rms": 0.1676,
+      "peak": 0.5441,
+      "nan": 0,
+      "zcRate": 569.5,
+      "samples": 15876,
+      "durSec": 0.36,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0669,
+      "peak": 0.12,
+      "nan": 0,
+      "zcRate": 758.6,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "move": {
+      "rms": 0.0195,
+      "peak": 0.0555,
+      "nan": 0,
+      "zcRate": 11695.3,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "staminaLow": {
+      "rms": 0.332,
+      "peak": 0.4,
+      "nan": 0,
+      "zcRate": 216.7,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2105,
+      "peak": 0.5275,
+      "nan": 0,
+      "zcRate": 335,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "drown": {
+      "rms": 0.1974,
+      "peak": 0.4859,
+      "nan": 0,
+      "zcRate": 258.8,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "coreReach": {
+      "rms": 0.1616,
+      "peak": 0.7796,
+      "nan": 0,
+      "zcRate": 713.5,
+      "samples": 44100,
+      "durSec": 1,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1185,
+      "peak": 0.2671,
+      "nan": 0,
+      "zcRate": 970.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1681,
+      "peak": 0.6235,
+      "nan": 0,
+      "zcRate": 828,
+      "samples": 29988,
+      "durSec": 0.68,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.1374,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 879.2,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "laserCharge": {
+      "rms": 0.1405,
+      "peak": 0.24,
+      "nan": 0,
+      "zcRate": 1007.3,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    }
+  },
+  "loops": {
+    "cavern": {
+      "rms": 0.0132,
+      "peak": 0.0839,
+      "nan": 0,
+      "zcRate": 1904,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "magma": {
+      "rms": 0.0159,
+      "peak": 0.0893,
+      "nan": 0,
+      "zcRate": 2274.9,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "diamond.pitchAboveDig": {
+      "zcRateDiamond": 1450.1,
+      "zcRateDig": 225.1,
+      "ok": true
+    },
+    "coreReach.longerThanUi": {
+      "durCore": 1,
+      "durUi": 0.05,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

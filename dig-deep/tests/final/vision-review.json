@@ -1,0 +1,149 @@
+{
+  "game": "dig-deep",
+  "generatedAt": "2026-11-19T14:34:00.232Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 6.5,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘DIG DEEP’发光效果过强，导致部分字母边缘轻微晕染，影响远距离辨识",
+        "‘Best: 0’文字字号偏小且对比度低，易被忽略",
+        "右上角语言选择下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间高亮的2号格子（带向下箭头的黄色方块）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Flood △’提示文字颜色过浅（青色），在深棕背景上对比度不足，易被忽略",
+        "左下角蓝色菱形标记（玩家位置？）与数字2重叠，视觉层级混乱，未明确指示玩家身份",
+        "右上角工具按钮（Shovel/Drill/Laser）无图标仅文字，小屏设备辨识度低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-fossil.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角带向下箭头的青色方块（当前选中操作位）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Flood —’文字颜色过浅（青蓝），在深背景上对比度偏低，易被忽略",
+        "部分格子内数字与斜线符号（如‘-1’）排版拥挤，可能误读为‘1’或‘/’",
+        "右上角工具按钮（Shovel/Drill/Laser）无图标仅文字，移动端辨识成本高"
+      ]
+    },
+    {
+      "shot": "tests/final/04-core.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角橙色高亮格子（带向下箭头的熔岩格）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Flood —’文字颜色过浅（青蓝），在深棕背景上对比度不足，易被忽略",
+        "左上角‘DEPTH 85’与‘LAYER 11 · Rising Magma’标签间距过小，视觉拥挤",
+        "部分数字‘2’在浅橙格中（如第1行第1格）与背景对比度偏低，辨识稍弱"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Dig again’按钮重新开始游戏",
+      "readable": 8,
+      "silhouette": 5,
+      "style_consistent": 7,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景网格模糊导致可交互格子边界不清，影响‘挖’操作目标定位",
+        "‘The flood caught you’红色提示文字字号偏小，与主标题对比度不足，易被忽略",
+        "‘Title’按钮样式（深灰圆角）与‘Dig again’（金边浅棕）风格不一致，疑似未完成UI"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击当前选中的铲子工具（1 Shovel）以挖掘标有向下箭头的深色方块",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Flood ▲’提示文字颜色偏淡（青色），在深棕背景上对比度不足，易被忽略",
+        "右下角浅米色方块内数字‘2’疑似被部分裁切（右下角缺角）",
+        "深度条右侧数值‘34’与进度条重叠，轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间标有'2'且带向下箭头的方块（当前选中操作目标）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部'Flood △'文字与进度条间距过小，易误读为进度条标签",
+        "右上角按钮组（Shovel/Drill/Laser）无视觉层级区分，功能优先级不明确",
+        "部分深棕方块内'√'符号颜色过暗，与背景对比度不足（如第1行第4列、第5行第4列）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间亮蓝色带数字2的方块（当前光标正指向它）以挖掘该列",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角‘HOW TO DIG’提示框部分遮挡底部可交互格子（第6行第2、4列蓝色2格）",
+        "顶部‘Flood ▲’文字与进度条间距过小，易误读为‘Flood▲’连写",
+        "左上角‘DEPTH 0’与‘LAYER 1 · Topsoil’标签背景色相近，层次感弱"
+      ]
+    }
+  ]
+}

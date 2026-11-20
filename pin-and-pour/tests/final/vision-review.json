@@ -1,0 +1,149 @@
+{
+  "game": "pin-and-pour",
+  "generatedAt": "2026-11-19T12:29:02.897Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 6.75,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1按钮高亮为橙色，但其下方有半透明黄色圆环遮挡部分按钮区域，可能干扰点击",
+        "‘★ 0 / 36’ 星级计数文字偏小且颜色较淡，易被忽略",
+        "背景左右两侧柱状结构与地面交界处有轻微锯齿，风格略不统一"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部带箭头的蜂蜜罐图标，将中间的蜂蜜球拉下来",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间蜂蜜球与下方按钮间距过小，可能误触",
+        "顶部'HONEY'标签右侧箭头与方块图标紧贴，易误判为单个控件",
+        "背景建筑剪影过于简化，缺乏场景引导性"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮进入下一关",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Bottled!’标题与‘Perfect Pour!’主提示间距过小，视觉层级略混乱",
+        "三颗星图标为纯白无描边，在深棕背景上对比度偏低，眯眼时易与背景融合",
+        "‘Honey 1/1 · Bubbles 0/0 · Pulls 1’统计行字体偏小，3秒内需聚焦才能辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/04-bubble-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部黄色蜂蜜图标（带提手的罐子）以选择蜂蜜工具",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Honey 0/1’等状态文字字号偏小，远距离辨识度略低",
+        "中央工具栏右侧‘BUBBLES’箭头按钮与右侧边距过近，可能误触",
+        "工具栏中网格状图标（第5行第2列）视觉语义模糊，不易理解功能"
+      ]
+    },
+    {
+      "shot": "tests/final/05-comb-level.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部带黄色圆点的购物袋图标（当前选中HONEY，需收集1个蜂蜜）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Honey 0/1’与‘Bubbles 0/1’文字间距过小，易误读为‘Honey 0/1 Bubbles 0/1’",
+        "中央操作面板无明确边界指示，新手可能不确定可交互区域范围",
+        "紫色气泡图标与黄色蜂蜜图标视觉权重接近，目标优先级不够突出"
+      ]
+    },
+    {
+      "shot": "tests/final/06-noon-scene.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部带黄色圆点的提桶图标（当前选中状态）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间竖条操作面板遮挡部分游戏区域，可能影响空间判断",
+        "‘HONEY’和‘BUBBLES’标签与箭头图标间距过小，视觉拥挤",
+        "紫色气泡图标与黄色蜂蜜图标形状相似但颜色区分度不足，易混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/07-dusk-scene.png",
+      "goal_visible": true,
+      "first_action_guess": "点击最下方带蜂巢图标的按钮，将蜂蜜收集到容器中",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间竖条交互区无明确边界指示，玩家可能误触非目标区域",
+        "‘HONEY’标签右侧箭头与方框图标间距过小，易误判为单个控件",
+        "背景星空与月光亮度较高，轻微削弱中央交互元素对比度"
+      ]
+    },
+    {
+      "shot": "tests/final/08-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部带箭头的蜂蜜罐图标，将中间的蜂蜜球拉入罐中",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间蜂蜜球与下方按钮间距过小，可能误触",
+        "顶部'HONEY'标签右侧箭头与方框图标紧贴，视觉拥挤",
+        "背景建筑剪影过于简化，缺乏层次感，影响场景辨识"
+      ]
+    }
+  ]
+}

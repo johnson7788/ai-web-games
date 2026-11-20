@@ -1,0 +1,10 @@
+assets/_src/
+tests/artifacts/
+node_modules/
+
+# 3D 中间产物（大文件不入库，产物以 lib/models/*.glb.js 为准）
+assets/_raw3d/
+assets/_src3d/
+tools/gen3d.log
+tools/probe/
+tools/gate3d/

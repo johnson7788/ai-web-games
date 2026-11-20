@@ -1,0 +1,90 @@
+{
+  "slug": "note-rider",
+  "genre": "action",
+  "oneLiner": "骑士骑在音符马上驰骋五线谱桥：跟上节拍换轨挥剑，斩尽迎面扑来的弦魔，连续完美触发整行震动的和弦斩。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "slash",
+      "cost": "只能在音符贴近判定线时斩；过早只是 Good 少分，过晚则漏击被弦魔反击掉血，且斩错红色反击音会被反打",
+      "feedback": ["sfx", "slashArc", "hitFlash"],
+      "combinesWith": ["switch"]
+    },
+    {
+      "name": "switch",
+      "cost": "换轨有 0.12s 硬直、期间无法斩击；换错轨道会错过另一条弦上的音符",
+      "feedback": ["sfx", "laneGlow", "knightDash"],
+      "combinesWith": ["slash"]
+    },
+    {
+      "name": "skill",
+      "cost": "消耗由完美命中积攒的能量（护盾/爆发/吸血/治疗），用掉能量就失去保命后手",
+      "feedback": ["sfx", "auraGlow", "screenFx"],
+      "combinesWith": ["slash"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一个音符逼近：立刻挥剑，还是再等它近一点拿 Perfect", "cost": "早砍只是 Good 少分；等太久则漏击掉血" },
+    { "atSec": 12, "choice": "长按蓄斩出现：按住蓄满拿全额伤害，还是提前松手去接下一个音符", "cost": "提前松手 = 蓄斩半途而废，弦魔反击" },
+    { "atSec": 20, "choice": "上下两条弦同时来 note：换轨贪上行，还是留在下行吃更稳的一个", "cost": "换轨有硬直，贪心可能两头落空" },
+    { "atSec": 30, "choice": "红色反击音逼近：忍住不砍，还是手快误砍被反打", "cost": "误砍 = 被反击掉血 + 断连" },
+    { "atSec": 42, "choice": "能量满了：留护盾保命，还是立刻爆发抢分", "cost": "用掉能量 = 失去关键保命后手" },
+    { "atSec": 55, "choice": "Boss 蓄斩槽出现：硬扛长按，还是放技能打断节奏", "cost": "硬扛 = 长按期间无法换轨，漏击掉血" },
+    { "atSec": 72, "choice": "变速乐章启动节奏翻倍：追速度吃高连击，还是降节奏苟血", "cost": "追速度 = 高连击高风险，容错归零" },
+    { "atSec": 95, "choice": "血线见底：能量全砸吸血续命，还是留最后一搏", "cost": "吸血 = 放弃爆发输出，拖久了更难" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "单音 note：单弦上第一次学会挥剑节奏" },
+    { "index": 2, "newElement": "长按蓄斩 note：按住蓄满伤害" },
+    { "index": 3, "newElement": "上下两行换轨：↑↓ 切换轨道对应不同 note" },
+    { "index": 4, "newElement": "反击红 note：红色必须躲，斩了被反打" },
+    { "index": 5, "newElement": "技能三选一升级点：护盾/爆发/吸血选 1" },
+    { "index": 6, "newElement": "变速乐章：BPM 抬升 + 中途视觉加速" },
+    { "index": 7, "newElement": "双音 note：快速连击两下" },
+    { "index": 8, "newElement": "第二次技能三选一强化" },
+    { "index": 9, "newElement": "星海场景 + 密集换轨节奏" },
+    { "index": 10, "newElement": "红音 + 双音混合连弹" },
+    { "index": 11, "newElement": "第三次技能三选一强化" },
+    { "index": 12, "newElement": "终章 Boss 寂静魔王：高血量 + 全机制叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockHold", "kind": "rule", "desc": "第 2 关起出现长按蓄斩 note" },
+    { "id": "unlockTwoLanes", "kind": "rule", "desc": "第 3 关起解锁上下两行换轨" },
+    { "id": "unlockRed", "kind": "rule", "desc": "第 4 关起出现反击红 note，必须躲" },
+    { "id": "unlockSkill", "kind": "rule", "desc": "第 5 关起技能三选一升级点" },
+    { "id": "tempoShift", "kind": "rule", "desc": "第 6 关起变速乐章" },
+    { "id": "unlockDouble", "kind": "rule", "desc": "第 7 关起出现双音 note" },
+    { "id": "skillBurst", "kind": "rule", "desc": "第 8 关起爆发技能可强化" },
+    { "id": "skillLifesteal", "kind": "rule", "desc": "第 11 关起吸血技能可强化" },
+    { "id": "hpUp", "kind": "stat", "desc": "提升血量上限的成长" },
+    { "id": "energyUp", "kind": "stat", "desc": "提升能量上限的成长" }
+  ],
+  "replayHooks": [
+    "rating",
+    "nearMiss",
+    "unlock",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

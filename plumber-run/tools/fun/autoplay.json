@@ -1,0 +1,62 @@
+{
+  "game": "plumber-run",
+  "genre": "action",
+  "source": "bot",
+  "generatedAt": "2026-11-19T16:39:19.946Z",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 226.2,
+      "actions": 613,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 13.7,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.28,
+      "uniqueEvents": 8,
+      "levelsReached": 12,
+      "completed": true,
+      "maxLevel": 12,
+      "actionsPerMin": 163
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 165.6,
+      "actions": 263,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 11.4,
+      "deaths": 3,
+      "idleSec": 29.5,
+      "maxEventGapSec": 3.68,
+      "uniqueEvents": 14,
+      "levelsReached": 1,
+      "completed": false,
+      "maxLevel": 1,
+      "actionsPerMin": 95
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 101.6,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 3,
+      "idleSec": 101.6,
+      "maxEventGapSec": 85.85,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false,
+      "maxLevel": 1,
+      "actionsPerMin": 0
+    }
+  ]
+}

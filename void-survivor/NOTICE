@@ -1,0 +1,15 @@
+VOID SURVIVOR
+Copyright 2026 VOID SURVIVOR contributors
+
+This product includes software developed as a derivative of
+"threejs-gamedev-template" by SahilK-027
+(https://github.com/SahilK-027/threejs-gamedev-template),
+licensed under the Apache License, Version 2.0.
+
+The template's Game architecture (Game/Time/Sizes/EventEmitter loop,
+AudioManager, ResourceLoader, VisibilityManager) was adapted and extended
+with an ECS layer, positional audio playback, and procedural audio/visual
+generation for VOID SURVIVOR. Demo models (CC-BY-4.0 Sketchfab assets),
+demo music, textures, and debug GUI tooling from the template were removed.
+
+See the LICENSE file for the full Apache License 2.0 text.

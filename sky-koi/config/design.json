@@ -1,0 +1,68 @@
+{
+  "slug": "sky-koi",
+  "genre": "arcade",
+  "oneLiner": "锦鲤在云海单键上扑，穿过鸟居门柱得分，贴近水面攒免费水花跳，吃满三颗珍珠升一星。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "flap",
+      "cost": "重力持续拉回高度，扑得太高会撞上门柱顶部，扑得太频繁打乱节奏",
+      "feedback": ["splashSfx", "逆鳞粒子", "上升冲量"],
+      "combinesWith": ["skim", "collect"]
+    },
+    {
+      "name": "skim",
+      "cost": "贴水面低飞随时可能被巨浪托起的水面吞没，撞水即死",
+      "feedback": ["水花拖尾", "免费小跳", "水声Sfx"],
+      "combinesWith": ["flap"]
+    },
+    {
+      "name": "collect",
+      "cost": "珍珠只出现在门缝窄处或危险路径，穿门瞬间必须保持高度",
+      "feedback": ["珍珠闪光", "星级进度", "鳞光粒子"],
+      "combinesWith": ["flap", "skim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "第一扇鸟居门来了：走高空安全，还是贴水低飞攒水花", "cost": "贴水=免费小跳但撞水即死" },
+    { "atSec": 12, "choice": "门缝里悬着一颗珍珠，位置很窄：冲进去吃，还是放弃保命", "cost": "吃珍珠逼你走窄缝，失误撞柱" },
+    { "atSec": 20, "choice": "连续两扇门：用攒到的免费水花跳过渡，还是常规上扑", "cost": "水花跳只有一次，用掉就没了" },
+    { "atSec": 30, "choice": "侧风阵风开始推你：逆风多扑还是顺风省力滑翔", "cost": "多扑消耗节奏，顺风可能被推向水面" },
+    { "atSec": 45, "choice": "巨浪改变水面高度：趁浪低贴水攒跳，还是保持高空", "cost": "浪随时升高，贴水会被吞" },
+    { "atSec": 60, "choice": "珍珠进度 2/3，最后一颗在移动门缝：赌它还是等下一扇", "cost": "赌移动门可能撞柱，等则延迟升星" },
+    { "atSec": 80, "choice": "移动门和侧风叠加：冲门时机选在门移动到最高还是最低", "cost": "选错时机直接撞柱" }
+  ],
+  "loop": { "teachSec": 20, "practiceSec": 50, "twistSec": 40, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "基础鸟居门（宽门）" },
+    { "index": 2, "newElement": "珍珠收集（吃满 3 颗升 1 星）" },
+    { "index": 3, "newElement": "窄门（门缝更窄）" },
+    { "index": 4, "newElement": "移动门（门上下浮动）" },
+    { "index": 5, "newElement": "侧风湍流（上下阵风）" },
+    { "index": 6, "newElement": "双门选择（上下两缝选其一）" },
+    { "index": 7, "newElement": "巨浪周期（水面升降）" },
+    { "index": 8, "newElement": "珍珠连珠（一门双珠）" },
+    { "index": 9, "newElement": "窄门 + 移动叠加" },
+    { "index": 10, "newElement": "侧风 + 巨浪叠加" },
+    { "index": 11, "newElement": "鳞光冲刺（第 3 颗珍珠触发）" },
+    { "index": 12, "newElement": "三轴终章（窄门+侧风+巨浪）" }
+  ],
+  "upgrades": [
+    { "id": "pearlStar", "kind": "rule", "desc": "吃满 3 颗珍珠，本关结算 +1 星" },
+    { "id": "skimJump", "kind": "rule", "desc": "贴水低飞触发免费水花小跳" },
+    { "id": "narrowGate", "kind": "rule", "desc": "第 3 关起门缝变窄" },
+    { "id": "movingGate", "kind": "rule", "desc": "第 4 关起门上下浮动" },
+    { "id": "sideWind", "kind": "rule", "desc": "第 5 关起上下阵风" },
+    { "id": "doubleGate", "kind": "rule", "desc": "第 6 关起一扇门有两道缝" },
+    { "id": "tidalWave", "kind": "rule", "desc": "第 7 关起水面周期升降" },
+    { "id": "scaleDash", "kind": "rule", "desc": "第 11 关第 3 颗珍珠触发鳞光冲刺" },
+    { "id": "gateSpeed", "kind": "stat", "desc": "门滚动速度逐关提升" },
+    { "id": "gapWidth", "kind": "stat", "desc": "窄门关门缝宽度压缩" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

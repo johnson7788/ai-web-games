@@ -1,0 +1,45 @@
+TITLE
+Mosaic Slide — Free Stained Glass Sliding Puzzle Game
+
+CATEGORY
+Puzzle
+
+TAGS
+sliding puzzle, stained glass, rose window, mosaic, brain teaser, casual, logic, tile puzzle, relaxing, browser game
+
+SHORT DESCRIPTION
+Slide colorful stained-glass shards into the gap to rebuild a glowing rose window before the sun sets.
+
+LONG DESCRIPTION
+MOSAIC SLIDE is a free sliding-tile puzzle game set in a stained-glass workshop. Tap a glass shard next to the dark gap and slide it into place, one shimmering piece at a time, until the shattered window becomes a perfect symmetric rose.
+
+Every level generates a unique hand-crafted-feeling stained-glass window from a seeded procedural pattern — geometric mosaics, blooming rosettes and candlelit night windows. Rebuild it, and the finishing move floods the whole window with sunlight: the signature moment every player remembers.
+
+12 levels across three scenes: Workshop Dawn, Glass Afternoon and Candle Night. Start with a gentle 3×3, then master hexagon cuts, timed sprints, rotating shards, memory puzzles where the goal image hides after five seconds, and dual interwoven patterns before the grand 6×6 finale.
+
+Three stars per level: finish the window, finish within the move goal, and finish fast enough for the time star. Track your best stars across all 12 windows.
+
+Easy to learn in ten seconds, hard to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+琉璃拼图坊 — 免费琉璃花窗滑块拼图游戏
+
+CATEGORY
+益智
+
+TAGS
+滑块拼图, 琉璃花窗, 玫瑰花窗, 马赛克, 解谜, 休闲, 逻辑, 拼图, 放松, 网页游戏
+
+SHORT DESCRIPTION
+点击缺口旁的彩色琉璃碎片，把它们一片片滑回原位，在太阳落山前拼出会发光的花窗。
+
+LONG DESCRIPTION
+《琉璃拼图坊》是一款免费的滑块拼图游戏，故事发生在一间琉璃工坊里。点击暗色缺口旁的琉璃碎片，把它滑进缺口，一片接着一片，直到破碎的花窗重新拼成一扇完美对称的玫瑰花窗。
+
+每一关都由程序化算法生成一扇独一无二的彩色花窗——几何镶嵌、绽放花蕊、烛光夜景。拼好它的那一瞬间，整扇花窗会被阳光点亮，成为每个玩家都会记住的画面。
+
+12 个关卡横跨三大场景：工坊晨光、彩窗午后、烛光夜殿。从轻松的 3×3 起步，逐步挑战六边形切、限时冲刺、旋转碎片、参考图五秒后消失的记忆关、双图交织，直到 6×6 终章大花窗。
+
+每关三星：拼好花窗、在步数目标内完成、抢在时间星要求内完成。记录你在 12 扇花窗上的最高星级。
+
+十秒上手，越玩越烧脑。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

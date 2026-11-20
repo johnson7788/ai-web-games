@@ -1,0 +1,14 @@
+{
+  "done": false,
+  "round": 20,
+  "gates": {
+    "artbible": 1,
+    "manifest": 1,
+    "probeScene": 0,
+    "probeStats": 0,
+    "probeAudio": 0,
+    "probeConsole": 1,
+    "probeTest": 0
+  },
+  "at": "2026-11-18T01:26:20.200Z"
+}

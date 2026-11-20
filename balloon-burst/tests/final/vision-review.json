@@ -1,0 +1,149 @@
+{
+  "game": "balloon-burst",
+  "generatedAt": "2026-11-19T12:14:13.418Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.875,
+    "silhouette": 7.5,
+    "style_consistent": 9.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-dusk.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一列中相同颜色连续3个以上的灯笼进行消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD按钮（如重试、设置）尺寸偏小，桌面截图无法判断是否≥44px，保守视为潜在风险",
+        "部分灯笼高光反射在暗背景上对比度略低，眯眼时个别颜色（如浅黄与橙）区分稍弱",
+        "左上角‘Level 1 · First Lanterns’文字与Score/Target按钮间距紧凑，轻微视觉拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/02-action.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景灯笼网格在模糊层下仍部分可见，干扰焦点；应完全虚化或移除",
+        "‘Festival Lit!’标题与三颗星间距过小，视觉拥挤",
+        "‘Perfect Glow!’副标题字号偏小，弱化成就感"
+      ]
+    },
+    {
+      "shot": "tests/final/03-metal.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意一个带六边形图标的盾牌（绿色或蓝色）以触发匹配或消除",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "六边形图标在部分盾牌中尺寸偏小且与背景对比度不足，易被忽略（如第1行第5列、第3行第6列）",
+        "底部紫色区域与网格底边对齐不一致，存在轻微视觉断层（y≈680px处）",
+        "顶部计时器'40s'字体略小，远距离辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/04-fire.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意同色相邻的火花图标进行匹配消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部计时器'40s'与目标框间距过小，可能误触",
+        "右上角设置/重试按钮图标尺寸偏小（约24px），桌面虽可接受但移动端风险高",
+        "部分火花图标内高光点位置不一致（如红/黄图标高光在左上，蓝/绿在右下），轻微风格偏差"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间带∞符号的彩色灯笼进行匹配消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第2行第3列与第4行第3列的∞符号灯笼视觉重复，易误判为相同元素",
+        "右上角月亮与星形装饰轻微遮挡部分格子边缘（第1行第6-7列）",
+        "顶部计时器‘40s’字体略小，远距离辨识度稍低"
+      ]
+    },
+    {
+      "shot": "tests/final/06-shifting.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意两个相邻的相同颜色灯笼进行交换以匹配三个或更多",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角月亮与星星装饰轻微遮挡部分灯笼（第1行第7列附近）",
+        "左上角‘Level 6 · Shifting Glow’文字与得分框间距过小，视觉拥挤",
+        "部分灯笼顶部小挂环颜色（如粉色/紫色）在深蓝背景中对比度偏低，影响快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mist.png",
+      "goal_visible": true,
+      "first_action_guess": "点击任意两个相同颜色的盾牌进行配对消除",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第4行第2、5列盾牌上有白色时钟图标，未说明其功能（可能是冻结/计时器），易造成困惑",
+        "顶部‘Borrowed Time’文字颜色偏暗，与背景对比度略低（#666 vs #A8DADC）",
+        "部分盾牌高光反射位置不一致（如红/橙色盾牌高光在左上，绿/蓝在右上），轻微影响视觉统一性"
+      ]
+    },
+    {
+      "shot": "tests/final/08-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Next Level”按钮进入下一关",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Festival Lit!’标题与背景灯笼网格部分重叠，弱化文字对比度",
+        "三颗星图标下方‘Perfect Glow!’文字字号偏小，远距离辨识度略低",
+        "‘Menu’按钮为灰色半透明，视觉权重过低，易被忽略"
+      ]
+    }
+  ]
+}

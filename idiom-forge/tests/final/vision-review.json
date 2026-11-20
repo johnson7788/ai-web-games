@@ -1,0 +1,149 @@
+{
+  "game": "idiom-forge",
+  "generatedAt": "2026-11-19T17:38:38.589Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 6.25,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Forge’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘IDIOM FORGE’发光效果过强，导致部分字母边缘模糊（如O、R），影响可读性",
+        "‘成语熔炉’与英文副标题间距过小，中英混排易造成视觉干扰",
+        "‘0/12 weapons forged’文字颜色偏暗（橙色#FF9933），在深棕背景上对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击字母'O'填入空格，组成'ZOOM'表示'快速移动'",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "空格高亮框与字母'O'间距过小，易误触相邻字母",
+        "底部输入框无明确状态反馈（如光标/闪烁）",
+        "‘MEANING’标签字体偏小且对比度低，弱光下难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击字母'O'填入空格，组成'ZOOM'表示'快速移动'",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中间输入区空格高亮框与字母间距不均，第三格（空格）明显偏大，易误判为可输入位置",
+        "底部中央黑色长条按钮无明确功能标识，且发光效果与上方字母混淆视觉层级",
+        "‘MEANING’标签与下方字母行垂直间距过小，部分用户可能误读为单词一部分"
+      ]
+    },
+    {
+      "shot": "tests/final/04-forge.png",
+      "goal_visible": true,
+      "first_action_guess": "点击字母 'K' 填入第一个空格，因为光标在第一个空位且 'K' 在键盘中央被高亮指向",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘MEANING’标签与输入框间距过小，易误触；",
+        "底部武器槽图标模糊，无法辨识当前武器类型；",
+        "字母键盘无视觉反馈区分已选/未选状态，仅靠光标箭头指示不够明确"
+      ]
+    },
+    {
+      "shot": "tests/final/05-riddle.png",
+      "goal_visible": true,
+      "first_action_guess": "点击字母 'N' 或 'V' 组成单词，因光标正指向 'N' 且提示为 'on top of'",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "光标箭头部分遮挡字母 'N' 和 'V'，影响精确点击",
+        "底部武器槽图标与粒子特效重叠，可能误触或干扰视觉",
+        "‘RIDDLE · x2’ 文字偏小且颜色浅（淡紫），在深背景上对比度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Forge again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签与标题间距过小，视觉层级略混乱",
+        "‘Press R to forge again’提示字号偏小，易被忽略",
+        "整体暗色背景+暖光边框导致眯眼时UI与背景对比度不足，影响silhouette得分"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击键盘上的 'W' 键填入第一个空格",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘MEANING’标签与下方输入框间距过小，视觉层级略模糊",
+        "进度1/8右对齐但无明确归属（易误认为是当前词进度而非总题数）",
+        "键盘字母键无大小写区分，可能影响拼写判断（如I/l混淆）"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击字母 'E'（补全 'THE' 中缺失的第三位）",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标单词 'the one there' 与当前输入框 'T H _ T' 不一致，易引发混淆",
+        "底部中央黑色矩形区域（疑似输入槽）无明确交互提示，视觉上像装饰而非可操作区",
+        "‘MEANING’标签与下方输入格间距过小，略显拥挤"
+      ]
+    }
+  ]
+}

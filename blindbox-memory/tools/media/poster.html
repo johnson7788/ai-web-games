@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+html,body{margin:0;padding:0;width:1280px;height:720px;overflow:hidden}
+body{background:
+  radial-gradient(circle at 25% 30%, #4a2f8f 0%, transparent 55%),
+  radial-gradient(circle at 78% 72%, #8f2f5e 0%, transparent 55%),
+  linear-gradient(160deg, #241b3a, #372a56 60%, #241b3a);
+  font-family:'Trebuchet MS','Segoe UI',sans-serif}
+.wrap{position:relative;width:1280px;height:720px}
+.fan{position:absolute;display:grid;grid-template-columns:repeat(6,1fr);gap:26px;width:1180px;left:50px;top:80px;transform:rotate(-4deg)}
+.card{width:180px;height:180px;border-radius:22px;overflow:hidden;box-shadow:0 10px 0 rgba(0,0,0,.35),0 18px 30px rgba(0,0,0,.45);background:#fff}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.title{position:absolute;left:640px;top:300px;transform:translateX(-50%) rotate(-1.5deg);text-align:center;z-index:5}
+.t1,.t2{font-weight:900;letter-spacing:.05em;line-height:.95;font-size:110px;display:block}
+.t1{color:#ffd166;text-shadow:0 5px 0 #a3543f,0 9px 0 rgba(0,0,0,.35),0 14px 26px rgba(0,0,0,.5)}
+.t2{color:#7ef0d4;text-shadow:0 5px 0 #2c7f6d,0 9px 0 rgba(0,0,0,.35),0 14px 26px rgba(0,0,0,.5)}
+.sub{margin-top:26px;font-size:30px;color:#e9e0ff;font-weight:700;letter-spacing:.06em;text-shadow:0 2px 0 rgba(0,0,0,.4)}
+.glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%, rgba(255,209,102,.14), transparent 60%);z-index:4}
+</style></head><body>
+<div class="wrap">
+  <div class="fan" id="fan"></div>
+  <div class="glow"></div>
+  <div class="title"><span class="t1">BLIND BOX</span><span class="t2">MEMORY</span><div class="sub">FLIP · MATCH · COLLECT</div></div>
+</div>
+<script>
+const ids=[0,1,4,7,10,12,16,19,22,25,28,30,3,6,9,13,18,21,24,27,5,8,15,20];
+const fan=document.getElementById('fan');
+for(const i of ids){
+  const d=document.createElement('div');d.className='card';
+  const im=document.createElement('img');im.src='../../assets/cards/card_'+String(i).padStart(2,'0')+'.webp';
+  d.appendChild(im);fan.appendChild(d);
+}
+</script>
+</body></html>

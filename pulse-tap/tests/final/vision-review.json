@@ -1,0 +1,149 @@
+{
+  "game": "pulse-tap",
+  "generatedAt": "2026-11-19T13:37:25.123Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.375,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间的‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角音量条图标无标签，功能不明确（可能误认为是进度条）",
+        "关卡1高亮但未说明为何选中（无‘当前关卡’提示）",
+        "‘0 / 36’星星计数旁无文字说明，易误解为分数"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "根据左上角红蓝绿三柱指示，按D键（红色）和F键（蓝色）对应左右手操作",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角目标指示区无文字说明‘Left, Right’与三柱颜色映射关系，易混淆",
+        "HP条右侧按钮组（?、手柄、重试、主页）图标过小且无标签，桌面端可接受但移动端风险高",
+        "D/F/J/K键位标签颜色（粉/青/绿/橙）与对应光柱颜色不完全一致（如J为绿色但无绿光柱），可能误导"
+      ]
+    },
+    {
+      "shot": "tests/final/03-perfect.png",
+      "goal_visible": true,
+      "first_action_guess": "按键盘D键（或点击底部D区域）以击中即将到达的粉色音符",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角音符指示器小圆点位置偏右，未对齐三柱状图中心，易误判节奏点",
+        "‘PERFECT’提示框轻微遮挡下方D键区域边缘（约1px）",
+        "HP条右侧图标间距过密，桌面模式虽可接受，但移动端可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/04-hold.png",
+      "goal_visible": true,
+      "first_action_guess": "按 F 键（蓝色带向下箭头的按钮）以匹配中间绿色发光条",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角目标指示器（三色条+红点）未明确说明红点含义，易误判为当前进度而非目标位置",
+        "HP 条右侧图标（问号、手、重试、主页）无文字标签，依赖图标语义，对新手不友好",
+        "底部 D/F/J/K 字母颜色与对应轨道光效颜色不完全一致（如 J 为绿但轨道偏青），可能造成混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/05-groove.png",
+      "goal_visible": true,
+      "first_action_guess": "按 D 键（粉色光条所在列）以匹配当前下落的音符",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HP 条右侧图标（问号、设置等）间距过密，可能误触",
+        "左上角 'Level 6 · Density Climb' 与分数 '0' 紧邻，小屏可能混淆",
+        "背景城市剪影与音符轨道亮度接近，部分玩家可能误判可交互区域边界"
+      ]
+    },
+    {
+      "shot": "tests/final/06-rooftop.png",
+      "goal_visible": true,
+      "first_action_guess": "按 J 键接住绿色光条，因它位于中央且正下落，是当前唯一可交互目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HP 条与右上角按钮组间距过小，可能误触",
+        "‘Level 6 · Density Climb’文字偏左且字号小，弱光下辨识度低",
+        "四个光条垂直位置不一致（红/黄偏高，绿居中），易造成节奏判断偏差"
+      ]
+    },
+    {
+      "shot": "tests/final/07-subway.png",
+      "goal_visible": true,
+      "first_action_guess": "按 D 键（粉色光条左侧箭头指向的按键）",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色光条上方有向下三角形图标，与光条重叠，可能干扰目标识别",
+        "底部 D/F/J/K 字母颜色与对应光条色系不完全匹配（如 D 粉 vs 光条粉偏红）",
+        "右侧黄色光条被半透明竖条部分遮挡，边缘模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/08-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "三颗星图标与‘Full Combo!’文字间距过小，易误读为四星",
+        "‘Set Cleared!’标题字体有轻微模糊/抗锯齿不均，影响高分辨率下清晰度",
+        "按钮渐变色（蓝→粉）与背景深黑对比强，但‘Menu’按钮灰度偏低，视觉权重失衡"
+      ]
+    }
+  ]
+}

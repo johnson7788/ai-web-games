@@ -1,0 +1,149 @@
+{
+  "game": "ink-finch",
+  "generatedAt": "2026-11-19T05:39:07.119Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.875,
+    "silhouette": 7.625,
+    "style_consistent": 9
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡按钮 4 上叠加了小墨鸟图标，可能干扰数字识别",
+        "左下角弧形线条无明确功能指示，易被误认为 UI 元素",
+        "‘0 / 12’ 进度显示颜色偏红且字号小，对比度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/01b-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央的‘开始’按钮",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "第4格中的小墨雀图标过小且灰度低，眯眼时易与背景混淆（silhouette问题）",
+        "‘0 / 12’进度提示颜色偏红但未加粗，与标题对比度不足，影响快速识别",
+        "左侧/右侧灰色竖条结构疑似障碍物，但无明确交互反馈或说明，易引发困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让黑色小生物向上跳跃，避开黑色障碍柱并触碰红色光点",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色光点无明确交互反馈提示（是否收集？触发？）",
+        "背景山形与垂直线干扰深度感知，可能误判障碍位置",
+        "左上角‘0/5’计数器字体偏小，远距离辨识度略低"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Next Level”按钮进入下一关",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊的平台与前景按钮层级关系不清晰，可能干扰目标识别",
+        "‘5 / 5’数字颜色偏红但未加粗，与‘Ink Cleared!’主标题对比度不足",
+        "‘Next Level · New Best!’副文本字号过小，远距离阅读易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-updraft.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让小鸟向上飞，避开黑色柱子并穿过红色圆点目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色目标点无明确提示其为收集物（仅红圈+白心），新手可能误判为障碍",
+        "小鸟飞行轨迹无视觉反馈（如拖尾或路径线），难以预判落点",
+        "背景山形与柱子间距过近，部分区域深度感弱，易误判碰撞"
+      ]
+    },
+    {
+      "shot": "tests/final/05-double-gap.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧灰色圆形角色使其向右移动，避开障碍并收集红色光点",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色光点（目标物）与黑色平台边缘间距过小，易误判为不可收集",
+        "左上角‘0/8’计数器背景圆角与文字对齐略偏，视觉轻微不稳",
+        "细雨粒子效果与箭头指示线颜色接近（浅灰），部分区域辨识度低"
+      ]
+    },
+    {
+      "shot": "tests/final/06-wheel.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动避开左侧尖刺轮并朝右侧目标前进",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘0/8’进度框与玩家角色垂直对齐，易误判为可交互元素",
+        "红色尖刺轮中心光点过亮，可能造成视觉干扰或误判为收集物",
+        "背景雨线与部分箭头轨迹重叠，轻微影响路径判断"
+      ]
+    },
+    {
+      "shot": "tests/final/07-snow.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕让黑色小角色向右跳跃，避开黑色柱子并触碰红色圆点目标",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘0/9’进度数字与背景对比度偏低，雪景中略难辨识",
+        "红色目标点无明确交互反馈提示（如闪烁/高亮），仅靠颜色区分可能被误认为装饰",
+        "黑色柱子顶部弧线动画轨迹较细，部分玩家可能忽略其运动方向"
+      ]
+    }
+  ]
+}

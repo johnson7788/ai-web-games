@@ -1,0 +1,149 @@
+{
+  "game": "shadow-ninja",
+  "generatedAt": "2026-11-19T15:21:13.345Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 8.125,
+    "style_consistent": 9.25
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择栏（1-12）中数字与分隔线间距过小，易误触；",
+        "右上角语言切换下拉框无展开箭头或视觉反馈，交互意图不明确；",
+        "背景月球与标题文字对比度偏低，弱光环境下可能影响可读性"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角黄色箭头按钮开始移动或跳跃",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角HUD图标密集，部分图标（如问号、放大镜）尺寸过小，可能影响辨识",
+        "月亮光晕与右上角HUD轻微视觉干扰，但未遮挡关键元素",
+        "角色后方拖尾粒子较淡，在深紫背景下略难分辨"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角猫形角色与门框轮廓模糊，眯眼时难以区分主体与背景（silhouette偏低）",
+        "顶部HUD图标密集且部分图标语义不明（如问号、箭头、b字母），影响快速理解",
+        "‘Flawless Run!’文字无标点结尾，风格略突兀"
+      ]
+    },
+    {
+      "shot": "tests/final/04-scene-dusk.png",
+      "goal_visible": true,
+      "first_action_guess": "向右跑动并跳跃避开尖刺，朝终点旗子前进",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "终点旗子与黄色箭头光晕重叠，可能干扰目标识别",
+        "左上角距离数值'155'与进度条间距过小，略显拥挤",
+        "月亮表面斑点为灰色圆点，与月面亮度对比不足，细节模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/05-scene-rain.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角黄色箭头按钮开始移动或跳跃",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角HUD图标密集，部分图标（如×2、?）尺寸过小，可能影响辨识",
+        "月亮与右侧终点箭头距离过近，视觉上易混淆目标与背景元素",
+        "雨线与悬挂圆点颜色相近（浅灰/米黄），在深蓝背景下对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/06-scene-moon.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动（朝终点旗子方向）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "月亮右下角有轻微光晕溢出至游戏区域边缘，可能干扰远景判断",
+        "左上角‘Distance 216’与‘5/15’间距过小，小屏可能误读为‘2165/15’",
+        "右侧终点旗子旁黄色箭头与黑白格旗子重叠，视觉优先级模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角箭头按钮（跳跃/冲刺）以越过尖刺障碍",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "距离条右侧终点图标（黑白格旗）与右下角黄色箭头目标重叠，可能误判终点位置",
+        "HUD 中多个图标（风筝、磁铁、×2）上方小黄点‘0’字号过小，易被忽略",
+        "月亮光晕轻微覆盖右上角问号按钮边缘，存在轻微视觉干扰"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右上角黄色箭头按钮开始移动或跳跃",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角目标箭头与终点旗子重叠，可能误判为同一物体",
+        "月亮光晕过强，轻微干扰右侧目标箭头辨识度",
+        "左下角猫尾部拖影与平台边缘接近，动态时易混淆边界"
+      ]
+    }
+  ]
+}

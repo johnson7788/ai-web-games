@@ -1,0 +1,149 @@
+{
+  "url": "http://127.0.0.1:52304/",
+  "startedAt": "2026-11-15T15:20:58.600Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "move",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "eval",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/03-aim.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/04-charge.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/05-roll.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/06-impact.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/07-score.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/09-results.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/10-restart.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/11-strike-celebrate.png",
+    "/Users/admin/git/webgames/games/pin-smash/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T15:22:46.106Z",
+  "video": "/Users/admin/git/webgames/games/pin-smash/tests/final/play.webm"
+}

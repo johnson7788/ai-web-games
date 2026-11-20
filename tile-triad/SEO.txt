@@ -1,0 +1,41 @@
+TITLE
+Tile Triad — Free Herbal Market Match-3 Puzzle Game
+
+CATEGORY
+Puzzle
+
+TAGS
+match 3, tile matching, herbal market, mahjong solitaire, brain teaser, casual, logic, market stall, family friendly, browser game
+
+SHORT DESCRIPTION
+Clear a layered market stall by matching three identical goods before the tray overflows.
+
+LONG DESCRIPTION
+TILE TRIAD is a free layered tile-matching puzzle game set in a cozy herbal market.
+
+Tap glowing top cards to move them into a seven-slot tray, and match three of the same good — spice jars, dried flowers, fruit baskets, lanterns and more — to clear them in a puff of spice dust while the shopkeeper cat cheers you on. Clearing the top card uncovers the one beneath it, so every pick is a gamble: grab a match now, or dig deeper and risk flooding your tray.
+
+12 handcrafted levels across three markets: Dawn Market, Afternoon Market and the Night Lantern Fair. The tray shrinks from 7 slots to 6, the stacks grow from 2 layers to 5, and 6 goods expand to 12 as cap layers, twin towers, fake-locked tiles, timed stalls and prop levels keep every run fresh. Undo and shuffle props give you a lifeline when the stall gets out of hand.
+
+Every level is guaranteed solvable without props. Three stars per level reward clean, prop-free clears. Easy to learn in ten seconds, tricky to master. Works with mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+药草集市 — 免费层叠三消益智网页游戏
+
+CATEGORY
+益智
+
+TAGS
+三消, 叠牌, 药草集市, 连连看, 脑力, 休闲, 逻辑, 解谜, 全年龄, 网页游戏
+
+SHORT DESCRIPTION
+点击层叠在摊位上的香料罐与果篮，三张同款即消，别让七格收槽塞满。
+
+LONG DESCRIPTION
+《药草集市》是一款免费层叠三消益智游戏，故事发生在一座温馨的药草集市。
+
+点击发亮的顶牌，把它收进底部七格收槽；凑齐三张同款货品——香料罐、干花束、果篮、灯笼……它们就会化作香料烟尘消失，守摊小猫还会为你欢呼。移走顶牌，就能翻开压在下面的下一张，所以每一次拾取都是一场取舍：是现在就凑齐，还是深挖第三张、冒着收槽爆满的风险？
+
+12 个手工关卡横跨三座市集：晨光集市、午后市集、灯会夜市。收槽从 7 格缩到 6 格、层数从 2 层涨到 5 层、货品从 6 类增到 12 类，压顶大层、分区双塔、假锁层、限时收摊与道具关让每一关都不同。撤回与洗牌道具在你手忙脚乱时救你一命。
+
+每一关都保证不用道具也能通关；每关三星，无道具且高效清场才能拿满。十秒上手，越玩越烧脑。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

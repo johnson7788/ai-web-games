@@ -1,0 +1,17 @@
+TITLE
+HERO VANGUARD
+英雄前哨
+
+CATEGORY
+Action
+
+TAGS
+twin hero, defense, orbital station, wave survival, resonance swap, html5, arcade
+
+SHORT DESCRIPTION
+Command twin heroes Blade & Bow to hold an orbital station: swap for resonance dashes, slash swarms, shield the base, and survive 12 waves.
+
+LONG DESCRIPTION
+Command two heroes — Blade (melee) and Bow (ranged) — and hold the last orbital station against 12 waves of alien boarders. Move the controlled hero, swap heroes to cut everything in the dash path, unleash Resonance Slash, and channel a station shield. Kill for gold, pick rule-changing upgrades between waves, and survive three scene packs: Near Orbit, Asteroid Belt, and Deep Space.
+
+指挥双子英雄（近战刃 + 远程弓）守住轨道站，抵御 12 波异星来敌。移动走位、换位共鸣打路径伤害、共鸣斩清场、护盾充能补基地。击杀得金币，波间三选一升级。三场景包：近轨 / 小行星 / 深空。

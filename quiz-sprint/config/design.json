@@ -1,0 +1,78 @@
+{
+  "slug": "quiz-sprint",
+  "genre": "quiz",
+  "oneLiner": "你在知识马拉松里与三名 AI 竞速：读题限时作答，答对冲刺、连击加速，每五题一次双倍赌注题，先看类别再决定答或跳，用体力条撑到终点争名次。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "answer",
+      "cost": "答错掉体力、连击清零并原地/后退；答对才冲刺前进",
+      "feedback": ["sfx", "forward-surge", "combo-flash"],
+      "combinesWith": ["wager"]
+    },
+    {
+      "name": "wager",
+      "cost": "赌注题先看类别再决定：答对双倍前进、答错双倍扣体力，也可跳过保稳",
+      "feedback": ["sfx", "category-reveal", "double-badge"],
+      "combinesWith": ["answer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "第一题：看类别在 4 个选项里选一个", "cost": "答错掉体力+连击清零" },
+    { "atSec": 12, "choice": "没把握的题：凭直觉猜，还是拖到计时最后一秒再定", "cost": "猜错掉体力 vs 浪费时间" },
+    { "atSec": 20, "choice": "第 5 题赌注题：先看类别，双倍答还是安全跳过", "cost": "双倍风险 vs 保稳小步" },
+    { "atSec": 30, "choice": "连击已到 4：答熟题冲学霸冲刺，还是答难题赌一把", "cost": "断连 vs 冲刺残影" },
+    { "atSec": 45, "choice": "体力偏低：跳过不熟类别保体力，还是硬答维持配速", "cost": "节奏 vs 体力" },
+    { "atSec": 60, "choice": "第 10 题赌注题：落后 AI 时双倍下注还是求稳", "cost": "拉大差距 vs 双倍回报" },
+    { "atSec": 90, "choice": "末段冲刺：保连击还是抢答更快", "cost": "连击收益 vs 抢时风险" },
+    { "atSec": 120, "choice": "体力见底降速：谨慎作答回体力，还是继续冲", "cost": "慢速容错 vs 提速风险" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "晨跑：四选一作答 + 连击加速（教学）" },
+    { "index": 2, "newElement": "晨跑：体力条上线（答错掉/答对回）" },
+    { "index": 3, "newElement": "晨跑：AI 贴跑对手，首次名次压力" },
+    { "index": 4, "newElement": "晨跑：解锁赌注题（每 5 题一次双倍）" },
+    { "index": 5, "newElement": "山道：换场景 + 每题时限缩短" },
+    { "index": 6, "newElement": "山道：连击加速带（连击越高前进越快）" },
+    { "index": 7, "newElement": "山道：类别锁定题组（体育专场）" },
+    { "index": 8, "newElement": "山道：解锁学霸冲刺（5 连对残影）" },
+    { "index": 9, "newElement": "夜城：换场景 + AI 速度翻倍" },
+    { "index": 10, "newElement": "夜城：赌注题频率提至每 4 题" },
+    { "index": 11, "newElement": "夜城：体力流失加速（容错收紧）" },
+    { "index": 12, "newElement": "夜城：冠军冲刺，最长距离 + 最快 AI" }
+  ],
+  "upgrades": [
+    { "id": "doubleAnswer", "kind": "rule", "desc": "答对得分×2（条件规则）" },
+    { "id": "comboShield", "kind": "rule", "desc": "连击≥3 时答错不清零只减 1（改失败成本）" },
+    { "id": "wagerRefund", "kind": "rule", "desc": "赌注题跳过也回一点体力（改规则）" },
+    { "id": "lastResort", "kind": "rule", "desc": "体力空后第一次答对额外回体力（规则链）" },
+    { "id": "draftBoost", "kind": "rule", "desc": "落后 AI 时答对前进 ×1.5（追赶规则）" },
+    { "id": "staminaTank", "kind": "stat", "desc": "体力上限 +20%（数值）" },
+    { "id": "sprintShoes", "kind": "stat", "desc": "冲刺前进距离 +15%（数值）" },
+    { "id": "readingGlasses", "kind": "stat", "desc": "每题时限 +1s（数值）" }
+  ],
+  "replayHooks": ["rating", "growth", "unlock", "daily"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 20,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "连击到 5 的瞬间，跑者拉出一串残影进入「学霸冲刺」，全屏加速带亮起",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "三场景程序化 Canvas 插画风：晨跑亮色 / 山道绿调 / 夜城霓虹；UI 手写 SVG/CSS；角色为原创跑步剪影，无任何原作素材"
+}

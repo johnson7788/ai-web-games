@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-11-19T18:09:08.724Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": ">0",
+    "peak": "<0.95",
+    "nan": "===0"
+  },
+  "sfx": {
+    "ui": {
+      "rms": 0.1346,
+      "peak": 0.3089,
+      "nan": 0,
+      "samples": 2205,
+      "pass": true
+    },
+    "bet": {
+      "rms": 0.1342,
+      "peak": 0.2998,
+      "nan": 0,
+      "samples": 3969,
+      "pass": true
+    },
+    "roll": {
+      "rms": 0.0273,
+      "peak": 0.1336,
+      "nan": 0,
+      "samples": 22050,
+      "pass": true
+    },
+    "peg": {
+      "rms": 0.1071,
+      "peak": 0.2,
+      "nan": 0,
+      "samples": 2205,
+      "pass": true
+    },
+    "settle": {
+      "rms": 0.1415,
+      "peak": 0.3452,
+      "nan": 0,
+      "samples": 5292,
+      "pass": true
+    },
+    "rune": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "samples": 12348,
+      "pass": true
+    },
+    "triple": {
+      "rms": 0.1674,
+      "peak": 0.6796,
+      "nan": 0,
+      "samples": 37926,
+      "pass": true
+    },
+    "cursed": {
+      "rms": 0.192,
+      "peak": 0.5105,
+      "nan": 0,
+      "samples": 17640,
+      "pass": true
+    },
+    "stageClear": {
+      "rms": 0.1478,
+      "peak": 0.5637,
+      "nan": 0,
+      "samples": 30870,
+      "pass": true
+    },
+    "stageFail": {
+      "rms": 0.1899,
+      "peak": 0.4736,
+      "nan": 0,
+      "samples": 39690,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "samples": 34839,
+      "pass": true
+    }
+  },
+  "loops": {
+    "temple": {
+      "rms": 0.16,
+      "peak": 0.7765,
+      "nan": 0,
+      "samples": 176400,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

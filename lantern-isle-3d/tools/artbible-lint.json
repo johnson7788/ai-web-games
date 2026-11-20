@@ -1,0 +1,162 @@
+{
+  "at": "2026-11-17T09:39:02.958Z",
+  "ok": false,
+  "rows": [
+    {
+      "id": "char_keeper",
+      "ok": true,
+      "why": "",
+      "prompt": "stylized game character, lighthouse keeper, full body A-pose front view, straw conical hat"
+    },
+    {
+      "id": "prop_lantern_01",
+      "ok": true,
+      "why": "",
+      "prompt": "iron storm lantern with glass panels, brass frame and a ring handle, three-quarter hero vi"
+    },
+    {
+      "id": "prop_oil_barrel_01",
+      "ok": true,
+      "why": "",
+      "prompt": "small wooden oil barrel with rope binding and a brass pouring cap, three-quarter hero view"
+    },
+    {
+      "id": "prop_crate_01",
+      "ok": true,
+      "why": "",
+      "prompt": "weathered wooden supply crate, half open lid, salt worn, three-quarter hero view of one is"
+    },
+    {
+      "id": "prop_rock_cluster_01",
+      "ok": true,
+      "why": "",
+      "prompt": "moss covered coastal granite boulder cluster, three-quarter hero view of one isolated hand"
+    },
+    {
+      "id": "prop_boat_row_01",
+      "ok": true,
+      "why": "",
+      "prompt": "small wooden rowing boat pulled up on pebbles, oars aboard, faded blue paint, three-quarte"
+    },
+    {
+      "id": "prop_net_bundle_01",
+      "ok": true,
+      "why": "",
+      "prompt": "coiled fishing net bundle with wooden floats and a lead weight, three-quarter hero view of"
+    },
+    {
+      "id": "prop_bell_01",
+      "ok": true,
+      "why": "",
+      "prompt": "brass harbor signal bell hung in a small iron frame, three-quarter hero view of one isolat"
+    },
+    {
+      "id": "prop_lamp_relay_01",
+      "ok": true,
+      "why": "",
+      "prompt": "large fresnel lighthouse lamp assembly in a brass cradle, three-quarter hero view of one i"
+    },
+    {
+      "id": "prop_storm_glass_01",
+      "ok": true,
+      "why": "",
+      "prompt": "storm glass weather barometer in a wooden and brass frame, three-quarter hero view of one "
+    },
+    {
+      "id": "build_cottage_a",
+      "ok": false,
+      "why": "没有 prompt（AI 出图资产必须写生成提示词，或标 pipeline=blender-*）"
+    },
+    {
+      "id": "build_cottage_b",
+      "ok": true,
+      "why": "",
+      "prompt": "two-storey harbour house, slate blue plaster walls, red tiled roof, wooden porch with two "
+    },
+    {
+      "id": "build_shed_01",
+      "ok": true,
+      "why": "",
+      "prompt": "tiny tool shed, leaning wooden planks, moss on the roof, half open door, three-quarter vie"
+    },
+    {
+      "id": "build_lighthouse_01",
+      "ok": true,
+      "why": "",
+      "prompt": "tall striped lighthouse tower, weathered red and cream bands, iron gallery railing, glowin"
+    },
+    {
+      "id": "build_well_01",
+      "ok": true,
+      "why": "",
+      "prompt": "old stone village well with wooden bucket winch and small tiled roof, three-quarter view o"
+    },
+    {
+      "id": "build_boathouse_01",
+      "ok": true,
+      "why": "",
+      "prompt": "open-front wooden boat shed, salt grey planks, pitched terracotta roof, dark interior, thr"
+    },
+    {
+      "id": "prop_lantern_post_01",
+      "ok": true,
+      "why": "",
+      "prompt": "old iron street lantern post, stone base, brass glass lamp head with warm flame inside, sl"
+    },
+    {
+      "id": "env_tree_pine_01",
+      "ok": true,
+      "why": "",
+      "prompt": "wind bent coastal pine tree, dark green needle clusters, twisted brown trunk, three-quarte"
+    },
+    {
+      "id": "env_rock_01",
+      "ok": true,
+      "why": "",
+      "prompt": "mossy granite boulder, lichen patches, weathered facets, three-quarter hero view of one is"
+    },
+    {
+      "id": "env_crate_stack_01",
+      "ok": true,
+      "why": "",
+      "prompt": "stack of two weathered wooden crates and a coil of rope beside them, three-quarter hero vi"
+    },
+    {
+      "id": "tex_stone_wall",
+      "ok": true,
+      "why": "",
+      "prompt": "seamless hand painted slate stone wall texture, dusk cool grey with warm rim, seamless til"
+    },
+    {
+      "id": "tex_roof_tile",
+      "ok": true,
+      "why": "",
+      "prompt": "seamless hand painted terracotta roof tile texture, weathered red orange, seamless tileabl"
+    },
+    {
+      "id": "tex_wood_plank",
+      "ok": true,
+      "why": "",
+      "prompt": "seamless hand painted salt worn wood plank texture, warm brown, seamless tileable material"
+    },
+    {
+      "id": "tex_dirt_path",
+      "ok": true,
+      "why": "",
+      "prompt": "seamless hand painted coastal dirt and pebble path texture, seamless tileable material tex"
+    },
+    {
+      "id": "tex_grass_dune",
+      "ok": true,
+      "why": "",
+      "prompt": "seamless hand painted dune grass and moss texture, muted green, seamless tileable material"
+    },
+    {
+      "id": "tex_pebbles",
+      "ok": true,
+      "why": "",
+      "prompt": "seamless hand painted smooth sea pebble beach texture, seamless tileable material texture,"
+    }
+  ],
+  "missing": []
+}

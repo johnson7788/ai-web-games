@@ -1,0 +1,149 @@
+{
+  "game": "color-flux",
+  "generatedAt": "2026-11-19T11:38:07.854Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 6.625,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Best 0’文字颜色为黄色，与主标题蓝白光效风格略有冲突，可能影响视觉层级",
+        "右上角语言选择下拉框无展开箭头图标，移动端易误触或难识别交互性",
+        "‘Sound: On’按钮尺寸过小（目测约30px宽），不符合移动端最小触控44px标准（但桌面截图可忽略）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘最高 0’数值为0但未说明是否已重置或初始值，易引发困惑",
+        "‘点按起跳，对上环色；连穿10环触发极光爆发’描述较抽象，新手可能不理解‘环色’指代",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不够明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或拖动下方发光球体使其对准上方彩色圆环的缺口位置",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "彩色圆环缺口方向未明确指示（当前缺口在左下，但无箭头/高亮提示）",
+        "‘Polar Night’标签字体过小且无背景衬底，暗背景下辨识度偏低",
+        "中央虚线引导线太细，在低对比度场景中易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/04-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮或按R键重新开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊光晕与HUD边框轻微融合，可能影响视觉层级区分",
+        "‘Stage reached: Polar Night’文字右对齐但未与左侧标签基线对齐，排版略不严谨",
+        "‘Press R to play again’提示字号过小，低对比度下易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕或按空格键让萤火虫弹跳",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央圆形色环无明确玩家标识，眯眼时难以区分可交互物与背景装饰",
+        "‘Polar Night’标签悬于色环上方，字体小且无对比度，易被忽略",
+        "左上角 SCORE/BEST 按钮边框过细，与深色背景对比不足，辨识度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央发光球体或任意位置开始游戏",
+      "readable": 6,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部‘Polar Night’标题无明确交互提示，玩家可能不确定是否可点击",
+        "中央发光球体与虚线对齐但无明确操作指示，新手易犹豫",
+        "左上角SCORE/BEST标签字体偏小，低分辨率下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央或按空格键让萤火虫弹跳",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央‘FIRST FLIGHT’提示框轻微遮挡萤火虫发光点（视觉焦点）",
+        "‘Polar Night’标题无背景衬底，在深蓝波浪上对比度偏低",
+        "眯眼时萤火虫与背景波浪层次模糊，轮廓辨识度不足"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘COLOR FLUX’发光效果过强，部分字母边缘轻微溢光，影响远距离辨识",
+        "‘Best 0’文字颜色偏黄，在深蓝背景上对比度略低，易被忽略",
+        "右上角‘Skip’按钮无明确视觉层级，与语言切换下拉菜单间距过近，可能误触"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+[20:58:57] poll#1 A=47019MB
+[20:59:57] poll#2 A=50005MB
+[21:11:38] poll#3 A=47112MB
+[21:12:40] poll#4 A=45745MB
+[21:13:40] poll#5 A=50466MB
+[21:14:40] poll#6 A=45839MB
+[21:28:53] poll#7 A=54973MB
+[21:29:53] poll#8 A=55384MB
+[21:30:53] poll#9 A=60851MB
+[21:31:53] poll#10 A=57005MB
+[21:32:53] poll#11 A=52801MB
+[21:35:57] poll#12 A=51137MB
+[21:51:10] poll#13 A=53492MB
+[21:52:12] poll#14 A=51065MB
+[21:53:12] poll#15 A=52036MB
+[21:54:12] poll#16 A=55065MB
+[21:55:12] poll#17 A=56011MB
+[22:13:16] poll#18 A=51141MB
+[22:14:17] poll#19 A=50390MB
+[22:15:17] poll#20 A=51870MB
+[22:16:17] poll#21 A=45688MB
+[22:17:17] poll#22 A=51806MB
+[22:18:17] poll#23 A=52166MB
+[22:19:18] poll#24 A=51651MB
+[22:20:18] poll#25 A=52495MB
+[22:21:18] poll#26 A=50264MB
+[22:22:18] poll#27 A=54452MB
+[22:23:18] poll#28 A=48029MB
+[22:24:18] poll#29 A=43759MB
+[22:25:19] poll#30 A=48442MB
+[22:26:19] poll#31 A=47314MB
+[22:27:19] poll#32 A=49855MB
+[22:28:19] poll#33 A=46689MB
+[22:29:19] poll#34 A=48149MB
+[22:30:20] poll#35 A=49161MB
+[22:31:20] poll#36 A=50557MB
+[22:32:20] poll#37 A=57223MB
+[22:33:20] poll#38 A=49374MB
+[22:34:20] poll#39 A=49241MB
+[22:52:00] poll#40 A=44952MB
+[23:07:58] poll#41 A=45195MB
+[23:23:56] poll#42 A=45627MB
+[23:29:09] poll#43 A=44337MB
+[23:38:35] poll#44 A=43582MB
+[23:39:35] poll#45 A=46720MB
+[23:40:35] poll#46 A=43797MB
+[23:41:35] poll#47 A=20519MB
+[23:42:36] poll#48 A=18355MB
+[23:43:36] poll#49 A=15589MB
+[23:44:36] poll#50 A=22405MB
+[23:45:36] poll#51 A=23487MB
+[23:46:36] poll#52 A=18687MB
+[23:47:37] poll#53 A=22377MB
+[23:48:37] poll#54 A=19383MB
+[23:49:37] poll#55 A=19933MB
+[23:50:37] poll#56 A=16824MB
+[23:51:37] poll#57 A=18748MB
+[23:52:37] poll#58 A=14782MB
+[23:53:37] poll#59 A=20561MB
+[23:54:38] poll#60 A=16930MB
+[23:55:38] poll#61 A=17905MB
+[23:56:38] poll#62 A=14995MB
+[23:57:38] poll#63 A=15769MB
+[23:58:38] poll#64 A=18153MB
+[23:59:38] poll#65 A=16933MB
+[00:00:39] poll#66 A=17354MB
+[00:01:39] poll#67 A=19505MB
+[00:02:39] poll#68 A=17446MB
+[00:03:39] poll#69 A=16927MB
+[00:04:39] poll#70 A=18331MB
+[00:05:39] poll#71 A=21431MB
+[00:06:40] poll#72 A=20689MB
+[00:07:40] poll#73 A=18239MB
+[00:08:40] poll#74 A=18867MB
+[00:09:40] poll#75 A=20949MB
+[00:10:40] poll#76 A=17958MB
+[00:11:40] poll#77 A=19413MB
+[00:12:41] poll#78 A=15383MB
+[00:13:41] poll#79 A=22597MB
+[00:15:06] poll#80 A=19910MB
+[00:29:00] poll#81 A=17949MB
+[00:45:26] poll#82 A=16597MB
+[01:01:51] poll#83 A=21553MB
+[01:18:08] poll#84 A=17016MB
+[01:34:31] poll#85 A=19333MB
+[02:06:22] poll#86 A=18668MB
+[02:22:47] poll#87 A=16479MB
+[02:39:12] poll#88 A=18631MB
+[02:55:37] poll#89 A=17649MB
+[03:12:02] poll#90 A=18213MB
+[03:43:53] poll#91 A=19503MB
+[04:00:18] poll#92 A=16913MB
+[04:16:43] poll#93 A=15077MB
+[04:27:10] poll#94 A=18401MB
+[04:43:12] poll#95 A=15895MB
+[04:59:31] poll#96 A=18171MB
+[05:31:21] poll#97 A=20037MB
+[05:47:46] poll#98 A=20389MB
+[06:03:51] poll#99 A=18035MB
+[06:27:39] poll#100 A=16389MB
+[06:36:24] poll#101 A=17605MB
+[06:52:49] poll#102 A=18483MB
+[07:09:14] poll#103 A=19300MB
+[07:25:39] poll#104 A=18085MB
+[07:44:46] poll#105 A=18545MB
+[07:48:18] poll#106 A=99999MB
+[08:53:28] poll#107 A=99999MB
+[08:59:57] poll#108 A=7713MB
+[08:59:57] A 机空出，开始 r3 全链
+[wait-vram] 机会主义等显存（A>=66G 走 h3，C>=42G 走 qwen-image；最多 45 分钟）
+[wait-vram] A=7713MB C=60454MB
+[stage h3]
+[stage] stop hunyuan3d
+[stage] wait release: running=[] mem=8247MB
+[stage] start h3-image
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] wait ready: running=[]
+[stage] final running=[]
+[concepts]
+  "error": "vram budget exceeded: used=63576MB need=61440MB budget=73728MB"
+}
+[11-18 01:15:19] FAIL char_keeper: useH3 is not defined
+[11-18 01:15:19] ==== gen-hunyuan DONE ok=0 fail=11 ====
+[stage hy3d]
+[stage] stop h3-image
+[stage] wait release: running=[] mem=8834MB
+[stage] start hunyuan3d
+[stage] wait ready: running=[hunyuan3d]
+[stage] final running=[hunyuan3d]
+[gens]
+[11-18 01:17:27] FAIL build_well_01: useH3 is not defined
+[11-18 01:17:28] char_keeper 概念图 retry1: 503 {
+  "error": "vram budget exceeded: used=64092MB need=61440MB budget=73728MB"
+}
+[11-18 01:17:28] FAIL char_keeper: useH3 is not defined
+[11-18 01:17:28] ==== gen-hunyuan DONE ok=1 fail=10 ====
+manifest raw → .r3
+[decimate env]
+==== blender-decimate DONE ok=10 fail=0 ====
+[optimize env]
+OK 聚合模块 lib/models/all.js（24 件，18.8MB）
+==== optimize-glb DONE 10 ok / 0 skip-fail ====
+[rig char]
+==== run-r3 DONE ====
+Warning: Permanently added '[117.50.187.176]:23' (ED25519) to the list of known hosts.
+sky h3 ok
+[vost#0:0 @ 0x7cccf0000] Automatic encoder selection failed Default encoder for format webp (codec webp) is probably disabled. Please choose an encoder manually.
+[vost#0:0 @ 0x7cccf0000] Error selecting an encoder
+Error opening output file assets/tex/sky_dusk.webp.
+Error opening output files: Encoder not found
+[gates]
+[gates]
+FAIL artbible lint — 26 条资产风格锁：char_keeper,prop_lantern_01,prop_oil_barrel_01,prop_crate_01,prop_rock_cluster_01,prop_boat_row_01,prop_net_bundle_01,prop_bell_01,prop_lamp_relay_01,prop_storm_glass_01,build_cottage_a,build_cottage_b,build_shed_01,build_lighthouse_01,build_well_01,build_boathouse_01,prop_lantern_post_01,env_tree_pine_01,env_rock_01,env_crate_stack_01,tex_stone_wall,tex_roof_tile,tex_wood_plank,tex_dirt_path,tex_grass_dune,tex_pebbles
+FAIL manifest: TOTAL: 运行时 GLB 合计 14620KB > 预算 13000KB
+FAIL manifest — 34 项 / 运行时 GLB 14620KB
+ok   probe scene — mesh=56 光源=11 分区=7
+ok   probe stats — fps=60 DrawCall=38 三角=190327 纹理=32
+ok   probe audio — ctx=running master=0.9 播放中=0
+FAIL probe console — console=1 page=0 404=1 非SDK外链=0
+ok   probe test — 交互→状态断言全过
+FAIL gate3d 有未达标项
+[package+publish]
+✓ /Users/admin/git/webgames/dist/lantern-isle-3d/lantern-isle-3d.zip  19.35 MB  (64 个文件)
+✓ /Users/admin/git/webgames/dist/lantern-isle-3d/manifest.json
+→ 截图: /Users/admin/git/webgames/dist/lantern-isle-3d/after-publish.png
+✓ 已上线：https://pipygames.com/games/lantern-isle-gico
+  结果: /Users/admin/git/webgames/dist/lantern-isle-3d/result.json
+==== post-r3 DONE ====
+[09:27:22] r3 全链结束

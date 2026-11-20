@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Blind Box Memory — Flip, Match &amp; Collect</title>
+  <meta name="description" content="Flip blind-box cards, match cute collectible characters and complete your collection. A cozy memory puzzle with combos, star cards and daily decks.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- 开屏：真实数字百分比 -->
+    <div id="boot" aria-label="loading">
+      <div class="boot-box">
+        <div class="boot-logo">BLIND BOX MEMORY</div>
+        <div class="boot-bar"><div id="boot-fill"></div></div>
+        <div id="boot-pct">0%</div>
+      </div>
+    </div>
+
+    <audio id="bgm" src="assets/audio/bgm.mp3" preload="auto" loop></audio>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-level" class="hud-chip">LV 1</span>
+        <span id="hud-moves" class="hud-chip">MOVES 14</span>
+      </div>
+      <div class="hud-mid">
+        <span id="hud-pairs" class="hud-chip">PAIRS 0/6</span>
+        <span id="hud-combo" class="hud-chip combo hidden">COMBO ×2</span>
+      </div>
+      <div class="hud-right">
+        <span id="hud-coins" class="hud-chip">🪙 0</span>
+        <button id="btn-peek" class="btn btn-peek" aria-label="Peek">💡 <span id="peek-count">3</span></button>
+        <button id="btn-pause" class="btn btn-icon" aria-label="Pause">⏸</button>
+      </div>
+    </div>
+
+    <div id="toast" class="hidden"></div>
+
+    <!-- 牌桌 -->
+    <div id="screen-game" class="screen hidden">
+      <div id="board" class="board"></div>
+    </div>
+
+    <!-- 标题 -->
+    <div id="screen-title" class="screen">
+      <div class="title-wrap">
+        <h1 class="game-title"><span class="tt-line1">BLIND BOX</span><span class="tt-line2">MEMORY</span></h1>
+        <p class="subtitle" id="subtitle-text">Flip. Match. Collect them all.</p>
+        <div class="menu-stack">
+          <button id="btn-start" class="btn btn-primary btn-big">Start</button>
+          <button id="btn-collection" class="btn btn-secondary">Collection</button>
+          <button id="btn-shop" class="btn btn-secondary">Shop</button>
+          <button id="btn-howto" class="btn btn-ghost">How to play</button>
+        </div>
+        <div class="title-foot">
+          <select id="lang-select" class="lang-select" aria-label="Language"></select>
+          <button id="btn-sound" class="btn btn-ghost btn-sound">🔊</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 暂停 -->
+    <div id="screen-pause" class="screen hidden">
+      <div class="panel">
+        <h2 id="pause-title">Paused</h2>
+        <div class="menu-stack">
+          <button id="btn-resume" class="btn btn-primary">Resume</button>
+          <button id="btn-restart" class="btn btn-secondary">Restart</button>
+          <button id="btn-quit" class="btn btn-ghost">Menu</button>
+        </div>
+        <select id="lang-select-pause" class="lang-select" aria-label="Language"></select>
+      </div>
+    </div>
+
+    <!-- 过关 -->
+    <div id="screen-win" class="screen hidden">
+      <div class="panel">
+        <h2 id="win-title">Level Clear!</h2>
+        <div id="win-stars" class="stars">★★★</div>
+        <p id="win-reward" class="reward-text">+30 🪙</p>
+        <div class="menu-stack">
+          <button id="btn-double" class="btn btn-secondary hidden">Double coins</button>
+          <button id="btn-next" class="btn btn-primary">Next level</button>
+          <button id="btn-retry-win" class="btn btn-ghost">Replay</button>
+          <button id="btn-menu-win" class="btn btn-ghost">Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 失败 -->
+    <div id="screen-fail" class="screen hidden">
+      <div class="panel">
+        <h2 id="fail-title">Out of Moves</h2>
+        <p id="fail-pairs" class="reward-text">Pairs 5/8</p>
+        <div class="menu-stack">
+          <button id="btn-revive" class="btn btn-primary hidden">Keep going (+5 moves)</button>
+          <button id="btn-retry-fail" class="btn btn-secondary">Retry</button>
+          <button id="btn-menu-fail" class="btn btn-ghost">Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 图鉴 -->
+    <div id="screen-collection" class="screen hidden">
+      <div class="panel panel-wide">
+        <h2 id="collection-title">Collection</h2>
+        <p id="collection-progress" class="reward-text">12 / 31</p>
+        <div id="collection-grid" class="collection-grid"></div>
+        <button id="btn-collection-back" class="btn btn-ghost">Back</button>
+      </div>
+    </div>
+
+    <!-- 商店 -->
+    <div id="screen-shop" class="screen hidden">
+      <div class="panel panel-wide">
+        <h2 id="shop-title">Shop</h2>
+        <p id="shop-coins" class="reward-text">🪙 120</p>
+        <div id="shop-list" class="shop-list"></div>
+        <button id="btn-shop-back" class="btn btn-ghost">Back</button>
+      </div>
+    </div>
+
+    <!-- 引导 -->
+    <div id="tutorial" data-tutorial class="tutorial hidden">
+      <div class="tut-card">
+        <p id="tut-text" class="tut-text"></p>
+        <div class="tut-actions">
+          <button id="tut-skip" data-tutorial-skip class="btn btn-ghost">Skip</button>
+          <button id="tut-next" class="btn btn-secondary">Next</button>
+        </div>
+      </div>
+      <div id="tut-spotlight" class="tut-spotlight hidden"></div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

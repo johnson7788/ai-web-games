@@ -1,0 +1,185 @@
+{
+  "slug": "lantern-isle-3d",
+  "genre": "action",
+  "oneLiner": "风暴来前的黑夜，守灯人从码头搬灯沿岛点亮七盏灯：负重让你又慢又跳不高，阵风会抢走手里的灯，油只够点有限的几盏——每一段路都要在点哪盏、走哪条、丢不丢之间当场决定。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "carry",
+      "cost": "负重按比例吃掉移速与跳跃高度，且在风口可能被吹落",
+      "feedback": [
+        "sfx",
+        "anim",
+        "hud-weight-bar",
+        "particles"
+      ],
+      "combinesWith": [
+        "light",
+        "drop"
+      ]
+    },
+    {
+      "name": "light",
+      "cost": "必须站定引导 2.0-4.2 秒，期间不能移动、被打断就白等，且烧掉 1-2 份油",
+      "feedback": [
+        "light-bloom",
+        "sfx",
+        "score-pop",
+        "bgm-layer",
+        "hud-lamps"
+      ],
+      "combinesWith": [
+        "carry",
+        "route"
+      ]
+    },
+    {
+      "name": "drop",
+      "cost": "丢掉的那盏本夜彻底消失，该段海岸保持黑暗并按 45 分/段扣分",
+      "feedback": [
+        "hud",
+        "dark-overlay",
+        "sfx",
+        "toast"
+      ],
+      "combinesWith": [
+        "carry"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 10,
+      "choice": "出发拿 1 盏大灯（能点主塔）还是 3 盏小灯（点满村道）",
+      "cost": "大灯重 2 格，小灯不能上塔；拿错就有点不亮的灯位"
+    },
+    {
+      "atSec": 30,
+      "choice": "走崖边近路（省约 14 秒）还是村内远路",
+      "cost": "近路在阵风区，手里灯有被吹走风险"
+    },
+    {
+      "atSec": 55,
+      "choice": "帮补网人点亮她眼前那盏（给她任务）还是直接赶主塔",
+      "cost": "任务给 10 秒与共鸣，但绕路"
+    },
+    {
+      "atSec": 80,
+      "choice": "油只够 4 盏：点主塔（1 盏 320 分）还是点村口两盏（连击倍率）",
+      "cost": "点了就烧油，不可回收"
+    },
+    {
+      "atSec": 110,
+      "choice": "听到阵风预警：站住保灯（耗时）还是继续赶路（可能丢灯）",
+      "cost": "丢灯等于黑暗段并扣分"
+    },
+    {
+      "atSec": 150,
+      "choice": "最后一段：丢灯全速冲刺还是保灯慢走",
+      "cost": "冲刺省时间但扣黑暗分，慢走可能超时"
+    },
+    {
+      "atSec": 180,
+      "choice": "要不要花 20 秒看一次奖励广告换回时间",
+      "cost": "换的是这一夜的机会，不是永久优势"
+    }
+  ],
+  "levels": [
+    {
+      "name": "night1",
+      "newElement": "负重与点灯引导"
+    },
+    {
+      "name": "night2",
+      "newElement": "阵风抢灯与站住防守"
+    },
+    {
+      "name": "night3",
+      "newElement": "迷雾缩短视野加松林补给"
+    },
+    {
+      "name": "night4",
+      "newElement": "崖顶强阵风会吹灭已点亮的崖灯"
+    },
+    {
+      "name": "night5",
+      "newElement": "主塔大灯双份油与全岛要素同时"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "lantern_resonance",
+      "kind": "rule"
+    },
+    {
+      "id": "warden_warning",
+      "kind": "rule"
+    },
+    {
+      "id": "sure_hands",
+      "kind": "rule"
+    },
+    {
+      "id": "slow_wind",
+      "kind": "rule"
+    },
+    {
+      "id": "oil_recovery",
+      "kind": "rule"
+    },
+    {
+      "id": "cap1",
+      "kind": "stat"
+    },
+    {
+      "id": "speed1",
+      "kind": "stat"
+    },
+    {
+      "id": "light_fast",
+      "kind": "stat"
+    },
+    {
+      "id": "storm_resist",
+      "kind": "stat"
+    }
+  ],
+  "replayHooks": [
+    "每日风向种子决定阵风节奏与补给散布",
+    "每夜最快通关时间排行榜",
+    "松林风暴杯支线与三个岛民的记忆"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1,
+    "hitStopMs": 40
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 8,
+    "firstSuccessSec": 55,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "session": {
+    "lengthSec": 120,
+    "failCondition": "风暴计时归零时仍有灯未点亮",
+    "peakAtSec": 95
+  },
+  "difficultyCurve": {
+    "firstSuccessBySec": 60,
+    "firstThreatAtSec": 40,
+    "deathBySec": 200
+  },
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  }
+}

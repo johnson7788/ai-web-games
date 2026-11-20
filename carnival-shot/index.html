@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="CARNIVAL SHOT — a night-market lantern fair shooting gallery. Click paper kites and lantern ducks, reload early for a speed clip, and chain hits into a golden lantern rain.">
+  <meta name="theme-color" content="#2b0a1c">
+  <title>CARNIVAL SHOT · Night Fair Shooter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <button id="btn-reload" class="touch-only" aria-label="Reload" hidden></button>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-lantern"></div>
+      <span data-i18n="set.loading">Hanging lanterns…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

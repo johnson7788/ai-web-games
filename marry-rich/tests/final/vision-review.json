@@ -1,0 +1,149 @@
+{
+  "game": "marry-rich",
+  "generatedAt": "2026-11-19T17:35:43.338Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.625,
+    "silhouette": 7,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Begin your rise’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景人物剪影模糊且与标题文字亮度接近，眯眼时难以区分角色与环境",
+        "‘Endings found 0/8’文字颜色偏黄，在深紫背景下对比度略低，小字号易被忽略",
+        "右上角语言选择下拉框无展开指示（如三角图标），交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘开始逆袭’按钮进入游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景人物剪影模糊，无法明确区分角色与环境（silhouette偏低）",
+        "右上角语言切换下拉框无展开箭头，交互意图不明显",
+        "‘已解锁结局 0/8’文字偏小且颜色对比度略低，弱光环境下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击选项1“Take the bus to the big city”开始剧情选择",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Hometown’标签背景色与文字对比度偏低，夜间模式下略难辨识",
+        "‘FIRST STEPS’提示框位于角色下方偏右，与选项按钮间距不均，视觉重心稍偏",
+        "右上角‘Skip’按钮无悬停反馈提示，可能被误认为装饰元素"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击选项1“Take the bus to the big city”开始剧情选择",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD中'Hometown'标签背景色与文字对比度偏低，弱光下可能难辨",
+        "角色剪影左手持物（疑似票/手机）细节模糊，易误判为手臂姿势",
+        "右上月亮与章节框轻微重叠，虽未遮文字但视觉干扰轻微"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Continue’按钮继续剧情",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD中'Hometown'标签背景色与文字对比度偏低，夜间模式下可能辨识困难",
+        "‘Chapter 1/12’位置偏上且字号小，易被忽略",
+        "右上月亮与右侧平衡杆式UI元素视觉权重接近，可能分散对核心提示框的注意力"
+      ]
+    },
+    {
+      "shot": "tests/final/06-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 Resume 按钮或按 Esc 键继续游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景人物剪影模糊且与城市轮廓融合，眯眼时难以区分玩家角色与环境（silhouette偏低）",
+        "‘Paused’标题与按钮间距偏大，视觉重心略松散",
+        "右上角语言切换下拉框无展开指示图标，移动端可能误触"
+      ]
+    },
+    {
+      "shot": "tests/final/07-ending.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Play again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 4,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊角色剪影过暗且轮廓不清，眯眼时无法辨识玩家/敌人（silhouette低）",
+        "‘Endings discovered 1/8’与下方提示文字间距过小，易误读为一行",
+        "‘Memory shard unlocked — replay the road not taken.’使用破折号但前后空格不一致，排版略粗糙"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击选项1“Take the bus to the big city”",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Hometown’标签被部分遮挡（与上方条目重叠）",
+        "‘Mento 0 Partner 0 Reputation 0’文字过小且颜色浅，易忽略",
+        "章节标题‘CHAPTER 1/12’重复出现两次，冗余"
+      ]
+    }
+  ]
+}

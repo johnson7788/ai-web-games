@@ -1,0 +1,62 @@
+{
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 300,
+      "actions": 1488,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 24,
+      "deaths": 0,
+      "idleSec": 0,
+      "maxEventGapSec": 0.78,
+      "uniqueEvents": 12,
+      "levelsReached": 3,
+      "completed": false,
+      "maxWave": 3,
+      "score": 1550,
+      "kills": 14
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 17.9,
+      "actions": 610,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 12.9,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.47,
+      "uniqueEvents": 11,
+      "levelsReached": 1,
+      "completed": false,
+      "maxWave": 1,
+      "score": 300,
+      "kills": 3
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 65.3,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 64,
+      "maxEventGapSec": 1.22,
+      "uniqueEvents": 10,
+      "levelsReached": 1,
+      "completed": false,
+      "maxWave": 1,
+      "score": 0,
+      "kills": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T11:21:16.448Z"
+}

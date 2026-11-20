@@ -1,0 +1,117 @@
+{
+  "slug": "tile-triad",
+  "genre": "puzzle",
+  "oneLiner": "玩家扮演集市掌柜，点击层叠在摊位上的香料罐、干花束与果篮，三张同款即消，赶在七格收槽塞满前清空整摊货品。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "pick",
+      "cost": "拾取的货品占住一个收槽格；若凑不齐三张同款，它就会一直堵在槽里，挤占后续空间",
+      "feedback": ["sfx", "cardBounce", "slotGlow"],
+      "combinesWith": ["clear"]
+    },
+    {
+      "name": "clear",
+      "cost": "必须正好三张同款同时在场才触发；提前或延后都会改变下方牌被翻出的顺序",
+      "feedback": ["sfx", "spiceDust", "catReact"],
+      "combinesWith": ["pick"]
+    },
+    {
+      "name": "prop",
+      "cost": "撤回/洗牌每局限量，用完即无救；关键局里早用晚用直接决定胜负",
+      "feedback": ["sfx", "cardRearrange"],
+      "combinesWith": ["pick"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "先消台面上已经露出的对子，还是点开深埋的第三张",
+      "cost": "点开深埋牌可能垫爆收槽"
+    },
+    {
+      "atSec": 25,
+      "choice": "收槽已有两张香料罐：立刻找第三张，还是先清掉散牌腾槽",
+      "cost": "找第三张可能翻不到，散牌占槽更久"
+    },
+    {
+      "atSec": 45,
+      "choice": "顶层压着一整层：先挖侧翼锚点还是硬啃顶牌",
+      "cost": "硬啃顶牌会让下面的牌一直锁死"
+    },
+    {
+      "atSec": 70,
+      "choice": "双塔左右各缺一张：赌哪边先出牌",
+      "cost": "赌错方向，收槽被两张同款卡住"
+    },
+    {
+      "atSec": 95,
+      "choice": "限时关里：用撤回救一手，还是留着保命",
+      "cost": "撤回只有一次，用掉后失误直接判负"
+    },
+    {
+      "atSec": 120,
+      "choice": "洗牌把全场牌打散：现在洗还是等更乱的局面再洗",
+      "cost": "洗牌一次性，洗早了后面无解"
+    },
+    {
+      "atSec": 150,
+      "choice": "终局大阵只剩最后几组：清快求稳还是省道具冲星",
+      "cost": "省道具可能拖到超时"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 55,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "6 种集市货品，3×3 摊格，7 格收槽" },
+    { "index": 2, "newElement": "层数加深到 3 层（货品叠得更密）" },
+    { "index": 3, "newElement": "收槽缩到 6 格（容错更紧）" },
+    { "index": 4, "newElement": "压顶大层（顶部整层压住下方）" },
+    { "index": 5, "newElement": "分区双塔（左右两塔互相卡位）" },
+    { "index": 6, "newElement": "假锁层（顶牌锁定，需先清侧翼锚点）" },
+    { "index": 7, "newElement": "层数加深到 5 层" },
+    { "index": 8, "newElement": "限时模式（倒计时收摊）" },
+    { "index": 9, "newElement": "11 种货品 + 灯会夜市场景" },
+    { "index": 10, "newElement": "道具关（撤回×2 + 洗牌×1）" },
+    { "index": 11, "newElement": "12 种货品" },
+    { "index": 12, "newElement": "终局大阵（压顶+双塔+限时三轴叠加）" }
+  ],
+  "upgrades": [
+    { "id": "slotShrink", "kind": "rule", "desc": "第 3 关起收槽 7→6，容错收紧" },
+    { "id": "stackDepth", "kind": "rule", "desc": "层数从 2 层一路加深到 5 层" },
+    { "id": "capLayer", "kind": "rule", "desc": "第 4 关起出现压顶大层" },
+    { "id": "twinTowers", "kind": "rule", "desc": "第 5 关起出现分区双塔" },
+    { "id": "fakeLock", "kind": "rule", "desc": "第 6 关起出现假锁层" },
+    { "id": "timedLevel", "kind": "rule", "desc": "第 8 关起出现限时收摊" },
+    { "id": "propUndo", "kind": "rule", "desc": "第 10 关起解锁撤回道具" },
+    { "id": "propShuffle", "kind": "rule", "desc": "第 10 关起解锁洗牌道具" },
+    { "id": "typeCount", "kind": "stat", "desc": "货品种类 6→12 递增" },
+    { "id": "undoCount", "kind": "stat", "desc": "撤回次数随关卡提升到 2 次" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

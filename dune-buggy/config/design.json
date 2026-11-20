@@ -1,0 +1,115 @@
+{
+  "slug": "dune-buggy",
+  "genre": "racing",
+  "oneLiner": "你开一辆巴哈沙丘越野车，在金色沙脊上抢速度、在软沙岩区里取舍胎压，抢在时间目标前冲过一个个拉力赛段。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "偏离沙脊中心就失去持续加速，高速下转向更飘",
+      "feedback": [
+        "sfx",
+        "trail",
+        "car-lean"
+      ],
+      "combinesWith": [
+        "throttle"
+      ]
+    },
+    {
+      "name": "throttle",
+      "cost": "满油门速度高但过弯/岩区更容易失控冲出赛道",
+      "feedback": [
+        "sfx",
+        "speed-zoom",
+        "dust"
+      ],
+      "combinesWith": [
+        "steer"
+      ]
+    },
+    {
+      "name": "tune",
+      "cost": "高胎压快但沙地打滑，低胎压稳但极速慢——只能选一边",
+      "feedback": [
+        "sfx",
+        "pressure-gauge",
+        "ui-flash"
+      ],
+      "combinesWith": [
+        "throttle"
+      ]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "软沙上满油门起步会打滑，还是缓给油先抓地", "cost": "起步速度 vs 初期稳定" },
+    { "atSec": 20, "choice": "骑金色沙脊抢速度，还是走平沙稳稳推进", "cost": "风险路线 vs 安全路线" },
+    { "atSec": 40, "choice": "进岩区前换低胎压保抓地，还是高胎压赌极速", "cost": "极速 vs 抓地" },
+    { "atSec": 55, "choice": "弯前早刹车稳住走线，还是晚刹车带滑入弯", "cost": "出弯速度 vs 过弯风险" },
+    { "atSec": 78, "choice": "全速冲绿洲跳台换飞跃加速，还是减速保落地控制", "cost": "飞跃收益 vs 落地失控" },
+    { "atSec": 100, "choice": "沙暴里贴着沙脊盲跑，还是降速走平沙", "cost": "能见度风险 vs 速度损失" },
+    { "atSec": 130, "choice": "暮丘赛段前切换胎压，还是保留当前设定硬跑", "cost": "一次进站取舍 vs 适应新地形" },
+    { "atSec": 165, "choice": "双脊岔路选更陡的左脊还是更长的右脊", "cost": "短险 vs 长稳" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "晨沙软地：教油门/刹车/转向基础" },
+    { "index": 2, "newElement": "金色沙脊：骑脊持续加速的风险路线" },
+    { "index": 3, "newElement": "岩区：抓地骤降的糙地" },
+    { "index": 4, "newElement": "绿洲跳台：腾空飞跃与落地控制" },
+    { "index": 5, "newElement": "白热午漠 + 轻沙暴：能见度开始下降" },
+    { "index": 6, "newElement": "胎压试炼：岩区逼迫低胎压取舍" },
+    { "index": 7, "newElement": "沙脊迷宫：高占比沙脊 + 更急的弯" },
+    { "index": 8, "newElement": "岩脊：岩区上叠沙脊的双重风险" },
+    { "index": 9, "newElement": "暮丘低阳眩光：光影变化" },
+    { "index": 10, "newElement": "黑沙暴：极低能见度盲跑" },
+    { "index": 11, "newElement": "双脊岔路：左右两条沙脊的二选一" },
+    { "index": 12, "newElement": "巴哈耐力：全地形混合的最终赛段" }
+  ],
+  "upgrades": [
+    { "id": "ridgeMagnet", "kind": "rule", "desc": "骑脊加速更强，但骑脊时转向轻微锁死（规则取舍）" },
+    { "id": "sandTire", "kind": "rule", "desc": "低胎压在软沙上不再损失极速（打破取舍）" },
+    { "id": "rockGuard", "kind": "rule", "desc": "岩区减速减半" },
+    { "id": "stormLens", "kind": "rule", "desc": "沙暴能见度 +40%" },
+    { "id": "jumpBoost", "kind": "rule", "desc": "跳台落地改为 2 秒加速而非落地减速" },
+    { "id": "nightOwl", "kind": "rule", "desc": "暮丘眩光移除" },
+    { "id": "gripTune", "kind": "stat", "desc": "基础抓地 +8%" },
+    { "id": "turbo", "kind": "stat", "desc": "极速 +6%" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "growth",
+    "nearMiss"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "全速冲上绿洲跳台，相机瞬间拉升俯瞰沙丘与落点，车在半空越过金色沙脊",
+  "antiScope": [
+    "不做联网排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "程序化 Canvas 伪 3D 渲染为主（行扫描地平线起伏 + 沙丘剪影），UI 线框 CSS；BGM/SFX 走 WebAudio 程序化合成"
+}

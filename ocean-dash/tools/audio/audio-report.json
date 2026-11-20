@@ -1,0 +1,208 @@
+{
+  "generatedAt": "2026-11-19T15:24:49.935Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "bubbleGain": {
+      "rms": 0.2119,
+      "peak": 0.4696,
+      "nan": 0,
+      "zcRate": 707.3,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "currentBoost": {
+      "rms": 0.1369,
+      "peak": 0.6571,
+      "nan": 0,
+      "zcRate": 1872.8,
+      "samples": 33957,
+      "durSec": 0.77,
+      "pass": true
+    },
+    "gatherStart": {
+      "rms": 0.0617,
+      "peak": 0.23,
+      "nan": 0,
+      "zcRate": 5267.7,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "gatherEnd": {
+      "rms": 0.048,
+      "peak": 0.172,
+      "nan": 0,
+      "zcRate": 6754.1,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "jump": {
+      "rms": 0.1732,
+      "peak": 0.3,
+      "nan": 0,
+      "zcRate": 502.3,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "glideStart": {
+      "rms": 0.0646,
+      "peak": 0.2532,
+      "nan": 0,
+      "zcRate": 7106.3,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "glideEnd": {
+      "rms": 0.1163,
+      "peak": 0.3951,
+      "nan": 0,
+      "zcRate": 2258.6,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "obstacleHit": {
+      "rms": 0.1896,
+      "peak": 0.5191,
+      "nan": 0,
+      "zcRate": 184.4,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.107,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 1310.6,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0558,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 767,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "segmentEnter": {
+      "rms": 0.1188,
+      "peak": 0.4338,
+      "nan": 0,
+      "zcRate": 421.3,
+      "samples": 33075,
+      "durSec": 0.75,
+      "pass": true
+    },
+    "segmentClear": {
+      "rms": 0.1613,
+      "peak": 0.6487,
+      "nan": 0,
+      "zcRate": 987.3,
+      "samples": 41454,
+      "durSec": 0.94,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2123,
+      "peak": 0.5155,
+      "nan": 0,
+      "zcRate": 343.2,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1348,
+      "peak": 0.3017,
+      "nan": 0,
+      "zcRate": 870.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.137,
+      "peak": 0.32,
+      "nan": 0,
+      "zcRate": 878.6,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "water": {
+      "rms": 0.013,
+      "peak": 0.0738,
+      "nan": 0,
+      "zcRate": 2469.1,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgm-coral": {
+      "rms": 0.1407,
+      "peak": 0.5,
+      "nan": 0,
+      "zcRate": 809.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgm-trench": {
+      "rms": 0.1311,
+      "peak": 0.5,
+      "nan": 0,
+      "zcRate": 697.1,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgm-mangrove": {
+      "rms": 0.1386,
+      "peak": 0.5,
+      "nan": 0,
+      "zcRate": 779,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

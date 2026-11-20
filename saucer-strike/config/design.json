@@ -1,0 +1,118 @@
+{
+  "slug": "saucer-strike",
+  "genre": "arcade",
+  "oneLiner": "你守护荒漠雷达站，拖磁轨炮蓄力瞄准、松开发射拦截来袭飞碟：命中按碟计分、漏碟扣命，满蓄会过热锁炮，12 波越打越险。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "拖得越远力度越大，但瞄准期间炮口被占用、不能瞬移换目标",
+      "feedback": ["sfx", "reticle", "charge-glow"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "fire",
+      "cost": "满蓄发射会触发过热锁炮 2s；低蓄弹慢伤害低",
+      "feedback": ["sfx", "muzzle-flash", "trail"],
+      "combinesWith": ["aim", "tracer"]
+    },
+    {
+      "name": "tracer",
+      "cost": "每波仅 1 发曳光弹，用了这波就没了（留给隐形碟波）",
+      "feedback": ["sfx", "reveal-glow", "trajectory-lines"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "蓄力等大碟还是速射清小碟",
+      "cost": "满蓄锁炮 2s vs 低蓄伤害不足"
+    },
+    {
+      "atSec": 15,
+      "choice": "把曳光弹留给隐形碟波还是现在开图",
+      "cost": "本波用完后面没显形"
+    },
+    {
+      "atSec": 30,
+      "choice": "追高价值运输碟（厚甲要 3 发）还是先清快侦察碟",
+      "cost": "时间与弹药消耗"
+    },
+    {
+      "atSec": 55,
+      "choice": "满蓄赌母碟高伤害还是分次低蓄稳打",
+      "cost": "过热风险 vs 输出节奏"
+    },
+    {
+      "atSec": 80,
+      "choice": "流星雨里穿缝打碟还是等流星过去",
+      "cost": "弹被挡 vs 时间浪费"
+    },
+    {
+      "atSec": 110,
+      "choice": "用贴脸险射吃近失 bonus 还是稳瞄远射",
+      "cost": "差一点脱靶 vs 命中率换分"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "侦察碟：快而脆，教拖拽蓄力与松开发射" },
+    { "index": 2, "newElement": "更多更快的侦察碟，教连续瞄准" },
+    { "index": 3, "newElement": "运输碟：厚甲 3 发才破，教蓄力换伤害" },
+    { "index": 4, "newElement": "Z 字碟：折线路径，教预判拦截点" },
+    { "index": 5, "newElement": "侦察+运输混编，教目标优先级" },
+    { "index": 6, "newElement": "流星雨干扰：挡弹，教穿缝射击" },
+    { "index": 7, "newElement": "隐形碟：平时不可见，教用曳光弹显形" },
+    { "index": 8, "newElement": "Z 字+运输混编，教折线与厚甲取舍" },
+    { "index": 9, "newElement": "护航母碟群：母碟带小碟，教先清护航还是集火母碟" },
+    { "index": 10, "newElement": "流星雨+隐形碟，教在干扰中保显形时机" },
+    { "index": 11, "newElement": "Z 字+隐形+运输三混编，教多目标分权" },
+    { "index": 12, "newElement": "双母碟终局：满蓄命中母碟触发雷达红闪签名瞬间" }
+  ],
+  "upgrades": [
+    { "id": "coolant", "kind": "rule", "desc": "过热锁炮时长减半（改规则）" },
+    { "id": "pierce", "kind": "rule", "desc": "炮弹穿透 +1 个飞碟（改命中规则）" },
+    { "id": "tracerPlus", "kind": "rule", "desc": "曳光弹每波 +1 发且显形 +3s（改资源规则）" },
+    { "id": "split", "kind": "rule", "desc": "命中后分裂 2 个弹片（改弹道规则）" },
+    { "id": "overcharge", "kind": "rule", "desc": "满蓄伤害 +50% 但过热阈值升（高风险规则）" },
+    { "id": "radar", "kind": "rule", "desc": "隐形碟闪烁现身频率翻倍（改可见规则）" },
+    { "id": "comboBank", "kind": "rule", "desc": "连击 ≥5 存护盾，挡一次漏碟不扣命（改失败成本）" },
+    { "id": "magnet", "kind": "rule", "desc": "炮弹轻微追踪最近飞碟（改弹道规则）" },
+    { "id": "rapid", "kind": "stat", "desc": "发射冷却 -20%（数值）" },
+    { "id": "damage", "kind": "stat", "desc": "伤害 +25%（数值）" },
+    { "id": "lives", "kind": "stat", "desc": "命 +1（数值）" },
+    { "id": "coolRate", "kind": "stat", "desc": "过热降温 +30%（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "newBuild", "rating", "unlock"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "满蓄命中母碟时，一束磁轨光束撕裂夜空，雷达屏全网格闪红",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "复古雷达站科幻：程序化 Canvas 发光渲染（径向渐变/加法混合），三场景色板（沙黄/青绿/蓝紫）；UI 线框 SVG/CSS；BGM 与 SFX 全 WebAudio 程序化合成"
+}

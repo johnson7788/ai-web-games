@@ -1,0 +1,260 @@
+{
+  "generatedAt": "2026-11-19T18:43:08.111Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shot": {
+      "rms": 0.1886,
+      "peak": 0.2738,
+      "nan": 0,
+      "zcRate": 550.2,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "coreCopy": {
+      "rms": 0.118,
+      "peak": 0.3,
+      "nan": 0,
+      "zcRate": 725.1,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.1878,
+      "peak": 0.4723,
+      "nan": 0,
+      "zcRate": 518.9,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.1484,
+      "peak": 0.4527,
+      "nan": 0,
+      "zcRate": 566,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "playerHurt": {
+      "rms": 0.2421,
+      "peak": 0.6413,
+      "nan": 0,
+      "zcRate": 233.4,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "enemyShot": {
+      "rms": 0.1328,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 294.5,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "enemyDash": {
+      "rms": 0.0401,
+      "peak": 0.1613,
+      "nan": 0,
+      "zcRate": 5853.5,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "waveStart": {
+      "rms": 0.1524,
+      "peak": 0.4715,
+      "nan": 0,
+      "zcRate": 561,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "waveClear": {
+      "rms": 0.1413,
+      "peak": 0.5155,
+      "nan": 0,
+      "zcRate": 834.2,
+      "samples": 25137,
+      "durSec": 0.57,
+      "pass": true
+    },
+    "cardPick": {
+      "rms": 0.1788,
+      "peak": 0.6064,
+      "nan": 0,
+      "zcRate": 969.7,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "phaseSync": {
+      "rms": 0.1058,
+      "peak": 0.4067,
+      "nan": 0,
+      "zcRate": 4975.4,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "overload": {
+      "rms": 0.1688,
+      "peak": 0.7078,
+      "nan": 0,
+      "zcRate": 1222.5,
+      "samples": 44100,
+      "durSec": 1,
+      "pass": true
+    },
+    "overloadNo": {
+      "rms": 0.1447,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 155,
+      "samples": 4410,
+      "durSec": 0.1,
+      "pass": true
+    },
+    "coreOffline": {
+      "rms": 0.1307,
+      "peak": 0.28,
+      "nan": 0,
+      "zcRate": 305,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "coreOnline": {
+      "rms": 0.1145,
+      "peak": 0.24,
+      "nan": 0,
+      "zcRate": 305,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "bossSpawn": {
+      "rms": 0.1551,
+      "peak": 0.336,
+      "nan": 0,
+      "zcRate": 252.1,
+      "samples": 31752,
+      "durSec": 0.72,
+      "pass": true
+    },
+    "bossHit": {
+      "rms": 0.2184,
+      "peak": 0.5887,
+      "nan": 0,
+      "zcRate": 193.8,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "bossBreak": {
+      "rms": 0.16,
+      "peak": 0.6606,
+      "nan": 0,
+      "zcRate": 931.8,
+      "samples": 48510,
+      "durSec": 1.1,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.2083,
+      "peak": 0.5689,
+      "nan": 0,
+      "zcRate": 303.5,
+      "samples": 44100,
+      "durSec": 1,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1727,
+      "peak": 0.6547,
+      "nan": 0,
+      "zcRate": 967.1,
+      "samples": 38808,
+      "durSec": 0.88,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1185,
+      "peak": 0.266,
+      "nan": 0,
+      "zcRate": 890.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm1": {
+      "rms": 0.241,
+      "peak": 0.9,
+      "nan": 0,
+      "zcRate": 339.3,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "bgm2": {
+      "rms": 0.2235,
+      "peak": 0.9,
+      "nan": 0,
+      "zcRate": 660.3,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "bgm3": {
+      "rms": 0.2315,
+      "peak": 0.9,
+      "nan": 0,
+      "zcRate": 399.9,
+      "samples": 352800,
+      "durSec": 8,
+      "pass": true
+    },
+    "bgmBoss": {
+      "rms": 0.2794,
+      "peak": 0.87,
+      "nan": 0,
+      "zcRate": 607,
+      "samples": 264600,
+      "durSec": 6,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "bgm.distinct": {
+      "bgm1": 339.3,
+      "bgm3": 399.9,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

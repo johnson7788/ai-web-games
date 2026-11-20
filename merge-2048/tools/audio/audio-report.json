@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-11-19T11:49:07.817Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "move": {
+      "rms": 0.1336,
+      "peak": 0.3163,
+      "nan": 0,
+      "zcRate": 621.6,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "merge": {
+      "rms": 0.1968,
+      "peak": 0.4912,
+      "nan": 0,
+      "zcRate": 490.7,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "spawn": {
+      "rms": 0.093,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 864.6,
+      "samples": 3087,
+      "durSec": 0.07,
+      "pass": true
+    },
+    "blocked": {
+      "rms": 0.1284,
+      "peak": 0.16,
+      "nan": 0,
+      "zcRate": 133.4,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "gravitySpawn": {
+      "rms": 0.1912,
+      "peak": 0.4152,
+      "nan": 0,
+      "zcRate": 130,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "gravityLock": {
+      "rms": 0.0947,
+      "peak": 0.2351,
+      "nan": 0,
+      "zcRate": 231.3,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "gravityExpire": {
+      "rms": 0.1017,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 612.6,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "warp": {
+      "rms": 0.132,
+      "peak": 0.392,
+      "nan": 0,
+      "zcRate": 2870.2,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "unlock": {
+      "rms": 0.1545,
+      "peak": 0.6526,
+      "nan": 0,
+      "zcRate": 623.2,
+      "samples": 29547,
+      "durSec": 0.67,
+      "pass": true
+    },
+    "levelClear": {
+      "rms": 0.1684,
+      "peak": 0.6078,
+      "nan": 0,
+      "zcRate": 430.7,
+      "samples": 33075,
+      "durSec": 0.75,
+      "pass": true
+    },
+    "levelEnter": {
+      "rms": 0.1372,
+      "peak": 0.4779,
+      "nan": 0,
+      "zcRate": 563.8,
+      "samples": 22491,
+      "durSec": 0.51,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1997,
+      "peak": 0.7287,
+      "nan": 0,
+      "zcRate": 599.4,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    },
+    "lose": {
+      "rms": 0.1887,
+      "peak": 0.4577,
+      "nan": 0,
+      "zcRate": 272.8,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1076,
+      "peak": 0.2435,
+      "nan": 0,
+      "zcRate": 910.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.121,
+      "peak": 0.28,
+      "nan": 0,
+      "zcRate": 878.6,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.16,
+      "peak": 0.4082,
+      "nan": 0,
+      "zcRate": 330,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "shimmer": {
+      "rms": 0.08,
+      "peak": 0.2295,
+      "nan": 0,
+      "zcRate": 1278.9,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "merge.valueChangesPitch": {
+      "low": 612.6,
+      "high": 321.9,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

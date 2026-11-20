@@ -1,0 +1,62 @@
+{
+  "game": "cell-wars",
+  "genre": "puzzle",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 300,
+      "actions": 244,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.4,
+      "deaths": 0,
+      "idleSec": 0.2,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 11,
+      "levelsReached": 9,
+      "completed": false,
+      "maxDish": 9,
+      "dishesCleared": 8
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 9.9,
+      "actions": 26,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.42,
+      "uniqueEvents": 11,
+      "levelsReached": 1,
+      "completed": false,
+      "maxDish": 1,
+      "dishesCleared": 0
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 82.3,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 3.4,
+      "deaths": 1,
+      "idleSec": 80.2,
+      "maxEventGapSec": 1.02,
+      "uniqueEvents": 8,
+      "levelsReached": 1,
+      "completed": false,
+      "maxDish": 1,
+      "dishesCleared": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T15:13:56.734Z"
+}

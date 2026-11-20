@@ -1,0 +1,95 @@
+{
+  "slug": "star-slayer",
+  "genre": "action",
+  "oneLiner": "驾驶机甲「铁卫」在星舰甲板上迎战波次敌群，与 AI 伙伴「光核」复制彼此攻击，血量告急时自爆光核清屏。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "fire",
+      "cost": "开火期间移动速度下降，且子弹有飞行时间需预判提前量",
+      "feedback": ["sfx", "muzzle", "hit-flash"],
+      "combinesWith": ["sync"]
+    },
+    {
+      "name": "sync",
+      "cost": "4 秒冷却，且要求光核在线（超载后 20 秒不可用）",
+      "feedback": ["sfx", "teleport-flash", "shockwave"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "overload",
+      "cost": "自爆光核，光核离线 20 秒失去复制与换位能力，且需血量 <30%",
+      "feedback": ["sfx", "screen-flash", "clear-burst"],
+      "combinesWith": ["sync"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先清贴脸的突袭者还是先点掉远处炮台", "cost": "被另一类敌人近身" },
+    { "atSec": 18, "choice": "用相位同步躲自爆，还是走位硬吃伤害", "cost": "冷却期失去逃生手段" },
+    { "atSec": 30, "choice": "第一张三选一：攻击流还是协同流", "cost": "放弃另一条 build" },
+    { "atSec": 55, "choice": "超载协议现在清屏，还是留到 Boss", "cost": "光核离线 20 秒" },
+    { "atSec": 75, "choice": "贴脸输出，还是拉开距离让光核的延迟复制命中", "cost": "输出效率 vs 生存" },
+    { "atSec": 100, "choice": "Boss 激光扇形来袭：换位穿越还是护甲硬抗", "cost": "换位后位置差 / 掉装甲" },
+    { "atSec": 130, "choice": "第二张卡：穿透 / 反弹 / 攻速，锁定 build", "cost": "放弃其余两条" }
+  ],
+  "loop": {
+    "teachSec": 20,
+    "practiceSec": 40,
+    "twistSec": 40,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "舰桥：教移动 + 自动瞄准主武器，首波突袭者" },
+    { "index": 2, "newElement": "裂刃登场：周期性冲刺，教预判与拉开距离" },
+    { "index": 3, "newElement": "Boss 核心巨兽：激光扇形 + 炸弹弹幕，死亡分裂" },
+    { "index": 4, "newElement": "炮台登场：远程慢速弹，教点杀优先级" },
+    { "index": 5, "newElement": "舰体外壳场景切换 + 织网蛛束缚" },
+    { "index": 6, "newElement": "Boss 强化：飞梭增援，多线压力" },
+    { "index": 7, "newElement": "三类敌混编，教拉扯与集火" },
+    { "index": 8, "newElement": "织网蛛 + 飞梭 + 炮台三角压力" },
+    { "index": 9, "newElement": "反应堆场景切换 + Boss 更高血量" },
+    { "index": 10, "newElement": "五类敌全开混编，教超载清屏时机" },
+    { "index": 11, "newElement": "敌群密度最高，考验 build 成型" },
+    { "index": 12, "newElement": "最终 Boss + 增援，教协同复制提前量收官" }
+  ],
+  "upgrades": [
+    { "id": "twinCore", "kind": "rule" },
+    { "id": "echoStrike", "kind": "rule" },
+    { "id": "overloadSpike", "kind": "rule" },
+    { "id": "coldCore", "kind": "rule" },
+    { "id": "pierce", "kind": "rule" },
+    { "id": "ricochet", "kind": "rule" },
+    { "id": "armorRegen", "kind": "rule" },
+    { "id": "killHeal", "kind": "rule" },
+    { "id": "rapidFire", "kind": "stat" },
+    { "id": "bigMag", "kind": "stat" },
+    { "id": "movespeed", "kind": "stat" },
+    { "id": "bulk", "kind": "stat" }
+  ],
+  "replayHooks": ["nearMiss", "newBuild", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "血量见红时按 K，光核化作环形冲击波清空全场，屏幕亮到发白，随后伙伴离线 20 秒只剩你孤军作战",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "星舰科幻风格：程序化 Canvas 发光渲染（径向渐变/加法混合/粒子），三场景换色板+构图；UI 线框 SVG/CSS；封面海报与 BGM 走 AI + 程序化兜底"
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "gun-legend",
+  "genre": "action",
+  "oneLiner": "你是港片巷战里的双枪枪神：指针瞄准、双枪轮流连火、翻滚闪避弹幕，双枪同时打空时触发白鸽飞过的吴宇森时刻。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "fire",
+      "cost": "消耗双枪弹匣，打空后必须停下换弹，暴露在弹幕里",
+      "feedback": ["sfx", "muzzle-flash", "bullet-trail", "hit-spark"],
+      "combinesWith": ["reload", "roll"]
+    },
+    {
+      "name": "roll",
+      "cost": "3 秒冷却，翻滚期间无法开火，赌 0.5 秒无敌穿过弹幕",
+      "feedback": ["sfx", "coat-sweep", "i-frame-flash", "trail"],
+      "combinesWith": ["fire"]
+    },
+    {
+      "name": "reload",
+      "cost": "换弹时无法开火；节奏点外乱点会打空弹匣重来",
+      "feedback": ["sfx", "cylinder-spin", "hud-pulse"],
+      "combinesWith": ["fire"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "先瞄最近冲来的刀手，还是提前把枪口转向远处枪手", "cost": "近战换血 vs 被远程点射" },
+    { "atSec": 20, "choice": "双枪轮流省着打，还是打空双枪赌白鸽时刻", "cost": "安全换弹 vs 短暂空枪换免费换弹与连杀" },
+    { "atSec": 40, "choice": "翻滚是主动贴脸抢连杀，还是留作保命躲手雷", "cost": "消耗冷却失去保命 vs 错过连杀窗口" },
+    { "atSec": 65, "choice": "换弹时在节奏点内点一下缩短 30%，还是等满", "cost": "提前 30% 拿到火力 vs 乱点打空弹匣重来" },
+    { "atSec": 90, "choice": "优先打投弹手断手雷，还是先清贴身刀手", "cost": "吃爆炸伤害 vs 被近战连击" },
+    { "atSec": 120, "choice": "散弹贴脸求秒杀，还是保持距离用弹幕压制", "cost": "高风险贴脸 vs 低命中远射" },
+    { "atSec": 150, "choice": "面对精英双枪火力，翻滚穿越弹幕还是缩在安全角", "cost": "无敌窗口拼输出 vs 被围堵" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 50,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "刀手冲锋：只教瞄准+开火+翻滚的基础循环" },
+    { "index": 2, "newElement": "枪手掩体：远程点射逼你主动翻滚换位" },
+    { "index": 3, "newElement": "枪手成群：多方向火力，第一次真正读弹幕" },
+    { "index": 4, "newElement": "投弹手登场：手雷落点逼你决策翻滚时机" },
+    { "index": 5, "newElement": "换章雨巷→天台：武器解锁散弹，金橙夕照构图" },
+    { "index": 6, "newElement": "投弹手+枪手混合：手雷与点射交错弹幕" },
+    { "index": 7, "newElement": "双持精英登场：高血量快速双枪火力" },
+    { "index": 8, "newElement": "精英成对：必须靠白鸽时刻与散弹贴脸破局" },
+    { "index": 9, "newElement": "换章天台→酒楼：武器解锁双持冲锋，朱红灯笼" },
+    { "index": 10, "newElement": "精英+投弹手混编：弹幕密度首次拉满" },
+    { "index": 11, "newElement": "三精英围杀：考验翻滚无敌窗口的精确度" },
+    { "index": 12, "newElement": "Boss 大哥：高血量散射齐射，全机制收束" }
+  ],
+  "upgrades": [
+    { "id": "revolver-unlock", "kind": "rule", "desc": "解锁双持左轮：双枪轮流连火的换弹节奏" },
+    { "id": "shotgun-unlock", "kind": "rule", "desc": "解锁双持散弹：单发 5 弹丸扩散，贴脸秒杀规则" },
+    { "id": "smg-unlock", "kind": "rule", "desc": "解锁双持冲锋：高射速低单发，压制换精度的规则" },
+    { "id": "roll-iframe", "kind": "rule", "desc": "风衣闪避：翻滚 0.5 秒无敌（改判定规则）" },
+    { "id": "dove-moment", "kind": "rule", "desc": "白鸽时刻：双枪同时清空触发慢动作+免费换弹+连杀" },
+    { "id": "reload-dance", "kind": "rule", "desc": "换弹舞：节奏点内点击缩短 30%，乱点打空弹匣" },
+    { "id": "hp-up", "kind": "stat", "desc": "最大血量 +20（数值）" },
+    { "id": "dmg-up", "kind": "stat", "desc": "子弹伤害 +15%（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "rating", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "双枪同时清空瞬间，画面慢放、一只白鸽掠过霓虹巷口，双枪自动转出满膛",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "港片霓虹巷战风格：程序化 Canvas 渲染（三场景色板/霓虹灯/雨丝），UI 线框 SVG/CSS，封面海报 AI 生成"
+}

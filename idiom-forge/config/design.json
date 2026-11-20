@@ -1,0 +1,91 @@
+{
+  "slug": "idiom-forge",
+  "genre": "quiz",
+  "oneLiner": "你是成语熔炉的学徒：看着缺字的成语与释义，从候选字格里点选补全；答对连击得分并把成语锻进兵器，答错的字落进炉渣，集满三渣熔炼成提示。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "fill",
+      "cost": "答错扣时并把错字丢进炉渣",
+      "feedback": ["sfx", "slot-flash", "combo-pop"],
+      "combinesWith": ["hint"]
+    },
+    {
+      "name": "hint",
+      "cost": "消耗 1 次提示（或 3 炉渣熔炼），且本题不再享受连击加成",
+      "feedback": ["sfx", "reveal-glow"],
+      "combinesWith": ["fill"]
+    },
+    {
+      "name": "reset",
+      "cost": "消耗 1 次重置并中断当前连击",
+      "feedback": ["sfx", "card-swap"],
+      "combinesWith": []
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "难题用提示省时，还是硬猜省道具", "cost": "提示数量 vs 时间" },
+    { "atSec": 18, "choice": "字谜题×2 抢分，还是求稳保连击", "cost": "高分 vs 连击" },
+    { "atSec": 40, "choice": "炉渣集满 3 时熔炼成提示，还是留着继续攒", "cost": "提示 vs 熔炉进度" },
+    { "atSec": 65, "choice": "剩几秒时重置换题，还是赌最后一题", "cost": "重置道具 vs 时间" },
+    { "atSec": 90, "choice": "双缺字先用提示锁定难字，还是先猜容易的字", "cost": "提示 vs 猜测风险" },
+    { "atSec": 115, "choice": "换题保命，还是硬答维持高分连击", "cost": "生存 vs 分数" },
+    { "atSec": 150, "choice": "关卡末题时间紧，快速连点还是稳准保连击", "cost": "速度 vs 准确" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 25
+  },
+  "levels": [
+    { "index": 1, "newElement": "单缺字 + 8 格字盘（教点选填字）" },
+    { "index": 2, "newElement": "提示道具解锁（亮出正确字）" },
+    { "index": 3, "newElement": "连击计分（连续答对加分）" },
+    { "index": 4, "newElement": "字谜双轨解锁（30% 概率，分×2）" },
+    { "index": 5, "newElement": "双缺字（一次补两格）" },
+    { "index": 6, "newElement": "炉渣熔炼：3 炉渣换 1 提示" },
+    { "index": 7, "newElement": "换场景：铁匠铺→书院" },
+    { "index": 8, "newElement": "字盘扩到 11 格 + 干扰字增多" },
+    { "index": 9, "newElement": "重置道具解锁（换一题）" },
+    { "index": 10, "newElement": "换场景：书院→天工阁 + 字盘 14 格" },
+    { "index": 11, "newElement": "时间更紧 + 双缺字为主" },
+    { "index": 12, "newElement": "十二神兵最终章（武器全收集冲刺）" }
+  ],
+  "upgrades": [
+    { "id": "hintUnlock", "kind": "rule", "desc": "解锁提示道具：亮出当前空格的正确字" },
+    { "id": "riddleTrack", "kind": "rule", "desc": "解锁字谜双轨：谜面猜字，分×2" },
+    { "id": "slagSmelt", "kind": "rule", "desc": "炉渣熔炼规则：3 个错字换 1 次提示" },
+    { "id": "comboChain", "kind": "rule", "desc": "连击加成规则：连续答对每层多 50 分" },
+    { "id": "resetUnlock", "kind": "rule", "desc": "解锁重置道具：换一题，中断连击" },
+    { "id": "timeBonus", "kind": "stat", "desc": "答对加时 +1s" },
+    { "id": "gridTamer", "kind": "stat", "desc": "字盘干扰字 -2" },
+    { "id": "scoreMult", "kind": "stat", "desc": "得分 +20%" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "newBuild"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "成语四字齐聚的瞬间，熔炉轰然喷出兵器剪影",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "程序化 Canvas 三场景包（铁匠铺暖橙 / 书院青竹 / 天工阁金紫）+ 熔炉与兵器剪影动画；封面海报 AI 生成叠字"
+}

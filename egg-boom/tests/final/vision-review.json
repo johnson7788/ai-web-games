@@ -1,0 +1,149 @@
+{
+  "game": "egg-boom",
+  "generatedAt": "2026-11-19T19:23:54.479Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.375,
+    "silhouette": 7,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部中央的发射按钮（棕色长条）发射子弹击中带红感叹号的1分目标",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（左下角小鸡）与地面边缘几乎贴合，无明显轮廓分离，易被忽略",
+        "多个带'1'和红感叹号的目标外观高度一致，缺乏区分度，易误判优先级",
+        "顶部HUD中'SHELL 1'右侧无空隙，紧贴右边缘，存在裁切风险（虽当前未裁但临界）"
+      ]
+    },
+    {
+      "shot": "tests/final/02-shoot.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧小球角色发射子弹击中带红感叹号的1分目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角太阳光晕与粒子特效轻微遮挡部分得分/弹药数值，影响快速读数",
+        "右侧5个圆形目标状态图标颜色差异小（暖棕系），在低对比下易混淆",
+        "底部棕色操作条位置偏高，可能误触（虽为桌面截图，但UI布局暗示移动端适配）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕底部中央的棕色区域（跳跃按钮）来让蛋跳起",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘Skip’按钮与目标蛋图标间距过近，易误触",
+        "右侧两个带‘1’的蛋目标未明确指示其为可交互对象，仅靠红感叹号提示不够直观",
+        "左下角角色（蛋）轮廓较淡，与背景对比度偏低，影响快速识别"
+      ]
+    },
+    {
+      "shot": "tests/final/04-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部发射按钮发射子弹击中带‘1’的圆形目标",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标数字‘1’与红色感叹号图标过小且密集，眯眼时易混淆为单一元素",
+        "左上角太阳光晕与背景融合度高，可能干扰目标识别",
+        "顶部HUD‘Kitchen Rise’标签与右侧‘SHELL 1’间距不均，轻微视觉失衡"
+      ]
+    },
+    {
+      "shot": "tests/final/05-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Play again”按钮重新开始游戏。",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签无明确交互反馈，可能被误认为纯装饰；",
+        "‘Press R to play again’提示字体过小且颜色偏淡，易被忽略；",
+        "‘Best combo’与‘Best score’数值对齐不一致（4 vs 90），视觉轻微失衡"
+      ]
+    },
+    {
+      "shot": "tests/final/06-restart.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部棕色发射按钮发射炮弹",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标数字'1'上方红色感叹号图标易被误认为错误提示而非目标标识，语义模糊",
+        "左上角'SCORE 0 AMMO 28 COMBO 0 TARGETS 3'中'TARGETS 3'颜色（橙红）与其他字段不一致，视觉干扰",
+        "右上角'SHELL 1'与'Kitchen Rise'标题间距过小，轻微拥挤"
+      ]
+    },
+    {
+      "shot": "tests/final/07-scene2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕右侧的粉色方框发射子弹击中右侧带数字的圆圈目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧目标数字（2/3/6/4）上方红色感叹号图标过小且无说明，易被忽略",
+        "左上角‘DESSERT LINE’标签与HUD颜色对比弱，略显模糊",
+        "底部波浪线装饰与玩家角色高度接近，可能干扰操作区域感知"
+      ]
+    },
+    {
+      "shot": "tests/final/08-scene3.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角玩家角色发射子弹",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标数字（11/9/5/6）与红色感叹号图标间距过小，易误判为单个元素",
+        "底部灰色圆点群（疑似弹道轨迹）与目标6重叠，干扰判断",
+        "顶部黄色圆点（可能为障碍/道具）无明确功能标识，语义模糊"
+      ]
+    }
+  ]
+}

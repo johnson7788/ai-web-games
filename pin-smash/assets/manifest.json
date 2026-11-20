@@ -1,0 +1,23 @@
+{
+  "assets": {
+    "poster-raw": {
+      "file": "assets/poster-raw.jpg",
+      "group": "",
+      "w": 2048,
+      "h": 1155,
+      "aspect": 1.7732,
+      "pivot": "top",
+      "alpha": false,
+      "bytes": 461464,
+      "sha256": "67527fffa96a46e6ba7b1d5e5f0f27c26c020131647d09f7fa263997f1be6616",
+      "source": {
+        "kind": "image",
+        "model": "qwen-image-xl",
+        "seed": 41,
+        "prompt": "Stylized 3D game key art, wide cinematic composition: a glossy bowling ball smashing into a rack of ten pins at the moment of impact, pins flying and scattering, polished wooden lane with neon scoring glow, dramatic spotlit alley background, dynamic freeze-frame strike action, vibrant saturated bowling aesthetic, high detail PBR materials, no text, no watermark, no logo",
+        "raw": "assets/_src/poster-raw-s41.png"
+      }
+    }
+  },
+  "generatedAt": "2026-11-15T18:06:52+00:00"
+}

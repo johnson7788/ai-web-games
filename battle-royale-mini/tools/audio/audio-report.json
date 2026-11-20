@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-11-19T17:06:56.269Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "shot": {
+      "rms": 0.2083,
+      "peak": 0.6404,
+      "nan": 0,
+      "samples": 3969,
+      "durSec": 0.09,
+      "pass": true
+    },
+    "hit": {
+      "rms": 0.2125,
+      "peak": 0.5225,
+      "nan": 0,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "kill": {
+      "rms": 0.1617,
+      "peak": 0.5222,
+      "nan": 0,
+      "samples": 17640,
+      "durSec": 0.4,
+      "pass": true
+    },
+    "pickup": {
+      "rms": 0.1696,
+      "peak": 0.3,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "equip": {
+      "rms": 0.132,
+      "peak": 0.4227,
+      "nan": 0,
+      "samples": 9261,
+      "durSec": 0.21,
+      "pass": true
+    },
+    "reload": {
+      "rms": 0.0967,
+      "peak": 0.28,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "reloadDone": {
+      "rms": 0.139,
+      "peak": 0.2996,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "med": {
+      "rms": 0.1412,
+      "peak": 0.4149,
+      "nan": 0,
+      "samples": 14994,
+      "durSec": 0.34,
+      "pass": true
+    },
+    "gasWarn": {
+      "rms": 0.1168,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "gasShrink": {
+      "rms": 0.056,
+      "peak": 0.2468,
+      "nan": 0,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "gasTick": {
+      "rms": 0.0873,
+      "peak": 0.1998,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.107,
+      "peak": 0.18,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1669,
+      "peak": 0.5973,
+      "nan": 0,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "lose": {
+      "rms": 0.2121,
+      "peak": 0.5846,
+      "nan": 0,
+      "samples": 41895,
+      "durSec": 0.95,
+      "pass": true
+    },
+    "matchStart": {
+      "rms": 0.1155,
+      "peak": 0.3722,
+      "nan": 0,
+      "samples": 23814,
+      "durSec": 0.54,
+      "pass": true
+    },
+    "scan": {
+      "rms": 0.0466,
+      "peak": 0.08,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1348,
+      "peak": 0.3065,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "final": {
+      "rms": 0.1328,
+      "peak": 0.5081,
+      "nan": 0,
+      "samples": 35280,
+      "durSec": 0.8,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm": {
+      "rms": 0.2,
+      "peak": 0.7358,
+      "nan": 0,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

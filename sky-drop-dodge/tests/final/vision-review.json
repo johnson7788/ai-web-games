@@ -1,0 +1,149 @@
+{
+  "game": "sky-drop-dodge",
+  "generatedAt": "2026-11-19T14:38:05.303Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7,
+    "style_consistent": 8.75
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Start’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊城市剪影与标题文字对比度偏低，眯眼时主标题虽亮但背景元素干扰辨识",
+        "‘Best wave 0 · D’文字颜色偏黄，在深蓝背景下易被忽略，建议提高对比度或加描边",
+        "右上角语言切换按钮无图标仅文字，小屏下可能误触或识别困难"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动躲避即将落下的瓶子雨",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与地面阴影融合，轮廓在灰蓝背景下略弱（silhouette扣分）",
+        "‘Bottle rain’进度条下方无明确掉落物轨迹提示，新手可能误判落点",
+        "右下角感叹号图标未标注功能，疑似交互点但无反馈线索"
+      ]
+    },
+    {
+      "shot": "tests/final/03-block.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击或按方向键向右移动以躲避上方掉落的瓶子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色头顶伞状特效与‘!’提示圈部分重叠，可能干扰目标识别",
+        "‘Bottle rain’进度条颜色与背景蓝灰接近，对比度偏低",
+        "城市建筑中右侧高楼窗户为蓝色点阵，与其他建筑风格略异，轻微不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/04-ripple.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击或按方向键移动角色躲避上方掉落的瓶子雨",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色头顶伞状特效与‘Bottle rain’提示条轻微视觉干扰，可能影响目标识别",
+        "地面箭头指示器尺寸偏小（约12px），在低分辨率下易误判方向",
+        "左下角感叹号图标无明确交互反馈，功能意图模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/05-thunder.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央角色周围扇形光效区域以展开伞或防御",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 'Drones' 进度条与 'WIND Calm' 文字间距过小，易误读为一整体",
+        "右下角感叹号图标（!）无明确提示，功能不明，可能被误认为敌人或陷阱",
+        "底部箭头指示器（←→）未标注方向含义，新手可能困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/06-dusk.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应点击屏幕下方箭头区域发射伞状武器以击落空中下坠的方块",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘DODGE THE DROP!’标题与HP/UMBRELLA图标间距过小，可能误触",
+        "中央角色头顶伞状物与背景太阳部分重叠，弱化目标识别",
+        "右上角‘WAVE 9/12’与‘WIND Calm’垂直排列紧凑，小屏易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/07-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Run again’按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签发光效果略过强，可能干扰主标题阅读",
+        "‘Best’行右侧‘1 · D’中点号与字母间距不均，疑似排版疏漏",
+        "背景模糊导致部分玩家可能误判为游戏仍在运行（非UI问题但影响认知）"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角雨伞按钮开启伞防掉落物",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与地面黄色感叹号标记重叠，可能误判为可交互点",
+        "‘Flowerpots’进度条无明确目标值或单位，语义模糊",
+        "右侧建筑群部分窗户呈蓝色方块阵列，疑似未渲染完成或资源缺失"
+      ]
+    }
+  ]
+}

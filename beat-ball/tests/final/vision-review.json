@@ -1,0 +1,149 @@
+{
+  "game": "beat-ball",
+  "generatedAt": "2026-11-19T13:28:13.907Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.75,
+    "silhouette": 8,
+    "style_consistent": 9.125
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的 'Start' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部 '0 / 36' 星标计数文字偏小，略显模糊",
+        "左右两侧红色球体与鸟居结构有轻微光晕重叠，可能干扰目标识别",
+        "关卡按钮（1-12）无选中状态高亮，当前第1关仅靠星标区分，不够直观"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的笑脸球使其发射向上",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部进度条左侧黄色段极短，可能被误认为未开始",
+        "四个红色目标球发光晕重叠背景，远距离辨识度略降",
+        "中央垂线上的两个小黄点功能不明，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-three-lanes.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央上方的黄色发射装置启动弹射",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "红色目标球与背景光晕融合，部分目标辨识度略低（中上区域）",
+        "发射装置细线与背景色对比弱，可能影响瞄准精度（中央偏上）",
+        "左上角‘Level 3’等HUD文字字号偏小，远距离阅读稍费力"
+      ]
+    },
+    {
+      "shot": "tests/final/04-lantern.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或拖拽底部笑脸角色发射弹道瞄准上方黄色目标",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部HUD中'Level 5'左侧进度条过短且无标签，易误读为装饰",
+        "右上角功能图标（?、音乐、重试、菜单）间距过密，小屏可能误触",
+        "红色气球目标发光晕过强，与背景星点融合，夜间辨识度略降"
+      ]
+    },
+    {
+      "shot": "tests/final/05-storm.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央上方的红色目标点以发射弹道",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标点（红点）与上方黄色云朵重叠，易误判为装饰物而非可交互目标",
+        "三条弹道线汇聚于同一点但无明确起点指示，新手难理解发射机制",
+        "左上角进度条过短且无标签，无法判断是能量/时间/冷却"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Stage Cleared!’文字与三颗星图标间距略紧，可能影响小屏阅读",
+        "底部笑脸筹码角色被同心圆轨道部分遮挡，轮廓辨识度稍降",
+        "左上角‘Level 1’等HUD标签背景色与主界面融合度高，对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/07-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央的红色笑脸圆盘使其摆动发射",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "顶部进度条黄色部分极短，可能难以感知当前进度；",
+        "目标红球（左/右门内）与背景光晕融合，弱对比下易误判位置；",
+        "悬挂小黄环（瞄准点）尺寸过小，精细操作时可能难定位"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击红色‘开始’按钮启动游戏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡编号1-12的按钮与中心笑脸角色距离过近，可能误触",
+        "顶部‘0 / 36’星标计数文字偏小，弱光下辨识度低",
+        "左右鸟居结构对称但右侧红球略模糊，疑似渲染差异"
+      ]
+    }
+  ]
+}

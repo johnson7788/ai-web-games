@@ -1,0 +1,96 @@
+{
+  "slug": "slot-legends",
+  "genre": "arcade",
+  "oneLiner": "你是初入绿林的侠盗，转动 5×3 轮盘凑齐刀客/神偷/元宝等好汉符号，靠下注、押镖与好汉令保底赢下「侠盗传说筹码」，一路解锁 12 级新图标与倍率。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "spin",
+      "cost": "每次消耗当前下注筹码；筹码低于最小注且无免费旋转即破产",
+      "feedback": ["reels", "sfx", "win-flash"],
+      "combinesWith": ["bet", "escort"]
+    },
+    {
+      "name": "bet",
+      "cost": "下注越高，单次输掉的筹码越多、破产越快",
+      "feedback": ["hud", "sfx"],
+      "combinesWith": ["spin", "escort"]
+    },
+    {
+      "name": "escort",
+      "cost": "额外 50% 筹码，且基础赔付 -20%",
+      "feedback": ["sfx", "hud", "icon"],
+      "combinesWith": ["spin"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 4, "choice": "这一转押多少筹码", "cost": "高注赢面大但更快破产" },
+    { "atSec": 12, "choice": "第 3 级解锁押镖后是否开启", "cost": "免费旋转触发率翻倍 vs 基础赔付 -20%" },
+    { "atSec": 25, "choice": "余额偏低时保守最小注还是加注翻本", "cost": "苟活 vs 快速回本" },
+    { "atSec": 40, "choice": "好汉令快满 5 枚保底时，是否临时加注放大保底大奖", "cost": "多押的筹码 vs 保底倍率" },
+    { "atSec": 70, "choice": "进入山寨章、元宝图标解锁后，是否提高下注博 jackpot", "cost": "更高下注 vs 更高大奖" },
+    { "atSec": 100, "choice": "刚中大奖后落袋为安（降注）还是乘胜追击", "cost": "锁定利润 vs 追更大" },
+    { "atSec": 140, "choice": "wild 解锁后 7 条赔付线，改中注还是继续最小注", "cost": "赔付线命中率 vs 单注成本" },
+    { "atSec": 170, "choice": "濒临破产时最后一搏满注还是最小注磨下去", "cost": "可能瞬间输光 vs 慢速苟活" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 45,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础：5×3 滚动轮、5 条赔付线、4 个好汉符号 + 聚义令（散布）" },
+    { "index": 2, "newElement": "好汉令：集 5 枚令牌必触发一次大保底" },
+    { "index": 3, "newElement": "押镖（策略下注）+ 新图标「刀客」" },
+    { "index": 4, "newElement": "倍率表 ×1.2" },
+    { "index": 5, "newElement": "新图标「元宝」（jackpot）+ 场景切「山寨」" },
+    { "index": 6, "newElement": "追加 2 条赔付线（共 7 条）" },
+    { "index": 7, "newElement": "倍率表 ×1.5" },
+    { "index": 8, "newElement": "散布权重上调（免费旋转更容易触发）" },
+    { "index": 9, "newElement": "场景切「夜市」+ 元宝权重上调（jackpot 更容易）" },
+    { "index": 10, "newElement": "倍率表 ×2.0" },
+    { "index": 11, "newElement": "押镖成本减半（额外成本 +50% → +25%）" },
+    { "index": 12, "newElement": "jackpot 权重上调（元宝更常出现）" }
+  ],
+  "upgrades": [
+    { "id": "token", "kind": "rule", "desc": "好汉令保底：集 5 枚令牌下一转必中大奖" },
+    { "id": "escort", "kind": "rule", "desc": "押镖：花额外筹码让免费旋转触发率翻倍" },
+    { "id": "blade", "kind": "rule", "desc": "新图标刀客（高赔付）" },
+    { "id": "paytable12", "kind": "stat", "desc": "倍率表 ×1.2" },
+    { "id": "ingot", "kind": "rule", "desc": "新图标元宝（jackpot 顶级）" },
+    { "id": "paylines7", "kind": "rule", "desc": "追加 2 条赔付线" },
+    { "id": "paytable15", "kind": "stat", "desc": "倍率表 ×1.5" },
+    { "id": "scatterUp", "kind": "rule", "desc": "散布权重上调" },
+    { "id": "ingotUp", "kind": "rule", "desc": "元宝权重上调（jackpot 更容易）" },
+    { "id": "paytable20", "kind": "stat", "desc": "倍率表 ×2.0" },
+    { "id": "escortCheap", "kind": "rule", "desc": "押镖成本减半（额外成本 +50% → +25%）" },
+    { "id": "jackpotUp", "kind": "rule", "desc": "jackpot 权重上调" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 3,
+    "firstSuccessSec": 4,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "三连元宝时金色大雨倾泻而下，全屏金色粒子 + 大奖音效 + 结算闪光，一眼难忘",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做真钱/充值（纯虚拟筹码）"
+  ],
+  "artSource": "程序化 Canvas：3 场景色板（酒馆暖木 / 山寨青绿 / 夜市红灯）+ 8 个原创好汉符号（形状 + 颜色区分）；封面海报 AI 生成；BGM/SFX 程序化 WebAudio 合成"
+}

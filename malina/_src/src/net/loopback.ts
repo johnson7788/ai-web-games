@@ -1,0 +1,94 @@
+import type { Rand } from '../rng.ts';
+import type { Transport } from './transport.ts';
+
+/**
+ * In-memory loopback: a pair of linked transports. Without a clock frames arrive at once (single player — a "listen server");
+ * with a clock — after delayMs ± jitterMs, with a loss share and reordering, on `pump(now)` (channel tests)
+ */
+export interface LoopbackOpts {
+  clock?: () => number;
+  delayMs?: number;
+  jitterMs?: number;
+  /** Share of lost frames 0..1 */
+  loss?: number;
+  /** Share of frames that arrive after the next one */
+  reorder?: number;
+  rng?: Rand;
+}
+
+interface Pending { at: number; frame: string; to: LoopbackEnd }
+
+export class LoopbackEnd implements Transport {
+  readonly lossy: boolean;
+  onMessage: ((frame: string) => void) | null = null;
+  onClose: ((code: number) => void) | null = null;
+  peer!: LoopbackEnd;
+  closed = false;
+  /** Frames sent and delivered — for tests */
+  sent = 0;
+  delivered = 0;
+  private readonly link: Link;
+
+  constructor(link: Link, lossy: boolean) { this.link = link; this.lossy = lossy; }
+
+  send(frame: string): void {
+    if (this.closed || this.peer.closed) return;
+    this.sent++;
+    this.link.post(frame, this.peer);
+  }
+
+  close(code = 1000): void {
+    if (this.closed) return;
+    this.closed = true;
+    this.peer.closed = true;
+    this.onClose?.(code);
+    this.peer.onClose?.(code);
+  }
+}
+
+class Link {
+  private readonly o: LoopbackOpts;
+  private readonly queue: Pending[] = [];
+  private draining = false;
+
+  constructor(o: LoopbackOpts) { this.o = o; }
+
+  post(frame: string, to: LoopbackEnd): void {
+    const r = this.o.rng;
+    if (this.o.loss && r && r() < this.o.loss) return;
+    const now = this.o.clock?.() ?? 0;
+    let at = now + (this.o.delayMs ?? 0) + (this.o.jitterMs && r ? (r() * 2 - 1) * this.o.jitterMs : 0);
+    if (this.o.reorder && r && r() < this.o.reorder) at += (this.o.delayMs ?? 1) * 1.5 + 1;
+    this.queue.push({ at, frame, to });
+    if (!this.o.clock) this.drain(Infinity);
+  }
+
+  /** Deliver everything due by now (in due order) */
+  pump(now: number): void { this.drain(now); }
+
+  private drain(now: number): void {
+    if (this.draining) return;
+    this.draining = true;
+    try {
+      for (;;) {
+        let k = -1;
+        for (let i = 0; i < this.queue.length; i++) if (this.queue[i].at <= now && (k < 0 || this.queue[i].at < this.queue[k].at)) k = i;
+        if (k < 0) break;
+        const [p] = this.queue.splice(k, 1);
+        if (p.to.closed) continue;
+        p.to.delivered++;
+        p.to.onMessage?.(p.frame);
+      }
+    } finally { this.draining = false; }
+  }
+}
+
+export interface LoopbackPair { a: LoopbackEnd; b: LoopbackEnd; pump: (now: number) => void }
+
+export function loopbackPair(o: LoopbackOpts = {}): LoopbackPair {
+  const link = new Link(o);
+  const lossy = (o.loss ?? 0) > 0 || (o.reorder ?? 0) > 0;
+  const a = new LoopbackEnd(link, lossy), b = new LoopbackEnd(link, lossy);
+  a.peer = b; b.peer = a;
+  return { a, b, pump: (now) => link.pump(now) };
+}

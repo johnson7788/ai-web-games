@@ -1,0 +1,149 @@
+{
+  "game": "hero-vanguard",
+  "generatedAt": "2026-11-19T16:16:52.159Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 6.75,
+    "style_consistent": 8.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Deploy' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角虚拟摇杆图标模糊且无明确功能标注，可能影响新手理解",
+        "‘Best wave 0’文字颜色偏黄，在深蓝背景上对比度略低",
+        "右上角语言切换按钮过小（目测 <30px），非桌面端可能难触达"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘部署’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角虚拟摇杆轮廓模糊、无明确边界，可能影响操作识别",
+        "‘最高波次 0’文字颜色偏黄，在深蓝背景上对比度略低",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头过小（约12px）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "用 WASD 或摇杆移动黄色圆形英雄到网格中央",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "黄色英雄与背景星点对比度偏低，眯眼时易混淆（silhouette扣分）",
+        "右下角按钮组无间距且颜色相近，Swap/Charge易误触",
+        "‘FIRST DEPLOYMENT’提示框遮挡部分网格线，轻微影响路径判断"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角圆形按钮发射蓝色方块子弹",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘BEST 0’与轨道线轻微重叠，可能影响辨识",
+        "‘WAVE 1 Near Orbit’中‘Near Orbit’字体略小且颜色偏淡，远距离易忽略",
+        "敌人红色三角箭头无明显朝向指示（部分指向斜下方），可能误导移动方向"
+      ]
+    },
+    {
+      "shot": "tests/final/05-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Resume’按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角虚拟摇杆与技能按钮部分模糊，轮廓辨识度偏低（影响silhouette）",
+        "右上角语言切换下拉框无展开箭头，交互意图不明确",
+        "背景星轨与暂停层半透明叠加，轻微干扰主按钮视觉层级"
+      ]
+    },
+    {
+      "shot": "tests/final/06-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Redeploy' 按钮或按 R 键重新开始",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中红色三角形（疑似敌人）与深蓝背景对比度低，眯眼时难以辨识轮廓",
+        "'NEW RECORD' 标签发光效果略过强，轻微干扰主标题阅读",
+        "左下角虚拟摇杆/按钮模糊且未聚焦，若为移动版则尺寸与清晰度存疑"
+      ]
+    },
+    {
+      "shot": "tests/final/07-restart.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角蓝色圆形按钮发射子弹",
+      "readable": 6,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘WAVE 1 Near Orbit’文字颜色过浅（灰黄），在深蓝背景上对比度不足，易误读为‘Near Orbit’是独立标签",
+        "右上角‘BEST 1’按钮无边框且文字小，与背景融合度高，辨识度低",
+        "中央黄色目标物（带箭头）与网格线颜色接近，动态时可能混淆"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "按 W/A/S/D 或摇杆移动英雄到网格中合适位置",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡部分网格与右下按钮区域，可能影响操作预判",
+        "右上 'Skip' 按钮与轨道线视觉距离过近，易误触",
+        "红色敌方箭头未标注类型/威胁等级，新手难判断优先级"
+      ]
+    }
+  ]
+}

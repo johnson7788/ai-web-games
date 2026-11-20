@@ -1,0 +1,65 @@
+{
+  "slug": "pulse-tap",
+  "genre": "arcade",
+  "oneLiner": "在心跳夜店的 DJ 台上，四条霓虹能量轨落下脉冲，玩家在判定线按 DFJK 点中节拍——连击 8 次 Perfect 触发律动模式，漏拍扣血，清完整首曲子赢下这一盘。",
+  "fun": { "primary": "mastery", "secondary": "expression" },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "点空轨或点错轨断连；点到灰色假 note 会扣血",
+      "feedback": ["sfx", "glowFlash", "scorePop"],
+      "combinesWith": ["hold", "slide"]
+    },
+    {
+      "name": "hold",
+      "cost": "按住一轨时另一只手被占住，同拍落到别轨的音更难接；提前松开会断连扣血",
+      "feedback": ["sfx", "beamGlow", "ringPulse"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "slide",
+      "cost": "滑键把你锁进相邻双轨的两段序列，第二轨没接上就断连",
+      "feedback": ["sfx", "connectorArc", "streakTrail"],
+      "combinesWith": ["tap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一束脉冲落下：掐准判定线要 Perfect，还是提前一拍求稳拿 Great", "cost": "提前一拍 = 拿不到律动模式的连击进度" },
+    { "atSec": 20, "choice": "双轨交替：双手拆分注意力，还是放掉副轨保主轨", "cost": "放掉副轨 = Miss 扣血" },
+    { "atSec": 40, "choice": "长按 note 到来：按满全程吃满发光加成，还是提前松手腾出另一只手", "cost": "提前松手 = 断连 + 扣血" },
+    { "atSec": 55, "choice": "密度爬升：硬接每一个 note 保连击，还是放掉难 note 保血量", "cost": "放掉 = 掉连击丢星；硬接 = 可能 Miss" },
+    { "atSec": 75, "choice": "密段里混进灰色假 note：看清它是假的跳过，还是凭反射照点", "cost": "点假 note = 扣血 + 断连" },
+    { "atSec": 100, "choice": "双手和弦同拍落下：两只手同时按两条轨，还是只接一条吃另一半 Miss", "cost": "只接一半 = 必定 Miss" },
+    { "atSec": 130, "choice": "律动耐力段：追连续 8 次 Perfect 换更宽判定窗，还是稳拿 Great 保命", "cost": "追 Perfect = 容错更小，一旦 Miss 前功尽弃" },
+    { "atSec": 160, "choice": "终章冲刺：为三星全连击拼到底，还是保一星活过全曲", "cost": "全连击一旦断就血线告急，可能直接失败" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 60, "twistSec": 45, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "单点 pulse 四轨下落判定" },
+    { "index": 2, "newElement": "双轨交替切换" },
+    { "index": 3, "newElement": "长按 note 持续发光" },
+    { "index": 4, "newElement": "滑键相邻轨滑接" },
+    { "index": 5, "newElement": "变速段谱面加速" },
+    { "index": 6, "newElement": "密度爬升保连击压力" },
+    { "index": 7, "newElement": "灰色假 note 不可点" },
+    { "index": 8, "newElement": "多轨同拍和弦" },
+    { "index": 9, "newElement": "长按 + 律动模式耐力" },
+    { "index": 10, "newElement": "切分节奏打破正拍" },
+    { "index": 11, "newElement": "又快又密的生存冲刺" },
+    { "index": 12, "newElement": "终章全曲三轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockHold", "kind": "rule", "desc": "第 3 关起出现长按 note，按住才完整得分" },
+    { "id": "unlockSlide", "kind": "rule", "desc": "第 4 关起出现滑键，相邻轨连击触发 slideChain" },
+    { "id": "unlockFake", "kind": "rule", "desc": "第 7 关起出现灰色假 note，点它扣血断连" },
+    { "id": "unlockChord", "kind": "rule", "desc": "第 8 关起出现同拍和弦，需要双手同时按" },
+    { "id": "grooveMode", "kind": "rule", "desc": "连续 8 次 Perfect 进入律动模式，判定窗口放宽" },
+    { "id": "tempoShift", "kind": "rule", "desc": "第 5 关起出现变速段，节奏突然加快" },
+    { "id": "syncopation", "kind": "rule", "desc": "第 10 关起出现切分节奏，note 落点偏移正拍" },
+    { "id": "finaleMix", "kind": "rule", "desc": "第 12 关终章把长按/滑键/假 note/和弦全部叠加" },
+    { "id": "densityClimb", "kind": "stat", "desc": "关卡越靠后 note 密度越高，专注压力爬升" }
+  ],
+  "replayHooks": ["rating", "nearMiss", "growth", "unlock"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 0, "firstInputSec": 5, "firstSuccessSec": 20, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

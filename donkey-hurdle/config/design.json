@@ -1,0 +1,94 @@
+{
+  "slug": "donkey-hurdle",
+  "genre": "arcade",
+  "oneLiner": "你是一头驮满陶罐的小驴，沿丝路自动奔跑；短按跳过矮栏、长按高跳翻过高墙、坑洞要踩准起跳，撞一次掉一个罐，罐子掉光商队散架。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "jump",
+      "cost": "起跳即失去地面控制，短按跳得矮、长按跳得高——选错高度就会撞栏或掉坑",
+      "feedback": ["sfx", "dust", "body-arc"],
+      "combinesWith": ["dropJump"]
+    },
+    {
+      "name": "hold",
+      "cost": "延长滞空时间，但落地更晚、节奏被打乱，窄桥段容易踩错节拍",
+      "feedback": ["sfx", "higher-arc", "trail"],
+      "combinesWith": ["jump"]
+    },
+    {
+      "name": "dropJump",
+      "cost": "主动丢一个陶罐（血量-1）换一次超高跳，满罐时丢罐会中断满载加分",
+      "feedback": ["sfx", "golden-arc", "jar-shard"],
+      "combinesWith": ["jump"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一道矮栏：短按小跳还是直接长按高跳（浪费时间）", "cost": "节奏 vs 高度" },
+    { "atSec": 14, "choice": "高墙逼近：长按高跳但落地慢，还是用一罐换卸货跳秒过", "cost": "血量 vs 位移" },
+    { "atSec": 26, "choice": "坑洞：精确起跳点在哪，跳早了掉坑跳晚了撞壁", "cost": "时机判断" },
+    { "atSec": 40, "choice": "连环栏：连点两下还是长跳一次跨两栏", "cost": "操作节奏 vs 滞空风险" },
+    { "atSec": 55, "choice": "滚石以更快速度滚来：提前跳还是等它再近一点", "cost": "反应 vs 预判" },
+    { "atSec": 70, "choice": "罐子只剩 1 个：路边补给罐在障碍上方，冒险去接还是保命绕开", "cost": "血量 vs 资源" },
+    { "atSec": 90, "choice": "满载加分进行中：丢罐保命会断满载，硬跳还是卸货", "cost": "分数 vs 血量" },
+    { "atSec": 120, "choice": "窄桥节奏段：等距连环栏，压节拍连跳还是减速抢时间", "cost": "节奏 vs 速度" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "矮栏：教短按小跳" },
+    { "index": 2, "newElement": "坑洞：教精确起跳" },
+    { "index": 3, "newElement": "高墙：教长按高跳" },
+    { "index": 4, "newElement": "连环栏：教连点节奏" },
+    { "index": 5, "newElement": "滚石：更快滚来的移动障碍" },
+    { "index": 6, "newElement": "风沙减速区：速度骤降，别跳过头" },
+    { "index": 7, "newElement": "窄桥节奏段：等距连环栏压节拍" },
+    { "index": 8, "newElement": "滚石+坑洞混合" },
+    { "index": 9, "newElement": "星夜场景切换" },
+    { "index": 10, "newElement": "三连障碍（连环+坑+栏）" },
+    { "index": 11, "newElement": "全类型混合" },
+    { "index": 12, "newElement": "终章：最快速度全类型收束" }
+  ],
+  "upgrades": [
+    { "id": "coyote", "kind": "rule", "desc": "土狼时间：离地后 100ms 内仍可起跳（改规则）" },
+    { "id": "jumpBuffer", "kind": "rule", "desc": "输入缓冲：落地前 140ms 内的起跳落地即生效" },
+    { "id": "dropRefund", "kind": "rule", "desc": "卸货跳若连清 2 个障碍，返还 1 罐" },
+    { "id": "fullLoadCombo", "kind": "rule", "desc": "满载状态下连跳，身后陶罐划出金色弧线并加分" },
+    { "id": "sandGlide", "kind": "rule", "desc": "风沙区滞空时间 +20%（改规则）" },
+    { "id": "jarMagnet", "kind": "rule", "desc": "补给罐吸附半径翻倍" },
+    { "id": "jarStart", "kind": "stat", "desc": "开局陶罐 +1" },
+    { "id": "speedCap", "kind": "stat", "desc": "速度上限 +10%" },
+    { "id": "jarMax", "kind": "stat", "desc": "最大陶罐数 +2" },
+    { "id": "invuln", "kind": "stat", "desc": "受伤无敌时间 +0.3s" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "满载状态下连续起跳，驴身后的陶罐在晨光里划出一串金色弧线",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "西域丝路手绘风格：Canvas 程序化绘制（色块+渐变+剪影），三场景包（沙金晨/翠绿洲/蓝紫夜），BGM WebAudio 程序化合成，UI 线框 CSS"
+}

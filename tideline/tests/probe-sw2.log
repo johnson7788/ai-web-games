@@ -1,0 +1,6 @@
+t=3s {"has":true,"mode":"loading","load":"Baking waves…","gpu":"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)"}
+SW load ms: 52407
+state: {"mode":"title","lap":1,"cp":0,"activeGate":1,"gatesPassedTotal":0,"raceTime":0,"gateLeft":30,"speed":0,"x":496.7194798052346,"z":-25.7922117557168,"heading":1.8124672566580509,"fps":0,"gpu":"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)","software":true,"quality":{"resolution":0.45,"msaa":2,"reflections":false,"reflectionScale":0.25,"autoResolution":true,"shadow":512,"bloom":0,"simSkip":2}}
+SW after 50s drive: {"mode":"racing","gates":0,"cp":0,"fps":0,"speed":12.6,"res":0.45}
+errors: [] consoleErrs: []
+EXIT:0

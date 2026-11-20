@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="BATTLE ROYALE MINI — toy soldiers on a desk battlefield. Dual-stick shoot, loot guns and meds, outrun the shrinking zone, be the last toy standing.">
+  <meta name="theme-color" content="#1a120b">
+  <title>BATTLE ROYALE MINI · Toy Soldier Battle Royale</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+
+    <div id="touch-controls" class="touch-only">
+      <div id="joy-move" class="joystick" aria-label="Move">
+        <div class="joy-ring"></div>
+        <div class="joy-dot"></div>
+      </div>
+      <div id="joy-aim" class="joystick" aria-label="Aim">
+        <div class="joy-ring"></div>
+        <div class="joy-dot"></div>
+      </div>
+      <div class="touch-btns">
+        <button id="btn-shoot" type="button" aria-label="Shoot">FIRE</button>
+      </div>
+    </div>
+
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Deploying toys…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

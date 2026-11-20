@@ -1,0 +1,84 @@
+{
+  "slug": "penta-cards",
+  "genre": "puzzle",
+  "oneLiner": "你在星象牌桌上组牌：摸牌弃牌、碰杠成副，卡五星夹中成牌时星阵连线亮起，用观星偷看牌堆、换星盲换一牌，与两名 AI 打满 12 局段位赛。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "discard",
+      "cost": "弃掉一张牌，对手立刻看到你放弃了什么",
+      "feedback": ["tile-slide", "sfx", "fold-glow"],
+      "combinesWith": ["claim"]
+    },
+    {
+      "name": "claim",
+      "cost": "碰/杠会拆散手牌结构并暴露你的成型目标",
+      "feedback": ["meld-glow", "sfx", "banner"],
+      "combinesWith": ["discard"]
+    },
+    {
+      "name": "stargaze",
+      "cost": "消耗本局观星次数，且对手知道你看了牌堆",
+      "feedback": ["starfield-reveal", "sfx"],
+      "combinesWith": ["swap"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先弃孤立边张还是留着中张等顺子", "cost": "断掉一条成型路线" },
+    { "atSec": 18, "choice": "碰不碰对手打的牌", "cost": "改变手牌结构、暴露目标" },
+    { "atSec": 34, "choice": "现在观星还是留到听牌前再用", "cost": "消耗一次观星机会" },
+    { "atSec": 50, "choice": "换星盲赌一张还是稳打保留手牌", "cost": "暴露弃牌信息" },
+    { "atSec": 72, "choice": "冲大番还是快胡小番", "cost": "放弃更高番或错失先胡" },
+    { "atSec": 110, "choice": "听牌后是保守防守还是继续进攻", "cost": "可能点炮" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 30, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "基础胡牌：4 副 + 1 对，教学摸打" },
+    { "index": 2, "newElement": "观星：看牌堆顶 3 张" },
+    { "index": 3, "newElement": "换星：弃 1 换 1 且对手可见" },
+    { "index": 4, "newElement": "碰：吃进对手弃牌成明副" },
+    { "index": 5, "newElement": "杠：暗杠/明杠加番补牌" },
+    { "index": 6, "newElement": "卡五星：夹 4-6 听 5 成牌" },
+    { "index": 7, "newElement": "清一色：单花色 +2 番" },
+    { "index": 8, "newElement": "七对：不碰不杠集 7 对" },
+    { "index": 9, "newElement": "大小三元：三元成副 +2/+3 番" },
+    { "index": 10, "newElement": "手抓一：剩 1-2 张胡 +2 番" },
+    { "index": 11, "newElement": "海底：摸最后一张成牌 +1 番" },
+    { "index": 12, "newElement": "极光终局：满番封顶决段位" }
+  ],
+  "upgrades": [
+    { "id": "stargazePlus", "kind": "rule", "desc": "观星次数 2→3（改规则）" },
+    { "id": "swapPlus", "kind": "rule", "desc": "换星次数 1→2（改规则）" },
+    { "id": "deepPeek", "kind": "rule", "desc": "观星看 3→5 张（改规则）" },
+    { "id": "pickSwap", "kind": "rule", "desc": "换星抽 1→二选一（改规则）" },
+    { "id": "kawuxingFan", "kind": "rule", "desc": "卡五星 +1→+2 番（改规则）" },
+    { "id": "sevenPairFan", "kind": "rule", "desc": "七对额外 +1 番（改规则）" },
+    { "id": "dealerEdge", "kind": "rule", "desc": "庄家连庄时首摸多 1 张（改规则）" },
+    { "id": "fanCapUp", "kind": "rule", "desc": "番数封顶 8→9（改规则）" },
+    { "id": "chipsUp", "kind": "stat", "desc": "起始筹码 +10（数值）" },
+    { "id": "betDown", "kind": "stat", "desc": "底注增速减半（数值）" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "胡牌瞬间，你的手牌被金色星线串联成完整星阵，观星台天幕随之点亮",
+  "antiScope": [
+    "不做联网/房间/排行榜",
+    "不做皮肤/付费商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式"
+  ],
+  "artSource": "程序化 Canvas 星空牌桌（径向渐变 + 加法混合发光），三套场景包换色板与构图；UI 线框 SVG/CSS；BGM/SFX 程序化 WebAudio"
+}

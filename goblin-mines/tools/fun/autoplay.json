@@ -1,0 +1,60 @@
+{
+  "genre": "puzzle",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 0.6,
+      "actions": 35,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.02,
+      "uniqueEvents": 12,
+      "levelsReached": 3,
+      "completed": false,
+      "maxDepth": 24,
+      "actionsPerMin": 3600
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 4.5,
+      "actions": 238,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0,
+      "deaths": 1,
+      "idleSec": 0.5,
+      "maxEventGapSec": 0.07,
+      "uniqueEvents": 15,
+      "levelsReached": 3,
+      "completed": false,
+      "maxDepth": 24,
+      "actionsPerMin": 3197
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 79.1,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 79,
+      "maxEventGapSec": 18.02,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false,
+      "maxDepth": 0,
+      "actionsPerMin": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T14:34:18.893Z"
+}

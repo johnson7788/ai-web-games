@@ -1,0 +1,117 @@
+{
+  "game": "cake-kart",
+  "generatedAt": "2026-11-19T16:17:46.162Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8,
+    "silhouette": 7.5,
+    "style_consistent": 9.166666666666666
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-play.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该按方向键或滑动屏幕控制粉色小车沿白色赛道前进",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 HUD 数值（如 '6th'）字体偏小，远距离可能辨识困难",
+        "右上角 'FROSTING' 和 'ITEM' 按钮无明确交互反馈提示，易误判为静态信息",
+        "迷你地图中红点（目标）与白点（玩家）对比度偏低，眯眼时不易区分"
+      ]
+    },
+    {
+      "shot": "tests/final/02-drift.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该按方向键或滑动屏幕控制红色赛车沿白色赛道前进",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "小地图中红点（玩家）与白点（目标）间距过近，易混淆；",
+        "右上角'ITEM'按钮无图标仅文字，移动端辨识度低；",
+        "速度条左侧橙色指示器极短，当前75 km/h在视觉上接近0，数值与进度不匹配"
+      ]
+    },
+    {
+      "shot": "tests/final/03-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "按方向键上或点击屏幕上方区域加速起步",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "中央提示框遮挡赛道中段，可能影响弯道预判",
+        "左下角三角按钮尺寸偏小（目测约32px），不符合触屏最小44px标准",
+        "右上角'FROSTING'与'ITEM'标签间距过近，易误触"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "按方向键或滑动屏幕控制粉色小车沿白色赛道右转",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角 'FROSTING' 和 'ITEM —' 按钮文字过小且无明确交互反馈，可能影响可操作性",
+        "小地图中红点（玩家）与白线（赛道）对比度偏低，远距离辨识稍弱",
+        "赛道边缘粉红线在弯道处有轻微锯齿/断裂感，疑似渲染问题"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "按向上方向键或↑键加速前进",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "小地图中红点（玩家）与白圈边界几乎重合，易误判位置",
+        "‘FIRST LAP’提示框遮挡部分赛道边缘，可能影响弯道判断",
+        "右上角‘FROSTING’条状UI无明确功能说明，语义模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-replay.png",
+      "goal_visible": true,
+      "first_action_guess": "点击 'Race' 按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题 'CAKE KART' 发光效果过强，导致部分字母边缘模糊（如 A、K），影响远距离辨识",
+        "‘FIRST LAP’提示框背景为深紫近黑，与主背景对比度不足，易被忽略",
+        "右上角语言选择与 Skip 按钮间距过小，可能误触（桌面截图但需考虑响应式适配）"
+      ]
+    }
+  ]
+}

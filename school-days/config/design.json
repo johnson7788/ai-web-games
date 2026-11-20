@@ -1,0 +1,67 @@
+{
+  "slug": "school-days",
+  "genre": "sim",
+  "oneLiner": "山村小堂里，你每周把有限的课时分给算学、习武、游学和休息，把小熊猫村童养成能上大考放榜的学子。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "meaning"
+  },
+  "verbs": [
+    {
+      "name": "assign",
+      "cost": "消耗一个课时槽和对应体力：选了算学就练不了习武；每个科目都有副作用（读书掉心情、习武更耗体力、游学烧钱）",
+      "feedback": ["sfx", "cardSnap", "attrFlash"],
+      "combinesWith": ["endWeek"]
+    },
+    {
+      "name": "rest",
+      "cost": "占用一个课时槽，只回体力与心情，本周不产出任何属性成长",
+      "feedback": ["sfx", "cozyGlow", "energyPop"],
+      "combinesWith": ["assign"]
+    },
+    {
+      "name": "endWeek",
+      "cost": "锁定本周安排进入结算，不能再改；随机事件会逼你在金币与属性之间二选一",
+      "feedback": ["sfx", "weekReport", "lanternPulse"],
+      "combinesWith": ["assign"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一节课时：上算学冲成绩，还是先习武补体魄", "cost": "算学掉心情、习武更费体力，二者不能兼得" },
+    { "atSec": 20, "choice": "天赋生偏科：专精他的天赋科目吃加成，还是均衡培养所有村童", "cost": "专精=放弃其他科目本周进度" },
+    { "atSec": 40, "choice": "体力见底：安排休息回体力，还是硬撑上课赌下周不崩", "cost": "硬撑可能下周被迫全休，白丢一周" },
+    { "atSec": 60, "choice": "游学窗口：花双倍课时和金币换高声望，还是省钱保底", "cost": "游学占两个课时槽且烧金币" },
+    { "atSec": 85, "choice": "疫病爆发：花钱请大夫稳住心情，还是隔离硬扛", "cost": "请大夫花一大笔金币；硬扛心情崩盘拖累结算" },
+    { "atSec": 110, "choice": "村口庆典：花金币办庆典换声望，还是省钱被村民议论", "cost": "办=金币损失；不办=声望下滑" },
+    { "atSec": 140, "choice": "期末冲刺：补最弱的一科，还是巩固最强的一科", "cost": "补短板难见效，巩固优势不能过其他门槛" },
+    { "atSec": 170, "choice": "大考放榜：四门全达标拿三星，还是保核心两门及格", "cost": "求全可能一门都不稳；保底放弃满分" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 60, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "四个科目与课时分配" },
+    { "index": 2, "newElement": "体力紧张：休息成为取舍" },
+    { "index": 3, "newElement": "双事件周：一次处理两个随机事件" },
+    { "index": 4, "newElement": "天赋生：偏科加成的专精路线" },
+    { "index": 5, "newElement": "游学窗口：双课时高收益" },
+    { "index": 6, "newElement": "疫病周：心情崩盘处置" },
+    { "index": 7, "newElement": "声望事件：庆典换声望" },
+    { "index": 8, "newElement": "连轴周：体力上限吃紧" },
+    { "index": 9, "newElement": "冲刺周：补短板还是巩固优势" },
+    { "index": 10, "newElement": "暴雨周：部分科目收益波动" },
+    { "index": 11, "newElement": "期末模拟考：提前检验四门" },
+    { "index": 12, "newElement": "大考之年：放榜日全村点灯" }
+  ],
+  "upgrades": [
+    { "id": "talentFocus", "kind": "rule", "desc": "第 4 周起天赋生对天赋科目获得双倍成长，专精路线成立" },
+    { "id": "studyWindow", "kind": "rule", "desc": "第 5 周游学窗口：游学收益翻倍但占双课时" },
+    { "id": "epidemic", "kind": "rule", "desc": "第 6 周疫病：心情崩盘事件，考验金币与心情取舍" },
+    { "id": "festival", "kind": "rule", "desc": "第 7 周庆典：花金币换声望的规则型机会" },
+    { "id": "stormWeek", "kind": "rule", "desc": "第 10 周暴雨：户外科目（习武/游学）收益随机波动" },
+    { "id": "mockExam", "kind": "rule", "desc": "第 11 周模拟考：提前锁定四门成绩，暴露短板" },
+    { "id": "energyCap", "kind": "stat", "desc": "第 8 周体力上限 +20，连轴周转得动" },
+    { "id": "stipend", "kind": "stat", "desc": "第 9 周村学补助 +200 金币" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "newBuild"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 60, "interactive": true, "steps": 4, "skippable": true, "replayable": true }
+}

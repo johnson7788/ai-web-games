@@ -1,0 +1,90 @@
+{
+  "slug": "depth-diver",
+  "genre": "arcade",
+  "oneLiner": "驾驶深海科考潜航器下潜马里亚纳海沟：按住上浮、松开下沉，躲开礁石水雷，采集发光生物样本，在氧气耗尽前抵达目标深度。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "thrust",
+      "cost": "按住就上浮、松开就下沉，上浮时会迎面撞上更快的障碍，且消耗掉贴样本的时机",
+      "feedback": ["bubbleTrail", "engineSfx", "lightSway"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "steer",
+      "cost": "水平偏移会偏离样本航迹，也可能漂进洋流或礁石群",
+      "feedback": ["tiltSfx", "headlightTurn"],
+      "combinesWith": ["thrust", "dive"]
+    },
+    {
+      "name": "dive",
+      "cost": "主动俯冲更快抵达目标深度（省氧），但速度越快越难躲、撞上即毁",
+      "feedback": ["speedLines", "whooshSfx", "shake"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一块岩礁逼近：上浮绕过头顶，还是俯冲贴底穿过", "cost": "俯冲省氧但风险高，上浮慢但稳" },
+    { "atSec": 20, "choice": "左侧发光样本 vs 右侧氧气罐：先补星还是先保命", "cost": "追样本耗时耗氧，抢氧气则少一颗样本" },
+    { "atSec": 35, "choice": "水雷阵里：走宽缝（慢、绕远）还是穿窄缝（快、贴雷）", "cost": "窄缝省氧，擦到即爆" },
+    { "atSec": 50, "choice": "热泉气泡柱：借力上冲（省操作）还是横向绕开（可预测）", "cost": "借力会被推高撞向头顶障碍，绕行多花氧" },
+    { "atSec": 70, "choice": "鮟鱇追来：俯冲甩开（撞岩风险）还是上浮变向摆脱（耗氧）", "cost": "二选一，甩不掉就毁" },
+    { "atSec": 90, "choice": "进入压力区：直下目标深度（省氧）还是先采满剩余样本（多耗氧）", "cost": "直下缺星，采样本可能缺氧" },
+    { "atSec": 110, "choice": "两颗样本被岩礁隔开：选左航迹还是右航迹", "cost": "只能拿一边，另一边放弃" },
+    { "atSec": 140, "choice": "终点近在眼前：俯冲冲线，还是降速抢最后一颗样本", "cost": "冲线少一星，抢样本有撞毁风险" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 55,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础岩礁与发光样本（教：上浮/微调/采集）" },
+    { "index": 2, "newElement": "水雷（触爆即毁，练：窄缝取舍）" },
+    { "index": 3, "newElement": "洋流（恒推力，须反向修正）" },
+    { "index": 4, "newElement": "热泉上喷（气泡柱推升）" },
+    { "index": 5, "newElement": "鮟鱇追逐者（追一段）" },
+    { "index": 6, "newElement": "窄缝洞窟（岩礁只留一条缝）" },
+    { "index": 7, "newElement": "头灯缩窄（限视）" },
+    { "index": 8, "newElement": "压力限时（越深耗氧越快）" },
+    { "index": 9, "newElement": "生物群（样本与风险密集）" },
+    { "index": 10, "newElement": "双洋流（方向交替）" },
+    { "index": 11, "newElement": "寒流（减速+更暗+密集岩礁）" },
+    { "index": 12, "newElement": "终局深渊（全要素叠加）" }
+  ],
+  "upgrades": [
+    { "id": "sonar", "kind": "rule", "desc": "声呐标出样本方位（跨局解锁）" },
+    { "id": "headlight", "kind": "rule", "desc": "头灯照射半径 +40%" },
+    { "id": "magnet", "kind": "rule", "desc": "样本磁吸：靠近自动吸附" },
+    { "id": "shield", "kind": "rule", "desc": "每局 1 次护盾，免一次撞击" },
+    { "id": "stabilizer", "kind": "rule", "desc": "洋流漂移减半" },
+    { "id": "boost", "kind": "rule", "desc": "主动俯冲加速（下潜更快省氧）" },
+    { "id": "slowField", "kind": "rule", "desc": "擦肩时短暂慢放" },
+    { "id": "tank", "kind": "stat", "desc": "氧气上限 +25%" },
+    { "id": "battery", "kind": "stat", "desc": "头灯基础半径 +20%" },
+    { "id": "hull", "kind": "stat", "desc": "碰撞半径 -6%" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

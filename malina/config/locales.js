@@ -1,0 +1,56 @@
+// Malina: Bush Defence — UI dictionary for the kit i18n layer (keys = English source).
+// The game's own i18n (src/i18n/zh.ts) translates the dynamic battle UI with placeholders;
+// this dictionary covers the static title screen and shared labels.
+window.LOCALES = {
+  en: {
+    'Bush Defence': 'Bush Defence',
+    'Start Defence': 'Start Defence',
+    'Controls': 'Controls',
+    'Based on': 'Based on',
+    'by aablinov (MIT)': 'by aablinov (MIT)',
+    'single-player Bush Defence edition': 'single-player Bush Defence edition',
+    'The Order marches on the raspberry bush. Build towers on the pads, fight at its side and hold all 10 waves.': 'The Order marches on the raspberry bush. Build towers on the pads, fight at its side and hold all 10 waves.',
+    'move': 'move',
+    'walk / strike': 'walk / strike',
+    'dodge roll': 'dodge roll',
+    'build / upgrade / sell at a pad': 'build / upgrade / sell at a pad',
+    'pick a tower': 'pick a tower',
+    'call the next wave early (+bonus)': 'call the next wave early (+bonus)',
+    'bow': 'bow',
+    'potion': 'potion',
+    'inventory': 'inventory',
+    'map': 'map',
+    'pause': 'pause'
+  },
+  zh: {
+    'Bush Defence': '灌木保卫战',
+    'Start Defence': '开始防守',
+    'Controls': '操作',
+    'Based on': '基于',
+    'by aablinov (MIT)': '作者 aablinov（MIT 许可）',
+    'single-player Bush Defence edition': '单机灌木保卫战版',
+    'The Order marches on the raspberry bush. Build towers on the pads, fight at its side and hold all 10 waves.': '教团大军正向覆盆子灌木进发。在塔垫上建塔，与灌木并肩战斗，守住全部 10 波进攻。',
+    'move': '移动',
+    'walk / strike': '行走 / 挥剑',
+    'dodge roll': '闪避翻滚',
+    'build / upgrade / sell at a pad': '在塔垫建造 / 升级 / 出售',
+    'pick a tower': '选择塔',
+    'call the next wave early (+bonus)': '提前召唤下一波（+奖励）',
+    'bow': '弓',
+    'potion': '药水',
+    'inventory': '背包',
+    'map': '地图',
+    'pause': '暂停',
+    'Back to title': '返回标题',
+    'Paused': '已暂停',
+    'Resume': '继续',
+    'Restart': '重新开始',
+    'Once more': '再来一局',
+    'Settings': '设置',
+    'How to play': '玩法说明',
+    'The bush held!': '灌木守住了！',
+    'The bush withered': '灌木枯萎了',
+    'Got it': '明白了',
+    'Do not show hints': '不再显示提示'
+  }
+};

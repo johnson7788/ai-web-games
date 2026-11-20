@@ -1,0 +1,1 @@
+门禁：node ../../skills/game3d-pipeline/scripts/gate3d.mjs --root . → .gate3d-status.json

@@ -1,0 +1,64 @@
+{
+  "slug": "kiln-2048",
+  "genre": "puzzle",
+  "oneLiner": "在陶窑里投放釉球，同值相碰即复烧翻倍，炼到 2048 天青出窑闪光消除——但堆过顶部失败线就窑满溢出。",
+  "fun": { "primary": "mastery", "secondary": "curiosity" },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "投放点即策略：把球对准同值球的落点能合成，落错位置就变成碍事的孤球",
+      "feedback": ["dropGuide", "sfx", "cursor"],
+      "combinesWith": ["drop"]
+    },
+    {
+      "name": "drop",
+      "cost": "每关投放次数有限（部分关），且球一旦落下就定型，无法撤回",
+      "feedback": ["sfx", "dustPuff", "ballSettle"],
+      "combinesWith": ["aim"]
+    },
+    {
+      "name": "smash",
+      "cost": "重锤每局仅 1–2 次，砸碎任意球救场；用掉后失误就无解",
+      "feedback": ["sfx", "shatter", "shake"],
+      "combinesWith": ["aim"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一枚球落点：对准已有的同值球合成，还是铺进最深的空档控高度", "cost": "合成=贪分；平铺=稳但慢" },
+    { "atSec": 25, "choice": "大值干扰球到手：堆塔垂直合成，还是平铺成两列等配对", "cost": "堆塔越高越接近失败线；平铺占用宽度" },
+    { "atSec": 45, "choice": "冰冻球堵在关键位：用重锤砸掉，还是绕开等它两次复烧解冻", "cost": "重锤只有一次；绕开会拖慢节奏" },
+    { "atSec": 70, "choice": "双色釉异色才能合：现在丢下去配对，还是再等一枚同值球", "cost": "等=占投放次数；丢=可能垫高窑堆" },
+    { "atSec": 100, "choice": "只剩最后一次投放：赌一把冲目标分数，还是安全垫底保命", "cost": "冲分可能溢出判负；保底可能差一点达标" },
+    { "atSec": 140, "choice": "窄窑腔只剩一条缝：把大球塞进低空档，还是用重锤清出空间", "cost": "塞缝可能卡死；重锤用光后无后悔药" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 60, "twistSec": 50, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "投放素坯球：同值接触合二为一" },
+    { "index": 2, "newElement": "双球预览：提前看下一枚釉球" },
+    { "index": 3, "newElement": "低温出窑：≥256 即可出窑计分" },
+    { "index": 4, "newElement": "大值干扰球：高窑温釉球混入投放" },
+    { "index": 5, "newElement": "冰冻球：不可合并，两次复烧后解冻" },
+    { "index": 6, "newElement": "双色釉：隔次才能合（异色相吸）" },
+    { "index": 7, "newElement": "限定投放数：42 次投放冲 3000 分" },
+    { "index": 8, "newElement": "窄窑腔：窑壁收窄，堆叠更紧张" },
+    { "index": 9, "newElement": "三彩合流：大值+双色釉同场" },
+    { "index": 10, "newElement": "双锤：每局两次砸碎任意球" },
+    { "index": 11, "newElement": "全机制合炉：冰/双色/干扰三轴叠加" },
+    { "index": 12, "newElement": "夜焰终章：2048 天青出窑" }
+  ],
+  "upgrades": [
+    { "id": "twoBallPreview", "kind": "rule", "desc": "第 2 关起预览下一枚球，规划从当帧变成长线" },
+    { "id": "lowFireExit", "kind": "rule", "desc": "第 3 关起低温出窑：≥256 即可消除计分" },
+    { "id": "distractor", "kind": "rule", "desc": "第 4 关起大值干扰球入队，落点策略被打破" },
+    { "id": "frozen", "kind": "rule", "desc": "第 5 关起冰冻球不可合并，两次复烧后解冻" },
+    { "id": "dualGlaze", "kind": "rule", "desc": "第 6 关起双色釉隔次才能合" },
+    { "id": "hammer", "kind": "rule", "desc": "第 4 关起解锁重锤，砸碎任意球救场" },
+    { "id": "narrowChamber", "kind": "rule", "desc": "第 8 关起窄窑腔，堆叠空间被压缩" },
+    { "id": "twinHammer", "kind": "stat", "desc": "第 10 关起重锤增至 2 次" },
+    { "id": "triplePreview", "kind": "stat", "desc": "第 9 关起预览增至 3 球" },
+    { "id": "hotterFire", "kind": "stat", "desc": "第 9 关起窑火更旺，大值釉球投放权重上升" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true }
+}

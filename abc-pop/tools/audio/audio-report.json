@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-11-19T20:02:16.414Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "bubblePop": {
+      "rms": 0.2012,
+      "peak": 0.4512,
+      "nan": 0,
+      "zcRate": 475.1,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "bubbleMiss": {
+      "rms": 0.1614,
+      "peak": 0.4755,
+      "nan": 0,
+      "zcRate": 131.3,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.1139,
+      "peak": 0.2,
+      "nan": 0,
+      "zcRate": 294.5,
+      "samples": 7938,
+      "durSec": 0.18,
+      "pass": true
+    },
+    "bridge": {
+      "rms": 0.1451,
+      "peak": 0.5168,
+      "nan": 0,
+      "zcRate": 427.9,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "roundClear": {
+      "rms": 0.1471,
+      "peak": 0.34,
+      "nan": 0,
+      "zcRate": 878.4,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "letterClear": {
+      "rms": 0.1487,
+      "peak": 0.5423,
+      "nan": 0,
+      "zcRate": 832.7,
+      "samples": 31752,
+      "durSec": 0.72,
+      "pass": true
+    },
+    "cleared": {
+      "rms": 0.1521,
+      "peak": 0.5801,
+      "nan": 0,
+      "zcRate": 981.7,
+      "samples": 43218,
+      "durSec": 0.98,
+      "pass": true
+    },
+    "levelEnter": {
+      "rms": 0.1427,
+      "peak": 0.3929,
+      "nan": 0,
+      "zcRate": 411.7,
+      "samples": 13230,
+      "durSec": 0.3,
+      "pass": true
+    },
+    "tapMiss": {
+      "rms": 0.0594,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 1040.5,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1289,
+      "peak": 0.2834,
+      "nan": 0,
+      "zcRate": 830.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.1606,
+      "peak": 0.6489,
+      "nan": 0,
+      "zcRate": 868.8,
+      "samples": 28224,
+      "durSec": 0.64,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgmMorning": {
+      "rms": 0.0422,
+      "peak": 0.174,
+      "nan": 0,
+      "zcRate": 392.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgmRain": {
+      "rms": 0.0422,
+      "peak": 0.174,
+      "nan": 0,
+      "zcRate": 440.5,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgmNight": {
+      "rms": 0.0422,
+      "peak": 0.174,
+      "nan": 0,
+      "zcRate": 330,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "behavior": {
+    "letter.pitchUp": {
+      "letterA": "A",
+      "letterZ": "Z",
+      "zcRateA": 487.6,
+      "zcRateZ": 496.9,
+      "ok": true
+    },
+    "letterFreq.monotonic": {
+      "freqA": 330,
+      "freqZ": 349.62,
+      "ok": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

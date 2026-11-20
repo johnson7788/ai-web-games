@@ -1,0 +1,56 @@
+{
+  "game": "slot-legends",
+  "genre": "default",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 180,
+      "actions": 180,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.8,
+      "deaths": 0,
+      "idleSec": 22.1,
+      "maxEventGapSec": 0.13,
+      "uniqueEvents": 14,
+      "levelsReached": 10,
+      "completed": true
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 5,
+      "actions": 18,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 0.2,
+      "deaths": 1,
+      "idleSec": 2,
+      "maxEventGapSec": 0.13,
+      "uniqueEvents": 14,
+      "levelsReached": 3,
+      "completed": false
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 30,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 0,
+      "idleSec": 30,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 0,
+      "levelsReached": 1,
+      "completed": true
+    }
+  ],
+  "generatedAt": "2026-11-19T18:45:02.884Z"
+}

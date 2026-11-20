@@ -1,0 +1,149 @@
+{
+  "game": "tile-triad",
+  "generatedAt": "2026-11-19T12:24:45.068Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.625,
+    "silhouette": 7.125,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing-dawn.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间列的篮子图标卡片进行配对",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'Left 16'与'Match 3'按钮间距过小，可能误触",
+        "右下角小狐狸角色部分被底部托盘遮挡（视觉干扰）",
+        "顶部装饰三角旗与卡片上边缘轻微重叠，影响卡片识别"
+      ]
+    },
+    {
+      "shot": "tests/final/02-clear-dust.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左侧列中间的红色蘑菇图标，与上方同图案匹配",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部托盘第4格显示散落颗粒（疑似错误状态），但无对应图标说明，易混淆",
+        "右下角小狐狸角色部分遮挡托盘最右格，可能影响点击精度",
+        "顶部‘How to’按钮文字被截断为‘How to’（实际应为‘How to Play’？），存在轻微裁切风险"
+      ]
+    },
+    {
+      "shot": "tests/final/03-cap-layer.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部两个梨子牌，尝试匹配消除",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘How to’按钮文字被截断（仅显示‘How’和‘to’部分）",
+        "底部托盘中第3-6格为空但无占位提示，易误判为不可用区域",
+        "四列牌堆高度不一致且无对齐基准线，视觉节奏略混乱"
+      ]
+    },
+    {
+      "shot": "tests/final/04-fake-lock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击左下角已翻开的篮子牌，尝试匹配另一张篮子牌",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角‘How to play’文字部分被图标遮挡（第3个图标右侧）",
+        "左侧和右侧堆叠卡牌的锁图标与卡牌边缘重叠，可能误触",
+        "底部托盘中5个空槽无视觉区分，易混淆当前选中位置"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night-market.png",
+      "goal_visible": true,
+      "first_action_guess": "点击下方托盘中两个相同的金色小壶图标进行配对",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角'How to'按钮文字被部分遮挡（'to'仅显示'to'前半），且与相邻图标间距过小",
+        "顶部横幅彩旗在列间有轻微错位，视觉节奏不一致",
+        "底部托盘第3-6格为空但无占位提示，新手可能误以为不可操作"
+      ]
+    },
+    {
+      "shot": "tests/final/06-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部托盘区域有模糊粒子效果，可能干扰物品识别",
+        "右下角小动物图标与背景融合度高，轮廓不清晰",
+        "顶部状态栏文字（如'Tray 0/7'）字号偏小，弱光下易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/07-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角小狐狸角色与底部深色区域边界模糊，轮廓辨识度偏低",
+        "‘3 / 36’进度提示字号偏小，且星形图标与数字间距过近，易误读",
+        "顶部三角旗装饰带颜色重复（橙/白交替），但右端被截断，视觉不完整"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角小狐狸角色与底部暗区融合，轮廓辨识度偏低（silhouette扣分）",
+        "关卡1/2高亮色与‘开始’按钮同为橙黄渐变，易混淆优先级",
+        "顶部三角旗装饰与标题文字间距过近，轻微视觉拥挤"
+      ]
+    }
+  ]
+}

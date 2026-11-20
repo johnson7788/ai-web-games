@@ -1,0 +1,83 @@
+{
+  "slug": "jungle-chess",
+  "genre": "puzzle",
+  "oneLiner": "翡翠雨林棋盘上，指挥兽群跨河攻入对方兽穴：鼠能克象、虎狮跳河、陷阱诱敌——每回合一步的取舍。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "每回合只能动一子（上下左右一格），走位会把破绽送给对手",
+      "feedback": ["hop", "sfx", "highlight"],
+      "combinesWith": ["capture"]
+    },
+    {
+      "name": "capture",
+      "cost": "吃子后子力暴露，可能被反吃或踩进陷阱",
+      "feedback": ["vineFx", "sfx", "shake"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "jump",
+      "cost": "仅狮虎可跳河，直线越水且河中不能有鼠阻挡，落点唯一",
+      "feedback": ["splash", "sfx"],
+      "combinesWith": ["capture"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一手：先动河边鼠下水，还是推狮虎压中线", "cost": "鼠下水慢但控制河；狮虎快但可能被陷阱反制" },
+    { "atSec": 25, "choice": "对方虎贴河：我方鼠是堵河防跳，还是先占陷阱", "cost": "堵河保住跳河权；占陷阱放对方过河" },
+    { "atSec": 45, "choice": "牺牲狼进陷阱诱敌，还是保住子力稳守", "cost": "诱敌可能白送；稳守可能被动" },
+    { "atSec": 70, "choice": "用鼠换象（一换一最强子），还是先吃对方猫犬滚雪球", "cost": "换象最赚但鼠可能先被拦；滚雪球更稳" },
+    { "atSec": 100, "choice": "狮虎跳河抢攻，还是走一步稳推进", "cost": "跳河落点暴露给陷阱；稳推慢半拍" },
+    { "atSec": 140, "choice": "只剩少子：全力冲穴，还是先吃掉对方守穴子", "cost": "冲穴可能被反吃；吃子给对手时间" },
+    { "atSec": 170, "choice": "对方逼近我穴：回防还是对攻换速度", "cost": "回防失先手；对攻赌谁先到穴" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础移动与占穴（一步杀）" },
+    { "index": 2, "newElement": "鼠克象：一步吃关键子" },
+    { "index": 3, "newElement": "两步杀：算到对手应手" },
+    { "index": 4, "newElement": "陷阱格：敌踩陷阱任意吃" },
+    { "index": 5, "newElement": "虎跳河：横向越水吃关键子" },
+    { "index": 6, "newElement": "狮跳河：纵向越水吃关键子" },
+    { "index": 7, "newElement": "完整对局·随班 AI（浅层贪吃）" },
+    { "index": 8, "newElement": "完整对局·河域攻防焦点" },
+    { "index": 9, "newElement": "完整对局·学长 AI（深度 2）" },
+    { "index": 10, "newElement": "完整对局·陷阱诱敌战术" },
+    { "index": 11, "newElement": "完整对局·长老 AI（深度 3）" },
+    { "index": 12, "newElement": "长老的秘密（完美难度）" }
+  ],
+  "upgrades": [
+    { "id": "unlockDen", "kind": "rule", "desc": "第 1 关起占领兽穴即胜" },
+    { "id": "unlockRatElephant", "kind": "rule", "desc": "第 2 关起鼠可克象" },
+    { "id": "unlockTwoPly", "kind": "rule", "desc": "第 3 关起两步杀" },
+    { "id": "unlockTrap", "kind": "rule", "desc": "第 4 关起陷阱格弱化敌人" },
+    { "id": "unlockRiverJump", "kind": "rule", "desc": "第 5/6 关起河域与狮虎跳河" },
+    { "id": "unlockFullGame", "kind": "rule", "desc": "第 7 关起完整对局" },
+    { "id": "aiSenior", "kind": "rule", "desc": "第 9 关起学长 AI 深度 2" },
+    { "id": "aiElder", "kind": "rule", "desc": "第 11 关起长老 AI 深度 3" },
+    { "id": "aiPerfect", "kind": "stat", "desc": "第 12 关长老完美深度 4" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

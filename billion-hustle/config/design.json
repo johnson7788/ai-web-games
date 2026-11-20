@@ -1,0 +1,85 @@
+{
+  "slug": "billion-hustle",
+  "genre": "sim",
+  "oneLiner": "你在车库点出一家独角兽：狂点挣钱、升级点击力、雇佣伙伴被动产出，押对风口赛道 ×3 收益、烧钱冲刺 ×6，一路融资翻牌冲一亿。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "真实手速有上限，每秒点击次数决定收入上限",
+      "feedback": ["coin-burst", "valuation-count", "sfx"],
+      "combinesWith": ["invest", "bet", "burn"]
+    },
+    {
+      "name": "invest",
+      "cost": "花掉现金，牺牲当下购买力换长期点击力/自动收入/伙伴产出",
+      "feedback": ["cost-drain", "power-glow", "sfx"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "bet",
+      "cost": "每轮风口只能押一个赛道，押错就错过 30s 的 ×3 窗口",
+      "feedback": ["wheel-spin", "heat-bars", "sfx"],
+      "combinesWith": ["burn"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 3, "choice": "手速全开狂点，还是省力靠自动收入起步", "cost": "点击费手，自动收入初期极慢" },
+    { "atSec": 12, "choice": "第一笔钱买点击力升级，还是攒钱雇第一个伙伴", "cost": "点击力 vs 被动产出的先后" },
+    { "atSec": 30, "choice": "押哪个风口赛道：追热度最高的还是赌冷门反转", "cost": "押错错过 30s ×3 收益" },
+    { "atSec": 45, "choice": "烧钱模式开在风口窗口内叠 ×6，还是留到无风口时保底", "cost": "开错时机浪费 60s 冷却" },
+    { "atSec": 70, "choice": "现金全投升级，还是留底等下一轮融资估值", "cost": "即时增速 vs 现金安全垫" },
+    { "atSec": 100, "choice": "风口押注提前锁定，还是等最后 5 秒看热度趋势再下注", "cost": "先锁稳妥 vs 后锁更准但可能错过" },
+    { "atSec": 140, "choice": "冲刺 A 轮估值，还是先铺自动收入求稳", "cost": "节奏 vs 稳定" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 40, "twistSec": 45, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "车库暖白场景 · 点击挣钱 + 首个点击力升级" },
+    { "index": 2, "newElement": "自动收入起步 · 估值翻牌首次上演" },
+    { "index": 3, "newElement": "第一位伙伴 Intern 可雇佣（被动产出）" },
+    { "index": 4, "newElement": "风口轮盘进入决策核心（押赛道 ×3）" },
+    { "index": 5, "newElement": "场景转孵化器青 · Engineer 伙伴可雇佣" },
+    { "index": 6, "newElement": "烧钱模式与风口叠加成 ×6 冲刺窗口" },
+    { "index": 7, "newElement": "PM 伙伴可雇佣" },
+    { "index": 8, "newElement": "VP 伙伴可雇佣" },
+    { "index": 9, "newElement": "场景转摩天办公蓝紫 · CTO 伙伴可雇佣" },
+    { "index": 10, "newElement": "CMO 伙伴可雇佣（高被动产出）" },
+    { "index": 11, "newElement": "估值冲刺期：目标曲线陡峭" },
+    { "index": 12, "newElement": "IPO 估值翻牌冲一亿 · 独角兽结算" }
+  ],
+  "upgrades": [
+    { "id": "tapPower", "kind": "stat", "desc": "点击力 ×1.5/级（数值）" },
+    { "id": "autoIncome", "kind": "stat", "desc": "自动收入 ×1.7/级（数值）" },
+    { "id": "critTap", "kind": "rule", "desc": "每第 10 次点击触发一次暴击，收入翻倍（改点击规则）" },
+    { "id": "windfallExtend", "kind": "rule", "desc": "押中风口后 ×3 窗口延长 5s（改规则）" },
+    { "id": "burnLucky", "kind": "rule", "desc": "开启烧钱瞬间自动押中当前最热赛道（条件规则）" },
+    { "id": "milBonus", "kind": "rule", "desc": "每次融资成功额外奖励当前估值 1% 现金（规则链）" },
+    { "id": "autopilot", "kind": "rule", "desc": "自动收入每 10 秒触发一次免费点击（改规则）" },
+    { "id": "partnerBoost", "kind": "stat", "desc": "伙伴产出 +25%（数值）" },
+    { "id": "tapRush", "kind": "stat", "desc": "点击力 +50%（数值）" },
+    { "id": "instantCash", "kind": "rule", "desc": "每次押中风口立即送一次免费升级（改规则）" }
+  ],
+  "replayHooks": ["unlock", "growth", "rating", "nearMiss"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "每次融资成功，估值面板数字翻滚、一张全屏翻牌卡翻出新一轮名字与估值，宣告你离一亿更近一步",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做多产业组合管理（那是 tycoon-empire）"
+  ],
+  "artSource": "全程序化 Canvas 三场景（车库暖白/孵化器青/摩天办公蓝紫）+ WebAudio 程序化音效与分层 BGM；封面海报由程序化排版叠加标题生成"
+}

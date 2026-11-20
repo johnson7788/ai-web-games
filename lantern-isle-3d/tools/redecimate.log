@@ -1,0 +1,118 @@
+17:25:13 | INFO: Data are loaded, start creating Blender stuff
+17:25:13 | INFO: Blender create Mesh node eb539878-c50c-497d-a5d4-c684f2bda8a0_texturing.obj
+17:25:13 | INFO: glTF import finished in 0.04s
+Info: Removed 8665 vertices
+INFO Draco mesh compression is available, use library at /Applications/Blender.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+17:25:13 | INFO: Starting glTF 2.0 export
+17:25:13 | WARNING: Mesh eb539878-c50c-497d-a5d4-c684f2bda8a0_texturing.obj is not valid, and may be exported wrongly
+17:25:13 | INFO: Extracting primitive: eb539878-c50c-497d-a5d4-c684f2bda8a0_texturing.obj
+17:25:13 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:13 | INFO: Primitives created: 1
+17:25:13 | INFO: Finished glTF 2.0 export in 0.07489204406738281 s
+
+OK build_cottage_a tri 40000→39998→9000  bytes=3919536 (3.7MB)
+17:25:13 | INFO: Data are loaded, start creating Blender stuff
+17:25:13 | INFO: Blender create Mesh node 23bde579-bd7b-451a-8a8c-882c3190ef84_texturing.obj
+17:25:13 | INFO: glTF import finished in 0.01s
+Info: Removed 8453 vertices
+17:25:13 | INFO: Starting glTF 2.0 export
+17:25:13 | WARNING: Mesh 23bde579-bd7b-451a-8a8c-882c3190ef84_texturing.obj is not valid, and may be exported wrongly
+17:25:13 | INFO: Extracting primitive: 23bde579-bd7b-451a-8a8c-882c3190ef84_texturing.obj
+17:25:13 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:13 | INFO: Primitives created: 1
+17:25:13 | INFO: Finished glTF 2.0 export in 0.06109189987182617 s
+
+OK build_cottage_b tri 40000→40000→9000  bytes=4620712 (4.4MB)
+17:25:13 | INFO: Data are loaded, start creating Blender stuff
+17:25:13 | INFO: Blender create Mesh node 6c4115a4-9089-44b8-84d4-e195f3de0dbc_texturing.obj
+17:25:13 | INFO: glTF import finished in 0.02s
+Info: Removed 15058 vertices
+17:25:13 | INFO: Starting glTF 2.0 export
+17:25:13 | WARNING: Mesh 6c4115a4-9089-44b8-84d4-e195f3de0dbc_texturing.obj is not valid, and may be exported wrongly
+17:25:13 | INFO: Extracting primitive: 6c4115a4-9089-44b8-84d4-e195f3de0dbc_texturing.obj
+17:25:13 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:13 | INFO: Primitives created: 1
+17:25:13 | INFO: Finished glTF 2.0 export in 0.06471681594848633 s
+
+OK build_shed_01 tri 40000→39991→8999  bytes=5109228 (4.9MB)
+17:25:14 | INFO: Data are loaded, start creating Blender stuff
+17:25:14 | INFO: Blender create Mesh node 5f7fe30d-2ef1-4a87-91ee-13f9b961d464_texturing.obj
+17:25:14 | INFO: glTF import finished in 0.02s
+Info: Removed 9111 vertices
+17:25:14 | INFO: Starting glTF 2.0 export
+17:25:14 | INFO: Extracting primitive: 5f7fe30d-2ef1-4a87-91ee-13f9b961d464_texturing.obj
+17:25:14 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:14 | INFO: Primitives created: 1
+17:25:14 | INFO: Finished glTF 2.0 export in 0.05878090858459473 s
+
+OK build_lighthouse_01 tri 40000→39999→8999  bytes=4364788 (4.2MB)
+17:25:14 | INFO: Data are loaded, start creating Blender stuff
+17:25:14 | INFO: Blender create Mesh node 52c97e9a-b1bd-4883-a0f8-d31a70e41c65_texturing.obj
+17:25:14 | INFO: glTF import finished in 0.01s
+Info: Removed 10560 vertices
+17:25:14 | INFO: Starting glTF 2.0 export
+17:25:14 | WARNING: Mesh 52c97e9a-b1bd-4883-a0f8-d31a70e41c65_texturing.obj is not valid, and may be exported wrongly
+17:25:14 | INFO: Extracting primitive: 52c97e9a-b1bd-4883-a0f8-d31a70e41c65_texturing.obj
+17:25:14 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:14 | INFO: Primitives created: 1
+17:25:14 | INFO: Finished glTF 2.0 export in 0.05724000930786133 s
+
+OK build_well_01 tri 40000→39999→8999  bytes=3861600 (3.7MB)
+17:25:14 | INFO: Data are loaded, start creating Blender stuff
+17:25:14 | INFO: Blender create Mesh node 341a2300-4272-421b-bfce-487c6c575b52_texturing.obj
+17:25:14 | INFO: glTF import finished in 0.01s
+Info: Removed 4628 vertices
+17:25:14 | INFO: Starting glTF 2.0 export
+17:25:14 | INFO: Extracting primitive: 341a2300-4272-421b-bfce-487c6c575b52_texturing.obj
+17:25:14 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:14 | INFO: Primitives created: 1
+17:25:14 | INFO: Finished glTF 2.0 export in 0.058149099349975586 s
+
+OK build_boathouse_01 tri 40000→40000→9000  bytes=4006740 (3.8MB)
+17:25:14 | INFO: Data are loaded, start creating Blender stuff
+17:25:14 | INFO: Blender create Mesh node 506ec3be-0336-4024-9c33-d80741d64d7d_texturing.obj
+17:25:14 | INFO: glTF import finished in 0.01s
+Info: Removed 5122 vertices
+17:25:14 | INFO: Starting glTF 2.0 export
+17:25:14 | INFO: Extracting primitive: 506ec3be-0336-4024-9c33-d80741d64d7d_texturing.obj
+17:25:14 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:14 | INFO: Primitives created: 1
+17:25:14 | INFO: Finished glTF 2.0 export in 0.058406829833984375 s
+
+OK prop_lantern_post_01 tri 40000→40000→9000  bytes=4215320 (4.0MB)
+17:25:14 | INFO: Data are loaded, start creating Blender stuff
+17:25:14 | INFO: Blender create Mesh node d62fe5fe-a557-42f6-9040-6defde6eb039_texturing.obj
+17:25:14 | INFO: glTF import finished in 0.01s
+Info: Removed 464 vertices
+17:25:15 | INFO: Starting glTF 2.0 export
+17:25:15 | INFO: Extracting primitive: d62fe5fe-a557-42f6-9040-6defde6eb039_texturing.obj
+17:25:15 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:15 | INFO: Primitives created: 1
+17:25:15 | INFO: Finished glTF 2.0 export in 0.052232980728149414 s
+
+OK env_tree_pine_01 tri 40000→39990→9000  bytes=3449004 (3.3MB)
+17:25:15 | INFO: Data are loaded, start creating Blender stuff
+17:25:15 | INFO: Blender create Mesh node aa7bda6d-f05d-4368-9dc4-b211713f753e_texturing.obj
+17:25:15 | INFO: glTF import finished in 0.01s
+Info: Removed 4206 vertices
+17:25:15 | INFO: Starting glTF 2.0 export
+17:25:15 | WARNING: Mesh aa7bda6d-f05d-4368-9dc4-b211713f753e_texturing.obj is not valid, and may be exported wrongly
+17:25:15 | INFO: Extracting primitive: aa7bda6d-f05d-4368-9dc4-b211713f753e_texturing.obj
+17:25:15 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:15 | INFO: Primitives created: 1
+17:25:15 | INFO: Finished glTF 2.0 export in 0.05299806594848633 s
+
+OK env_rock_01 tri 40000→40000→9000  bytes=3663940 (3.5MB)
+17:25:15 | INFO: Data are loaded, start creating Blender stuff
+17:25:15 | INFO: Blender create Mesh node e9665502-d061-4ba9-b9e5-e07bf917cfe0_texturing.obj
+17:25:15 | INFO: glTF import finished in 0.01s
+Info: Removed 8735 vertices
+17:25:15 | INFO: Starting glTF 2.0 export
+17:25:15 | INFO: Extracting primitive: e9665502-d061-4ba9-b9e5-e07bf917cfe0_texturing.obj
+17:25:15 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+17:25:15 | INFO: Primitives created: 1
+17:25:15 | INFO: Finished glTF 2.0 export in 0.055207252502441406 s
+Blender 4.5.0 (hash 8cb6b388974a built 2025-07-15 01:35:28)
+
+OK env_crate_stack_01 tri 40000→40000→9000  bytes=3733568 (3.6MB)
+==== blender-decimate DONE ok=10 fail=0 ====

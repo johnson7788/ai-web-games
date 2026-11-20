@@ -1,0 +1,181 @@
+{
+  "slug": "cannon-echo",
+  "genre": "action",
+  "oneLiner": "你镇守山谷要塞，操控底部回声炮台瞄准射击；炮弹会从崖壁反弹再打一次，用反弹穿透掩体击碎逼近的货箱，同时管理连射过热。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "aim",
+      "cost": "把炮口对准一个目标，就放弃了同屏另一个更靠近要塞的目标",
+      "feedback": [
+        "sfx",
+        "muzzle-flash",
+        "barrel-rotate"
+      ],
+      "combinesWith": [
+        "fire"
+      ]
+    },
+    {
+      "name": "fire",
+      "cost": "连射积累热量，过热锁管 1.5s 完全无法开火",
+      "feedback": [
+        "sfx",
+        "bullet-trail",
+        "screen-shake"
+      ],
+      "combinesWith": [
+        "aim",
+        "echo"
+      ]
+    },
+    {
+      "name": "echo",
+      "cost": "打崖壁反弹会衰减伤害，且占用飞行时间错过直射窗口",
+      "feedback": [
+        "sfx",
+        "echo-ripple",
+        "bounce-flash"
+      ],
+      "combinesWith": [
+        "fire"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 6,
+      "choice": "先打离要塞最近的快箱，还是先瞄远处慢箱攒分",
+      "cost": "打远处 = 近箱继续逼近要塞"
+    },
+    {
+      "atSec": 18,
+      "choice": "看到掩体后补给箱：直射被挡，要不要打对面崖壁反弹过去",
+      "cost": "反弹路线伤害衰减 + 放弃直射窗口"
+    },
+    {
+      "atSec": 34,
+      "choice": "装甲箱直射只掉 25% 血，是硬磨还是改打反弹全额伤害",
+      "cost": "反弹更难命中 = 时间风险"
+    },
+    {
+      "atSec": 52,
+      "choice": "热量逼近上限：停手冷却保住节奏，还是打空拼掉眼前目标",
+      "cost": "打空触发 1.5s 过热锁管"
+    },
+    {
+      "atSec": 74,
+      "choice": "三选一升级：跳弹 / 穿透 / 威力，放弃另外两条 build",
+      "cost": "build 不可逆"
+    },
+    {
+      "atSec": 100,
+      "choice": "俯冲集群同时压线：先清哪一列，另一列注定撞要塞",
+      "cost": "被放弃的列扣要塞耐久"
+    },
+    {
+      "atSec": 130,
+      "choice": "Boss 巨箱降临：攒过热前打一波，还是稳节奏慢慢磨",
+      "cost": "贪输出会过热锁管"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 30,
+    "resolveSec": 15
+  },
+  "levels": [
+    {
+      "index": 1,
+      "newElement": "慢速浮空箱：教瞄准与直射击碎"
+    },
+    {
+      "index": 2,
+      "newElement": "俯冲集群：快速下坠逼迫优先排序"
+    },
+    {
+      "index": 3,
+      "newElement": "掩体后补给箱：护盾挡直射，必须打崖壁反弹"
+    },
+    {
+      "index": 4,
+      "newElement": "装甲箱：直射减伤，回声连击全额"
+    },
+    {
+      "index": 5,
+      "newElement": "掩体 + 装甲混编：切换直射/反弹节奏"
+    },
+    {
+      "index": 6,
+      "newElement": "雪隘场景切换：新色板 + 俯冲群"
+    },
+    {
+      "index": 7,
+      "newElement": "装甲双箱：两路装甲需要连续反弹"
+    },
+    {
+      "index": 8,
+      "newElement": "掩体 + 俯冲突进：多路压线"
+    },
+    {
+      "index": 9,
+      "newElement": "熔峡场景切换：全类型混编"
+    },
+    {
+      "index": 10,
+      "newElement": "重型装甲线：高血量要求 build 成型"
+    },
+    {
+      "index": 11,
+      "newElement": "最终群袭：高频多路压线"
+    },
+    {
+      "index": 12,
+      "newElement": "Boss 巨型货箱：需回声连击破甲"
+    }
+  ],
+  "upgrades": [
+    { "id": "ricochet", "kind": "rule", "desc": "炮弹多反弹一次且衰减更缓（改弹道规则）" },
+    { "id": "pierce", "kind": "rule", "desc": "炮弹穿透一个目标继续飞（改命中规则）" },
+    { "id": "echoChain", "kind": "rule", "desc": "回声命中溅射一枚追踪小弹（改命中规则）" },
+    { "id": "heatVent", "kind": "rule", "desc": "过热瞬间爆发三向散弹并立即泄压（改过热规则）" },
+    { "id": "frost", "kind": "rule", "desc": "直射击中减速目标下坠 50%（改敌人行为）" },
+    { "id": "bossBuster", "kind": "rule", "desc": "回声弹对装甲/Boss 伤害 ×2.5（改克制规则）" },
+    { "id": "power", "kind": "stat", "desc": "攻击 +45%（数值）" },
+    { "id": "rate", "kind": "stat", "desc": "射速 +35%（数值）" },
+    { "id": "coolant", "kind": "stat", "desc": "冷却 +45%（数值）" },
+    { "id": "velocity", "kind": "stat", "desc": "弹速 +30%（数值）" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "unlock",
+    "growth",
+    "rating"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "一箭三雕：一发炮弹弹过两面崖壁连续击碎三个货箱，山谷轰鸣出三连回声的瞬间",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "山谷要塞风格：程序化 Canvas 渲染（三套色板晨谷/雪隘/熔峡 + 粒子光效）；UI 线框 CSS/SVG；BGM 用 WebAudio 程序化合成"
+}

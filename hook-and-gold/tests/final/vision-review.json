@@ -1,0 +1,117 @@
+{
+  "game": "hook-and-gold",
+  "generatedAt": "2026-11-19T06:01:02.091Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.166666666666666,
+    "silhouette": 7,
+    "style_consistent": 8.333333333333334
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1按钮高亮色（橙黄）与Start按钮色相近，易混淆优先级",
+        "‘0/36’星星计数位于钩爪正下方，视觉上略被遮挡",
+        "海底光束背景与关卡按钮区域层次模糊，影响深度感知"
+      ]
+    },
+    {
+      "shot": "tests/final/02-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘Got it’按钮以确认教程提示",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "教程弹窗遮挡中央爪臂操作预览区，影响对核心机制的即时观察",
+        "海底光束与宝箱颜色相近（灰棕），在低对比度下易混淆可交互物",
+        "左上角金币计数‘0 / Target 420’未明确单位（金币图标小且模糊）"
+      ]
+    },
+    {
+      "shot": "tests/final/03-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘Salvage Complete!’标题与三颗星间距略小，视觉层级稍弱",
+        "背景中潜艇剪影与光束重叠，导致潜艇轮廓在眯眼时辨识度下降",
+        "左上角‘Level 1 / 60s’与‘0 / Target 420’字体大小不一致，轻微风格断裂"
+      ]
+    },
+    {
+      "shot": "tests/final/04-deep-blue.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间下落的钥匙状物体以收集它",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标分数 'Target 680' 与当前 0 对比不明显，易误读为已达成",
+        "顶部小船中的黄色球体（可能为玩家）与背景光束对比度偏低，初始定位稍慢",
+        "左下角黑色结构物轮廓模糊，疑似障碍物但功能不明"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night-sea.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央偏左的灰色箭头状物体（可能是鱼叉或投掷物）进行发射",
+      "readable": 7,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色（小船）在顶部中央，但无明显高亮或轮廓强化，与背景星空对比度低，易被忽略",
+        "目标计数 '0 / Target 920' 数值过小且颜色浅（灰黄），在深蓝背景下辨识度不足",
+        "右上角按钮组中红色爆炸图标带数字'2'，但未说明其含义，易引发困惑"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击橙色‘开始’按钮启动游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡1按钮高亮色（橙黄）与‘开始’按钮色近似，易混淆优先级",
+        "底部海床植物图形重复且无功能提示，可能干扰视觉焦点",
+        "‘0/36’星星计数文字偏小，眯眼时不易辨识"
+      ]
+    }
+  ]
+}

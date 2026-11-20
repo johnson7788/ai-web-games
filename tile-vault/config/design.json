@@ -1,0 +1,111 @@
+{
+  "slug": "tile-vault",
+  "genre": "puzzle",
+  "oneLiner": "盗贼猫潜入地珠宝库，从等距堆叠的宝物中拾取自由块放进底部槽，三同凑齐即化作金币雨落袋——槽满或超时就前功尽弃。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "pick",
+      "cost": "只有未被压住的自由块可拿；拿了就占一个槽位，取错会堵死槽、逼爆槽",
+      "feedback": ["sfx", "liftGlow", "traySlide"],
+      "combinesWith": ["undo", "shuffle"]
+    },
+    {
+      "name": "undo",
+      "cost": "道具次数有限，且只救回最后一枚入槽的宝物",
+      "feedback": ["sfx", "flyback", "slotVacate"],
+      "combinesWith": ["pick"]
+    },
+    {
+      "name": "shuffle",
+      "cost": "道具次数有限，把槽内宝物全部退回堆顶重排，等于重新面对压力",
+      "feedback": ["sfx", "coinFlyback", "pileScatter"],
+      "combinesWith": ["pick"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "同一层多个自由块：先拿哪种宝物、哪个位置",
+      "cost": "占一个槽位，顺序决定后面能不能凑成三同"
+    },
+    {
+      "atSec": 15,
+      "choice": "槽快满时：先凑齐已有两枚的三同，还是冒险拿新的品类",
+      "cost": "拿新品类可能直接爆槽失败"
+    },
+    {
+      "atSec": 30,
+      "choice": "假锁块看着锁死，要不要绕开侧翼先挖出通路",
+      "cost": "浪费一步、也可能错过关键三同"
+    },
+    {
+      "atSec": 45,
+      "choice": "限时关倒计时紧张：连拿快清，还是慢挑稳凑",
+      "cost": "连拿易爆槽，慢挑耗时间"
+    },
+    {
+      "atSec": 60,
+      "choice": "道具（撤回/洗牌）什么时候用：早用保命，还是留到最后翻盘",
+      "cost": "用了就没有后悔药"
+    },
+    {
+      "atSec": 90,
+      "choice": "深井柱：先清柱顶的自由块，还是先清底座扩大可见面",
+      "cost": "顺序错会把下面的宝物堵死"
+    },
+    {
+      "atSec": 120,
+      "choice": "龙巢终局 12 品类 6 槽：只许凑三同，不能贪多",
+      "cost": "多拿一个不匹配就爆槽"
+    }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 60,
+    "twistSec": 40,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "等距堆叠压顶层 + 三同消除基础循环" },
+    { "index": 2, "newElement": "层数加深（3 层），品类 7 种" },
+    { "index": 3, "newElement": "品类 8 种，堆更高更密" },
+    { "index": 4, "newElement": "深井层：中央深柱纵向 5 层" },
+    { "index": 5, "newElement": "分区双堆：两座独立宝山并排" },
+    { "index": 6, "newElement": "假锁：锁样块需先挖侧翼" },
+    { "index": 7, "newElement": "限时：倒计时大幅收紧" },
+    { "index": 8, "newElement": "道具关：撤回×2 + 洗牌×1" },
+    { "index": 9, "newElement": "深井层升级 + 槽位 7→6" },
+    { "index": 10, "newElement": "分区双堆升级 + 品类 11" },
+    { "index": 11, "newElement": "假锁升级 + 品类 12" },
+    { "index": 12, "newElement": "龙巢宝山终局：6 层 + 12 品类 + 6 槽三轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockUndo", "kind": "rule", "desc": "道具关起解锁撤回，拾错可救回最后一枚" },
+    { "id": "unlockShuffle", "kind": "rule", "desc": "道具关起解锁洗牌，槽满压力可整体退回重排" },
+    { "id": "trayShrink", "kind": "rule", "desc": "第 9 关起槽位从 7 收窄到 6，容错变低" },
+    { "id": "fakeLock", "kind": "rule", "desc": "假锁块改变可见面的认知，需绕开侧翼" },
+    { "id": "deepWell", "kind": "rule", "desc": "深井柱把可见面收窄，顺序决定生路" },
+    { "id": "dualStacks", "kind": "rule", "desc": "分区双堆把战场切成两块，注意力被撕扯" },
+    { "id": "timed", "kind": "rule", "desc": "限时关把倒计时变成第二根血条" },
+    { "id": "moreTypes", "kind": "stat", "desc": "品类 6→12，三同的视觉搜索更难" },
+    { "id": "deeperLayers", "kind": "stat", "desc": "层数 2→6，堆叠更深、可见面更少" }
+  ],
+  "replayHooks": ["rating", "unlock", "nearMiss", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

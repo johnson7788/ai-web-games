@@ -1,0 +1,149 @@
+{
+  "game": "fog-town",
+  "generatedAt": "2026-11-19T20:02:06.355Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.625,
+    "silhouette": 6.5,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Enter the fog’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 5,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘FOG TOWN’发光效果过强，导致部分字母边缘模糊，影响远距离辨识",
+        "‘Best block 1’文字颜色偏黄且字号小，与主视觉层级不协调",
+        "右上角语言切换按钮无悬停反馈，且下拉箭头在深色背景下对比度偏低"
+      ]
+    },
+    {
+      "shot": "tests/final/02-play.png",
+      "goal_visible": true,
+      "first_action_guess": "向下移动拿到钥匙，再向右上走到出口",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与钥匙距离过近，光照晕染导致轮廓略模糊，影响快速识别",
+        "右上角出口图标（蓝色方框+菱形）与背景对比度偏低，弱光下可能不易辨识",
+        "油量条数值'30'与进度条颜色相近，小字号下易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/03-truth.png",
+      "goal_visible": true,
+      "first_action_guess": "向右上方移动收集三个黄色钥匙状线索",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与附近线索（左上、正上、右上三把钥匙）亮度接近，眯眼时易混淆轮廓",
+        "出口处发光方框与菱形图标重叠显示，视觉层级不清晰",
+        "‘Echo Space’按钮文字与背景对比度偏低，小字号下辨识度下降"
+      ]
+    },
+    {
+      "shot": "tests/final/04-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Start over”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 4,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景模糊中隐约可见一个发光轮廓（右上），但无法辨识是敌人、道具还是装饰，影响 silhouette 判断",
+        "‘Rating: C’未说明评分标准，可能引起困惑（虽非文字裁切，但信息不完整）",
+        "‘Press R to try again’为小字号辅助提示，若玩家未注意主按钮可能忽略该快捷键"
+      ]
+    },
+    {
+      "shot": "tests/final/05-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动拾取黄色钥匙",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "钥匙图标偏小且无高亮边框，易与背景方块混淆（坐标约 x=5, y=3）",
+        "玩家角色光晕过强，轻微遮挡下方方块边界",
+        "右上角‘Echo Space’按钮文字与背景对比度偏低（#88A0FF on #121824）"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘走进迷雾’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "标题‘雾町寻踪’发光效果过强，导致部分笔画边缘模糊，影响远距离辨识",
+        "‘最远街区 1’为橙色小字，与主标题对比度不足，易被忽略",
+        "按钮组水平居中但垂直位置偏下，与标题间距过大，视觉重心失衡"
+      ]
+    },
+    {
+      "shot": "tests/final/07-play2.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动到机关（黄色叉号）位置并触发它",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家角色与左侧墙壁紧贴，可能误判为卡住；",
+        "机关图标（叉号）与地面色差小，弱光下易忽略；",
+        "出口目标图标（菱形+方框）发光过强，与环境对比失衡"
+      ]
+    },
+    {
+      "shot": "tests/final/08-play3.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动到第一个带三角标记的方块处",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "出口图标（菱形+方框）与目标文字‘抵达出口’未直接关联，需玩家推断；",
+        "玩家角色亮度偏低，仅靠白点高亮，眯眼时易与背景方块混淆；",
+        "左上角‘街区 9 湖畔’与目标提示行间距过小，略显拥挤"
+      ]
+    }
+  ]
+}

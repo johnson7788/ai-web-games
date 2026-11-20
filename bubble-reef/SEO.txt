@@ -1,0 +1,7 @@
+TITLE: BUBBLE REEF
+CATEGORY: Puzzle
+TAGS: bubble shooter, match 3, jellyfish, puzzle, arcade, underwater
+SHORT DESCRIPTION: BUBBLE REEF is a glowing jellyfish bubble shooter. Aim the tide cannon, match 3 to free the reef, and drop whole clusters before the ceiling sinks.
+LONG DESCRIPTION: BUBBLE REEF is a glowing jellyfish bubble shooter set across the Shallow Reef, Night Reef and Sunken Wreck. Aim the tide cannon, fire luminous jellyfish bubbles onto a hex grid, match 3 to release them, and drop unsupported clusters for bonus points. Chain combos to earn a wildcard bubble, use the once-per-level tide preview to trace your bouncing shot, and beat the sinking ceiling across 12 levels of rock obstacles, drifting currents, double ceilings and gold bubbles.
+
+中文说明：《BUBBLE REEF》是一款发光水母泡泡龙。在浅礁、夜礁、沉船三场景中瞄准潮汐炮台，同色三连放归水母、整簇悬空掉落加分；攒连击换百搭泡，用每关一次的潮汐瞄准线看清反弹轨迹，在顶棚下沉触底前清空礁区，横跨 12 关。

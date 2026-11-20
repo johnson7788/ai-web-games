@@ -1,0 +1,88 @@
+{
+  "slug": "pin-and-pour",
+  "genre": "puzzle",
+  "oneLiner": "蜜糖工坊的分装台上，玩家按正确顺序抽出闸板，让金色蜂蜜在重力下分段流动、灌进玻璃瓶，同时把气泡引入排口——抽错一根闸，蜂蜜就流进排口或气泡掉进瓶子。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "pull",
+      "cost": "抽闸不可逆：拉出来的闸板不能再插回去，抽错顺序会让蜂蜜流进排口或气泡掉进瓶子",
+      "feedback": ["gateSlide", "sfx", "shake"],
+      "combinesWith": ["pour"]
+    },
+    {
+      "name": "pour",
+      "cost": "开闸后重力一路走到头，无法中途暂停或改道，必须先想清每一段的落点",
+      "feedback": ["honeyStringing", "amberGlow", "flowTick"],
+      "combinesWith": ["pull"]
+    },
+    {
+      "name": "scan",
+      "cost": "盯着台面迟迟不抽闸，等于把先手让给一个可能已经错了的布局",
+      "feedback": ["hoverHighlight", "sfx"],
+      "combinesWith": ["pull"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "直接抽眼前唯一那根闸，还是先扫一遍下面还有没有气泡陷阱", "cost": "不扫就抽，可能把气泡直接放进瓶子" },
+    { "atSec": 18, "choice": "先放蜂蜜进瓶，还是先把气泡引走", "cost": "顺序反了，气泡会污染已经装好的蜂蜜" },
+    { "atSec": 35, "choice": "开共享闸让蜂蜜走左边瓶，还是走右边瓶", "cost": "走错一边，整批蜂蜜进排口" },
+    { "atSec": 55, "choice": "用一次「试抽」探路，还是一口气按推测的顺序抽完", "cost": "试抽可能当场失误；闷头抽到底可能错得更晚" },
+    { "atSec": 80, "choice": "绕开蜂巢块，还是用蜂蜜把它冲掉再抄近路", "cost": "冲掉它省步数，但多一段蜂蜜可能失控" },
+    { "atSec": 110, "choice": "拉拦截闸接住下落的蜂蜜，还是让它直接掉到底", "cost": "不接住，蜂蜜会摔进错误的排口" },
+    { "atSec": 145, "choice": "追求完美分装（排空所有气泡），还是拿两星收手", "cost": "贪完美多抽一根闸，可能把已经稳的局面抽崩" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 45,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "单闸直落：一根闸板 + 一滴蜂蜜 + 一个瓶" },
+    { "index": 2, "newElement": "双闸顺序：两根闸板必须按顺序抽" },
+    { "index": 3, "newElement": "气泡分流：气泡与蜂蜜同台，气泡进排口" },
+    { "index": 4, "newElement": "蜂巢桥：可被蜂蜜冲走的蜂巢块" },
+    { "index": 5, "newElement": "时间差陷阱：同排珠子先后落下" },
+    { "index": 6, "newElement": "双股汇流：两股蜂蜜须同时进瓶" },
+    { "index": 7, "newElement": "拦截闸：拉开挡板接住下落蜂蜜" },
+    { "index": 8, "newElement": "交叉排口：瓶与排口交错，蜂蜜要横向分流" },
+    { "index": 9, "newElement": "三闸叠塔：三层闸板，逐层放行" },
+    { "index": 10, "newElement": "气泡逆流：气泡从侧路冒上来" },
+    { "index": 11, "newElement": "多室并联：两个分装室共享一个排口" },
+    { "index": 12, "newElement": "终局多室大关：四类元素叠加" }
+  ],
+  "upgrades": [
+    { "id": "unlockTwoGates", "kind": "rule", "desc": "第 2 关起出现两根闸板，顺序成为核心策略" },
+    { "id": "unlockBubble", "kind": "rule", "desc": "第 3 关起气泡入场，蜂蜜之外多一类要引导的流体" },
+    { "id": "honeycombBridge", "kind": "rule", "desc": "第 4 关起蜂巢块可被蜂蜜冲走，通路变成消耗品" },
+    { "id": "timedDrip", "kind": "rule", "desc": "第 5 关起同排珠子先后落下，节奏变成陷阱" },
+    { "id": "twinFlow", "kind": "rule", "desc": "第 6 关起双股汇流，必须同时进瓶" },
+    { "id": "interceptGate", "kind": "rule", "desc": "第 7 关起拦截闸，拉开挡板能接住蜂蜜" },
+    { "id": "crossSinks", "kind": "rule", "desc": "第 8 关起瓶与排口交错，蜂蜜要横向分流" },
+    { "id": "towerGates", "kind": "rule", "desc": "第 9 关起三层闸塔，逐层放行" },
+    { "id": "cellarDensity", "kind": "stat", "desc": "夜幕场景珠子更多、布局更密" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 5,
+    "firstSuccessSec": 30,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

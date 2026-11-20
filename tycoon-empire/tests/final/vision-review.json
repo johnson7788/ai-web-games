@@ -1,0 +1,149 @@
+{
+  "game": "tycoon-empire",
+  "generatedAt": "2026-11-19T17:33:34.085Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 8.625,
+    "style_consistent": 9.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/a-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击发光的塔楼收集现金，或点击右下角‘Collect’按钮",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "底部提示文字‘Tap the tower to earn cash → Radio Studio ($420)’中箭头符号与金额紧贴，易误读为‘→Radio Studio($420)’无空格",
+        "右侧列表中‘Diner’行‘Up’和‘Mgr’按钮间距过小，可能误触",
+        "‘Radio Studio’价格‘$420’未对齐其他条目收入单位（如‘$21.3/s’），格式不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/b-industries.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央发光塔楼收集报纸收入",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧面板'Newspaper'行显示'$9.50K'但底部提示为'Newspaper ($9.50K)'，单位不一致（K vs $K）",
+        "右侧面板'Theater'行右侧有'Up Mgr'，'Mgr'无明确含义且未对齐",
+        "底部提示文字'→ Newspaper ($9.50K)'中箭头与文字间距过小，易误读为'→Newspaper'"
+      ]
+    },
+    {
+      "shot": "tests/final/c-manager.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部“Collect”按钮收集报纸收益，或点击塔楼触发 Newspaper购买提示",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧面板‘Newspaper’价格$9.50K与下方‘Dept. Store’等锁定项间距过小，易误触",
+        "底部提示文字‘Tap the tower to earn cash → Newspaper ($9.50K)’中箭头符号与金额紧贴，视觉拥挤",
+        "‘Market Day’横幅文字较小（约12px），在低分辨率下可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/d-stock.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央高亮塔楼收集报纸（$9.50K）",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧面板‘Newspaper’价格$9.50K与底部提示重复且未对齐，易混淆",
+        "‘Market Day: Theater: Rumor: crash ×0.5’提示文字偏小且居中悬浮，易被忽略",
+        "右侧列表‘Buy’按钮无明确视觉反馈，与‘Up’按钮样式不一致"
+      ]
+    },
+    {
+      "shot": "tests/final/f-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央高亮塔楼（Theater）以赚取现金",
+      "readable": 9,
+      "silhouette": 8,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右下角'Theater'条目显示'...'且无等级/收入，'Buy'按钮状态不明确",
+        "底部提示文字'Tap the tower to earn cash → Theater ($2.10K)'中箭头与金额间距过小，易误读为'$2.10K→'",
+        "右侧列表中'Up'按钮文字偏小（约12px），在低分辨率屏可能难辨"
+      ]
+    },
+    {
+      "shot": "tests/final/g-play-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部“点击大楼赚钱 → 报社 ($9.50K)”提示区域",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧面板‘报社’行显示‘$9.50K’但无单位说明，易与现金$6.53K混淆",
+        "行情日提示‘剧院: 传闻: 崩盘 ×0.5’语义模糊，未明确影响对象",
+        "右侧列表中‘百货公司’等条目带锁图标但无悬停提示或说明"
+      ]
+    },
+    {
+      "shot": "tests/final/h-build.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央金色塔楼收集现金",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧面板‘Dept. Store’价格$42.0K与底部提示‘Dept. Store ($42.0K)’重复且单位不一致（K vs .0K）",
+        "市场日提示‘Theater: Rumor: crash ×0.5’字体偏小，易被忽略",
+        "右侧列表‘Up’/‘Mgr’/‘Buy’状态标签无统一对齐或视觉权重，部分行文字靠右过近"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击底部提示中的‘Laundry ($15.0)’或点击高亮塔楼触发收入",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右侧菜单中‘Laundry’价格$15.0与上方Income $1.12/s单位不一致（美元 vs 美元/秒），易混淆",
+        "塔楼高亮边框为黄色细线，与背景暖棕对比度偏低，眯眼时辨识度下降",
+        "底部提示文字‘Tap the tower to earn cash → Laundry ($15.0)’中箭头→与前后文字间距不均，轻微排版瑕疵"
+      ]
+    }
+  ]
+}

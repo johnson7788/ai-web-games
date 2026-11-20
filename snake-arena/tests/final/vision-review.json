@@ -1,0 +1,149 @@
+{
+  "game": "snake-arena",
+  "generatedAt": "2026-11-19T12:12:00.788Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.5,
+    "silhouette": 6.625,
+    "style_consistent": 8.5
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘Enter Arena’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "波浪线图形与标题文字轻微重叠，可能干扰视觉焦点",
+        "‘Best 0’字号过小且颜色偏黄，在深蓝背景下对比度不足",
+        "右上角语言选择下拉框无展开指示（如箭头），移动端易误触或难识别"
+      ]
+    },
+    {
+      "shot": "tests/final/02-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击‘进入竞技场’按钮开始游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "波浪线图形与标题文字轻微重叠，可能干扰视觉焦点",
+        "‘最佳 0’字号过小且颜色偏黄，在深蓝背景下对比度不足",
+        "右上角语言切换下拉框无展开箭头图标，交互意图不明确"
+      ]
+    },
+    {
+      "shot": "tests/final/03-tutorial.png",
+      "goal_visible": true,
+      "first_action_guess": "拖动中央标有'YOU'的白色长条指针来转向",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家标识'YOU'文字为黄色，与背景蓝光对比度偏低，弱光下可能难辨",
+        "右上角'Skip'按钮部分遮挡右侧蛇形轨迹末端（第3个圆点）",
+        "底部提示框'FIRST RUN'层级略低，与网格线轻微融合，影响扫视效率"
+      ]
+    },
+    {
+      "shot": "tests/final/04-play.png",
+      "goal_visible": true,
+      "first_action_guess": "控制白色长条（YOU）移动去吃周围蓝色圆点数据",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家标识'YOU'文字偏小且无背景，弱光下易混淆",
+        "右上角PULSE进度条与时间1:27间距过近，可能误读",
+        "左上角状态栏按钮（MATCH 1等）字体略小，远距辨识度低"
+      ]
+    },
+    {
+      "shot": "tests/final/05-paused.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Resume”按钮或按Esc键继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景中模糊的蛇形物体与光点轮廓相似，眯眼时难以区分玩家与环境元素（silhouette偏低）",
+        "‘Paused’下方提示文字‘Press Esc to resume’字号偏小，弱光环境下可能不易辨识",
+        "右上角语言切换下拉框无明确选中状态指示，且与主界面视觉层级略冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/06-dead.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Play again”按钮重新开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘NEW RECORD’标签发光过强，可能造成视觉干扰",
+        "背景模糊元素（如蓝线）与HUD风格不一致，略显杂乱",
+        "‘Press R to re-enter the arena’提示字体偏小，弱光下可读性下降"
+      ]
+    },
+    {
+      "shot": "tests/final/07-restart.png",
+      "goal_visible": true,
+      "first_action_guess": "控制白色长条（标有'YOU'）移动去吃周围蓝色光点",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家标识'YOU'文字偏小且无背景衬底，弱光下易混淆",
+        "右上角'PULSE'进度条与时间显示间距过近，视觉拥挤",
+        "部分蓝色光点密集重叠（如中上区域），可能误判为单个目标"
+      ]
+    },
+    {
+      "shot": "tests/final/08-mobile-play.png",
+      "goal_visible": true,
+      "first_action_guess": "点击右下角 PULSE 按钮发射脉冲波",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家蛇体（白色长条）与右侧‘YOU’标签间距过小，易误读为UI元素",
+        "右上角PULSE进度条与时间1:27紧邻，视觉干扰略强",
+        "左上角状态栏‘MATCH 1’等按钮圆角不一致（部分直角/部分圆角）"
+      ]
+    }
+  ]
+}

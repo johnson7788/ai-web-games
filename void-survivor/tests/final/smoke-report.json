@@ -1,0 +1,226 @@
+{
+  "url": "http://127.0.0.1:57291/",
+  "startedAt": "2026-11-15T12:35:49.109Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "move",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 24,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 25,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 26,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 27,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 28,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 29,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 30,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 31,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 32,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 33,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 34,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 35,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 36,
+      "act": "move",
+      "ok": true
+    },
+    {
+      "i": 37,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 38,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 39,
+      "act": "shot",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/03-wave1-start.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/04-combat.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/04b-after-clear.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/05-upgrade-choice.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/06-wave2.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/07-zh-hud.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/08-gameover.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/09-restarted.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/10-final-play.png",
+    "/Users/admin/git/webgames/games/void-survivor/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T12:36:14.479Z",
+  "video": "/Users/admin/git/webgames/games/void-survivor/tests/final/play.webm"
+}

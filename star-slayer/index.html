@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="STAR SLAYER — pilot the Iron Guard mech, fight in sync with your AI partner Light Core, and overload it to clear the deck when your hull runs low.">
+  <meta name="theme-color" content="#050d1c">
+  <title>STAR SLAYER · Mech Deck Shooter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+
+    <!-- 触屏控制（coarse pointer 显示） -->
+    <div id="touch-controls" class="touch-only" hidden>
+      <div id="joystick" aria-label="Move">
+        <div id="joystick-base"></div>
+        <div id="joystick-knob"></div>
+      </div>
+      <div id="touch-buttons">
+        <button id="btn-fire" class="touch-btn fire" type="button" aria-label="Fire"><span class="tb-label">FIRE</span></button>
+        <button id="btn-skill" class="touch-btn skill" type="button" aria-label="Skill"><span class="tb-label">OVER</span></button>
+        <button id="btn-sync" class="touch-btn sync" type="button" aria-label="Sync"><span class="tb-label">SYNC</span></button>
+      </div>
+    </div>
+
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-orb"></div>
+      <span data-i18n="set.loading">Booting…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+  "slug": "battle-royale-mini",
+  "genre": "action",
+  "oneLiner": "你是玩具战场上的迷你兵，用双摇杆移动射击、捡枪吃药、躲缩圈，在 15 名 AI 里活到最后——决赛圈台灯打下聚光。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "move",
+      "cost": "静步时移速 +30% 且不暴露位置，但无法还手；跑步会留下可见足迹",
+      "feedback": ["footstep", "trail", "move-aim"],
+      "combinesWith": ["shoot"]
+    },
+    {
+      "name": "shoot",
+      "cost": "消耗弹药，且枪声会把附近 AI 引过来",
+      "feedback": ["muzzle-flash", "sfx", "hit-spark"],
+      "combinesWith": ["move"]
+    },
+    {
+      "name": "swap",
+      "cost": "背包只有 2 格——捡医疗就要丢护甲，每局都要重选",
+      "feedback": ["pickup-pop", "hud-bag", "sfx"],
+      "combinesWith": ["move"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 5, "choice": "跳富区（枪多但 AI 密）还是跳安全区（穷但稳）", "cost": "富区可能落地成盒 vs 安全区发育慢" },
+    { "atSec": 20, "choice": "2 格背包装什么：医疗 + 护甲，还是医疗 + 子弹", "cost": "选甲不怕拼枪，选子弹不怕持久战" },
+    { "atSec": 40, "choice": "去追空投箱（要 5 秒开箱）还是蹲圈边卡人", "cost": "开箱被偷袭 vs 蹲点错过神装" },
+    { "atSec": 60, "choice": "听到枪声：去劝架捡人头，还是绕开避战", "cost": "劝架可能被反打 vs 避战少击杀积分" },
+    { "atSec": 85, "choice": "决赛圈静步阴人，还是抢高点架枪", "cost": "静步慢但隐身 vs 高点显眼但视野好" },
+    { "atSec": 110, "choice": "换弹时机：躲掩体换，还是边打边换", "cost": "躲掩体丢节奏 vs 边打边换可能空窗" },
+    { "atSec": 130, "choice": "决赛圈 1v1 台灯聚光下刚枪，还是绕侧翼", "cost": "刚枪吃子弹 vs 绕侧翼被毒圈收" },
+    { "atSec": 150, "choice": "毒圈最后冲刺，还是原地打药续命", "cost": "冲刺暴露吃枪线 vs 打药吃毒圈伤害" }
+  ],
+  "loop": {
+    "teachSec": 25,
+    "practiceSec": 50,
+    "twistSec": 40,
+    "resolveSec": 35
+  },
+  "levels": [
+    { "index": 1, "newElement": "书桌暖木场：教学圈 + 散落手枪/机关枪（教移动/拾取/射击）" },
+    { "index": 2, "newElement": "AI 强度 1 档：敌人会主动找枪、朝枪声靠拢" },
+    { "index": 3, "newElement": "空投箱开启 5 秒 + 2 格背包取舍上线" },
+    { "index": 4, "newElement": "毒速加快：缩圈间隔缩短，圈外掉血更痛" },
+    { "index": 5, "newElement": "玩具城彩场：掩体变密，狙击点变多" },
+    { "index": 6, "newElement": "静步机制：不射击时移速 +30% 且不暴露位置" },
+    { "index": 7, "newElement": "AI 强度 2 档：敌人会结伴劝架、更激进" },
+    { "index": 8, "newElement": "物资密度下降：逼玩家尽早打架抢装备" },
+    { "index": 9, "newElement": "夜库靛蓝场：低可视度，枪口火光更显眼" },
+    { "index": 10, "newElement": "轰炸区轮换：定点空袭逼走位" },
+    { "index": 11, "newElement": "AI 强度 3 档：决赛圈 AI 优先清人、不恋战毒圈" },
+    { "index": 12, "newElement": "最终场：决赛圈 1v1 台灯聚光签名时刻" }
+  ],
+  "upgrades": [
+    { "id": "backpack2", "kind": "rule", "desc": "背包 2 格：带什么必须取舍（改携带规则而非+数值）" },
+    { "id": "silent", "kind": "rule", "desc": "静步：不射击时移速 +30% 且不暴露位置（改移动规则）" },
+    { "id": "gunshotLure", "kind": "rule", "desc": "枪声引 AI：射击会改变敌人仇恨目标（改 AI 规则）" },
+    { "id": "headshot", "kind": "rule", "desc": "爆头判定：命中头部范围伤害翻倍（改命中规则）" },
+    { "id": "armorDrop", "kind": "rule", "desc": "护甲掉落：敌人死亡可掉甲，捡甲替换背包（改掉落规则）" },
+    { "id": "medKit", "kind": "stat", "desc": "医疗包回血 +40（数值）" },
+    { "id": "armorVest", "kind": "stat", "desc": "护甲减伤 +20%（数值）" },
+    { "id": "clipUp", "kind": "stat", "desc": "弹匣容量 +50%（数值）" },
+    { "id": "moveSpeed", "kind": "stat", "desc": "移动速度 +10%（数值）" },
+    { "id": "damageUp", "kind": "stat", "desc": "伤害 +10%（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "newBuild", "rating", "unlock", "growth"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 4,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "决赛圈只剩你和最后一个 AI，台灯从天打下聚光，两人在光柱里对枪的瞬间",
+  "antiScope": [
+    "不做联网对战/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "玩具战场桌面风格：程序化 Canvas 绘制玩具兵/文具掩体/三套场景色板；BGM 程序化 WebAudio 合成；封面海报 AI 出图 + HTML 叠字"
+}

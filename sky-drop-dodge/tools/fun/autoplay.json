@@ -1,0 +1,53 @@
+{
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 58.8,
+      "actions": 3526,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 12,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 10,
+      "levelsReached": 5,
+      "completed": false
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 53.1,
+      "actions": 1063,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 12,
+      "deaths": 1,
+      "idleSec": 39.8,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 12,
+      "levelsReached": 5,
+      "completed": false
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 18.7,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 12,
+      "deaths": 1,
+      "idleSec": 17.9,
+      "maxEventGapSec": 1,
+      "uniqueEvents": 8,
+      "levelsReached": 2,
+      "completed": false
+    }
+  ],
+  "generatedAt": "2026-11-19T14:36:56.482Z"
+}

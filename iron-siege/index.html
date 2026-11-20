@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="IRON SIEGE — drive a steampunk armored mech, guard the Core Furnace, and break the steel tide across 12 waves.">
+  <meta name="theme-color" content="#1a0e0c">
+  <title>IRON SIEGE · Steampunk Fortress Defense</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div id="ui-root"></div>
+    <div class="touch-controls hidden" id="touch-controls" aria-hidden="true">
+      <div class="joy" id="joy"><i class="joy-knob" id="joy-knob"></i></div>
+      <div class="touch-btns">
+        <button id="btn-fire" class="touch-btn" type="button" data-i18n="btn.fire"></button>
+        <button id="btn-heavy" class="touch-btn" type="button" data-i18n="btn.heavy"></button>
+        <button id="btn-weld-touch" class="touch-btn" type="button" data-i18n="btn.weld"></button>
+      </div>
+    </div>
+    <div id="rotate" class="rotate-hint" aria-hidden="true"><span class="rotate-icon">↻</span><span data-i18n="set.rotate">Rotate for the best view</span></div>
+    <div id="loading" class="loading">
+      <div class="loading-gear"></div>
+      <span data-i18n="set.loading">Charging the forge…</span>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

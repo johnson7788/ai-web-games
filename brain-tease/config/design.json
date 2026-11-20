@@ -1,0 +1,86 @@
+{
+  "slug": "brain-tease",
+  "genre": "puzzle",
+  "oneLiner": "你在博士的整蛊实验室破解 24 个反直觉机关谜题：点错会踩坑、点对会看到博士的魔性吐槽脸。",
+  "fun": {
+    "primary": "curiosity",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "tap",
+      "cost": "点错算一次失误，累计 3 次解锁「博士帮你」半自动通关（过关只 1 星）",
+      "feedback": ["sfx", "pulse", "wrong-flash"],
+      "combinesWith": ["drag"]
+    },
+    {
+      "name": "drag",
+      "cost": "拖错目标也算失误；拖走遮挡物可能反而暴露真正的答案",
+      "feedback": ["sfx", "trail", "drop-glow"],
+      "combinesWith": ["tap"]
+    },
+    {
+      "name": "rotate",
+      "cost": "倒置后目标随之颠倒，需要重新辨认方位",
+      "feedback": ["sfx", "scene-flip", "shake"],
+      "combinesWith": ["drag"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 8, "choice": "第一关：直接点温度计，还是把它拖进冰水", "cost": "点错=失误数 +1，可能解锁博士帮你" },
+    { "atSec": 25, "choice": "灯泡连点两次后，第三下是点灯还是点影子", "cost": "点错=失误 +1" },
+    { "atSec": 45, "choice": "先用提示，还是自己继续试错", "cost": "用提示=该关少 1 星" },
+    { "atSec": 70, "choice": "倒置关：拖旋转把手，还是先观察其它物体", "cost": "拖错=失误 +1" },
+    { "atSec": 100, "choice": "Boss 多步关：按提示顺序还是自己组合步骤", "cost": "试错=失误 +1，多了会扣星" },
+    { "atSec": 140, "choice": "卡关 3 次后是否用「博士帮你」半自动通关", "cost": "用=1 星，且计入速通成绩" }
+  ],
+  "loop": { "teachSec": 25, "practiceSec": 40, "twistSec": 35, "resolveSec": 20 },
+  "levels": [
+    { "index": 1, "newElement": "拖拽交互：把温度计拖进冰水" },
+    { "index": 2, "newElement": "影子点击：连点灯泡但第三下点影子" },
+    { "index": 3, "newElement": "遮挡物：掀开海报找真按钮" },
+    { "index": 4, "newElement": "倒置：拖旋转把手翻转场景" },
+    { "index": 5, "newElement": "撕贴纸：拖走乞好评弹窗" },
+    { "index": 6, "newElement": "Boss 多步：闹钟+掀毯+叫醒助手" },
+    { "index": 7, "newElement": "连点计数：点三下让鸡蛋立起来" },
+    { "index": 8, "newElement": "倒水：把烧开的锅拖进水池" },
+    { "index": 9, "newElement": "分类陷阱：点出不是水果的台灯" },
+    { "index": 10, "newElement": "融化：把冰块拖到热锅上" },
+    { "index": 11, "newElement": "开门：先开冰箱门再拿牛奶" },
+    { "index": 12, "newElement": "Boss 烘焙：鸡蛋面粉进碗、碗进烤箱、点火" },
+    { "index": 13, "newElement": "浇水：把水壶拖到花上" },
+    { "index": 14, "newElement": "赶鸟：点稻草人而不是乌鸦" },
+    { "index": 15, "newElement": "拨草：拨开草丛找钥匙" },
+    { "index": 16, "newElement": "下雨：点乌云三下" },
+    { "index": 17, "newElement": "昼夜：把窗帘拉到太阳前" },
+    { "index": 18, "newElement": "Boss 组装：头+帽装到身体、赶走乌鸦" },
+    { "index": 19, "newElement": "掀盖：掀开保护罩按火箭按钮" },
+    { "index": 20, "newElement": "救援：把宇航员拖回飞船" },
+    { "index": 21, "newElement": "修灯：点三下闪烁的灯" },
+    { "index": 22, "newElement": "连星：把三颗星拖进星座槽" },
+    { "index": 23, "newElement": "倒置+静音：翻转后按 MUTE" },
+    { "index": 24, "newElement": "Boss 逃生：刷卡+拉杆+倒置+逃生舱" }
+  ],
+  "upgrades": [
+    { "id": "hintRefund", "kind": "rule", "desc": "用提示后 30 秒内通关，返还被扣的星星" },
+    { "id": "streakShield", "kind": "rule", "desc": "连续 3 关零失误时，下一关的第一次失误不计入" },
+    { "id": "doctorDiscount", "kind": "rule", "desc": "「博士帮你」改为 2 次失误即解锁" },
+    { "id": "timeFreeze", "kind": "rule", "desc": "打开提示时速通计时暂停 5 秒" },
+    { "id": "doubleTap", "kind": "stat", "desc": "连点判定窗口 +50ms" },
+    { "id": "dragMagnet", "kind": "stat", "desc": "拖拽吸附半径 +30%" },
+    { "id": "hintPlus", "kind": "stat", "desc": "每关多一条隐藏提示" },
+    { "id": "retrySpeed", "kind": "stat", "desc": "关卡重开动画缩短 40%" }
+  ],
+  "replayHooks": ["rating", "unlock", "growth", "leaderboard"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 5, "firstSuccessSec": 45, "interactive": true, "steps": 3, "skippable": true, "replayable": true },
+  "signatureMoment": "过关瞬间博士摘下护目镜，露出魔性坏笑并弹出一句吐槽",
+  "antiScope": [
+    "不做联网/在线排行榜（只用本地最佳时间榜）",
+    "不做皮肤商店/内购",
+    "不做每日任务",
+    "不做剧情对话长文本",
+    "不做竖屏专属模式（横竖 letterbox 兼容）"
+  ],
+  "artSource": "整蛊实验室手绘卡通风：程序化 Canvas 矢量绘制（4 套场景包 + 博士角色 + 机关道具），UI 线框 CSS；BGM/SFX 程序化 WebAudio 合成"
+}

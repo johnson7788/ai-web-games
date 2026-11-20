@@ -1,0 +1,41 @@
+TITLE
+INK FINCH — Free Ink-Wash Flappy Bamboo Game
+
+CATEGORY
+Arcade
+
+TAGS
+flappy bird, ink wash, bamboo, bird, one-tap, arcade, zen, casual, hand-drawn, browser game
+
+SHORT DESCRIPTION
+Flap a little ink finch through rolling bamboo gates in a hand-drawn ink-wash world. One tap, one splatter.
+
+LONG DESCRIPTION
+INK FINCH is a free one-tap arcade game about a little ink bird flitting through a bamboo sea.
+
+Tap, press Space, or touch anywhere to flap. Every beat of the wing splatters a dot of ink — your signature in the world. Thread the gap in each bamboo stalk to score a vermilion point. Clip a stalk, the ground or the sky, and the ink spills — one tap restarts you instantly.
+
+12 handcrafted levels across three ink-wash worlds: Morning Mist, Rainy Night and Snowy Path. Narrow gaps test your precision, swaying gaps test your timing, updrafts let you glide, headwinds push you sideways, twin gaps offer a risky +3 or a safe +1, and spinning spike wheels guard the later paths. A final master stage stacks them all.
+
+Black, white and grey ink with a single touch of vermilion. Easy to learn in ten seconds, hard to put down. Works with mouse, touch and keyboard on desktop and mobile. No download — play free in your browser.
+
+TITLE
+墨雀 — 免费水墨竹海飞行游戏
+
+CATEGORY
+街机
+
+TAGS
+墨雀, 水墨, 竹海, 小鸟, 单键, 街机, 禅意, 休闲, 手绘, 网页游戏
+
+SHORT DESCRIPTION
+一只墨色雀在水墨竹海里单键上扑穿缝，每次振翅溅出墨点，穿过竹节记一分。
+
+LONG DESCRIPTION
+《墨雀》是一款免费的单键街机游戏：一只小墨雀，穿过水墨竹海。
+
+点击、按空格或触屏任意处即可上扑。每一次振翅都溅出一滴墨点——那是你在世界里的签名。穿过每根竹节的缝口，记一分朱砂红；撞竹、落地或触顶，墨就洒了——再点一下，立刻重开。
+
+12 个手工关卡横跨三大水墨场景：晨雾竹海、雨夜竹径、雪竹山道。窄缝考验精度，移动缝考验预判，上升气流可以长按滑翔，逆风把你往侧边吹，双缝关在「稳拿+1」和「搏一把+3」之间取舍，竹刺转轮守住后面的路，终章把全部机制叠在一起。
+
+黑白灰的墨，配上一抹朱砂红。十秒上手，越玩越上头。鼠标、触屏、键盘全支持，桌面与手机都能玩。无需下载，浏览器免费畅玩。

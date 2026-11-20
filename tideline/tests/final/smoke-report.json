@@ -1,0 +1,105 @@
+{
+  "url": "http://127.0.0.1:60094/",
+  "startedAt": "2026-11-15T13:08:27.158Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "wait",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "eval",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/tideline/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/tideline/tests/final/03-race-start.png",
+    "/Users/admin/git/webgames/games/tideline/tests/final/04-driving.png",
+    "/Users/admin/git/webgames/games/tideline/tests/final/05-checkpoint.png",
+    "/Users/admin/git/webgames/games/tideline/tests/final/06-boost.png",
+    "/Users/admin/git/webgames/games/tideline/tests/final/02-final.png"
+  ],
+  "fps": 37,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T13:09:44.169Z",
+  "video": "/Users/admin/git/webgames/games/tideline/tests/final/play.webm"
+}

@@ -1,0 +1,62 @@
+{
+  "game": "neo-tetra",
+  "genre": "puzzle",
+  "source": "bot",
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 27.7,
+      "actions": 1662,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1.8,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.17,
+      "uniqueEvents": 20,
+      "levelsReached": 7,
+      "completed": false,
+      "score": 20912,
+      "lines": 42
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 1.1,
+      "actions": 41,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 0.4,
+      "maxEventGapSec": 0.12,
+      "uniqueEvents": 13,
+      "levelsReached": 1,
+      "completed": false,
+      "score": 179,
+      "lines": 0
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 87.8,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 87.6,
+      "maxEventGapSec": 14.9,
+      "uniqueEvents": 9,
+      "levelsReached": 1,
+      "completed": false,
+      "score": 0,
+      "lines": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T06:09:50.143Z"
+}

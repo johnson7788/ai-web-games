@@ -1,0 +1,87 @@
+{
+  "slug": "mosaic-slide",
+  "genre": "puzzle",
+  "oneLiner": "在琉璃拼图坊里，点击缺口旁的彩色碎片把它滑进缺口，一片片拼回对称的玫瑰花窗——滑得又少又快，才能在完成瞬间让整扇窗被阳光点亮。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "slide",
+      "cost": "每滑一步计入步数，缺口随之移动；滑错不能撤销，只能靠后续步骤绕回来",
+      "feedback": ["glassClick", "settleGlow", "slideTween"],
+      "combinesWith": ["rotate", "peek"]
+    },
+    {
+      "name": "rotate",
+      "cost": "旋转占用一步，仅旋转关可用；转错方向要再花一步转回来",
+      "feedback": ["chime", "rotateSpin"],
+      "combinesWith": ["slide"]
+    },
+    {
+      "name": "peek",
+      "cost": "消耗 1 次偷看（盲拼关每局仅 3 次），参考图只短暂亮起几秒",
+      "feedback": ["revealFlash", "whoosh"],
+      "combinesWith": ["slide"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "先拼边框还是先拼中心花蕊", "cost": "边框定位稳但中心碎片更多；先中心则边框要盲试" },
+    { "atSec": 20, "choice": "先归位参考图里的大色块，还是先还原细节纹样", "cost": "大色块快但细节难；细节先做则整体进度慢" },
+    { "atSec": 40, "choice": "步数逼近目标：继续找最优解还是接受多走几步", "cost": "多走几步会丢掉步数星" },
+    { "atSec": 60, "choice": "盲拼关参考图已隐藏：凭记忆硬拼还是用掉一次偷看", "cost": "偷看有限，用掉一次少一次" },
+    { "atSec": 80, "choice": "旋转关：先滑到正确位置再转角度，还是边滑边转", "cost": "转错方向要再花一步；先转则可能滑到别处" },
+    { "atSec": 100, "choice": "时间吃紧：求稳拼完整，还是抢时间星", "cost": "求快更容易滑错，一步错步步绕" },
+    { "atSec": 130, "choice": "双图关：先拼亮纹样还是暗纹样", "cost": "两幅纹样交织，先拼哪边都容易被另一幅干扰" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 50,
+    "resolveSec": 20
+  },
+  "levels": [
+    { "index": 1, "newElement": "3×3 基本滑块：缺口在左上角" },
+    { "index": 2, "newElement": "4×4 更密的棋盘" },
+    { "index": 3, "newElement": "4×5 矩形花窗（非正方形）" },
+    { "index": 4, "newElement": "5×5 大花窗" },
+    { "index": 5, "newElement": "异形切：六边形琉璃片（视觉近似）" },
+    { "index": 6, "newElement": "限时关：更紧张的时间预算" },
+    { "index": 7, "newElement": "旋转块：碎片可旋转 90° 归位" },
+    { "index": 8, "newElement": "盲拼关：参考图 5 秒后隐藏，可偷看" },
+    { "index": 9, "newElement": "双图交替：两幅纹样交织嵌套" },
+    { "index": 10, "newElement": "旋转 + 限时叠加" },
+    { "index": 11, "newElement": "盲拼 + 双图叠加（5×6）" },
+    { "index": 12, "newElement": "终章 6×6 大花窗" }
+  ],
+  "upgrades": [
+    { "id": "unlockHex", "kind": "rule", "desc": "第 5 关起琉璃片切成六边形，缺口邻接关系改变" },
+    { "id": "unlockRotate", "kind": "rule", "desc": "第 7 关起碎片带朝向，可旋转 90° 归位" },
+    { "id": "unlockBlind", "kind": "rule", "desc": "第 8 关起参考图开局 5 秒后隐藏，只能偷看" },
+    { "id": "unlockDual", "kind": "rule", "desc": "第 9 关起两幅纹样交织，参考图交替提示" },
+    { "id": "unlockGrand", "kind": "rule", "desc": "第 12 关 6×6 终章大花窗" },
+    { "id": "biggerGrid", "kind": "stat", "desc": "网格从 3×3 一路放大到 6×6，规划半径翻倍" },
+    { "id": "tighterTime", "kind": "stat", "desc": "限时关时间预算收紧，节奏变快" },
+    { "id": "moveParTight", "kind": "stat", "desc": "步数目标随关卡收紧，求快成为决策" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 60,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

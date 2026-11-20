@@ -1,0 +1,149 @@
+{
+  "game": "tile-vault",
+  "generatedAt": "2026-11-19T15:27:06.602Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.375,
+    "silhouette": 6.75,
+    "style_consistent": 8.625
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中间倾斜的彩色方块堆中任意一个带圆圈标记的方块以选择宝藏",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标提示文字 'Match 3 treasures to fill the bag' 与背景对比度偏低，暗色背景下黄色描边不够突出",
+        "左下角弧形区域（疑似入口）无明确交互反馈或说明，易被误认为装饰",
+        "右上角悬浮金币图标位置孤立，与主操作区距离过远，视觉动线断裂"
+      ]
+    },
+    {
+      "shot": "tests/final/02-deepwell.png",
+      "goal_visible": true,
+      "first_action_guess": "点击金字塔中任意三个相同图标的宝物进行匹配",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "金字塔底部边缘与TRAY区域间距过小，可能误触",
+        "右上角按钮组密集且无明确分隔，部分图标（如问号、重置）辨识度偏低",
+        "金币罐旁‘COINS 0’文字字号偏小，弱光环境下易忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/03-dual-tomb.png",
+      "goal_visible": true,
+      "first_action_guess": "点击堆叠方块中任意一个宝藏图标，尝试匹配3个相同类型填满袋子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "目标提示文字‘Match 3 treasures to fill the bag’字号偏小且无高对比背景，弱光下易误读",
+        "右下角金币罐图标与‘COINS 0’标签间距过近，视觉上易混淆为单个元素",
+        "堆叠方块边缘阴影较弱，部分同色相邻块在快速扫视时难以区分层级"
+      ]
+    },
+    {
+      "shot": "tests/final/04-dragon.png",
+      "goal_visible": true,
+      "first_action_guess": "点击金字塔中任意一个宝藏图标，尝试匹配3个相同类型填满袋子",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘Level 9 - Tight Slot’与计时器/剩余数间距过小，易误触",
+        "右下金币罐图标与‘COINS 0’标签轻微重叠（罐体遮挡部分文字）",
+        "金字塔底部边缘与TRAY区域无明显分隔，视觉上可能误判可拖拽范围"
+      ]
+    },
+    {
+      "shot": "tests/final/05-result.png",
+      "goal_visible": true,
+      "first_action_guess": "点击“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘90s left’和‘$240’字号过小，弱光下易误读",
+        "右下角金币图标与‘COINS 240’标签轻微重叠",
+        "背景粒子光点干扰主信息区，降低视觉聚焦"
+      ]
+    },
+    {
+      "shot": "tests/final/06-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "‘0/36’星星计数与标题间距过小，易误读为‘★0/36’整体",
+        "右下角金币袋图标与‘COINS 0’文字轻微重叠，边缘模糊",
+        "数字1-12的格子在暗背景下对比度偏低（尤其6、12），部分数字略显灰暗"
+      ]
+    },
+    {
+      "shot": "tests/final/07-m-playing.png",
+      "goal_visible": true,
+      "first_action_guess": "点击三个相同图标的方块（如三个带圆圈的绿色方块）来匹配填满袋子",
+      "readable": 8,
+      "silhouette": 6,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左下角弧形区域有4个黄点，功能不明，疑似未完成UI元素",
+        "网格方块图标种类多但部分相似（如不同形状的杯子/盾牌），易混淆，影响快速识别",
+        "‘Match 3 treasures to fill the bag’文字为浅黄底黑字，对比度偏低，在深棕背景上稍显模糊"
+      ]
+    },
+    {
+      "shot": "tests/final/08-title-zh.png",
+      "goal_visible": true,
+      "first_action_guess": "点击黄色‘开始’按钮",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡选择按钮（1-12）无明确选中态，当前未高亮任何关卡，易混淆进度",
+        "右下角金币袋图标与文字‘金币 0’间距过小，视觉拥挤",
+        "背景暗部细节模糊（左下弧形结构），可能影响场景识别"
+      ]
+    }
+  ]
+}

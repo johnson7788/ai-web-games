@@ -1,0 +1,149 @@
+{
+  "game": "goose-lane",
+  "generatedAt": "2026-11-19T15:24:41.615Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "WARN",
+  "means": {
+    "readable": 7.625,
+    "silhouette": 8.625,
+    "style_consistent": 9.375
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-morning.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家第一眼该点击屏幕中央偏下区域控制鸭子向上移动以收集钻石并避开红色车辆",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD‘M 20’‘GEMS 12’‘BALLOONS 0’文字间距过小，易误读为单行",
+        "右上角‘BEST 0m’与粉色气球视觉距离近，可能被误认为气球属性",
+        "鸭子角色下方灰色圆环略显多余，轻微干扰主体轮廓辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/02-obstacles.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或拖动鸭子角色向右移动以避开红色车辆并收集宝石",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD‘M 41’‘GEMS 23’‘BALLOONS 1’文字间距过密，小屏可能误读",
+        "右上角‘BEST 0m’与游戏区域无明显分隔，视觉层级略弱",
+        "黑色虚线椭圆坑洞（右侧）无交互提示，玩家可能忽略其危险性"
+      ]
+    },
+    {
+      "shot": "tests/final/03-afternoon.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕右侧的鸭子角色使其移动避让红色车辆",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "右上角' BEST 0m'文字与钻石图标间距过小，可能误触",
+        "左侧HUD三栏按钮高度不一致（M:301 vs GEMS:31 vs BALLOONS:1），视觉失衡",
+        "鸭子角色下方灰色圆环与粉色气球轻微重叠，影响可交互物识别"
+      ]
+    },
+    {
+      "shot": "tests/final/04-gate.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕中央红色横线上的红点（转弯触发点）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角‘M 201’与‘GEMS 18’间距过小，易误读为‘M 201 GEMS 18’",
+        "红色横线中央红点无明确交互提示（如闪烁/箭头），新手可能忽略",
+        "‘4/12 · Turnstile’文字偏小且居中偏上，与道路视觉重心脱节"
+      ]
+    },
+    {
+      "shot": "tests/final/05-night.png",
+      "goal_visible": true,
+      "first_action_guess": "玩家应操控鸭子向右避开红色巴士并收集钻石",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD数值‘M 491’与‘GEMS 41’间距过小，易误读为单行",
+        "鸭子角色周围有粉色/黄色小圆点，功能不明（疑似气球但未标注），可能造成混淆",
+        "右上角‘BEST 0m’单位‘m’无上下文，新手可能不解是距离还是时间"
+      ]
+    },
+    {
+      "shot": "tests/final/06-mobile.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕右侧的STOP按钮（因当前无移动指令，且角色静止，可能需启动或暂停）",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角HUD‘M 16’‘GEMS 6’‘BALLOONS 1’字体过小且无间距，易误读为单行",
+        "顶部‘1/12 · Depot’标签位置偏高，与粉色气球重叠风险大（当前未重叠但临界）",
+        "鸭子角色下方灰色圆圈阴影略模糊，与路面融合度高，影响轮廓辨识"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-after-skip.png",
+      "goal_visible": true,
+      "first_action_guess": "点击屏幕下方鸭子角色使其移动避让上方红色巴士",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角'M 3'标签中'M'与数字间距过小，易误读为'M3'或'3M'",
+        "顶部'1/12 · Depot'文字字号偏小，远距离辨识度低",
+        "两侧钻石图标无明确交互提示（是否可收集？），缺乏视觉反馈线索"
+      ]
+    },
+    {
+      "shot": "tests/final/tutorial-first.png",
+      "goal_visible": true,
+      "first_action_guess": "向左滑动或按 ← 键切换车道以收集左侧的蓝宝石",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "左上角 'M 5' 标签无明确含义（可能为移动次数？），易引起困惑",
+        "中央提示框遮挡部分企鹅角色，轻微影响角色可见性",
+        "右上角 'BEST 0m' 与 'Skip' 按钮间距过小，桌面端虽可接受，但移动端可能误触"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "url": "http://127.0.0.1:55444/",
+  "startedAt": "2026-11-15T16:37:12.704Z",
+  "steps": [
+    {
+      "i": 0,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 1,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 2,
+      "act": "hold",
+      "ok": true
+    },
+    {
+      "i": 3,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 4,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 5,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 6,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 7,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 8,
+      "act": "click",
+      "ok": true
+    },
+    {
+      "i": 9,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 10,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 11,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 12,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 15,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 16,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 17,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 18,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 19,
+      "act": "key",
+      "ok": true
+    },
+    {
+      "i": 20,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 21,
+      "act": "shot",
+      "ok": true
+    },
+    {
+      "i": 22,
+      "act": "eval",
+      "ok": true
+    },
+    {
+      "i": 23,
+      "act": "wait",
+      "ok": true
+    }
+  ],
+  "shots": [
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/01-title.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/03-level1-start.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/04-rolling.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/05-level-clear.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/06-level2-start.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/07-after-fall.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/08-pause.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/09-narrow-bridge.png",
+    "/Users/admin/git/webgames/games/marble-dash/tests/final/02-final.png"
+  ],
+  "fps": 61,
+  "errors": [],
+  "consoleErrs": [],
+  "failedRequests": [],
+  "finishedAt": "2026-11-15T16:37:45.706Z",
+  "video": "/Users/admin/git/webgames/games/marble-dash/tests/final/play.webm"
+}

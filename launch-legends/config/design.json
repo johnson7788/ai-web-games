@@ -1,0 +1,122 @@
+{
+  "slug": "launch-legends",
+  "genre": "arcade",
+  "oneLiner": "一颗烟花弹自动弹跳向夜空攀升：左右横移撞碎云絮得分并充能，蓄满引信进入炽热态烧穿钢棚，高度即分数，每升 5 米绽放一圈迷你烟花。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "expression"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "横移会远离最优路线或贴墙反弹区；横风还会把弹体吹偏，逆风要持续修正",
+      "feedback": ["sfx", "trail", "windDrift"],
+      "combinesWith": ["break"]
+    },
+    {
+      "name": "break",
+      "cost": "撞碎云絮会加速爬升（更难控），且错过空档/贴墙弹更高的路线",
+      "feedback": ["sfx", "sparkBurst", "scorePop"],
+      "combinesWith": ["ignite"]
+    },
+    {
+      "name": "ignite",
+      "cost": "炽热态限时，期间引信不再充能，结束后从零重新蓄",
+      "feedback": ["sfx", "flameTrail", "screenGlow"],
+      "combinesWith": ["break"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一层云絮在左，右侧是空档：先撞云充能，还是走空档保命",
+      "cost": "撞云加速更难控；走空档少一次充能"
+    },
+    {
+      "atSec": 15,
+      "choice": "横风来了：逆风稳住弹道，还是顺风借力冲云絮连击",
+      "cost": "逆风拖慢横向节奏；顺风可能被吹进钢棚"
+    },
+    {
+      "atSec": 30,
+      "choice": "云絮连击被空档打断：绕行重排队列，还是赌下一层再出云",
+      "cost": "绕行多耗一层高度；赌下一层可能断连击"
+    },
+    {
+      "atSec": 50,
+      "choice": "钢棚横在眼前：蓄满引信点火烧穿，还是等它露出缺口绕过去",
+      "cost": "点火消耗炽热态；绕行可能撞到旁边的实钢"
+    },
+    {
+      "atSec": 80,
+      "choice": "贴墙弹得更高但离云远：守墙刷高度，还是回中路刷云",
+      "cost": "守墙放弃充能；回中路放弃墙弹加成"
+    },
+    {
+      "atSec": 110,
+      "choice": "阵雨减速带在前：硬穿吃减速，还是借云加速冲过去",
+      "cost": "硬穿拖慢全局节奏；借云要更精准地预判落点"
+    },
+    {
+      "atSec": 140,
+      "choice": "移动云台摆动：预判落点追云，还是保守走空档",
+      "cost": "追云可能扑空撞钢；走空档分数低"
+    },
+    {
+      "atSec": 160,
+      "choice": "冲顶前：交出炽热态直线冲刺，还是留状态防最后的失误",
+      "cost": "交出状态没后悔药；留着则最后一段要手动绕钢"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 60,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "基本弹跳与横移（无风无钢棚）" },
+    { "index": 2, "newElement": "横风：弹体被持续吹偏，需逆风修正" },
+    { "index": 3, "newElement": "云絮连击：安全通道连续出云，连撞得分翻倍" },
+    { "index": 4, "newElement": "钢棚：全钢横梁，只有炽热态能烧穿" },
+    { "index": 5, "newElement": "侧壁反弹：贴墙弹更高，多爬 1 米" },
+    { "index": 6, "newElement": "阵雨带：指定高度区间弹跳变慢（下压减速）" },
+    { "index": 7, "newElement": "移动云台：云絮随时间左右摆动" },
+    { "index": 8, "newElement": "窄井通道：全屏仅 3 列，容错极低" },
+    { "index": 9, "newElement": "风暴前缘：云絮与钢棚密度齐升" },
+    { "index": 10, "newElement": "风与钢：横风 + 周期钢棚双威胁" },
+    { "index": 11, "newElement": "摇摆迷阵：窄列 + 移动云台叠加" },
+    { "index": 12, "newElement": "冲顶终章：横风 + 阵雨 + 高频钢棚三轴叠加" }
+  ],
+  "upgrades": [
+    { "id": "crosswind", "kind": "rule", "desc": "第 2 关起横风持续把弹体吹偏，必须逆风修正" },
+    { "id": "cloudCombo", "kind": "rule", "desc": "第 3 关起连续撞云触发连击加分" },
+    { "id": "steelCanopy", "kind": "rule", "desc": "第 4 关起出现全钢棚，只有炽热态能烧穿" },
+    { "id": "wallBounce", "kind": "rule", "desc": "第 5 关起贴墙弹更高，多爬 1 米" },
+    { "id": "rainBand", "kind": "rule", "desc": "第 6 关起阵雨带下压减速" },
+    { "id": "movingClouds", "kind": "rule", "desc": "第 7 关起云台左右移动，需预判落点" },
+    { "id": "narrowWell", "kind": "rule", "desc": "第 8 关起通道收窄到 3 列" },
+    { "id": "climbSpeed", "kind": "stat", "desc": "撞云加速：每片云絮缩短弹跳周期" },
+    { "id": "igniteDuration", "kind": "stat", "desc": "炽热态时长（3.5s，撞云可持续）" },
+    { "id": "fuseGain", "kind": "stat", "desc": "引信蓄能效率（3 片云絮蓄满）" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 4,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

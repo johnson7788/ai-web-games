@@ -1,0 +1,124 @@
+{
+  "slug": "dune-tac-toe",
+  "genre": "puzzle",
+  "oneLiner": "在沙漠棋盘上种下仙人掌，抢先连成三线，在 12 个必胜残局里一步步智胜那只每一步都完美防守的蝎子。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "place",
+      "cost": "落子即定型：占掉这一格就永久放弃另外 8 个落点，落错一格就把节奏交还给蝎子",
+      "feedback": ["sfx", "sandBurst", "pieceGrow"],
+      "combinesWith": ["fork", "block"]
+    },
+    {
+      "name": "fork",
+      "cost": "为了制造两条胜线，你必须把子压向角位/斜线，等于在另一侧放空自己的防线",
+      "feedback": ["sfx", "threatGlow", "winLine"],
+      "combinesWith": ["place"]
+    },
+    {
+      "name": "block",
+      "cost": "堵住蝎子的成线威胁，就要放弃自己正铺到一半的进攻线",
+      "feedback": ["sfx", "sandPuff", "scorpionRattle"],
+      "combinesWith": ["place"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 5,
+      "choice": "第一关：眼前就有三连的最后一块，是直接封顶，还是先试探别的格子",
+      "cost": "不封顶 = 把必赢的一步让给蝎子反击"
+    },
+    {
+      "atSec": 20,
+      "choice": "蝎子已经两子成线：先堵它的威胁，还是赌自己能更快成线",
+      "cost": "先堵 = 放弃自己的进攻线；不堵 = 下一手蝎子直接获胜"
+    },
+    {
+      "atSec": 40,
+      "choice": "fork 关头：把子下在角位制造双威胁，还是下在中心稳一手",
+      "cost": "角位双威胁更锋利，但中心被占后防御更脆"
+    },
+    {
+      "atSec": 60,
+      "choice": "两条等价胜路都摆在面前：选哪一条，等于决定蝎子下一手被逼向哪个角",
+      "cost": "选错会留下唯一能被蝎子同时堵住两个威胁的格子"
+    },
+    {
+      "atSec": 85,
+      "choice": "三连长逼迫：每一步都必须同时是威胁，还是提前一格布局",
+      "cost": "提前布局少一层威胁，蝎子有喘息空间"
+    },
+    {
+      "atSec": 110,
+      "choice": "唯一胜点的残局：是相信直觉下中心，还是推演三步后唯一的活路",
+      "cost": "直觉落错一步，胜局立刻变负局"
+    },
+    {
+      "atSec": 140,
+      "choice": "第 12 关完美蝎子：承认赢不了、转而求平，还是继续冒险进攻",
+      "cost": "进攻必死；只有唯一的逼平格能活下来"
+    },
+    {
+      "atSec": 165,
+      "choice": "无尽模式选难度：刷随机攒战绩，还是挑战完美蝎子换高分",
+      "cost": "只有 hard（完美）胜计入高分，随机胜不计"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 15
+  },
+  "levels": [
+    { "index": 1, "newElement": "win-in-1：看清三连的最后一块" },
+    { "index": 2, "newElement": "win-in-1 with pressure：蝎子已有成线威胁" },
+    { "index": 3, "newElement": "fork 双威胁：一步制造两条胜线" },
+    { "index": 4, "newElement": "double threat 斜线+边线交叉" },
+    { "index": 5, "newElement": "corner fork 角位双叉（两条等价胜路）" },
+    { "index": 6, "newElement": "block-then-fork 先堵蝎子再反杀" },
+    { "index": 7, "newElement": "counter-kill 反杀：三连长的连续逼迫" },
+    { "index": 8, "newElement": "squeeze 挤压：让蝎子无路可堵" },
+    { "index": 9, "newElement": "triple threat 三连威胁的连锁" },
+    { "index": 10, "newElement": "long game 长线规划：唯一胜点" },
+    { "index": 11, "newElement": "plan-from-nothing 从近乎空盘起强制 3 步胜" },
+    { "index": 12, "newElement": "perfect defense 逼平完美蝎子（无法获胜）" }
+  ],
+  "upgrades": [
+    { "id": "winIn1", "kind": "rule", "desc": "第 1 章解锁：一眼看穿三连的最后一块" },
+    { "id": "threatRead", "kind": "rule", "desc": "第 1 章解锁：识别蝎子的成线威胁" },
+    { "id": "fork", "kind": "rule", "desc": "第 1 章解锁：一步制造两条胜线的双威胁" },
+    { "id": "doubleThreat", "kind": "rule", "desc": "第 1 章解锁：斜线+边线的交叉双威胁" },
+    { "id": "cornerFork", "kind": "rule", "desc": "第 2 章解锁：角位双叉，两条等价胜路" },
+    { "id": "blockThenFork", "kind": "rule", "desc": "第 2 章解锁：先堵蝎子再反杀" },
+    { "id": "counterKill", "kind": "rule", "desc": "第 2 章解锁：三连长的连续逼迫" },
+    { "id": "forcingSequence", "kind": "rule", "desc": "第 3 章解锁：每步必为威胁的长线逼迫" },
+    { "id": "planAhead", "kind": "rule", "desc": "第 3 章解锁：从近乎空盘起规划三步" },
+    { "id": "perfectDefense", "kind": "rule", "desc": "第 3 章解锁：逼平完美蝎子（不可获胜）" },
+    { "id": "hardMode", "kind": "stat", "desc": "无尽模式：只有击败 perfect 难度才计入高分" },
+    { "id": "streak", "kind": "stat", "desc": "无尽模式：连胜计数驱动重玩" }
+  ],
+  "replayHooks": [
+    "rating",
+    "unlock",
+    "nearMiss",
+    "growth"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 40,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  }
+}

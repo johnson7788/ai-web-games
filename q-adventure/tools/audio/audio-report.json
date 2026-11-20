@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-11-19T19:22:00.365Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "jump": {
+      "rms": 0.1927,
+      "peak": 0.4177,
+      "nan": 0,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "doubleJump": {
+      "rms": 0.1936,
+      "peak": 0.4981,
+      "nan": 0,
+      "samples": 6615,
+      "durSec": 0.15,
+      "pass": true
+    },
+    "wallJump": {
+      "rms": 0.1843,
+      "peak": 0.3027,
+      "nan": 0,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "land": {
+      "rms": 0.0355,
+      "peak": 0.1282,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "coin": {
+      "rms": 0.0781,
+      "peak": 0.2258,
+      "nan": 0,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "star": {
+      "rms": 0.1228,
+      "peak": 0.4038,
+      "nan": 0,
+      "samples": 16317,
+      "durSec": 0.37,
+      "pass": true
+    },
+    "stomp": {
+      "rms": 0.1883,
+      "peak": 0.5031,
+      "nan": 0,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "enemyDefeat": {
+      "rms": 0.1997,
+      "peak": 0.34,
+      "nan": 0,
+      "samples": 9702,
+      "durSec": 0.22,
+      "pass": true
+    },
+    "hurt": {
+      "rms": 0.1278,
+      "peak": 0.3124,
+      "nan": 0,
+      "samples": 8820,
+      "durSec": 0.2,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1794,
+      "peak": 0.4488,
+      "nan": 0,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "respawn": {
+      "rms": 0.1353,
+      "peak": 0.4414,
+      "nan": 0,
+      "samples": 18522,
+      "durSec": 0.42,
+      "pass": true
+    },
+    "checkpoint": {
+      "rms": 0.1327,
+      "peak": 0.41,
+      "nan": 0,
+      "samples": 10584,
+      "durSec": 0.24,
+      "pass": true
+    },
+    "goal": {
+      "rms": 0.1837,
+      "peak": 0.6432,
+      "nan": 0,
+      "samples": 28665,
+      "durSec": 0.65,
+      "pass": true
+    },
+    "levelClear": {
+      "rms": 0.1736,
+      "peak": 0.645,
+      "nan": 0,
+      "samples": 29988,
+      "durSec": 0.68,
+      "pass": true
+    },
+    "spring": {
+      "rms": 0.1781,
+      "peak": 0.3,
+      "nan": 0,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    },
+    "beat": {
+      "rms": 0.1588,
+      "peak": 0.3596,
+      "nan": 0,
+      "samples": 6174,
+      "durSec": 0.14,
+      "pass": true
+    },
+    "nearMiss": {
+      "rms": 0.0951,
+      "peak": 0.16,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "milestone": {
+      "rms": 0.0446,
+      "peak": 0.08,
+      "nan": 0,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1286,
+      "peak": 0.2489,
+      "nan": 0,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.2114,
+      "peak": 0.7413,
+      "nan": 0,
+      "samples": 49392,
+      "durSec": 1.12,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgmTitle": {
+      "rms": 0.2109,
+      "peak": 0.7376,
+      "nan": 0,
+      "samples": 82688,
+      "durSec": 1.875,
+      "pass": true
+    },
+    "bgmCandy": {
+      "rms": 0.2107,
+      "peak": 0.7337,
+      "nan": 0,
+      "samples": 82688,
+      "durSec": 1.875,
+      "pass": true
+    },
+    "bgmCloud": {
+      "rms": 0.2105,
+      "peak": 0.7612,
+      "nan": 0,
+      "samples": 82688,
+      "durSec": 1.875,
+      "pass": true
+    },
+    "bgmNight": {
+      "rms": 0.2109,
+      "peak": 0.7216,
+      "nan": 0,
+      "samples": 82688,
+      "durSec": 1.875,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function",
+    "beatPhase": "function"
+  },
+  "summary": {
+    "total": 24,
+    "passed": 24,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

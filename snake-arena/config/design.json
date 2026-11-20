@@ -1,0 +1,93 @@
+{
+  "slug": "snake-arena",
+  "genre": "action",
+  "oneLiner": "你是霓虹竞技场里一条数据流光蛇，摇杆转向、超频加速吃数据点变长；头撞对手光带判死，击杀瞬间敌蛇碎成数据雨被你吸走，90 秒内争长度榜第一。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "steer",
+      "cost": "注意力：转向绕圈会错过直线上的数据点，也会把侧身暴露给猎手",
+      "feedback": ["sfx", "trail", "head-glow"],
+      "combinesWith": ["boost"]
+    },
+    {
+      "name": "boost",
+      "cost": "超频消耗自身长度并留下光屑（可被对手吃），是风险资源化",
+      "feedback": ["sfx", "speed-lines", "shard-drop"],
+      "combinesWith": ["steer"]
+    },
+    {
+      "name": "pulse",
+      "cost": "长度 >30 才能放 1 次，20s 冷却；放了就放弃保命的长度优势",
+      "feedback": ["sfx", "shockwave-ring", "screen-shake"],
+      "combinesWith": ["steer"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "贴大蛇尾部伺机截杀，还是安心绕外围扫食", "cost": "高风险截杀换击杀，还是低风险吃数据点" },
+    { "atSec": 18, "choice": "超频抢一圈数据点，还是省下长度躲过迎面大蛇", "cost": "超频掉长度 + 留光屑被吃，还是慢速更稳" },
+    { "atSec": 32, "choice": "长度到 30 后：脉冲主动进攻震晕对手，还是留着冷却保命", "cost": "进攻机会换 20s 冷却真空期" },
+    { "atSec": 48, "choice": "冲进熔断区高密度食物带，还是守在外围安全区", "cost": "高收益高碰撞风险，还是低收益低风险" },
+    { "atSec": 66, "choice": "场间三选一：转向速度 / 磁吸半径 / 脉冲冷却，选哪一个 build", "cost": "放弃另外两条升级路线" },
+    { "atSec": 82, "choice": "时间剩 8 秒：保住当前名次缩圈防守，还是冒险再杀一条翻盘", "cost": "守名次 vs 翻盘失败被反杀" },
+    { "atSec": 100, "choice": "故意用超频光屑做诱饵引对手，还是吃完光屑立刻走", "cost": "设陷阱留光屑掉长度，还是贪吃暴露身位" },
+    { "atSec": 130, "choice": "深网紫黑区视野压迫下：贴着边界走捷径，还是绕中间大团蛇", "cost": "边界即死 vs 蛇堆碰撞" }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 45,
+    "twistSec": 60,
+    "resolveSec": 45
+  },
+  "levels": [
+    { "index": 1, "newElement": "数据核心：学会转向 + 超频加速 + 吃数据点变长 + 撞墙即死边界" },
+    { "index": 2, "newElement": "AI 增员：对手从 4 增至 5 条，攻击性初现" },
+    { "index": 3, "newElement": "电磁脉冲解锁：长度>30 震晕附近敌蛇 1.5s，冷却 20s" },
+    { "index": 4, "newElement": "漂移数据点：部分食物缓慢漂移，追吃更考预判" },
+    { "index": 5, "newElement": "熔断区换章 + 猎手 AI：AI 会瞄准玩家头部截杀" },
+    { "index": 6, "newElement": "高热食物潮：食物密度升高但 AI 更密" },
+    { "index": 7, "newElement": "猎手小队：攻击性 AI 会夹击围堵" },
+    { "index": 8, "newElement": "熔断风暴：食物快速刷新 + 最高攻击性" },
+    { "index": 9, "newElement": "深网换章：紫黑视野 + 大蛇 AI（更长更致命）" },
+    { "index": 10, "newElement": "暗网猎杀：AI 高频猎手 + 光屑更肥" },
+    { "index": 11, "newElement": "数据风暴：食物饱和 + 高速 AI" },
+    { "index": 12, "newElement": "深网终局：满编 AI 车轮战，争总榜第一" }
+  ],
+  "upgrades": [
+    { "id": "turnSpeed", "kind": "stat", "descKey": "up.turnSpeed" },
+    { "id": "magnetRadius", "kind": "stat", "descKey": "up.magnetRadius" },
+    { "id": "pulseCooldown", "kind": "stat", "descKey": "up.pulseCooldown" },
+    { "id": "shardRefund", "kind": "rule", "descKey": "up.shardRefund" },
+    { "id": "tailArmor", "kind": "rule", "descKey": "up.tailArmor" },
+    { "id": "pulseShield", "kind": "rule", "descKey": "up.pulseShield" },
+    { "id": "overclock", "kind": "rule", "descKey": "up.overclock" },
+    { "id": "coreSteal", "kind": "rule", "descKey": "up.coreSteal" },
+    { "id": "shockAbsorb", "kind": "rule", "descKey": "up.shockAbsorb" }
+  ],
+  "replayHooks": ["nearMiss", "growth", "unlock", "rating"],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 0,
+    "firstInputSec": 3,
+    "firstSuccessSec": 8,
+    "interactive": true,
+    "steps": 3,
+    "skippable": true,
+    "replayable": true
+  },
+  "signatureMoment": "击杀敌蛇瞬间，其光带炸成一团数据雨被你的蛇头真空吸走，蛇身同步亮起一圈吞噬脉冲",
+  "antiScope": [
+    "不做联网/真人对战",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "霓虹数据流风格：程序化 Canvas 发光渲染（径向渐变/加法混合 + 三段色板换章），UI 线框 SVG/CSS，BGM 程序化合成"
+}

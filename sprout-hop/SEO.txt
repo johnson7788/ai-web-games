@@ -1,0 +1,45 @@
+TITLE
+Sprout Hop — Free Bean-Vine Slingshot Jump Game
+
+CATEGORY
+Arcade
+
+TAGS
+slingshot, jump, physics, arcade, pea, garden, bean vine, casual, one-touch, browser game
+
+SHORT DESCRIPTION
+Drag back to bend the vine and sling the pea across bean-vine platforms — land on pods, pumpkins and baskets without splashing into the pond.
+
+LONG DESCRIPTION
+SPROUT HOP is a free one-touch slingshot arcade game about a round little pea-sprout hopping across giant bean-vine trellises.
+
+Press and drag back on Sprout to bend the vine and charge your jump — a dotted arc shows exactly where you will fly. Release to launch the pea along the parabola and land on the next platform. Nail the center for a PERFECT landing and a combo; splash into the pond or fly out of the garden and you lose.
+
+Every platform changes the plan: pea pods are steady, pumpkins bounce you 1.3x further, and bamboo baskets soak up your jump distance. Watch out for moving baskets, broken vines that collapse half a second after you land, tailwinds and headwinds, and high-low twin routes where the risky low path is shorter.
+
+12 handcrafted levels across three worlds — Dawn Garden, Noon Trellis and Moonlit Beanfield — each introducing one new rule. Three stars per level: clear it, clear it clean without a revive, and rack up perfect center landings.
+
+Ten seconds to learn, a lifetime to master. Mouse, touch and keyboard on desktop and mobile. No download, play free in your browser.
+
+TITLE
+豆荚跳跳 — 免费豆藤弹射跳跃游戏
+
+CATEGORY
+街机
+
+TAGS
+弹射, 跳跃, 物理, 街机, 豌豆, 菜园, 豆藤, 休闲, 单指操作, 网页游戏
+
+SHORT DESCRIPTION
+按住豌豆向后拖，把藤蔓拉弯蓄力，松手把豌豆弹射出去，落在豆荚、南瓜和竹筐上，别掉进池塘。
+
+LONG DESCRIPTION
+《豆荚跳跳》是一款免费的单指弹射街机游戏：一只圆滚滚的豌豆射手在巨型豆藤架之间跳来跳去。
+
+按住豌豆向后拖，把藤蔓拉弯蓄力——虚线弧线会精确显示你要飞到哪里。松手后豌豆沿抛物线弹射出去，落到下一个平台上。落在正中心就是「完美落点」并累积连击；掉进池塘或飞出菜园就失败。
+
+每一种平台都会改变策略：豆荚平稳，南瓜回弹 1.3× 跳得更远，竹筐吸力则会大大缩短跳距。还要小心左右摆动的移动竹筐、落上 0.6 秒就塌的断藤、顺风与逆风，以及「上稳下险近」的高低双层路线。
+
+12 个手工关卡横跨三大场景：晨露菜园、午后藤棚、月下豆田，每关引入一条新规则。每关三星：通关、无复活干净通关、以及攒够中心完美落点。
+
+十秒上手，越玩越上瘾。鼠标、触屏、键盘全支持，桌面与手机均可游玩。无需下载，浏览器免费畅玩。

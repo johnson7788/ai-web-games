@@ -1,0 +1,110 @@
+{
+  "slug": "blindbox-memory",
+  "genre": "puzzle",
+  "oneLiner": "在步数预算内翻开盲盒潮玩卡牌配对成对，连击攒金币、集齐海量 AI 潮玩角色图鉴",
+  "fun": {
+    "primary": "curiosity",
+    "secondary": "mastery"
+  },
+  "verbs": [
+    {
+      "name": "flip",
+      "cost": "每次翻两张消耗 1 步预算；误配翻回、步数不退（每关步数有限，用尽即失败）",
+      "feedback": ["sfx", "3D card-flip animation", "matched pair burst + glow", "combo counter pop"],
+      "combinesWith": ["peek"]
+    },
+    {
+      "name": "peek",
+      "cost": "消耗 1 次提示（每局 3 次，看广告可补充，有每局补充上限）",
+      "feedback": ["sfx", "highlight a random un-matched pair for 1.5s"],
+      "combinesWith": ["flip"]
+    }
+  ],
+  "decisions": [
+    {
+      "atSec": 8,
+      "choice": "先翻哪张：翻开已知位置的半配对保底，还是开新区域赌信息",
+      "cost": "开新区域可能浪费步数失去保底分；只翻已知牌会耗尽信息源"
+    },
+    {
+      "atSec": 20,
+      "choice": "看到两张不同新卡后，第三张是回翻已知牌（稳）还是继续开新（赌连击）",
+      "cost": "回翻保底但连击中断；开新可能连续误配烧步数"
+    },
+    {
+      "atSec": 40,
+      "choice": "提示用不用：现在用提示保连击，还是留着卡关时刻",
+      "cost": "提示次数有限，用光后只能看广告补充（有每局上限）"
+    },
+    {
+      "atSec": 70,
+      "choice": "金币花在哪：买本关 +3 步，还是存着解锁新盲盒系列（图鉴扩展）",
+      "cost": "买步数稳过但收集进度慢；存金币可能本关失败"
+    },
+    {
+      "atSec": 100,
+      "choice": "冲 3 星（剩余步数 1:1 转金币）还是稳过（多翻保底）",
+      "cost": "冲 3 星可能步数耗尽失败；稳过则星级和金币更少"
+    },
+    {
+      "atSec": 130,
+      "choice": "通关后：立即重开同种子刷 3 星，还是进入下一关",
+      "cost": "重开刷星消耗时间且新内容延后；直接下一关星级缺口留存"
+    },
+    {
+      "atSec": 160,
+      "choice": "每日同种子挑战（限步冲榜）还是继续闯关",
+      "cost": "每日挑战一天一次，错过当日奖励；闯关进度暂停"
+    }
+  ],
+  "loop": {
+    "teachSec": 30,
+    "practiceSec": 60,
+    "twistSec": 45,
+    "resolveSec": 30
+  },
+  "levels": [
+    { "index": 1, "newElement": "基础翻牌配对（4×4=8 对），教学关，零失败可能" },
+    { "index": 2, "newElement": "牌桌加大到 4×5=10 对，步数预算收紧" },
+    { "index": 3, "newElement": "星卡：一对金边星卡配对得 3 倍金币" },
+    { "index": 4, "newElement": "障碍卡：2 张不可配对的干扰卡占位，翻它也耗步数" },
+    { "index": 5, "newElement": "镜像卡：一对卡互为左右镜像，不能靠逐像素记忆" },
+    { "index": 6, "newElement": "同色系混淆组：牌池混入 3 组近似角色，考验细节观察" },
+    { "index": 7, "newElement": "连击窗口：连续 2 次配对不失误则第 3 连击起返还 1 步" },
+    { "index": 8, "newElement": "牌桌 5×6=15 对，长程记忆压力" },
+    { "index": 9, "newElement": "幻影洗牌：每 6 次误配牌桌未配对卡位置洗一次" },
+    { "index": 10, "newElement": "开局闪现：开局所有牌亮 1.2 秒再扣下（速记挑战）" },
+    { "index": 11, "newElement": "双重配对：两张角色卡+两张对应名字卡，图文四选配对" },
+    { "index": 12, "newElement": "终局：6×6=18 对 + 障碍卡 + 星卡 + 幻影洗牌全混合 Boss 关" }
+  ],
+  "upgrades": [
+    { "id": "combo-refund", "kind": "rule", "detail": "连击达人：第 4 连击起每次成功配对返还 1 步" },
+    { "id": "collector-peek", "kind": "rule", "detail": "收藏家：图鉴每收集满 10 个角色，开局多 1 次免费提示" },
+    { "id": "star-bonus", "kind": "rule", "detail": "星级返还：3 星通关时剩余步数 1:1 转金币" },
+    { "id": "peek-plus", "kind": "rule", "detail": "精准提示：提示升级为先点一张目标卡，只亮它的配对位置" },
+    { "id": "combo-shield", "kind": "rule", "detail": "连击护盾：每局首次误配不清空连击（仅一次）" },
+    { "id": "shuffle-block", "kind": "rule", "detail": "定牌咒：幻影洗牌关可花 20 金币阻止一次洗牌" },
+    { "id": "extra-moves-1", "kind": "stat", "detail": "步数上限 +3（金币购买）" },
+    { "id": "extra-moves-2", "kind": "stat", "detail": "步数上限再 +3（金币购买，最多 2 次）" }
+  ],
+  "replayHooks": [
+    "nearMiss",
+    "rating",
+    "daily",
+    "growth",
+    "unlock"
+  ],
+  "juice": {
+    "layersPerEvent": 3,
+    "fullScreenPer10s": 1
+  },
+  "onboarding": {
+    "menuScreens": 1,
+    "firstInputSec": 5,
+    "firstSuccessSec": 45,
+    "interactive": true,
+    "steps": 4,
+    "skippable": true,
+    "replayable": true
+  }
+}

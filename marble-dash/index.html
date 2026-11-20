@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<script src="./config/sdk.config.js"></script>
+<script src="./src/core/sdk-boot.js"></script>
+<script src="./src/core/cors-img.js"></script>
+<script src="./config/locales.js"></script>
+<script src="./src/core/i18n.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Marble Dash — Free 3D Marble Game</title>
+  <meta name="description" content="Marble Dash is a free 3D marble roller. Tilt neon sky tracks with WASD, guide your glass marble across narrow bridges, jumps and moving platforms, grab gems and reach the goal. 6 handcrafted levels, star ratings, no download.">
+  <meta name="theme-color" content="#0b0720">
+  <meta property="og:title" content="Marble Dash — Free 3D Marble Game">
+  <meta property="og:description" content="Tilt the sky. Roll the glass marble. Reach the goal. A free 3D marble puzzle-roller with 6 neon levels.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0720'/%3E%3Cpath d='M8 44 L32 36 L56 44 L32 52 Z' fill='%23151a3a' stroke='%2322d3ee' stroke-width='2'/%3E%3Ccircle cx='32' cy='28' r='12' fill='%237dd3fc' fill-opacity='0.55' stroke='%23e0f2fe' stroke-width='2'/%3E%3Ccircle cx='27' cy='23' r='3.5' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  { "imports": { "three": "./lib/three.module.min.js" } }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="canvas"></canvas>
+    <div id="vignette"></div>
+    <div id="flash"></div>
+
+    <!-- ============ HUD ============ -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-panel hud-left">
+          <div class="lvl-line"><span class="lbl" data-i18n="LEVEL">LEVEL</span> <b id="hud-level">1/6</b></div>
+          <div id="hud-lvlname" class="lvl-name">First Roll</div>
+          <div id="hud-lives" class="lives" aria-label="Lives"></div>
+        </div>
+        <div class="hud-panel hud-timer">
+          <span class="lbl" data-i18n="TIME">TIME</span>
+          <b id="hud-time">0:00.0</b>
+          <div id="hud-par" class="par-line"></div>
+        </div>
+        <div class="hud-panel hud-right">
+          <div class="stat-line"><span class="lbl" data-i18n="SCORE">SCORE</span> <b id="hud-score">0</b></div>
+          <div class="stat-line"><span class="lbl" data-i18n="BEST">BEST</span> <b id="hud-best">0</b></div>
+          <div class="stat-line gems-line"><span class="gem-ico">◆</span> <b id="hud-gems">0/0</b></div>
+        </div>
+      </div>
+      <div class="hud-btns">
+        <button id="btn-mute" class="icon-btn" title="Mute" data-i18n-title="Mute" aria-label="Mute">♪</button>
+        <button id="btn-pause" class="icon-btn" title="Pause" data-i18n-title="Pause" aria-label="Pause">❚❚</button>
+      </div>
+      <div id="tilt-meter" class="tilt-meter"><div class="tilt-ring"></div><div id="tilt-dot" class="tilt-dot"></div></div>
+      <div id="toast" class="toast"></div>
+      <div id="hint" class="hint">WASD / Arrows — tilt the track · Space — pause · R — retry</div>
+    </div>
+
+    <!-- ============ TITLE ============ -->
+    <div id="screen-title" class="screen is-active">
+      <div class="title-card">
+        <div class="logo">MARBLE<span>DASH</span></div>
+        <p class="tagline" data-i18n="Tilt the sky. Roll the glass. Reach the goal.">Tilt the sky. Roll the glass. Reach the goal.</p>
+        <div class="title-btns">
+          <button id="btn-play" class="btn primary big" data-i18n="PLAY">PLAY</button>
+          <button id="btn-levels" class="btn" data-i18n="LEVELS">LEVELS</button>
+          <button id="btn-howto" class="btn" data-i18n="HOW TO PLAY">HOW TO PLAY</button>
+        </div>
+        <p class="best-line"><span data-i18n="Best score">Best score</span>: <b id="title-best">0</b></p>
+        <p class="credits">Original game · three.js (MIT) · Inspired by Marble Mouse (Varun Ramesh)</p>
+      </div>
+    </div>
+
+    <!-- ============ LEVEL SELECT ============ -->
+    <div id="screen-levels" class="screen">
+      <div class="card">
+        <h2 data-i18n="SELECT LEVEL">SELECT LEVEL</h2>
+        <div id="level-grid" class="level-grid"></div>
+        <button id="btn-levels-back" class="btn" data-i18n="BACK">BACK</button>
+      </div>
+    </div>
+
+    <!-- ============ HOW TO ============ -->
+    <div id="screen-howto" class="screen">
+      <div class="card howto">
+        <h2 data-i18n="HOW TO PLAY">HOW TO PLAY</h2>
+        <p class="goal" data-i18n="Tilt the floating track so your glass marble rolls to the glowing goal hole. Grab gems for points, beat the clock for stars — and don't fall into the void!">Tilt the floating track so your glass marble rolls to the glowing goal hole. Grab gems for points, beat the clock for stars — and don't fall into the void!</p>
+        <ul class="howto-list">
+          <li data-i18n="WASD or Arrow keys tilt the whole track. The marble rolls downhill.">WASD or Arrow keys tilt the whole track. The marble rolls downhill.</li>
+          <li data-i18n="Gems = 100 points each. Checkpoint rings save your respawn spot.">Gems = 100 points each. Checkpoint rings save your respawn spot.</li>
+          <li data-i18n="Chevron pads and ramps launch you over gaps. Keep your speed!">Chevron pads and ramps launch you over gaps. Keep your speed!</li>
+          <li data-i18n="Amber platforms move — ride them. Orange sweepers will knock you off.">Amber platforms move — ride them. Orange sweepers will knock you off.</li>
+          <li data-i18n="Falling costs one of 3 lives. Lose them all and the run ends.">Falling costs one of 3 lives. Lose them all and the run ends.</li>
+          <li data-i18n="Space = pause · R = retry level · M = mute. On touch: drag anywhere to tilt.">Space = pause · R = retry level · M = mute. On touch: drag anywhere to tilt.</li>
+        </ul>
+        <button id="btn-howto-back" class="btn primary" data-i18n="GOT IT">GOT IT</button>
+      </div>
+    </div>
+
+    <!-- ============ PAUSE ============ -->
+    <div id="screen-pause" class="screen">
+      <div class="card">
+        <h2 data-i18n="PAUSED">PAUSED</h2>
+        <button id="btn-resume" class="btn primary" data-i18n="RESUME">RESUME</button>
+        <button id="btn-restart-pause" class="btn" data-i18n="RETRY LEVEL">RETRY LEVEL</button>
+        <button id="btn-menu-pause" class="btn" data-i18n="MENU">MENU</button>
+      </div>
+    </div>
+
+    <!-- ============ LEVEL CLEAR ============ -->
+    <div id="screen-clear" class="screen">
+      <div class="card">
+        <h2 class="clear-h" data-i18n="LEVEL CLEAR!">LEVEL CLEAR!</h2>
+        <div id="clear-stars" class="stars"></div>
+        <div id="clear-rating" class="rating"></div>
+        <div class="res-rows">
+          <div class="res-row"><span data-i18n="Time">Time</span><b id="clear-time">0:00.0</b></div>
+          <div class="res-row"><span data-i18n="Gems">Gems</span><b id="clear-gems">0/0</b></div>
+          <div class="res-row"><span data-i18n="Level bonus">Level bonus</span><b id="clear-bonus">0</b></div>
+          <div class="res-row total"><span data-i18n="Score">Score</span><b id="clear-score">0</b></div>
+        </div>
+        <div id="clear-record" class="record hidden" data-i18n="NEW BEST TIME!">NEW BEST TIME!</div>
+        <button id="btn-next" class="btn primary big" data-i18n="NEXT LEVEL">NEXT LEVEL</button>
+        <button id="btn-replay" class="btn" data-i18n="REPLAY">REPLAY</button>
+      </div>
+    </div>
+
+    <!-- ============ GAME OVER ============ -->
+    <div id="screen-gameover" class="screen">
+      <div class="card">
+        <h2 class="over-h" data-i18n="GAME OVER">GAME OVER</h2>
+        <p class="over-sub" data-i18n="The void claims another marble…">The void claims another marble…</p>
+        <div class="res-rows">
+          <div class="res-row"><span data-i18n="Reached">Reached</span><b id="over-level">Level 1</b></div>
+          <div class="res-row total"><span data-i18n="Score">Score</span><b id="over-score">0</b></div>
+        </div>
+        <button id="btn-retry" class="btn primary big" data-i18n="TRY AGAIN">TRY AGAIN</button>
+        <button id="btn-menu-over" class="btn" data-i18n="MENU">MENU</button>
+      </div>
+    </div>
+
+    <!-- ============ GAME COMPLETE ============ -->
+    <div id="screen-complete" class="screen">
+      <div class="card">
+        <h2 class="win-h" data-i18n="YOU CONQUERED THE SKY!">YOU CONQUERED THE SKY!</h2>
+        <div id="complete-stars" class="stars"></div>
+        <div class="res-rows">
+          <div class="res-row"><span data-i18n="Total stars">Total stars</span><b id="complete-stars-n">0/18</b></div>
+          <div class="res-row total"><span data-i18n="Final score">Final score</span><b id="complete-score">0</b></div>
+        </div>
+        <div id="complete-record" class="record hidden" data-i18n="NEW BEST SCORE!">NEW BEST SCORE!</div>
+        <button id="btn-again" class="btn primary big" data-i18n="PLAY AGAIN">PLAY AGAIN</button>
+        <button id="btn-menu-complete" class="btn" data-i18n="MENU">MENU</button>
+      </div>
+    </div>
+
+    <div id="loading"><div class="spinner"></div><div data-i18n="Loading…">Loading…</div></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

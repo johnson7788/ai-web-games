@@ -1,0 +1,62 @@
+{
+  "runs": [
+    {
+      "id": "greedy-123",
+      "policy": "greedy",
+      "seed": 123,
+      "durationSec": 120,
+      "actions": 7100,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": 1,
+      "deaths": 0,
+      "idleSec": 1.6,
+      "maxEventGapSec": 1.12,
+      "uniqueEvents": 11,
+      "levelsReached": 12,
+      "completed": true,
+      "distance": 1724,
+      "gems": 25,
+      "smoothTransfers": 0
+    },
+    {
+      "id": "random-456",
+      "policy": "random",
+      "seed": 456,
+      "durationSec": 1,
+      "actions": 59,
+      "firstInputSec": 0,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 0,
+      "maxEventGapSec": 0.3,
+      "uniqueEvents": 5,
+      "levelsReached": 1,
+      "completed": false,
+      "distance": 13,
+      "gems": 0,
+      "smoothTransfers": 1
+    },
+    {
+      "id": "noinput-789",
+      "policy": "noinput",
+      "seed": 789,
+      "durationSec": 1,
+      "actions": 0,
+      "firstInputSec": -1,
+      "inputLatencyMs": 90,
+      "firstSuccessSec": null,
+      "deaths": 1,
+      "idleSec": 1,
+      "maxEventGapSec": 0,
+      "uniqueEvents": 2,
+      "levelsReached": 1,
+      "completed": false,
+      "distance": 8,
+      "gems": 0,
+      "smoothTransfers": 0
+    }
+  ],
+  "generatedAt": "2026-11-19T15:23:37.915Z"
+}

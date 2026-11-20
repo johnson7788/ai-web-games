@@ -1,0 +1,75 @@
+{
+  "slug": "dig-deep",
+  "genre": "arcade",
+  "oneLiner": "你是地心钻探员：在5列竖井里点击/滑动选格下挖，用铲/钻/激光打破不同硬度的砖块，收集钻石化石回体力，躲开熔岩、跑赢上涨的洪水一路挖到地心。",
+  "fun": {
+    "primary": "mastery",
+    "secondary": "curiosity"
+  },
+  "verbs": [
+    {
+      "name": "dig",
+      "cost": "体力（铲3/钻2/激光1）；硬度高的格子要多次点击",
+      "feedback": ["sfx", "debris-particles", "cell-crack"],
+      "combinesWith": ["switchTool"]
+    },
+    {
+      "name": "move",
+      "cost": "洪水上涨的时间——绕路吃钻石会变慢",
+      "feedback": ["sfx", "rig-slide", "target-marker"],
+      "combinesWith": ["dig"]
+    },
+    {
+      "name": "switchTool",
+      "cost": "激光受充能限制；铲子最慢且挖断层会塌方砸伤",
+      "feedback": ["sfx", "tool-glow", "hud-flash"],
+      "combinesWith": ["dig"]
+    }
+  ],
+  "decisions": [
+    { "atSec": 6, "choice": "第一格硬砖：用铲子慢慢磨，还是切钻头速挖", "cost": "多花体力 vs 被洪水追上" },
+    { "atSec": 20, "choice": "看到侧列钻石：直下快挖，还是绕路去吃钻石", "cost": "洪水上涨 vs 分数/体力" },
+    { "atSec": 40, "choice": "断层格：用铲子省激光充能但会塌方，还是用钻头/激光稳过", "cost": "激光充能 vs 塌方伤体力" },
+    { "atSec": 60, "choice": "体力见底：换最省体力的激光，还是继续钻头", "cost": "激光充能 vs 体力" },
+    { "atSec": 90, "choice": "硬岩阵挡路：用激光切岩耗充能，还是横移绕行", "cost": "充能 vs 洪水时间" },
+    { "atSec": 130, "choice": "熔岩囊：绕开保命，还是冒险贴近挖钻石", "cost": "安全 vs 分数" },
+    { "atSec": 160, "choice": "暗河加速：现在补化石，还是拼命下挖", "cost": "体力 vs 深度" }
+  ],
+  "loop": { "teachSec": 30, "practiceSec": 45, "twistSec": 45, "resolveSec": 15 },
+  "levels": [
+    { "index": 1, "newElement": "dig cells / diamonds refill energy" },
+    { "index": 2, "newElement": "drill unlocked (2-power, 2-cost)" },
+    { "index": 3, "newElement": "fault lines collapse under shovel + laser unlock" },
+    { "index": 4, "newElement": "hard rock arrays" },
+    { "index": 5, "newElement": "rising dark river speeds up + fossil-dense" },
+    { "index": 6, "newElement": "giant fossil puzzle cells" },
+    { "index": 7, "newElement": "diamond lode" },
+    { "index": 8, "newElement": "faults stacked with hard rock" },
+    { "index": 9, "newElement": "lava pockets to avoid" },
+    { "index": 10, "newElement": "ember chasm: diamonds over lava" },
+    { "index": 11, "newElement": "magma rises faster" },
+    { "index": 12, "newElement": "reach the molten core (signature)" }
+  ],
+  "upgrades": [
+    { "id": "rubblePlow", "kind": "rule", "desc": "钻头挖断层不再塌方（改规则）" },
+    { "id": "laserRecycle", "kind": "rule", "desc": "激光切岩返还 1 充能（改规则）" },
+    { "id": "diamondGreed", "kind": "rule", "desc": "连吃 3 颗钻石，第 4 颗双倍分（规则链）" },
+    { "id": "fossilMagnet", "kind": "rule", "desc": "化石必掉充能且体力额外 +50%（改规则）" },
+    { "id": "floodBrake", "kind": "rule", "desc": "每进一层洪水暂缓 3 秒（改规则）" },
+    { "id": "staminaCore", "kind": "stat", "desc": "体力上限 +20（数值）" },
+    { "id": "shovelEdge", "kind": "stat", "desc": "铲子威力 +1（数值）" },
+    { "id": "moveSwift", "kind": "stat", "desc": "横移速度 +15%（数值）" }
+  ],
+  "replayHooks": ["nearMiss", "unlock", "growth", "rating"],
+  "juice": { "layersPerEvent": 3, "fullScreenPer10s": 1 },
+  "onboarding": { "menuScreens": 1, "firstInputSec": 4, "firstSuccessSec": 20, "interactive": true, "steps": 4, "skippable": true, "replayable": true },
+  "signatureMoment": "挖到地心瞬间，屏幕熔金溢流、竖井被金色填满，弹出「你挖穿了地球」成就",
+  "antiScope": [
+    "不做联网/排行榜",
+    "不做皮肤商店",
+    "不做每日任务",
+    "不做剧情对话",
+    "不做竖屏专属模式（横竖 letterbox 兼容即可）"
+  ],
+  "artSource": "地质钻探程序化 Canvas 渲染：三场景包（黄土暖褐 / 化石暗河青黑 / 熔核红金）径向渐变 + 粒子；UI 线框 SVG/CSS"
+}

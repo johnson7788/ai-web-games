@@ -1,0 +1,149 @@
+{
+  "game": "depth-diver",
+  "generatedAt": "2026-11-19T12:35:13.648Z",
+  "model": "dashscope/qwen3-vl-plus",
+  "verdict": "PASS",
+  "means": {
+    "readable": 8.125,
+    "silhouette": 7.5,
+    "style_consistent": 8.875
+  },
+  "thresholds": {
+    "readable": 7,
+    "silhouette": 6,
+    "style": 6
+  },
+  "critical": [],
+  "lowMeans": [],
+  "errors": [],
+  "shots": [
+    {
+      "shot": "tests/final/01-title.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Start”按钮开始游戏",
+      "readable": 9,
+      "silhouette": 7,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "关卡编号1-12按钮无明显选中态区分，当前仅1号高亮但未说明为何高亮（可能为默认选中）",
+        "背景深蓝条纹与发光文字对比度略低，部分玩家可能需适应亮度",
+        "‘Best 0m’文字偏小且颜色较淡，易被忽略"
+      ]
+    },
+    {
+      "shot": "tests/final/02-gameplay-sunlit.png",
+      "goal_visible": true,
+      "first_action_guess": "点击或拖动潜水器向左移动以收集左侧发光样本",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家潜水器与右侧岩石部分重叠，可能影响操作判断",
+        "两个发光样本图标样式相同但无明确交互反馈（如高亮/脉冲），易混淆是否已采集",
+        "HUD中'Samples ★★★ 0/3'星号为紫色，与整体蓝黄主色调略冲突"
+      ]
+    },
+    {
+      "shot": "tests/final/03-gameplay-samples.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色发光样本收集它",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家潜艇与右侧发光样本距离过近，可能误触；",
+        "底部海草与岩石遮挡部分可交互物（如左下样本）；",
+        "氧气条与 Samples 指示器间距小，桌面缩放时易误读"
+      ]
+    },
+    {
+      "shot": "tests/final/04-gameplay-mines.png",
+      "goal_visible": true,
+      "first_action_guess": "点击发光样本收集它",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'Samples ★☆☆ 0/3'星标与数字间距过小，易误读为'0/3★'",
+        "深度显示'5m · 360m'单位与数值间缺少空格，略显拥挤",
+        "右上角图标按钮无文字标签，首次使用需猜测功能（如问号、重试、主页）"
+      ]
+    },
+    {
+      "shot": "tests/final/05-gameplay-twilight.png",
+      "goal_visible": true,
+      "first_action_guess": "向右移动收集发光样本",
+      "readable": 8,
+      "silhouette": 9,
+      "style_consistent": 10,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "Oxygen计时器‘46s’与Samples进度条紧邻，小屏可能误读为‘46★’",
+        "深度显示‘6m · 520m’单位混用（米 vs 米），易混淆",
+        "右上角图标无文字标签，新手难辨功能（如问号/重试/灯泡）"
+      ]
+    },
+    {
+      "shot": "tests/final/06-gameplay-abyss.png",
+      "goal_visible": true,
+      "first_action_guess": "点击中央发光的白色鱼形角色以控制其移动或采集发光样本",
+      "readable": 7,
+      "silhouette": 8,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "HUD中'Samples ★★★★☆ 0/5'文字与星标间距过小，易误读为'0/5'是星标数量",
+        "左下角灰色八边形物体功能不明，无视觉提示是否可交互",
+        "深度显示'Depth 7m · 680m'单位混淆（米 vs 米），可能引起理解歧义"
+      ]
+    },
+    {
+      "shot": "tests/final/07-gameplay-abyss2.png",
+      "goal_visible": true,
+      "first_action_guess": "点击发光的样本收集点（黄色灯状物）以采集样本",
+      "readable": 8,
+      "silhouette": 7,
+      "style_consistent": 9,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "玩家飞船与右侧样本点距离过近，可能误触；",
+        "底部山形剪影细节模糊，部分可交互物（如绿色+号）与背景对比度偏低；",
+        "HUD中'Samples ★★★★☆ 0/6'星标与文字间距略紧，小屏可能误读"
+      ]
+    },
+    {
+      "shot": "tests/final/08-result-win.png",
+      "goal_visible": true,
+      "first_action_guess": "点击绿色的“Next Level”按钮继续游戏",
+      "readable": 9,
+      "silhouette": 6,
+      "style_consistent": 8,
+      "hud_overlap": false,
+      "text_clipped": false,
+      "mobile_safe": true,
+      "issues": [
+        "背景深蓝渐变与文字对比度偏低，眯眼时‘Dive Complete!’标题略模糊",
+        "底部中央微弱光晕状图形（疑似玩家/载具残影）与‘Next Level’按钮轻微重叠，可能干扰点击",
+        "顶部HUD中‘Samples ★★★ 3/3’星标与文字间距过紧，小屏下易误读"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "generatedAt": "2026-11-19T17:37:58.390Z",
+  "sampleRate": 44100,
+  "criteria": {
+    "rms": "> 0",
+    "peak": "< 0.95",
+    "nan": "=== 0"
+  },
+  "sfx": {
+    "tileTap": {
+      "rms": 0.1712,
+      "peak": 0.3513,
+      "nan": 0,
+      "zcRate": 842,
+      "samples": 2646,
+      "durSec": 0.06,
+      "pass": true
+    },
+    "charCorrect": {
+      "rms": 0.1974,
+      "peak": 0.4392,
+      "nan": 0,
+      "zcRate": 704.3,
+      "samples": 5292,
+      "durSec": 0.12,
+      "pass": true
+    },
+    "charWrong": {
+      "rms": 0.0916,
+      "peak": 0.2628,
+      "nan": 0,
+      "zcRate": 337.5,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "solve": {
+      "rms": 0.1462,
+      "peak": 0.5529,
+      "nan": 0,
+      "zcRate": 895,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "forge": {
+      "rms": 0.1422,
+      "peak": 0.6003,
+      "nan": 0,
+      "zcRate": 1029.9,
+      "samples": 27342,
+      "durSec": 0.62,
+      "pass": true
+    },
+    "riddle": {
+      "rms": 0.1496,
+      "peak": 0.495,
+      "nan": 0,
+      "zcRate": 657,
+      "samples": 22050,
+      "durSec": 0.5,
+      "pass": true
+    },
+    "hint": {
+      "rms": 0.1512,
+      "peak": 0.5037,
+      "nan": 0,
+      "zcRate": 988.1,
+      "samples": 18522,
+      "durSec": 0.42,
+      "pass": true
+    },
+    "reset": {
+      "rms": 0.0452,
+      "peak": 0.1928,
+      "nan": 0,
+      "zcRate": 5563.9,
+      "samples": 11466,
+      "durSec": 0.26,
+      "pass": true
+    },
+    "slag": {
+      "rms": 0.0913,
+      "peak": 0.2871,
+      "nan": 0,
+      "zcRate": 1744.2,
+      "samples": 3528,
+      "durSec": 0.08,
+      "pass": true
+    },
+    "smelt": {
+      "rms": 0.1276,
+      "peak": 0.3851,
+      "nan": 0,
+      "zcRate": 986.2,
+      "samples": 15876,
+      "durSec": 0.36,
+      "pass": true
+    },
+    "comboUp": {
+      "rms": 0.0977,
+      "peak": 0.2144,
+      "nan": 0,
+      "zcRate": 987.6,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "comboBreak": {
+      "rms": 0.1023,
+      "peak": 0.18,
+      "nan": 0,
+      "zcRate": 353.2,
+      "samples": 7056,
+      "durSec": 0.16,
+      "pass": true
+    },
+    "levelStart": {
+      "rms": 0.1055,
+      "peak": 0.4057,
+      "nan": 0,
+      "zcRate": 342.2,
+      "samples": 30870,
+      "durSec": 0.7,
+      "pass": true
+    },
+    "levelClear": {
+      "rms": 0.1238,
+      "peak": 0.4714,
+      "nan": 0,
+      "zcRate": 659.7,
+      "samples": 31752,
+      "durSec": 0.72,
+      "pass": true
+    },
+    "death": {
+      "rms": 0.1837,
+      "peak": 0.4605,
+      "nan": 0,
+      "zcRate": 325,
+      "samples": 39690,
+      "durSec": 0.9,
+      "pass": true
+    },
+    "win": {
+      "rms": 0.1603,
+      "peak": 0.5839,
+      "nan": 0,
+      "zcRate": 569.6,
+      "samples": 48510,
+      "durSec": 1.1,
+      "pass": true
+    },
+    "ui": {
+      "rms": 0.1179,
+      "peak": 0.2591,
+      "nan": 0,
+      "zcRate": 910.4,
+      "samples": 2205,
+      "durSec": 0.05,
+      "pass": true
+    },
+    "newRecord": {
+      "rms": 0.153,
+      "peak": 0.5475,
+      "nan": 0,
+      "zcRate": 827.2,
+      "samples": 34839,
+      "durSec": 0.79,
+      "pass": true
+    },
+    "chime": {
+      "rms": 0.121,
+      "peak": 0.28,
+      "nan": 0,
+      "zcRate": 878.6,
+      "samples": 12348,
+      "durSec": 0.28,
+      "pass": true
+    }
+  },
+  "loops": {
+    "bgm0": {
+      "rms": 0.0817,
+      "peak": 0.3268,
+      "nan": 0,
+      "zcRate": 177.1,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgm1": {
+      "rms": 0.0437,
+      "peak": 0.1,
+      "nan": 0,
+      "zcRate": 683.4,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    },
+    "bgm2": {
+      "rms": 0.0339,
+      "peak": 0.08,
+      "nan": 0,
+      "zcRate": 760,
+      "samples": 176400,
+      "durSec": 4,
+      "pass": true
+    }
+  },
+  "api": {
+    "unlock": "function",
+    "event": "function",
+    "setMuted": "function",
+    "setVolume": "function",
+    "playBgm": "function",
+    "stopBgm": "function"
+  },
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "failed": 0,
+    "allPass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "url": "http://127.0.0.1:8131/",
+  "plan": "tools/verify.plan.json",
+  "checks": [
+    {
+      "name": "标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "默认英文/LTR",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "i18n 默认 en",
+      "ok": true,
+      "detail": "eval: window.__ll.state.lang === 'en'"
+    },
+    {
+      "name": "切中文生效",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'zh' && document.documentElement.dir === 'ltr'"
+    },
+    {
+      "name": "切回英文",
+      "ok": true,
+      "detail": "eval: document.documentElement.lang === 'en'"
+    },
+    {
+      "name": "开局进入 playing",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "首次进入引导出现",
+      "ok": true,
+      "detail": "eval: !!document.querySelector('[data-tutorial]') && !document.querySelector('[data-tutorial]').classList.contains('hidden')"
+    },
+    {
+      "name": "跳过引导后消失",
+      "ok": true,
+      "detail": "eval: document.querySelector('[data-tutorial]').classList.contains('hidden')"
+    },
+    {
+      "name": "键盘移动生效",
+      "ok": true,
+      "detail": "eval: window.__ll.run.player.y > 8"
+    },
+    {
+      "name": "主炮开火",
+      "ok": true,
+      "detail": "eval: window.__ll.run.stats.firedMain >= 1"
+    },
+    {
+      "name": "重炮开火",
+      "ok": true,
+      "detail": "eval: window.__ll.run.stats.heavyUsed >= 1"
+    },
+    {
+      "name": "暂停",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'paused'"
+    },
+    {
+      "name": "恢复",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "命尽/基地被毁判负",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'dead'"
+    },
+    {
+      "name": "结算卡出现",
+      "ok": true,
+      "detail": "eval: !document.querySelector('#screen-result').classList.contains('hidden')"
+    },
+    {
+      "name": "R 键重开",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "移动端标题屏",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'title'"
+    },
+    {
+      "name": "触屏控件可见",
+      "ok": true,
+      "detail": "eval: !document.getElementById('touch-controls').classList.contains('hidden')"
+    },
+    {
+      "name": "移动端开局",
+      "ok": true,
+      "detail": "eval: window.__ll.state.phase === 'playing'"
+    },
+    {
+      "name": "帧率 ≥ 50",
+      "ok": true,
+      "detail": "{\"avgFrameMs\":16.66,\"fps\":60,\"frames\":120}"
+    },
+    {
+      "name": "0 console/page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0 失败请求",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01-title.png",
+    "04-play.png",
+    "06-dead.png",
+    "07-restart.png",
+    "08-mobile-play.png"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "externalRequests": [
+    "[mobile] https://pipygames.com/sdk/config.json",
+    "[mobile] https://pipygames.com/api/sdk/config?appId=pipy-iron-siege",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-iron-siege",
+    "https://pipygames.com/sdk/config.json",
+    "https://pipygames.com/api/sdk/config?appId=pipy-iron-siege"
+  ],
+  "fps": {
+    "avgFrameMs": 16.66,
+    "fps": 60,
+    "frames": 120
+  },
+  "pass": true
+}
